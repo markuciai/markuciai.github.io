@@ -1,0 +1,1 @@
+const allSchemas={blog:{body:{type:"wysiwyg",options:["all"]}}};export default allSchemas
