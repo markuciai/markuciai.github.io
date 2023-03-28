@@ -1,6 +1,4 @@
 <script>
-    import '$src/styles.css';
-
 	import bowl from '$lib/images/illustrations/bowl.png';
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
