@@ -1,4 +1,6 @@
 <script>
+    import './styles.css';
+
 	import bowl from '$lib/images/illustrations/bowl.png';
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -12,9 +14,14 @@
 
 
 
+<div class="app">
+<!-- <Header /> -->
+<main>
+
+
 <section>
 	<img class="illustration" src={map_piece}>
-	<h1>Крест</h1>
+	<h1>Крест!!!</h1>
 	<article>
 	По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
 	</article>
@@ -53,7 +60,19 @@
 
 
 
+</main>
+
+<footer>
+    <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+</footer>
+</div>
+
+
+
+
 <style>
+
+
 	section {
 		display: flex;
 		flex-direction: column;
