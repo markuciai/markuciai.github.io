@@ -4,11 +4,13 @@ export const manifest = {
 	assets: new Set(["favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":{"file":"_app/immutable/entry/start.cc5e9d29.js","imports":["_app/immutable/entry/start.cc5e9d29.js","_app/immutable/chunks/index.6677c752.js","_app/immutable/chunks/singletons.08be07ea.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.4f319cd2.js","imports":["_app/immutable/entry/app.4f319cd2.js","_app/immutable/chunks/index.6677c752.js"],"stylesheets":[],"fonts":[]}},
+		client: {"start":{"file":"_app/immutable/entry/start.10f89e8d.js","imports":["_app/immutable/entry/start.10f89e8d.js","_app/immutable/chunks/index.6677c752.js","_app/immutable/chunks/singletons.6ebbe353.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.0cfa69e7.js","imports":["_app/immutable/entry/app.0cfa69e7.js","_app/immutable/chunks/index.6677c752.js"],"stylesheets":[],"fonts":[]}},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
-			() => import('./nodes/2.js')
+			() => import('./nodes/2.js'),
+			() => import('./nodes/3.js'),
+			() => import('./nodes/4.js')
 		],
 		routes: [
 			{
@@ -16,6 +18,20 @@ export const manifest = {
 				pattern: /^\/$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 2 },
+				endpoint: null
+			},
+			{
+				id: "/lobis",
+				pattern: /^\/lobis\/?$/,
+				params: [],
+				page: { layouts: [0], errors: [1], leaf: 3 },
+				endpoint: null
+			},
+			{
+				id: "/lobis/kryzius",
+				pattern: /^\/lobis\/kryzius\/?$/,
+				params: [],
+				page: { layouts: [0], errors: [1], leaf: 4 },
 				endpoint: null
 			}
 		],

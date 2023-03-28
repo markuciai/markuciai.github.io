@@ -12,6 +12,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `${$$result.head += `<!-- HEAD_svelte-t32ptj_START -->${$$result.title = `<title>Home</title>`, ""}<meta name="description" content="Svelte demo app"><!-- HEAD_svelte-t32ptj_END -->`, ""}
 
+
+
 <section class="svelte-1qnusw3"><img class="illustration svelte-1qnusw3"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1qnusw3">Крест</h1>
 	<article class="svelte-1qnusw3">По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
