@@ -1,11 +1,9 @@
 <script>
 	import task from '$lib/images/illustrations/fishing_rod.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import stables from '$lib/images/archival/stables.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
-
-	
 </script>
 
 <svelte:head>
@@ -22,11 +20,10 @@
 	<p class="subh">Trečioji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Šaunuoliai, jūs lengvai įvykdėt tarnų prašymą – naują balną atidavėt vežikui-vadeliotojui ponui Michalui, kuris ilgą laiką tarnavo pas Puškinus Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.
-	<img width=105% src={entrance}>
-
-	<article>
-	<br>
 	</article>
+	<img width=105% src={stables}>
+	<br><br>
+
 	<img class="illustration" src={task}>
 
 	<div class="where-next">

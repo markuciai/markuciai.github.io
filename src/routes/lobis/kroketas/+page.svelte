@@ -1,7 +1,9 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
 
+	import nazimov from '$lib/images/archival/nazimov.jpg';
+	import kabinetas from '$lib/images/archival/kabinetas.jpg';
+	import safe from '$lib/images/archival/safe.jpg';
+	
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
 
@@ -18,24 +20,27 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Kroketo aikštelė</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Dvyliktoji ir priešpaskutinė stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Prie poeto Aleksandro Puškino paminklo grupelė vaikų ir suaugusiųjų žaidžia kroketą. Vienas iš žaidėjų yra architektas ir geras Grigorijaus Puškino draugas Vladimiras Nazimovas.
 	</article>
-		<img width=105% src={entrance}>
+		<img width=105% src={nazimov}>
 	<article>
+		<br>
 		Jis į Markučius atvyko paskutiniais Varvaros Puškinos gyvenimo metais ir pažadėjo padaryti viską, kas įmanoma, kad dvaro sodyboje būtų atidarytas muziejus, skirtas žymiam poetui Aleksandrui Puškinui. Sodyboje saugomi unikalūs baldai, poeto ir jo artimųjų asmeniniai daiktai čia atvežti iš poeto namų, buvusių Michailovsko gyvenvietėje.
 	</article>
 
-	<img width=105% src={entrance}>
+	<img width=105% src={kabinetas}>
 
 	<article>
+		<br>
 	Vladimirui Nazimovui jūs atiduodate kroketo kamuoliuką bei parodote visas rastas dokumento skiautes. Architektas jums atiduoda paskutinę – dvyliktąją dokumento dalį – ir papasakoja, kad dokumentas, kurį jūs šiandien surinkote, yra ne kas kita, o 1935 m. Markučių dvaro šeimininkės Varvaros Puškinos surašytas testamentas!
 	</article>
 
-	<img class="illustration" src={bowl}>
+	<img width=105% src={safe}>
 
 	<article>
+	<br>
 	Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, nedegiame, dar 1867 m. prie vienos iš krosnių įrengtame seife. Šį smagų žaidimą, kurio tikslas surinkti šį svarbų dokumentą, veikiausiai sugalvojo pats Varvaros testamento vykdytojas Vladimiras Nazimovas su savo vaikais, norėdamas plačiau paskleisti žinią apie Markučių dvaro šeimininkų paskutinę valią.
 	</article>
 

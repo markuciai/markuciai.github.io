@@ -70,6 +70,7 @@
 	<br>
 	Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
 	</article>
+	<br><br>
 	<img class="illustration" src={bowl}>
 
 	<div class="where-next">

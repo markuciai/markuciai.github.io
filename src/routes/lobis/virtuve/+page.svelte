@@ -1,6 +1,6 @@
 <script>
 	import task from '$lib/images/illustrations/fodder.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import cook from '$lib/images/archival/cook.png';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -19,13 +19,13 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Virtuvė</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Penktoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Virėja nudžiunga pamačius puikų laimikį - net penkis karpius! Juos ji pagamins orkaitėje su daržovėmis ir visokiausiomis žolelėmis pagal senovinį Melnikovų šeimos receptą bei patieks per šventinius pietus.
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={cook}>
 	<article>
 	<br>
 	Netikėtai receptų knygoje pastebite jums jau matyto dokumento skiautę, kurį virėja naudoja kaip knygos skirtuką.

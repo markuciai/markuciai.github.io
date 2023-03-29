@@ -1,6 +1,6 @@
 <script>
 	import bowl from '$lib/images/illustrations/bucket.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import sulinys from '$lib/images/archival/sulinys.png';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -20,13 +20,13 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Šulinys</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Aštuntoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Šis šulinys buvo iškastas 1867 m., kuomet buvo statomas Melnikovų dvaras Markučiuose. Kiekvieną rytą kiemsargis specialia pompa pumpavo vandenį, kuris vamzdžiais tekėjo į specialią namuose esančią talpą.
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={sulinys}>
 	<article>
 	<br>
 	Dalį vandens šildydavo ir naudojo prausimuisi bei vonios malonumams. Taip, XIX a. šiame name jau buvo įrengta vonia ir tualetas. Na bet grįžkim prie mūsų reikalų, jums juk reikia pasemti vandens ir  palaistyti orchidėjas. Prie šulinio stovi kibiras. Neskubėkit. Prieš leidžiant kibirą į šulinį, žvilgtelkit į kibiro vidų. Matote? Ant dugno baltuoja popieriaus skiautė! Paėmėt ją? Tai būtent tai ko jums reikia.

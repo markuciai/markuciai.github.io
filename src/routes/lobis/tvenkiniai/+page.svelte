@@ -1,6 +1,6 @@
 <script>
 	import task from '$lib/images/illustrations/fish.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import waters from '$lib/images/archival/waters.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -25,7 +25,7 @@
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={waters}>
 	<article>
 	<br>
 	Šiandien Tarasas turi svarbią užduotį – tvenkiniuose pagauti žuvies šventiniams pietums.

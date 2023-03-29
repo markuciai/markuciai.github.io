@@ -1,8 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
-	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import dvaras from '$lib/images/archival/mdvaras.jpg';
 </script>
 
 <svelte:head>
@@ -13,7 +10,8 @@
 
 
 <section>
-	<h1>Markučių dvaro muziejus</h1>
+
+	<h1>Markučių dvaro&nbsp;muziejus</h1>
 	<article>
 		<a href="/lobis">Lobis:</a>
 		<ol>
@@ -32,7 +30,7 @@
 		<li>Muziejus</li>
 		</ol>
 	</article>
-
+	<img width=98% src={dvaras}>
 
 
 </section>

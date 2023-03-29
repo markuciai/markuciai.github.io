@@ -1,6 +1,8 @@
 <script>
 	import task_object from '$lib/images/illustrations/saddle.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import servant_house from '$lib/images/archival/servant_house.jpg';
+	import servants from '$lib/images/archival/servants.jpg';
+
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -19,13 +21,13 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Tarnų namelis</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Antroji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 	Tarnaitė Ona ir jos vyras Viačeslavas jus pasitinka ant savo jaukių namų slenksčio. Jie taip pat parke aptiko panašaus dokumento skiautę su įrašu, bet nežino, ką su ja daryti.
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={servants}>
 	<article>
 	<br>
 	Tarnai užsiėmę nesibaigiančiais darbais sode, todėl neturi laiko nežinomo dokumento paieškoms. Tačiau girdėjo, jog surinkus visas dokumento dalis ir nunešus jį į ponų namą galima gauti radybų.

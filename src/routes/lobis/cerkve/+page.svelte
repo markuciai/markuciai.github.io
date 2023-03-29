@@ -1,6 +1,6 @@
 <script>
 	import bowl from '$lib/images/illustrations/doggo.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import cerkve from '$lib/images/archival/cerkve.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -20,15 +20,17 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Cerkvė</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Dešintoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
-		Padėję gėles ant kapų, atsisukite į cerkvę ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – koplyčios statybos? Ji buvo pašventinta šventosios kankinės Barboros vardu. Šalia bažnyčios aptinkate dar vieną dokumento skiautę. Apeikite kapinaites.
+		Padėję gėles ant kapų, atsisukite į cerkvę ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – koplyčios statybos?
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={cerkve}>
 	<article>
-	<br>
+		<br>
+		Ji buvo pašventinta šventosios kankinės Barboros vardu. Šalia bažnyčios aptinkate dar vieną dokumento skiautę. Apeikite kapinaites.
+
 
 	</article>
 	<img class="illustration" src={bowl}>

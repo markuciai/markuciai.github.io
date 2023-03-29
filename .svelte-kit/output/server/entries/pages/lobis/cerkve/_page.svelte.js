@@ -1,6 +1,7 @@
 import { c as create_ssr_component, d as add_attribute } from "../../../../chunks/index.js";
-import { m as map_piece, e as entrance, a as map } from "../../../../chunks/entrance.js";
+import { m as map_piece, a as map } from "../../../../chunks/map.js";
 const bowl = "/_app/immutable/assets/doggo.149c5f38.png";
+const cerkve = "/_app/immutable/assets/cerkve.b692cd14.jpg";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
   code: "section.svelte-1sskqkw{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:0.6;background-color:white;border-radius:5px;box-shadow:0 20px 20px -15px rgba(0,0,0, 0.4);font-size:16pt}h1.svelte-1sskqkw{width:90%;font-weight:800;font-size:clamp(40px, 12vw, 64px);line-height:clamp(40px, 12vw, 64px);;;color:#D33F37;padding:0;margin:50px 0 60px 0}.subh.svelte-1sskqkw{font-size:12px;text-align:center;width:89%;margin:-50px 0 30px 0;font-weight:600;text-transform:uppercase;letter-spacing:1.5px}article.svelte-1sskqkw{padding:0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);margin-bottom:20px}.where-next.svelte-1sskqkw{background-color:#EEDC83;color:black;width:105%;box-sizing:border-box;padding:clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);margin:0px 0 20px 0;box-shadow:0 20px 20px -15px rgba(0,0,0, 0.4);border-radius:5px;font-size:24px;font-size:clamp(24px, 6vw, 32px)}.highlighted-question.svelte-1sskqkw{font-style:italic;font-weight:bold;color:#D33F37}.illustration.svelte-1sskqkw{width:clamp(320px, 100vw, 640px);z-index:10;margin:clamp(-160px, -25vw, -80px) 0 clamp(-80px, -12.5vw, -40px) 0;user-select:none;pointer-events:none}.map_section.svelte-1sskqkw{color:white;font-size:16pt;padding:20px}",
@@ -16,13 +17,17 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Cerkvė</h1>
-	<p class="subh svelte-1sskqkw">Pirmoji stotelė<br>jieškant Markučių lobį</p>
-	<article class="svelte-1sskqkw">Padėję gėles ant kapų, atsisukite į cerkvę ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – koplyčios statybos? Ji buvo pašventinta šventosios kankinės Barboros vardu. Šalia bažnyčios aptinkate dar vieną dokumento skiautę. Apeikite kapinaites.
+	<p class="subh svelte-1sskqkw">Dešintoji stotelė<br>jieškant Markučių lobį</p>
+	<article class="svelte-1sskqkw">Padėję gėles ant kapų, atsisukite į cerkvę ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – koplyčios statybos?
 	</article>
 
 
-	<img width="105%"${add_attribute("src", entrance, 0)}>
-	<article class="svelte-1sskqkw"><br></article>
+	<img width="105%"${add_attribute("src", cerkve, 0)}>
+	<article class="svelte-1sskqkw"><br>
+		Ji buvo pašventinta šventosios kankinės Barboros vardu. Šalia bažnyčios aptinkate dar vieną dokumento skiautę. Apeikite kapinaites.
+
+
+	</article>
 	<img class="illustration svelte-1sskqkw"${add_attribute("src", bowl, 0)}>
 
 	<div class="where-next svelte-1sskqkw">Sekančią dokumento dalį jums padės surasti keturkojai Puškinų šeimos draugai.

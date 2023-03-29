@@ -1,6 +1,6 @@
 <script>
 	import bowl from '$lib/images/illustrations/ball.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import doggie from '$lib/images/archival/doggie.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -20,13 +20,13 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Šuniukai</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Vienuolitkoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Šaunuoliai! Radote mylimų Puškinų šunelių kapus. Staiga matote, kad Fankos ir Boikos (šuniukų vardai) palikuonys žaidžia su kroketo kamuoliuku. Taip neturi būti, nes šis kamuoliukas yra ne šuns žaislas!
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={doggie}>
 	<article>
 	<br>
 

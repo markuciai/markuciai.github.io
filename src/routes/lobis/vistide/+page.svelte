@@ -1,6 +1,7 @@
 <script>
 	import bowl from '$lib/images/illustrations/eggs.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import birdhouse from '$lib/images/archival/birdhouse.jpg';
+	import vanyusha from '$lib/images/archival/vanyusha.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -18,13 +19,13 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Vištidė ir ledainė</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Šeštoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Vaniuša jus pastebi iš tolo ir pamojuoja. Jūs atiduodat jam viščiukų lesalą ir papasakojate apie savo paieškas.
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={vanyusha}>
 	<article>
 	<br>
 	Berniukas su džiaugsmu pasiruošęs jums padėti – jis matė panašią popieriaus skiautę prie ledainės po aviečių krūmu ir tuoj pat jį atneš.

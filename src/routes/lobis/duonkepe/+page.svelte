@@ -1,6 +1,6 @@
 <script>
 	import task from '$lib/images/illustrations/bucket-empty.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import bakery from '$lib/images/archival/bakery.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -19,13 +19,13 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Duonkepė</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Septintoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Oi kaip karšta prie duonkepės! Mašenka (mažoji Marija) paima iš jūsų pintinę su kiaušiniais ir vikriai puola minkyti tešlą pyragui ir pyragėliams.
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={bakery}>
 	<article>
 	<br>
 	Prie krosnies dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuroms pastebite jau pažįstamo dokumento skiautę.

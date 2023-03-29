@@ -1,6 +1,6 @@
 <script>
 	import bowl from '$lib/images/illustrations/flowers.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+	import fruit_garden from '$lib/images/archival/fruit_garden.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
@@ -19,13 +19,13 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Oranžerija</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Devintoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Jūs visiškai teisūs – orchidėjos auga oranžerijoj, kur šaltuoju metų sezonu nuo šalčio saugomi egzotiški šilumą mėgstantys augalai. 
 	</article>
 
 
-	<img width=105% src={entrance}>
+	<img width=105% src={fruit_garden}>
 	<article>
 	<br>
 	Čia jūs sutinkate mergaitę Olią (mažąją Olgą), kuriai padedate supilti vandenį į laistytuvus ir viename gražiame gėlių vazonėlyje pastebite jums reikalingo dokumento skiautę. Pasiimkite ją!
