@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/lobis/vistide 2/+page.svelte";

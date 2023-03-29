@@ -13,42 +13,22 @@
 
 
 <section>
-	<img class="illustration" src={map_piece}>
-	<h1>Крест</h1>
+	<h1>Markučių dvaro muziejus</h1>
 	<article>
-	По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
+		<ul>
+		<li><a href="/lobis">Lobis</a></li>
+		<li><a href="/lobis/kryzius">Kryzius</a></li>
+		<li><a href="/lobis/kryzius">Kryzius</a></li>
+		<li><a href="/lobis/kryzius">Kryzius</a></li>
+		<li><a href="/lobis/kryzius">Kryzius</a></li>
+		<li><a href="/lobis/kryzius">Kryzius</a></li>
+		</ul>
 	</article>
 
 
-	<img width=105% src={entrance}>
-	<article>
-	<br>
-	Сейчас в этой чаше лежит только обрывок бумаги с гербовой печатью и подписью. Похоже, это очень важный исторический документ. Но, где же остальная часть текста, и что в нем было написано? Кому следует отдать случайную находку?
-	</article>
-	<img class="illustration" src={bowl}>
-
-	<div class="where-next">
-		Может быть слуги поместья смогут нам&nbsp;помочь? Нужно&nbsp;срочно их&nbsp;найти.
-		<br><br>
-		<span class="highlighted-question">Где можно найти&nbsp;слуг?</span>
-	</div>
 
 </section>
 
-
-	<div class="appendix">
-		Теперь у вас есть первая часть карты. Куда дальше?
-
-	</div>
-	<img src={map} width=100%>
-
-	<div class="appendix">
-		<ul>
-			<li>Колодец</li>
-			<li>Пекарня</li>
-		</ul>
-		Обойдите все пункты в нужном порядке чтобы выиграть квест.
-	</div>
 
 
 
