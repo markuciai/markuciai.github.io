@@ -117,9 +117,9 @@ section {
 		width: 105%;
 		box-sizing: border-box;
 		/* padding: clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px); */
-		padding: clamp(160px, 25vw, 240px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
+		padding: clamp(180px, 25vw, 240px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
 		/* padding: 160px 10px 80px 20px; */
-		margin: clamp(-160px, -20vw, -120px) 0 20px 0;
+		margin: clamp(-160px, -25vw, -110px) 0 20px 0;
 		box-shadow: 0 20px 20px -15px rgba(0,0,0, 0.4);
 		border-radius: 5px;
 		
@@ -139,8 +139,7 @@ section {
 	.illustration {
 		width: clamp(320px, 100vw, 640px);
 		z-index: 10;
-		margin: clamp(-160px, -25vw, -80px) 0 clamp(-80px, -12.5vw, -40px) 0;
-
+		margin: clamp(-80px, -25vw, -40px) 0 clamp(-80px, -12.5vw, -40px) 0;
 		user-select: none;
 		pointer-events: none;
 	}
