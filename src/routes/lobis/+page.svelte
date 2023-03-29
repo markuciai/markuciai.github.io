@@ -2,54 +2,23 @@
 	import bowl from '$lib/images/illustrations/bowl.png';
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
-	import entrance from '$lib/images/entrance.jpg';
+	import entrance from '$lib/images/archival/entrance.jpg';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Markučių Lobis</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 
 
 <section>
-	<img class="illustration" src={map_piece}>
-	<h1>Крест</h1>
+	<h1>Markučių Lobis</h1>
 	<article>
-	По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
+		Markučių dvarą 1867 m. savo žmonai ir penkiems vaikams pastatė geležinkelių inžinierius Aleksejus Melnikovas. Be pagrindinio ponų namo buvo įkurtas angliškas parkas, pasodintas vaismedžių sodas, iškasti tvenkiniai ir šulinys, pastatytos arklidės, oranžerija, duonkepė (kepyklėlė), tarnų namelis, ledainė, vištidė, virtuvė, įrengtos kroketo ir teniso žaidimų aikštelės. Kai vaikai užaugo, dvaras ir jo 270 hektarų valda buvo padovanota vyriausiajai dukrai Varvarai (Barborai). 1883 m. į Markučius atvyko žymaus rusų poeto Aleksandro Puškino sūnus Grigorijus. Jie su Varvara susituokė ir kartu pragyveno 22 metus. Abu daug keliavo, o iki 1899 m. pakaitomis gyveno tai Markučių, tai Michailovsko dvaruose. Vilniuje jie daug laiko ir lėšų skyrė labdarai, išlaikė vaikų prieglaudą „Jasli“. Po Grigorijaus mirties Varvara dar pragyveno 30 metų, tačiau daugiau nebeištekėjo. Iki pat mirties ji svajojo išpildyti savo velionio vyro valią ir dvare įkurti muziejų, kuriame visi norintys galėtų pamatyti žymaus poeto Aleksandro Puškino daiktus. Varvara mirė 1935 m. ir buvo palaidota šalia savo vyro Grigorijaus. 
+		O dabar įsivaizduokite, kad jūs laiko mašina nusikeliate į praeitį ir lankotės Markučių dvare jo klestėjimo laikais. Jums reikės atlikti 12 užduočių, kurios padės surinkti paslaptingą senovinį dokumentą ir rasti Markučių dvaro lobį.		
 	</article>
-
-
-	<img width=105% src={entrance}>
-	<article>
-	<br>
-	Сейчас в этой чаше лежит только обрывок бумаги с гербовой печатью и подписью. Похоже, это очень важный исторический документ. Но, где же остальная часть текста, и что в нем было написано? Кому следует отдать случайную находку?
-	</article>
-	<img class="illustration" src={bowl}>
-
-	<div class="where-next">
-		Может быть слуги поместья смогут нам&nbsp;помочь? Нужно&nbsp;срочно их&nbsp;найти.
-		<br><br>
-		<span class="highlighted-question">Где можно найти&nbsp;слуг?</span>
-	</div>
-
 </section>
-
-
-	<div class="appendix">
-		Теперь у вас есть первая часть карты. Куда дальше?
-
-	</div>
-	<img src={map} width=100%>
-
-	<div class="appendix">
-		<ul>
-			<li>Колодец</li>
-			<li>Пекарня</li>
-		</ul>
-		Обойдите все пункты в нужном порядке чтобы выиграть квест.
-	</div>
-
 
 
 

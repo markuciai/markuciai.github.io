@@ -4,6 +4,10 @@
 	import './styles.css';
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
 <div class="app">
 	
 	<!-- <Header /> -->
@@ -13,7 +17,8 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
+		<p>// Demonstracinė versija. Vyksta darbai.</p>
 	</footer>
 </div>
 
@@ -26,6 +31,7 @@
 	}
 
 	main {
+		font-family: "Lora";
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -43,6 +49,18 @@
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
+
+		font-size: 12px;
+		/* text-align: left; */
+		text-align: center;
+		width: 100%;
+
+		/* font-style: italic; */
+		font-weight: bold;
+		font-family: "Lora";
+		color: wheat;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
 	}
 
 	footer a {
@@ -54,4 +72,9 @@
 			padding: 12px 0;
 		}
 	}
+
+
+
+
+
 </style>

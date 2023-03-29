@@ -1,19 +1,21 @@
 <script>
-
-
 	import bowl from '$lib/images/illustrations/bowl.png';
+	import entrance from '$lib/images/archival/entrance.jpg';
+
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
-	import entrance from '$lib/images/entrance.jpg';
+
+	
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Kryžius – Markučių Lobis</title>
+	<meta name="description" content="Žaidimas" />
 </svelte:head>
 
 
 
+<!-- Archived russian version 
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Крест</h1>
@@ -52,13 +54,55 @@
 		Обойдите все пункты в нужном порядке чтобы выиграть квест.
 	</div>
 
+-->
+
+
+<section>
+	<img class="illustration" src={map_piece}>
+	<h1>Kryžius</h1>
+	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<article>
+		Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
+
+
+	<img width=105% src={entrance}>
+	<article>
+	<br>
+	Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
+	</article>
+	<img class="illustration" src={bowl}>
+
+	<div class="where-next">
+		Kam vertėtų parodyti keistąjį radinį? Galbūt dvaro tarnai galėtų jums&nbsp;padėti?
+		<br><br>
+		<span class="highlighted-question">Kur reikėtų ieškoti&nbsp;tarnų?</span>
+	</div>
+
+</section>
+
+
+	<div class="map_section">
+		Теперь у вас есть первая часть карты. Куда дальше?
+
+	</div>
+	<img src={map} width=100%>
+
+
+	<div class="map_section">
+		<ul>
+			<li>Колодец</li>
+			<li>Пекарня</li>
+		</ul>
+		Обойдите все пункты в нужном порядке чтобы выиграть квест.
+	</div>
 
 
 
 
 
 <style>
-	section {
+
+section {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -72,23 +116,38 @@
 
 	h1 {
 		width: 90%;
-		font-weight: bold;
+		font-weight: 800;
+		/* text-transform: uppercase;
+		letter-spacing: 5px; */
+		/* font-style: italic; */
 		/* font-size: clamp(80px, 24vw, 128px); */
 		font-size: clamp(40px, 12vw, 64px);
-        /* line-height: 0px; */
+		line-height: clamp(40px, 12vw, 64px);;
 		color: #D33F37;
         /* text-align: left; */
+		padding: 0;
+		margin: 50px 0 60px 0;
 	}
+
+	.subh {
+		font-size: 12px;
+		/* text-align: left; */
+		text-align: center;
+		width: 89%;
+		margin: -50px 0 30px 0;
+		/* font-style: italic; */
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+	}
+
 
 	article {
 		padding: 0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);
+		margin-bottom: 20px;
 	}
 
-	.highlighted-question {
-		font-style: italic;
-		font-weight: bold;
-		color: #D33F37;
-	}
+
 
 	.where-next {
 		background-color: #EEDC83;
@@ -106,6 +165,12 @@
 
 	}
 
+	.highlighted-question {
+		font-style: italic;
+		font-weight: bold;
+		color: #D33F37;
+	}
+
 	.illustration {
 		width: clamp(320px, 100vw, 640px);
 		z-index: 10;
@@ -115,11 +180,9 @@
 	}
 
 
-	.appendix {
+	.map_section {
 		color: white;
 		font-size: 16pt;
 		padding: 20px;
 	}
-
-
 </style>

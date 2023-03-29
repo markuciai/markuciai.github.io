@@ -7,7 +7,7 @@ const css = {
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `${$$result.head += `<!-- HEAD_svelte-t32ptj_START -->${$$result.title = `<title>Home</title>`, ""}<meta name="description" content="Svelte demo app"><!-- HEAD_svelte-t32ptj_END -->`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1ephg36_START -->${$$result.title = `<title>MDM</title>`, ""}<meta name="description" content="Markučių dvaro muziejus"><!-- HEAD_svelte-1ephg36_END -->`, ""}
 
 
 

@@ -2,12 +2,12 @@
 	import bowl from '$lib/images/illustrations/bowl.png';
 	import map_piece from '$lib/images/map/cross-piece.png';
 	import map from '$lib/images/map/map.png';
-	import entrance from '$lib/images/entrance.jpg';
+	import entrance from '$lib/images/archival/entrance.jpg';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>MDM</title>
+	<meta name="description" content="Markučių dvaro muziejus" />
 </svelte:head>
 
 
