@@ -11,12 +11,20 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 <section class="svelte-16le9m7"><h1 class="svelte-16le9m7">Markučių dvaro muziejus</h1>
-	<article class="svelte-16le9m7"><ul><li><a href="/lobis">Lobis</a></li>
-		<li><a href="/lobis/kryzius">Kryzius</a></li>
-		<li><a href="/lobis/kryzius">Kryzius</a></li>
-		<li><a href="/lobis/kryzius">Kryzius</a></li>
-		<li><a href="/lobis/kryzius">Kryzius</a></li>
-		<li><a href="/lobis/kryzius">Kryzius</a></li></ul></article>
+	<article class="svelte-16le9m7"><a href="/lobis">Lobis:</a>
+		<ol><li><a href="/lobis/kryzius">Kryžius</a></li>
+		<li><a href="/lobis/namelis">Namelis</a></li>
+		<li><a href="/lobis/arklides">Arklides</a></li>
+		<li><a href="/lobis/tvenkiniai">Tvenkiniai</a></li>
+		<li><a href="/lobis/virtuve">Virtuvė</a></li>
+		<li><a href="/lobis/vistide">Vištidė ir ledainė </a></li>
+		<li><a href="/lobis/duonkepe">Duonkepė</a></li>
+		<li><a href="/lobis/sulinys">Šulinys</a></li>
+		<li><a href="/lobis/oranzerija">Oranžerija</a></li>
+		<li><a href="/lobis/cerkve">Cerkvė</a></li>
+		<li><a href="/lobis/suniukai">Šuniukai</a></li>
+		<li><a href="/lobis/kroketas">Kroketo aikštelė</a></li>
+		<li>Muziejus</li></ol></article>
 
 
 
