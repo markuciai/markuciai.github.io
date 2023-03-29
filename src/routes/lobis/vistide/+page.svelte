@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import bowl from '$lib/images/illustrations/eggs.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -29,6 +29,7 @@
 	<br>
 	Berniukas su džiaugsmu pasiruošęs jums padėti – jis matė panašią popieriaus skiautę prie ledainės po aviečių krūmu ir tuoj pat jį atneš.
 	</article>
+	<br><br><br><br>
 	<img class="illustration" src={bowl}>
 
 	<div class="where-next">

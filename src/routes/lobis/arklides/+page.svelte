@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import task from '$lib/images/illustrations/fishing_rod.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Tarnų namelis – Markučių Lobis</title>
+	<title>Arklidės – Markučių Lobis</title>
 	<meta name="description" content="Žaidimas" />
 </svelte:head>
 
@@ -27,7 +27,7 @@
 	<article>
 	<br>
 	</article>
-	<img class="illustration" src={bowl}>
+	<img class="illustration" src={task}>
 
 	<div class="where-next">
 		Jums užsiminus apie svarbaus dokumento paiešką, vežikas prisiminė, jog prie arklidžių kaip tik rado dokumento skiautę ir mielai ją atiduos, jeigu jūs nunešite meškerę jo jauniausiajam sūnui Tarasui.

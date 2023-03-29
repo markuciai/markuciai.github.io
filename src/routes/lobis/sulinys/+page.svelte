@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import bowl from '$lib/images/illustrations/bucket.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -31,6 +31,7 @@
 	<br>
 	Dalį vandens šildydavo ir naudojo prausimuisi bei vonios malonumams. Taip, XIX a. šiame name jau buvo įrengta vonia ir tualetas. Na bet grįžkim prie mūsų reikalų, jums juk reikia pasemti vandens ir  palaistyti orchidėjas. Prie šulinio stovi kibiras. Neskubėkit. Prieš leidžiant kibirą į šulinį, žvilgtelkit į kibiro vidų. Matote? Ant dugno baltuoja popieriaus skiautė! Paėmėt ją? Tai būtent tai ko jums reikia.
 	</article>
+	<br><br><br><br>
 	<img class="illustration" src={bowl}>
 
 	<div class="where-next">

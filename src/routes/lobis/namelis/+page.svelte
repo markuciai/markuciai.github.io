@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import task_object from '$lib/images/illustrations/saddle.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -30,7 +30,7 @@
 	<br>
 	Tarnai užsiėmę nesibaigiančiais darbais sode, todėl neturi laiko nežinomo dokumento paieškoms. Tačiau girdėjo, jog surinkus visas dokumento dalis ir nunešus jį į ponų namą galima gauti radybų.
 	</article>
-	<img class="illustration" src={bowl}>
+	<img class="illustration task" src={task_object}>
 
 	<div class="where-next">
 		Ana ir Viačeslavas sutinka jums atiduoti rastą dokumento dalį, jeigu jūs jiems pagelbėsit ir įvykdysit jų prašymą – nunešit naują balną ponui Michalui.
@@ -114,8 +114,10 @@ section {
 		color: black;
 		width: 105%;
 		box-sizing: border-box;
-		padding: clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
-		margin: 0px 0 20px 0;
+		/* padding: clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px); */
+		padding: clamp(160px, 25vw, 240px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
+		/* padding: 160px 10px 80px 20px; */
+		margin: clamp(-160px, -20vw, -120px) 0 20px 0;
 		box-shadow: 0 20px 20px -15px rgba(0,0,0, 0.4);
 		border-radius: 5px;
 		
@@ -124,6 +126,7 @@ section {
 		font-size: clamp(24px, 6vw, 32px);
 
 	}
+
 
 	.highlighted-question {
 		font-style: italic;
@@ -135,10 +138,14 @@ section {
 		width: clamp(320px, 100vw, 640px);
 		z-index: 10;
 		margin: clamp(-160px, -25vw, -80px) 0 clamp(-80px, -12.5vw, -40px) 0;
+
 		user-select: none;
 		pointer-events: none;
 	}
 
+	.task {
+		padding: 0 0 -200px 0;
+	}
 
 	.map_section {
 		color: white;

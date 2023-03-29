@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import bowl from '$lib/images/illustrations/flowers.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -30,6 +30,7 @@
 	<br>
 	Čia jūs sutinkate mergaitę Olią (mažąją Olgą), kuriai padedate supilti vandenį į laistytuvus ir viename gražiame gėlių vazonėlyje pastebite jums reikalingo dokumento skiautę. Pasiimkite ją!
 	</article>
+	<br><br>
 	<img class="illustration" src={bowl}>
 
 	<div class="where-next">

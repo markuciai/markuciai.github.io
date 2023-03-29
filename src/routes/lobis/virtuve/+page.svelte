@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import task from '$lib/images/illustrations/fodder.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -29,8 +29,9 @@
 	<article>
 	<br>
 	Netikėtai receptų knygoje pastebite jums jau matyto dokumento skiautę, kurį virėja naudoja kaip knygos skirtuką.
+	<br><br><br><br>
 	</article>
-	<img class="illustration" src={bowl}>
+	<img class="illustration" src={task}>
 
 	<div class="where-next">
 		i su džiaugsmu atiduos popierėlį jums, jeigu Vaniušai (mažajam Ivanui) nunešit paruoštą lesalą, kuriuo šis galėtų pamaitinti viščiukus.

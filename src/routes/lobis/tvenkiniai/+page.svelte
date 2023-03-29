@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import task from '$lib/images/illustrations/fish.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -30,7 +30,7 @@
 	<br>
 	Šiandien Tarasas turi svarbią užduotį – tvenkiniuose pagauti žuvies šventiniams pietums.
 	</article>
-	<img class="illustration" src={bowl}>
+	<img class="illustration" src={task}>
 
 	<div class="where-next">
 		Atidavę meškerę berniukui, jūs pastebite, kad vieno iš jo laivelių burė padaryta iš jums reikiamo dokumento skiautės. Berniukas sutinka jums ją atiduoti su sąlyga, jeigu jūs kiek luktelsit ir vėliau nunešit jo pagautą žuvį virėjai.

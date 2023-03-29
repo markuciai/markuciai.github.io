@@ -1,5 +1,5 @@
 <script>
-	import bowl from '$lib/images/illustrations/bowl.png';
+	import task from '$lib/images/illustrations/bucket-empty.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
@@ -16,23 +16,6 @@
 
 
 
-	<div class="appendix">
-		Теперь у вас есть первая часть карты. Куда дальше?
-
-	</div>
-	<img src={map} width=100%>
-
-	<div class="appendix">
-		<ul>
-			<li>Колодец</li>
-			<li>Пекарня</li>
-		</ul>
-		Обойдите все пункты в нужном порядке чтобы выиграть квест.
-	</div>
-
--->
-
-
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Duonkepė</h1>
@@ -47,7 +30,8 @@
 	<br>
 	Prie krosnies dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuroms pastebite jau pažįstamo dokumento skiautę.
 	</article>
-	<img class="illustration" src={bowl}>
+	<br><br>
+	<img class="illustration" src={task}>
 
 	<div class="where-next">
 		Mergaitė ją jums atiduoda ir, įdavus kibirą, paprašo nueiti pasemti vandens ir palaistyti orchidėjas.
