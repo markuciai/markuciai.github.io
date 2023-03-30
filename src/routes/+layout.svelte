@@ -31,7 +31,7 @@
 		<slot />
 		<div class="map_section">
 			<ul class="legend_ul">
-				<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų namelis</li>
+				<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
 				<li class="legend " ><img src={icon_8} class="legend_icon">Šulinys</li>
 				<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
 				<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
@@ -39,8 +39,8 @@
 				<li class="legend"><img src={icon_13} class="legend_icon">Muziejus</li>
 				<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
 				<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
-				<li class="legend"><img src={icon_6} class="legend_icon">Vištidė ir ledainė</li>
-				<li class="legend"><img src={icon_12} class="legend_icon">Kroketo aikštelė</li>
+				<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
+				<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
 		
 				<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
 				<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
@@ -70,9 +70,11 @@
 
 .legend_ul {
 	list-style-type: none;
-	/* padding: 0; */
-	/* margin: 0; */
+	padding: 0;
+	margin: 0;
 	color: white;
+	width: 100vw;
+	margin-left: -20px;
 
 }
 
@@ -85,7 +87,7 @@
 	/* vertical-align: middle; */
 	padding: 0 0 80px 0;
 	/* margin: 0; */
-	margin: -0px 0 -80px 0;
+	margin: 0px 0 -80px 0;
 }
 
 .legend_icon {
@@ -129,7 +131,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 12px;
+		padding: 0px;
 
 		font-size: 12px;
 		/* text-align: left; */
@@ -150,7 +152,7 @@
 
 	@media (min-width: 480px) {
 		footer {
-			padding: 12px 0;
+			padding: 0px 0;
 		}
 	}
 
