@@ -55,6 +55,8 @@
 	<footer>
 		<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 		<p>// Demonstracinė versija. Vyksta darbai.</p>
+		<p>Pageidaujant užsakyti Markučiu Lobio edukacija: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
+		<p> </p>
 	</footer>
 </div>
 

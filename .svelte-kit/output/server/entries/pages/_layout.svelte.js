@@ -16,7 +16,7 @@ const icon_12 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPEAAADyCAYAAACcX
 const icon_13 = "/_app/immutable/assets/icon-13.6548b019.png";
 const _layout_svelte_svelte_type_style_lang = "";
 const css = {
-  code: '.legend_ul.svelte-16xdkz3{list-style-type:none;color:white}.legend.svelte-16xdkz3{display:block;font-size:36px;border-radius:8px;padding:0 0 80px 0;margin:-0px 0 -80px 0}.legend_icon.svelte-16xdkz3{position:relative;top:40px;left:4px;width:120px}.app.svelte-16xdkz3{display:flex;flex-direction:column;min-height:100vh}main.svelte-16xdkz3{font-family:"Lora";flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-16xdkz3{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:12px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px}@media(min-width: 480px){footer.svelte-16xdkz3{padding:12px 0}}',
+  code: '.legend_ul.svelte-16xdkz3.svelte-16xdkz3{list-style-type:none;color:white}.legend.svelte-16xdkz3.svelte-16xdkz3{display:block;font-size:36px;border-radius:8px;padding:0 0 80px 0;margin:-0px 0 -80px 0}.legend_icon.svelte-16xdkz3.svelte-16xdkz3{position:relative;top:40px;left:4px;width:120px}.app.svelte-16xdkz3.svelte-16xdkz3{display:flex;flex-direction:column;min-height:100vh}main.svelte-16xdkz3.svelte-16xdkz3{font-family:"Lora";flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-16xdkz3.svelte-16xdkz3{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:12px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px}footer.svelte-16xdkz3 a.svelte-16xdkz3{font-weight:bold}@media(min-width: 480px){footer.svelte-16xdkz3.svelte-16xdkz3{padding:12px 0}}',
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -46,7 +46,9 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 				</div></main>
 
 	<footer class="svelte-16xdkz3">
-		<p>// Demonstracinė versija. Vyksta darbai.</p></footer>
+		<p>// Demonstracinė versija. Vyksta darbai.</p>
+		<p>Pageidaujant užsakyti Markučiu Lobio edukacija: <a href="mailto:edukacija@puskinas.lt" class="svelte-16xdkz3">edukacija@puskinas.lt</a></p>
+		<p></p></footer>
 </div>`;
 });
 export {
