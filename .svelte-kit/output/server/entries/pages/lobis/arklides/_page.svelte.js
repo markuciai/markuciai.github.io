@@ -1,4 +1,4 @@
-import { c as create_ssr_component, d as add_attribute } from "../../../../chunks/index.js";
+import { c as create_ssr_component, b as add_attribute } from "../../../../chunks/index.js";
 import { m as map_piece } from "../../../../chunks/cross-piece.js";
 const task = "/_app/immutable/assets/fishing_rod.d6356b68.png";
 const stables = "/_app/immutable/assets/stables.65099b6b.jpg";
@@ -33,13 +33,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	<div class="map_section svelte-1sskqkw">Jūs gavote trečiąją dokumento dalį.
 
 	</div>
-	<img${add_attribute("src", map, 0)} width="100%">
-
-
-	<div class="map_section svelte-1sskqkw"><ul><li>Колодец</li>
-			<li>Пекарня</li></ul>
-		Обойдите все пункты в нужном порядке чтобы выиграть квест.
-	</div>`;
+	<img${add_attribute("src", map, 0)} width="100%">`;
 });
 export {
   Page as default

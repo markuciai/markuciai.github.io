@@ -1,4 +1,4 @@
-import { c as create_ssr_component, d as add_attribute } from "../../../../chunks/index.js";
+import { c as create_ssr_component, b as add_attribute } from "../../../../chunks/index.js";
 import { m as map_piece } from "../../../../chunks/cross-piece.js";
 const nazimov = "/_app/immutable/assets/nazimov.1ec7ea12.jpg";
 const kabinetas = "/_app/immutable/assets/kabinetas.9fbcaa03.jpg";
@@ -42,16 +42,10 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 		<span class="highlighted-question svelte-1sskqkw">O dabar laikas užsukti į muziejų ir gauti apdovanojimą už nuveiktą darbą!</span></div></section>
 
 
-	<div class="map_section svelte-1sskqkw">Теперь у вас есть первая часть карты. Куда дальше?
+	<div class="map_section svelte-1sskqkw">Kur toliau?
 
 	</div>
-	<img${add_attribute("src", map, 0)} width="100%">
-
-
-	<div class="map_section svelte-1sskqkw"><ul><li>Колодец</li>
-			<li>Пекарня</li></ul>
-		Обойдите все пункты в нужном порядке чтобы выиграть квест.
-	</div>`;
+	<img${add_attribute("src", map, 0)} width="100%">`;
 });
 export {
   Page as default

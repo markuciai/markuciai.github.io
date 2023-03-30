@@ -1,4 +1,4 @@
-import { c as create_ssr_component, d as add_attribute } from "../../chunks/index.js";
+import { c as create_ssr_component, b as add_attribute } from "../../chunks/index.js";
 const dvaras = "/_app/immutable/assets/mdvaras.04f34fa2.jpg";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {

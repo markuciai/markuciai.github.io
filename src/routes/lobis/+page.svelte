@@ -13,6 +13,8 @@
 
 
 <section>
+	<br>
+
 	<h1>Markučių Lobis</h1>
 	<p class="subh">Markučių dvaro muziejaus<br>orientacinis žaidimas</p>
 	<article>
@@ -25,7 +27,8 @@
 		O dabar įsivaizduokite, kad jūs laiko mašina nusikeliate į praeitį ir lankotės Markučių dvare jo klestėjimo laikais. Jums reikės atlikti 12 užduočių, kurios padės surinkti paslaptingą senovinį dokumentą ir rasti Markučių dvaro lobį.		
 	</article>
 </section>
-
+<br><br>
+<img width=100% src={map}>
 
 
 

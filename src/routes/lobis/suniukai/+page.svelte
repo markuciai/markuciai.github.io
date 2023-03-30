@@ -43,19 +43,13 @@
 
 
 	<div class="map_section">
-		Теперь у вас есть первая часть карты. Куда дальше?
+		Kur toliau?
 
 	</div>
 	<img src={map} width=100%>
 
 
-	<div class="map_section">
-		<ul>
-			<li>Колодец</li>
-			<li>Пекарня</li>
-		</ul>
-		Обойдите все пункты в нужном порядке чтобы выиграть квест.
-	</div>
+
 
 
 
