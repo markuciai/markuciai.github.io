@@ -4,7 +4,7 @@
 	import vanyusha from '$lib/images/archival/vanyusha.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/map-6.png';
 
 	
 </script>

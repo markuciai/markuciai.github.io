@@ -3,7 +3,7 @@
 	import doggie from '$lib/images/archival/doggie.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/map-11.png';
 
 	
 </script>

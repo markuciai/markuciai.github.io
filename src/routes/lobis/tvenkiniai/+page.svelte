@@ -3,7 +3,7 @@
 	import waters from '$lib/images/archival/waters.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/map-4.png';
 
 	
 </script>
@@ -19,7 +19,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Tvenkiniai</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Ketvirtoji stotelė<br>jieškant Markučių lobį</p>
 	<article>
 		Surasti Tarasą nesudėtinga, nes berniukas visą savo laisvą laiką praleidžia prie dvaro tvenkinių. Jiems užšąlus žiemą, mėgsta čiuožinėti pačiūžomis, o vasarą maudytis ir iš nereikalingų skiedrų konstruoti laivo modeliukus.
 	</article>

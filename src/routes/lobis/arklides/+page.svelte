@@ -3,14 +3,14 @@
 	import stables from '$lib/images/archival/stables.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/map-3.png';
 </script>
 
 <svelte:head>
 	<title>Arklidės – Markučių Lobis</title>
 	<meta name="description" content="Žaidimas" />
 </svelte:head>
-
+ 
 
 
 

@@ -5,7 +5,7 @@
 	import safe from '$lib/images/archival/safe.jpg';
 	
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/map-12.png';
 
 	
 </script>

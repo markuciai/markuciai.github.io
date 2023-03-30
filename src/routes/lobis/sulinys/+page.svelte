@@ -3,7 +3,7 @@
 	import sulinys from '$lib/images/archival/sulinys.png';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/map-8.png';
 
 	
 </script>

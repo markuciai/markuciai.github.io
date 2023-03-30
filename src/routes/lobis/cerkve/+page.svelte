@@ -3,7 +3,7 @@
 	import cerkve from '$lib/images/archival/cerkve.jpg';
 
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/map-10.png';
 
 	
 </script>
