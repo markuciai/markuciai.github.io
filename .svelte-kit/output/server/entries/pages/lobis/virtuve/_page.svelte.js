@@ -28,7 +28,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	<br><br><br><br></article>
 	<img class="illustration svelte-1sskqkw"${add_attribute("src", task, 0)}>
 
-	<div class="where-next svelte-1sskqkw">i su džiaugsmu atiduos popierėlį jums, jeigu Vaniušai (mažajam Ivanui) nunešit paruoštą lesalą, kuriuo šis galėtų pamaitinti viščiukus.
+	<div class="where-next svelte-1sskqkw">Virėja su džiaugsmu atiduos popierėlį jums, jeigu Vaniušai (mažajam Ivanui) nunešit paruoštą lesalą, kuriuo šis galėtų pamaitinti viščiukus.
 		<br><br>
 		<span class="highlighted-question svelte-1sskqkw">Kur reikėtų nunešti viščiukų lesalą?</span></div></section>
 

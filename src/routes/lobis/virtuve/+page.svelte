@@ -34,7 +34,7 @@
 	<img class="illustration" src={task}>
 
 	<div class="where-next">
-		i su džiaugsmu atiduos popierėlį jums, jeigu Vaniušai (mažajam Ivanui) nunešit paruoštą lesalą, kuriuo šis galėtų pamaitinti viščiukus.
+		Virėja su džiaugsmu atiduos popierėlį jums, jeigu Vaniušai (mažajam Ivanui) nunešit paruoštą lesalą, kuriuo šis galėtų pamaitinti viščiukus.
 		<br><br>
 		<span class="highlighted-question">Kur reikėtų nunešti viščiukų lesalą?</span>
 	</div>

@@ -31,10 +31,10 @@
 		<slot />
 		<div class="map_section">
 			<ul class="legend_ul">
-				<li class="legend " ><img src={icon_2} class="legend_icon" >Namelis</li>
+				<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų namelis</li>
 				<li class="legend " ><img src={icon_8} class="legend_icon">Šulinys</li>
 				<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
-				<li class="legend"><img src={icon_4} class="legend_icon">Virtuvė</li>
+				<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
 				<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
 				<li class="legend"><img src={icon_13} class="legend_icon">Muziejus</li>
 				<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
@@ -44,7 +44,7 @@
 		
 				<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
 				<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
-				<li class="legend"><img src={icon_3} class="legend_icon">Tvenkiniai</li>
+				<li class="legend"><img src={icon_4} class="legend_icon">Tvenkiniai</li>
 			</ul>
 		
 				<!-- Kad laimeti žaidima, apeikite visus punktus teisinga eile. -->
