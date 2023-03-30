@@ -2,7 +2,7 @@
 	import task from '$lib/images/illustrations/fish.png';
 	import waters from '$lib/images/archival/waters.jpg';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/4.png';
 	import map from '$lib/images/map/map-4.png';
 
 	

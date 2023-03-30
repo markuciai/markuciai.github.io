@@ -1,7 +1,7 @@
 import { c as create_ssr_component, b as add_attribute } from "../../../../chunks/index.js";
-import { m as map_piece } from "../../../../chunks/cross-piece.js";
 const bowl = "/_app/immutable/assets/flowers.fdf70632.png";
 const fruit_garden = "/_app/immutable/assets/fruit_garden.2c553950.jpg";
+const map_piece = "/_app/immutable/assets/9.bab34d66.png";
 const map = "/_app/immutable/assets/map-9.140d737d.png";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {

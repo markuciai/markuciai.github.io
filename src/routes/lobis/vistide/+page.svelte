@@ -3,7 +3,7 @@
 	import birdhouse from '$lib/images/archival/birdhouse.jpg';
 	import vanyusha from '$lib/images/archival/vanyusha.jpg';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/6.png';
 	import map from '$lib/images/map/map-6.png';
 
 	

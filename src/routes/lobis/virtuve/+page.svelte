@@ -2,7 +2,7 @@
 	import task from '$lib/images/illustrations/fodder.png';
 	import cook from '$lib/images/archival/cook.png';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/5.png';
 	import map from '$lib/images/map/map-5.png';
 
 	

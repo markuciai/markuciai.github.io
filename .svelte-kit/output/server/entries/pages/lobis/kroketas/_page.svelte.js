@@ -1,8 +1,8 @@
 import { c as create_ssr_component, b as add_attribute } from "../../../../chunks/index.js";
-import { m as map_piece } from "../../../../chunks/cross-piece.js";
 const nazimov = "/_app/immutable/assets/nazimov.1ec7ea12.jpg";
 const kabinetas = "/_app/immutable/assets/kabinetas.9fbcaa03.jpg";
 const safe = "/_app/immutable/assets/safe.4d72ce12.jpg";
+const map_piece = "/_app/immutable/assets/12.7f55d5ae.png";
 const map = "/_app/immutable/assets/map-12.dc59851b.png";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {

@@ -4,7 +4,7 @@
 	import kabinetas from '$lib/images/archival/kabinetas.jpg';
 	import safe from '$lib/images/archival/safe.jpg';
 	
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/12.png';
 	import map from '$lib/images/map/map-12.png';
 
 	

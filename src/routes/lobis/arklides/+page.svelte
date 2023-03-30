@@ -2,7 +2,7 @@
 	import task from '$lib/images/illustrations/fishing_rod.png';
 	import stables from '$lib/images/archival/stables.jpg';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/3.png';
 	import map from '$lib/images/map/map-3.png';
 </script>
 

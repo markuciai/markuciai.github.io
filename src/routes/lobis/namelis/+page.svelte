@@ -4,7 +4,7 @@
 	import servants from '$lib/images/archival/servants.jpg';
 
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/2.png';
 	import map from '$lib/images/map/map-2.png';
 
 	

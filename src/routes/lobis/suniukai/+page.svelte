@@ -2,7 +2,7 @@
 	import bowl from '$lib/images/illustrations/ball.png';
 	import doggie from '$lib/images/archival/doggie.jpg';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/11.png';
 	import map from '$lib/images/map/map-11.png';
 
 	

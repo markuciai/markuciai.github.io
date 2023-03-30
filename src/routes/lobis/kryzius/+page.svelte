@@ -2,22 +2,10 @@
 	import bowl from '$lib/images/illustrations/bowl.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/1.png';
 	import map from '$lib/images/map/map-1.png';
 
-	import icon_1 from '$lib/images/icons/icon-1.png';
-	import icon_2 from '$lib/images/icons/icon-2.png';
-	import icon_3 from '$lib/images/icons/icon-3.png';
-	import icon_4 from '$lib/images/icons/icon-4.png';
-	import icon_5 from '$lib/images/icons/icon-5.png';
-	import icon_6 from '$lib/images/icons/icon-6.png';
-	import icon_7 from '$lib/images/icons/icon-7.png';
-	import icon_8 from '$lib/images/icons/icon-8.png';
-	import icon_9 from '$lib/images/icons/icon-9.png';
-	import icon_10 from '$lib/images/icons/icon-10.png';
-	import icon_11 from '$lib/images/icons/icon-11.png';
-	import icon_12 from '$lib/images/icons/icon-12.png';
-	import icon_13 from '$lib/images/icons/icon-13.png';
+
 
 
 
@@ -111,27 +99,6 @@
 
 
 
-	
-	<div class="map_section">
-	<ul class="legend_ul">
-		<li class="legend " ><img src={icon_2} class="legend_icon" >Namelis</li>
-		<li class="legend " ><img src={icon_8} class="legend_icon">Šulinys</li>
-		<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
-		<li class="legend"><img src={icon_4} class="legend_icon">Virtuvė</li>
-		<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
-		<li class="legend"><img src={icon_13} class="legend_icon">Muziejus</li>
-		<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
-		<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
-		<li class="legend"><img src={icon_6} class="legend_icon">Vištidė ir ledainė</li>
-		<li class="legend"><img src={icon_12} class="legend_icon">Kroketo aikštelė</li>
-
-		<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
-		<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
-		<li class="legend"><img src={icon_3} class="legend_icon">Tvenkiniai</li>
-	</ul>
-
-		Kad laimeti žaidima, apeikite visus punktus teisinga eile.
-	</div>
 
 
 
@@ -139,41 +106,6 @@
 
 <style>
 
-.legend_ul {
-	list-style-type: none;
-	/* padding: 0; */
-	/* margin: 0; */
-
-}
-
-.legend {
-	display: block;
-	/* height: 120px; */
-	/* padding: 20px; */
-	font-size: 36px;
-	border-radius: 8px;
-	/* vertical-align: middle; */
-	padding: 0 0 80px 0;
-	/* margin: 0; */
-	margin: -0px 0 -80px 0;
-}
-
-.legend_icon {
-	position: relative;
-	top: 40px;
-	left: 4px;
-	width: 120px;
-	}
-
-.current {
-	background-color: #D33F37;
-
-}
-
-.visited {
-	background-color: #D33F37;
-
-}
 
 
 section {

@@ -2,7 +2,7 @@
 	import task from '$lib/images/illustrations/bucket-empty.png';
 	import bakery from '$lib/images/archival/bakery.jpg';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/7.png';
 	import map from '$lib/images/map/map-7.png';
 
 	

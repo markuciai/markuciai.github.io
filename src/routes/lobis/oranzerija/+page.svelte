@@ -2,7 +2,7 @@
 	import bowl from '$lib/images/illustrations/flowers.png';
 	import fruit_garden from '$lib/images/archival/fruit_garden.jpg';
 
-	import map_piece from '$lib/images/map/cross-piece.png';
+	import map_piece from '$lib/images/map-pieces/9.png';
 	import map from '$lib/images/map/map-9.png';
 
 	
