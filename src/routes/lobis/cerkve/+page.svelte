@@ -20,7 +20,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Cerkvė</h1>
-	<p class="subh">Dešintoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Dešintoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Padėję gėles ant kapų, atsisukite į cerkvę ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – koplyčios statybos?
 	</article>

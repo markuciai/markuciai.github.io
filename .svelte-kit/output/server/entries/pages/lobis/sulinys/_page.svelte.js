@@ -18,7 +18,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Šulinys</h1>
-	<p class="subh svelte-1sskqkw">Aštuntoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-1sskqkw">Aštuntoji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-1sskqkw">Šis šulinys buvo iškastas 1867 m., kuomet buvo statomas Melnikovų dvaras Markučiuose. Kiekvieną rytą kiemsargis specialia pompa pumpavo vandenį, kuris vamzdžiais tekėjo į specialią namuose esančią talpą.
 	</article>
 

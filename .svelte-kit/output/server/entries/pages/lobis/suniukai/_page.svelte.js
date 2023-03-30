@@ -18,7 +18,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Šuniukai</h1>
-	<p class="subh svelte-1sskqkw">Vienuolitkoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-1sskqkw">Vienuolitkoji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-1sskqkw">Šaunuoliai! Radote mylimų Puškinų šunelių kapus. Staiga matote, kad Fankos ir Boikos (šuniukų vardai) palikuonys žaidžia su kroketo kamuoliuku. Taip neturi būti, nes šis kamuoliukas yra ne šuns žaislas!
 	</article>
 

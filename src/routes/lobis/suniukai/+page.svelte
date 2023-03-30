@@ -20,7 +20,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Šuniukai</h1>
-	<p class="subh">Vienuolitkoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Vienuolitkoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Šaunuoliai! Radote mylimų Puškinų šunelių kapus. Staiga matote, kad Fankos ir Boikos (šuniukų vardai) palikuonys žaidžia su kroketo kamuoliuku. Taip neturi būti, nes šis kamuoliukas yra ne šuns žaislas!
 	</article>

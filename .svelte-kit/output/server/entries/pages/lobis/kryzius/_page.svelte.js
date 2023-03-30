@@ -19,7 +19,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-17qxhho"><img class="illustration svelte-17qxhho"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-17qxhho">Kryžius</h1>
-	<p class="subh svelte-17qxhho">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-17qxhho">Pirmoji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-17qxhho">Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
 
 

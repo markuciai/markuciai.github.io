@@ -17,7 +17,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Arklidės</h1>
-	<p class="subh">Trečioji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Trečioji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Šaunuoliai, jūs lengvai įvykdėt tarnų prašymą – naują balną atidavėt vežikui-vadeliotojui ponui Michalui, kuris ilgą laiką tarnavo pas Puškinus Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.
 	</article>

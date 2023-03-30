@@ -19,7 +19,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Tvenkiniai</h1>
-	<p class="subh">Ketvirtoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Ketvirtoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Surasti Tarasą nesudėtinga, nes berniukas visą savo laisvą laiką praleidžia prie dvaro tvenkinių. Jiems užšąlus žiemą, mėgsta čiuožinėti pačiūžomis, o vasarą maudytis ir iš nereikalingų skiedrų konstruoti laivo modeliukus.
 	</article>

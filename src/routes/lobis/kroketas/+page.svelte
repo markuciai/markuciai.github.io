@@ -20,7 +20,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Kroketo aikštelė</h1>
-	<p class="subh">Dvyliktoji ir priešpaskutinė stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Dvyliktoji ir priešpaskutinė stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Prie poeto Aleksandro Puškino paminklo grupelė vaikų ir suaugusiųjų žaidžia kroketą. Vienas iš žaidėjų yra architektas ir geras Grigorijaus Puškino draugas Vladimiras Nazimovas.
 	</article>

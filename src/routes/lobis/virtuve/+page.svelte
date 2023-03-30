@@ -19,7 +19,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Virtuvė</h1>
-	<p class="subh">Penktoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Penktoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Virėja nudžiunga pamačius puikų laimikį - net penkis karpius! Juos ji pagamins orkaitėje su daržovėmis ir visokiausiomis žolelėmis pagal senovinį Melnikovų šeimos receptą bei patieks per šventinius pietus.
 	</article>

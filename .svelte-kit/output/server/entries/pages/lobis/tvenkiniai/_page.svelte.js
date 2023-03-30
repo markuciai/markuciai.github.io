@@ -17,7 +17,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Tvenkiniai</h1>
-	<p class="subh svelte-1sskqkw">Ketvirtoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-1sskqkw">Ketvirtoji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-1sskqkw">Surasti Tarasą nesudėtinga, nes berniukas visą savo laisvą laiką praleidžia prie dvaro tvenkinių. Jiems užšąlus žiemą, mėgsta čiuožinėti pačiūžomis, o vasarą maudytis ir iš nereikalingų skiedrų konstruoti laivo modeliukus.
 	</article>
 

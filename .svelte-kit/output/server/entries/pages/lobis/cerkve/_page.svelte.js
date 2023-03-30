@@ -18,7 +18,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Cerkvė</h1>
-	<p class="subh svelte-1sskqkw">Dešintoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-1sskqkw">Dešintoji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-1sskqkw">Padėję gėles ant kapų, atsisukite į cerkvę ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – koplyčios statybos?
 	</article>
 

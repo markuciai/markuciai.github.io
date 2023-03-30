@@ -68,7 +68,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Kryžius</h1>
-	<p class="subh">Pirmoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Pirmoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
 

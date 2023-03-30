@@ -17,7 +17,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Duonkepė</h1>
-	<p class="subh svelte-1sskqkw">Septintoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-1sskqkw">Septintoji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-1sskqkw">Oi kaip karšta prie duonkepės! Mašenka (mažoji Marija) paima iš jūsų pintinę su kiaušiniais ir vikriai puola minkyti tešlą pyragui ir pyragėliams.
 	</article>
 

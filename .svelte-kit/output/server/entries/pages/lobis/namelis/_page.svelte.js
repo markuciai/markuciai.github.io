@@ -17,7 +17,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-11412mu"><img class="illustration svelte-11412mu"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-11412mu">Tarnų namelis</h1>
-	<p class="subh svelte-11412mu">Antroji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-11412mu">Antroji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-11412mu">Tarnaitė Ona ir jos vyras Viačeslavas jus pasitinka ant savo jaukių namų slenksčio. Jie taip pat parke aptiko panašaus dokumento skiautę su įrašu, bet nežino, ką su ja daryti.
 	</article>
 

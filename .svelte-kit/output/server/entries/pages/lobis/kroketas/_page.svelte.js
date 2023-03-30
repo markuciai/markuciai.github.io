@@ -17,7 +17,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Kroketo aikštelė</h1>
-	<p class="subh svelte-1sskqkw">Dvyliktoji ir priešpaskutinė stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-1sskqkw">Dvyliktoji ir priešpaskutinė stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-1sskqkw">Prie poeto Aleksandro Puškino paminklo grupelė vaikų ir suaugusiųjų žaidžia kroketą. Vienas iš žaidėjų yra architektas ir geras Grigorijaus Puškino draugas Vladimiras Nazimovas.
 	</article>
 		<img width="105%"${add_attribute("src", nazimov, 0)}>

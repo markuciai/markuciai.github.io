@@ -17,7 +17,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-1sskqkw"><img class="illustration svelte-1sskqkw"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-1sskqkw">Arklidės</h1>
-	<p class="subh svelte-1sskqkw">Trečioji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh svelte-1sskqkw">Trečioji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-1sskqkw">Šaunuoliai, jūs lengvai įvykdėt tarnų prašymą – naują balną atidavėt vežikui-vadeliotojui ponui Michalui, kuris ilgą laiką tarnavo pas Puškinus Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.
 	</article>
 	<img width="105%"${add_attribute("src", stables, 0)}>

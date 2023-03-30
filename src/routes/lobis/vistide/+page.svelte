@@ -19,7 +19,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Vištidė ir ledainė</h1>
-	<p class="subh">Šeštoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Šeštoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Vaniuša jus pastebi iš tolo ir pamojuoja. Jūs atiduodat jam viščiukų lesalą ir papasakojate apie savo paieškas.
 	</article>

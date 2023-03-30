@@ -20,7 +20,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Šulinys</h1>
-	<p class="subh">Aštuntoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Aštuntoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Šis šulinys buvo iškastas 1867 m., kuomet buvo statomas Melnikovų dvaras Markučiuose. Kiekvieną rytą kiemsargis specialia pompa pumpavo vandenį, kuris vamzdžiais tekėjo į specialią namuose esančią talpą.
 	</article>

@@ -19,7 +19,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Duonkepė</h1>
-	<p class="subh">Septintoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Septintoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Oi kaip karšta prie duonkepės! Mašenka (mažoji Marija) paima iš jūsų pintinę su kiaušiniais ir vikriai puola minkyti tešlą pyragui ir pyragėliams.
 	</article>

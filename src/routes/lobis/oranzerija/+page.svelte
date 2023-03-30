@@ -19,7 +19,7 @@
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Oranžerija</h1>
-	<p class="subh">Devintoji stotelė<br>jieškant Markučių lobį</p>
+	<p class="subh">Devintoji stotelė<br>ieškant Markučių lobio</p>
 	<article>
 		Jūs visiškai teisūs – orchidėjos auga oranžerijoj, kur šaltuoju metų sezonu nuo šalčio saugomi egzotiški šilumą mėgstantys augalai. 
 	</article>
