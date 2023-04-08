@@ -1,4 +1,4 @@
-import { c as create_ssr_component, b as add_attribute } from "../../../chunks/index.js";
+import { c as create_ssr_component, b as add_attribute } from "../../../chunks/index2.js";
 const map = "/_app/immutable/assets/map.52a5cc0d.png";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {

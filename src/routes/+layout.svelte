@@ -131,14 +131,12 @@
 
 
 
-
-	<!-- <input bind:value={$store} /> -->
-	
 	<!-- <Header /> -->
 
 	<main>
 		
 		<slot />
+		{#if language == "LT"}
 		<div class="map_section">
 			<ul class="legend_ul">
 				<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
@@ -158,10 +156,31 @@
 				<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
 				<li class="legend"><img src={icon_4} class="legend_icon">Tvenkiniai</li>
 			</ul>
-		
 				<!-- Kad laimeti žaidima, apeikite visus punktus teisinga eile. -->
 			</div>
+		{:else}
+		<div class="map_section">
+			<ul class="legend_ul">
+				<li class="legend " ><img src={icon_2} class="legend_icon" >Домик слуг</li>
+				<li class="legend " ><img src={icon_8} class="legend_icon">Колодец</li>
+				<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
+				<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
+				<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
+				<li class="legend"><img src={icon_1} class="legend_icon">Крест</li>
+			</ul>
+			<ul class="legend_ul">
+				<li class="legend"><img src={icon_13} class="legend_icon">Музей</li>
+				<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
+				<li class="legend"><img src={icon_6} class="legend_icon">Курятник</li>
+				<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
 		
+				<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
+				<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
+				<li class="legend"><img src={icon_4} class="legend_icon">Пруды</li>
+			</ul>
+				<!-- Kad laimeti žaidima, apeikite visus punktus teisinga eile. -->
+			</div>
+		{/if}
 	</main>
 
 	<footer>

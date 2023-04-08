@@ -1,4 +1,4 @@
-import { c as create_ssr_component, b as add_attribute } from "../../../../chunks/index.js";
+import { c as create_ssr_component, b as add_attribute } from "../../../../chunks/index2.js";
 const bowl = "/_app/immutable/assets/bowl.b639b93e.png";
 const entrance = "/_app/immutable/assets/entrance.49b57398.jpg";
 const map_piece = "/_app/immutable/assets/1.97ffe4b4.png";
@@ -9,15 +9,35 @@ const css = {
   map: null
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let language = "LT";
   $$result.css.add(css);
-  return `${$$result.head += `<!-- HEAD_svelte-1icpahc_START -->${$$result.title = `<title>Kryžius – Markučių Lobis</title>`, ""}<meta name="description" content="Žaidimas"><!-- HEAD_svelte-1icpahc_END -->`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1a6xnip_START -->${language == "LT" ? `${$$result.title = `<title>Kryžius – Markučių Lobis</title>`, ""}
+	<meta name="description" content="Žaidimas">` : `${$$result.title = `<title>Крест – Клад Маркутья</title>`, ""}
+	<meta name="description" content="Квест">`}<!-- HEAD_svelte-1a6xnip_END -->`, ""}
 
 
 
+${language == "RU" ? `<section class="svelte-17qxhho"><img class="illustration svelte-17qxhho"${add_attribute("src", map_piece, 0)}>
+	<h1 class="svelte-17qxhho">Крест</h1>
+	<p class="subh svelte-17qxhho">Первая остановка<br>в поисках Клада Маркутья</p>
+	<article class="svelte-17qxhho">По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
+	</article>
 
 
+	<img width="105%"${add_attribute("src", entrance, 0)}>
+	<article class="svelte-17qxhho"><br>
+	Сейчас в этой чаше лежит только обрывок бумаги с гербовой печатью и подписью. Похоже, это очень важный исторический документ. Но, где же остальная часть текста, и что в нем было написано? Кому следует отдать случайную находку?
+	</article>
+	<img class="illustration svelte-17qxhho"${add_attribute("src", bowl, 0)}>
 
-<section class="svelte-17qxhho"><img class="illustration svelte-17qxhho"${add_attribute("src", map_piece, 0)}>
+	<div class="where-next svelte-17qxhho">Может быть слуги поместья смогут нам помочь? Нужно срочно их найти.
+		<br><br>
+		<span class="highlighted-question svelte-17qxhho">Где можно найти слуг?</span></div></section>
+
+
+	<div class="map_section svelte-17qxhho">Теперь у вас есть первая часть карты. Куда дальше?
+
+	</div>` : `${(language = "LT") ? `<section class="svelte-17qxhho"><img class="illustration svelte-17qxhho"${add_attribute("src", map_piece, 0)}>
 	<h1 class="svelte-17qxhho">Kryžius</h1>
 	<p class="subh svelte-17qxhho">Pirmoji stotelė<br>ieškant Markučių lobio</p>
 	<article class="svelte-17qxhho">Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
@@ -37,7 +57,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 	<div class="map_section svelte-17qxhho">Kur toliau?
 
-	</div>
+	</div>` : ``}`}
+
 	<img${add_attribute("src", map, 0)} width="100%">`;
 });
 export {

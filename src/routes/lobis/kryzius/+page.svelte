@@ -42,18 +42,27 @@
 
 </script>
 
+
+
+
+
 <svelte:head>
+	{#if language == "LT"}
 	<title>Kryžius – Markučių Lobis</title>
 	<meta name="description" content="Žaidimas" />
+	{:else}
+	<title>Крест – Клад Маркутья</title>
+	<meta name="description" content="Квест" />
+	{/if}
 </svelte:head>
 
 
-{#if language == "RU"}
-<!-- <!-- Archived russian version  -->
 
+{#if language == "RU"}
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Крест</h1>
+	<p class="subh">Первая остановка<br>в поисках Клада Маркутья</p>
 	<article>
 	По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
 	</article>
@@ -75,13 +84,15 @@
 </section>
 
 
-	<div class="appendix">
+	<div class="map_section">
 		Теперь у вас есть первая часть карты. Куда дальше?
 
 	</div>
 
-{:else if language = "LT"}
 
+
+	
+{:else if language = "LT"}
 
 
 
