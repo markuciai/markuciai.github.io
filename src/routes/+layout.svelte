@@ -104,24 +104,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 <div class="app">
-	<button on:click={set_language_en}>EN</button>
-	<button on:click={set_language_ru}>RU</button>
-	<button on:click={set_language_lt}>LT</button>
+	<div>
+		<button on:click={increment}>
+			plus
+		</button>
+		<button on:click={decrement}>
+			minus
+		</button>
+	
+		 || Visited: {visited} || language: {language}
+		</div>
 
+	<div class="lang_switch">
+	<button on:click={set_language_en} class="lang_button selected">EN</button> | 
+	<button on:click={set_language_ru} class="lang_button">RU</button> | 
+	<button on:click={set_language_lt} class="lang_button">LT</button>
+	</div>
 
-	<button on:click={increment}>
-		plus
-	</button>
-	<button on:click={decrement}>
-		minus
-	</button>
-	<h1>Visited: {visited} || language: {language}</h1>
-
-	{#if visited > 4}
-		<h1>visited more than 4</h1>
-	{:else}
-		<h1>begone, child</h1>
-	{/if}
 
 
 
@@ -130,6 +129,7 @@
 	<!-- <Header /> -->
 
 	<main>
+		
 		<slot />
 		<div class="map_section">
 			<ul class="legend_ul">
@@ -171,6 +171,59 @@
 
 
 <style>
+
+.lang_switch {
+	/* width: 100vw; */
+	/* text-align: center; */
+	text-align: right;
+	/* margin: 5px 25vw 40px 0; */
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-right: 20px;
+
+}
+
+.lang_button {
+	box-sizing: border-box;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	border: none;
+ 	background-color: rgba(255, 255, 255, 0);
+	width: 60px;
+	height: 30px;
+	margin: 5px;
+	border-radius: 2px;
+	/* border: 0px; */
+	color: #EEDC83;
+	border: 0.67px solid #EEDC83;
+
+}
+
+
+.lang_button:hover {
+	background-color:#EEDC83;
+	color: #D33F37;
+	border: 0.67px solid black;
+}
+
+
+.lang_button:active {
+	background-color:#EEDC83;
+}
+
+.lang_button.selected {
+	pointer-events: none;
+	color: #222;
+	/* background-color: white; */
+	background-color: rgba(0, 0, 0, 0.1);
+	border:none;
+}
+
+
 
 .map_section {
 	/* display: grid; */
@@ -229,10 +282,11 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		font-family: "Lora";
 	}
 
 	main {
-		font-family: "Lora";
+		
 		flex: 1;
 		display: flex;
 		flex-direction: column;
