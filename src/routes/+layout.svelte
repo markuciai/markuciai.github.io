@@ -36,8 +36,10 @@
 				<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
 				<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
 				<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
-				<li class="legend"><img src={icon_13} class="legend_icon">Muziejus</li>
 				<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
+			</ul>
+			<ul class="legend_ul">
+				<li class="legend"><img src={icon_13} class="legend_icon">Muziejus</li>
 				<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
 				<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
 				<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
@@ -68,26 +70,40 @@
 
 <style>
 
+.map_section {
+	/* display: grid; */
+	display: flex;
+	flex-wrap: wrap;
+	/* width: clamp(200px, 100vw, 760px); */
+	/* flex-basis: 400px; */
+	flex-grow: 0;
+}
+
 .legend_ul {
+	/* flex: initial; */
+	flex: 1 0 0;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 	color: white;
-	width: clamp(200px, 100vw, 760px);
+	/* width: clamp(200px, 100vw, 760px); */
+	width: 400px;
 	margin-left: -20px;
 
 }
 
 .legend {
+	/* border: solid #D33F37 2px; */
 	display: block;
 	/* height: 120px; */
 	/* padding: 20px; */
-	font-size: 36px;
+	font-size: 34px;
 	border-radius: 8px;
 	/* vertical-align: middle; */
 	padding: 0 0 80px 0;
 	/* margin: 0; */
 	margin: 0px 0 -80px 0;
+	width: 400px;
 }
 
 .legend_icon {
