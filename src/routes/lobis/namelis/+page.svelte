@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
 	import task_object from '$lib/images/illustrations/saddle.png';
 	import servant_house from '$lib/images/archival/servant_house.jpg';
 	import servants from '$lib/images/archival/servants.jpg';
@@ -7,7 +9,43 @@
 	import map_piece from '$lib/images/map-pieces/2.png';
 	import map from '$lib/images/map/map-2.png';
 
+	const station_id = 2
+	let show_station = false
+
+	let visited
+
+	function a_func(a_thing = "") {
+		console.log("test thing", a_thing);
+	}
+
+
+	onMount(async () => { 
+		visited = localStorage.getItem("visited")
+
+		if(visited == station_id - 1) {
+			visited = station_id
+			localStorage.setItem("visited", visited);
+		}
+		if (visited >= station_id) {
+			show_station = true;
+		}
+
+		a_thing('success')
+	});
 	
+
+
+
+
+	const count = writable(0);
+	console.log($count); // logs 0
+
+	count.set(1);
+	console.log($count); // logs 1
+
+	$count = 2;
+	console.log($count); // logs 2
+
 </script>
 
 <svelte:head>
@@ -17,8 +55,11 @@
 
 
 
-
+{#if show_station}
 <section>
+
+
+	
 	<img class="illustration" src={map_piece}>
 	<h1>Tarnų namelis</h1>
 	<p class="subh">Antroji stotelė<br>ieškant Markučių lobio</p>
@@ -49,7 +90,9 @@
 	</div>
 	<img src={map} width=100%>
 
-
+	{:else}
+	Per anksti! Pirma reikia rasti kelio pradžia.
+	{/if}
 
 
 

@@ -1,4 +1,4 @@
-import { c as create_ssr_component, b as add_attribute } from "../../chunks/index.js";
+import { c as create_ssr_component, e as escape, b as add_attribute } from "../../chunks/index.js";
 const Header_svelte_svelte_type_style_lang = "";
 const styles = "";
 const icon_1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAADyCAYAAAB3aJikAAAACXBIWXMAAAsSAAALEgHS3X78AAAE7UlEQVR4nO3d3U0jZxiG4ZeIc9YVxJILWDoIHYQOQjpIAZbiAxewJWwH2RKgA28BlkwFZitwDmwUSwnK7ozHn+fhuiTE8ud9hHQLD2PGV7vdroBx+6n1AKA/IUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUOA69YD6G+7Xt5V1R9V9et/fPhbVa2q6vHwejWZzTfn2sZ5XO12u9Yb6GG7Xt5X1V8/+GXPVfWlqh4ns/mX06/i3IQ8ctv1clNVP/e4ieequp/M5qvTLKIFx8jj1yfi169/3K6X0xNsoREhU1V1U1WL1iPoTsi8um89gO6EzKsbd6/HS8gcm7YeQDdChgBChgBChgBChgBChgBChgBCHrHtevmh9QYug5DH7bb1AC6DkCGAkCGAkCGAkDk2bT2AboTMsWnrAXQjZAggZAgg5HHzgBCqSshj5wEhVJWQIYKQIYAL1De0XS9vq99x7kNV/XaaNVVV9VT7p5b5UXdvvH9zeHn1UvunranJbN7l/+ENQh7Y4S+UXo9lHw7//ths0GV5rqrPk9l80XrI2Al5QIeIN7W/ADxv+30ym39uPWLMHCMPa1Ei/h4ujt+TkIf10HrASDgf3pOQB3L4RZafxpyFkIdz13oA74eQhzNtPYD3Q8jD8fBJzkbIEEDIw/ml9QDeDyFzCRyG9CRkLoHTdD0JmYtwOO9OR0LmUnh0Vw9CHoDnZOpk2nrAmAmZSzFtPWDMhDyAyWz+0noD74uQIYCQIYCQIYCQuRSr1gPGTMjDeWo9YGSE3IOQh/PYesBIfKv9xfc2rYeM2XXrAcE+1f7c6PTw9kvt436czOb/+9PnO695vajx/JXV19p/D6r++V6sqmrldF1/Loc7Ytv1clFVf57wJp8ms/ndCW+PM3HXGgIIGQIIGQIIGQIIedzuWg/gMggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAgiZY7etB9CNkDl203oA3QgZAggZAggZAgiZY19bD6Cb69YD6OVTVS3e+NiH+vdvoW8P7z/+nI9Hb29ONYzzutrtdq03AD25aw0BhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwB/gbtGnhF/z84KAAAAABJRU5ErkJggg==";
@@ -20,12 +20,26 @@ const css = {
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let visited = 0;
+  let language = "LT";
   $$result.css.add(css);
   return `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-<div class="app svelte-1knkt6o">
+<div class="app svelte-1knkt6o"><button>EN</button>
+	<button>RU</button>
+	<button>LT</button>
+
+
+	<button>plus
+	</button>
+	<button>minus
+	</button>
+	<h1>Visited: ${escape(visited)} || language: ${escape(language)}</h1>
+	
+	
+	
 
 	<main class="svelte-1knkt6o">${slots.default ? slots.default({}) : ``}
 		<div class="map_section svelte-1knkt6o"><ul class="legend_ul svelte-1knkt6o"><li class="legend  svelte-1knkt6o"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-1knkt6o">Tarnų namelis</li>

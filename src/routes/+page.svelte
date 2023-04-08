@@ -1,5 +1,6 @@
 <script>
 	import dvaras from '$lib/images/archival/mdvaras.jpg';
+
 </script>
 
 <svelte:head>
@@ -10,7 +11,6 @@
 
 
 <section>
-
 	<h1>Markučių dvaro&nbsp;muziejus</h1>
 	<article>
 		<a href="/lobis">Lobis:</a>

@@ -1,5 +1,8 @@
 
 <script>
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
+
 	import Header from './Header.svelte';
 	import './styles.css';
 
@@ -17,6 +20,83 @@
 	import icon_12 from '$lib/images/icons/icon-12.png';
 	import icon_13 from '$lib/images/icons/icon-13.png';
 
+
+
+	let a_thing_in_a_store = writable("i'm stored yo");
+	console.log($a_thing_in_a_store)
+	
+
+	// const store = writable(localStorage.getItem("store") || "");
+
+	// store.subscribe(val => localStorage.setItem("store", val));
+	let visited = 0;
+	let language = "LT"
+
+	// visited = localStorage.getItem(visited)
+	// let visited = writable(localStorage.getItem("store") || 0);
+	// visited = writable(localStorage.getItem("store") || "0");
+	// visited = 
+
+	// console.log(localStorage.getItem("store") )
+	
+	
+
+	function increment() {
+		// visited.update(n => n + 1);
+		visited = visited + 1;
+		console.log(visited);
+		localStorage.setItem("visited", visited);
+		console.log( localStorage.getItem("visited") )
+
+		console.log("language:", language);
+	}
+
+	function decrement() {
+		// visited.update(n => n - 1);
+		visited = visited - 1;
+		console.log(visited);
+		localStorage.setItem("visited", visited);
+		console.log("language:", language);
+	}
+
+	function set_language_en() {
+		language = "EN";
+		console.log("language set to:", language);
+		localStorage.setItem("language", language);
+	}
+
+	function set_language_ru() {
+		language = "RU";
+		console.log("language set to:", language);
+		localStorage.setItem("language", language);
+	}
+
+	function set_language_lt() {
+		language = "LT";
+		console.log("language set to:", language);
+		localStorage.setItem("language", language);
+	}
+
+	onMount(async () => { 
+		console.log( "Mounted!!" )
+
+		if(localStorage.getItem("visited") === null) {
+			localStorage.setItem("visited", visited);
+}
+
+		if(localStorage.getItem("language") === null) {
+			localStorage.setItem("language", language);
+}
+		
+		visited = Number(localStorage.getItem("visited"));
+		language = localStorage.getItem("language")
+		console.log("Starting up. Language: ", language, " || biggest visited:", visited);
+		// if (language == "LT"):
+		// 	console.log("already LT");
+		// else:
+		// 	localStorage.setItem("language", "LT");
+	});
+
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +104,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 <div class="app">
+	<button on:click={set_language_en}>EN</button>
+	<button on:click={set_language_ru}>RU</button>
+	<button on:click={set_language_lt}>LT</button>
+
+
+	<button on:click={increment}>
+		plus
+	</button>
+	<button on:click={decrement}>
+		minus
+	</button>
+	<h1>Visited: {visited} || language: {language}</h1>
+
+	{#if visited > 4}
+		<h1>visited more than 4</h1>
+	{:else}
+		<h1>begone, child</h1>
+	{/if}
+
+
+
+	<!-- <input bind:value={$store} /> -->
 	
 	<!-- <Header /> -->
 
