@@ -11,6 +11,7 @@
 
 	const station_id = 2
 	let show_station = false
+	let language = "LT"
 
 	let visited
 
@@ -29,6 +30,8 @@
 		if (visited >= station_id) {
 			show_station = true;
 		}
+
+		language = localStorage.getItem("language")
 
 		a_thing('success')
 	});

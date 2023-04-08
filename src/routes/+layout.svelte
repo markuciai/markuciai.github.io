@@ -63,18 +63,21 @@
 		language = "EN";
 		console.log("language set to:", language);
 		localStorage.setItem("language", language);
+		window.location.reload();
 	}
 
 	function set_language_ru() {
 		language = "RU";
 		console.log("language set to:", language);
 		localStorage.setItem("language", language);
+		window.location.reload();
 	}
 
 	function set_language_lt() {
 		language = "LT";
 		console.log("language set to:", language);
 		localStorage.setItem("language", language);
+		window.location.reload();
 	}
 
 	onMount(async () => { 
@@ -104,7 +107,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 <div class="app">
-	<div>
+	<!-- <div>
 		<button on:click={increment}>
 			plus
 		</button>
@@ -113,12 +116,17 @@
 		</button>
 	
 		 || Visited: {visited} || language: {language}
-		</div>
+	</div> -->
 
 	<div class="lang_switch">
-	<button on:click={set_language_en} class="lang_button selected">EN</button> | 
-	<button on:click={set_language_ru} class="lang_button">RU</button> | 
+	{#if language == "LT"}
+	<!-- <button on:click={set_language_en} class="lang_button selected">EN</button> |  -->
+	<button on:click={set_language_ru} class="lang_button">RU</button> |
+	<button on:click={set_language_lt} class="lang_button selected">LT</button>
+	{:else}
+	<button on:click={set_language_ru} class="lang_button selected">RU</button> |
 	<button on:click={set_language_lt} class="lang_button">LT</button>
+	{/if}
 	</div>
 
 
@@ -179,9 +187,10 @@
 	/* margin: 5px 25vw 40px 0; */
 	width: 100%;
 	max-width: 800px;
-	margin: 0 auto;
+	margin: 10px auto;
 	box-sizing: border-box;
 	padding-right: 20px;
+	color: #222;
 
 }
 

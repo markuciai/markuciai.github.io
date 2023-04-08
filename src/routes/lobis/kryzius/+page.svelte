@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import bowl from '$lib/images/illustrations/bowl.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 
@@ -8,7 +9,32 @@
 
 
 
+	const station_id = 1
+	let show_station = false
+	let language = "LT"
 
+	let visited
+
+	function a_func(a_thing = "") {
+		console.log("test thing", a_thing);
+	}
+
+
+	onMount(async () => { 
+		visited = localStorage.getItem("visited")
+
+		if(visited == station_id - 1) {
+			visited = station_id
+			localStorage.setItem("visited", visited);
+		}
+		if (visited >= station_id) {
+			show_station = true;
+		}
+
+		language = localStorage.getItem("language")
+
+		a_thing('success')
+	});
 
 
 
@@ -22,8 +48,9 @@
 </svelte:head>
 
 
+{#if language == "RU"}
+<!-- <!-- Archived russian version  -->
 
-<!-- Archived russian version 
 <section>
 	<img class="illustration" src={map_piece}>
 	<h1>Крест</h1>
@@ -52,17 +79,10 @@
 		Теперь у вас есть первая часть карты. Куда дальше?
 
 	</div>
-	<img src={map} width=100%>
 
-	<div class="appendix">
-		<ul>
-			<li>Колодец</li>
-			<li>Пекарня</li>
-		</ul>
-		Обойдите все пункты в нужном порядке чтобы выиграть квест.
-	</div>
+{:else if language = "LT"}
 
--->
+
 
 
 <section>
@@ -94,6 +114,9 @@
 		Kur toliau?
 
 	</div>
+
+{/if}
+
 	<img src={map} width=100%>
 
 
