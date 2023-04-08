@@ -55,7 +55,7 @@
 	<footer>
 		<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 		<p>// Demonstracinė versija. Vyksta darbai.</p>
-		<p>Pageidaujant užsakyti Markučiu Lobio edukacija: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
+		<p>Pageidaujant užsakyti Markučių Lobio edukacija: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
 		<p> </p>
 	</footer>
 </div>
@@ -73,7 +73,7 @@
 	padding: 0;
 	margin: 0;
 	color: white;
-	width: 100vw;
+	width: clamp(200px, 100vw, 760px);
 	margin-left: -20px;
 
 }
