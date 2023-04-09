@@ -7,17 +7,13 @@
 
 
 	import map_piece from '$lib/images/map-pieces/2.png';
-	import map from '$lib/images/map/map-2.png';
+	import map from '$lib/images/map/2.png';
+	
 
 	const station_id = 2
 	let show_station = false
 	let language = "LT"
-
 	let visited
-
-	function a_func(a_thing = "") {
-		console.log("test thing", a_thing);
-	}
 
 
 	onMount(async () => { 
@@ -58,6 +54,7 @@
 
 
 
+
 {#if show_station}
 <section>
 
@@ -93,9 +90,28 @@
 	</div>
 	<img src={map} width=100%>
 
-	{:else}
-	Per anksti! Pirma reikia rasti kelio pradžia.
-	{/if}
+{:else}
+{#if language == "LT"}
+<section>
+	<img class="illustration" src={task_object}>
+	<div class="where-next too_early">
+		Tarnu namelio durys užrakintos.
+		<br><br>
+		Jus atejot per anksti! Pirma reikia rasti kelio pradžia.
+	</div>
+</section>
+{:else}
+<section>
+	<img class="illustration" src={task_object}>
+	<div class="where-next too_early">
+		Двери домика слуг заперты.
+		<br><br>
+		Вы рановато пришли! Сначала найдите начало пути.
+	</div>
+</section>
+
+{/if}
+{/if}
 
 
 
@@ -166,7 +182,10 @@ section {
 		font-size: clamp(24px, 6vw, 32px);
 
 	}
-
+	.where-next.too_early {
+		background-color: #D33F37;
+		color: #EEDC83;
+	}
 
 	.highlighted-question {
 		font-style: italic;

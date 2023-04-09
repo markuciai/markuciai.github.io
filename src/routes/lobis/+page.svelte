@@ -1,7 +1,7 @@
 <script>
 	import bowl from '$lib/images/illustrations/bowl.png';
 	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/map.png';
+	import map from '$lib/images/map/0.png';
 	import entrance from '$lib/images/archival/entrance.jpg';
 </script>
 
@@ -29,6 +29,7 @@
 </section>
 <br><br>
 <img width=100% src={map}>
+
 
 
 

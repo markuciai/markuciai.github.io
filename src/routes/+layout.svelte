@@ -1,45 +1,30 @@
 
 <script>
 	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
 
-	import Header from './Header.svelte';
+	// import a_map from './Map.svelte';
 	import './styles.css';
 
-	import icon_1 from '$lib/images/icons/icon-1.png';
-	import icon_2 from '$lib/images/icons/icon-2.png';
-	import icon_3 from '$lib/images/icons/icon-3.png';
-	import icon_4 from '$lib/images/icons/icon-4.png';
-	import icon_5 from '$lib/images/icons/icon-5.png';
-	import icon_6 from '$lib/images/icons/icon-6.png';
-	import icon_7 from '$lib/images/icons/icon-7.png';
-	import icon_8 from '$lib/images/icons/icon-8.png';
-	import icon_9 from '$lib/images/icons/icon-9.png';
-	import icon_10 from '$lib/images/icons/icon-10.png';
-	import icon_11 from '$lib/images/icons/icon-11.png';
-	import icon_12 from '$lib/images/icons/icon-12.png';
-	import icon_13 from '$lib/images/icons/icon-13.png';
+	import icon_0 from '$lib/images/icons/0.png';
+	import icon_1 from '$lib/images/icons/1.png';
+	import icon_2 from '$lib/images/icons/2.png';
+	import icon_3 from '$lib/images/icons/3.png';
+	import icon_4 from '$lib/images/icons/4.png';
+	import icon_5 from '$lib/images/icons/5.png';
+	import icon_6 from '$lib/images/icons/6.png';
+	import icon_7 from '$lib/images/icons/7.png';
+	import icon_8 from '$lib/images/icons/8.png';
+	import icon_9 from '$lib/images/icons/9.png';
+	import icon_10 from '$lib/images/icons/10.png';
+	import icon_11 from '$lib/images/icons/11.png';
+	import icon_12 from '$lib/images/icons/12.png';
 
 
+	import Map from './Map.svelte';
 
-	let a_thing_in_a_store = writable("i'm stored yo");
-	console.log($a_thing_in_a_store)
-	
-
-	// const store = writable(localStorage.getItem("store") || "");
-
-	// store.subscribe(val => localStorage.setItem("store", val));
 	let visited = 0;
 	let language = "LT"
 
-	// visited = localStorage.getItem(visited)
-	// let visited = writable(localStorage.getItem("store") || 0);
-	// visited = writable(localStorage.getItem("store") || "0");
-	// visited = 
-
-	// console.log(localStorage.getItem("store") )
-	
-	
 
 	function increment() {
 		// visited.update(n => n + 1);
@@ -106,7 +91,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
+
+
+
 <div class="app">
+	
 	<!-- <div>
 		<button on:click={increment}>
 			plus
@@ -134,10 +123,11 @@
 	<!-- <Header /> -->
 
 	<main>
-		
 		<slot />
+		<Map />
 		{#if language == "LT"}
 		<div class="map_section">
+
 			<ul class="legend_ul">
 				<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
 				<li class="legend " ><img src={icon_8} class="legend_icon">Šulinys</li>
@@ -147,7 +137,7 @@
 				<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
 			</ul>
 			<ul class="legend_ul">
-				<li class="legend"><img src={icon_13} class="legend_icon">Muziejus</li>
+				<li class="legend"><img src={icon_0} class="legend_icon">Muziejus</li>
 				<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
 				<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
 				<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
@@ -169,7 +159,7 @@
 				<li class="legend"><img src={icon_1} class="legend_icon">Крест</li>
 			</ul>
 			<ul class="legend_ul">
-				<li class="legend"><img src={icon_13} class="legend_icon">Музей</li>
+				<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
 				<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
 				<li class="legend"><img src={icon_6} class="legend_icon">Курятник</li>
 				<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
@@ -186,7 +176,7 @@
 	<footer>
 		<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 		<p>// Demonstracinė versija. Vyksta darbai.</p>
-		<p>Pageidaujant užsakyti Markučių Lobio edukacija: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
+		<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
 		<p> </p>
 	</footer>
 </div>
@@ -228,6 +218,7 @@
 	/* border: 0px; */
 	color: #EEDC83;
 	border: 0.67px solid #EEDC83;
+	cursor: pointer;
 
 }
 

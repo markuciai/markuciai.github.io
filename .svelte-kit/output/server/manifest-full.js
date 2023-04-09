@@ -4,7 +4,7 @@ export const manifest = {
 	assets: new Set([".DS_Store","favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":{"file":"_app/immutable/entry/start.cccc1bdb.js","imports":["_app/immutable/entry/start.cccc1bdb.js","_app/immutable/chunks/index.4f4526e2.js","_app/immutable/chunks/singletons.16b5f09e.js","_app/immutable/chunks/index.1be6d31f.js","_app/immutable/chunks/paths.5095e400.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.51a27f6f.js","imports":["_app/immutable/entry/app.51a27f6f.js","_app/immutable/chunks/index.4f4526e2.js"],"stylesheets":[],"fonts":[]}},
+		client: {"start":{"file":"_app/immutable/entry/start.992c2309.js","imports":["_app/immutable/entry/start.992c2309.js","_app/immutable/chunks/index.d08ce2ef.js","_app/immutable/chunks/singletons.c7f3ad42.js","_app/immutable/chunks/index.765f24db.js","_app/immutable/chunks/paths.ee9e88a3.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.5859baa7.js","imports":["_app/immutable/entry/app.5859baa7.js","_app/immutable/chunks/index.d08ce2ef.js"],"stylesheets":[],"fonts":[]}},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),

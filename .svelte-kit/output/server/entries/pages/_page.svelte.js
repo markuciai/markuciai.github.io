@@ -1,4 +1,7 @@
-import { c as create_ssr_component, b as add_attribute } from "../../chunks/index2.js";
+import { c as create_ssr_component, e as escape, b as add_attribute } from "../../chunks/index2.js";
+const Component = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `I AM A COMPONENT DAMMIT`;
+});
 const dvaras = "/_app/immutable/assets/mdvaras.04f34fa2.jpg";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
@@ -12,6 +15,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 <section class="svelte-16le9m7"><h1 class="svelte-16le9m7">Markučių dvaro muziejus</h1>
+	${escape(Component)}
 	<article class="svelte-16le9m7"><a href="/lobis">Lobis:</a>
 		<ol><li><a href="/lobis/kryzius">Kryžius</a></li>
 		<li><a href="/lobis/namelis">Namelis</a></li>

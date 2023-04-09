@@ -1,0 +1,43 @@
+<script>
+	import { onMount } from 'svelte';
+    
+import Map_0 from '$lib/images/map/0.png';
+import Map_1 from '$lib/images/map/1.png';
+import Map_2 from '$lib/images/map/2.png';
+import Map_3 from '$lib/images/map/3.png';
+import Map_4 from '$lib/images/map/4.png';
+import Map_5 from '$lib/images/map/5.png';
+import Map_6 from '$lib/images/map/6.png';
+import Map_7 from '$lib/images/map/7.png';
+import Map_8 from '$lib/images/map/8.png';
+import Map_9 from '$lib/images/map/9.png';
+import Map_10 from '$lib/images/map/10.png';
+import Map_11 from '$lib/images/map/11.png';
+import Map_12 from '$lib/images/map/12.png';
+
+
+let visited = 0
+
+onMount(async () => { 
+    visited = Number(localStorage.getItem("visited"));
+});
+
+</script>
+
+
+
+
+{#if visited == 1}          <img src={Map_1} width=100%>    
+{:else if visited == 2}     <img src={Map_2} width=100%>
+{:else if visited == 3}     <img src={Map_3} width=100%>   
+{:else if visited == 4}     <img src={Map_4} width=100%>
+{:else if visited == 5}     <img src={Map_5} width=100%>   
+{:else if visited == 6}     <img src={Map_6} width=100%>
+{:else if visited == 7}     <img src={Map_7} width=100%>   
+{:else if visited == 8}     <img src={Map_8} width=100%>
+{:else if visited == 9}     <img src={Map_9} width=100%>   
+{:else if visited == 10}    <img src={Map_10} width=100%>
+{:else if visited == 11}    <img src={Map_11} width=100%>   
+{:else if visited == 12}    <img src={Map_12} width=100%>
+{:else}                     <img src={Map_0} width=100%>
+{/if}

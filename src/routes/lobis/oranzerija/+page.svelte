@@ -3,7 +3,7 @@
 	import fruit_garden from '$lib/images/archival/fruit_garden.jpg';
 
 	import map_piece from '$lib/images/map-pieces/9.png';
-	import map from '$lib/images/map/map-9.png';
+	import map from '$lib/images/map/9.png';
 
 	
 </script>

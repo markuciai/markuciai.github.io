@@ -3,7 +3,7 @@
 	import stables from '$lib/images/archival/stables.jpg';
 
 	import map_piece from '$lib/images/map-pieces/3.png';
-	import map from '$lib/images/map/map-3.png';
+	import map from '$lib/images/map/3.png';
 </script>
 
 <svelte:head>

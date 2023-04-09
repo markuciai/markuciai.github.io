@@ -1,1 +1,2 @@
-export { default as component } from "../../../../src/routes/lobis/vistide/+page.svelte";
+import * as universal from "../../../../src/routes/map/+page.js";
+export { universal };

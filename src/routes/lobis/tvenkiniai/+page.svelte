@@ -3,7 +3,7 @@
 	import waters from '$lib/images/archival/waters.jpg';
 
 	import map_piece from '$lib/images/map-pieces/4.png';
-	import map from '$lib/images/map/map-4.png';
+	import map from '$lib/images/map/4.png';
 
 	
 </script>

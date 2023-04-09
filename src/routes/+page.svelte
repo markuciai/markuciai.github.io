@@ -1,6 +1,7 @@
 <script>
 	import dvaras from '$lib/images/archival/mdvaras.jpg';
 
+
 </script>
 
 <svelte:head>
@@ -31,6 +32,8 @@
 		</ol>
 	</article>
 	<img width=98% src={dvaras}>
+
+
 
 
 </section>

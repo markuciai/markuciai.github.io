@@ -4,7 +4,8 @@
 	import entrance from '$lib/images/archival/entrance.jpg';
 
 	import map_piece from '$lib/images/map-pieces/1.png';
-	import map from '$lib/images/map/map-1.png';
+	// import map from '$lib/images/map/1.png';
+	// import Map from '../../Map.svelte';
 
 
 
@@ -128,7 +129,8 @@
 
 {/if}
 
-	<img src={map} width=100%>
+	<!-- <img src={map} width=100%> -->
+
 
 
 
@@ -204,6 +206,8 @@ section {
 		font-size: clamp(24px, 6vw, 32px);
 
 	}
+
+
 
 	.highlighted-question {
 		font-style: italic;

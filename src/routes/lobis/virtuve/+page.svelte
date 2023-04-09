@@ -3,7 +3,7 @@
 	import cook from '$lib/images/archival/cook.png';
 
 	import map_piece from '$lib/images/map-pieces/5.png';
-	import map from '$lib/images/map/map-5.png';
+	import map from '$lib/images/map/5.png';
 
 	
 </script>
