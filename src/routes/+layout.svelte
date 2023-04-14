@@ -47,28 +47,28 @@
 	function set_language_en() {
 		language = "EN";
 		console.log("language set to:", language);
-		localStorage.setItem("language", language);
+		language = localStorage.language
 		window.location.reload();
 	}
 
 	function set_language_ru() {
 		language = "RU";
 		console.log("language set to:", language);
-		localStorage.setItem("language", language);
+		language = localStorage.language
 		window.location.reload();
 	}
 
 	function set_language_lt() {
 		language = "LT";
 		console.log("language set to:", language);
-		localStorage.setItem("language", language);
+		language = localStorage.language
 		window.location.reload();
 	}
 
 	function set_language_la() {
 		language = "LA";
 		console.log("language set to:", language);
-		localStorage.setItem("language", language);
+		language = localStorage.language
 		window.location.reload();
 	}
 
@@ -83,20 +83,20 @@
 }
 
 		if(localStorage.getItem("language") === null) {
-			localStorage.setItem("language", language);
+			language = localStorage.language
 }
 		
-		visited = Number(localStorage.getItem("visited"));
-		language = localStorage.getItem("language")
+		visited = Number(localStorage.visited);
+		language = localStorage.language
 		console.log("Starting up. Language: ", language, " || biggest visited:", visited);
 	});
 
 </script>
 
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
 
 
 
@@ -147,8 +147,8 @@
 	<div class="legend_section">
 	{#if language == "RU"}
 		<ul class="legend_ul">
-			<li class="legend " ><img src={icon_2} class="legend_icon" >Домик слуг</li>
-			<li class="legend " ><img src={icon_8} class="legend_icon">Колодец</li>
+			<li class="legend"><img src={icon_2} class="legend_icon" >Домик слуг</li>
+			<li class="legend"><img src={icon_8} class="legend_icon">Колодец</li>
 			<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
 			<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
 			<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
@@ -166,8 +166,8 @@
 
 	{:else} <!-- LT-->
 		<ul class="legend_ul">
-			<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
-			<li class="legend " ><img src={icon_8} class="legend_icon">Šulinys</li>
+			<li class="legend"><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
+			<li class="legend"><img src={icon_8} class="legend_icon">Šulinys</li>
 			<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
 			<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
 			<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>

@@ -3,11 +3,11 @@
 	import Offer from '../Offer.svelte';
 	import Stopper from '../../Stopper.svelte';
 
-
+	import map_piece from '$lib/images/map-pieces/2.png';
 	import task_object from '$lib/images/illustrations/saddle.png';
+	
 	import servant_house from '$lib/images/archival/servant_house.jpg';
 	import servants from '$lib/images/archival/servants.jpg';
-	import map_piece from '$lib/images/map-pieces/2.png';
 
 
 	const station_id = 2
@@ -22,7 +22,7 @@
 
 
 	onMount(async () => { 
-		visited = localStorage.getItem("visited")
+		visited = localStorage.visited
 
 		if (visited >= 0) {
 			show_offer = false
@@ -30,14 +30,14 @@
 
 		if(visited == station_id - 1) {
 			visited = station_id
-			localStorage.setItem("visited", visited);
+			localStorage.visited = visited
 			window.location.reload();
 		}
 		if (visited >= station_id) {
 			show_station = true;
 		}
 
-		language = localStorage.getItem("language")
+		language = localStorage.language
 
 		a_thing('success')
 	});
@@ -75,7 +75,7 @@
 
 {#if language == "EN"}
 
-Lorem, but english
+English
 
 {:else if language == "RU"}
 
@@ -83,7 +83,7 @@ Lorem, but english
 
 {:else if language == "LA"}
 
-Lorem
+Latin
 
 {:else} <!-- LT -->
 <section>	

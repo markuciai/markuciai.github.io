@@ -25,48 +25,50 @@
 	let date_finished_m
 	let date_finished_s
 
+	let time_delta
+
+
+
 	
-    const d = new Date();
-    let time = d.getTime();
-    let time_h = d.getHours().toString().padStart(2,"0");
-	let time_m = d.getMinutes().toString().padStart(2,"0");
-	let time_s = d.getSeconds().toString().padStart(2,"0");
-
-
 	onMount(async () => { 
-		visited = localStorage.getItem("visited")
+		localStorage.visited = visited;
 
 		if(visited == station_id - 1) {
-			visited = station_id
-			// localStorage.setItem("visited", visited);
+			visited = -1
 			localStorage.visited = visited;
-			localStorage.date_finished = d;
-			window.location.reload();
+			localStorage.finished = true
+			localStorage.date_finished = date_finished;
+			// window.location.reload();
 		}
 		
-		if (visited == station_id) {
+		if (localStorage.finished) {
 			show_station = true;
 
-
-			// date_started.setTime( Date.parse(localStorage.date_started) );
 			date_started = new Date( Date.parse(localStorage.date_started) );
 			date_started_h = date_started.getHours().toString().padStart(2,"0");
 			date_started_m = date_started.getMinutes().toString().padStart(2,"0");
 			date_started_s = date_started.getSeconds().toString().padStart(2,"0");
 
-
-			// date_finished.setTime( Date.parse(localStorage.date_finished) );
 			date_finished = new Date( Date.parse(localStorage.date_finished) );
 			date_finished_h = date_finished.getHours().toString().padStart(2,"0");
 			date_finished_m = date_finished.getMinutes().toString().padStart(2,"0");
 			date_finished_s = date_finished.getSeconds().toString().padStart(2,"0");
-
-
+			
+			time_delta = ms_to_time(Math.abs(date_finished.getTime() - date_started.getTime() ) ) ;
 		}
 
-		language = localStorage.getItem("language");
+		language = localStorage.language
 
 	});
+
+	function ms_to_time(ms) {
+		let hours = Math.floor(ms / (1000 * 60 * 60)).toFixed(0);
+		ms -= hours * 1000 * 60 * 60
+		let minutes = Math.floor(ms / (1000 * 60)).toFixed(0);
+		ms -= minutes * 1000 * 60
+		let seconds = (ms / 1000).toFixed(0);
+		return hours.toString().padStart(2,"0") + ":" + minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0");
+		}
 
 </script>
 
@@ -96,7 +98,7 @@
 
 {#if language == "EN"}
 
-Lorem en
+English
 
 {:else if language == "RU"}
 <section>
@@ -107,8 +109,11 @@ Lorem en
 	Вы собрали карту поместья и завещание Варвары. Вы достигли финиша!
 </article>
 <article>
-	Начало поисков: {date_started_h}:{date_started_m}:{date_started_s} | 
-	Клад найден:  {date_finished_h}:{date_finished_m}:{date_finished_s}
+	<ul>
+	<li>Старт поиска: {date_started_h}:{date_started_m}:{date_started_s}</li> 
+	<li>Клад найден:  {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
+	<li>Время: {time_delta}</li>
+	</ul>
 </article>
 
 
@@ -117,7 +122,7 @@ Lorem en
 
 {:else if language == "LA"}
 
-Lorem
+Latin
 
 {:else}
 
@@ -153,18 +158,18 @@ Lorem
 
 {/if} <!-- Main page Languages-->
 
+
 {:else}
 <!-- Stopper-->
 {#if language == "EN"}
-<Stopper>The safe is locked.</Stopper>
+<Stopper>The safe is locked. <br> You're yet to collect every piece of the map!</Stopper>
 {:else if language == "RU"}
-<Stopper>Вы дёргаете за ручку сейфа, но тот заперт. <br>Вы ещё не все кусочки карты собрали! <br>Возвращайтесь в парк.</Stopper>
+<Stopper>Вы дёргаете за ручку сейфа, но тот заперт. <br>Вы ещё собрали не все кусочки карты!</Stopper>
 {:else if language == "LA"}
-<Stopper></Stopper>
+<Stopper>Tuta clausa est. <br>Nondum es ad colligendas singulas chartas partes!</Stopper>
 {:else}
-<Stopper>Tarnu namelio durys užrakintos.</Stopper>
+<Stopper>Seifas užrakintas. <br>Jūs dar turite surinkti kiekvieną žemėlapio dalį!</Stopper>
 {/if}
-
 
 
 {/if} <!-- Module types-->
