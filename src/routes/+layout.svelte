@@ -22,7 +22,7 @@
 
 	import Map from './Map.svelte';
 
-	let visited = 0;
+	let visited = -1;
 	let language = "LT"
 
 
@@ -76,10 +76,10 @@
 
 
 	onMount(async () => { 
-		console.log( "Mounted!!" )
 
 		if(localStorage.getItem("visited") === null) {
 			localStorage.setItem("visited", visited);
+			window.location.reload();
 }
 
 		if(localStorage.getItem("language") === null) {
@@ -89,10 +89,6 @@
 		visited = Number(localStorage.getItem("visited"));
 		language = localStorage.getItem("language")
 		console.log("Starting up. Language: ", language, " || biggest visited:", visited);
-		// if (language == "LT"):
-		// 	console.log("already LT");
-		// else:
-		// 	localStorage.setItem("language", "LT");
 	});
 
 </script>
@@ -105,104 +101,100 @@
 
 
 <div class="app">
-	
-	<!-- <div>
-		<button on:click={increment}>
-			plus
-		</button>
-		<button on:click={decrement}>
-			minus
-		</button>
-	
-		 || Visited: {visited} || language: {language}
-	</div> -->
 
-	<div class="lang_switch">
-	{#if language == "EN"}
-	<button on:click={set_language_en} class="lang_button selected">EN</button> |
-	<button on:click={set_language_ru} class="lang_button">RU</button> |
-	<button on:click={set_language_lt} class="lang_button">LT</button> |
-	<button on:click={set_language_la} class="lang_button">LA</button>
-	{:else if language == "RU"}
-	<button on:click={set_language_en} class="lang_button">EN</button> |
-	<button on:click={set_language_ru} class="lang_button selected">RU</button> |
-	<button on:click={set_language_lt} class="lang_button">LT</button> |
-	<button on:click={set_language_la} class="lang_button">LA</button>
-	{:else if language == "LA"}
-	<button on:click={set_language_en} class="lang_button">EN</button> |
-	<button on:click={set_language_ru} class="lang_button">RU</button> |
-	<button on:click={set_language_lt} class="lang_button">LT</button> |
-	<button on:click={set_language_la} class="lang_button selected">LA</button>
-	{:else}
-	<button on:click={set_language_en} class="lang_button">EN</button> |
-	<button on:click={set_language_ru} class="lang_button">RU</button> |
-	<button on:click={set_language_lt} class="lang_button selected">LT</button> |
-	<button on:click={set_language_la} class="lang_button">LA</button>
+<!-- <div>
+	<button on:click={increment}>
+		plus
+	</button>
+	<button on:click={decrement}>
+		minus
+	</button>
+
+		|| Visited: {visited} || language: {language}
+</div> -->
+
+<div class="lang_switch">
+{#if language == "EN"}
+<button on:click={set_language_en} class="lang_button selected">EN</button> |
+<button on:click={set_language_ru} class="lang_button">RU</button> |
+<button on:click={set_language_lt} class="lang_button">LT</button> |
+<button on:click={set_language_la} class="lang_button">LA</button>
+{:else if language == "RU"}
+<button on:click={set_language_en} class="lang_button">EN</button> |
+<button on:click={set_language_ru} class="lang_button selected">RU</button> |
+<button on:click={set_language_lt} class="lang_button">LT</button> |
+<button on:click={set_language_la} class="lang_button">LA</button>
+{:else if language == "LA"}
+<button on:click={set_language_en} class="lang_button">EN</button> |
+<button on:click={set_language_ru} class="lang_button">RU</button> |
+<button on:click={set_language_lt} class="lang_button">LT</button> |
+<button on:click={set_language_la} class="lang_button selected">LA</button>
+{:else}
+<button on:click={set_language_en} class="lang_button">EN</button> |
+<button on:click={set_language_ru} class="lang_button">RU</button> |
+<button on:click={set_language_lt} class="lang_button selected">LT</button> |
+<button on:click={set_language_la} class="lang_button">LA</button>
+{/if}
+</div>
+
+
+
+<!-- <Header /> -->
+
+<main>
+	<slot />
+	<Map />
+	<div class="legend_section">
+	{#if language == "RU"}
+		<ul class="legend_ul">
+			<li class="legend " ><img src={icon_2} class="legend_icon" >Домик слуг</li>
+			<li class="legend " ><img src={icon_8} class="legend_icon">Колодец</li>
+			<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
+			<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
+			<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
+			<li class="legend"><img src={icon_1} class="legend_icon">Крест</li>
+		</ul>
+		<ul class="legend_ul">
+			<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
+			<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
+			<li class="legend"><img src={icon_6} class="legend_icon">Курятник</li>
+			<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
+			<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
+			<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
+			<li class="legend"><img src={icon_4} class="legend_icon">Пруды</li>
+		</ul>
+
+	{:else} <!-- LT-->
+		<ul class="legend_ul">
+			<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
+			<li class="legend " ><img src={icon_8} class="legend_icon">Šulinys</li>
+			<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
+			<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
+			<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
+			<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
+		</ul>
+		<ul class="legend_ul">
+			<li class="legend"><img src={icon_0} class="legend_icon">Muziejus</li>
+			<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
+			<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
+			<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
+			<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
+			<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
+			<li class="legend"><img src={icon_4} class="legend_icon">Tvenkiniai</li>
+		</ul>
 	{/if}
 	</div>
+</main>
 
 
 
-	<!-- <Header /> -->
-
-	<main>
-		<slot />
-		<Map />
-		{#if language == "LT"}
-		<div class="map_section">
-
-			<ul class="legend_ul">
-				<li class="legend " ><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
-				<li class="legend " ><img src={icon_8} class="legend_icon">Šulinys</li>
-				<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
-				<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
-				<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
-				<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
-			</ul>
-			<ul class="legend_ul">
-				<li class="legend"><img src={icon_0} class="legend_icon">Muziejus</li>
-				<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
-				<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
-				<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
-		
-				<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
-				<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
-				<li class="legend"><img src={icon_4} class="legend_icon">Tvenkiniai</li>
-			</ul>
-				<!-- Kad laimeti žaidima, apeikite visus punktus teisinga eile. -->
-			</div>
-		{:else}
-		<div class="map_section">
-			<ul class="legend_ul">
-				<li class="legend " ><img src={icon_2} class="legend_icon" >Домик слуг</li>
-				<li class="legend " ><img src={icon_8} class="legend_icon">Колодец</li>
-				<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
-				<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
-				<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
-				<li class="legend"><img src={icon_1} class="legend_icon">Крест</li>
-			</ul>
-			<ul class="legend_ul">
-				<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
-				<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
-				<li class="legend"><img src={icon_6} class="legend_icon">Курятник</li>
-				<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
-		
-				<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
-				<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
-				<li class="legend"><img src={icon_4} class="legend_icon">Пруды</li>
-			</ul>
-				<!-- Kad laimeti žaidima, apeikite visus punktus teisinga eile. -->
-			</div>
-		{/if}
-	</main>
-
-	<footer>
-		<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
-		<p>// Demonstracinė versija. Vyksta darbai.</p>
-		<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
-		<p> </p>
-	</footer>
-</div>
+<footer>
+	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
+	<p>// Demonstracinė versija. Vyksta darbai.</p>
+	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
+	<p> </p>
+</footer>
+</div> <!-- / app -->
 
  
 
@@ -211,6 +203,8 @@
 
 
 <style>
+
+/* Language switcher */
 
 .lang_switch {
 	/* width: 100vw; */
@@ -224,8 +218,7 @@
 	padding-right: 20px;
 	color: #222;
 	user-select: none;
-
-}
+	}
 
 .lang_button {
 	box-sizing: border-box;
@@ -244,19 +237,19 @@
 	border: 0.67px solid #EEDC83;
 	cursor: pointer;
 	user-select: none;
-}
+	}
 
 
 .lang_button:hover {
 	background-color:#EEDC83;
 	color: #D33F37;
 	border: 0.67px solid black;
-}
+	}
 
 
 .lang_button:active {
 	background-color:#EEDC83;
-}
+	}
 
 .lang_button.selected {
 	pointer-events: none;
@@ -265,19 +258,19 @@
 	background-color: rgba(0, 0, 0, 0.1);
 	border:none;
 	user-select: none;
-
-}
-
+	}
 
 
-.map_section {
+/* Legend */
+
+.legend_section {
 	/* display: grid; */
 	display: flex;
 	flex-wrap: wrap;
 	/* width: clamp(200px, 100vw, 760px); */
 	/* flex-basis: 400px; */
 	flex-grow: 0;
-}
+	}
 
 .legend_ul {
 	/* flex: initial; */
@@ -289,8 +282,7 @@
 	/* width: clamp(200px, 100vw, 760px); */
 	width: 400px;
 	margin-left: -20px;
-
-}
+	}
 
 .legend {
 	/* border: solid #D33F37 2px; */
@@ -305,7 +297,7 @@
 	margin: 20px 0 20px 0;
 	width: 400px;
 	vertical-align: middle;
-}
+	}
 
 .legend_icon {
 	position: relative;
@@ -320,66 +312,62 @@
 .current_location {
 	/* background-color: #D33F37; */
 	border: dashed 2px white;
-
-}
+	}
 
 .visited {
 	background-color: #D33F37;
+	}
 
+
+/* Wrapper styles */
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: "Lora";
 }
 
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		font-family: "Lora";
-	}
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	padding-top: 100px;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
 
-	main {
-		
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 20px;
-		padding-top: 100px;
-		width: 100%;
-		max-width: 800px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
 
+	font-size: 12px;
+	/* text-align: left; */
+	text-align: center;
+	width: 100%;
+
+	/* font-style: italic; */
+	font-weight: bold;
+	font-family: "Lora";
+	color: wheat;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+footer a {
+	font-weight: bold;
+}
+
+@media (min-width: 480px) {
 	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 0px;
-
-		font-size: 12px;
-		/* text-align: left; */
-		text-align: center;
-		width: 100%;
-
-		/* font-style: italic; */
-		font-weight: bold;
-		font-family: "Lora";
-		color: wheat;
-		text-transform: uppercase;
-		letter-spacing: 1.5px;
+		padding: 0px 0;
 	}
-
-	footer a {
-		font-weight: bold;
 	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 0px 0;
-		}
-	}
-
-
-
 
 
 </style>

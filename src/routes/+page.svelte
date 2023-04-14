@@ -15,7 +15,8 @@
 	<h1>Markučių dvaro&nbsp;muziejus</h1>
 	<article>
 		<a href="/lobis">Lobis:</a>
-		<ol>
+		<ol start="0">
+		<li><a href="/lobis/start-1867">Pradžia</a></li>
 		<li><a href="/lobis/kryzius">Kryžius</a></li>
 		<li><a href="/lobis/namelis">Namelis</a></li>
 		<li><a href="/lobis/arklides">Arklides</a></li>
@@ -28,12 +29,10 @@
 		<li><a href="/lobis/cerkve">Cerkvė</a></li>
 		<li><a href="/lobis/suniukai">Šuniukai</a></li>
 		<li><a href="/lobis/kroketas">Kroketo aikštelė</a></li>
-		<li>Muziejus</li>
+		<li><a href="/lobis/finish-1935">Muziejus (Pabaiga)</a></li>
 		</ol>
 	</article>
 	<img width=98% src={dvaras}>
-
-
 
 
 </section>

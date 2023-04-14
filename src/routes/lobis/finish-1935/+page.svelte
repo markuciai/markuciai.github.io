@@ -8,36 +8,64 @@
 	import map_piece from '$lib/images/map-pieces/1.png';
 
 
-	const station_id = 1
+	const station_id = 13
 	let visited
 	let language = "LT"
 
-	let show_offer = true
 	let show_station = false
 
-	let alert_collected = false
-	let alert_ahead = false
+
+	let date_started = new Date();
+	let date_started_h
+	let date_started_m
+	let date_started_s
+
+	let date_finished = new Date();
+	let date_finished_h
+	let date_finished_m
+	let date_finished_s
+
+	
+    const d = new Date();
+    let time = d.getTime();
+    let time_h = d.getHours().toString().padStart(2,"0");
+	let time_m = d.getMinutes().toString().padStart(2,"0");
+	let time_s = d.getSeconds().toString().padStart(2,"0");
 
 
 	onMount(async () => { 
 		visited = localStorage.getItem("visited")
 
-		if (visited >= 0) {
-			show_offer = false
-		}
-
 		if(visited == station_id - 1) {
 			visited = station_id
-			localStorage.setItem("visited", visited);
+			// localStorage.setItem("visited", visited);
+			localStorage.visited = visited;
+			localStorage.date_finished = d;
 			window.location.reload();
 		}
-		if (visited >= station_id) {
+		
+		if (visited == station_id) {
 			show_station = true;
+
+
+			// date_started.setTime( Date.parse(localStorage.date_started) );
+			date_started = new Date( Date.parse(localStorage.date_started) );
+			date_started_h = date_started.getHours().toString().padStart(2,"0");
+			date_started_m = date_started.getMinutes().toString().padStart(2,"0");
+			date_started_s = date_started.getSeconds().toString().padStart(2,"0");
+
+
+			// date_finished.setTime( Date.parse(localStorage.date_finished) );
+			date_finished = new Date( Date.parse(localStorage.date_finished) );
+			date_finished_h = date_finished.getHours().toString().padStart(2,"0");
+			date_finished_m = date_finished.getMinutes().toString().padStart(2,"0");
+			date_finished_s = date_finished.getSeconds().toString().padStart(2,"0");
+
+
 		}
 
-		language = localStorage.getItem("language")
+		language = localStorage.getItem("language");
 
-		a_thing('success')
 	});
 
 </script>
@@ -46,13 +74,13 @@
 
 <svelte:head>
 {#if language == "EN"}
-	<title>Cross — Markučiai Treasure</title>
+	<title>Finish Line - Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title>Крест – Клад Маркутья</title>
+	<title>Финиш - Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
-	<title>Crucis – Markučiai Treasure</title>
+	<title>Finio – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
 	<title>Kryžius – Markučių Lobis</title>
@@ -62,44 +90,29 @@
 
 
 
-{#if show_offer}
-<Offer />
-{:else if show_station}
+{#if show_station}
+
 
 
 {#if language == "EN"}
 
-Lorem
+Lorem en
 
 {:else if language == "RU"}
 <section>
-<img class="illustration" src={map_piece}>
-<h1>Крест</h1>
-<p class="subh">Первая остановка<br>в поисках Клада Маркутья</p>
+<!-- <img class="illustration" src={map_piece}> -->
+<h1>Победа!</h1>
+<p class="subh">Финишная линия квеста<br>в поместье Маркутья</p>
 <article>
-По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
+	Вы собрали карту поместья и завещание Варвары. Вы достигли финиша!
+</article>
+<article>
+	Начало поисков: {date_started_h}:{date_started_m}:{date_started_s} | 
+	Клад найден:  {date_finished_h}:{date_finished_m}:{date_finished_s}
 </article>
 
-
-<img width=105% src={entrance}>
-<article>
-<br>
-Сейчас в этой чаше лежит только обрывок бумаги с гербовой печатью и подписью. Похоже, это очень важный исторический документ. Но, где же остальная часть текста, и что в нем было написано? Кому следует отдать случайную находку?
-</article>
-<img class="illustration" src={task_object}>
-
-<div class="where-next">
-	Может быть слуги поместья смогут нам&nbsp;помочь? Нужно&nbsp;срочно их&nbsp;найти.
-	<br><br>
-	<span class="highlighted-question">Где можно найти&nbsp;слуг?</span>
-</div>
 
 </section>
-
-<div class="map_section">
-	Теперь у вас есть первая часть карты. Куда дальше?
-</div>
-
 
 
 {:else if language == "LA"}
@@ -139,15 +152,15 @@ Lorem
 	</div>
 
 {/if} <!-- Main page Languages-->
-{:else}
 
+{:else}
 <!-- Stopper-->
 {#if language == "EN"}
-<Stopper>Servants' quarters doors are shut.</Stopper>
+<Stopper>The safe is locked.</Stopper>
 {:else if language == "RU"}
-<Stopper>Двери домика слуг заперты. </Stopper>
+<Stopper>Вы дёргаете за ручку сейфа, но тот заперт. <br>Вы ещё не все кусочки карты собрали! <br>Возвращайтесь в парк.</Stopper>
 {:else if language == "LA"}
-<Stopper>Двери домика слуг заперты. </Stopper>
+<Stopper></Stopper>
 {:else}
 <Stopper>Tarnu namelio durys užrakintos.</Stopper>
 {/if}

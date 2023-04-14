@@ -16,7 +16,9 @@ export const nodes = [
 	() => import('./nodes/12'),
 	() => import('./nodes/13'),
 	() => import('./nodes/14'),
-	() => import('./nodes/15')
+	() => import('./nodes/15'),
+	() => import('./nodes/16'),
+	() => import('./nodes/17')
 ];
 
 export const server_loads = [];
@@ -27,15 +29,17 @@ export const dictionary = {
 		"/lobis/arklides": [4],
 		"/lobis/cerkve": [5],
 		"/lobis/duonkepe": [6],
-		"/lobis/kroketas": [7],
-		"/lobis/kryzius": [8],
-		"/lobis/namelis": [9],
-		"/lobis/oranzerija": [10],
-		"/lobis/sulinys": [11],
-		"/lobis/suniukai": [12],
-		"/lobis/tvenkiniai": [13],
-		"/lobis/virtuve": [14],
-		"/lobis/vistide": [15]
+		"/lobis/finish-1935": [7],
+		"/lobis/kroketas": [8],
+		"/lobis/kryzius": [9],
+		"/lobis/namelis": [10],
+		"/lobis/oranzerija": [11],
+		"/lobis/start-1867": [12],
+		"/lobis/sulinys": [13],
+		"/lobis/suniukai": [14],
+		"/lobis/tvenkiniai": [15],
+		"/lobis/virtuve": [16],
+		"/lobis/vistide": [17]
 	};
 
 export const hooks = {
