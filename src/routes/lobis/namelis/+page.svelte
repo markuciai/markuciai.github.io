@@ -6,6 +6,8 @@
 	import servants from '$lib/images/archival/servants.jpg';
 
 
+	import Stopper from '../../Stopper.svelte';
+
 	import map_piece from '$lib/images/map-pieces/2.png';
 	import map from '$lib/images/map/2.png';
 	
@@ -34,8 +36,6 @@
 	
 
 
-
-
 	const count = writable(0);
 	console.log($count); // logs 0
 
@@ -44,6 +44,7 @@
 
 	$count = 2;
 	console.log($count); // logs 2
+
 
 </script>
 
@@ -90,27 +91,16 @@
 	</div>
 	<img src={map} width=100%>
 
-{:else}
-{#if language == "LT"}
-<section>
-	<img class="illustration" src={task_object}>
-	<div class="where-next too_early">
-		Tarnu namelio durys užrakintos.
-		<br><br>
-		Jus atejot per anksti! Pirma reikia rasti kelio pradžia.
-	</div>
-</section>
-{:else}
-<section>
-	<img class="illustration" src={task_object}>
-	<div class="where-next too_early">
-		Двери домика слуг заперты.
-		<br><br>
-		Вы рановато пришли! Сначала найдите начало пути.
-	</div>
-</section>
 
+
+{:else}
+
+{#if language == "LT"}
+<Stopper>Tarnu namelio durys užrakintos.</Stopper>
+{:else}
+<Stopper>Двери домика слуг заперты. </Stopper>
 {/if}
+
 {/if}
 
 
@@ -118,96 +108,22 @@
 
 <style>
 
-section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-		background-color: white;
-		border-radius: 5px;
-		box-shadow: 0 20px 20px -15px rgba(0,0,0, 0.4);
-		font-size: 16pt;
-	}
 
-	h1 {
-		width: 90%;
-		font-weight: 800;
-		/* text-transform: uppercase;
-		letter-spacing: 5px; */
-		/* font-style: italic; */
-		/* font-size: clamp(80px, 24vw, 128px); */
-		font-size: clamp(40px, 12vw, 64px);
-		line-height: clamp(40px, 12vw, 64px);;
-		color: #D33F37;
-        /* text-align: left; */
-		padding: 0;
-		margin: 50px 0 60px 0;
-	}
-
-	.subh {
-		font-size: 12px;
-		/* text-align: left; */
-		text-align: center;
-		width: 89%;
-		margin: -50px 0 30px 0;
-		/* font-style: italic; */
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 1.5px;
-	}
-
-
-	article {
-		padding: 0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);
-		margin-bottom: 20px;
-	}
 
 
 
 	.where-next {
-		background-color: #EEDC83;
-		color: black;
-		width: 105%;
-		box-sizing: border-box;
+
 		/* padding: clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px); */
 		padding: clamp(180px, 25vw, 240px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
 		/* padding: 160px 10px 80px 20px; */
 		margin: clamp(-160px, -25vw, -110px) 0 20px 0;
-		box-shadow: 0 20px 20px -15px rgba(0,0,0, 0.4);
-		border-radius: 5px;
-		
 
-		font-size: 24px;
-		font-size: clamp(24px, 6vw, 32px);
 
-	}
-	.where-next.too_early {
-		background-color: #D33F37;
-		color: #EEDC83;
-	}
-
-	.highlighted-question {
-		font-style: italic;
-		font-weight: bold;
-		color: #D33F37;
 	}
 
 	.illustration {
-		width: clamp(320px, 100vw, 640px);
-		z-index: 10;
 		margin: clamp(-80px, -25vw, -40px) 0 clamp(-80px, -12.5vw, -40px) 0;
-		user-select: none;
-		pointer-events: none;
 	}
 
-	.task {
-		padding: 0 0 -200px 0;
-	}
-
-	.map_section {
-		color: white;
-		font-size: 16pt;
-		padding: 20px;
-	}
 </style>

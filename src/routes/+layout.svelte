@@ -26,23 +26,23 @@
 	let language = "LT"
 
 
-	function increment() {
-		// visited.update(n => n + 1);
-		visited = visited + 1;
-		console.log(visited);
-		localStorage.setItem("visited", visited);
-		console.log( localStorage.getItem("visited") )
+	// function increment() {
+	// 	// visited.update(n => n + 1);
+	// 	visited = visited + 1;
+	// 	console.log(visited);
+	// 	localStorage.setItem("visited", visited);
+	// 	console.log( localStorage.getItem("visited") )
 
-		console.log("language:", language);
-	}
+	// 	console.log("language:", language);
+	// }
 
-	function decrement() {
-		// visited.update(n => n - 1);
-		visited = visited - 1;
-		console.log(visited);
-		localStorage.setItem("visited", visited);
-		console.log("language:", language);
-	}
+	// function decrement() {
+	// 	// visited.update(n => n - 1);
+	// 	visited = visited - 1;
+	// 	console.log(visited);
+	// 	localStorage.setItem("visited", visited);
+	// 	console.log("language:", language);
+	// }
 
 	function set_language_en() {
 		language = "EN";
@@ -64,6 +64,16 @@
 		localStorage.setItem("language", language);
 		window.location.reload();
 	}
+
+	function set_language_la() {
+		language = "LA";
+		console.log("language set to:", language);
+		localStorage.setItem("language", language);
+		window.location.reload();
+	}
+
+	
+
 
 	onMount(async () => { 
 		console.log( "Mounted!!" )
@@ -108,13 +118,26 @@
 	</div> -->
 
 	<div class="lang_switch">
-	{#if language == "LT"}
-	<!-- <button on:click={set_language_en} class="lang_button selected">EN</button> |  -->
+	{#if language == "EN"}
+	<button on:click={set_language_en} class="lang_button selected">EN</button> |
 	<button on:click={set_language_ru} class="lang_button">RU</button> |
-	<button on:click={set_language_lt} class="lang_button selected">LT</button>
-	{:else}
+	<button on:click={set_language_lt} class="lang_button">LT</button> |
+	<button on:click={set_language_la} class="lang_button">LA</button>
+	{:else if language == "RU"}
+	<button on:click={set_language_en} class="lang_button">EN</button> |
 	<button on:click={set_language_ru} class="lang_button selected">RU</button> |
-	<button on:click={set_language_lt} class="lang_button">LT</button>
+	<button on:click={set_language_lt} class="lang_button">LT</button> |
+	<button on:click={set_language_la} class="lang_button">LA</button>
+	{:else if language == "LA"}
+	<button on:click={set_language_en} class="lang_button">EN</button> |
+	<button on:click={set_language_ru} class="lang_button">RU</button> |
+	<button on:click={set_language_lt} class="lang_button">LT</button> |
+	<button on:click={set_language_la} class="lang_button selected">LA</button>
+	{:else}
+	<button on:click={set_language_en} class="lang_button">EN</button> |
+	<button on:click={set_language_ru} class="lang_button">RU</button> |
+	<button on:click={set_language_lt} class="lang_button selected">LT</button> |
+	<button on:click={set_language_la} class="lang_button">LA</button>
 	{/if}
 	</div>
 
@@ -200,6 +223,7 @@
 	box-sizing: border-box;
 	padding-right: 20px;
 	color: #222;
+	user-select: none;
 
 }
 
@@ -219,7 +243,7 @@
 	color: #EEDC83;
 	border: 0.67px solid #EEDC83;
 	cursor: pointer;
-
+	user-select: none;
 }
 
 
@@ -240,6 +264,8 @@
 	/* background-color: white; */
 	background-color: rgba(0, 0, 0, 0.1);
 	border:none;
+	user-select: none;
+
 }
 
 
@@ -274,21 +300,26 @@
 	font-size: 34px;
 	border-radius: 8px;
 	/* vertical-align: middle; */
-	padding: 0 0 80px 0;
+	padding: 40px 0 20px 0;
 	/* margin: 0; */
-	margin: 0px 0 -80px 0;
+	margin: 20px 0 20px 0;
 	width: 400px;
+	vertical-align: middle;
 }
 
 .legend_icon {
 	position: relative;
-	top: 40px;
+	/* top: 40px; */
 	left: 4px;
 	width: 120px;
+	/* padding-bottom: 20; */
+	/* padding-bottom: 20px; */
+	margin: -100px -10px -40px -10px;
 	}
 
-.current {
-	background-color: #D33F37;
+.current_location {
+	/* background-color: #D33F37; */
+	border: dashed 2px white;
 
 }
 

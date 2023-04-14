@@ -110,8 +110,8 @@ function add_attribute(name, value, boolean) {
   return ` ${name}${assignment}`;
 }
 export {
-  subscribe as a,
-  add_attribute as b,
+  add_attribute as a,
+  subscribe as b,
   create_ssr_component as c,
   set_store_value as d,
   escape as e,
