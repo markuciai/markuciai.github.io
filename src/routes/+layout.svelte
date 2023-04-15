@@ -168,7 +168,7 @@
 		<ul class="legend_ul">
 			<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
 			<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
-			<li class="legend"><img src={icon_6} class="legend_icon">Птичкник</li>
+			<li class="legend"><img src={icon_6} class="legend_icon">Птичник</li>
 			<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
 			<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
 			<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
@@ -233,17 +233,21 @@
 	}
 
 .lang_button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	box-sizing: border-box;
 	text-decoration: none;
+	text-align: center;
 	font-size: 14px;
 	font-weight: 600;
 	/* letter-spacing: 2px; */
 	border: none;
  	background-color: rgba(255, 255, 255, 0);
 	width: 40px;
-	height: 24px;
+	height: 26px;
 	margin: 5px;
-	border-radius: 2px;
+	border-radius: 3px;
 	/* border: 0px; */
 	color: #EEDC83;
 	border: 0.67px solid #EEDC83;
@@ -270,8 +274,12 @@
 .lang_button.selected {
 	pointer-events: none;
 	color: #006837;
+	color: #EEDC83;
 	/* background-color: white; */
-	background-color: #EEDC83;
+	/* background-color: #EEDC83; */
+	/* background-color: rgba(0,0,0, 0.6); */
+	/* background-color: #222; */
+	background-color: #D33F37;
 	border:none;
 	user-select: none;
 	}
@@ -297,6 +305,7 @@
 	padding: 0;
 	margin: 0;
 	color: white;
+	color: #EEDC83;
 	/* width: clamp(200px, 100vw, 760px); */
 	width: 400px;
 	margin-left: 0px;
@@ -320,6 +329,7 @@
 	line-height: 20px;
 	letter-spacing: 1px;
 	font-style: italic;
+	font-weight: 500;
 	}
 
 .legend_icon {
@@ -335,6 +345,8 @@
 .current_location {
 	/* background-color: #D33F37; */
 	border: dashed 2px white;
+	background-color: #D33F37;
+	color: white;
 	}
 
 .visited {
