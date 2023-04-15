@@ -37,7 +37,7 @@ onMount(async () => {
 
 
 <section>
-
+<br><br>
 {#if visited == 0}
 <img class="illustration" src={zero}>
 <div class="where-next too_early"><slot /><br><br>

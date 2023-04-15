@@ -1,6 +1,7 @@
 import { c as create_ssr_component, v as validate_component } from "../../../../chunks/index.js";
 const Stopper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<section>${`${`${`${`${`${`${`${`${`${`${`${`${``}`}`}`}`}`}`}`}`}`}`}`}`}</section>`;
+  return `<section><br><br>
+${`${`${`${`${`${`${`${`${`${`${`${`${``}`}`}`}`}`}`}`}`}`}`}`}`}</section>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${$$result.head += `<!-- HEAD_svelte-1ftraoe_START -->${`${`${`${$$result.title = `<title>Finišas – Markučių Lobis</title>`, ""}

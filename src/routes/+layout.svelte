@@ -227,12 +227,12 @@
 	/* right: ; */
 	align-items: center;
 	align-self: center;
-	text-align: center;
+	text-align: right;
 	width: 100%;
 	max-width: 800px;
 	margin: 10px auto;
 	box-sizing: border-box;
-	/* padding-right: 20px; */
+	padding-right: 20px;
 	color: #222;
 	user-select: none;
 	}
@@ -245,6 +245,7 @@
 	text-decoration: none;
 	text-align: center;
 	font-size: 14px;
+	line-height: 20px;
 	font-weight: 600;
 	/* letter-spacing: 2px; */
 	border: none;
@@ -252,6 +253,7 @@
 	width: 40px;
 	height: 26px;
 	margin: 5px;
+	/* padding-bottom: 10px; */
 	border-radius: 3px;
 	/* border: 0px; */
 	color: #EEDC83;
@@ -365,6 +367,7 @@
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: "Lora";
+	/* transform: rotate(-0.25deg); */
 }
 
 main {

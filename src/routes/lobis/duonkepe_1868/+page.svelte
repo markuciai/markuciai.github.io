@@ -61,10 +61,11 @@ onMount(async () => {
 
 {#if show_offer}
 <Offer />
-<img class="illustration" src={map_piece}>
+
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if language == "EN"}
 
 English

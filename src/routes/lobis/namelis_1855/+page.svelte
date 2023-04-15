@@ -129,9 +129,9 @@ Latin
 <br>
 	Tarnai užsiėmę nesibaigiančiais darbais sode, todėl neturi laiko nežinomo dokumento paieškoms. Tačiau girdėjo, jog surinkus visas dokumento dalis ir nunešus jį į ponų namą galima gauti radybų.
 </article>
-<img class="illustration task" src={task}>
+<img class="illustration task saddle" src={task}>
 
-<div class="where-next">
+<div class="where-next saddle-block">
 	Ana ir Viačeslavas sutinka jums atiduoti rastą dokumento dalį, jeigu jūs jiems pagelbėsit ir įvykdysit jų prašymą – nunešit naują balną ponui Michalui.
 	<br><br>
 <span class="highlighted-question">Kur reikėtų nunešti balną?</span>
@@ -161,16 +161,4 @@ Latin
 {/if} <!-- Module types -->
 
 
-<style>
-.where-next {
 
-	/* padding: clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px); */
-	padding: clamp(180px, 25vw, 240px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
-	/* padding: 160px 10px 80px 20px; */
-	margin: clamp(-160px, -25vw, -110px) 0 20px 0;
-}
-
-.illustration {
-	margin: clamp(-80px, -25vw, -40px) 0 clamp(-80px, -12.5vw, -40px) 0;
-}
-</style>
