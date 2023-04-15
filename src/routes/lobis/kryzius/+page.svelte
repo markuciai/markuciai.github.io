@@ -1,43 +1,41 @@
 <script>
-	import { onMount } from 'svelte';
-	import Offer from '../Offer.svelte';
-	import Stopper from '../../Stopper.svelte';
+import { onMount } from 'svelte';
+import Offer from '../Offer.svelte';
+import Stopper from '../../Stopper.svelte';
 
-	import map_piece from '$lib/images/map-pieces/1.png';
-	import task_object from '$lib/images/illustrations/bowl.png';
+import map_piece from '$lib/images/map-pieces/1.png';
+import task from '$lib/images/illustrations/bowl.png';
 
-	import entrance from '$lib/images/archival/entrance.jpg';
-
-
-	const station_id = 1
-	let visited
-	let language = "LT"
-
-	let show_offer = true
-	let show_station = false
-
-	let alert_collected = false
-	let alert_ahead = false
+import entrance from '$lib/images/archival/entrance.jpg';
 
 
-	onMount(async () => { 
-		visited = localStorage.visited;
+const station_id = 1
+let visited
+let language = "LT"
 
-		if (visited >= 0) {
-			show_offer = false
-		}
+let show_offer = true
+let show_station = false
 
-		if(visited == station_id - 1) {
-			visited = station_id
-			localStorage.visited = visited;
-			window.location.reload();
-		}
-		if (visited >= station_id) {
-			show_station = true;
-		}
 
-		language = localStorage.language;
-	});
+
+onMount(async () => { 
+	visited = localStorage.visited;
+
+	if (visited >= 0) {
+		show_offer = false
+	}
+
+	if(visited == station_id - 1) {
+		visited = station_id
+		localStorage.visited = visited;
+		window.location.reload();
+	}
+	if (visited >= station_id) {
+		show_station = true;
+	}
+
+	language = localStorage.language;
+});
 
 </script>
 
@@ -85,7 +83,7 @@ Lorem
 <br>
 Сейчас в этой чаше лежит только обрывок бумаги с гербовой печатью и подписью. Похоже, это очень важный исторический документ. Но, где же остальная часть текста, и что в нем было написано? Кому следует отдать случайную находку?
 </article>
-<img class="illustration" src={task_object}>
+<img class="illustration" src={task}>
 
 <div class="where-next">
 	Может быть слуги поместья смогут нам&nbsp;помочь? Нужно&nbsp;срочно их&nbsp;найти.
@@ -121,7 +119,7 @@ Lorem
 	Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
 	</article>
 	<br><br>
-	<img class="illustration" src={task_object}>
+	<img class="illustration" src={task}>
 
 	<div class="where-next">
 		Kam vertėtų parodyti keistąjį radinį? Galbūt dvaro tarnai galėtų jums&nbsp;padėti?

@@ -1,74 +1,74 @@
 <script>
-	import { onMount } from 'svelte';
-	import Offer from '../Offer.svelte';
-	import Stopper from '../../Stopper.svelte';
+import { onMount } from 'svelte';
+import Offer from '../Offer.svelte';
+import Stopper from '../../Stopper.svelte';
 
-	import task_object from '$lib/images/illustrations/bowl.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
-	import map_piece from '$lib/images/map-pieces/1.png';
-
-
-	const station_id = 13
-	let visited
-	let language = "LT"
-
-	let show_station = false
+import task from '$lib/images/illustrations/bowl.png';
+import entrance from '$lib/images/archival/entrance.jpg';
+import map_piece from '$lib/images/map-pieces/1.png';
 
 
-	let date_started = new Date();
-	let date_started_h
-	let date_started_m
-	let date_started_s
+const station_id = 13
+let visited
+let language = "LT"
 
-	let date_finished = new Date();
-	let date_finished_h
-	let date_finished_m
-	let date_finished_s
-
-	let time_delta
+let show_station = false
 
 
+let date_started = new Date();
+let date_started_h
+let date_started_m
+let date_started_s
 
+let date_finished = new Date();
+let date_finished_h
+let date_finished_m
+let date_finished_s
+
+let time_delta
+
+
+
+
+onMount(async () => { 
+	visited = localStorage.visited;
+
+	if(visited == station_id - 1) {
+		visited = -1
+		localStorage.visited = visited;
+		localStorage.finished = true
+		localStorage.date_finished = date_finished;
+		// window.location.reload();
+	}
 	
-	onMount(async () => { 
-		visited = localStorage.visited;
+	if (localStorage.finished) {
+		show_station = true;
 
-		if(visited == station_id - 1) {
-			visited = -1
-			localStorage.visited = visited;
-			localStorage.finished = true
-			localStorage.date_finished = date_finished;
-			// window.location.reload();
-		}
+		date_started = new Date( Date.parse(localStorage.date_started) );
+		date_started_h = date_started.getHours().toString().padStart(2,"0");
+		date_started_m = date_started.getMinutes().toString().padStart(2,"0");
+		date_started_s = date_started.getSeconds().toString().padStart(2,"0");
+
+		date_finished = new Date( Date.parse(localStorage.date_finished) );
+		date_finished_h = date_finished.getHours().toString().padStart(2,"0");
+		date_finished_m = date_finished.getMinutes().toString().padStart(2,"0");
+		date_finished_s = date_finished.getSeconds().toString().padStart(2,"0");
 		
-		if (localStorage.finished) {
-			show_station = true;
+		time_delta = ms_to_time(Math.abs(date_finished.getTime() - date_started.getTime() ) ) ;
+	}
 
-			date_started = new Date( Date.parse(localStorage.date_started) );
-			date_started_h = date_started.getHours().toString().padStart(2,"0");
-			date_started_m = date_started.getMinutes().toString().padStart(2,"0");
-			date_started_s = date_started.getSeconds().toString().padStart(2,"0");
+	language = localStorage.language
 
-			date_finished = new Date( Date.parse(localStorage.date_finished) );
-			date_finished_h = date_finished.getHours().toString().padStart(2,"0");
-			date_finished_m = date_finished.getMinutes().toString().padStart(2,"0");
-			date_finished_s = date_finished.getSeconds().toString().padStart(2,"0");
-			
-			time_delta = ms_to_time(Math.abs(date_finished.getTime() - date_started.getTime() ) ) ;
-		}
+});
 
-		language = localStorage.language
-
-	});
-
-	function ms_to_time(ms) {
-		let hours = Math.floor(ms / (1000 * 60 * 60)).toFixed(0);
-		ms -= hours * 1000 * 60 * 60
-		let minutes = Math.floor(ms / (1000 * 60)).toFixed(0);
-		ms -= minutes * 1000 * 60
-		let seconds = (ms / 1000).toFixed(0);
-		return hours.toString().padStart(2,"0") + ":" + minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0");
-		}
+function ms_to_time(ms) {
+	let hours = Math.floor(ms / (1000 * 60 * 60)).toFixed(0);
+	ms -= hours * 1000 * 60 * 60
+	let minutes = Math.floor(ms / (1000 * 60)).toFixed(0);
+	ms -= minutes * 1000 * 60
+	let seconds = (ms / 1000).toFixed(0);
+	return hours.toString().padStart(2,"0") + ":" + minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0");
+	}
 
 </script>
 
@@ -85,7 +85,7 @@
 	<title>Finio – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
-	<title>Kryžius – Markučių Lobis</title>
+	<title>Finišas – Markučių Lobis</title>
 	<meta name="description" content="Žaidimas" />
 {/if}
 </svelte:head>
@@ -140,7 +140,7 @@ Latin
 	Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
 	</article>
 	<br><br>
-	<img class="illustration" src={task_object}>
+	<img class="illustration" src={task}>
 
 	<div class="where-next">
 		Kam vertėtų parodyti keistąjį radinį? Galbūt dvaro tarnai galėtų jums&nbsp;padėti?

@@ -1,46 +1,43 @@
 <script>
-	import { onMount } from 'svelte';
-	import Offer from '../Offer.svelte';
-	import Stopper from '../../Stopper.svelte';
+import { onMount } from 'svelte';
+import Offer from '../Offer.svelte';
+import Stopper from '../../Stopper.svelte';
 
-	import map_piece from '$lib/images/map-pieces/2.png';
-	import task_object from '$lib/images/illustrations/saddle.png';
-	
-	import servant_house from '$lib/images/archival/servant_house.jpg';
-	import servants from '$lib/images/archival/servants.jpg';
+import map_piece from '$lib/images/map-pieces/2.png';
+import task from '$lib/images/illustrations/saddle.png';
 
-
-	const station_id = 2
-	let visited = -1
-	let language = "LT"
-
-	let show_offer = true
-	let show_station = false
-
-	let alert_collected = false
-	let alert_ahead = false
+import servant_house from '$lib/images/archival/servant_house.jpg';
+import servants from '$lib/images/archival/servants.jpg';
 
 
-	onMount(async () => { 
-		visited = localStorage.visited;
+const station_id = 2
+let visited = -1
+let language = "LT"
 
-		if (visited >= 0) {
-			show_offer = false
-		}
+let show_offer = true
+let show_station = false
 
-		if(visited == station_id - 1) {
-			visited = station_id
-			localStorage.visited = visited;
-			window.location.reload();
-		}
-		if (visited >= station_id) {
-			show_station = true;
-		}
 
-		language = localStorage.language;
+onMount(async () => { 
+	visited = localStorage.visited;
 
-		a_thing('success')
-	});
+	if (visited >= 0) {
+		show_offer = false
+	}
+
+	if(visited == station_id - 1) {
+		visited = station_id
+		localStorage.visited = visited;
+		window.location.reload();
+	}
+	if (visited >= station_id) {
+		show_station = true;
+	}
+
+	language = localStorage.language;
+
+	a_thing('success')
+});
 
 </script>
 
@@ -105,7 +102,7 @@ Latin
 	<br>
 		Tarnai užsiėmę nesibaigiančiais darbais sode, todėl neturi laiko nežinomo dokumento paieškoms. Tačiau girdėjo, jog surinkus visas dokumento dalis ir nunešus jį į ponų namą galima gauti radybų.
 	</article>
-	<img class="illustration task" src={task_object}>
+	<img class="illustration task" src={task}>
 
 	<div class="where-next">
 		Ana ir Viačeslavas sutinka jums atiduoti rastą dokumento dalį, jeigu jūs jiems pagelbėsit ir įvykdysit jų prašymą – nunešit naują balną ponui Michalui.

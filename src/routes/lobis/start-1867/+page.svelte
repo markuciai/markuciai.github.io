@@ -3,7 +3,7 @@
 
 	import Stopper from '../../Stopper.svelte';
 
-	import task_object from '$lib/images/illustrations/bowl.png';
+	import task from '$lib/images/illustrations/bowl.png';
 
 	import map_piece from '$lib/images/map-pieces/1.png';
 
@@ -49,16 +49,16 @@
 
 <svelte:head>
 {#if language == "EN"}
-	<title>Cross — Markučiai Treasure</title>
+	<title>Start — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title>Крест – Клад Маркутья</title>
+	<title>Старт – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
-	<title>Crucis – Markučiai Treasure</title>
+	<title>Start – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
-	<title>Kryžius – Markučių Lobis</title>
+	<title>Startas – Markučių Lobis</title>
 	<meta name="description" content="Žaidimas" />
 {/if}
 </svelte:head>

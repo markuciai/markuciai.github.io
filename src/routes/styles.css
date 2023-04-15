@@ -136,12 +136,23 @@ h1 {
 	margin: 50px 0 60px 0;
 }
 
+h2 {
+	width: 70%;
+	font-weight: 800;
+	font-style: italic;
+	font-size: clamp(20px, 6vw, 48px);
+	line-height: clamp(30px, 8vw, 48px);;
+	color: #006837;
+	margin: 35px 0 40px 0;
+	text-align: center;
+}
+
 .subh {
 	font-size: 12px;
 	/* text-align: left; */
 	text-align: center;
 	width: 89%;
-	margin: -50px 0 30px 0;
+	margin: -40px 0 35px 0;
 	/* font-style: italic; */
 	font-weight: 600;
 	text-transform: uppercase;

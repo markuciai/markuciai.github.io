@@ -10,9 +10,22 @@
 </script>
 
 <svelte:head>
+{#if language == "EN"}
+	<title>Markučiai Treasure</title>
+	<meta name="description" content="Quest" />
+{:else if language == "RU"}
+	<title>Клад Маркутья</title>
+	<meta name="description" content="Квест" />
+{:else if language == "LA"}
+	<title>Markučiai Treasure</title>
+	<meta name="description" content="Quest" />
+{:else}
 	<title>Markučių Lobis</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Žaidimas" />
+{/if}
 </svelte:head>
+
+
 
 <Offer />
 <br>
