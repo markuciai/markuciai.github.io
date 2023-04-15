@@ -1,12 +1,15 @@
 <script>
-	import Offer from './Offer.svelte';
+import { onMount } from 'svelte';
+import Offer from './Offer.svelte';
 
-	import bowl from '$lib/images/illustrations/bowl.png';
-	import map_piece from '$lib/images/map/cross-piece.png';
-	import map from '$lib/images/map/0.png';
-	import entrance from '$lib/images/archival/entrance.jpg';
+let language = "LT"
 
-	
+
+
+onMount(async () => { 
+	language = localStorage.language;
+});
+
 </script>
 
 <svelte:head>
@@ -29,6 +32,7 @@
 
 <Offer />
 <br>
+
 <section>
 	<br>
 
@@ -45,7 +49,7 @@
 	</article>
 </section>
 <br><br>
-<img width=100% src={map}>
+
 
 
 

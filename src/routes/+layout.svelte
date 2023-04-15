@@ -21,6 +21,7 @@
 
 
 	import Map from './Map.svelte';
+    import Header from './Header.svelte';
 
 	let visited = -1;
 	let language = "LT"
@@ -73,6 +74,10 @@
 	}
 
 	
+	function empty_storage() {
+		localStorage.clear();
+		window.location.reload();
+	}
 
 
 	onMount(async () => { 
@@ -114,6 +119,10 @@
 </div> -->
 
 <div class="lang_switch">
+<button on:click={empty_storage} class="lang_button">↻</button> |
+
+{visited} / 12 <!-- for debug only..? --> | 
+
 {#if language == "EN"}
 <button on:click={set_language_en} class="lang_button selected">EN</button> |
 <button on:click={set_language_ru} class="lang_button">RU</button> |

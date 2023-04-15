@@ -1,6 +1,5 @@
-import { c as create_ssr_component, v as validate_component, b as add_attribute } from "../../../chunks/index.js";
+import { c as create_ssr_component, v as validate_component } from "../../../chunks/index.js";
 import { O as Offer } from "../../../chunks/Offer.js";
-import { m as map } from "../../../chunks/0.js";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
   code: "section.svelte-1b83ov3{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:0.6;background-color:white;border-radius:5px;box-shadow:0 20px 20px -15px rgba(0,0,0, 0.4);font-size:16pt;padding-bottom:80px}h1.svelte-1b83ov3{width:90%;font-weight:800;font-size:clamp(40px, 12vw, 64px);line-height:clamp(40px, 12vw, 64px);;;color:#D33F37;padding:0;margin:50px 0 60px 0}article.svelte-1b83ov3{padding:0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px)}.subh.svelte-1b83ov3{font-size:12px;text-align:center;width:89%;margin:-50px 0 30px 0;font-weight:600;text-transform:uppercase;letter-spacing:1.5px}",
@@ -8,10 +7,14 @@ const css = {
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `${$$result.head += `<!-- HEAD_svelte-xzmpx6_START -->${$$result.title = `<title>Markučių Lobis</title>`, ""}<meta name="description" content="Svelte demo app"><!-- HEAD_svelte-xzmpx6_END -->`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-9b4z94_START -->${`${`${`${$$result.title = `<title>Markučių Lobis</title>`, ""}
+	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-9b4z94_END -->`, ""}
+
+
 
 ${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}
 <br>
+
 <section class="svelte-1b83ov3"><br>
 
 	<h1 class="svelte-1b83ov3">Markučių Lobis</h1>
@@ -24,8 +27,7 @@ ${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}
 		<br><br>
 		O dabar įsivaizduokite, kad jūs laiko mašina nusikeliate į praeitį ir lankotės Markučių dvare jo klestėjimo laikais. Jums reikės atlikti 12 užduočių, kurios padės surinkti paslaptingą senovinį dokumentą ir rasti Markučių dvaro lobį.		
 	</article></section>
-<br><br>
-<img width="100%"${add_attribute("src", map, 0)}>`;
+<br><br>`;
 });
 export {
   Page as default

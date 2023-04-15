@@ -1,8 +1,8 @@
 
 
 export const index = 8;
-export const component = async () => (await import('../entries/pages/lobis/kroketas/_page.svelte.js')).default;
-export const file = '_app/immutable/entry/lobis-kroketas-page.svelte.b6cf2951.js';
-export const imports = ["_app/immutable/entry/lobis-kroketas-page.svelte.b6cf2951.js","_app/immutable/chunks/index.ea08cdfa.js","_app/immutable/chunks/12.5cdde857.js"];
-export const stylesheets = ["_app/immutable/assets/_page.670c6855.css"];
+export const component = async () => (await import('../entries/pages/lobis/kroketas_1867/_page.svelte.js')).default;
+export const file = '_app/immutable/entry/lobis-kroketas_1867-page.svelte.e76e378d.js';
+export const imports = ["_app/immutable/entry/lobis-kroketas_1867-page.svelte.e76e378d.js","_app/immutable/chunks/index.69e2c043.js","_app/immutable/chunks/Offer.0d93b772.js","_app/immutable/chunks/Stopper.ab579600.js"];
+export const stylesheets = [];
 export const fonts = [];

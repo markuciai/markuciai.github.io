@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/lobis/sulinys/+page.svelte";
+export { default as component } from "../../../../src/routes/lobis/sulinys_1867/+page.svelte";

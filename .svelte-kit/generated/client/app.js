@@ -26,20 +26,20 @@ export const server_loads = [];
 export const dictionary = {
 		"/": [2],
 		"/lobis": [3],
-		"/lobis/arklides": [4],
-		"/lobis/cerkve": [5],
-		"/lobis/duonkepe": [6],
-		"/lobis/finish-1935": [7],
-		"/lobis/kroketas": [8],
-		"/lobis/kryzius": [9],
-		"/lobis/namelis": [10],
-		"/lobis/oranzerija": [11],
-		"/lobis/start-1867": [12],
-		"/lobis/sulinys": [13],
-		"/lobis/suniukai": [14],
-		"/lobis/tvenkiniai": [15],
-		"/lobis/virtuve": [16],
-		"/lobis/vistide": [17]
+		"/lobis/arklides_1935": [4],
+		"/lobis/cerkve_1903": [5],
+		"/lobis/duonkepe_1868": [6],
+		"/lobis/finish_1935": [7],
+		"/lobis/kroketas_1867": [8],
+		"/lobis/kryzius_1880": [9],
+		"/lobis/namelis_1855": [10],
+		"/lobis/oranzerija_1875": [11],
+		"/lobis/start_1865": [12],
+		"/lobis/sulinys_1867": [13],
+		"/lobis/suniukai-1883": [14],
+		"/lobis/tvenkiniai_1917": [15],
+		"/lobis/virtuve_1899": [16],
+		"/lobis/vistide_1877": [17]
 	};
 
 export const hooks = {

@@ -1,13 +1,11 @@
 <script>
     import { onMount } from 'svelte';
-    // let visited = 999
     let language = "LT"
     
 
 
     onMount(async () => { 
-        // visited = Number(localStorage.getItem("visited"));
-        language = localStorage.getItem("language");
+        language = localStorage.language;
     });
     
 

@@ -4,7 +4,7 @@ export const manifest = {
 	assets: new Set([".DS_Store","favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":{"file":"_app/immutable/entry/start.2cdef0fd.js","imports":["_app/immutable/entry/start.2cdef0fd.js","_app/immutable/chunks/index.ea08cdfa.js","_app/immutable/chunks/singletons.0482da06.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.873785f0.js","imports":["_app/immutable/entry/app.873785f0.js","_app/immutable/chunks/index.ea08cdfa.js"],"stylesheets":[],"fonts":[]}},
+		client: {"start":{"file":"_app/immutable/entry/start.48077f7c.js","imports":["_app/immutable/entry/start.48077f7c.js","_app/immutable/chunks/index.69e2c043.js","_app/immutable/chunks/paths.f9734c31.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.1d56a19c.js","imports":["_app/immutable/entry/app.1d56a19c.js","_app/immutable/chunks/index.69e2c043.js"],"stylesheets":[],"fonts":[]}},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
@@ -41,99 +41,99 @@ export const manifest = {
 				endpoint: null
 			},
 			{
-				id: "/lobis/arklides",
-				pattern: /^\/lobis\/arklides\/?$/,
+				id: "/lobis/arklides_1935",
+				pattern: /^\/lobis\/arklides_1935\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 4 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/cerkve",
-				pattern: /^\/lobis\/cerkve\/?$/,
+				id: "/lobis/cerkve_1903",
+				pattern: /^\/lobis\/cerkve_1903\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 5 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/duonkepe",
-				pattern: /^\/lobis\/duonkepe\/?$/,
+				id: "/lobis/duonkepe_1868",
+				pattern: /^\/lobis\/duonkepe_1868\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 6 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/finish-1935",
-				pattern: /^\/lobis\/finish-1935\/?$/,
+				id: "/lobis/finish_1935",
+				pattern: /^\/lobis\/finish_1935\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 7 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/kroketas",
-				pattern: /^\/lobis\/kroketas\/?$/,
+				id: "/lobis/kroketas_1867",
+				pattern: /^\/lobis\/kroketas_1867\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 8 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/kryzius",
-				pattern: /^\/lobis\/kryzius\/?$/,
+				id: "/lobis/kryzius_1880",
+				pattern: /^\/lobis\/kryzius_1880\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 9 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/namelis",
-				pattern: /^\/lobis\/namelis\/?$/,
+				id: "/lobis/namelis_1855",
+				pattern: /^\/lobis\/namelis_1855\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 10 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/oranzerija",
-				pattern: /^\/lobis\/oranzerija\/?$/,
+				id: "/lobis/oranzerija_1875",
+				pattern: /^\/lobis\/oranzerija_1875\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 11 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/start-1867",
-				pattern: /^\/lobis\/start-1867\/?$/,
+				id: "/lobis/start_1865",
+				pattern: /^\/lobis\/start_1865\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 12 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/sulinys",
-				pattern: /^\/lobis\/sulinys\/?$/,
+				id: "/lobis/sulinys_1867",
+				pattern: /^\/lobis\/sulinys_1867\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 13 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/suniukai",
-				pattern: /^\/lobis\/suniukai\/?$/,
+				id: "/lobis/suniukai-1883",
+				pattern: /^\/lobis\/suniukai-1883\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 14 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/tvenkiniai",
-				pattern: /^\/lobis\/tvenkiniai\/?$/,
+				id: "/lobis/tvenkiniai_1917",
+				pattern: /^\/lobis\/tvenkiniai_1917\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 15 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/virtuve",
-				pattern: /^\/lobis\/virtuve\/?$/,
+				id: "/lobis/virtuve_1899",
+				pattern: /^\/lobis\/virtuve_1899\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 16 },
 				endpoint: null
 			},
 			{
-				id: "/lobis/vistide",
-				pattern: /^\/lobis\/vistide\/?$/,
+				id: "/lobis/vistide_1877",
+				pattern: /^\/lobis\/vistide_1877\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 17 },
 				endpoint: null

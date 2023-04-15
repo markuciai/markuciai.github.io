@@ -1,8 +1,8 @@
 
 
 export const index = 4;
-export const component = async () => (await import('../entries/pages/lobis/arklides/_page.svelte.js')).default;
-export const file = '_app/immutable/entry/lobis-arklides-page.svelte.e50b0a5e.js';
-export const imports = ["_app/immutable/entry/lobis-arklides-page.svelte.e50b0a5e.js","_app/immutable/chunks/index.ea08cdfa.js","_app/immutable/chunks/3.9f701cc1.js"];
-export const stylesheets = ["_app/immutable/assets/_page.670c6855.css"];
+export const component = async () => (await import('../entries/pages/lobis/arklides_1935/_page.svelte.js')).default;
+export const file = '_app/immutable/entry/lobis-arklides_1935-page.svelte.1f141951.js';
+export const imports = ["_app/immutable/entry/lobis-arklides_1935-page.svelte.1f141951.js","_app/immutable/chunks/index.69e2c043.js","_app/immutable/chunks/Offer.0d93b772.js","_app/immutable/chunks/Stopper.ab579600.js"];
+export const stylesheets = [];
 export const fonts = [];
