@@ -1,4 +1,4 @@
-import { c as create_ssr_component, a as add_attribute, v as validate_component } from "../../chunks/index2.js";
+import { c as create_ssr_component, b as add_attribute, v as validate_component } from "../../chunks/index.js";
 import { m as map } from "../../chunks/0.js";
 const styles = "";
 const icon_0 = "/_app/immutable/assets/0.6548b019.png";
@@ -19,7 +19,7 @@ const Map = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const _layout_svelte_svelte_type_style_lang = "";
 const css = {
-  code: '.lang_switch.svelte-b9umyh.svelte-b9umyh{text-align:right;width:100%;max-width:800px;margin:10px auto;box-sizing:border-box;padding-right:20px;color:#222}.lang_button.svelte-b9umyh.svelte-b9umyh{box-sizing:border-box;text-decoration:none;font-size:18px;font-weight:600;letter-spacing:2px;border:none;background-color:rgba(255, 255, 255, 0);width:60px;height:30px;margin:5px;border-radius:2px;color:#EEDC83;border:0.67px solid #EEDC83;cursor:pointer}.lang_button.svelte-b9umyh.svelte-b9umyh:hover{background-color:#EEDC83;color:#D33F37;border:0.67px solid black}.lang_button.svelte-b9umyh.svelte-b9umyh:active{background-color:#EEDC83}.lang_button.selected.svelte-b9umyh.svelte-b9umyh{pointer-events:none;color:#222;background-color:rgba(0, 0, 0, 0.1);border:none}.map_section.svelte-b9umyh.svelte-b9umyh{display:flex;flex-wrap:wrap;flex-grow:0}.legend_ul.svelte-b9umyh.svelte-b9umyh{flex:1 0 0;list-style-type:none;padding:0;margin:0;color:white;width:400px;margin-left:-20px}.legend.svelte-b9umyh.svelte-b9umyh{display:block;font-size:34px;border-radius:8px;padding:0 0 80px 0;margin:0px 0 -80px 0;width:400px}.legend_icon.svelte-b9umyh.svelte-b9umyh{position:relative;top:40px;left:4px;width:120px}.app.svelte-b9umyh.svelte-b9umyh{display:flex;flex-direction:column;min-height:100vh;font-family:"Lora"}main.svelte-b9umyh.svelte-b9umyh{flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-b9umyh.svelte-b9umyh{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px}footer.svelte-b9umyh a.svelte-b9umyh{font-weight:bold}@media(min-width: 480px){footer.svelte-b9umyh.svelte-b9umyh{padding:0px 0}}',
+  code: '.lang_switch.svelte-1th18tl.svelte-1th18tl{text-align:right;width:100%;max-width:800px;margin:10px auto;box-sizing:border-box;padding-right:20px;color:#222;user-select:none}.lang_button.svelte-1th18tl.svelte-1th18tl{box-sizing:border-box;text-decoration:none;font-size:18px;font-weight:600;letter-spacing:2px;border:none;background-color:rgba(255, 255, 255, 0);width:60px;height:30px;margin:5px;border-radius:2px;color:#EEDC83;border:0.67px solid #EEDC83;cursor:pointer;user-select:none}.lang_button.svelte-1th18tl.svelte-1th18tl:hover{background-color:#EEDC83;color:#D33F37;border:0.67px solid black}.lang_button.svelte-1th18tl.svelte-1th18tl:active{background-color:#EEDC83}.lang_button.selected.svelte-1th18tl.svelte-1th18tl{pointer-events:none;color:#222;background-color:rgba(0, 0, 0, 0.1);border:none;user-select:none}.legend_section.svelte-1th18tl.svelte-1th18tl{display:flex;flex-wrap:wrap;flex-grow:0}.legend_ul.svelte-1th18tl.svelte-1th18tl{flex:1 0 0;list-style-type:none;padding:0;margin:0;color:white;width:400px;margin-left:-20px}.legend.svelte-1th18tl.svelte-1th18tl{display:block;font-size:34px;border-radius:8px;padding:40px 0 20px 0;margin:20px 0 20px 0;width:400px;vertical-align:middle}.legend_icon.svelte-1th18tl.svelte-1th18tl{position:relative;left:4px;width:120px;margin:-100px -10px -40px -10px}.app.svelte-1th18tl.svelte-1th18tl{display:flex;flex-direction:column;min-height:100vh;font-family:"Lora"}main.svelte-1th18tl.svelte-1th18tl{flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-1th18tl.svelte-1th18tl{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px}footer.svelte-1th18tl a.svelte-1th18tl{font-weight:bold}@media(min-width: 480px){footer.svelte-1th18tl.svelte-1th18tl{padding:0px 0}}',
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -30,40 +30,40 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
+<div class="app svelte-1th18tl">
 
-<div class="app svelte-b9umyh">
-
-	<div class="lang_switch svelte-b9umyh">${`
-	<button class="lang_button svelte-b9umyh">RU</button> |
-	<button class="lang_button selected svelte-b9umyh">LT</button>`}</div>
-
+<div class="lang_switch svelte-1th18tl">${`${`${`<button class="lang_button svelte-1th18tl">EN</button> |
+<button class="lang_button svelte-1th18tl">RU</button> |
+<button class="lang_button selected svelte-1th18tl">LT</button> |
+<button class="lang_button svelte-1th18tl">LA</button>`}`}`}</div>
 
 
-	
 
-	<main class="svelte-b9umyh">${slots.default ? slots.default({}) : ``}
-		${validate_component(Map, "Map").$$render($$result, {}, {}, {})}
-		${`<div class="map_section svelte-b9umyh"><ul class="legend_ul svelte-b9umyh"><li class="legend  svelte-b9umyh"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-b9umyh">Tarnų namelis</li>
-				<li class="legend  svelte-b9umyh"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-b9umyh">Šulinys</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-b9umyh">Arklides</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-b9umyh">Virtuvė</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-b9umyh">Oranžerija</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-b9umyh">Kryžius</li></ul>
-			<ul class="legend_ul svelte-b9umyh"><li class="legend svelte-b9umyh"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-b9umyh">Muziejus</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-b9umyh">Duonkepė</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-b9umyh">Vištidė ir ledainė</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-b9umyh">Kroketo aikštelė</li>
-		
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-b9umyh">Cerkvė</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-b9umyh">Šuniukai</li>
-				<li class="legend svelte-b9umyh"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-b9umyh">Tvenkiniai</li></ul>
-				</div>`}</main>
 
-	<footer class="svelte-b9umyh">
-		<p>// Demonstracinė versija. Vyksta darbai.</p>
-		<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt" class="svelte-b9umyh">edukacija@puskinas.lt</a></p>
-		<p></p></footer>
-</div>`;
+
+<main class="svelte-1th18tl">${slots.default ? slots.default({}) : ``}
+	${validate_component(Map, "Map").$$render($$result, {}, {}, {})}
+	<div class="legend_section svelte-1th18tl">${`
+		<ul class="legend_ul svelte-1th18tl"><li class="legend svelte-1th18tl"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-1th18tl">Tarnų namelis</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-1th18tl">Šulinys</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-1th18tl">Arklides</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-1th18tl">Virtuvė</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-1th18tl">Oranžerija</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-1th18tl">Kryžius</li></ul>
+		<ul class="legend_ul svelte-1th18tl"><li class="legend svelte-1th18tl"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-1th18tl">Muziejus</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-1th18tl">Duonkepė</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-1th18tl">Vištidė ir ledainė</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-1th18tl">Kroketo aikštelė</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-1th18tl">Cerkvė</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-1th18tl">Šuniukai</li>
+			<li class="legend svelte-1th18tl"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-1th18tl">Tvenkiniai</li></ul>`}</div></main>
+
+
+
+<footer class="svelte-1th18tl">
+	<p>// Demonstracinė versija. Vyksta darbai.</p>
+	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt" class="svelte-1th18tl">edukacija@puskinas.lt</a></p>
+	<p></p></footer></div> `;
 });
 export {
   Layout as default

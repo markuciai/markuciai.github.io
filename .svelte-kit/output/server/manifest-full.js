@@ -4,7 +4,7 @@ export const manifest = {
 	assets: new Set([".DS_Store","favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":{"file":"_app/immutable/entry/start.01c37405.js","imports":["_app/immutable/entry/start.01c37405.js","_app/immutable/chunks/index.2af588b6.js","_app/immutable/chunks/singletons.343378bb.js","_app/immutable/chunks/index.168297e9.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.39c97797.js","imports":["_app/immutable/entry/app.39c97797.js","_app/immutable/chunks/index.2af588b6.js"],"stylesheets":[],"fonts":[]}},
+		client: {"start":{"file":"_app/immutable/entry/start.2cdef0fd.js","imports":["_app/immutable/entry/start.2cdef0fd.js","_app/immutable/chunks/index.ea08cdfa.js","_app/immutable/chunks/singletons.0482da06.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.873785f0.js","imports":["_app/immutable/entry/app.873785f0.js","_app/immutable/chunks/index.ea08cdfa.js"],"stylesheets":[],"fonts":[]}},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
@@ -21,7 +21,9 @@ export const manifest = {
 			() => import('./nodes/12.js'),
 			() => import('./nodes/13.js'),
 			() => import('./nodes/14.js'),
-			() => import('./nodes/15.js')
+			() => import('./nodes/15.js'),
+			() => import('./nodes/16.js'),
+			() => import('./nodes/17.js')
 		],
 		routes: [
 			{
@@ -60,66 +62,80 @@ export const manifest = {
 				endpoint: null
 			},
 			{
+				id: "/lobis/finish-1935",
+				pattern: /^\/lobis\/finish-1935\/?$/,
+				params: [],
+				page: { layouts: [0], errors: [1], leaf: 7 },
+				endpoint: null
+			},
+			{
 				id: "/lobis/kroketas",
 				pattern: /^\/lobis\/kroketas\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 7 },
+				page: { layouts: [0], errors: [1], leaf: 8 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/kryzius",
 				pattern: /^\/lobis\/kryzius\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 8 },
+				page: { layouts: [0], errors: [1], leaf: 9 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/namelis",
 				pattern: /^\/lobis\/namelis\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 9 },
+				page: { layouts: [0], errors: [1], leaf: 10 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/oranzerija",
 				pattern: /^\/lobis\/oranzerija\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 10 },
+				page: { layouts: [0], errors: [1], leaf: 11 },
+				endpoint: null
+			},
+			{
+				id: "/lobis/start-1867",
+				pattern: /^\/lobis\/start-1867\/?$/,
+				params: [],
+				page: { layouts: [0], errors: [1], leaf: 12 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/sulinys",
 				pattern: /^\/lobis\/sulinys\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 11 },
+				page: { layouts: [0], errors: [1], leaf: 13 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/suniukai",
 				pattern: /^\/lobis\/suniukai\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 12 },
+				page: { layouts: [0], errors: [1], leaf: 14 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/tvenkiniai",
 				pattern: /^\/lobis\/tvenkiniai\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 13 },
+				page: { layouts: [0], errors: [1], leaf: 15 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/virtuve",
 				pattern: /^\/lobis\/virtuve\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 14 },
+				page: { layouts: [0], errors: [1], leaf: 16 },
 				endpoint: null
 			},
 			{
 				id: "/lobis/vistide",
 				pattern: /^\/lobis\/vistide\/?$/,
 				params: [],
-				page: { layouts: [0], errors: [1], leaf: 15 },
+				page: { layouts: [0], errors: [1], leaf: 17 },
 				endpoint: null
 			}
 		],

@@ -1,4 +1,5 @@
-import { c as create_ssr_component, a as add_attribute } from "../../../chunks/index2.js";
+import { c as create_ssr_component, v as validate_component, b as add_attribute } from "../../../chunks/index.js";
+import { O as Offer } from "../../../chunks/Offer.js";
 import { m as map } from "../../../chunks/0.js";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
@@ -9,8 +10,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `${$$result.head += `<!-- HEAD_svelte-xzmpx6_START -->${$$result.title = `<title>Markučių Lobis</title>`, ""}<meta name="description" content="Svelte demo app"><!-- HEAD_svelte-xzmpx6_END -->`, ""}
 
-
-
+${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}
+<br>
 <section class="svelte-1b83ov3"><br>
 
 	<h1 class="svelte-1b83ov3">Markučių Lobis</h1>

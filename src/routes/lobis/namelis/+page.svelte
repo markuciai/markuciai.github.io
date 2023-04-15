@@ -22,7 +22,7 @@
 
 
 	onMount(async () => { 
-		visited = localStorage.visited
+		visited = localStorage.visited;
 
 		if (visited >= 0) {
 			show_offer = false
@@ -30,14 +30,14 @@
 
 		if(visited == station_id - 1) {
 			visited = station_id
-			localStorage.visited = visited
+			localStorage.visited = visited;
 			window.location.reload();
 		}
 		if (visited >= station_id) {
 			show_station = true;
 		}
 
-		language = localStorage.language
+		language = localStorage.language;
 
 		a_thing('success')
 	});

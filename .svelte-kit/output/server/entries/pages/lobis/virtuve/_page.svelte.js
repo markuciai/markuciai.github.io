@@ -1,4 +1,4 @@
-import { c as create_ssr_component, a as add_attribute } from "../../../../chunks/index2.js";
+import { c as create_ssr_component, b as add_attribute } from "../../../../chunks/index.js";
 const map = "/_app/immutable/assets/5.d6dd650a.png";
 const task = "/_app/immutable/assets/fodder.9b3cb03e.png";
 const cook = "/_app/immutable/assets/cook.4d566727.png";

@@ -31,7 +31,7 @@
 
 	
 	onMount(async () => { 
-		localStorage.visited = visited;
+		visited = localStorage.visited;
 
 		if(visited == station_id - 1) {
 			visited = -1

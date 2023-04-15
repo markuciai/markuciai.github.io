@@ -46,29 +46,29 @@
 
 	function set_language_en() {
 		language = "EN";
+		localStorage.language = language
 		console.log("language set to:", language);
-		language = localStorage.language
 		window.location.reload();
 	}
 
 	function set_language_ru() {
 		language = "RU";
+		localStorage.language = language
 		console.log("language set to:", language);
-		language = localStorage.language
 		window.location.reload();
 	}
 
 	function set_language_lt() {
 		language = "LT";
+		localStorage.language = language
 		console.log("language set to:", language);
-		language = localStorage.language
 		window.location.reload();
 	}
 
 	function set_language_la() {
 		language = "LA";
+		localStorage.language = language
 		console.log("language set to:", language);
-		language = localStorage.language
 		window.location.reload();
 	}
 

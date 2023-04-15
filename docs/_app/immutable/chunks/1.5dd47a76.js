@@ -1,0 +1,1 @@
+const e=""+new URL("../assets/bowl.b639b93e.png",import.meta.url).href,t=""+new URL("../assets/entrance.49b57398.jpg",import.meta.url).href,s=""+new URL("../assets/1.97ffe4b4.png",import.meta.url).href;export{t as e,s as m,e as t};

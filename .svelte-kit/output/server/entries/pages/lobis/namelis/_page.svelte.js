@@ -1,39 +1,18 @@
-import { c as create_ssr_component, b as subscribe, d as set_store_value, v as validate_component } from "../../../../chunks/index2.js";
-import { w as writable } from "../../../../chunks/index.js";
-const Stopper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${`<section>
-	<div class="where-next too_early">${slots.default ? slots.default({}) : ``}
-		Tarnu namelio durys užrakintos.
-		<br><br>
-		Jus atejot per anksti! Pirma reikia rasti kelio pradžia.
-	</div></section>`}`;
-});
+import { c as create_ssr_component, v as validate_component } from "../../../../chunks/index.js";
+import { O as Offer } from "../../../../chunks/Offer.js";
 const _page_svelte_svelte_type_style_lang = "";
 const css = {
-  code: "section.svelte-1nwqlfc{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:0.6;background-color:white;border-radius:5px;box-shadow:0 20px 20px -15px rgba(0,0,0, 0.4);font-size:16pt}h1.svelte-1nwqlfc{width:90%;font-weight:800;font-size:clamp(40px, 12vw, 64px);line-height:clamp(40px, 12vw, 64px);;;color:#D33F37;padding:0;margin:50px 0 60px 0}.subh.svelte-1nwqlfc{font-size:12px;text-align:center;width:89%;margin:-50px 0 30px 0;font-weight:600;text-transform:uppercase;letter-spacing:1.5px}article.svelte-1nwqlfc{padding:0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);margin-bottom:20px}.where-next.svelte-1nwqlfc{background-color:#EEDC83;color:black;width:105%;box-sizing:border-box;padding:clamp(180px, 25vw, 240px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);margin:clamp(-160px, -25vw, -110px) 0 20px 0;box-shadow:0 20px 20px -15px rgba(0,0,0, 0.4);border-radius:5px;font-size:24px;font-size:clamp(24px, 6vw, 32px)}.highlighted-question.svelte-1nwqlfc{font-style:italic;font-weight:bold;color:#D33F37}.illustration.svelte-1nwqlfc{width:clamp(320px, 100vw, 640px);z-index:10;margin:clamp(-80px, -25vw, -40px) 0 clamp(-80px, -12.5vw, -40px) 0;user-select:none;pointer-events:none}.task.svelte-1nwqlfc{padding:0 0 -200px 0}.map_section.svelte-1nwqlfc{color:white;font-size:16pt;padding:20px}",
+  code: ".where-next.svelte-j42z22{padding:clamp(180px, 25vw, 240px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);margin:clamp(-160px, -25vw, -110px) 0 20px 0}.illustration.svelte-j42z22{margin:clamp(-80px, -25vw, -40px) 0 clamp(-80px, -12.5vw, -40px) 0}",
   map: null
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $count, $$unsubscribe_count;
-  const count = writable(0);
-  $$unsubscribe_count = subscribe(count, (value) => $count = value);
-  console.log($count);
-  count.set(1);
-  console.log($count);
-  set_store_value(count, $count = 2, $count);
-  console.log($count);
   $$result.css.add(css);
-  $$unsubscribe_count();
-  return `${$$result.head += `<!-- HEAD_svelte-1ds1kxo_START -->${$$result.title = `<title>Tarnų namelis – Markučių Lobis</title>`, ""}<meta name="description" content="Žaidimas"><!-- HEAD_svelte-1ds1kxo_END -->`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-l6zm9c_START -->${`${`${`${$$result.title = `<title>Tarnų namelis – Markučių Lobis</title>`, ""}
+	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-l6zm9c_END -->`, ""}
 
 
 
-
-${`${`${validate_component(Stopper, "Stopper").$$render($$result, {}, {}, {
-    default: () => {
-      return `Tarnu namelio durys užrakintos.`;
-    }
-  })}`}`}`;
+${`${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}`} `;
 });
 export {
   Page as default
