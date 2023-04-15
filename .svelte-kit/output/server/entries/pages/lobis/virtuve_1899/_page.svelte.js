@@ -7,8 +7,8 @@ const css = {
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `${$$result.head += `<!-- HEAD_svelte-p0potk_START -->${`${`${`${$$result.title = `<title>Virtuvė – Markučių Lobis</title>`, ""}
-	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-p0potk_END -->`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-49szta_START -->${`${`${`${$$result.title = `<title>Virtuvė – Markučių Lobis</title>`, ""}
+	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-49szta_END -->`, ""}
 
 
 ${`${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}`} `;
