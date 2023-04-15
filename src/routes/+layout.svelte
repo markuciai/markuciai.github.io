@@ -47,30 +47,30 @@
 	// }
 
 	function set_language_en() {
-		language = "EN";
-		localStorage.language = language
-		console.log("language set to:", language);
+		// language = "EN"; disabled to reduce jiggling, reenable when reactivity returns
+		localStorage.language = "EN"
+		// console.log("language set to:", language);
 		window.location.reload();
 	}
 
 	function set_language_ru() {
-		language = "RU";
-		localStorage.language = language
-		console.log("language set to:", language);
+		// language = "RU";
+		localStorage.language = "RU"
+		// console.log("language set to:", language);
 		window.location.reload();
 	}
 
 	function set_language_lt() {
-		language = "LT";
-		localStorage.language = language
-		console.log("language set to:", language);
+		// language = "LT";
+		localStorage.language = "LT"
+		// console.log("language set to:", language);
 		window.location.reload();
 	}
 
 	function set_language_la() {
-		language = "LA";
-		localStorage.language = language
-		console.log("language set to:", language);
+		// language = "LA";
+		localStorage.language = "LA"
+		// console.log("language set to:", language);
 		window.location.reload();
 	}
 
@@ -153,6 +153,7 @@
 
 <main in:fly out:fade >
 	<slot />
+	<div class="map_and_stuff">
 	<Map />
 	<div class="legend_section">
 	{#if language == "RU"}
@@ -194,6 +195,7 @@
 		</ul>
 	{/if}
 	</div>
+	</div> <!-- map stuff-->
 </main>
 
 

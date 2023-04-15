@@ -25,8 +25,8 @@ onMount(async () => {
 </script>
 
 
-
-
+<br><br>
+<div class="map_wrapper">
 {#if visited == 1}          <img src={Map_1} width=100%>    
 {:else if visited == 2}     <img src={Map_2} width=100%>
 {:else if visited == 3}     <img src={Map_3} width=100%>   
@@ -41,3 +41,12 @@ onMount(async () => {
 {:else if visited == 12}    <img src={Map_12} width=100%>
 {:else}                     <img src={Map_0} width=100%>
 {/if}
+</div>
+
+<style>
+    .map_wrapper {
+        position: sticky;
+        top: 0;
+        position: -webkit-sticky; /* Safari */
+    }
+</style>
