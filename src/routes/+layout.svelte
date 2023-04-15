@@ -1,7 +1,7 @@
 
 <script>
 	import { onMount } from 'svelte';
-
+	import { fade, blur, fly, slide, scale } from "svelte/transition";
 	// import a_map from './Map.svelte';
 	import './styles.css';
 
@@ -22,6 +22,7 @@
 
 	import Map from './Map.svelte';
     import Header from './Header.svelte';
+
 
 	let visited = -1;
 	let language = "LT"
@@ -124,25 +125,25 @@
 {visited} / 12 <!-- for debug only..? --> | 
 
 {#if language == "EN"}
-<button on:click={set_language_en} class="lang_button selected">EN</button> |
-<button on:click={set_language_ru} class="lang_button">RU</button> |
-<button on:click={set_language_lt} class="lang_button">LT</button> |
-<button on:click={set_language_la} class="lang_button">LA</button>
+<button on:click={set_language_en} class="lang_button selected">E&#8239N</button> |
+<button on:click={set_language_ru} class="lang_button">R&#8239U</button> |
+<button on:click={set_language_lt} class="lang_button">L&#8239T</button> |
+<button on:click={set_language_la} class="lang_button">L&#8239A</button>
 {:else if language == "RU"}
-<button on:click={set_language_en} class="lang_button">EN</button> |
-<button on:click={set_language_ru} class="lang_button selected">RU</button> |
-<button on:click={set_language_lt} class="lang_button">LT</button> |
-<button on:click={set_language_la} class="lang_button">LA</button>
+<button on:click={set_language_en} class="lang_button">E&#8239N</button> |
+<button on:click={set_language_ru} class="lang_button selected">R&#8239U</button> |
+<button on:click={set_language_lt} class="lang_button">L&#8239T</button> |
+<button on:click={set_language_la} class="lang_button">L&#8239A</button>
 {:else if language == "LA"}
-<button on:click={set_language_en} class="lang_button">EN</button> |
-<button on:click={set_language_ru} class="lang_button">RU</button> |
-<button on:click={set_language_lt} class="lang_button">LT</button> |
-<button on:click={set_language_la} class="lang_button selected">LA</button>
+<button on:click={set_language_en} class="lang_button">E&#8239N</button> |
+<button on:click={set_language_ru} class="lang_button">R&#8239U</button> |
+<button on:click={set_language_lt} class="lang_button">L&#8239T</button> |
+<button on:click={set_language_la} class="lang_button selected">L&#8239A</button>
 {:else}
-<button on:click={set_language_en} class="lang_button">EN</button> |
-<button on:click={set_language_ru} class="lang_button">RU</button> |
-<button on:click={set_language_lt} class="lang_button selected">LT</button> |
-<button on:click={set_language_la} class="lang_button">LA</button>
+<button on:click={set_language_en} class="lang_button">E&#8239N</button> |
+<button on:click={set_language_ru} class="lang_button">R&#8239U</button> |
+<button on:click={set_language_lt} class="lang_button selected">L&#8239T</button> |
+<button on:click={set_language_la} class="lang_button">L&#8239A</button>
 {/if}
 </div>
 
@@ -150,7 +151,7 @@
 
 <!-- <Header /> -->
 
-<main>
+<main in:fly out:fade >
 	<slot />
 	<Map />
 	<div class="legend_section">
@@ -232,13 +233,13 @@
 .lang_button {
 	box-sizing: border-box;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 600;
-	letter-spacing: 2px;
+	/* letter-spacing: 2px; */
 	border: none;
  	background-color: rgba(255, 255, 255, 0);
-	width: 60px;
-	height: 30px;
+	width: 40px;
+	height: 24px;
 	margin: 5px;
 	border-radius: 2px;
 	/* border: 0px; */
@@ -252,7 +253,11 @@
 .lang_button:hover {
 	background-color:#EEDC83;
 	color: #D33F37;
-	border: 0.67px solid black;
+	/* border: 0.67px  solid #a29349; */
+	/* border-top-color: white;
+  	border-left-color: white;
+  	border-right-color: white;
+ 	 border-bottom-color: white; */
 	}
 
 
@@ -262,9 +267,9 @@
 
 .lang_button.selected {
 	pointer-events: none;
-	color: #222;
+	color: #006837;
 	/* background-color: white; */
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: #EEDC83;
 	border:none;
 	user-select: none;
 	}
