@@ -4,7 +4,7 @@ export const manifest = {
 	assets: new Set([".DS_Store","favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":{"file":"_app/immutable/entry/start.687c5d44.js","imports":["_app/immutable/entry/start.687c5d44.js","_app/immutable/chunks/index.c158a002.js","_app/immutable/chunks/paths.65e4e7a6.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.fd1067d1.js","imports":["_app/immutable/entry/app.fd1067d1.js","_app/immutable/chunks/index.c158a002.js"],"stylesheets":[],"fonts":[]}},
+		client: {"start":{"file":"_app/immutable/entry/start.8da1b786.js","imports":["_app/immutable/entry/start.8da1b786.js","_app/immutable/chunks/index.c158a002.js","_app/immutable/chunks/paths.f1cdc873.js"],"stylesheets":[],"fonts":[]},"app":{"file":"_app/immutable/entry/app.bd1ba6b7.js","imports":["_app/immutable/entry/app.bd1ba6b7.js","_app/immutable/chunks/index.c158a002.js"],"stylesheets":[],"fonts":[]}},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
@@ -132,8 +132,8 @@ export const manifest = {
 				endpoint: null
 			},
 			{
-				id: "/lobis/vistide_1877",
-				pattern: /^\/lobis\/vistide_1877\/?$/,
+				id: "/lobis/vistide-1877",
+				pattern: /^\/lobis\/vistide-1877\/?$/,
 				params: [],
 				page: { layouts: [0], errors: [1], leaf: 17 },
 				endpoint: null

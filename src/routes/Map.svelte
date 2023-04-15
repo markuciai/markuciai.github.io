@@ -49,16 +49,26 @@ onMount(async () => {
 
 @media (max-aspect-ratio: 5/8) and (orientation:portrait) {
     .map_wrapper {
-        width: 99vw;
-        height: 98vw;
+        width: 100vw;
+        height: 100vw;
         margin-left: -19px; /* hacky! */
         z-index: 10;
         position: sticky;
-        top: 0;
+        top: -20px;
         position: -webkit-sticky; /* Safari */
         /* border: 1px solid red; */
         /* background-color: aqua; */
         box-shadow: 0px 30px 50px 10px #006837;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .map_wrapper {
+        margin: 5vw 0 0 0;
+        width: 90vw;
+        /* height: 90vw; */
+        /* border: red solid 1px; */
     }
 }
 

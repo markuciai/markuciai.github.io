@@ -39,7 +39,7 @@ export const dictionary = {
 		"/lobis/suniukai-1883": [14],
 		"/lobis/tvenkiniai_1917": [15],
 		"/lobis/virtuve_1899": [16],
-		"/lobis/vistide_1877": [17]
+		"/lobis/vistide-1877": [17]
 	};
 
 export const hooks = {

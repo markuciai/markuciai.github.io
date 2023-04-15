@@ -95,9 +95,9 @@ English
 <br>
 У слуг много хлопот в саду, но если вы сможете собрать все части этого документа и отнесете его в усадебный дом, то обязательно получите вознаграждение.
 </article>
-<img class="illustration task" src={task}>
+<img class="illustration task saddle" src={task}>
 
-<div class="where-next">
+<div class="where-next saddle-block">
 	Слуги отдадут вам свою часть документа, а взамен вы должны выполнить их просьбу — отнесите новое седло пану Михалу.
 <br><br>
 <span class="highlighted-question">

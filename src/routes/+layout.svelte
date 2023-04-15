@@ -367,7 +367,6 @@
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: "Lora";
-	/* transform: rotate(-0.25deg); */
 }
 
 main {
@@ -411,6 +410,23 @@ footer a {
 		padding: 0px 0;
 	}
 	}
+
+@media (min-width: 1400px) {
+	.map_and_stuff {
+		/* position: absolute; */
+		left: 0;
+		width: 100vw;
+		display: flex;
+		flex: 1;
+		margin: 40px 0 0 -30vw;
+	}
+
+	.legend_section {
+		margin: calc(40px + 5vw) 0 0 40px;
+		min-width: 720px;
+	}
+	}
+
 
 
 </style>
