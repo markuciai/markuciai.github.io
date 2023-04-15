@@ -168,7 +168,7 @@
 		<ul class="legend_ul">
 			<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
 			<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
-			<li class="legend"><img src={icon_6} class="legend_icon">Курятник</li>
+			<li class="legend"><img src={icon_6} class="legend_icon">Птичкник</li>
 			<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
 			<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
 			<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
@@ -283,6 +283,7 @@
 	/* display: grid; */
 	display: flex;
 	flex-wrap: wrap;
+	/* text-align: center; */
 	/* width: clamp(200px, 100vw, 760px); */
 	/* flex-basis: 400px; */
 	flex-grow: 0;
@@ -292,27 +293,33 @@
 	/* flex: initial; */
 	flex: 1 0 0;
 	list-style-type: none;
+	display: block;
 	padding: 0;
 	margin: 0;
 	color: white;
 	/* width: clamp(200px, 100vw, 760px); */
 	width: 400px;
-	margin-left: -20px;
+	margin-left: 0px;
 	}
 
 .legend {
 	/* border: solid #D33F37 2px; */
 	display: block;
+	/* border: #D33F37 1px solid; */
 	/* height: 120px; */
 	/* padding: 20px; */
-	font-size: 34px;
+	font-size: 28px;
 	border-radius: 8px;
 	/* vertical-align: middle; */
-	padding: 40px 0 20px 0;
+	padding: 20px 0 20px 0;
 	/* margin: 0; */
-	margin: 20px 0 20px 0;
-	width: 400px;
+	margin: 40px 0 40px 0;
+	width: 360px;
 	vertical-align: middle;
+	/* transform: translate(0px, 2px); */
+	line-height: 20px;
+	letter-spacing: 1px;
+	font-style: italic;
 	}
 
 .legend_icon {
@@ -322,7 +329,7 @@
 	width: 120px;
 	/* padding-bottom: 20; */
 	/* padding-bottom: 20px; */
-	margin: -100px -10px -40px -10px;
+	margin: -100px 0px -45px -10px;
 	}
 
 .current_location {

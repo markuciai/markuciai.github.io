@@ -35,7 +35,7 @@ onMount(async () => {
 {:else if visited == 6}     <img src={Map_6} width=100%>
 {:else if visited == 7}     <img src={Map_7} width=100%>   
 {:else if visited == 8}     <img src={Map_8} width=100%>
-{:else if visited == 9}     <img src={Map_9} width=100%>   
+{:else if visited == 9}     <img src={Map_9} width=100%>  
 {:else if visited == 10}    <img src={Map_10} width=100%>
 {:else if visited == 11}    <img src={Map_11} width=100%>   
 {:else if visited == 12}    <img src={Map_12} width=100%>
@@ -43,10 +43,23 @@ onMount(async () => {
 {/if}
 </div>
 
+
+
 <style>
+
+@media (max-aspect-ratio: 5/8) and (orientation:portrait) {
     .map_wrapper {
+        width: 99vw;
+        height: 98vw;
+        margin-left: -19px; /* hacky! */
+        z-index: 10;
         position: sticky;
         top: 0;
         position: -webkit-sticky; /* Safari */
+        /* border: 1px solid red; */
+        /* background-color: aqua; */
+        box-shadow: 0px 30px 50px 10px #006837;
     }
+}
+
 </style>
