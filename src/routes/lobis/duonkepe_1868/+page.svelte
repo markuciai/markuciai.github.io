@@ -61,6 +61,7 @@ onMount(async () => {
 
 {#if show_offer}
 <Offer />
+<img class="illustration" src={map_piece}>
 {:else if show_station}
 
 <section>
@@ -70,7 +71,28 @@ English
 
 {:else if language == "RU"}
 
-По-русски
+
+<h1>Пекарня</h1>
+<p class="subh">Septintoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Ух, как жарко в пекарне. Машенька взяла у вас корзинку с яйцами и стала ловко готовить тесто для пирога и ватрушек. 
+</article>
+
+
+<img width=105% src={bakery}>
+<article>
+<br>
+Рядом с печью на ящике с дровами и щепками, среди старых газет для розжига огня, замечаете заветный клочок документа. 
+
+</article>
+<br><br>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Девочка вручила его вам и попросила сходить за водой и полить орхидеи. 
+	<br><br>
+	<span class="highlighted-question">Где можно набрать ведро воды?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -78,7 +100,7 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
+
 <h1>Duonkepė</h1>
 <p class="subh">Septintoji stotelė<br>ieškant Markučių lobio</p>
 <article>

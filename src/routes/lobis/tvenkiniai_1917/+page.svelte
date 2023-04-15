@@ -45,7 +45,7 @@ onMount(async () => {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Пруды – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -62,13 +62,33 @@ onMount(async () => {
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if language == "EN"}
 
 English
 
 {:else if language == "RU"}
 
-По-русски
+<h1>Пруды</h1>
+<p class="subh">Ketvirtoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Отыскать мальчика Тараса было несложно, все свое свободное время он проводит у прудов. Зимой катается на коньках по ледяной глади водоема, а в теплое время купается или мастерит кораблики из деревянных щепок.
+</article>
+
+
+<img width=105% src={waters}>
+<article>
+<br>
+Но сегодня у него важное дело — он должен наловить рыбы для праздничного обеда.
+</article>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Вы отдаете Тарасу удочку и замечаете, что парус у его кораблика сделан из обрывка нужного вам документа. Мальчик соглашается отдать клочок бумаги, но просит вас отнести пойманную рыбу кухарке.
+
+	<br><br>
+	<span class="highlighted-question">Куда нужно отнести рыбу?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -76,7 +96,7 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
+
 <h1>Tvenkiniai</h1>
 <p class="subh">Ketvirtoji stotelė<br>ieškant Markučių lobio</p>
 <article>

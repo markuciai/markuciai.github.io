@@ -45,7 +45,7 @@ onMount(async () => {
 	<title>Cerkvė — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Церковь – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -59,16 +59,37 @@ onMount(async () => {
 
 {#if show_offer}
 <Offer />
+
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if language == "EN"}
 
 English
 
 {:else if language == "RU"}
 
-По-русски
+<h1>Церковь</h1>
+<p class="subh">Dešimtoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Найдите дату — в каком году началось строительство этой домовой церкви?  
+
+</article>
+
+
+<img width=105% src={cerkve}>
+<article>
+	<br>
+	Она была освящена во имя святой великомученицы Варвары. Возле церкви вы нашли еще одну часть документа.
+</article>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Следующий фрагмент вам помогут найти четвероногие друзья семьи Пушкиных.
+	<br><br>
+	<span class="highlighted-question">Кто бегает недалеко от кладбища?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -76,7 +97,7 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
+
 <h1>Cerkvė</h1>
 <p class="subh">Dešimtoji stotelė<br>ieškant Markučių lobio</p>
 <article>

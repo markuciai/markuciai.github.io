@@ -45,7 +45,7 @@ onMount(async () => {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Оранжерея – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -63,13 +63,33 @@ onMount(async () => {
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if language == "EN"}
 
 English
 
 {:else if language == "RU"}
 
-По-русски
+<h1>Оранжерея</h1>
+<p class="subh">Devintoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Вы невероятно догадливы — орхидеи растут в оранжерее.
+</article>
+
+
+<img width=105% src={fruit_garden}>
+<article>
+<br>
+Здесь вы встретили девочку Олю. Вы помогли ей наполнить лейки водой и заметили в кашпо для цветов нужный вам фрагмент документа. Берите его!
+</article>
+<br><br>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Оля сделала красивые букеты и попросила отнести их на на надгробие Григория и Варвары Пушкиных.
+	<br><br>
+	<span class="highlighted-question">Куда нужно отнести цветы?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -77,7 +97,7 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
+
 <h1>Oranžerija</h1>
 <p class="subh">Devintoji stotelė<br>ieškant Markučių lobio</p>
 <article>

@@ -46,7 +46,7 @@ onMount(async () => {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Колодец – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -60,16 +60,38 @@ onMount(async () => {
 
 {#if show_offer}
 <Offer />
+
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if language == "EN"}
 
 English
 
 {:else if language == "RU"}
 
-По-русски
+<h1>Колодец</h1>
+<p class="subh">Aštuntoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Этот колодец был выкопан в 1867 г. во время постройки усадьбы Мельниковых в Маркутье. Каждое утро дворник насосом накачивал воду и она по трубам текла в специальный резервуар в доме.
+
+</article>
+
+
+<img width=105% src={sulinys}>
+<article>
+<br>
+Часть воды подогревали и использовали для умывания и принятия ванны. Да-да, в 19 веке в этом доме уже была ванная комната и туалет. Что-то мы отвлеклись, ведь вам нужно еще набрать воды и полить орхидеи. Рядом с колодцем стоит ведро. Но не торопитесь. Прежде, чем опустить его в колодец, загляните в ведро — видите? На дне белеет клочок бумаги! Взяли его? Да, это то, что вам нужно. 
+</article>
+<br><br><br><br>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Теперь смело набирайте воду и отправляйтесь на поиски орхидей.
+	<br><br>
+	<span class="highlighted-question">Где могут расти орхидеи?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -77,7 +99,6 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
 <h1>Šulinys</h1>
 <p class="subh">Aštuntoji stotelė<br>ieškant Markučių lobio</p>
 <article>

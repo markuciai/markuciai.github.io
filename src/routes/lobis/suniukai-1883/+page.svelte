@@ -46,7 +46,7 @@ onMount(async () => {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Собачки – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -61,16 +61,37 @@ onMount(async () => {
 
 {#if show_offer}
 <Offer />
+
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if language == "EN"}
 
 English
 
 {:else if language == "RU"}
 
-По-русски
+<h1>Собачки</h1>
+<p class="subh">Vienuolitkoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Потомки Фаньки и Бойки играют с шариком от крокета. Непорядок!
+
+</article>
+
+
+<img width=105% src={doggie}>
+<article>
+<br>
+
+</article>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Шар нужно отнести на место. Подбирая с земли шар, вы замечаете часть листа, исписанного знакомым почерком. Отправляйтесь на поиски последнего фрагмента.
+	<br><br>
+	<span class="highlighted-question">Где можно найти игроков в крокет?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -78,7 +99,7 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
+
 <h1>Šuniukai</h1>
 <p class="subh">Vienuolitkoji stotelė<br>ieškant Markučių lobio</p>
 <article>

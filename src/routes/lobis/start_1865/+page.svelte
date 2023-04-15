@@ -69,7 +69,7 @@ onMount(async () => {
 <section>
 {#if language == "EN"}
 
-Lorem
+Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
 {:else if language == "RU"}
 
@@ -89,7 +89,6 @@ Lorem
 
 
 
-
 <div class="where-next">
 	Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
 	<br><br>
@@ -98,15 +97,13 @@ Lorem
 
 
 
-
-
 {:else if language == "LA"}
 
-Latin
+Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 {:else}
 
-LT
+Žaidimo startas: {date_started_h}:{date_started_m}:{date_started_s}
 
 {/if} <!-- Main page Languages-->
 </section>

@@ -46,7 +46,7 @@ onMount(async () => {
 	<title>Stables — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Конюшня – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -71,7 +71,23 @@ English
 
 {:else if language == "RU"}
 
-По-русски
+<img class="illustration" src={map_piece}>
+<h1>Конюшня</h1>
+<p class="subh">Trečioji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Вы легко справились с этой просьбой — передали кучеру седло и рассказали о поисках важного документа. Пан Михал много лет служил в усадьбе Пушкиных в Маркутье, возил Григория и Варвару в город и соседние губернии. 
+
+</article>
+<img width=105% src={stables}>
+<br><br>
+
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Сегодня у конюшни он обнаружил похожий обрывок бумаги, который с удовольствием отдаст вам, если не откажетесь отнести удочку его младшему сыну Тарасу. 
+	<br><br>
+	<span class="highlighted-question">Куда нужно отнести&nbsp;удочку?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -80,7 +96,7 @@ Lorem ipsum dolor sit amet
 {:else} <!-- LT -->
 
 <img class="illustration" src={map_piece}>
-<h1>Arklidės</h1>
+<h1>Конюшня</h1>
 <p class="subh">Trečioji stotelė<br>ieškant Markučių lobio</p>
 <article>
 	Šaunuoliai, jūs lengvai įvykdėt tarnų prašymą – naują balną atidavėt vežikui-vadeliotojui ponui Michalui, kuris ilgą laiką tarnavo pas Puškinus Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.

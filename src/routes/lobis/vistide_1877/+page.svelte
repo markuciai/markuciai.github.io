@@ -64,13 +64,33 @@ onMount(async () => {
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if language == "EN"}
 
 English
 
 {:else if language == "RU"}
 
-По-русски
+<h1>Птичник и ледник</h1>
+<p class="subh">Šeštoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Ванюша увидел вас еще издали и весело замахал руками. Вы отдали ему корм для цыплят и рассказали о своих поисках.
+</article>
+
+
+<img width=105% src={vanyusha}>
+<article>
+<br>
+Мальчик с радостью поможет вам — он видел похожий обрывок бумаги у куста малины рядом с ледником и сейчас же принесет его вам.
+</article>
+<br><br><br><br>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	А вы уж не откажите — отнесите корзинку со свежими яйцами Маше. Пусть она испечет большой пирог для гостей и сладкую ватрушку для Илюши — он сегодня именинник.
+	<br><br>
+	<span class="highlighted-question">Куда нужно отнести корзинку с яйцами?</span>
+</div>
 
 {:else if language == "LA"}
 
@@ -78,7 +98,7 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
+
 <h1>Vištidė ir ledainė</h1>
 <p class="subh">Šeštoji stotelė<br>ieškant Markučių lobio</p>
 <article>

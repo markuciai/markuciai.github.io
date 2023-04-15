@@ -61,16 +61,19 @@ onMount(async () => {
 
 {#if show_offer}
 <Offer />
+
+
 {:else if show_station}
 
-
-{#if language == "EN"}
-
-Lorem
-
-{:else if language == "RU"}
 <section>
 <img class="illustration" src={map_piece}>
+{#if language == "EN"}
+
+English
+
+{:else if language == "RU"}
+
+
 <h1>Крест</h1>
 <p class="subh">Первая остановка<br>в поисках Клада Маркутья</p>
 <article>
@@ -91,51 +94,45 @@ Lorem
 	<span class="highlighted-question">Где можно найти&nbsp;слуг?</span>
 </div>
 
-</section>
 
-<div class="map_section">
-	Теперь у вас есть первая часть карты. Куда дальше?
-</div>
+
+
 
 
 
 {:else if language == "LA"}
 
-Lorem
+Lorem Ipsum Dolor sit amet
 
-{:else}
-
-<section>
-	<img class="illustration" src={map_piece}>
-	<h1>Kryžius</h1>
-	<p class="subh">Pirmoji stotelė<br>ieškant Markučių lobio</p>
-	<article>
-		Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
+{:else} <!-- LT -->
 
 
-	<img width=105% src={entrance}>
-	<article>
-	<br>
-	Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
-	</article>
+
+<h1>Kryžius</h1>
+<p class="subh">Pirmoji stotelė<br>ieškant Markučių lobio</p>
+<article>
+	Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
+
+
+<img width=105% src={entrance}>
+<article>
+<br>
+Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
+</article>
+<br><br>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Kam vertėtų parodyti keistąjį radinį? Galbūt dvaro tarnai galėtų jums&nbsp;padėti?
 	<br><br>
-	<img class="illustration" src={task}>
+	<span class="highlighted-question">Kur reikėtų ieškoti&nbsp;tarnų?</span>
+</div>
 
-	<div class="where-next">
-		Kam vertėtų parodyti keistąjį radinį? Galbūt dvaro tarnai galėtų jums&nbsp;padėti?
-		<br><br>
-		<span class="highlighted-question">Kur reikėtų ieškoti&nbsp;tarnų?</span>
-	</div>
 
+{/if} <!-- Main page Languages-->
 </section>
 
 
-	<div class="map_section">
-		Kur toliau?
-
-	</div>
-
-{/if} <!-- Main page Languages-->
 {:else}
 
 <!-- Stopper-->
