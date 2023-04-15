@@ -221,13 +221,18 @@
 .lang_switch {
 	/* width: 100vw; */
 	/* text-align: center; */
-	text-align: right;
+	/* text-align: right; */
 	/* margin: 5px 25vw 40px 0; */
+	/* position:absolute; */
+	/* right: ; */
+	align-items: center;
+	align-self: center;
+	text-align: center;
 	width: 100%;
 	max-width: 800px;
 	margin: 10px auto;
 	box-sizing: border-box;
-	padding-right: 20px;
+	/* padding-right: 20px; */
 	color: #222;
 	user-select: none;
 	}
