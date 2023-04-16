@@ -54,6 +54,8 @@ a:hover {
 h1 {
 	font-size: 2rem;
 	text-align: center;
+	/* position: sticky;
+	top: 0; */
 }
 
 h2 {
@@ -197,6 +199,8 @@ article {
 	font-size: clamp(24px, 6vw, 32px);
 	transition: 1s;
 	transform: rotate(0.7deg);
+	
+
 }
 
 .where-next.too_early {

@@ -411,6 +411,15 @@ footer a {
 	}
 	}
 
+
+@media (min-width: 950px){
+	.lang_switch {
+		position: absolute;
+		right: 2vw;
+	}
+
+}
+
 @media (min-width: 1400px) {
 	.map_and_stuff {
 		/* position: absolute; */
@@ -426,7 +435,6 @@ footer a {
 		min-width: 720px;
 	}
 	}
-
 
 
 </style>
