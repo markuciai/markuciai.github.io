@@ -46,7 +46,7 @@ onMount(async () => {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Пекарня – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -131,7 +131,7 @@ Prie krosnies dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuro
 {#if language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
 {:else if language == "RU"}
-<Stopper>А зачем вы сюда пришли? </Stopper>
+<Stopper>Из пекарни несёт жаром, но девушка-пекарь слишком занята, чтобы давать вам подсказки.</Stopper>
 {:else if language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}

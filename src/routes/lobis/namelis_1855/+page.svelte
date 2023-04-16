@@ -150,7 +150,7 @@ Latin
 {#if language == "EN"}
 <Stopper>Servants' quarters doors are shut.</Stopper>
 {:else if language == "RU"}
-<Stopper>Двери домика слуг заперты. </Stopper>
+<Stopper>Двери домика слуг заперты.</Stopper>
 {:else if language == "LA"}
 <Stopper>Двери домика слуг заперты. </Stopper>
 {:else}

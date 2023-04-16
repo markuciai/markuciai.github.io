@@ -128,7 +128,7 @@ Dalį vandens šildydavo ir naudojo prausimuisi bei vonios malonumams. Taip, XIX
 {#if language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
 {:else if language == "RU"}
-<Stopper>А зачем вы сюда пришли? </Stopper>
+<Stopper>Наверно, не стоит закидывать в колодец то, что вы несёте.</Stopper>
 {:else if language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}

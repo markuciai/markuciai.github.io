@@ -48,7 +48,7 @@ onMount(async () => {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if language == "RU"}
-	<title> – Клад Маркутья</title>
+	<title>Площадка для крокета – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if language == "LA"}
 	<title> – Markučiai Treasure</title>
@@ -151,7 +151,7 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 {#if language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
 {:else if language == "RU"}
-<Stopper>А зачем вы сюда пришли? </Stopper>
+<Stopper>Вокруг площадки для крокета бегают дети и суетливо ищут пропавший шар.</Stopper>
 {:else if language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}

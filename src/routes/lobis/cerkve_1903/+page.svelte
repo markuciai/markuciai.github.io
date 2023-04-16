@@ -128,7 +128,7 @@ Lorem ipsum dolor sit amet
 {#if language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
 {:else if language == "RU"}
-<Stopper>А зачем вы сюда пришли? </Stopper>
+<Stopper>У церквушки тихо. Небольшое кладбище отдаёт прохладой и спокойствием. </Stopper>
 {:else if language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}

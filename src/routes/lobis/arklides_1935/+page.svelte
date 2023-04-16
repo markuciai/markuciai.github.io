@@ -120,7 +120,7 @@ Lorem ipsum dolor sit amet
 {#if language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
 {:else if language == "RU"}
-<Stopper>А зачем вы сюда пришли? </Stopper>
+<Stopper>Кучер отошёл, только старая лошадь смотрит вам в лицо и фыркает. </Stopper>
 {:else if language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
