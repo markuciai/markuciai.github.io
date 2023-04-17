@@ -1,5 +1,8 @@
 <script>
 import {onMount} from 'svelte';
+import language from '../../stores/language';
+import visited from '../../stores/visited';
+
 
 import Stopper from '../../Stopper.svelte';
 
@@ -8,9 +11,6 @@ import task from '$lib/images/illustrations/bowl.png';
 
 
 const station_id = 0
-let visited = -1
-let language = "LT"
-
 let show_station = true
 
 
@@ -21,25 +21,27 @@ let date_started_m = date_started.getMinutes().toString().padStart(2,"0");
 let date_started_s = date_started.getSeconds().toString().padStart(2,"0");
 
 onMount(async () => { 
-	visited = localStorage.visited
-
-	// not playing → playing
-	if(visited == station_id - 1) {
-		visited = station_id
-		localStorage.visited = visited;
-		localStorage.date_started = date_started;
+	// finished before, resetting completely
+	if (localStorage.finished) {
+		localStorage.clear(); // clears language too
 		window.location.reload();
 	}
 
+	// not playing → playing
+	if($visited == station_id - 1) {
+		$visited = station_id
+		localStorage.date_started = date_started;
+	}
+
+
+
 	// already playing
-	if (visited > station_id) {
+	if ($visited > station_id) {
 		date_started = new Date( Date.parse(localStorage.date_started) );
 		date_started_h = date_started.getHours().toString().padStart(2,"0");
 		date_started_m = date_started.getMinutes().toString().padStart(2,"0");
 		date_started_s = date_started.getSeconds().toString().padStart(2,"0");
 	}
-
-	language = localStorage.language
 });
 
 </script>
@@ -47,13 +49,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if language == "EN"}
+{#if $language == "EN"}
 	<title>Start — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if language == "RU"}
+{:else if $language == "RU"}
 	<title>Старт – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if language == "LA"}
+{:else if $language == "LA"}
 	<title>Start – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -67,11 +69,11 @@ onMount(async () => {
 {#if show_station}
 
 <section>
-{#if language == "EN"}
+{#if $language == "EN"}
 
 Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
-{:else if language == "RU"}
+{:else if $language == "RU"}
 
 <!-- <img class="illustration" src={map_piece}> -->
 <h1>Клад Маркутья</h1>
@@ -97,7 +99,7 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
 
 
-{:else if language == "LA"}
+{:else if $language == "LA"}
 
 Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
@@ -115,11 +117,11 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 {:else}
 <!-- Stopper-->
-{#if language == "EN"}
+{#if $language == "EN"}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
-{:else if language == "RU"}
+{:else if $language == "RU"}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
-{:else if language == "LA"}
+{:else if $language == "LA"}
 <Stopper>Вы уже начали своё путешествие! </Stopper>
 {:else}
 <Stopper>Вы уже начали своё путешествие!</Stopper>

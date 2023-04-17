@@ -1,6 +1,9 @@
 
 <script>
-import {onMount} from 'svelte';
+import { onMount } from 'svelte';
+import language from '../../stores/language';
+import visited from '../../stores/visited';
+
 import Offer from '../Offer.svelte';
 import Stopper from '../../Stopper.svelte';
 
@@ -11,44 +14,35 @@ import bakery from '$lib/images/archival/bakery.jpg';
 
 
 const station_id = 7
-let visited = -1
-let language = "LT"
 
 let show_offer = true
 let show_station = false
 
 
 onMount(async () => { 
-	visited = localStorage.visited;
-
-	if (visited >= 0) {
+	if ($visited >= 0) {
 		show_offer = false
 	}
 
-	if(visited == station_id - 1) {
-		visited = station_id
-		localStorage.visited = visited;
-		window.location.reload();
+	if($visited == station_id - 1) {
+		$visited = station_id
 	}
-	if (visited >= station_id) {
+
+	if ($visited >= station_id) {
 		show_station = true;
 	}
-
-	language = localStorage.language;
-
-	a_thing('success')
 });
 
 </script>
 
 <svelte:head>
-{#if language == "EN"}
+{#if $language == "EN"}
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if language == "RU"}
+{:else if $language == "RU"}
 	<title>Пекарня – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if language == "LA"}
+{:else if $language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -66,11 +60,11 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if language == "EN"}
+{#if $language == "EN"}
 
 English
 
-{:else if language == "RU"}
+{:else if $language == "RU"}
 
 
 <h1>Пекарня</h1>
@@ -95,7 +89,7 @@ English
 	<span class="highlighted-question">Где можно набрать ведро воды?</span>
 </div>
 
-{:else if language == "LA"}
+{:else if $language == "LA"}
 
 Lorem ipsum dolor sit amet
 
@@ -123,16 +117,16 @@ Prie krosnies dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuro
 	<span class="highlighted-question">Kur reikėtų eiti pasemti vandens?</span>
 </div>
 
-{/if} <!-- Station Languages-->
+{/if} <!-- Station $languages-->
 </section>
 
 {:else}
 <!-- Stopper-->
-{#if language == "EN"}
+{#if $language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
-{:else if language == "RU"}
+{:else if $language == "RU"}
 <Stopper>Из пекарни несёт жаром, но девушка-пекарь слишком занята, чтобы давать вам подсказки.</Stopper>
-{:else if language == "LA"}
+{:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Ne ten atejote.</Stopper>

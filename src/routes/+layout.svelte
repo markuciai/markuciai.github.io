@@ -1,11 +1,13 @@
 
 <script>
 	import { onMount } from 'svelte';
+	// import { browser } from "$app/environment";
 	import { fade, blur, fly, slide, scale } from "svelte/transition";
 	import './styles.css';
-	// import { writeable } from "svelte/store";
-	// import Brain from './store.js'
-
+	// import { writable } from "svelte/store";
+	import language from './stores/language.js'
+	import visited from './stores/visited';
+	
 	import icon_0 from '$lib/images/icons/0.png';
 	import icon_1 from '$lib/images/icons/1.png';
 	import icon_2 from '$lib/images/icons/2.png';
@@ -24,80 +26,62 @@
 	import Map from './Map.svelte';
     import Header from './Header.svelte';
 
-
-	let visited = -1;
-	let language = "LT"
-
+	  
+	// let visited = -1;
 	let scroll
 
-	// function increment() {
-	// 	// visited.update(n => n + 1);
-	// 	visited = visited + 1;
-	// 	console.log(visited);
-	// 	localStorage.setItem("visited", visited);
-	// 	console.log( localStorage.getItem("visited") )
-
-	// 	console.log("language:", language);
-	// }
-
-	// function decrement() {
-	// 	// visited.update(n => n - 1);
-	// 	visited = visited - 1;
-	// 	console.log(visited);
-	// 	localStorage.setItem("visited", visited);
-	// 	console.log("language:", language);
-	// }
 
 	function set_language_en() {
-		// language = "EN"; disabled to reduce jiggling, reenable when reactivity returns
-		localStorage.language = "EN"
-		// console.log("language set to:", language);
-		window.location.reload();
-	}
+		$language = "EN";
+		// localStorage.language = $language;
+	};
+
 
 	function set_language_ru() {
-		// language = "RU";
-		localStorage.language = "RU"
-		// console.log("language set to:", language);
-		window.location.reload();
-	}
+		$language = "RU";
+		// localStorage.language = $language;
+	};
+
 
 	function set_language_lt() {
-		// language = "LT";
-		localStorage.language = "LT"
-		// console.log("language set to:", language);
-		window.location.reload();
-	}
+		$language = "LT";
+		// localStorage.language = $language;
+	};
+
 
 	function set_language_la() {
-		// language = "LA";
-		localStorage.language = "LA"
-		// console.log("language set to:", language);
-		window.location.reload();
-	}
+		$language = "LA";
+		// localStorage.language = $language;
+	};
 
 	
 	function empty_storage() {
 		localStorage.clear();
 		window.location.reload();
-	}
+	};
 
 
 	onMount(async () => { 
+		console.log(localStorage.visited)
+		
+		// console.log("Bazinga");
+		// console.log("brain set to:", brain);
+		// $brain = "set from layout";
+		// console.log("reactive brain set to:", bazinger, $brain);
 
 		if(localStorage.getItem("visited") === null) {
-			localStorage.setItem("visited", visited);
-			window.location.reload();
+			localStorage.setItem("visited", $visited);
+			// window.location.reload();
 }
 
 		if(localStorage.getItem("language") === null) {
-			language = localStorage.language
+			$language = localStorage.language
 }
 		
-		visited = Number(localStorage.visited);
-		language = localStorage.language
+		$visited = Number(localStorage.visited);
+		$language = localStorage.language
 		// Brain(0) = language
-		console.log("Starting up. Language: ", language, " || biggest visited:", visited);
+		console.log("Starting up. Language: ", $language, " || biggest visited:", $visited);
 	});
 
 </script>
@@ -125,32 +109,18 @@
 
 
 
-<div class="lang_switch" >
+<div class="lang_switch" in:fade out:fade>
 <button on:click={empty_storage} class="lang_button">↻</button> |
 
-{visited} / 12 <!-- for debug only..? --> | 
+{$visited} / 12 <!-- for debug only..? --> | 
 
-{#if language == "EN"}
-<button on:click={set_language_en} class="lang_button selected">E&#8239N</button> |
-<button on:click={set_language_ru} class="lang_button">R&#8239U</button> |
-<button on:click={set_language_lt} class="lang_button">L&#8239T</button> |
-<button on:click={set_language_la} class="lang_button">L&#8239A</button>
-{:else if language == "RU"}
-<button on:click={set_language_en} class="lang_button">E&#8239N</button> |
-<button on:click={set_language_ru} class="lang_button selected">R&#8239U</button> |
-<button on:click={set_language_lt} class="lang_button">L&#8239T</button> |
-<button on:click={set_language_la} class="lang_button">L&#8239A</button>
-{:else if language == "LA"}
-<button on:click={set_language_en} class="lang_button">E&#8239N</button> |
-<button on:click={set_language_ru} class="lang_button">R&#8239U</button> |
-<button on:click={set_language_lt} class="lang_button">L&#8239T</button> |
-<button on:click={set_language_la} class="lang_button selected">L&#8239A</button>
-{:else}
-<button on:click={set_language_en} class="lang_button">E&#8239N</button> |
-<button on:click={set_language_ru} class="lang_button">R&#8239U</button> |
-<button on:click={set_language_lt} class="lang_button selected">L&#8239T</button> |
-<button on:click={set_language_la} class="lang_button">L&#8239A</button>
-{/if}
+<button on:click={set_language_en} class="lang_button" class:selected={$language == "EN"}>E&#8239N</button> |
+<button on:click={set_language_ru} class="lang_button" class:selected={$language == "RU"}>R&#8239U</button> |
+<button on:click={set_language_lt} class="lang_button" class:selected={$language == "LT"}>L&#8239T</button> |
+<button on:click={set_language_la} class="lang_button" class:selected={$language == "LA"}>L&#8239A</button>
+
+
+
 </div>
 
 
@@ -162,10 +132,10 @@
 	<div class="map_and_stuff" >
 	<Map />
 	<div class="legend_section">
-	{#if language == "RU"}
+	{#if $language == "RU"}
 		<ul class="legend_ul">
-			<li class="legend"><img src={icon_2} class="legend_icon" >Домик слуг</li>
-			<li class="legend"><img src={icon_8} class="legend_icon">Колодец</li>
+			<li class="legend" class:current_location={$visited == "0"} ><img src={icon_2} class="legend_icon">Домик слуг</li>
+			<li class="legend" class:current_location={$visited == "1"}><img src={icon_8} class="legend_icon">Колодец</li>
 			<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
 			<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
 			<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
@@ -267,6 +237,8 @@
 	border: 0.67px solid #EEDC83;
 	cursor: pointer;
 	user-select: none;
+
+	transition: 0.3s;
 	}
 
 
@@ -278,6 +250,7 @@
   	border-left-color: white;
   	border-right-color: white;
  	 border-bottom-color: white; */
+	transition: 0.05s;
 	}
 
 
@@ -296,6 +269,7 @@
 	background-color: #D33F37;
 	border:none;
 	user-select: none;
+	transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 
@@ -328,6 +302,7 @@
 .legend {
 	/* border: solid #D33F37 2px; */
 	display: block;
+	box-sizing: border-box;
 	/* border: #D33F37 1px solid; */
 	/* height: 120px; */
 	/* padding: 20px; */
@@ -359,7 +334,8 @@
 .current_location {
 	/* background-color: #D33F37; */
 	border: dashed 2px white;
-	background-color: #D33F37;
+	/* padding: 18px -2px 18px -2px; */
+	/* background-color: #D33F37; */
 	color: white;
 	}
 

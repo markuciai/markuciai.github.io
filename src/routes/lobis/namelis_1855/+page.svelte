@@ -1,5 +1,8 @@
 <script>
 import { onMount } from 'svelte';
+import language from '../../stores/language';
+import visited from '../../stores/visited';
+
 import Offer from '../Offer.svelte';
 import Stopper from '../../Stopper.svelte';
 
@@ -11,32 +14,23 @@ import servants from '$lib/images/archival/servants.jpg';
 
 
 const station_id = 2
-let visited = -1
-let language = "LT"
 
 let show_offer = true
 let show_station = false
 
 
 onMount(async () => { 
-	visited = localStorage.visited;
-
-	if (visited >= 0) {
+	if ($visited >= 0) {
 		show_offer = false
 	}
 
-	if(visited == station_id - 1) {
-		visited = station_id
-		localStorage.visited = visited;
-		window.location.reload();
+	if($visited == station_id - 1) {
+		$visited = station_id
 	}
-	if (visited >= station_id) {
+
+	if ($visited >= station_id) {
 		show_station = true;
 	}
-
-	language = localStorage.language;
-
-	a_thing('success')
 });
 
 </script>
@@ -48,13 +42,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if language == "EN"}
+{#if $language == "EN"}
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if language == "RU"}
+{:else if $language == "RU"}
 	<title>Домик слуг – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if language == "LA"}
+{:else if $language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -68,15 +62,15 @@ onMount(async () => {
 {#if show_offer}
 <Offer />
 {:else if show_station}
-<!-- Station languages -->
+<!-- Station $languages -->
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if language == "EN"}
+{#if $language == "EN"}
 
 English
 
-{:else if language == "RU"}
+{:else if $language == "RU"}
 
 
 <h1>Домик слуг</h1>
@@ -105,7 +99,7 @@ English
 </span>
 </div>
 
-{:else if language == "LA"}
+{:else if $language == "LA"}
 
 Latin
 
@@ -142,16 +136,16 @@ Latin
 
 
 
-{/if} <!-- Main page Languages -->
+{/if} <!-- Main page $languages -->
 </section>
 {:else}
 
 <!-- Stopper-->
-{#if language == "EN"}
+{#if $language == "EN"}
 <Stopper>Servants' quarters doors are shut.</Stopper>
-{:else if language == "RU"}
+{:else if $language == "RU"}
 <Stopper>Двери домика слуг заперты.</Stopper>
-{:else if language == "LA"}
+{:else if $language == "LA"}
 <Stopper>Двери домика слуг заперты. </Stopper>
 {:else}
 <Stopper>Tarnu namelio durys užrakintos.</Stopper>

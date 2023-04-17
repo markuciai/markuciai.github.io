@@ -1,5 +1,8 @@
 <script>
 import { onMount } from 'svelte';
+import language from '../../stores/language';
+import visited from '../../stores/visited';
+
 import Offer from '../Offer.svelte';
 import Stopper from '../../Stopper.svelte';
 
@@ -10,45 +13,36 @@ import stables from '$lib/images/archival/stables.jpg';
 
 
 const station_id = 3
-let visited = -1
-let language = "LT"
 
 let show_offer = true
 let show_station = false
 
 
 onMount(async () => { 
-	visited = localStorage.visited;
-
-	if (visited >= 0) {
+	if ($visited >= 0) {
 		show_offer = false
 	}
 
-	if(visited == station_id - 1) {
-		visited = station_id
-		localStorage.visited = visited;
-		window.location.reload();
+	if($visited == station_id - 1) {
+		$visited = station_id
 	}
-	if (visited >= station_id) {
+
+	if ($visited >= station_id) {
 		show_station = true;
 	}
-
-	language = localStorage.language;
-
-	a_thing('success')
 });
 
 </script>
 
 
 <svelte:head>
-{#if language == "EN"}
+{#if $language == "EN"}
 	<title>Stables — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if language == "RU"}
+{:else if $language == "RU"}
 	<title>Конюшня – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if language == "LA"}
+{:else if $language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -65,11 +59,11 @@ onMount(async () => {
 {:else if show_station}
 
 <section>
-{#if language == "EN"}
+{#if $language == "EN"}
 
 English
 
-{:else if language == "RU"}
+{:else if $language == "RU"}
 
 <img class="illustration" src={map_piece}>
 <h1>Конюшня</h1>
@@ -89,7 +83,7 @@ English
 	<span class="highlighted-question">Куда нужно отнести&nbsp;удочку?</span>
 </div>
 
-{:else if language == "LA"}
+{:else if $language == "LA"}
 
 Lorem ipsum dolor sit amet
 
@@ -117,11 +111,11 @@ Lorem ipsum dolor sit amet
 
 {:else}
 <!-- Stopper-->
-{#if language == "EN"}
+{#if $language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
-{:else if language == "RU"}
+{:else if $language == "RU"}
 <Stopper>Кучер отошёл, только старая лошадь смотрит вам в лицо и фыркает. </Stopper>
-{:else if language == "LA"}
+{:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Ne ten atejote.</Stopper>

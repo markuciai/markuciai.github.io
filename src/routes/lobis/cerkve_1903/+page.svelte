@@ -1,5 +1,8 @@
 <script>
-import {onMount} from 'svelte';
+import { onMount } from 'svelte';
+import language from '../../stores/language';
+import visited from '../../stores/visited';
+
 import Offer from '../Offer.svelte';
 import Stopper from '../../Stopper.svelte';
 
@@ -10,44 +13,35 @@ import cerkve from '$lib/images/archival/cerkve.jpg';
 
 
 const station_id = 10
-let visited = -1
-let language = "LT"
 
 let show_offer = true
 let show_station = false
 
 
 onMount(async () => { 
-	visited = localStorage.visited;
-
-	if (visited >= 0) {
+	if ($visited >= 0) {
 		show_offer = false
 	}
 
-	if(visited == station_id - 1) {
-		visited = station_id
-		localStorage.visited = visited;
-		window.location.reload();
+	if($visited == station_id - 1) {
+		$visited = station_id
 	}
-	if (visited >= station_id) {
+
+	if ($visited >= station_id) {
 		show_station = true;
 	}
-
-	language = localStorage.language;
-
-	a_thing('success')
 });
 
 </script>
 
 <svelte:head>
-{#if language == "EN"}
+{#if $language == "EN"}
 	<title>Cerkvė — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if language == "RU"}
+{:else if $language == "RU"}
 	<title>Церковь – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if language == "LA"}
+{:else if $language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -64,11 +58,11 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if language == "EN"}
+{#if $language == "EN"}
 
 English
 
-{:else if language == "RU"}
+{:else if $language == "RU"}
 
 <h1>Церковь</h1>
 <p class="subh">Dešimtoji stotelė<br>ieškant Markučių lobio</p>
@@ -91,7 +85,7 @@ English
 	<span class="highlighted-question">Кто бегает недалеко от кладбища?</span>
 </div>
 
-{:else if language == "LA"}
+{:else if $language == "LA"}
 
 Lorem ipsum dolor sit amet
 
@@ -125,11 +119,11 @@ Lorem ipsum dolor sit amet
 
 {:else}
 <!-- Stopper-->
-{#if language == "EN"}
+{#if $language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
-{:else if language == "RU"}
+{:else if $language == "RU"}
 <Stopper>У церквушки тихо. Небольшое кладбище отдаёт прохладой и спокойствием. </Stopper>
-{:else if language == "LA"}
+{:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Ne ten atejote.</Stopper>

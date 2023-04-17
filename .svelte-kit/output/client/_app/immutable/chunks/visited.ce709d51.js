@@ -1,0 +1,1 @@
+import{w as e}from"./index.8ff6998b.js";const l=e(localStorage.language||"LT");l.subscribe(a=>localStorage.language=a);const o=e(localStorage.visited||-1);o.subscribe(a=>localStorage.visited=a);export{l,o as v};

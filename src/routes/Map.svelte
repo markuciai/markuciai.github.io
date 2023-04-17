@@ -1,6 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
-    
+// import { onMount } from 'svelte';
+import visited from './stores/visited';   
+
 import Map_0 from '$lib/images/map/0.png';
 import Map_1 from '$lib/images/map/1.png';
 import Map_2 from '$lib/images/map/2.png';
@@ -16,31 +17,27 @@ import Map_11 from '$lib/images/map/11.png';
 import Map_12 from '$lib/images/map/12.png';
 
 
-let visited = 0
 
 let scroll
 
-onMount(async () => { 
-    visited = Number(localStorage.getItem("visited"));
-});
 
 </script>
 
 <svelte:window bind:scrollY={scroll} />
 <br><br>
 <div class="map_wrapper">
-{#if visited == 1}          <img src={Map_1} width=100%>    
-{:else if visited == 2}     <img src={Map_2} width=100%>
-{:else if visited == 3}     <img src={Map_3} width=100%>   
-{:else if visited == 4}     <img src={Map_4} width=100%>
-{:else if visited == 5}     <img src={Map_5} width=100%>   
-{:else if visited == 6}     <img src={Map_6} width=100%>
-{:else if visited == 7}     <img src={Map_7} width=100%>   
-{:else if visited == 8}     <img src={Map_8} width=100%>
-{:else if visited == 9}     <img src={Map_9} width=100%>  
-{:else if visited == 10}    <img src={Map_10} width=100%>
-{:else if visited == 11}    <img src={Map_11} width=100%>   
-{:else if visited == 12}    <img src={Map_12} width=100%>
+{#if $visited == 1}          <img src={Map_1} width=100%>    
+{:else if $visited == 2}     <img src={Map_2} width=100%>
+{:else if $visited == 3}     <img src={Map_3} width=100%>   
+{:else if $visited == 4}     <img src={Map_4} width=100%>
+{:else if $visited == 5}     <img src={Map_5} width=100%>   
+{:else if $visited == 6}     <img src={Map_6} width=100%>
+{:else if $visited == 7}     <img src={Map_7} width=100%>   
+{:else if $visited == 8}     <img src={Map_8} width=100%>
+{:else if $visited == 9}     <img src={Map_9} width=100%>  
+{:else if $visited == 10}    <img src={Map_10} width=100%>
+{:else if $visited == 11}    <img src={Map_11} width=100%>   
+{:else if $visited == 12}    <img src={Map_12} width=100%>
 {:else}                     <img src={Map_0} width=100%>
 {/if}
 </div>

@@ -1,4 +1,5 @@
-import { c as create_ssr_component, b as add_attribute, e as escape, v as validate_component } from "../../chunks/index.js";
+import { c as create_ssr_component, a as subscribe, b as add_attribute, e as escape, v as validate_component } from "../../chunks/index2.js";
+import { v as visited, l as language } from "../../chunks/visited.js";
 const styles = "";
 const icon_0 = "/_app/immutable/assets/0.6548b019.png";
 const icon_1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAADyCAYAAAB3aJikAAAACXBIWXMAAAsSAAALEgHS3X78AAAE7UlEQVR4nO3d3U0jZxiG4ZeIc9YVxJILWDoIHYQOQjpIAZbiAxewJWwH2RKgA28BlkwFZitwDmwUSwnK7ozHn+fhuiTE8ud9hHQLD2PGV7vdroBx+6n1AKA/IUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUMAIUOA69YD6G+7Xt5V1R9V9et/fPhbVa2q6vHwejWZzTfn2sZ5XO12u9Yb6GG7Xt5X1V8/+GXPVfWlqh4ns/mX06/i3IQ8ctv1clNVP/e4ieequp/M5qvTLKIFx8jj1yfi169/3K6X0xNsoREhU1V1U1WL1iPoTsi8um89gO6EzKsbd6/HS8gcm7YeQDdChgBChgBChgBChgBChgBChgBCHrHtevmh9QYug5DH7bb1AC6DkCGAkCGAkCGAkDk2bT2AboTMsWnrAXQjZAggZAgg5HHzgBCqSshj5wEhVJWQIYKQIYAL1De0XS9vq99x7kNV/XaaNVVV9VT7p5b5UXdvvH9zeHn1UvunranJbN7l/+ENQh7Y4S+UXo9lHw7//ths0GV5rqrPk9l80XrI2Al5QIeIN7W/ADxv+30ym39uPWLMHCMPa1Ei/h4ujt+TkIf10HrASDgf3pOQB3L4RZafxpyFkIdz13oA74eQhzNtPYD3Q8jD8fBJzkbIEEDIw/ml9QDeDyFzCRyG9CRkLoHTdD0JmYtwOO9OR0LmUnh0Vw9CHoDnZOpk2nrAmAmZSzFtPWDMhDyAyWz+0noD74uQIYCQIYCQIYCQuRSr1gPGTMjDeWo9YGSE3IOQh/PYesBIfKv9xfc2rYeM2XXrAcE+1f7c6PTw9kvt436czOb/+9PnO695vajx/JXV19p/D6r++V6sqmrldF1/Loc7Ytv1clFVf57wJp8ms/ndCW+PM3HXGgIIGQIIGQIIGQIIedzuWg/gMggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAggZAgiZY7etB9CNkDl203oA3QgZAggZAggZAgiZY19bD6Cb69YD6OVTVS3e+NiH+vdvoW8P7z/+nI9Hb29ONYzzutrtdq03AD25aw0BhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwBhAwB/gbtGnhF/z84KAAAAABJRU5ErkJggg==";
@@ -14,69 +15,105 @@ const icon_10 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAADyCAYAAAB3a
 const icon_11 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAADyCAYAAAB3aJikAAAACXBIWXMAAAsSAAALEgHS3X78AAAK4UlEQVR4nO3d4W3bSBrG8SeH++6oglWgAuIOVh3EV0G0FawLELAOwO/xVhClgnMqCFPBWQUQK1dAqwLfB45ixZbEIUVyOO/8f4BhJ6aoF4Yfz3A4M3zz9PQkAHH7V+gCAJyPIAMGEGTAAIIMGECQAQMIMmAAQQYMIMiAAQQZMIAgAwYQZMAAggwYQJABAwgyYABBBgwgyIABBBkwgCADBhBkwACCDBhAkAEDCDJgAEEGDCDIgAEEGTCAIAMGEGTAAIIMGECQAQMIMmAAQQYMIMiAAQQZMIAgAwYQZMAAggwYQJABAwgyYABBBgwgyIABBBkwgCADBhBkwACCDBhAkAEDCDJgAEEGDCDIgAEEGTCAIAMGEGTAAIIMGECQAQMIMmAAQQYM+HfoAhCPssjeSlpIupvMlpuw1WAfLTK8lEV2I2kj6bOkacBScAAtMmqVRbaS9DF0HTiOFhknlUV2K0I8egQZR5VFNpf0Z+g6UI8g45RV6ALghyDjoLLIFpJ+C10H/BBkHHMTugD4e/P09BS6BoyMa42/nDjkD/d5+uL/7yez5V0fNeE0goxXyiK7l/S+5csfJF1NZsv7DktCDYKMX5RFdinpf2eeZitpTpiHwzUyXrru4BwXknI3pRMDIMj4yQWvq8kfF+rmjwI8EGTsW3R8vquOz4cjCDL2dd2Cth0wQ0MMdkHSz+mY33s49aea7+e7LyazZX78MJxCkCFpdCucfki6dx93k9nyMXA9o0eQsRvkKkPXccI3Sbe02MdxjQyp+0Gurn2Q9L0ssjtuaR1GkCGNP8g7H8SKrIPoWieuLLKppH9C19HQO/YM+xUtMmKctDENXcDYEGTEOGljE7qAsSHICXMLJGLbPOCBbvVrBDlti9AFtMB65wMIctpi7FYT5AMIcqIi7VbjCIKcrhhbYxxBkNMVZZCZpnkYQU6QmwTCEkNDCHKa5qELaGkduoCxIshpmocuoCVGrI8gyGmahy6ghQdJt6GLGCuCnBh3fRzbbaetqr2y2WDgCJ6PnJ55j+d+UDUP+lLVLpovbVV1j3f7XV9J+r3mnGtJC/bIPo0gp+eyp/NuJV1OZstHt/j/yn28VRXc/MDjZG7dxJRrd+x++H9IWk1my1VP9ZrCeuTEnPk4mFN+TGbLeQ/nhQeukdPD/WODCHJCXDe2L7+zn1Y4BDktfQZZinO3ERMIclqmPZ//mlY5DIKclr5bZB7cFghBTssQrSWtcgAEOS19t8hS1SozlXJgBDkth2Zb9eGjmwqKgRDkRAQI1s3A75c0gpyO6cDvR6s8IIKcjmmA97wJ8J5JIsjpmAZ4zyj3BYsRQU7HECPWL12URTYP8L7JIcjpCHVvdx7ofZNCkNNRt4C/L/NA75sUgpyAnlc91Qn1ByQpBDkNIYMspmz2jyCnIWiQR/D+5hHkNHAbyDiCbNxItr+la90zgmzfInQBomvdO4JsmBtkYqF/AgiybbcabukiAiLIRpVFtpD0MXQdziZ0AdbxpAmDyiJbaTwhlghy7wiyIe6aeCXpQ+BSMDCCbIQLcS6eJJEkrpENcHOpNyLEySLIkXMhzjXu0WkeidoznsYYsUhCrMls+SZ0DdbRIkcqlhBjGAQ5QpGFeBu6gBQQ5MjsjU7HEGKJ6+NBEOSIRBhiDIQgR4L7xDiFIMfjVnGGOA9dQAoIcgRGOHcaI0OQR25kq5ja2IQuIAUEecTcUxq+hK7jTJvQBaSAII+Uu1d8F7qODmxCF5ACpmiOkBuhvlf4TfPOxvTMYdAij8zebaboQyxpHbqAVBDk8Yn1NtMhm9AFpIIgj0hZZDeKe4T6JaZnDoQgj0RZZFeS/gpdR8fy0AWkgiCPgBuhXoWuowe0yAMhyIG5wa07jXshRJuliA+T2fKx80pwEEEO707jHqFeq90jX/KO68AJBDkgN7g19geBryaz5UbSt4avy7svBccQ5EDc9MsYBrdy97npExXz2iPQGYIcwN518dg9TGbL3YDVtMHr1q4Vx0DYoL4hF8IrVb/Y+WS2zFucZuyDWzv53tdNruNX3ZaBOrTIDZRFdq1qttIXVd3i726ZYZNz3Gj818U7d9LPy4DGr8NwCLKHssjelkWWS/qs1y3pF7fw3+c8l4rjungnd5/nDV5DtzoAglxjbxHDqVb0owtpnVUXNQ1kvXcfuMntp9s+isFpBPmELje8c13qmBZDrPa+bhJkutUBEOQjGob4697o7qFzTRVXl3orF2RXu+9A1zdmc4VBkI/zXU7492S2XNQcszq7mmHdtuxWr3qoBR64/XSAG52uW064lbSYzJYnu5JuVVMso9RSdW18s/dv3yBv634W6A8t8guuS31Tc9ha0tzzFzemwZ+1Xo9QTz1fS4gDIsiv3ej0ZI2tpKtT18Q7boBrzAsi9v2t6o/Ty2vcqefr806rQSN0rfe41nhRc9i1z31Sd67rDsrq21dJNx3c+6VFDogg/2qh063xj8lsufI813XNuUJaqxqYWnU0yrxmtDosgvyrRc33m1zvjrE1/qTnZYldYieQwLhGdlxX+NTtJu9RWTf/eoyt8bWaL0f0senhnGiAID+b13y/SaszxtZYqv645J7TSXfynmpBhwjys7pf7tznJC4kY56KeSEmbphDkLs31tZ433s3UcUH178RIMjP5jXf9+2O+gYkNN86fUaj52fUgQ4QZH/zugPcAvwxDnId4vWHyXMHlDa7bKJDBPlZXRfywmM3kFhaY6nZdXzdw9guGg6goWME+ZlPF/LG3aY6Zt5RLUN4aHDsxuOYebsy0AWC/Cz3OOY3HRnx9bgPPTZNBrFyj2MW7cpAFwjyM99f7A9lkd27Bff7YutaNpkbnXsc8/7AzwQDefP09BS6htEoi+xO0ocGL/mqKhCPqlqkWB6JupU0bTI/uiyyR9UP5H16sZYZA6FF/lXTtcMfJf1X0nfFE2Kp2hCh6SKH3OOYv2iVw6BFfsFtexvTjh5N/dFgBddPbsT+i8ehu/2+ckn3bI07DFrk1xZq9xjRGLQKsZN7Hnch6U9VPZV/yiLLa0b60QFa5APcxI7voevo0Q/3OVd1fX+vqvU82d0ui+xe7Ubmv3psUIgzEOQjXFfyVvHM1OrCWtX188ERfLcp4eeW535HN7s/dK2PcF3QuZpNnIjde53eeHB1xrnnZ7wWNQjyCa5lulS1s0Yqjl7Puq530wee70xbvg4eCHKNyWz56O6NvlO106TVgbCduttSbbf3ZTlkj7hGbsFdP1+p2eSRWPzHY9P9jZpt87uezJaxzXyLCkE+k1ugP3cfoeZab1Xf4l2qfuDu78ls2cnGCO6W06WkR589wHEegtwxd+vqUtW15tz9d9sJJmtVXd3dLSK5z49qGRA382q6V6Pc+e4YVY4XQR7YXpAOqb2XCxxCkAEDGLUGDCDIgAEEGTCAIAMGEGTAAIIMGECQAQMIMmAAQQYMIMiAAQQZMIAgAwYQZMAAggwYQJABAwgyYABBBgwgyIABBBkwgCADBhBkwACCDBhAkAEDCDJgAEEGDCDIgAEEGTCAIAMGEGTAAIIMGECQAQMIMmAAQQYMIMiAAQQZMIAgAwYQZMAAggwYQJABAwgyYABBBgwgyIABBBkwgCADBhBkwACCDBhAkAEDCDJgAEEGDCDIgAEEGTCAIAMGEGTAAIIMGECQAQMIMmAAQQYMIMiAAQQZMIAgAwYQZMCA/wPW/KATlMInlgAAAABJRU5ErkJggg==";
 const icon_12 = "data:image/png;base64,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";
 const Map_0 = "/_app/immutable/assets/0.52a5cc0d.png";
+const Map_1 = "/_app/immutable/assets/1.8da3bc18.png";
+const Map_2 = "/_app/immutable/assets/2.43edfaa3.png";
+const Map_3 = "/_app/immutable/assets/3.d891191f.png";
+const Map_4 = "/_app/immutable/assets/4.938c5b3e.png";
+const Map_5 = "/_app/immutable/assets/5.d6dd650a.png";
+const Map_6 = "/_app/immutable/assets/6.f716bcc3.png";
+const Map_7 = "/_app/immutable/assets/7.cd69fecc.png";
+const Map_8 = "/_app/immutable/assets/8.a1b196e2.png";
+const Map_9 = "/_app/immutable/assets/9.140d737d.png";
+const Map_10 = "/_app/immutable/assets/10.3668d023.png";
+const Map_11 = "/_app/immutable/assets/11.faf951fd.png";
+const Map_12 = "/_app/immutable/assets/12.dc59851b.png";
 const Map_svelte_svelte_type_style_lang = "";
 const css$1 = {
   code: "@media(max-aspect-ratio: 5/8) and (orientation:portrait){.map_wrapper.svelte-fk67od{width:100vw;height:100vw;margin-left:-19px;z-index:10;position:sticky;top:-20px;position:-webkit-sticky;box-shadow:0px 30px 50px 10px #006837}}@media(min-width: 1400px){.map_wrapper.svelte-fk67od{margin:5vw 0 0 0;width:90vw}}",
   map: null
 };
 const Map = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $visited, $$unsubscribe_visited;
+  $$unsubscribe_visited = subscribe(visited, (value) => $visited = value);
   $$result.css.add(css$1);
-  return `<br><br>
-<div class="map_wrapper svelte-fk67od">${`${`${`${`${`${`${`${`${`${`${`${`<img${add_attribute("src", Map_0, 0)} width="100%">`}`}`}`}`}`}`}`}`}`}`}`}
+  $$unsubscribe_visited();
+  return `
+<br><br>
+<div class="map_wrapper svelte-fk67od">${$visited == 1 ? `<img${add_attribute("src", Map_1, 0)} width="100%">` : `${$visited == 2 ? `<img${add_attribute("src", Map_2, 0)} width="100%">` : `${$visited == 3 ? `<img${add_attribute("src", Map_3, 0)} width="100%">` : `${$visited == 4 ? `<img${add_attribute("src", Map_4, 0)} width="100%">` : `${$visited == 5 ? `<img${add_attribute("src", Map_5, 0)} width="100%">` : `${$visited == 6 ? `<img${add_attribute("src", Map_6, 0)} width="100%">` : `${$visited == 7 ? `<img${add_attribute("src", Map_7, 0)} width="100%">` : `${$visited == 8 ? `<img${add_attribute("src", Map_8, 0)} width="100%">` : `${$visited == 9 ? `<img${add_attribute("src", Map_9, 0)} width="100%">` : `${$visited == 10 ? `<img${add_attribute("src", Map_10, 0)} width="100%">` : `${$visited == 11 ? `<img${add_attribute("src", Map_11, 0)} width="100%">` : `${$visited == 12 ? `<img${add_attribute("src", Map_12, 0)} width="100%">` : `<img${add_attribute("src", Map_0, 0)} width="100%">`}`}`}`}`}`}`}`}`}`}`}`}
 </div>`;
 });
 const Header_svelte_svelte_type_style_lang = "";
 const _layout_svelte_svelte_type_style_lang = "";
 const css = {
-  code: '.lang_switch.svelte-1sw17wk.svelte-1sw17wk{align-items:center;align-self:center;text-align:right;width:100%;max-width:800px;margin:10px auto;box-sizing:border-box;padding-right:20px;color:#222;user-select:none}.lang_button.svelte-1sw17wk.svelte-1sw17wk{-webkit-appearance:none;-moz-appearance:none;appearance:none;box-sizing:border-box;text-decoration:none;text-align:center;font-size:14px;line-height:20px;font-weight:600;border:none;background-color:rgba(255, 255, 255, 0);width:40px;height:26px;margin:5px;border-radius:3px;color:#EEDC83;border:0.67px solid #EEDC83;cursor:pointer;user-select:none}.lang_button.svelte-1sw17wk.svelte-1sw17wk:hover{background-color:#EEDC83;color:#D33F37}.lang_button.svelte-1sw17wk.svelte-1sw17wk:active{background-color:#EEDC83}.lang_button.selected.svelte-1sw17wk.svelte-1sw17wk{pointer-events:none;color:#006837;color:#EEDC83;background-color:#D33F37;border:none;user-select:none}.legend_section.svelte-1sw17wk.svelte-1sw17wk{display:flex;flex-wrap:wrap;flex-grow:0}.legend_ul.svelte-1sw17wk.svelte-1sw17wk{flex:1 0 0;list-style-type:none;display:block;padding:0;margin:0;color:white;color:#EEDC83;width:400px;margin-left:0px}.legend.svelte-1sw17wk.svelte-1sw17wk{display:block;font-size:28px;border-radius:8px;padding:20px 0 20px 0;margin:40px 0 40px 0;width:360px;vertical-align:middle;line-height:20px;letter-spacing:1px;font-style:italic;font-weight:500}.legend_icon.svelte-1sw17wk.svelte-1sw17wk{position:relative;left:4px;width:120px;margin:-100px 0px -45px -10px}.app.svelte-1sw17wk.svelte-1sw17wk{display:flex;flex-direction:column;min-height:100vh;font-family:"Lora"}main.svelte-1sw17wk.svelte-1sw17wk{flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-1sw17wk.svelte-1sw17wk{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px}footer.svelte-1sw17wk a.svelte-1sw17wk{font-weight:bold}@media(min-width: 480px){footer.svelte-1sw17wk.svelte-1sw17wk{padding:0px 0}}@media(min-width: 950px){.lang_switch.svelte-1sw17wk.svelte-1sw17wk{position:absolute;right:2vw}}@media(min-width: 1400px){.map_and_stuff.svelte-1sw17wk.svelte-1sw17wk{left:0;width:100vw;display:flex;flex:1;margin:40px 0 0 -30vw}.legend_section.svelte-1sw17wk.svelte-1sw17wk{margin:calc(40px + 5vw) 0 0 40px;min-width:720px}}',
+  code: '.lang_switch.svelte-40f4ib.svelte-40f4ib{align-items:center;align-self:center;text-align:right;width:100%;max-width:800px;margin:10px auto;box-sizing:border-box;padding-right:20px;color:#222;user-select:none}.lang_button.svelte-40f4ib.svelte-40f4ib{-webkit-appearance:none;-moz-appearance:none;appearance:none;box-sizing:border-box;text-decoration:none;text-align:center;font-size:14px;line-height:20px;font-weight:600;border:none;background-color:rgba(255, 255, 255, 0);width:40px;height:26px;margin:5px;border-radius:3px;color:#EEDC83;border:0.67px solid #EEDC83;cursor:pointer;user-select:none;transition:0.3s}.lang_button.svelte-40f4ib.svelte-40f4ib:hover{background-color:#EEDC83;color:#D33F37;transition:0.05s}.lang_button.svelte-40f4ib.svelte-40f4ib:active{background-color:#EEDC83}.lang_button.selected.svelte-40f4ib.svelte-40f4ib{pointer-events:none;color:#006837;color:#EEDC83;background-color:#D33F37;border:none;user-select:none;transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1)}.legend_section.svelte-40f4ib.svelte-40f4ib{display:flex;flex-wrap:wrap;flex-grow:0}.legend_ul.svelte-40f4ib.svelte-40f4ib{flex:1 0 0;list-style-type:none;display:block;padding:0;margin:0;color:white;color:#EEDC83;width:400px;margin-left:0px}.legend.svelte-40f4ib.svelte-40f4ib{display:block;box-sizing:border-box;font-size:28px;border-radius:8px;padding:20px 0 20px 0;margin:40px 0 40px 0;width:360px;vertical-align:middle;line-height:20px;letter-spacing:1px;font-style:italic;font-weight:500}.legend_icon.svelte-40f4ib.svelte-40f4ib{position:relative;left:4px;width:120px;margin:-100px 0px -45px -10px}.current_location.svelte-40f4ib.svelte-40f4ib{border:dashed 2px white;color:white}.app.svelte-40f4ib.svelte-40f4ib{display:flex;flex-direction:column;min-height:100vh;font-family:"Lora"}main.svelte-40f4ib.svelte-40f4ib{flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-40f4ib.svelte-40f4ib{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px}footer.svelte-40f4ib a.svelte-40f4ib{font-weight:bold}@media(min-width: 480px){footer.svelte-40f4ib.svelte-40f4ib{padding:0px 0}}@media(min-width: 950px){.lang_switch.svelte-40f4ib.svelte-40f4ib{position:absolute;right:2vw}}@media(min-width: 1400px){.map_and_stuff.svelte-40f4ib.svelte-40f4ib{left:0;width:100vw;display:flex;flex:1;margin:40px 0 0 -30vw}.legend_section.svelte-40f4ib.svelte-40f4ib{margin:calc(40px + 5vw) 0 0 40px;min-width:720px}}',
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let visited = -1;
+  let $visited, $$unsubscribe_visited;
+  let $language, $$unsubscribe_language;
+  $$unsubscribe_visited = subscribe(visited, (value) => $visited = value);
+  $$unsubscribe_language = subscribe(language, (value) => $language = value);
   $$result.css.add(css);
+  $$unsubscribe_visited();
+  $$unsubscribe_language();
   return `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 
 
-<div class="app svelte-1sw17wk">
 
-<div class="lang_switch svelte-1sw17wk"><button class="lang_button svelte-1sw17wk">↻</button> |
-
-${escape(visited)} / 12  | 
-
-${`${`${`<button class="lang_button svelte-1sw17wk">E N</button> |
-<button class="lang_button svelte-1sw17wk">R U</button> |
-<button class="lang_button selected svelte-1sw17wk">L T</button> |
-<button class="lang_button svelte-1sw17wk">L A</button>`}`}`}</div>
+<div class="app svelte-40f4ib">
 
 
 
+<div class="lang_switch svelte-40f4ib"><button class="lang_button svelte-40f4ib">↻</button> |
 
+${escape($visited)} / 12  | 
 
-<main class="svelte-1sw17wk">${slots.default ? slots.default({}) : ``}
-	<div class="map_and_stuff svelte-1sw17wk">${validate_component(Map, "Map").$$render($$result, {}, {}, {})}
-	<div class="legend_section svelte-1sw17wk">${`
-		<ul class="legend_ul svelte-1sw17wk"><li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-1sw17wk">Tarnų namelis</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-1sw17wk">Šulinys</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-1sw17wk">Arklides</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-1sw17wk">Virtuvė</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-1sw17wk">Oranžerija</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-1sw17wk">Kryžius</li></ul>
-		<ul class="legend_ul svelte-1sw17wk"><li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-1sw17wk">Muziejus</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-1sw17wk">Duonkepė</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-1sw17wk">Vištidė ir ledainė</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-1sw17wk">Kroketo aikštelė</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-1sw17wk">Cerkvė</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-1sw17wk">Šuniukai</li>
-			<li class="legend svelte-1sw17wk"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-1sw17wk">Tvenkiniai</li></ul>`}</div></div> </main>
+<button class="${["lang_button svelte-40f4ib", $language == "EN" ? "selected" : ""].join(" ").trim()}">E N</button> |
+<button class="${["lang_button svelte-40f4ib", $language == "RU" ? "selected" : ""].join(" ").trim()}">R U</button> |
+<button class="${["lang_button svelte-40f4ib", $language == "LT" ? "selected" : ""].join(" ").trim()}">L T</button> |
+<button class="${["lang_button svelte-40f4ib", $language == "LA" ? "selected" : ""].join(" ").trim()}">L A</button></div>
 
 
 
-<footer class="svelte-1sw17wk">
+
+
+<main class="svelte-40f4ib">${slots.default ? slots.default({}) : ``}
+	<div class="map_and_stuff svelte-40f4ib">${validate_component(Map, "Map").$$render($$result, {}, {}, {})}
+	<div class="legend_section svelte-40f4ib">${$language == "RU" ? `<ul class="legend_ul svelte-40f4ib"><li class="${["legend svelte-40f4ib", $visited == "0" ? "current_location" : ""].join(" ").trim()}"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-40f4ib">Домик слуг</li>
+			<li class="${["legend svelte-40f4ib", $visited == "1" ? "current_location" : ""].join(" ").trim()}"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-40f4ib">Колодец</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-40f4ib">Конюшни</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-40f4ib">Кухня</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-40f4ib">Оранжерея</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-40f4ib">Крест</li></ul>
+		<ul class="legend_ul svelte-40f4ib"><li class="legend svelte-40f4ib"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-40f4ib">Музей</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-40f4ib">Пекарня</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-40f4ib">Птичник</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-40f4ib">Крокет</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-40f4ib">Церковь</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-40f4ib">Собачки</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-40f4ib">Пруды</li></ul>` : `
+		<ul class="legend_ul svelte-40f4ib"><li class="legend svelte-40f4ib"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-40f4ib">Tarnų namelis</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-40f4ib">Šulinys</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-40f4ib">Arklides</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-40f4ib">Virtuvė</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-40f4ib">Oranžerija</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-40f4ib">Kryžius</li></ul>
+		<ul class="legend_ul svelte-40f4ib"><li class="legend svelte-40f4ib"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-40f4ib">Muziejus</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-40f4ib">Duonkepė</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-40f4ib">Vištidė ir ledainė</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-40f4ib">Kroketo aikštelė</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-40f4ib">Cerkvė</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-40f4ib">Šuniukai</li>
+			<li class="legend svelte-40f4ib"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-40f4ib">Tvenkiniai</li></ul>`}</div></div> </main>
+
+
+
+<footer class="svelte-40f4ib">
 	<p>// Demonstracinė versija. Vyksta darbai.</p>
-	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt" class="svelte-1sw17wk">edukacija@puskinas.lt</a></p>
+	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt" class="svelte-40f4ib">edukacija@puskinas.lt</a></p>
 	<p></p></footer></div> `;
 });
 export {
