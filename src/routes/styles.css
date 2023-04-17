@@ -130,6 +130,7 @@ section {
 	/* 0 10px 20px -20px rgba(255, 255, 255, 1); */
 	font-size: 16pt;
 	transform: rotate(-0.2deg);
+	/* perspective: 1px; */
 }
 
 h1 {
@@ -247,7 +248,9 @@ article {
 	color: #D33F37;
 }
 
+
 .illustration {
+	
 	width: clamp(320px, 100vw, 640px);
 	z-index: 10;
 	margin: clamp(-160px, -25vw, -80px) 0 clamp(-80px, -12.5vw, -40px) 0;
@@ -262,4 +265,5 @@ article {
 	font-size: 16pt;
 	padding: 20px;
 }
+
 

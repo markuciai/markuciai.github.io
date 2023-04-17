@@ -18,13 +18,15 @@ import Map_12 from '$lib/images/map/12.png';
 
 let visited = 0
 
+let scroll
+
 onMount(async () => { 
     visited = Number(localStorage.getItem("visited"));
 });
 
 </script>
 
-
+<svelte:window bind:scrollY={scroll} />
 <br><br>
 <div class="map_wrapper">
 {#if visited == 1}          <img src={Map_1} width=100%>    
@@ -42,6 +44,9 @@ onMount(async () => {
 {:else}                     <img src={Map_0} width=100%>
 {/if}
 </div>
+
+
+
 
 
 
@@ -73,3 +78,7 @@ onMount(async () => {
 }
 
 </style>
+
+
+
+

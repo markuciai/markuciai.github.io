@@ -2,8 +2,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fade, blur, fly, slide, scale } from "svelte/transition";
-	// import a_map from './Map.svelte';
 	import './styles.css';
+	// import { writeable } from "svelte/store";
+	// import Brain from './store.js'
 
 	import icon_0 from '$lib/images/icons/0.png';
 	import icon_1 from '$lib/images/icons/1.png';
@@ -27,6 +28,7 @@
 	let visited = -1;
 	let language = "LT"
 
+	let scroll
 
 	// function increment() {
 	// 	// visited.update(n => n + 1);
@@ -94,6 +96,7 @@
 		
 		visited = Number(localStorage.visited);
 		language = localStorage.language
+		// Brain(0) = language
 		console.log("Starting up. Language: ", language, " || biggest visited:", visited);
 	});
 
@@ -104,6 +107,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
+<svelte:window bind:scrollY={scroll} />
 
 
 <div class="app">
@@ -119,7 +123,9 @@
 		|| Visited: {visited} || language: {language}
 </div> -->
 
-<div class="lang_switch">
+
+
+<div class="lang_switch" >
 <button on:click={empty_storage} class="lang_button">↻</button> |
 
 {visited} / 12 <!-- for debug only..? --> | 
@@ -153,7 +159,7 @@
 
 <main in:fly out:fade >
 	<slot />
-	<div class="map_and_stuff">
+	<div class="map_and_stuff" >
 	<Map />
 	<div class="legend_section">
 	{#if language == "RU"}
@@ -235,6 +241,7 @@
 	padding-right: 20px;
 	color: #222;
 	user-select: none;
+
 	}
 
 .lang_button {
@@ -416,7 +423,16 @@ footer a {
 	.lang_switch {
 		position: absolute;
 		right: 2vw;
+
+		/* funny vertical thing */
+		/* writing-mode: vertical-lr;
+		right: calc(50vw - 1190px);
+		top: 120px; */
+
 	}
+	/* .lang_switch > * {
+		writing-mode: horizontal-tb;
+	} */
 
 }
 
@@ -435,6 +451,8 @@ footer a {
 		min-width: 720px;
 	}
 	}
+
+
 
 
 </style>
