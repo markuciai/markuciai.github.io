@@ -1,12 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
-    let language = "LT"
-    
-
-
-    onMount(async () => { 
-        language = localStorage.language;
-    });
+import language from "../stores/language";
     
 
 </script>
@@ -14,7 +7,7 @@
 
 
 <section>
-{#if language == "EN"}
+{#if $language == "EN"}
 
 
 <div class="where-next">
@@ -23,7 +16,7 @@
 </div>
 
 
-{:else if language == "RU"}
+{:else if $language == "RU"}
 
 [иллюстрация для верха]
 
@@ -54,7 +47,7 @@
 </div>
 
 
-{:else if language == "LA"}
+{:else if $language == "LA"}
 
 <div class="where-next">
     Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a>

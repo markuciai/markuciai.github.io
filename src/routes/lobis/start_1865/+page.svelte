@@ -23,7 +23,9 @@ let date_started_s = date_started.getSeconds().toString().padStart(2,"0");
 onMount(async () => { 
 	// finished before, resetting completely
 	if (localStorage.finished) {
+		let a_lang = $language
 		localStorage.clear(); // clears language too
+		$language = a_lang
 		window.location.reload();
 	}
 

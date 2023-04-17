@@ -1,5 +1,6 @@
 import { c as create_ssr_component, a as subscribe, v as validate_component } from "../../../../chunks/index2.js";
-import { v as visited, l as language } from "../../../../chunks/visited.js";
+import { l as language } from "../../../../chunks/language.js";
+import { v as visited } from "../../../../chunks/visited.js";
 import { O as Offer } from "../../../../chunks/Offer.js";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$unsubscribe_visited;

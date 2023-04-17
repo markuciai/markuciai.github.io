@@ -1,88 +1,67 @@
 
 <script>
-	import { onMount } from 'svelte';
-	// import { browser } from "$app/environment";
-	import { fade, blur, fly, slide, scale } from "svelte/transition";
-	import './styles.css';
-	// import { writable } from "svelte/store";
-	import language from './stores/language.js'
-	import visited from './stores/visited';
-	
-	import icon_0 from '$lib/images/icons/0.png';
-	import icon_1 from '$lib/images/icons/1.png';
-	import icon_2 from '$lib/images/icons/2.png';
-	import icon_3 from '$lib/images/icons/3.png';
-	import icon_4 from '$lib/images/icons/4.png';
-	import icon_5 from '$lib/images/icons/5.png';
-	import icon_6 from '$lib/images/icons/6.png';
-	import icon_7 from '$lib/images/icons/7.png';
-	import icon_8 from '$lib/images/icons/8.png';
-	import icon_9 from '$lib/images/icons/9.png';
-	import icon_10 from '$lib/images/icons/10.png';
-	import icon_11 from '$lib/images/icons/11.png';
-	import icon_12 from '$lib/images/icons/12.png';
+import { onMount } from 'svelte';
+import { browser } from "$app/environment";
+import { fade, blur, fly, slide, scale } from "svelte/transition";
+import './styles.css';
+// import { writable } from "svelte/store";
+import language from './stores/language.js'
+import visited from './stores/visited';
+
+import Offer from './lobis/Offer.svelte';
+
+import icon_0 from '$lib/images/icons/0.png';
+import icon_1 from '$lib/images/icons/1.png';
+import icon_2 from '$lib/images/icons/2.png';
+import icon_3 from '$lib/images/icons/3.png';
+import icon_4 from '$lib/images/icons/4.png';
+import icon_5 from '$lib/images/icons/5.png';
+import icon_6 from '$lib/images/icons/6.png';
+import icon_7 from '$lib/images/icons/7.png';
+import icon_8 from '$lib/images/icons/8.png';
+import icon_9 from '$lib/images/icons/9.png';
+import icon_10 from '$lib/images/icons/10.png';
+import icon_11 from '$lib/images/icons/11.png';
+import icon_12 from '$lib/images/icons/12.png';
 
 
-	import Map from './Map.svelte';
-    import Header from './Header.svelte';
-
-	  
-	// let visited = -1;
-	let scroll
-
-
-	function set_language_en() {
-		$language = "EN";
-		// localStorage.language = $language;
-	};
-
-
-	function set_language_ru() {
-		$language = "RU";
-		// localStorage.language = $language;
-	};
-
-
-	function set_language_lt() {
-		$language = "LT";
-		// localStorage.language = $language;
-	};
-
-
-	function set_language_la() {
-		$language = "LA";
-		// localStorage.language = $language;
-	};
+import Map from './Map.svelte';
+import Header from './Header.svelte';
 
 	
-	function empty_storage() {
-		localStorage.clear();
-		window.location.reload();
-	};
+// let visited = -1;
+let scroll
 
 
-	onMount(async () => { 
-		console.log(localStorage.visited)
-		
-		// console.log("Bazinga");
-		// console.log("brain set to:", brain);
-		// $brain = "set from layout";
-		// console.log("reactive brain set to:", bazinger, $brain);
+function empty_storage() {
+	localStorage.clear();
+	window.location.reload();
+};
 
-		if(localStorage.getItem("visited") === null) {
-			localStorage.setItem("visited", $visited);
-			// window.location.reload();
+
+// onMount(async () => { 
+
+
+// });
+
+
+if (browser) {
+	if(localStorage.getItem("visited") === null) {
+		localStorage.setItem("visited", $visited);
+		// window.location.reload();
 }
 
-		if(localStorage.getItem("language") === null) {
-			$language = localStorage.language
-}
-		
-		$visited = Number(localStorage.visited);
+	if(localStorage.getItem("language") === null) {
 		$language = localStorage.language
-		// Brain(0) = language
-		console.log("Starting up. Language: ", $language, " || biggest visited:", $visited);
-	});
+}
+	
+	$visited = Number(localStorage.visited);
+	$language = localStorage.language
+	
+	console.log("Starting up. Language: ", $language, " || biggest visited:", $visited);
+}
+
+
 
 </script>
 
@@ -114,10 +93,10 @@
 
 {$visited} / 12 <!-- for debug only..? --> | 
 
-<button on:click={set_language_en} class="lang_button" class:selected={$language == "EN"}>E&#8239N</button> |
-<button on:click={set_language_ru} class="lang_button" class:selected={$language == "RU"}>R&#8239U</button> |
-<button on:click={set_language_lt} class="lang_button" class:selected={$language == "LT"}>L&#8239T</button> |
-<button on:click={set_language_la} class="lang_button" class:selected={$language == "LA"}>L&#8239A</button>
+<button on:click={() => $language = "EN"} class="lang_button" class:selected={$language == "EN"}>E&#8239N</button> |
+<button on:click={() => $language = "RU"} class="lang_button" class:selected={$language == "RU"}>R&#8239U</button> |
+<button on:click={() => $language = "LT"} class="lang_button" class:selected={$language == "LT"}>L&#8239T</button> |
+<button on:click={() => $language = "LA"} class="lang_button" class:selected={$language == "LA"}>L&#8239A</button>
 
 
 
@@ -128,50 +107,95 @@
 <!-- <Header /> -->
 
 <main in:fly out:fade >
-	<slot />
-	<div class="map_and_stuff" >
-	<Map />
-	<div class="legend_section">
-	{#if $language == "RU"}
-		<ul class="legend_ul">
-			<li class="legend" class:current_location={$visited == "0"} ><img src={icon_2} class="legend_icon">Домик слуг</li>
-			<li class="legend" class:current_location={$visited == "1"}><img src={icon_8} class="legend_icon">Колодец</li>
-			<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
-			<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
-			<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
-			<li class="legend"><img src={icon_1} class="legend_icon">Крест</li>
-		</ul>
-		<ul class="legend_ul">
-			<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
-			<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
-			<li class="legend"><img src={icon_6} class="legend_icon">Птичник</li>
-			<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
-			<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
-			<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
-			<li class="legend"><img src={icon_4} class="legend_icon">Пруды</li>
-		</ul>
 
-	{:else} <!-- LT-->
-		<ul class="legend_ul">
-			<li class="legend"><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
-			<li class="legend"><img src={icon_8} class="legend_icon">Šulinys</li>
-			<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
-			<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
-			<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
-			<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
-		</ul>
-		<ul class="legend_ul">
-			<li class="legend"><img src={icon_0} class="legend_icon">Muziejus</li>
-			<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
-			<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
-			<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
-			<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
-			<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
-			<li class="legend"><img src={icon_4} class="legend_icon">Tvenkiniai</li>
-		</ul>
-	{/if}
-	</div>
-	</div> <!-- map stuff-->
+
+<!-- {#if $visited < 0 }
+<Offer />
+{/if} -->
+
+<slot />
+<div class="map_and_stuff" >
+<Map />
+<div class="legend_section">
+
+{#if $language == "RU"}
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_2} class="legend_icon">Домик слуг</li>
+	<li class="legend"><img src={icon_8} class="legend_icon">Колодец</li>
+	<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
+	<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
+	<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
+	<li class="legend"><img src={icon_1} class="legend_icon">Крест</li>
+</ul>
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
+	<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
+	<li class="legend"><img src={icon_6} class="legend_icon">Птичник</li>
+	<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
+	<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
+	<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
+	<li class="legend"><img src={icon_4} class="legend_icon">Пруды</li>
+</ul>
+
+{:else if $language == "EN"}
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_2} class="legend_icon">Servants'&nbsp;quarters</li>
+	<li class="legend"><img src={icon_8} class="legend_icon">Water well</li>
+	<li class="legend"><img src={icon_3} class="legend_icon">Stables</li>
+	<li class="legend"><img src={icon_5} class="legend_icon">Kitchen</li>
+	<li class="legend"><img src={icon_9} class="legend_icon">Orchard</li>
+	<li class="legend"><img src={icon_1} class="legend_icon">Cross</li>
+</ul>
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_0} class="legend_icon">Museum</li>
+	<li class="legend"><img src={icon_7} class="legend_icon">Bakery</li>
+	<li class="legend"><img src={icon_6} class="legend_icon">Chicken coop</li>
+	<li class="legend"><img src={icon_12} class="legend_icon">Croquet court</li>
+	<li class="legend"><img src={icon_10} class="legend_icon">Chapel</li>
+	<li class="legend"><img src={icon_11} class="legend_icon">Doggies</li>
+	<li class="legend"><img src={icon_4} class="legend_icon">Pond</li>
+</ul>
+
+{:else if $language == "LA"}
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_2} class="legend_icon">Servorum plagae</li>
+	<li class="legend"><img src={icon_8} class="legend_icon">Aqua bene</li>
+	<li class="legend"><img src={icon_3} class="legend_icon">Stabula</li>
+	<li class="legend"><img src={icon_5} class="legend_icon">Culina</li>
+	<li class="legend"><img src={icon_9} class="legend_icon">Pomarium</li>
+	<li class="legend"><img src={icon_1} class="legend_icon">Crucius</li>
+</ul>
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_0} class="legend_icon">Manerium</li>
+	<li class="legend"><img src={icon_7} class="legend_icon">Pistrinum</li>
+	<li class="legend"><img src={icon_6} class="legend_icon">Pullus domus</li>
+	<li class="legend"><img src={icon_12} class="legend_icon">Croquet atrium</li>
+	<li class="legend"><img src={icon_10} class="legend_icon">Capella</li>
+	<li class="legend"><img src={icon_11} class="legend_icon">Canes</li>
+	<li class="legend"><img src={icon_4} class="legend_icon">Piscine</li>
+</ul>
+
+{:else} <!-- LT-->
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
+	<li class="legend"><img src={icon_8} class="legend_icon">Šulinys</li>
+	<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
+	<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
+	<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
+	<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
+</ul>
+<ul class="legend_ul">
+	<li class="legend"><img src={icon_0} class="legend_icon">Muziejus</li>
+	<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
+	<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
+	<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
+	<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
+	<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
+	<li class="legend"><img src={icon_4} class="legend_icon">Tvenkiniai</li>
+</ul>
+{/if}
+</div>
+</div> <!-- map stuff-->
 </main>
 
 
@@ -234,7 +258,7 @@
 	border-radius: 3px;
 	/* border: 0px; */
 	color: #EEDC83;
-	border: 0.67px solid #EEDC83;
+	border: 0.67px solid rgb(238, 220, 131, 0.9);
 	cursor: pointer;
 	user-select: none;
 
@@ -250,6 +274,7 @@
   	border-left-color: white;
   	border-right-color: white;
  	 border-bottom-color: white; */
+	border: 0.67px solid rgb(238, 220, 131, 1);
 	transition: 0.05s;
 	}
 
@@ -267,6 +292,7 @@
 	/* background-color: rgba(0,0,0, 0.6); */
 	/* background-color: #222; */
 	background-color: #D33F37;
+	border: 0.67px solid rgb(238, 220, 131, 0);
 	border:none;
 	user-select: none;
 	transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);

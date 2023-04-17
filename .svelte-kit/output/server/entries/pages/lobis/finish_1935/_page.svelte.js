@@ -1,5 +1,6 @@
 import { c as create_ssr_component, a as subscribe, b as add_attribute, v as validate_component } from "../../../../chunks/index2.js";
-import { v as visited, l as language } from "../../../../chunks/visited.js";
+import { l as language } from "../../../../chunks/language.js";
+import { v as visited } from "../../../../chunks/visited.js";
 const task$a = "/_app/immutable/assets/doggo.149c5f38.png";
 const task$9 = "/_app/immutable/assets/ball.a747149c.png";
 const task$8 = "/_app/immutable/assets/bowl.b639b93e.png";

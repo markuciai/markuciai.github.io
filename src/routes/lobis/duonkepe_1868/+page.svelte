@@ -1,6 +1,7 @@
 
 <script>
 import { onMount } from 'svelte';
+import { browser } from "$app/environment";
 import language from '../../stores/language';
 import visited from '../../stores/visited';
 
@@ -19,19 +20,19 @@ let show_offer = true
 let show_station = false
 
 
-onMount(async () => { 
-	if ($visited >= 0) {
-		show_offer = false
-	}
+if (browser) {
+if ($visited >= 0) {
+	show_offer = false
+}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
-	}
+if($visited == station_id - 1) {
+	$visited = station_id
+}
 
-	if ($visited >= station_id) {
-		show_station = true;
-	}
-});
+if ($visited >= station_id) {
+	show_station = true;
+}
+}
 
 </script>
 
