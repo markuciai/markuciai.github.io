@@ -1,5 +1,6 @@
 <script>
-	import dvaras from '$lib/images/archival/mdvaras.jpg';
+import language from './stores/language';
+import dvaras from '$lib/images/archival/mdvaras.jpg';
 
 
 </script>
@@ -12,27 +13,35 @@
 
 
 <section>
-	<h1>Markučių dvaro&nbsp;muziejus</h1>
+<h1>
+{#if $language == "EN"}			Markučiai manor museum
+{:else if $language == "RU"}	Музей усадьбы Маркутья
+{:else if $language == "LA"}	Museum manerium Markucis
+{:else}							Markučių dvaro&nbsp;muziejus
+{/if}
+</h1>
 
-		<a href="/lobis">Lobis:</a>
-		<ol start="0">
-		<li><a href="/lobis/start_1865">Pradžia</a></li>
-		<li><a href="/lobis/kryzius_1880">Kryžius</a></li>
-		<li><a href="/lobis/namelis_1855">Namelis</a></li>
-		<li><a href="/lobis/arklides_1935">Arklides</a></li>
-		<li><a href="/lobis/tvenkiniai_1917">Tvenkiniai</a></li>
-		<li><a href="/lobis/virtuve_1899">Virtuvė</a></li>
-		<li><a href="/lobis/vistide_1877">Vištidė ir ledainė </a></li>
-		<li><a href="/lobis/duonkepe_1868">Duonkepė</a></li>
-		<li><a href="/lobis/sulinys_1867">Šulinys</a></li>
-		<li><a href="/lobis/oranzerija_1875">Oranžerija</a></li>
-		<li><a href="/lobis/cerkve_1903">Cerkvė</a></li>
-		<li><a href="/lobis/suniukai-1883">Šuniukai</a></li>
-		<li><a href="/lobis/kroketas_1867">Kroketo aikštelė</a></li>
-		<li><a href="/lobis/finish_1935">Muziejus (Pabaiga)</a></li>
-		</ol>
 
-	<img width=98% src={dvaras}>
+<a href="/lobis">Lobis:</a>
+<ol start="0">
+	<li><a href="/lobis/start_1865">Pradžia</a></li>
+	<li><a href="/lobis/kryzius_1880">Kryžius</a></li>
+	<li><a href="/lobis/namelis_1855">Namelis</a></li>
+	<li><a href="/lobis/arklides_1935">Arklides</a></li>
+	<li><a href="/lobis/tvenkiniai_1917">Tvenkiniai</a></li>
+	<li><a href="/lobis/virtuve_1899">Virtuvė</a></li>
+	<li><a href="/lobis/vistide_1877">Vištidė ir ledainė </a></li>
+	<li><a href="/lobis/duonkepe_1868">Duonkepė</a></li>
+	<li><a href="/lobis/sulinys_1867">Šulinys</a></li>
+	<li><a href="/lobis/oranzerija_1875">Oranžerija</a></li>
+	<li><a href="/lobis/cerkve_1903">Cerkvė</a></li>
+	<li><a href="/lobis/suniukai-1883">Šuniukai</a></li>
+	<li><a href="/lobis/kroketas_1867">Kroketo aikštelė</a></li>
+	<li><a href="/lobis/finish_1935">Muziejus (Pabaiga)</a></li>
+</ol>
+
+<br><br>
+<img width=98% src={dvaras}>
 
 
 </section>

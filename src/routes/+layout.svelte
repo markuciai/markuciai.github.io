@@ -264,7 +264,7 @@ function handleMousemove(event) {
 	border-radius: 3px;
 	/* border: 0px; */
 	color: #EEDC83;
-	border: 0.67px solid rgb(238, 220, 131, 0.9);
+	border: 0.67px solid rgb(238, 220, 131, 0.8);
 	cursor: pointer;
 	user-select: none;
 
@@ -287,6 +287,7 @@ function handleMousemove(event) {
 
 .lang_button:active {
 	background-color:#EEDC83;
+	border: 0.67px solid rgb(238, 220, 131, 0);
 	}
 
 .lang_button.selected {
@@ -298,8 +299,8 @@ function handleMousemove(event) {
 	/* background-color: rgba(0,0,0, 0.6); */
 	/* background-color: #222; */
 	background-color: #D33F37;
-	border: 0.67px solid rgb(238, 220, 131, 0);
-	border:none;
+	border: 0.67px solid rgb(238, 220, 131, 0.1);
+	/* border:none; */
 	user-select: none;
 	transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
