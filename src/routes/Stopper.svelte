@@ -26,14 +26,13 @@ import final from '$lib/images/illustrations/doggo.png';
 
 
 
-
 <section>
 <br><br>
 {#if $visited == 0}
 <img class="illustration" src={zero}>
 <div class="where-next too_early"><slot /><br><br>
-{#if $language == "EN"}		    	You're yet to start the game! <br> Visit the museum.
-{:else if $language == "RU"}		Вы ещё не начали игру! <br>Обращайтесь в музей.
+{#if $language == "EN"}		    	You're too early! <br> Find the start of the path.
+{:else if $language == "RU"}		Вы рановато пришли! <br>Сначала найдите начало пути.
 {:else if $language == "LA"}		Nimis mane es! <br>Alicubi ire necesse est.
 {:else}	<!-- LT-->		    		Jus atejote per anksti! <br>Pirma reikia rasti kelio pradžia.
 {/if} </div>

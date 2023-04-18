@@ -1,6 +1,7 @@
 <script>
 // import { onMount } from 'svelte';
 import visited from './stores/visited';   
+import location from './stores/location';
 
 import Map_0 from '$lib/images/map/0.png';
 import Map_1 from '$lib/images/map/1.png';
@@ -42,7 +43,9 @@ let scroll
 {/if}
 </div>
 
-
+<!-- TODO use $location to highlight where the player is -->
+<!-- set location from stations -->
+<!-- port the legend here from layout-->
 
 
 

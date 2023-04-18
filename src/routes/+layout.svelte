@@ -1,4 +1,3 @@
-
 <script>
 import { onMount } from 'svelte';
 import { browser } from "$app/environment";
@@ -7,6 +6,8 @@ import './styles.css';
 // import { writable } from "svelte/store";
 import language from './stores/language.js'
 import visited from './stores/visited';
+
+
 
 import Offer from './lobis/Offer.svelte';
 
@@ -26,23 +27,10 @@ import icon_12 from '$lib/images/icons/12.png';
 
 
 import Map from './Map.svelte';
-import Header from './Header.svelte';
 
-	
-// let visited = -1;
+
 let scroll
 
-
-function empty_storage() {
-	localStorage.clear();
-	window.location.reload();
-};
-
-
-// onMount(async () => { 
-
-
-// });
 
 
 if (browser) {
@@ -59,6 +47,19 @@ if (browser) {
 	$language = localStorage.language
 	
 	console.log("Starting up. Language: ", $language, " || biggest visited:", $visited);
+}
+
+function empty_storage() {
+	localStorage.clear();
+	window.location.reload();
+};
+
+let m = { x: 0, y: 0 };
+function handleMousemove(event) {
+	m.x = event.clientX;
+	m.y = event.clientY;
+
+	
 }
 
 
@@ -88,17 +89,19 @@ if (browser) {
 
 
 
-<div class="lang_switch" in:fade out:fade>
+<div class="lang_switch" in:fade out:fade >
 <button on:click={empty_storage} class="lang_button">↻</button> |
 
 {$visited} / 12 <!-- for debug only..? --> | 
 
-<button on:click={() => $language = "EN"} class="lang_button" class:selected={$language == "EN"}>E&#8239N</button> |
-<button on:click={() => $language = "RU"} class="lang_button" class:selected={$language == "RU"}>R&#8239U</button> |
-<button on:click={() => $language = "LT"} class="lang_button" class:selected={$language == "LT"}>L&#8239T</button> |
-<button on:click={() => $language = "LA"} class="lang_button" class:selected={$language == "LA"}>L&#8239A</button>
-
-
+<button on:click={() => $language = "EN"}
+	class="lang_button" class:selected={$language == "EN"}>E&#8239N</button> |
+<button on:click={() => $language = "RU"}
+	class="lang_button" class:selected={$language == "RU"}>R&#8239U</button> |
+<button on:click={() => $language = "LT"}
+	class="lang_button" class:selected={$language == "LT"}>L&#8239T</button> |
+<button on:click={() => $language = "LA"}
+	class="lang_button" class:selected={$language == "LA"}>L&#8239A</button>
 
 </div>
 
@@ -112,6 +115,9 @@ if (browser) {
 <!-- {#if $visited < 0 }
 <Offer />
 {/if} -->
+
+
+<div on:mousemove={handleMousemove} />
 
 <slot />
 <div class="map_and_stuff" >

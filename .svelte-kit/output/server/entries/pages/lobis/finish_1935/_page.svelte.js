@@ -22,7 +22,7 @@ const Stopper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<section><br><br>
 ${$visited == 0 ? `<img class="illustration"${add_attribute("src", task$a, 0)}>
 <div class="where-next too_early">${slots.default ? slots.default({}) : ``}<br><br>
-${$language == "EN" ? `You&#39;re yet to start the game! <br> Visit the museum.` : `${$language == "RU" ? `Вы ещё не начали игру! <br>Обращайтесь в музей.` : `${$language == "LA" ? `Nimis mane es! <br>Alicubi ire necesse est.` : `		    		Jus atejote per anksti! <br>Pirma reikia rasti kelio pradžia.`}`}`}</div>` : `${$visited == 1 ? `<img class="illustration"${add_attribute("src", task$8, 0)}>
+${$language == "EN" ? `You&#39;re too early! <br> Find the start of the path.` : `${$language == "RU" ? `Вы рановато пришли! <br>Сначала найдите начало пути.` : `${$language == "LA" ? `Nimis mane es! <br>Alicubi ire necesse est.` : `		    		Jus atejote per anksti! <br>Pirma reikia rasti kelio pradžia.`}`}`}</div>` : `${$visited == 1 ? `<img class="illustration"${add_attribute("src", task$8, 0)}>
 <div class="where-next too_early">${slots.default ? slots.default({}) : ``}<br><br>
 ${$language == "EN" ? `You&#39;re too early! <br>You need to go somewhere else.` : `${$language == "RU" ? `Наверно слуг стоит поискать <br>где-то ещё.` : `${$language == "LA" ? `Nimis mane es! <br>Alicubi ire necesse est.` : `			    	Jus atejote per anksti! <br>Pirma reikia rasti kelio pradžia.`}`}`}</div>` : `${$visited == 2 ? `<img class="illustration saddle"${add_attribute("src", task, 0)}>
 <div class="where-next too_early saddle-block">${slots.default ? slots.default({}) : ``}<br><br>
