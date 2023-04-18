@@ -247,8 +247,6 @@ function handleMousemove(event) {
 	}
 
 .lang_button {
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 	box-sizing: border-box;
 	text-decoration: none;
@@ -287,7 +285,7 @@ function handleMousemove(event) {
  	 border-bottom-color: white; */
 	border: 0.67px solid rgb(238, 220, 131, 1);
 	transition: 0.05s;
-	transform: scale(1.2);
+	transform: scale(1.1);
 	box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.3);
 	}
 
@@ -295,10 +293,25 @@ function handleMousemove(event) {
 .lang_button:active {
 	background-color:#EEDC83;
 	border: 0.67px solid rgb(238, 220, 131, 0);
+	transform: scale(0.95);
+	box-shadow: 0px 3px 5px -10px rgba(0, 0, 0, 0);
 	}
 
-.lang_button.selected {
+	/* away */
+.lang_button:active:not(:hover) {
+	transform: scale(1);
+	color: #EEDC83;
+	border: 0.67px solid rgb(238, 220, 131, 1);
+	background: none;
+	}
+/* .lang_button.selected:hover {
+	
+} */
+
+.lang_button.selected, .lang_button.selected:hover {
+	transform: scale(1);
 	pointer-events: none;
+	cursor: default;
 	color: #006837;
 	color: #EEDC83;
 	/* background-color: white; */
@@ -423,6 +436,7 @@ footer {
 	color: wheat;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
+	margin: 10px 0 80px 0;
 }
 
 footer a {
