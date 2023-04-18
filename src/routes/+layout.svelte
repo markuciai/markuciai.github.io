@@ -94,14 +94,16 @@ function handleMousemove(event) {
 
 {$visited} / 12 <!-- for debug only..? --> | 
 
+<!--thin space: &#8239 -->
+
 <button on:click={() => $language = "EN"}
-	class="lang_button" class:selected={$language == "EN"}>E&#8239N</button> |
+	class="lang_button" class:selected={$language == "EN"}>EN</button> |
 <button on:click={() => $language = "RU"}
-	class="lang_button" class:selected={$language == "RU"}>R&#8239U</button> |
+	class="lang_button" class:selected={$language == "RU"}>RU</button> |
 <button on:click={() => $language = "LT"}
-	class="lang_button" class:selected={$language == "LT"}>L&#8239T</button> |
+	class="lang_button" class:selected={$language == "LT"}>LT</button> |
 <button on:click={() => $language = "LA"}
-	class="lang_button" class:selected={$language == "LA"}>L&#8239A</button>
+	class="lang_button" class:selected={$language == "LA"}>LA</button>
 
 </div>
 
@@ -271,6 +273,9 @@ function handleMousemove(event) {
 	transition: 0.3s;
 	}
 
+.lang_button::first-letter {
+	letter-spacing: 2px;
+}
 
 .lang_button:hover {
 	background-color:#EEDC83;
@@ -282,6 +287,8 @@ function handleMousemove(event) {
  	 border-bottom-color: white; */
 	border: 0.67px solid rgb(238, 220, 131, 1);
 	transition: 0.05s;
+	transform: scale(1.2);
+	box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.3);
 	}
 
 
@@ -304,6 +311,7 @@ function handleMousemove(event) {
 	user-select: none;
 	transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
+
 
 
 /* Legend */
