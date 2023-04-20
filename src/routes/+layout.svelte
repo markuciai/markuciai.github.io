@@ -31,7 +31,7 @@ import Map from './Map.svelte';
 
 let scroll = Number(0)
 
-
+var emerge = false
 
 // dictionary lines test
 const lines = {
@@ -49,22 +49,26 @@ if (browser) {
 	if(localStorage.getItem("visited") === null) {
 		localStorage.setItem("visited", $visited);
 		// window.location.reload();
-}
+	}
 
 	if(localStorage.getItem("language") === null) {
 		$language = localStorage.language
-}
+	}
 	
 	$visited = Number(localStorage.visited);
 	$language = localStorage.language
 	
 	console.log("Starting up. Language: ", $language, " || biggest visited:", $visited);
+	
+	// appear()
+	emerge = true
 }
 
 function empty_storage() {
 	localStorage.clear();
 	window.location.reload();
 }
+
 
 let m = { x: 0, y: 0 };
 function handleMousemove(event) {
@@ -77,6 +81,8 @@ function handleMousemove(event) {
 </script>
 
 
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -85,22 +91,15 @@ function handleMousemove(event) {
 <svelte:window bind:scrollY={scroll} />
 <div on:mousemove={handleMousemove} />
 
+
+
+
+
 <div class="app">
 
-<!-- <div>
-	<button on:click={increment}>
-		plus
-	</button>
-	<button on:click={decrement}>
-		minus
-	</button>
-
-		|| Visited: {visited} || language: {language}
-</div> -->
 
 
-
-<div class="lang_switch" in:fade out:fade >
+<div class="lang_switch appear" in:fade out:fade class:appear_visible="{emerge === true}">
 <button on:click={empty_storage} class="lang_button">↻</button> |
 
 {$visited} / 12 <!-- for debug only..? --> | 
@@ -122,7 +121,7 @@ function handleMousemove(event) {
 
 <!-- <Header /> -->
 
-<main in:fly out:fade >
+<main in:fly out:fade class="appear" class:appear_visible="{emerge === true}">
 
 
 <!-- {#if $visited < 0 } <Offer /> {/if} -->
@@ -130,7 +129,7 @@ function handleMousemove(event) {
 
 
 <slot />
-<div class="map_and_stuff" >
+<div class="map_and_stuff">
 <Map />
 <div class="legend_section">
 
@@ -231,6 +230,20 @@ function handleMousemove(event) {
 
 
 <style>
+
+
+/* on load, a variable is flipped and the second style is added */
+.appear {
+	opacity: 0;
+	transform: translate(0, 10px);
+	transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.appear_visible {
+	opacity: 1;
+	transform: translate(0,0);
+}
+
 
 /* Language switcher */
 
