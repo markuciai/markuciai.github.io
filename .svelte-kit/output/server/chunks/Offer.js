@@ -4,7 +4,7 @@ const Offer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $language, $$unsubscribe_language;
   $$unsubscribe_language = subscribe(language, (value) => $language = value);
   $$unsubscribe_language();
-  return `<section>${$language == "EN" ? `<div class="where-next">Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></div>` : `${$language == "RU" ? `[иллюстрация для верха]
+  return `<section>${$language == "EN" ? `<div class="where-next">Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a></div>` : `${$language == "RU" ? `[иллюстрация для верха]
 
 <h1>Клад Маркутья</h1>
 <p class="subh">Ориентационный квест <br> по парку Маркутского двора</p>
@@ -25,8 +25,8 @@ const Offer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <div class="where-next">Если вы уже в парке (в часы работы музея) и хотите поиграть прямо сейчас — заходите в музей и обращайтесь в кассу.
 <br><br>
-А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a>.
-</div>` : `${$language == "LA" ? `<div class="where-next">Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></div>` : `<div class="where-next">Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></div>`}`}`}</section>`;
+А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>.
+</div>` : `${$language == "LA" ? `<div class="where-next">Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a></div>` : `<div class="where-next">Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a></div>`}`}`}</section>`;
 });
 export {
   Offer as O

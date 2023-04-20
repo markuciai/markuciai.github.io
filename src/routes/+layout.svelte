@@ -29,7 +29,19 @@ import icon_12 from '$lib/images/icons/12.png';
 import Map from './Map.svelte';
 
 
-let scroll
+let scroll = Number(0)
+
+
+
+// dictionary lines test
+const lines = {
+	"EN": ["Ze<br>ro", "First", "Double", "three"],
+	"RU": ["ноль", "один", "два", "три"],
+	"LT": ["Zero", "First", "Double", "Trys"],
+	"LA": ["Zero", "First", "Double", "Trys"],
+};
+
+// {lines[$language][0]}
 
 
 
@@ -52,14 +64,12 @@ if (browser) {
 function empty_storage() {
 	localStorage.clear();
 	window.location.reload();
-};
+}
 
 let m = { x: 0, y: 0 };
 function handleMousemove(event) {
 	m.x = event.clientX;
 	m.y = event.clientY;
-
-	
 }
 
 
@@ -71,8 +81,9 @@ function handleMousemove(event) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-<svelte:window bind:scrollY={scroll} />
 
+<svelte:window bind:scrollY={scroll} />
+<div on:mousemove={handleMousemove} />
 
 <div class="app">
 
@@ -114,12 +125,9 @@ function handleMousemove(event) {
 <main in:fly out:fade >
 
 
-<!-- {#if $visited < 0 }
-<Offer />
-{/if} -->
+<!-- {#if $visited < 0 } <Offer /> {/if} -->
+<!-- {lines[$language][0]} -->
 
-
-<div on:mousemove={handleMousemove} />
 
 <slot />
 <div class="map_and_stuff" >
@@ -211,7 +219,7 @@ function handleMousemove(event) {
 <footer>
 	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 	<p>// Demonstracinė versija. Vyksta darbai.</p>
-	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a></p>
+	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a></p>
 	<p> </p>
 </footer>
 </div> <!-- / app -->
@@ -302,7 +310,7 @@ function handleMousemove(event) {
 	transform: scale(1);
 	color: #EEDC83;
 	border: 0.67px solid rgb(238, 220, 131, 1);
-	background: none;
+	background-color:rgba(238, 220, 131, 0.2);
 	}
 /* .lang_button.selected:hover {
 	
@@ -337,6 +345,7 @@ function handleMousemove(event) {
 	/* width: clamp(200px, 100vw, 760px); */
 	/* flex-basis: 400px; */
 	flex-grow: 0;
+	margin-bottom: 40px;
 	}
 
 .legend_ul {
@@ -350,7 +359,7 @@ function handleMousemove(event) {
 	color: #EEDC83;
 	/* width: clamp(200px, 100vw, 760px); */
 	width: 400px;
-	margin-left: 0px;
+	margin-bottom: -40px;
 	}
 
 .legend {

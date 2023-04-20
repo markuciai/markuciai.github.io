@@ -11,7 +11,7 @@ import language from "../stores/language";
 
 
 <div class="where-next">
-    Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a>
+    Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>
 
 </div>
 
@@ -43,20 +43,20 @@ import language from "../stores/language";
 <div class="where-next">
 Если вы уже в парке (в часы работы музея) и хотите поиграть прямо сейчас — заходите в музей и обращайтесь в кассу.
 <br><br>
-А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a>.
+А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>.
 </div>
 
 
 {:else if $language == "LA"}
 
 <div class="where-next">
-    Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a>
+    Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>
 </div>
 
 {:else}
 
 <div class="where-next">
-    Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@puskinas.lt">edukacija@puskinas.lt</a>
+    Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>
 
 </div>
 
