@@ -231,7 +231,7 @@ function handleMousemove(event) {
 
 <style>
 
-
+/* Appearance effects */
 /* on load, a variable is flipped and the second style is added */
 .appear {
 	opacity: 0;
@@ -264,7 +264,6 @@ function handleMousemove(event) {
 	padding-right: 20px;
 	color: #222;
 	user-select: none;
-
 	}
 
 .lang_button {
@@ -362,6 +361,7 @@ function handleMousemove(event) {
 	}
 
 .legend_ul {
+	/* border: solid blue 2px; */
 	/* flex: initial; */
 	flex: 1 0 0;
 	list-style-type: none;
@@ -371,7 +371,7 @@ function handleMousemove(event) {
 	color: white;
 	color: #EEDC83;
 	/* width: clamp(200px, 100vw, 760px); */
-	width: 400px;
+	/* width: 400px; */
 	margin-bottom: -40px;
 	}
 
@@ -388,7 +388,7 @@ function handleMousemove(event) {
 	padding: 20px 0 20px 0;
 	/* margin: 0; */
 	margin: 40px 0 40px 0;
-	width: 360px;
+	width: 370px;
 	vertical-align: middle;
 	/* transform: translate(0px, 2px); */
 	line-height: 20px;
@@ -501,7 +501,7 @@ footer a {
 
 	.legend_section {
 		margin: calc(40px + 5vw) 0 0 40px;
-		min-width: 720px;
+		min-width: 760px;
 	}
 	}
 
