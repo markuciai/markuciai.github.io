@@ -22,12 +22,12 @@ import Map_12 from '$lib/images/map/12.png';
 
 let scroll
 
-
+var an_error = "all is good"
 
 
 var geolocation_permitted = false
-$: location_x = 20 //0...100
-$: location_y = 40
+$: location_x = -200 // 0...100, percentage
+$: location_y = -200
 
 
 
@@ -36,8 +36,22 @@ function show_position() {
 }
 
 
+
+
+// var times_location_was_checked = Number(0)
+
+function watch_position() {
+	const watchID = navigator.geolocation.watchPosition(set_geolocation_marker, failed_to_get_geolocation,
+		{
+		enableHighAccuracy: true,
+		timeout: 1
+		}
+	)
+	// navigator.geolocation.clearWatch(watchID)
+}
+
 function set_geolocation_marker(position) {
-	const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
+	// const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
 	geolocation_to_location(position.coords.latitude, position.coords.longitude)
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
 	console.log("location %: ", location_x, location_y)
@@ -47,21 +61,9 @@ function set_geolocation_marker(position) {
 
 // change to re-ask person to allow location
 function failed_to_get_geolocation(error) {
-	console.log(error)
+	console.log("woops", error)
+    an_error = error
 }
-
-
-function watch_position() {
-	const watchID = navigator.geolocation.watchPosition(set_geolocation_marker, failed_to_get_geolocation,
-		{
-		enableHighAccuracy: true,
-		timeout: 1000
-		}
-	)
-	navigator.geolocation.clearWatch(watchID)
-}
-
-
 
 // 100 * (1 - (center_point - half_of_range - passed_value) / range)
 // Markuciai parkas center 54.6765, 25.3245 (untested)
@@ -79,7 +81,8 @@ function geolocation_to_location(a_latitude, a_longitude) {
 
 
 if (browser) {
-    show_position()
+    // show_position()
+    watch_position()
 }
 
 
@@ -87,14 +90,16 @@ if (browser) {
 
 
 
-<!-- Put inside a map-sized container and rotate 7.5 deg -->
-<div id="position_marker" style="left: {location_x}cqw; top: {location_y}cqw" />
 
 
 
 <svelte:window bind:scrollY={scroll} />
 <br><br>
+
 <div class="map_wrapper">
+<div id="marker_container">
+<div id="position_marker" style="left: {location_x}%; top: {location_y}%" >{location_x}, {location_y} <br> {an_error}</div>
+</div>
 {#if $visited == 1}          <img src={Map_1} width=100%>    
 {:else if $visited == 2}     <img src={Map_2} width=100%>
 {:else if $visited == 3}     <img src={Map_3} width=100%>   
@@ -107,7 +112,7 @@ if (browser) {
 {:else if $visited == 10}    <img src={Map_10} width=100%>
 {:else if $visited == 11}    <img src={Map_11} width=100%>   
 {:else if $visited == 12}    <img src={Map_12} width=100%>
-{:else}                     <img src={Map_0} width=100%>
+{:else}                      <img src={Map_0} width=100%>
 {/if}
 </div>
 
@@ -119,7 +124,32 @@ if (browser) {
 
 
 <style>
+/* put the marker image inside, position it top left corner, lose the background */
+#marker_container {
+    position: absolute;
+    width:  100%;
+    height: 100%;
+    /* left: 0;
+    top: 0; */
+    rotate: -7.5deg;
+    border: red solid 1px;
+}
 
+#position_marker {
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: blue;
+	z-index: 200;
+}
+
+
+.map_wrapper {
+    position: relative;
+    border: 1px solid purple;
+    /* background-color: aqua; */
+}
 
 
 @media (max-aspect-ratio: 5/8) and (orientation:portrait) {
@@ -131,8 +161,7 @@ if (browser) {
         position: sticky;
         top: -20px;
         position: -webkit-sticky; /* Safari */
-        /* border: 1px solid red; */
-        /* background-color: aqua; */
+
         box-shadow: 0px 30px 50px 10px #006837;
     }
 }

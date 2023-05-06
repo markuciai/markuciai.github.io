@@ -251,14 +251,6 @@ function handleMousemove(event) {
 <style>
 
 
-#position_marker {
-	position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background: blue;
-	z-index: 200;
-}
 
 /* Appearance effects */
 /* on load, a variable is flipped and the second style is added */

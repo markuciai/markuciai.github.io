@@ -1,5 +1,21 @@
 import { c as create_ssr_component, v as validate_component } from "../../../chunks/index2.js";
 import { O as Offer } from "../../../chunks/Offer.js";
+const scroller_svelte_svelte_type_style_lang = "";
+const css = {
+  code: ":root{--module:100px}#scroller.svelte-qm0gon{position:relative;width:800px;height:300px;border:solid 1px red}.scroller_element.svelte-qm0gon{width:100px;height:var(--bazinga);position:relative;position:absolute;top:0px;right:0px;border:solid 1px blue}#one.svelte-qm0gon{background:blueviolet;top:100px;right:200px}#two.svelte-qm0gon{background:teal;width:200px}",
+  map: null
+};
+const Scroller = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css);
+  return `<div style="--bazinga = 150px "></div>
+
+
+
+
+<div id="scroller" class="svelte-qm0gon"><div class="scroller_element svelte-qm0gon" id="one"></div>
+<div class="scroller_element svelte-qm0gon" id="two"></div>
+</div>`;
+});
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${$$result.head += `<!-- HEAD_svelte-9b4z94_START -->${`${`${`${$$result.title = `<title>Markučių Lobis</title>`, ""}
 	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-9b4z94_END -->`, ""}
@@ -10,6 +26,8 @@ ${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}
 <br>
 
 
+${validate_component(Scroller, "Scroller").$$render($$result, {}, {}, {})}
+blabl
 
 <section>${`${`${`
 
