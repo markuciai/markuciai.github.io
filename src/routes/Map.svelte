@@ -1,4 +1,5 @@
 <script>
+import { browser } from "$app/environment";
 // import { onMount } from 'svelte';
 import visited from './stores/visited';   
 import location from './stores/location';
@@ -22,13 +23,72 @@ import Map_12 from '$lib/images/map/12.png';
 let scroll
 
 
+
+
+var geolocation_permitted = false
+$: location_x = 20 //0...100
+$: location_y = 40
+
+
+
+function show_position() {
+	navigator.geolocation.getCurrentPosition(set_geolocation_marker, failed_to_get_geolocation, { enableHighAccuracy: true, timeout: 1000})
+}
+
+
+function set_geolocation_marker(position) {
+	const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
+	geolocation_to_location(position.coords.latitude, position.coords.longitude)
+	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
+	console.log("location %: ", location_x, location_y)
+	// console.log(position.coords.latitude)
+	
+}
+
+// change to re-ask person to allow location
+function failed_to_get_geolocation(error) {
+	console.log(error)
+}
+
+
+function watch_position() {
+	const watchID = navigator.geolocation.watchPosition(set_geolocation_marker, failed_to_get_geolocation,
+		{
+		enableHighAccuracy: true,
+		timeout: 1000
+		}
+	)
+	navigator.geolocation.clearWatch(watchID)
+}
+
+
+
+// 100 * (1 - (center_point - half_of_range - passed_value) / range)
+// Markuciai parkas center 54.6765, 25.3245 (untested)
+// the other museum center 54.6895, 25.2545
+function geolocation_to_location(a_latitude, a_longitude) {
+	// location_x 	= 100 *( 1 - (54.6765 + 0.002 - a_latitude) / 0.004)
+	// location_y	= 100 *( 1 - (25.3245 + 0.002 - a_longitude) / 0.004)
+	location_x 	= 100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)
+	location_y	= 100 *( 1 - (25.2546 + 0.002 - a_longitude) / 0.004)
+}
+
+
+
+
+
+
+if (browser) {
+    show_position()
+}
+
+
 </script>
 
 
 
-
-
-
+<!-- Put inside a map-sized container and rotate 7.5 deg -->
+<div id="position_marker" style="left: {location_x}cqw; top: {location_y}cqw" />
 
 
 
