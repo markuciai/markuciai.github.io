@@ -24,6 +24,14 @@ let scroll
 
 </script>
 
+
+
+
+
+
+
+
+
 <svelte:window bind:scrollY={scroll} />
 <br><br>
 <div class="map_wrapper">
@@ -51,6 +59,8 @@ let scroll
 
 
 <style>
+
+
 
 @media (max-aspect-ratio: 5/8) and (orientation:portrait) {
     .map_wrapper {

@@ -1,6 +1,7 @@
 <script>
 import { onMount } from 'svelte';
 import Offer from './Offer.svelte';
+import Scroller from '../scroller.svelte';
 
 let language = "LT"
 
@@ -34,6 +35,8 @@ onMount(async () => {
 <br>
 
 
+<Scroller />
+blabl
 
 <section>
 {#if language == "EN"}

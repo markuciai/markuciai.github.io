@@ -45,6 +45,83 @@ const lines = {
 
 
 
+
+
+// ## Geolocation sketches
+
+// navigator.permissions.query({ name: "geolocation" }).then((result) => {
+//   if (result.state === "granted") {
+//     geolocation_permitted = true
+//   } else if (result.state === "prompt") {
+//     geolocation_permitted = false
+//   }
+//   // Don't do anything if the permission was denied.
+// });
+
+
+var geolocation_permitted = false
+$: location_x = 20 //0...100
+$: location_y = 40
+
+// the other museum center 54.6895, 25.2545
+//
+
+
+function show_position() {
+	navigator.geolocation.getCurrentPosition(set_geolocation_marker, failed_to_get_geolocation, { enableHighAccuracy: true, timeout: 1000})
+}
+
+// 
+function set_geolocation_marker(position) {
+	const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
+	geolocation_to_location(position.coords.latitude, position.coords.longitude)
+	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
+	console.log("location %: ", location_x, location_y)
+	// console.log(position.coords.latitude)
+	
+}
+
+// change to re-ask person to allow location
+function failed_to_get_geolocation(error) {
+	console.log(error)
+}
+
+
+function watch_position() {
+	const watchID = navigator.geolocation.watchPosition(set_geolocation_marker, failed_to_get_geolocation,
+		{
+		enableHighAccuracy: true,
+		timeout: 1000
+		}
+	)
+
+	navigator.geolocation.clearWatch(watchID)
+}
+// Approximate positions:
+// var tl = 54.67532313638747, 	25.32252596786567
+// var tr = 54.674990433496724, 	25.32676055256016
+// var bl = 54.672562659570616, 	25.322265239721
+// var br = 54.672359905288126, 	25.326284049399206
+
+// 54.675 to 54.672 		diff 0.003
+// 25.3225 to 25.3267		diff 0.0042
+// probably 0.004 total each??
+// if we do 0.0050 then math gets simpler
+// or: define center, offset from there
+
+// (1 - (max - real)/range) * 100
+function geolocation_to_location(a_latitude, a_longitude) {
+	// var an_x 	= 100 *( 1 - (54.675 - a_latitude) / 0.004)
+	// var a_y 	= 100 *( 1 - (25.326 - a_latitude) / 0.004)
+	location_x 	= 100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)
+	location_y	= 100 *( 1 - (25.2546 + 0.002 - a_longitude) / 0.004)
+
+}
+
+// [Log] geolocation:  – 54.68917283286751 – 25.25468720945291 (+layout.svelte, line 2038)
+
+
+
 if (browser) {
 	if(localStorage.getItem("visited") === null) {
 		localStorage.setItem("visited", $visited);
@@ -62,7 +139,17 @@ if (browser) {
 	
 	// appear()
 	emerge = true
+
+	show_position()
+
+	console.log("preferred languages:", navigator.languages)
+
 }
+
+
+
+
+
 
 function empty_storage() {
 	localStorage.clear();
@@ -83,6 +170,8 @@ function handleMousemove(event) {
 
 
 
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -92,6 +181,8 @@ function handleMousemove(event) {
 <div on:mousemove={handleMousemove} />
 
 
+
+<div id="position_marker" style="left: {location_x}cqw; top: {location_y}cqw" />
 
 
 
@@ -230,6 +321,16 @@ function handleMousemove(event) {
 
 
 <style>
+
+
+#position_marker {
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: blue;
+	z-index: 200;
+}
 
 /* Appearance effects */
 /* on load, a variable is flipped and the second style is added */
