@@ -28,8 +28,8 @@ var an_error = "all is good"
 var geolocation_permitted = false
 $: location_x = -200 // 0...100, percentage
 $: location_y = -200
-$: heading = 0
-
+$: heading = 0 //heading is null if there's no speed. Direction only shows up when user moves
+$: orientation = 0
 
 
 function show_position() {
@@ -45,9 +45,15 @@ function watch_position() {
 	const watchID = navigator.geolocation.watchPosition(set_geolocation_marker, failed_to_get_geolocation,
 		{
 		enableHighAccuracy: true,
-		timeout: 1
+		timeout: 1,
+        maximumAge: 0
 		}
 	)
+    
+    window.addEventListener("deviceorientation", (event) => {
+        orientation = event.alpha
+        })
+
 	// navigator.geolocation.clearWatch(watchID)
 }
 
@@ -55,8 +61,9 @@ function set_geolocation_marker(position) {
 	// const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
 	geolocation_to_location(position.coords.latitude, position.coords.longitude)
     heading = position.coords.heading
+    console.log("_________________________")
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
-	console.log("location %: ", location_x, location_y, " | heading: ", heading)
+	console.log("location %: ", location_x, location_y, " | heading: ", heading, "| orientation:", orientation)
 	// console.log(position.coords.latitude)
 	
 }
