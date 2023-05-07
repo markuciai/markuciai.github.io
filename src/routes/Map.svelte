@@ -29,7 +29,7 @@ var geolocation_permitted = false
 $: location_x = -200 // 0...100, percentage
 $: location_y = -200
 $: heading = 0 //heading is null if there's no speed. Direction only shows up when user moves
-$: orientation = 0
+// $: orientation = 0
 
 
 function show_position() {
@@ -50,15 +50,18 @@ function watch_position() {
 		}
 	)
     
-    window.addEventListener("deviceorientation", set_orientation)
+    // window.addEventListener("deviceorientation", function(an_event) {
+    //     console.log("event:", an_event, an_event.alpha)
+    //     orientation = an_event.alpha    
+    // })
 
-	// navigator.geolocation.clearWatch(watchID)
+	// navigator.geolocation.clearWatch(watchID) 
 }
 
-function set_orientation(an_event) {
-    console.log("event:", an_event, an_event.alpha)
-    orientation = an_event.alpha
-}
+// function set_orientation(an_event) {
+//     console.log("event:", an_event, an_event.alpha)
+//     orientation = an_event.alpha
+// }
 
 
 
@@ -68,7 +71,7 @@ function set_geolocation_marker(position) {
     heading = position.coords.heading
     console.log("_________________________")
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
-	console.log("location %: ", location_x, location_y, " | heading: ", heading, "| orientation:", orientation)
+	console.log("location %: ", location_x, location_y, " | heading: ", heading)
 	// console.log(position.coords.latitude)
 	
 }
@@ -118,11 +121,10 @@ if (browser) {
         style="
             left: {location_x}%;
             top: {location_y}%;
-            rotate: {orientation}deg;
+            rotate: {heading}deg;
             ">
         {location_x}, {location_y}
         <br/> H: {heading}
-        <br/> O: {orientation}
     </div>
 </div>
 

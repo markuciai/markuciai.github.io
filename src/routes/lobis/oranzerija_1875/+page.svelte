@@ -119,9 +119,9 @@ Lorem ipsum dolor sit amet
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
-{:else if $language == "RU"}
 <Stopper>The orangery smells of flowers. What did you come here for?</Stopper>
+{:else if $language == "RU"}
+<Stopper>В оранжерее пахнет цветами. Но зачем вы сюда пришли?</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}

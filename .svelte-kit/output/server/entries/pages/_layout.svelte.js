@@ -37,21 +37,18 @@ const Map = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let location_x;
   let location_y;
   let heading;
-  let orientation;
   let $visited, $$unsubscribe_visited;
   $$unsubscribe_visited = subscribe(visited, (value) => $visited = value);
   $$result.css.add(css$1);
   location_x = -200;
   location_y = -200;
   heading = 0;
-  orientation = 0;
   $$unsubscribe_visited();
   return `
 <br><br>
 
-<div class="map_wrapper svelte-r1jmk4"><div id="marker_container" class="svelte-r1jmk4"><div id="position_marker" style="${"left: " + escape(location_x, true) + "%; top: " + escape(location_y, true) + "%; rotate: " + escape(orientation, true) + "deg;"}" class="svelte-r1jmk4">${escape(location_x)}, ${escape(location_y)}
-        <br> H: ${escape(heading)}
-        <br> O: ${escape(orientation)}</div></div>
+<div class="map_wrapper svelte-r1jmk4"><div id="marker_container" class="svelte-r1jmk4"><div id="position_marker" style="${"left: " + escape(location_x, true) + "%; top: " + escape(location_y, true) + "%; rotate: " + escape(heading, true) + "deg;"}" class="svelte-r1jmk4">${escape(location_x)}, ${escape(location_y)}
+        <br> H: ${escape(heading)}</div></div>
 
 ${$visited == 1 ? `<img${add_attribute("src", Map_1, 0)} width="100%">` : `${$visited == 2 ? `<img${add_attribute("src", Map_2, 0)} width="100%">` : `${$visited == 3 ? `<img${add_attribute("src", Map_3, 0)} width="100%">` : `${$visited == 4 ? `<img${add_attribute("src", Map_4, 0)} width="100%">` : `${$visited == 5 ? `<img${add_attribute("src", Map_5, 0)} width="100%">` : `${$visited == 6 ? `<img${add_attribute("src", Map_6, 0)} width="100%">` : `${$visited == 7 ? `<img${add_attribute("src", Map_7, 0)} width="100%">` : `${$visited == 8 ? `<img${add_attribute("src", Map_8, 0)} width="100%">` : `${$visited == 9 ? `<img${add_attribute("src", Map_9, 0)} width="100%">` : `${$visited == 10 ? `<img${add_attribute("src", Map_10, 0)} width="100%">` : `${$visited == 11 ? `<img${add_attribute("src", Map_11, 0)} width="100%">` : `${$visited == 12 ? `<img${add_attribute("src", Map_12, 0)} width="100%">` : `<img${add_attribute("src", Map_0, 0)} width="100%">`}`}`}`}`}`}`}`}`}`}`}`}</div>
 
