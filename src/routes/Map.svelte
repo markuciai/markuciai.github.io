@@ -56,7 +56,7 @@ function set_geolocation_marker(position) {
 	geolocation_to_location(position.coords.latitude, position.coords.longitude)
     heading = position.coords.heading
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
-	console.log("location %: ", location_x, location_y)
+	console.log("location %: ", location_x, location_y, " | heading: ", heading)
 	// console.log(position.coords.latitude)
 	
 }
