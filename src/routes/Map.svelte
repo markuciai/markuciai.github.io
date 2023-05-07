@@ -50,13 +50,16 @@ function watch_position() {
 		}
 	)
     
-    window.addEventListener("deviceorientation", function(event) {
-        console.log("event:", event, event.alpha)
-        orientation = 360 - event.alpha
-        })
+    window.addEventListener("deviceorientation", set_orientation)
 
 	// navigator.geolocation.clearWatch(watchID)
 }
+
+function set_orientation(an_event) {
+    console.log("event:", an_event, an_event.alpha)
+    orientation = an_event.alpha
+}
+
 
 
 function set_geolocation_marker(position) {
@@ -163,7 +166,7 @@ if (browser) {
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    background: orange;
+    background: magenta;
 	z-index: 200;
 }
 
