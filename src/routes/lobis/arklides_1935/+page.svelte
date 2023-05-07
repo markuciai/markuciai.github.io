@@ -115,13 +115,13 @@ Lorem ipsum dolor sit amet
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>The coachman has left, only the old horse looks at you and snorts.</Stopper>
 {:else if $language == "RU"}
 <Stopper>Кучер отошёл, только старая лошадь смотрит вам в лицо и фыркает. </Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Vežikas nuėjo, tik senas arklys žiūri jums į akis ir prunkščia.</Stopper>
 {/if}
 
 

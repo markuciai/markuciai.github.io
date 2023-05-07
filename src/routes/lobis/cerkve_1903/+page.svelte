@@ -121,13 +121,13 @@ Lorem ipsum dolor sit amet
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>It‘s quiet near the chapel. The small cemetery is chilly and peaceful.</Stopper>
 {:else if $language == "RU"}
 <Stopper>У церквушки тихо. Небольшое кладбище отдаёт прохладой и спокойствием. </Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Prie cerkvės tylu. Nedidelės kapinaitės dvelkia vėsa ir ramybe.</Stopper>
 {/if}
 
 

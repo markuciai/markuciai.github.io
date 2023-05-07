@@ -28,6 +28,7 @@ var an_error = "all is good"
 var geolocation_permitted = false
 $: location_x = -200 // 0...100, percentage
 $: location_y = -200
+$: heading = 0
 
 
 
@@ -53,6 +54,7 @@ function watch_position() {
 function set_geolocation_marker(position) {
 	// const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
 	geolocation_to_location(position.coords.latitude, position.coords.longitude)
+    heading = position.coords.heading
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
 	console.log("location %: ", location_x, location_y)
 	// console.log(position.coords.latitude)
@@ -72,7 +74,7 @@ function geolocation_to_location(a_latitude, a_longitude) {
 	// location_x 	= 100 *( 1 - (54.6765 + 0.002 - a_latitude) / 0.004)
 	// location_y	= 100 *( 1 - (25.3245 + 0.002 - a_longitude) / 0.004)
 	location_x 	= 100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)
-	location_y	= 100 *( 1 - (25.2546 + 0.002 - a_longitude) / 0.004)
+	location_y	= 100 *( 1 - (25.2546 + 0.0015 - a_longitude) / 0.003)
 }
 
 
@@ -97,9 +99,20 @@ if (browser) {
 <br><br>
 
 <div class="map_wrapper">
+
 <div id="marker_container">
-<div id="position_marker" style="left: {location_x}%; top: {location_y}%" >{location_x}, {location_y} <br> {an_error}</div>
+    <div
+        id="position_marker"
+        style="
+            left: {location_x}%;
+            top: {location_y}%;
+            rotate: {heading}deg;
+            ">
+        {location_x}, {location_y}
+        <br/> {heading}
+    </div>
 </div>
+
 {#if $visited == 1}          <img src={Map_1} width=100%>    
 {:else if $visited == 2}     <img src={Map_2} width=100%>
 {:else if $visited == 3}     <img src={Map_3} width=100%>   
@@ -161,6 +174,8 @@ if (browser) {
         position: sticky;
         top: -20px;
         position: -webkit-sticky; /* Safari */
+
+ 
 
         box-shadow: 0px 30px 50px 10px #006837;
     }

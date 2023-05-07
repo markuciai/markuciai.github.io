@@ -121,13 +121,13 @@ Dalį vandens šildydavo ir naudojo prausimuisi bei vonios malonumams. Taip, XIX
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>You probably shouldn‘t toss whatever you‘re carrying into the well.</Stopper>
 {:else if $language == "RU"}
 <Stopper>Наверно, не стоит закидывать в колодец то, что вы несёте.</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Tikriausiai neverta mesti į šulinį to, ką atsinešėte.</Stopper>
 {/if}
 
 

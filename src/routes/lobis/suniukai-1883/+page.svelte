@@ -120,13 +120,13 @@ Lorem ipsum dolor sit amet
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>You try to approach to the doggies, but they scatter.</Stopper>
 {:else if $language == "RU"}
 <Stopper>Вы пытаетесь пообщаться с собачками, но они убегают.</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Jūs bandote pakalbinti šuniukus, tačiau jie pabėga.</Stopper>
 {/if}
 
 

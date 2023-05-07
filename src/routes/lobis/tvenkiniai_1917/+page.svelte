@@ -118,13 +118,13 @@ Lorem ipsum dolor sit amet
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>Just a pond. There is a boy swimming in the middle.</Stopper>
 {:else if $language == "RU"}
-<Stopper>Пруд как пруд. Только посреди пруда плавает мальчик.</Stopper>
+<Stopper>Пруд как пруд. Посреди пруда плавает мальчик.</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Tvenkinys kaip tvenkinys. Tvenkinio viduryje plaukioja berniukas.</Stopper>
 {/if}
 
 

@@ -124,13 +124,13 @@ Prie krosnies dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuro
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>It's hot in the bakery. The young baker is too busy to give you hints</Stopper>
 {:else if $language == "RU"}
-<Stopper>Из пекарни несёт жаром, но девушка-пекарь слишком занята, чтобы давать вам подсказки.</Stopper>
+<Stopper>Из пекарни несёт жаром. Девушка-пекарь слишком занята, чтобы давать вам подсказки.</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Kepykloje karšta. Jaunoji kepėja pernelyg užimta, kad duotų jums užuominas.</Stopper>
 {/if}
 
 

@@ -125,14 +125,14 @@ function handleMousemove(event) {
 
 <!--thin space: &#8239 -->
 
-<button on:click={() => $language = "EN"}
-	class="lang_button" class:selected={$language == "EN"}>EN</button> |
+<!-- <button on:click={() => $language = "EN"}
+	class="lang_button" class:selected={$language == "EN"}>EN</button> | -->
 <button on:click={() => $language = "RU"}
 	class="lang_button" class:selected={$language == "RU"}>RU</button> |
 <button on:click={() => $language = "LT"}
-	class="lang_button" class:selected={$language == "LT"}>LT</button> |
-<button on:click={() => $language = "LA"}
-	class="lang_button" class:selected={$language == "LA"}>LA</button>
+	class="lang_button" class:selected={$language == "LT"}>LT</button>
+<!-- <button on:click={() => $language = "LA"}
+	class="lang_button" class:selected={$language == "LA"}>LA</button> -->
 
 </div>
 

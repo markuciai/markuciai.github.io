@@ -121,11 +121,11 @@ Lorem ipsum dolor sit amet
 {#if $language == "EN"}
 <Stopper>You've come to the wrong place.</Stopper>
 {:else if $language == "RU"}
-<Stopper>В оранжерее пахнет цветами. Но зачем вы сюда пришли?</Stopper>
+<Stopper>The orangery smells of flowers. What did you come here for?</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Oranžerijoje kvepia gėlėmis. O ko jūs čia atėjote?</Stopper>
 {/if}
 
 

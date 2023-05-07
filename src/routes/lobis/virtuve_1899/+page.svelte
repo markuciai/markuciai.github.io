@@ -120,13 +120,13 @@ Netikėtai receptų knygoje pastebite jums jau matyto dokumento skiautę, kurį 
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>The cook is sitting by the entrance to the kitchen, flipping through a recipe book.</Stopper>
 {:else if $language == "RU"}
 <Stopper>У входа в кухню сидит кухарка и увлечённо листает рецепты.</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Prie įėjimo į virtuvę sėdi virėja ir susidomėjusi varto receptų knygą.</Stopper>
 {/if}
 
 

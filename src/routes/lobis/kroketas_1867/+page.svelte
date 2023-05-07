@@ -144,13 +144,13 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>Children are running around the croquet court frantically searching for the missing ball.</Stopper>
 {:else if $language == "RU"}
 <Stopper>Вокруг площадки для крокета бегают дети и суетливо ищут пропавший шар.</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Aplink kroketo aikštelę bėgioja vaikai karštligiškai ieškodami dingusio kamuoliuko.</Stopper>
 {/if}
 
 
