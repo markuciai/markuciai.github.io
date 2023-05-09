@@ -142,7 +142,7 @@ Latin
 
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>The door to the Servants' quarters is shut.</Stopper>
+<Stopper>The door to the Servants' house is shut.</Stopper>
 {:else if $language == "RU"}
 <Stopper>Двери домика слуг заперты.</Stopper>
 {:else if $language == "LA"}

@@ -64,7 +64,6 @@ function watch_position() {
 // }
 
 
-
 function set_geolocation_marker(position) {
 	// const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
 	geolocation_to_location(position.coords.latitude, position.coords.longitude)

@@ -94,7 +94,7 @@ import final from '$lib/images/illustrations/doggo.png';
 {:else if $visited == 7}
 <img class="illustration" src={bucket_empty}>
 <div class="where-next too_early"><slot /><br><br>
-{#if $language == "EN"}		    	You need to fill <br>You need to go somewhere else.
+{#if $language == "EN"}		    	You need to fill <br>the empty bucket with water.
 {:else if $language == "RU"}		А вот пустое ведро <br>нужно наполнить водой.
 {:else if $language == "LA"}		Nimis mane es! <br>Alicubi ire necesse est.
 {:else}	<!-- LT-->			    	Į tuščią kibirą <br>reikia pripilti vandens.
@@ -103,10 +103,10 @@ import final from '$lib/images/illustrations/doggo.png';
 {:else if $visited == 8}
 <img class="illustration" src={bucket}>
 <div class="where-next too_early"><slot /><br><br>
-{#if $language == "EN"}		    	You're too early! <br>You need to go somewhere else.
-{:else if $language == "RU"}		Дивные сады и фруктовые деревья поместья <br>не растут, если их не поливать. 
+{#if $language == "EN"}		    	Manor's beautiful gardens <br>don't grow if you don't water them.
+{:else if $language == "RU"}		Дивные сады поместья <br>не растут, если их не поливать. 
 {:else if $language == "LA"}		Nimis mane es! <br>Alicubi ire necesse est.
-{:else}	<!-- LT-->			    	Jus atejote per anksti! <br>Pirma reikia rasti kelio pradžia.
+{:else}	<!-- LT-->			    	Nuostabūs dvaro sodai <br>neaugs, jeigu jų nelaistysi.
 {/if} </div>
 
 {:else if $visited == 9}
@@ -133,7 +133,7 @@ import final from '$lib/images/illustrations/doggo.png';
 {#if $language == "EN"}		    	You seem to have been everywhere, <br>except for the croquet court.
 {:else if $language == "RU"}		Вы, кажется, уже везде были, <br>кроме площадки для крокета.
 {:else if $language == "LA"}		Nimis mane es! <br>Alicubi ire necesse est.
-{:else}	<!-- LT-->			    	Išskyrus kroketo aikštelę,  <br>jūs jau atrodo visur apsilankėte.
+{:else}	<!-- LT-->			    	Išskyrus kroketo aikštelę, <br>jūs jau, berods, visur apsilankėte.
 {/if} </div>
 
 {:else if $visited == 12}
@@ -142,7 +142,7 @@ import final from '$lib/images/illustrations/doggo.png';
 {#if $language == "EN"}		    	You have been everywhere. <br>Return to the museum!
 {:else if $language == "RU"}		Вы везде побывали! <br>Возвращайтесь в музей!
 {:else if $language == "LA"}		Nimis mane es! <br>Alicubi ire necesse est.
-{:else}	<!-- LT-->			    	Jūs jau aplankėte visas vietas. <br>Grįžkite į muziejų.
+{:else}	<!-- LT-->			    	Jūs jau aplankėte visas vietas. <br>Grįžkite į muziejų!
 {/if} </div>
 
 

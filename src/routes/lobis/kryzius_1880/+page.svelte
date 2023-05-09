@@ -133,7 +133,7 @@ Lorem Ipsum Dolor sit amet
 
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>Servants' quarters doors are shut.</Stopper>
+<Stopper>Servants' house doors are shut.</Stopper>
 {:else if $language == "RU"}
 <Stopper>??? </Stopper>
 {:else if $language == "LA"}

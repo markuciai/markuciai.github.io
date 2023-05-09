@@ -1,1 +1,0 @@
-import{default as t}from"../entry/lobis-namelis_1855-page.svelte.8435da70.js";export{t as component};

@@ -120,13 +120,13 @@ Berniukas su džiaugsmu pasiruošęs jums padėti – jis matė panašią popier
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
-<Stopper>You've come to the wrong place.</Stopper>
+<Stopper>There's nobody in the chicken coop but a few chickens.</Stopper>
 {:else if $language == "RU"}
-<Stopper>А зачем вы сюда пришли? </Stopper>
+<Stopper>В курятнике нет никого, кроме нескольких куриц.</Stopper>
 {:else if $language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
-<Stopper>Ne ten atejote.</Stopper>
+<Stopper>Vištidėje nėra nieko, apart keleto vištų.</Stopper>
 {/if}
 
 
