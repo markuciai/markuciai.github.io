@@ -22,7 +22,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 ${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `
-<h1>Клад Маркутья</h1>
+<h1>Клад Маркутья...</h1>
 <p class="subh">Вы начали своё путешествие<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
 <article>Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
@@ -37,7 +37,24 @@ ${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}
 
 <div class="where-next">Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
 	<br><br>
-	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `Žaidimo startas: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}`}`}`} </section>
+	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `Žaidimo startas: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}
+
+<h1>Markučių lobis</h1>
+<p class="subh">Вы начали своё путешествие<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
+
+<article>Sveiki atvykę į žaidimą „Markučių lobis“. Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
+</article>
+
+[инструкция]
+
+<article>Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
+</article>
+
+
+
+<div class="where-next">Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
+	<br><br>
+	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>`}`}`} </section>
 
 
 <div class="map_section">Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
