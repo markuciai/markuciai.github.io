@@ -159,7 +159,7 @@ if (browser) {
     /* left: 0;
     top: 0; */
     rotate: -7.5deg;
-    /* border: red solid 1px; */
+    border: red solid 1px;
 }
 
 #position_marker {
@@ -174,7 +174,7 @@ if (browser) {
 
 .map_wrapper {
     position: relative;
-    /* border: 1px solid purple; */
+    border: 1px solid purple;
     /* background-color: aqua; */
 }
 
@@ -183,11 +183,10 @@ if (browser) {
     .map_wrapper {
         width: 100vw;
         height: 100vw;
-        margin-left: calc(-19px - 0vw); /* hacky! */
+        margin-left: -19px; /* hacky! */
         z-index: 10;
         position: sticky;
-        top: -10vw;
-        /* left: -20vw; */
+        top: -20px;
         position: -webkit-sticky; /* Safari */
 
  

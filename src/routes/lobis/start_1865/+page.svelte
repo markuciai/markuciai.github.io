@@ -78,7 +78,7 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 {:else if $language == "RU"}
 
 <!-- <img class="illustration" src={map_piece}> -->
-<h1>Клад Маркутья...</h1>
+<h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>
@@ -109,34 +109,6 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 Žaidimo startas: {date_started_h}:{date_started_m}:{date_started_s}
 
-<h1>Markučių lobis</h1>
-<p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
-
-<article>
-	Sveiki atvykę į žaidimą „Markučių lobis“. Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
-</article>
-
-[инструкция]
-
-<article>
-Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
-</article>
-
-
-
-<div class="where-next">
-	Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
-	<br><br>
-	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
-</div>
-
-
-
-
-
-
-
-
 {/if} <!-- Main page Languages-->
 </section>
 
@@ -145,12 +117,6 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 	Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
 </div>
 
-
-
-
-
-
-
 {:else}
 <!-- Stopper-->
 {#if $language == "EN"}
@@ -158,7 +124,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 {:else if $language == "RU"}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
 {:else if $language == "LA"}
-<Stopper>Вы уже начали своё путешествие!</Stopper>
+<Stopper>Вы уже начали своё путешествие! </Stopper>
 {:else}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
 {/if}
