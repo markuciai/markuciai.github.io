@@ -88,7 +88,7 @@ English
 </article>
 
 
-<img width=100% src={testament_overlayed_ru}>
+<!-- <img width=100% src={testament_overlayed_ru}> -->
 
 
 <article>
@@ -134,7 +134,7 @@ Vladimirui Nazimovui jūs atiduodate kroketo kamuoliuką bei parodote visas rast
 </article>
 
 
-<img width=100% src={testament_overlayed_lt}>
+<!-- <img width=100% src={testament_overlayed_lt}> -->
 <article>
 Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, nedegiame, dar 1867 m. prie vienos iš krosnių įrengtame seife.
 </article>

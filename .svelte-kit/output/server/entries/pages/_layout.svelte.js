@@ -83,9 +83,9 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
-<div class="app svelte-181jacx"><div class="${["lang_switch appear svelte-181jacx", ""].join(" ").trim()}"><button class="lang_button svelte-181jacx">↻</button> |
+<div class="app svelte-181jacx"><div class="${["lang_switch appear svelte-181jacx", ""].join(" ").trim()}">
 
-${escape($visited)} / 12  | 
+${escape($visited)} / 12   
 
 
 

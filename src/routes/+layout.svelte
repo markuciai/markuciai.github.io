@@ -119,9 +119,9 @@ function handleMousemove(event) {
 
 
 <div class="lang_switch appear" in:fade out:fade class:appear_visible="{emerge === true}">
-<button on:click={empty_storage} class="lang_button">↻</button> |
+<!-- <button on:click={empty_storage} class="lang_button">↻</button> | -->
 
-{$visited} / 12 <!-- for debug only..? --> | 
+{$visited} / 12 <!-- for debug only..? -->  
 
 <!--thin space: &#8239 -->
 
