@@ -27,9 +27,9 @@
 }
 
 .unlock_cursor, article, a, p, h1, h2, .subh, .where-next, .highlighted-question {
-	-webkit-user-select: auto; 
-	-ms-user-select: auto;
-	user-select: auto;
+	-webkit-user-select: text; 
+	-ms-user-select: text;
+	user-select: text;
 	cursor: auto;
 }
 

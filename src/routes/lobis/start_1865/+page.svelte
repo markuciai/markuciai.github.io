@@ -114,7 +114,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 
 <h1>Markučių Lobis</h1>
-<p class="subh">JŪS PRADĖJOTE KELIONĘ<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
+<p class="subh">JŪS PRADĖJOTE KELIONĘ<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>
 	Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 

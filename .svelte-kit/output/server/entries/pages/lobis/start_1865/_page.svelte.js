@@ -42,7 +42,7 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 
 
 <h1>Markučių Lobis</h1>
-<p class="subh">JŪS PRADĖJOTE KELIONĘ<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
+<p class="subh">JŪS PRADĖJOTE KELIONĘ<br>${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
 <article>Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
 </article>
