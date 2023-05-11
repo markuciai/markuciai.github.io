@@ -56,7 +56,7 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 
 <div class="where-next"><span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
 	</span> <br><br>
-	<span>Nuo muziejaus leiskitės žemyn link paminklinės lentos (autobusų stotelės). Iš dabarties į praeitį.
+	<span>Nuo muziejaus leiskitės žemyn. Iš muziejaus link paminklinės lentos. Iš dabarties į praeitį.
 	</span></div>`}`}`} </section>
 
 

@@ -132,7 +132,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 	<span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
 	</span> <br/><br/>
 	<span>
-		Nuo muziejaus leiskitės žemyn link paminklinės lentos (autobusų stotelės). Iš dabarties į praeitį.
+		Nuo muziejaus leiskitės žemyn. Iš muziejaus link paminklinės lentos. Iš dabarties į praeitį.
 	</span>
 
 </div>

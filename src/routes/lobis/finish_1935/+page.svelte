@@ -117,9 +117,10 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 	Спасибо, что играли! 
 </article>
 
-<img  src={dvras_bw} width="100%" />
+<img  src={dvras_bw} width="105%" />
 
 <article>
+	<br/><br/>
 	А какие тайны хранит в себе дом хозяйки поместья? Где находится «исчезающая» комната? Что спрятано в печке? И зачем в столовой гильотина? Продолжить путешествие вы можете уже сейчас, заказав экскурсию в кассе музея или по адресу <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
 </article>
 
@@ -133,7 +134,7 @@ Latin
 {:else} <!-- LT-->
 
 <h1>Finišas!</h1>
-<p class="subh">MARKUČIŲ DVARO<br>ORIENTACINIO ŽAIDIMO FINIŠAS</p>
+<p class="subh">MARKUČIŲ DVARO<br>ORIENTACINIO ŽAIDIMO pabaiga</p>
 <article>
 	Jūs surinkote dvaro žemėlapį ir Varvaros testamentą.
 </article>
@@ -150,9 +151,10 @@ Latin
 	Ačiū už žaidimą!
 </article>
 
-<img  src={dvras_bw} width="100%" />
+<img  src={dvras_bw} width="105%" />
 
 <article>
+	<br/><br/>
 	Kokias paslaptis saugo pati dvaro sodyba? Kur buvo „slaptasis“ kambarys? Ką slėpė krosnyje? Kokias galvas kapodavo valgomajame? Pratęsti pažintį su Markučių dvaru galite užsisakę ekskursiją muziejaus kasoje arba iš anksto susisiekę elektropaštu <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
 </article>
 

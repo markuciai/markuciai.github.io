@@ -12,7 +12,8 @@ import task from '$lib/images/illustrations/fodder.png';
 import nazimov from '$lib/images/archival/nazimov.jpg';
 import kabinetas from '$lib/images/archival/kabinetas.jpg';
 import safe from '$lib/images/archival/safe.jpg';
-
+import testament_overlayed_ru from '$lib/images/illustrations/testament_overlayed_ru.png';
+import testament_overlayed_lt from '$lib/images/illustrations/testament_overlayed_lt.png';
 
 const station_id = 12
 
@@ -86,11 +87,18 @@ English
 	Вы показываете Назимову все найденные фрагменты документа. Архитектор отдает вам последнюю 12 часть и рассказывает, что в 1935 г. Варвара Пушкина составила завещание, текст которого вам и удалось сегодня собрать.
 </article>
 
-<img width=105% src={safe}>
+
+<img width=100% src={testament_overlayed_ru}>
+
 
 <article>
-<br>
-	Настоящий оригинал завещания хранится в надежном тайнике дома — в несгораемом сейфе, который был устроен еще в 1867 году. Но для того, чтобы о последней воле супругов Пушкиных узнало как можно больше людей,  Назимов со своими детьми и придумал для гостей усадьбы эту занимательную игру.  
+	Настоящий оригинал завещания хранится в надежном тайнике дома — в несгораемом сейфе, который был устроен еще в 1867 году.
+</article>
+
+<img width=90% src={safe}>
+
+<article><br><br>
+	Но для того, чтобы о последней воле супругов Пушкиных узнало как можно больше людей,  Назимов со своими детьми и придумал для гостей усадьбы эту занимательную игру.  
 
 </article>
 
@@ -125,11 +133,14 @@ Lorem ipsum dolor sit amet
 Vladimirui Nazimovui jūs atiduodate kroketo kamuoliuką bei parodote visas rastas dokumento skiautes. Architektas jums atiduoda paskutinę – dvyliktąją dokumento dalį – ir papasakoja, kad dokumentas, kurį jūs šiandien surinkote, yra ne kas kita, o 1935 m. Markučių dvaro šeimininkės Varvaros Puškinos surašytas testamentas!
 </article>
 
-<img width=105% src={safe}>
 
+<img width=100% src={testament_overlayed_lt}>
 <article>
-<br>
-Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, nedegiame, dar 1867 m. prie vienos iš krosnių įrengtame seife. Šį smagų žaidimą, kurio tikslas surinkti šį svarbų dokumentą, veikiausiai sugalvojo pats Varvaros testamento vykdytojas Vladimiras Nazimovas su savo vaikais, norėdamas plačiau paskleisti žinią apie Markučių dvaro šeimininkų paskutinę valią.
+Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, nedegiame, dar 1867 m. prie vienos iš krosnių įrengtame seife.
+</article>
+<img width=90% src={safe}>
+<article><br/><br>
+Šį smagų žaidimą, kurio tikslas surinkti šį svarbų dokumentą, veikiausiai sugalvojo pats Varvaros testamento vykdytojas Vladimiras Nazimovas su savo vaikais, norėdamas plačiau paskleisti žinią apie Markučių dvaro šeimininkų paskutinę valią.
 </article>
 
 <div class="where-next">
