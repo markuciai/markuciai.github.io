@@ -86,12 +86,15 @@ function ms_to_time(ms) {
 
 
 {#if show_station}
-<img class="illustration" src={head_signs}>
+
 <section>
+<img class="illustration" src={head_signs}>
 
 {#if $language == "EN"}
 
-English
+<article>
+Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
+</article>
 
 {:else if $language == "RU"}
 

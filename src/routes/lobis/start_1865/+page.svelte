@@ -70,10 +70,11 @@ onMount(async () => {
 </svelte:head>
 
 
-<img class="illustration" src={head_signs}>
+
 {#if show_station}
 
 <section>
+<img class="illustration" src={head_signs}>
 {#if $language == "EN"}
 
 Started the game at {date_started_h}:{date_started_m}:{date_started_s}
@@ -111,8 +112,6 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 {:else} <!-- LT -->
 
-Žaidimo startas: {date_started_h}:{date_started_m}:{date_started_s}
-
 
 <h1>Markučių Lobis</h1>
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
@@ -131,7 +130,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 <div class="where-next">
 	<span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
-	</span>
+	</span> <br/><br/>
 	<span>
 		Nuo muziejaus leiskitės žemyn link paminklinės lentos (autobusų stotelės). Iš dabarties į praeitį.
 	</span>

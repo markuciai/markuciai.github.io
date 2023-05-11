@@ -21,8 +21,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-1fdhjfc_END -->`, ""}
 
 
-<img class="illustration"${add_attribute("src", head_signs, 0)}>
-${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `<h1>Клад Маркутья</h1>
+
+${`<section><img class="illustration"${add_attribute("src", head_signs, 0)}>
+${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `<h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
 <article>Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
@@ -39,8 +40,6 @@ ${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}
 	<span>Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
 	</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `
 
-Žaidimo startas: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}
-
 
 <h1>Markučių Lobis</h1>
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
@@ -56,7 +55,7 @@ ${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}
 
 
 <div class="where-next"><span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
-	</span>
+	</span> <br><br>
 	<span>Nuo muziejaus leiskitės žemyn link paminklinės lentos (autobusų stotelės). Iš dabarties į praeitį.
 	</span></div>`}`}`} </section>
 
