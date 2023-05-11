@@ -28,7 +28,7 @@ ${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}
 <article>Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
 </article>
 
-[инструкция]
+
 
 <article>Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
 </article>
@@ -37,7 +37,27 @@ ${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}
 
 <div class="where-next">Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
 	<br><br>
-	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `Žaidimo startas: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}`}`}`} </section>
+	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `
+
+Žaidimo startas: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}
+
+
+<h1>Markučių Lobis</h1>
+<p class="subh">JŪS PRADĖJOTE KELIONĘ<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
+
+<article>Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
+</article>
+
+
+
+<article>Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
+</article>
+
+
+
+<div class="where-next">Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
+	<br><br>
+	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>`}`}`} </section>
 
 
 <div class="map_section">Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.

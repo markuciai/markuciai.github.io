@@ -30,7 +30,7 @@ const Map_11 = "/_app/immutable/assets/11.faf951fd.png";
 const Map_12 = "/_app/immutable/assets/12.dc59851b.png";
 const Map_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: "#marker_container.svelte-r1jmk4{position:absolute;width:100%;height:100%;rotate:-7.5deg;border:red solid 1px}#position_marker.svelte-r1jmk4{position:absolute;width:50px;height:50px;border-radius:25px;background:magenta;z-index:200}.map_wrapper.svelte-r1jmk4{position:relative;border:1px solid purple}@media(max-aspect-ratio: 5/8) and (orientation:portrait){.map_wrapper.svelte-r1jmk4{width:100vw;height:100vw;margin-left:-19px;z-index:10;position:sticky;top:-20px;position:-webkit-sticky;box-shadow:0px 30px 50px 10px #006837}}@media(min-width: 1400px){.map_wrapper.svelte-r1jmk4{margin:5vw 0 0 0;width:90vw}}",
+  code: "#marker_container.svelte-vdhfro{position:absolute;width:100%;height:100%;rotate:-7.5deg}#position_marker.svelte-vdhfro{position:absolute;width:50px;height:50px;border-radius:25px;background:magenta;z-index:200}.map_wrapper.svelte-vdhfro{position:relative}@media(max-aspect-ratio: 5/8) and (orientation:portrait){.map_wrapper.svelte-vdhfro{width:100vw;height:100vw;margin-left:-19px;z-index:10;position:sticky;top:-20px;position:-webkit-sticky;box-shadow:0px 30px 50px 10px #006837}}@media(min-width: 1400px){.map_wrapper.svelte-vdhfro{margin:5vw 0 0 0;width:90vw}}",
   map: null
 };
 const Map = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -47,7 +47,7 @@ const Map = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `
 <br><br>
 
-<div class="map_wrapper svelte-r1jmk4"><div id="marker_container" class="svelte-r1jmk4"><div id="position_marker" style="${"left: " + escape(location_x, true) + "%; top: " + escape(location_y, true) + "%; rotate: " + escape(heading, true) + "deg;"}" class="svelte-r1jmk4">${escape(location_x)}, ${escape(location_y)}
+<div class="map_wrapper svelte-vdhfro"><div id="marker_container" class="svelte-vdhfro"><div id="position_marker" style="${"left: " + escape(location_x, true) + "%; top: " + escape(location_y, true) + "%; rotate: " + escape(heading, true) + "deg;"}" class="svelte-vdhfro">${escape(location_x)}, ${escape(location_y)}
         <br> H: ${escape(heading)}</div></div>
 
 ${$visited == 1 ? `<img${add_attribute("src", Map_1, 0)} width="100%">` : `${$visited == 2 ? `<img${add_attribute("src", Map_2, 0)} width="100%">` : `${$visited == 3 ? `<img${add_attribute("src", Map_3, 0)} width="100%">` : `${$visited == 4 ? `<img${add_attribute("src", Map_4, 0)} width="100%">` : `${$visited == 5 ? `<img${add_attribute("src", Map_5, 0)} width="100%">` : `${$visited == 6 ? `<img${add_attribute("src", Map_6, 0)} width="100%">` : `${$visited == 7 ? `<img${add_attribute("src", Map_7, 0)} width="100%">` : `${$visited == 8 ? `<img${add_attribute("src", Map_8, 0)} width="100%">` : `${$visited == 9 ? `<img${add_attribute("src", Map_9, 0)} width="100%">` : `${$visited == 10 ? `<img${add_attribute("src", Map_10, 0)} width="100%">` : `${$visited == 11 ? `<img${add_attribute("src", Map_11, 0)} width="100%">` : `${$visited == 12 ? `<img${add_attribute("src", Map_12, 0)} width="100%">` : `<img${add_attribute("src", Map_0, 0)} width="100%">`}`}`}`}`}`}`}`}`}`}`}`}</div>

@@ -85,7 +85,7 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
 </article>
 
-[инструкция]
+<!-- [инструкция] -->
 
 <article>
 Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
@@ -105,9 +105,33 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
 Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
-{:else}
+{:else} <!-- LT -->
 
 Žaidimo startas: {date_started_h}:{date_started_m}:{date_started_s}
+
+
+<h1>Markučių Lobis</h1>
+<p class="subh">JŪS PRADĖJOTE KELIONĘ<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
+
+<article>
+	Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
+</article>
+
+<!-- [инструкция] -->
+
+<article>
+Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
+</article>
+
+
+
+<div class="where-next">
+	Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
+	<br><br>
+	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
+</div>
+
+
 
 {/if} <!-- Main page Languages-->
 </section>

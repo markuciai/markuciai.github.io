@@ -35,9 +35,10 @@ onMount(async () => {
 <br>
 
 
-<Scroller />
-blabl
+<!-- <Scroller /> -->
+<!-- blabl -->
 
+ {#if 0 == 1}
 <section>
 {#if language == "EN"}
 
@@ -84,11 +85,8 @@ O dabar įsivaizduokite, kad jūs laiko mašina nusikeliate į praeitį ir lanko
 
 
 
+{/if}
 
-<section>
-	
-</section>
-<br><br>
 
 
 
