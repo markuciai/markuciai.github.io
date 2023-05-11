@@ -28,12 +28,12 @@ const Map_9 = "/_app/immutable/assets/9.140d737d.png";
 const Map_10 = "/_app/immutable/assets/10.3668d023.png";
 const Map_11 = "/_app/immutable/assets/11.faf951fd.png";
 const Map_12 = "/_app/immutable/assets/12.dc59851b.png";
-const Map_svelte_svelte_type_style_lang = "";
+const The_map_svelte_svelte_type_style_lang = "";
 const css$1 = {
   code: "#marker_container.svelte-vdhfro{position:absolute;width:100%;height:100%;rotate:-7.5deg}#position_marker.svelte-vdhfro{position:absolute;width:50px;height:50px;border-radius:25px;background:magenta;z-index:200}.map_wrapper.svelte-vdhfro{position:relative}@media(max-aspect-ratio: 5/8) and (orientation:portrait){.map_wrapper.svelte-vdhfro{width:100vw;height:100vw;margin-left:-19px;z-index:10;position:sticky;top:-20px;position:-webkit-sticky;box-shadow:0px 30px 50px 10px #006837}}@media(min-width: 1400px){.map_wrapper.svelte-vdhfro{margin:5vw 0 0 0;width:90vw}}",
   map: null
 };
-const Map = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const The_map = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let location_x;
   let location_y;
   let heading;
@@ -103,7 +103,7 @@ ${escape($visited)} / 12  |
 
 
 ${slots.default ? slots.default({}) : ``}
-<div class="map_and_stuff svelte-181jacx">${validate_component(Map, "Map").$$render($$result, {}, {}, {})}
+<div class="map_and_stuff svelte-181jacx">${validate_component(The_map, "Map").$$render($$result, {}, {}, {})}
 <div class="legend_section svelte-181jacx">${$language == "RU" ? `<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-181jacx">Домик слуг</li>
 	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-181jacx">Колодец</li>
 	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-181jacx">Конюшни</li>

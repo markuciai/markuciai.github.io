@@ -26,7 +26,7 @@ import icon_11 from '$lib/images/icons/11.png';
 import icon_12 from '$lib/images/icons/12.png';
 
 
-import Map from './Map.svelte';
+import Map from './The_map.svelte';
 
 
 let scroll = Number(0)

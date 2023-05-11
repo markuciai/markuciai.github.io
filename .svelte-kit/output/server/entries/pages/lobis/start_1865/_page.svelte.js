@@ -1,6 +1,7 @@
-import { c as create_ssr_component, a as subscribe, e as escape } from "../../../../chunks/index2.js";
+import { c as create_ssr_component, a as subscribe, b as add_attribute, e as escape } from "../../../../chunks/index2.js";
 import { l as language } from "../../../../chunks/language.js";
 import { v as visited } from "../../../../chunks/visited.js";
+import { h as head_signs, i as instructions } from "../../../../chunks/instructions.js";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$unsubscribe_visited;
   let $language, $$unsubscribe_language;
@@ -20,24 +21,23 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-1fdhjfc_END -->`, ""}
 
 
-
-${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `
-<h1>Клад Маркутья</h1>
+<img class="illustration"${add_attribute("src", head_signs, 0)}>
+${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `<h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
 <article>Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
 </article>
 
-
+<img${add_attribute("src", instructions, 0)} width="100%">
 
 <article>Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
 </article>
 
 
-
-<div class="where-next">Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
+<div class="where-next"><span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
 	<br><br>
-	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `
+	<span>Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
+	</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `
 
 Žaidimo startas: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}
 
@@ -48,20 +48,20 @@ ${`<section>${$language == "EN" ? `Started the game at ${escape(date_started_h)}
 <article>Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
 </article>
 
+<img${add_attribute("src", instructions, 0)} width="100%">
 
-
-<article>Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
+<article>Žaidimas prasideda prie įėjimo. Dvare buvo įėjimo vartai, o prie jų stovėjo didelis iš geležinkelio bėgių pagamintas kryžius.
 </article>
 
 
 
-<div class="where-next">Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
-	<br><br>
-	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span></div>`}`}`} </section>
+<div class="where-next"><span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
+	</span>
+	<span>Nuo muziejaus leiskitės žemyn link paminklinės lentos (autobusų stotelės). Iš dabarties į praeitį.
+	</span></div>`}`}`} </section>
 
 
-<div class="map_section">Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
-</div>`} `;
+`} `;
 });
 export {
   Page as default

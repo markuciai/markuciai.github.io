@@ -2,6 +2,9 @@
 import {onMount} from 'svelte';
 import language from '../../stores/language';
 import visited from '../../stores/visited';
+import head_signs from '$lib/images/illustrations/head_signs.png';
+import instructions from '$lib/images/illustrations/instructions.png';
+
 
 
 import Stopper from '../../Stopper.svelte';
@@ -67,7 +70,7 @@ onMount(async () => {
 </svelte:head>
 
 
-
+<img class="illustration" src={head_signs}>
 {#if show_station}
 
 <section>
@@ -77,7 +80,7 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
 {:else if $language == "RU"}
 
-<!-- <img class="illustration" src={map_piece}> -->
+
 <h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
 
@@ -85,18 +88,19 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
 </article>
 
-<!-- [инструкция] -->
+<img  src={instructions} width="100%" />
 
 <article>
 Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
 </article>
 
 
-
 <div class="where-next">
-	Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
-	<br><br>
 	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
+	<br><br>
+	<span>
+		Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
+	</span>
 </div>
 
 
@@ -117,18 +121,21 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 	Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
 </article>
 
-<!-- [инструкция] -->
+<img  src={instructions} width="100%" />
 
 <article>
-Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
+	Žaidimas prasideda prie įėjimo. Dvare buvo įėjimo vartai, o prie jų stovėjo didelis iš geležinkelio bėgių pagamintas kryžius.
 </article>
 
 
 
 <div class="where-next">
-	Вы, наверно, не с неба упали, а поднялись в музей по лестнице ведущей от входа.
-	<br><br>
-	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
+	<span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
+	</span>
+	<span>
+		Nuo muziejaus leiskitės žemyn link paminklinės lentos (autobusų stotelės). Iš dabarties į praeitį.
+	</span>
+
 </div>
 
 
@@ -137,9 +144,9 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 </section>
 
 
-<div class="map_section">
+<!-- <div class="map_section">
 	Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
-</div>
+</div> -->
 
 {:else}
 <!-- Stopper-->

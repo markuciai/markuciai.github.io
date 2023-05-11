@@ -34,7 +34,7 @@ import doggo from '$lib/images/illustrations/doggo.png';
 По парку разбросаны таблички с кьюар-кодами. Начните в музее и посетите все точки квеста в нужном порядке чтобы получить приз и прикоснуться к истории поместья.
 </article>
 
-<img class="" src={instructions}>
+<img  src={instructions} width="100%" />
 
 <article>
 Для игры каждому игроку понадобится телефон или планшет подключённый к интернету (чтобы сканировать кьюар-коды). Никаких дополнительных приложений ставить не нужно.
@@ -73,7 +73,7 @@ Markučių dvaro muziejus nedidelėms grupėms ir pavieniams žaidėjams pristat
     Parko teritorijoje yra išdėliotos lentelės su QR-kodais. Pradėkite nuo muziejaus ir aplankykite iš eilės visus orientaciniame žaidime numatytus taškus, susipažinkite su dvaro istorija ir laimėkite prizą. 
 </article>
 
-<img class="" src={instructions}>
+<img  src={instructions} width="100%" />
 
 <article>
     Kiekvienam žaidėjui (ar žaidėjų komandai) reikės mobilaus telefono arba planšetinio kompiuterio su interneto prieiga. Jokių papildomų programėlių instaliuoti nereikia.
