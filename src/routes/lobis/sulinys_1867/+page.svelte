@@ -41,7 +41,7 @@ onMount(async () => {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
-	<title>Колодец – Клад Маркутья</title>
+	<title>Колодец – Клад Маркучай</title>
 	<meta name="description" content="Квест" />
 {:else if $language == "LA"}
 	<title> – Markučiai Treasure</title>

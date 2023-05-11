@@ -8,11 +8,11 @@ const Offer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_language();
   return `<section>${$language == "EN" ? `<div class="where-next">Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a></div>` : `${$language == "RU" ? `<img class="illustration"${add_attribute("src", head_signs, 0)}>
 
-<h1>Клад Маркутья</h1>
+<h1>Клад Маркучай</h1>
 <p class="subh">Ориентационный квест <br> по парку Маркутского двора</p>
 
 <article>А вы знали, что в Маркутье спрятан клад? <br><br>
-Музей Двора Маркутья представляет образовательную программу и увлекательное приключение для небольших групп или одиночных игроков.
+Музей Двора Маркучай представляет образовательную программу и увлекательное приключение для небольших групп или одиночных игроков.
 </article>
 
 <article>По парку разбросаны таблички с кьюар-кодами. Начните в музее и посетите все точки квеста в нужном порядке чтобы получить приз и прикоснуться к истории поместья.

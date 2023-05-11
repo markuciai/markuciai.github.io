@@ -15,7 +15,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_visited();
   $$unsubscribe_language();
   return `${$$result.head += `<!-- HEAD_svelte-1fdhjfc_START -->${$language == "EN" ? `${$$result.title = `<title>Start — Markučiai Treasure</title>`, ""}
-	<meta name="description" content="Quest">` : `${$language == "RU" ? `${$$result.title = `<title>Старт – Клад Маркутья</title>`, ""}
+	<meta name="description" content="Quest">` : `${$language == "RU" ? `${$$result.title = `<title>Старт – Клад Маркучай</title>`, ""}
 	<meta name="description" content="Квест">` : `${$language == "LA" ? `${$$result.title = `<title>Start – Markučiai Treasure</title>`, ""}
 	<meta name="description" content="Quest">` : `${$$result.title = `<title>Startas – Markučių Lobis</title>`, ""}
 	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-1fdhjfc_END -->`, ""}
@@ -23,7 +23,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 ${`<section><img class="illustration"${add_attribute("src", head_signs, 0)}>
-${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `<h1>Клад Маркутья</h1>
+${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `<h1>Клад Маркучай</h1>
 <p class="subh">Вы начали своё путешествие<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
 <article>Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.

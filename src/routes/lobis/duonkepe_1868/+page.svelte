@@ -41,7 +41,7 @@ if ($visited >= station_id) {
 	<title> — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
-	<title>Пекарня – Клад Маркутья</title>
+	<title>Пекарня – Клад Маркучай</title>
 	<meta name="description" content="Квест" />
 {:else if $language == "LA"}
 	<title> – Markučiai Treasure</title>

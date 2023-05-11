@@ -72,7 +72,7 @@ function ms_to_time(ms) {
 	<title>Finish Line - Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
-	<title>Финиш - Клад Маркутья</title>
+	<title>Финиш - Клад Маркучай</title>
 	<meta name="description" content="Квест" />
 {:else if $language == "LA"}
 	<title>Finio – Markučiai Treasure</title>
@@ -100,7 +100,7 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 
 
 <h1>Победа!</h1>
-<p class="subh">Финишная линия квеста<br>в поместье Маркутья</p>
+<p class="subh">Финишная линия квеста<br>в поместье Маркучай</p>
 <article>
 	Вы собрали карту поместья и завещание Варвары.
 </article>
