@@ -6,9 +6,10 @@ import visited from '../../stores/visited';
 import Offer from '../Offer.svelte';
 import Stopper from '../../Stopper.svelte';
 
-import task from '$lib/images/illustrations/bowl.png';
-import entrance from '$lib/images/archival/entrance.jpg';
-import map_piece from '$lib/images/map-pieces/1.png';
+import head_signs from '$lib/images/illustrations/head_signs.png';
+import dvras_bw from '$lib/images/archival/dvras_bw.jpg';
+
+
 
 
 const station_id = 13
@@ -85,21 +86,22 @@ function ms_to_time(ms) {
 
 
 {#if show_station}
-
-
+<img class="illustration" src={head_signs}>
+<section>
 
 {#if $language == "EN"}
 
 English
 
 {:else if $language == "RU"}
-<section>
-<!-- <img class="illustration" src={map_piece}> -->
+
+
 <h1>Победа!</h1>
 <p class="subh">Финишная линия квеста<br>в поместье Маркутья</p>
 <article>
-	Вы собрали карту поместья и завещание Варвары. Вы достигли финиша!
+	Вы собрали карту поместья и завещание Варвары.
 </article>
+
 <article>
 	<ul>
 	<li>Старт поиска: {date_started_h}:{date_started_m}:{date_started_s}</li> 
@@ -108,47 +110,56 @@ English
 	</ul>
 </article>
 
+<article>
+	Спасибо, что играли! 
+</article>
 
-</section>
+<img  src={dvras_bw} width="100%" />
+
+<article>
+	А какие тайны хранит в себе дом хозяйки поместья? Где находится «исчезающая» комната? Что спрятано в печке? И зачем в столовой гильотина? Продолжить путешествие вы можете уже сейчас, заказав экскурсию в кассе музея или по адресу <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
+</article>
+
+
 
 
 {:else if $language == "LA"}
 
 Latin
 
-{:else}
+{:else} <!-- LT-->
 
-<section>
-	<img class="illustration" src={map_piece}>
-	<h1>Kryžius</h1>
-	<p class="subh">Pirmoji stotelė<br>ieškant Markučių lobio</p>
-	<article>
-		Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
+<h1>Finišas!</h1>
+<p class="subh">MARKUČIŲ DVARO<br>ORIENTACINIO ŽAIDIMO FINIŠAS</p>
+<article>
+	Jūs surinkote dvaro žemėlapį ir Varvaros testamentą.
+</article>
+
+<article>
+	<ul>
+	<li>Žaidimo pradžia: {date_started_h}:{date_started_m}:{date_started_s}</li> 
+	<li>Lobis rastas:  {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
+	<li>Laikas: {time_delta}</li>
+	</ul>
+</article>
+
+<article>
+	Ačiū už žaidimą!
+</article>
+
+<img  src={dvras_bw} width="100%" />
+
+<article>
+	Kokias paslaptis saugo pati dvaro sodyba? Kur buvo „slaptasis“ kambarys? Ką slėpė krosnyje? Kokias galvas kapodavo valgomajame? Pratęsti pažintį su Markučių dvaru galite užsisakę ekskursiją muziejaus kasoje arba iš anksto susisiekę elektropaštu <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
+</article>
 
 
-	<img width=105% src={entrance}>
-	<article>
-	<br>
-	Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
-	</article>
-	<br><br>
-	<img class="illustration" src={task}>
 
-	<div class="where-next">
-		Kam vertėtų parodyti keistąjį radinį? Galbūt dvaro tarnai galėtų jums&nbsp;padėti?
-		<br><br>
-		<span class="highlighted-question">Kur reikėtų ieškoti&nbsp;tarnų?</span>
-	</div>
-
+{/if} <!-- Main page $languages-->
 </section>
 
 
-	<div class="map_section">
-		Kur toliau?
 
-	</div>
-
-{/if} <!-- Main page $languages-->
 
 
 {:else}
