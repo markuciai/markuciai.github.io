@@ -58,7 +58,7 @@ onMount(async () => {
 	<title>Start — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
-	<title>Старт – Клад Маркучай</title>
+	<title>Старт – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if $language == "LA"}
 	<title>Start – Markučiai Treasure</title>
@@ -82,7 +82,7 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 {:else if $language == "RU"}
 
 
-<h1>Клад Маркучай</h1>
+<h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>

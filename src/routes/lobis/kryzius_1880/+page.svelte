@@ -42,7 +42,7 @@ onMount(async () => {
 	<title>Cross — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
-	<title>Крест – Клад Маркучай</title>
+	<title>Крест – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
 {:else if $language == "LA"}
 	<title>Crucis – Markučiai Treasure</title>
@@ -71,7 +71,7 @@ English
 
 
 <h1>Крест</h1>
-<p class="subh">Первая остановка<br>в поисках Клада Маркучай</p>
+<p class="subh">Первая остановка<br>в поисках Клада Маркутья</p>
 <article>
 По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
 </article>
