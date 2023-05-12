@@ -9,7 +9,7 @@ import Stopper from '../../Stopper.svelte';
 import map_piece from '$lib/images/map-pieces/1.png';
 import task from '$lib/images/illustrations/bowl.png';
 
-import entrance from '$lib/images/archival/entrance.jpg';
+import cross from '$lib/images/archival/cross.jpg';
 
 
 const station_id = 1
@@ -77,7 +77,7 @@ English
 </article>
 
 
-<img width=105% src={entrance}>
+<img width=105% src={cross}>
 <article>
 <br>
 Сейчас в этой чаше лежит только обрывок бумаги с гербовой печатью и подписью. Похоже, это очень важный исторический документ. Но, где же остальная часть текста, и что в нем было написано? Кому следует отдать случайную находку?
@@ -110,7 +110,7 @@ Lorem Ipsum Dolor sit amet
 	Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
 
 
-<img width=105% src={entrance}>
+<img width=105% src={cross}>
 <article>
 <br>
 Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
