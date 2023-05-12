@@ -67,7 +67,7 @@ English
 {:else if $language == "RU"}
 
 <h1>Собачки</h1>
-<p class="subh">Vienuolitkoji stotelė<br>ieškant Markučių lobio</p>
+<p class="subh">Одинадцатая остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Потомки Фаньки и Бойки играют с шариком от крокета. Непорядок!
 

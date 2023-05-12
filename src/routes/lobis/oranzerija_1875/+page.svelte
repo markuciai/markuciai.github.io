@@ -65,7 +65,7 @@ English
 {:else if $language == "RU"}
 
 <h1>Оранжерея</h1>
-<p class="subh">Devintoji stotelė<br>ieškant Markučių lobio</p>
+<p class="subh">Девятая остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Вы невероятно догадливы — орхидеи растут в оранжерее.
 </article>

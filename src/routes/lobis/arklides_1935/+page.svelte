@@ -70,7 +70,7 @@ English
 
 <img class="illustration" src={map_piece}>
 <h1>Конюшня</h1>
-<p class="subh">Trečioji stotelė<br>ieškant Markučių lobio</p>
+<p class="subh">Третья остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Вы легко справились с этой просьбой — передали кучеру седло и рассказали о поисках важного документа. Пан Михал много лет служил в усадьбе Пушкиных в Маркутье, возил Григория и Варвару в город и соседние губернии. 
 
@@ -130,8 +130,8 @@ Lorem ipsum dolor sit amet
 
 
 
-<div class="map_section">
+<!-- <div class="map_section">
 	Jūs gavote trečiąją dokumento dalį.
 
-</div>
+</div> -->
 

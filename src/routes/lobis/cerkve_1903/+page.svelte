@@ -66,7 +66,7 @@ English
 {:else if $language == "RU"}
 
 <h1>Церковь</h1>
-<p class="subh">Dešimtoji stotelė<br>ieškant Markučių lobio</p>
+<p class="subh">Десятая остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Найдите дату — в каком году началось строительство этой домовой церкви?  
 

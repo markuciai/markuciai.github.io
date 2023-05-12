@@ -66,7 +66,7 @@ English
 {:else if $language == "RU"}
 
 <h1>Птичник и ледник</h1>
-<p class="subh">Šeštoji stotelė<br>ieškant Markučių lobio</p>
+<p class="subh">Шестая остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Ванюша увидел вас еще издали и весело замахал руками. Вы отдали ему корм для цыплят и рассказали о своих поисках.
 </article>
