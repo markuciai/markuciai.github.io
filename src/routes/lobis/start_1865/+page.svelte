@@ -91,8 +91,10 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
 <img  src={instructions} width="100%" />
 
+
 <article>
-Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой крест из железнодорожных рельс.
+	Любое путешествие начинается со входа. <br>
+	У поместья были ворота, а у ворот стоял большой крест из железнодорожных рельс.
 </article>
 
 
@@ -100,7 +102,9 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
 	<br><br>
 	<span>
-		Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
+		Спускайтесь вниз.<br>
+		Из музея ко входу.<br>
+		Из настоящего в прошлое.
 	</span>
 </div>
 
@@ -132,7 +136,9 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 	<span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
 	</span> <br/><br/>
 	<span>
-		Leiskitės žemyn. Iš&nbsp;muziejaus link paminklinės lentos. Iš&nbsp;dabarties į praeitį.
+		Leiskitės žemyn.<br>
+		Iš&nbsp;muziejaus link paminklinės lentos.<br>
+		Iš&nbsp;dabarties į praeitį.
 	</span>
 
 </div>

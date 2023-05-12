@@ -99,8 +99,8 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 {:else if $language == "RU"}
 
 
-<h1>Победа!</h1>
-<p class="subh">Финишная линия квеста<br>в поместье Маркутья</p>
+<h1>Финиш!</h1>
+<p class="subh">Финишная линия <br>квеста поместья Маркутья</p>
 <article>
 	Вы собрали карту поместья и завещание Варвары.
 </article>
@@ -108,7 +108,7 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 <article>
 	<ul>
 	<li>Старт поиска: {date_started_h}:{date_started_m}:{date_started_s}</li> 
-	<li>Клад найден:  {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
+	<li>Клад найден: {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
 	<li>Время: {time_delta}</li>
 	</ul>
 </article>
@@ -120,8 +120,12 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 <img  src={dvras_bw} width="105%" />
 
 <article>
-	<br/><br/>
-	А какие тайны хранит в себе дом хозяйки поместья? Где находится «исчезающая» комната? Что спрятано в печке? И зачем в столовой гильотина? Продолжить путешествие вы можете уже сейчас, заказав экскурсию в кассе музея или по адресу <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
+	<br/>
+	А какие тайны хранит в себе дом хозяйки поместья? Где находится «исчезающая» комната? Что спрятано в печке? И зачем в столовой гильотина?
+</article>
+<article>
+	Продолжить путешествие вы можете уже сейчас, заказав экскурсию в кассе музея или по адресу <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
+	<br/>&nbsp;
 </article>
 
 
@@ -142,7 +146,7 @@ Latin
 <article>
 	<ul>
 	<li>Žaidimo pradžia: {date_started_h}:{date_started_m}:{date_started_s}</li> 
-	<li>Lobis rastas:  {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
+	<li>Lobis rastas: {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
 	<li>Laikas: {time_delta}</li>
 	</ul>
 </article>
@@ -155,7 +159,11 @@ Latin
 
 <article>
 	<br/><br/>
-	Kokias paslaptis saugo pati dvaro sodyba? Kur buvo „slaptasis“ kambarys? Ką slėpė krosnyje? Kokias galvas kapodavo valgomajame? Pratęsti pažintį su Markučių dvaru galite užsisakę ekskursiją muziejaus kasoje arba iš anksto susisiekę elektropaštu <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
+	Kokias paslaptis saugo pati dvaro sodyba? Kur buvo „slaptasis“ kambarys? Ką slėpė krosnyje? Kokias galvas kapodavo valgomajame?
+</article>
+<article>
+	Pratęsti pažintį su Markučių dvaru galite užsisakę ekskursiją muziejaus kasoje arba iš anksto susisiekę elektropaštu <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
+	<br/>&nbsp;
 </article>
 
 

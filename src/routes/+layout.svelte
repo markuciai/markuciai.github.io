@@ -121,7 +121,10 @@ function handleMousemove(event) {
 <div class="lang_switch appear" in:fade out:fade class:appear_visible="{emerge === true}">
 <!-- <button on:click={empty_storage} class="lang_button">↻</button> | -->
 
-{$visited} / 12 <!-- for debug only..? -->  
+{#if $visited > -1}
+<span class="visited_counter">{$visited} / 12</span>&nbsp;<!-- for debug only..? -->  
+{/if}
+
 
 <!--thin space: &#8239 -->
 
@@ -267,6 +270,12 @@ function handleMousemove(event) {
 
 
 /* Language switcher */
+.visited_counter {
+	color: #EEDC83;
+	font-style: italic;
+	font-weight: 400;
+}
+
 
 .lang_switch {
 	/* width: 100vw; */
