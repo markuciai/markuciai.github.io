@@ -236,7 +236,7 @@ function handleMousemove(event) {
 
 <footer>
 	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
-	<p>// Demonstracinė versija. Vyksta darbai.</p>
+	<!-- <p>// Demonstracinė versija. Vyksta darbai.</p> -->
 	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a></p>
 	<p> </p>
 </footer>
