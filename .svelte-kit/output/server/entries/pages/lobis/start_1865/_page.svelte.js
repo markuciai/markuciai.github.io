@@ -31,13 +31,17 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 
 <img${add_attribute("src", instructions, 0)} width="100%">
 
-<article>Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой крест из железнодорожных рельс.
+
+<article>Любое путешествие начинается со входа. <br>
+	У поместья были ворота, а у ворот стоял большой крест из железнодорожных рельс.
 </article>
 
 
 <div class="where-next"><span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
 	<br><br>
-	<span>Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
+	<span>Спускайтесь вниз.<br>
+		Из музея ко входу.<br>
+		Из настоящего в прошлое.
 	</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `
 
 
@@ -56,7 +60,9 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 
 <div class="where-next"><span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
 	</span> <br><br>
-	<span>Leiskitės žemyn. Iš muziejaus link paminklinės lentos. Iš dabarties į praeitį.
+	<span>Leiskitės žemyn.<br>
+		Iš muziejaus link paminklinės lentos.<br>
+		Iš dabarties į praeitį.
 	</span></div>`}`}`} </section>
 
 

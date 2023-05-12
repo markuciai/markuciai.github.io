@@ -58,7 +58,7 @@ ${$visited == 1 ? `<img${add_attribute("src", Map_1, 0)} width="100%">` : `${$vi
 });
 const _layout_svelte_svelte_type_style_lang = "";
 const css = {
-  code: '.appear.svelte-181jacx.svelte-181jacx{opacity:0;transform:translate(0, 10px);transition:0.8s cubic-bezier(0.19, 1, 0.22, 1)}.appear_visible.svelte-181jacx.svelte-181jacx{opacity:1;transform:translate(0,0)}.lang_switch.svelte-181jacx.svelte-181jacx{align-items:center;align-self:center;text-align:right;width:100%;max-width:800px;margin:10px auto;box-sizing:border-box;padding-right:20px;color:#222;user-select:none}.lang_button.svelte-181jacx.svelte-181jacx{appearance:none;box-sizing:border-box;text-decoration:none;text-align:center;font-size:14px;line-height:20px;font-weight:600;border:none;background-color:rgba(255, 255, 255, 0);width:40px;height:26px;margin:5px;border-radius:3px;color:#EEDC83;border:0.67px solid rgb(238, 220, 131, 0.8);cursor:pointer;user-select:none;transition:0.3s}.lang_button.svelte-181jacx.svelte-181jacx::first-letter{letter-spacing:2px}.lang_button.svelte-181jacx.svelte-181jacx:hover{background-color:#EEDC83;color:#D33F37;border:0.67px solid rgb(238, 220, 131, 1);transition:0.05s;transform:scale(1.1);box-shadow:0px 3px 5px -3px rgba(0, 0, 0, 0.3)}.lang_button.svelte-181jacx.svelte-181jacx:active{background-color:#EEDC83;border:0.67px solid rgb(238, 220, 131, 0);transform:scale(0.95);box-shadow:0px 3px 5px -10px rgba(0, 0, 0, 0)}.lang_button.svelte-181jacx.svelte-181jacx:active:not(:hover){transform:scale(1);color:#EEDC83;border:0.67px solid rgb(238, 220, 131, 1);background-color:rgba(238, 220, 131, 0.2)}.lang_button.selected.svelte-181jacx.svelte-181jacx,.lang_button.selected.svelte-181jacx.svelte-181jacx:hover{transform:scale(1);pointer-events:none;cursor:default;color:#006837;color:#EEDC83;background-color:#D33F37;border:0.67px solid rgb(238, 220, 131, 0.1);user-select:none;transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1)}.legend_section.svelte-181jacx.svelte-181jacx{display:flex;flex-wrap:wrap;flex-grow:0;margin-bottom:40px}.legend_ul.svelte-181jacx.svelte-181jacx{flex:1 0 0;list-style-type:none;display:block;padding:0;margin:0;color:white;color:#EEDC83;margin-bottom:-40px}.legend.svelte-181jacx.svelte-181jacx{display:block;box-sizing:border-box;font-size:28px;border-radius:8px;padding:20px 0 20px 0;margin:40px 0 40px 0;width:370px;vertical-align:middle;line-height:20px;letter-spacing:1px;font-style:italic;font-weight:500}.legend_icon.svelte-181jacx.svelte-181jacx{position:relative;left:4px;width:120px;margin:-100px 0px -45px -10px}.app.svelte-181jacx.svelte-181jacx{display:flex;flex-direction:column;min-height:100vh;font-family:"Lora"}main.svelte-181jacx.svelte-181jacx{flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-181jacx.svelte-181jacx{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px;margin:10px 0 80px 0}footer.svelte-181jacx a.svelte-181jacx{font-weight:bold}@media(min-width: 480px){footer.svelte-181jacx.svelte-181jacx{padding:0px 0}}@media(min-width: 950px){.lang_switch.svelte-181jacx.svelte-181jacx{position:absolute;right:2vw}}@media(min-width: 1400px){.map_and_stuff.svelte-181jacx.svelte-181jacx{left:0;width:100vw;display:flex;flex:1;margin:40px 0 0 -30vw}.legend_section.svelte-181jacx.svelte-181jacx{margin:calc(40px + 5vw) 0 0 40px;min-width:760px}}',
+  code: '.appear.svelte-1w249pv.svelte-1w249pv{opacity:0;transform:translate(0, 10px);transition:0.8s cubic-bezier(0.19, 1, 0.22, 1)}.appear_visible.svelte-1w249pv.svelte-1w249pv{opacity:1;transform:translate(0,0)}.visited_counter.svelte-1w249pv.svelte-1w249pv{color:#EEDC83;font-style:italic;font-weight:400}.lang_switch.svelte-1w249pv.svelte-1w249pv{align-items:center;align-self:center;text-align:right;width:100%;max-width:800px;margin:10px auto;box-sizing:border-box;padding-right:20px;color:#222;user-select:none}.lang_button.svelte-1w249pv.svelte-1w249pv{appearance:none;box-sizing:border-box;text-decoration:none;text-align:center;font-size:14px;line-height:20px;font-weight:600;border:none;background-color:rgba(255, 255, 255, 0);width:40px;height:26px;margin:5px;border-radius:3px;color:#EEDC83;border:0.67px solid rgb(238, 220, 131, 0.8);cursor:pointer;user-select:none;transition:0.3s}.lang_button.svelte-1w249pv.svelte-1w249pv::first-letter{letter-spacing:2px}.lang_button.svelte-1w249pv.svelte-1w249pv:hover{background-color:#EEDC83;color:#D33F37;border:0.67px solid rgb(238, 220, 131, 1);transition:0.05s;transform:scale(1.1);box-shadow:0px 3px 5px -3px rgba(0, 0, 0, 0.3)}.lang_button.svelte-1w249pv.svelte-1w249pv:active{background-color:#EEDC83;border:0.67px solid rgb(238, 220, 131, 0);transform:scale(0.95);box-shadow:0px 3px 5px -10px rgba(0, 0, 0, 0)}.lang_button.svelte-1w249pv.svelte-1w249pv:active:not(:hover){transform:scale(1);color:#EEDC83;border:0.67px solid rgb(238, 220, 131, 1);background-color:rgba(238, 220, 131, 0.2)}.lang_button.selected.svelte-1w249pv.svelte-1w249pv,.lang_button.selected.svelte-1w249pv.svelte-1w249pv:hover{transform:scale(1);pointer-events:none;cursor:default;color:#006837;color:#EEDC83;background-color:#D33F37;border:0.67px solid rgb(238, 220, 131, 0.1);user-select:none;transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1)}.legend_section.svelte-1w249pv.svelte-1w249pv{display:flex;flex-wrap:wrap;flex-grow:0;margin-bottom:40px}.legend_ul.svelte-1w249pv.svelte-1w249pv{flex:1 0 0;list-style-type:none;display:block;padding:0;margin:0;color:white;color:#EEDC83;margin-bottom:-40px}.legend.svelte-1w249pv.svelte-1w249pv{display:block;box-sizing:border-box;font-size:28px;border-radius:8px;padding:20px 0 20px 0;margin:40px 0 40px 0;width:370px;vertical-align:middle;line-height:20px;letter-spacing:1px;font-style:italic;font-weight:500}.legend_icon.svelte-1w249pv.svelte-1w249pv{position:relative;left:4px;width:120px;margin:-100px 0px -45px -10px}.app.svelte-1w249pv.svelte-1w249pv{display:flex;flex-direction:column;min-height:100vh;font-family:"Lora"}main.svelte-1w249pv.svelte-1w249pv{flex:1;display:flex;flex-direction:column;padding:20px;padding-top:100px;width:100%;max-width:800px;margin:0 auto;box-sizing:border-box}footer.svelte-1w249pv.svelte-1w249pv{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0px;font-size:12px;text-align:center;width:100%;font-weight:bold;font-family:"Lora";color:wheat;text-transform:uppercase;letter-spacing:1.5px;margin:10px 0 80px 0}footer.svelte-1w249pv a.svelte-1w249pv{font-weight:bold}@media(min-width: 480px){footer.svelte-1w249pv.svelte-1w249pv{padding:0px 0}}@media(min-width: 950px){.lang_switch.svelte-1w249pv.svelte-1w249pv{position:absolute;right:2vw}}@media(min-width: 1400px){.map_and_stuff.svelte-1w249pv.svelte-1w249pv{left:0;width:100vw;display:flex;flex:1;margin:40px 0 0 -30vw}.legend_section.svelte-1w249pv.svelte-1w249pv{margin:calc(40px + 5vw) 0 0 40px;min-width:760px}}',
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -83,83 +83,84 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
-<div class="app svelte-181jacx"><div class="${["lang_switch appear svelte-181jacx", ""].join(" ").trim()}">
+<div class="app svelte-1w249pv"><div class="${["lang_switch appear svelte-1w249pv", ""].join(" ").trim()}">
 
-${escape($visited)} / 12   
-
-
+${$visited > -1 ? `<span class="visited_counter svelte-1w249pv">${escape($visited)} / 12</span> ` : ``}
 
 
-<button class="${["lang_button svelte-181jacx", $language == "RU" ? "selected" : ""].join(" ").trim()}">RU</button> |
-<button class="${["lang_button svelte-181jacx", $language == "LT" ? "selected" : ""].join(" ").trim()}">LT</button>
+
+
+
+<button class="${["lang_button svelte-1w249pv", $language == "RU" ? "selected" : ""].join(" ").trim()}">RU</button> |
+<button class="${["lang_button svelte-1w249pv", $language == "LT" ? "selected" : ""].join(" ").trim()}">LT</button>
 </div>
 
 
 
 
 
-<main class="${["appear svelte-181jacx", ""].join(" ").trim()}">
+<main class="${["appear svelte-1w249pv", ""].join(" ").trim()}">
 
 
 
 ${slots.default ? slots.default({}) : ``}
-<div class="map_and_stuff svelte-181jacx">${validate_component(The_map, "Map").$$render($$result, {}, {}, {})}
-<div class="legend_section svelte-181jacx">${$language == "RU" ? `<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-181jacx">Домик слуг</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-181jacx">Колодец</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-181jacx">Конюшни</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-181jacx">Кухня</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-181jacx">Оранжерея</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-181jacx">Крест</li></ul>
-<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-181jacx">Музей</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-181jacx">Пекарня</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-181jacx">Птичник</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-181jacx">Крокет</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-181jacx">Церковь</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-181jacx">Собачки</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-181jacx">Пруды</li></ul>` : `${$language == "EN" ? `<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-181jacx">Servants&#39; quarters</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-181jacx">Water well</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-181jacx">Stables</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-181jacx">Kitchen</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-181jacx">Orchard</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-181jacx">Cross</li></ul>
-<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-181jacx">Museum</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-181jacx">Bakery</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-181jacx">Chicken coop</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-181jacx">Croquet court</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-181jacx">Chapel</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-181jacx">Doggies</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-181jacx">Pond</li></ul>` : `${$language == "LA" ? `<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-181jacx">Servorum plagae</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-181jacx">Aqua bene</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-181jacx">Stabula</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-181jacx">Culina</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-181jacx">Pomarium</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-181jacx">Crucius</li></ul>
-<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-181jacx">Manerium</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-181jacx">Pistrinum</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-181jacx">Pullus domus</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-181jacx">Croquet atrium</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-181jacx">Capella</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-181jacx">Canes</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-181jacx">Piscine</li></ul>` : `
-<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-181jacx">Tarnų namelis</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-181jacx">Šulinys</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-181jacx">Arklides</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-181jacx">Virtuvė</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-181jacx">Oranžerija</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-181jacx">Kryžius</li></ul>
-<ul class="legend_ul svelte-181jacx"><li class="legend svelte-181jacx"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-181jacx">Muziejus</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-181jacx">Duonkepė</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-181jacx">Vištidė ir ledainė</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-181jacx">Kroketo aikštelė</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-181jacx">Cerkvė</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-181jacx">Šuniukai</li>
-	<li class="legend svelte-181jacx"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-181jacx">Tvenkiniai</li></ul>`}`}`}</div></div> </main>
+<div class="map_and_stuff svelte-1w249pv">${validate_component(The_map, "Map").$$render($$result, {}, {}, {})}
+<div class="legend_section svelte-1w249pv">${$language == "RU" ? `<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-1w249pv">Домик слуг</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-1w249pv">Колодец</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-1w249pv">Конюшни</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-1w249pv">Кухня</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-1w249pv">Оранжерея</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-1w249pv">Крест</li></ul>
+<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-1w249pv">Музей</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-1w249pv">Пекарня</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-1w249pv">Птичник</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-1w249pv">Крокет</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-1w249pv">Церковь</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-1w249pv">Собачки</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-1w249pv">Пруды</li></ul>` : `${$language == "EN" ? `<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-1w249pv">Servants&#39; quarters</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-1w249pv">Water well</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-1w249pv">Stables</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-1w249pv">Kitchen</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-1w249pv">Orchard</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-1w249pv">Cross</li></ul>
+<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-1w249pv">Museum</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-1w249pv">Bakery</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-1w249pv">Chicken coop</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-1w249pv">Croquet court</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-1w249pv">Chapel</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-1w249pv">Doggies</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-1w249pv">Pond</li></ul>` : `${$language == "LA" ? `<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-1w249pv">Servorum plagae</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-1w249pv">Aqua bene</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-1w249pv">Stabula</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-1w249pv">Culina</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-1w249pv">Pomarium</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-1w249pv">Crucius</li></ul>
+<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-1w249pv">Manerium</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-1w249pv">Pistrinum</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-1w249pv">Pullus domus</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-1w249pv">Croquet atrium</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-1w249pv">Capella</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-1w249pv">Canes</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-1w249pv">Piscine</li></ul>` : `
+<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_2, 0)} class="legend_icon svelte-1w249pv">Tarnų namelis</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_8, 0)} class="legend_icon svelte-1w249pv">Šulinys</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_3, 0)} class="legend_icon svelte-1w249pv">Arklides</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_5, 0)} class="legend_icon svelte-1w249pv">Virtuvė</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_9, 0)} class="legend_icon svelte-1w249pv">Oranžerija</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_1, 0)} class="legend_icon svelte-1w249pv">Kryžius</li></ul>
+<ul class="legend_ul svelte-1w249pv"><li class="legend svelte-1w249pv"><img${add_attribute("src", icon_0, 0)} class="legend_icon svelte-1w249pv">Muziejus</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_7, 0)} class="legend_icon svelte-1w249pv">Duonkepė</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_6, 0)} class="legend_icon svelte-1w249pv">Vištidė ir ledainė</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_12, 0)} class="legend_icon svelte-1w249pv">Kroketo aikštelė</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_10, 0)} class="legend_icon svelte-1w249pv">Cerkvė</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_11, 0)} class="legend_icon svelte-1w249pv">Šuniukai</li>
+	<li class="legend svelte-1w249pv"><img${add_attribute("src", icon_4, 0)} class="legend_icon svelte-1w249pv">Tvenkiniai</li></ul>`}`}`}</div></div> </main>
 
 
 
-<footer class="svelte-181jacx">
-	<p>// Demonstracinė versija. Vyksta darbai.</p>
-	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@markuciudvaras.lt" class="svelte-181jacx">edukacija@markuciudvaras.lt</a></p>
+<footer class="svelte-1w249pv">
+	
+	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@markuciudvaras.lt" class="svelte-1w249pv">edukacija@markuciudvaras.lt</a></p>
 	<p></p></footer></div> `;
 });
 export {

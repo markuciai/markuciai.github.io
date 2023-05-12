@@ -23,9 +23,7 @@ ${`${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}`}
 
 
 
-<div class="map_section">Jūs gavote trečiąją dokumento dalį.
-
-</div>`;
+`;
 });
 export {
   Page as default
