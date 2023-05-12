@@ -46,7 +46,7 @@ Markučių dvaro muziejus nedidelėms grupėms ir pavieniams žaidėjams pristat
 
 <article>Kiekvienam žaidėjui (ar žaidėjų komandai) reikės mobilaus telefono arba planšetinio kompiuterio su interneto prieiga. Jokių papildomų programėlių instaliuoti nereikia.
 
-<br><br>Žaidimas galimas dvim kalbomis: lietuvių ir rusų.
+<br><br>Žaidimas galimas dviem kalbomis: lietuvių ir rusų.
 </article>
 
 <img class="illustration"${add_attribute("src", task, 0)}>

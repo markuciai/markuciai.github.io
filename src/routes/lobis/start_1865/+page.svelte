@@ -92,7 +92,7 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 <img  src={instructions} width="100%" />
 
 <article>
-Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой деревянный крест.
+Любое путешествие начинается со входа. У поместья были ворота, а у ворот стоял большой крест из железнодорожных рельс.
 </article>
 
 
@@ -132,7 +132,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 	<span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
 	</span> <br/><br/>
 	<span>
-		Nuo muziejaus leiskitės žemyn. Iš muziejaus link paminklinės lentos. Iš dabarties į praeitį.
+		Leiskitės žemyn. Iš&nbsp;muziejaus link paminklinės lentos. Iš&nbsp;dabarties į praeitį.
 	</span>
 
 </div>
