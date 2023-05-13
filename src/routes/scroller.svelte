@@ -1,4 +1,5 @@
 <script>
+import { onMount } from "svelte";
 
 var bazinga = "300px"
 
@@ -9,9 +10,11 @@ var bazinga = "300px"
 "></div>
 
 <!--
-So. Have a grid. Iterate over objects. Push in the desired direction.
+So. Have a grid (array of arrays of bools). Iterate over objects (collect all with a style). Push in the desired direction until positioned.
 
+Filtering using svelte reactivity? And then trigger repositioning function.
 
+Look up how to collect parameters from html elements
 -->
 
 

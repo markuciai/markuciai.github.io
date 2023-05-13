@@ -107,7 +107,7 @@ Lorem Ipsum Dolor sit amet
 <h1>Kryžius</h1>
 <p class="subh">Pirmoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms. 	</article>
+	Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms.</article>
 
 
 <img width=105% src={cross}>

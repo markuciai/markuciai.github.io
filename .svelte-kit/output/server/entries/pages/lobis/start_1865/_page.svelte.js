@@ -3,9 +3,9 @@ import { l as language } from "../../../../chunks/language.js";
 import { v as visited } from "../../../../chunks/visited.js";
 import { h as head_signs, i as instructions } from "../../../../chunks/instructions.js";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$unsubscribe_visited;
+  let $visited, $$unsubscribe_visited;
   let $language, $$unsubscribe_language;
-  $$unsubscribe_visited = subscribe(visited, (value) => value);
+  $$unsubscribe_visited = subscribe(visited, (value) => $visited = value);
   $$unsubscribe_language = subscribe(language, (value) => $language = value);
   let date_started = /* @__PURE__ */ new Date();
   date_started.getTime();
@@ -64,6 +64,11 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 		Iš muziejaus link paminklinės lentos.<br>
 		Iš dabarties į praeitį.
 	</span></div>`}`}`} </section>
+
+${$visited > 0 ? `<br> 
+<button class="button" style="width: 160px">↻ Perkrauti žaidimą</button>` : ``}
+
+
 
 
 `} `;

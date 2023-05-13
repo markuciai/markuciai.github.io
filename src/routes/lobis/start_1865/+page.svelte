@@ -23,6 +23,11 @@ let date_started_h = date_started.getHours().toString().padStart(2,"0");
 let date_started_m = date_started.getMinutes().toString().padStart(2,"0");
 let date_started_s = date_started.getSeconds().toString().padStart(2,"0");
 
+function empty_storage() {
+	localStorage.clear();
+	window.location.reload();
+}
+
 onMount(async () => { 
 	// finished before, resetting completely
 	if (localStorage.finished) {
@@ -146,7 +151,17 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 
 {/if} <!-- Main page Languages-->
+
+
+
 </section>
+
+{#if $visited > 0}
+<br>&nbsp;
+<button on:click={empty_storage} class="button" style="width: 160px">↻ Perkrauti žaidimą</button>
+{/if}
+
+
 
 
 <!-- <div class="map_section">
