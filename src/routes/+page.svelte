@@ -3,6 +3,8 @@ import language from './stores/language';
 import dvaras from '$lib/images/archival/mdvaras.jpg';
 import map_foundation from '$lib/images/map/foundation.png';
 
+let bazinga = ""
+
 </script>
 
 <svelte:head>
@@ -21,8 +23,10 @@ import map_foundation from '$lib/images/map/foundation.png';
 {/if}
 </h1>
 
-<!-- Debug
+<input bind:value={bazinga}>
 
+{#if bazinga == "Вольность"}
+<br>&nbsp;
 <p><a href="https://www.markuciudvaras.lt/lobis">Lobis</a> → <a href="/lobis">Lobis:</a></p>
 <ol start="0">
 	<li><a href="https://www.markuciudvaras.lt/lobis/start_1865">Startas</a>→ <a href="/lobis/start_1865">Startas</a></li>
@@ -40,8 +44,8 @@ import map_foundation from '$lib/images/map/foundation.png';
 	<li><a href="https://www.markuciudvaras.lt/lobis/kroketas_1867">Kroketas</a> → <a href="/lobis/kroketas_1867">Kroketas</a></li>
 	<li><a href="https://www.markuciudvaras.lt/lobis/finish_1935">Finišas</a> → <a href="/lobis/finish_1935">Finišas</a></li>
 </ol>
+{/if}
 
--->
 
 
 <br>&nbsp;<br>&nbsp;

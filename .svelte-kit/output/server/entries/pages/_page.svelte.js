@@ -10,6 +10,7 @@ const css = {
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $language, $$unsubscribe_language;
   $$unsubscribe_language = subscribe(language, (value) => $language = value);
+  let bazinga = "";
   $$result.css.add(css);
   $$unsubscribe_language();
   return `${$$result.head += `<!-- HEAD_svelte-1ephg36_START -->${$$result.title = `<title>MDM</title>`, ""}<meta name="description" content="Markučių dvaro muziejus"><!-- HEAD_svelte-1ephg36_END -->`, ""}
@@ -18,6 +19,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-16le9m7"><h1 class="svelte-16le9m7">${$language == "EN" ? `Markučiai manor museum` : `${$language == "RU" ? `Музей-усадьба Маркучай` : `${$language == "LA" ? `Museum manerium Markucis` : `Markučių dvaro muziejus`}`}`}</h1>
 
+<input${add_attribute("value", bazinga, 0)}>
+
+${``}
 
 
 
