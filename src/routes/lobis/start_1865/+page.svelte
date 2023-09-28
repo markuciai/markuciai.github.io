@@ -80,9 +80,12 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={head_signs}>
-{#if $language == "EN"}
 
-Started the game at {date_started_h}:{date_started_m}:{date_started_s}
+
+
+
+
+{#if $language == "EN"}
 
 <h1>Markučiai Treasure</h1>
 <p class="subh">You set on your journey<br>at {date_started_h}:{date_started_m}:{date_started_s}</p>
@@ -111,8 +114,8 @@ The manor had a gate, and near that gate there was a large cross made of railway
 
 
 
-{:else if $language == "RU"}
 
+{:else if $language == "RU"}
 
 <h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
@@ -142,12 +145,16 @@ The manor had a gate, and near that gate there was a large cross made of railway
 
 
 
+
+
 {:else if $language == "LA"}
 
 Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
-{:else} <!-- LT -->
 
+
+
+{:else} <!-- LT -->
 
 <h1>Markučių Lobis</h1>
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
@@ -175,13 +182,15 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 </div>
 
-
-
 {/if} <!-- Main page Languages-->
 
 
 
+
 </section>
+
+
+
 
 {#if $visited > 0}
 <br>&nbsp;

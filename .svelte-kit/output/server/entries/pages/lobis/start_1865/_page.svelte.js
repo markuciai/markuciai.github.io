@@ -23,9 +23,12 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 ${`<section><img class="illustration"${add_attribute("src", head_signs, 0)}>
-${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}
 
-<h1>Markučiai Treasure</h1>
+
+
+
+
+${$language == "EN" ? `<h1>Markučiai Treasure</h1>
 <p class="subh">You set on your journey<br>at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
 <article>Welcome to the game! Find the plaques planted arond the park. Read the hints and scan the plaques in the correct order.
@@ -64,7 +67,6 @@ The manor had a gate, and near that gate there was a large cross made of railway
 		Из настоящего в прошлое.
 	</span></div>` : `${$language == "LA" ? `Coepi ludum at: ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `
 
-
 <h1>Markučių Lobis</h1>
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
@@ -84,6 +86,9 @@ The manor had a gate, and near that gate there was a large cross made of railway
 		Iš muziejaus link paminklinės lentos.<br>
 		Iš dabarties į praeitį.
 	</span></div>`}`}`} </section>
+
+
+
 
 ${$visited > 0 ? `<br> 
 <button class="button">↻ Perkrauti žaidimą</button>` : ``}
