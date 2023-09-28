@@ -36,7 +36,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>The Ponds — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Пруды – Клад Маркутья</title>
@@ -59,7 +59,26 @@ onMount(async () => {
 <img class="illustration" src={map_piece}>
 {#if $language == "EN"}
 
-English
+<h1>The Ponds</h1>
+<p class="subh">The fourth stop<br>in the quest for Markučiai Treasure</p>
+<article>
+Finding the boy Taras was not difficult; he spends all his free time at the ponds. In the winter, he skates on the icy surface of the pond, and in the warm weather, he swims or makes wooden ships out of twigs. 
+</article>
+
+
+<img width=105% src={waters}>
+<article>
+<br>
+But today, he has an important task: he must catch fish for the festive dinner. 
+</article>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+You give Taras the fishing rod and notice that the sail on his boat is made of a piece of the document you need. The boy agrees to give you the scrap of paper, but he asks for you to take the fish he caught to the cook.
+
+	<br><br>
+	<span class="highlighted-question">Where should you bring the fish?</span>
+</div>
 
 {:else if $language == "RU"}
 

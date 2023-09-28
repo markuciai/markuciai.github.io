@@ -5,6 +5,9 @@
 	--font-mono: 'Fira Mono', monospace;
 	--color-bg-0: rgb(202, 216, 228);
 	--color-bg-1: #006837;
+	/* 	--color-bg-1: #0c4428; */
+	/* 	--color-bg-1: #265841; */
+	/* 	--color-bg-1: #384f3b; */
 	--color-bg-2: hsl(224, 44%, 95%);
 	--color-theme-1: #ff3e00;
 	--color-theme-2: #4075a6;
@@ -26,12 +29,14 @@
 	cursor: default;
 }
 
-.unlock_cursor, article, a, p, h1, h2, .subh, .where-next, .highlighted-question {
+.unlock_cursor, article, a, p, h1, h2, ul, li, .subh, .where-next, .highlighted-question {
 	-webkit-user-select: text; 
 	-ms-user-select: text;
 	user-select: text;
 	cursor: auto;
 }
+
+
 
 
 body {
@@ -63,6 +68,7 @@ p {
 a {
 	color: var(--color-theme-1);
 	text-decoration: none;
+	cursor: pointer;
 }
 
 a:hover {
@@ -70,6 +76,8 @@ a:hover {
 }
 
 h1 {
+/* 	font-family: Manrope;
+	font-weight: bold; */
 	font-size: 2rem;
 	text-align: center;
 	/* position: sticky;
@@ -201,6 +209,7 @@ article {
 
 .where-next {
 	/* background-color: #EEDC83; */
+/* 	background-color: #dab587; */
 	background: linear-gradient(0deg, rgba(238,220,131,1) 0%, rgba(238,220,131,1) 67%, rgba(240,223,142,1) 100%);
 
 	color: black;
@@ -296,16 +305,21 @@ article {
 .button {
 	appearance: none;
 	box-sizing: border-box;
+
 	text-decoration: none;
 	text-align: center;
 	font-size: 14px;
 	line-height: 20px;
 	font-weight: 600;
-	/* letter-spacing: 2px; */
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
 	border: none;
  	background-color: rgba(255, 255, 255, 0);
-	width: 40px;
-	height: 26px;
+	/* width: 40px; */
+	width: max-content;
+	padding: 0px 20px;
+	height: 32px;
 	margin: 5px;
 	/* padding-bottom: 10px; */
 	border-radius: 3px;
@@ -314,13 +328,13 @@ article {
 	border: 0.67px solid rgb(238, 220, 131, 0.8);
 	cursor: pointer;
 	user-select: none;
-
+	background: #006837;
 	transition: 0.3s;
 	}
 
-.button::first-letter {
+/* .button::first-letter {
 	letter-spacing: 2px;
-}
+} */
 
 .button:hover {
 	background-color:#EEDC83;
@@ -332,7 +346,7 @@ article {
  	 border-bottom-color: white; */
 	border: 0.67px solid rgb(238, 220, 131, 1);
 	transition: 0.05s;
-	transform: scale(1.1);
+	transform: scale(1.05);
 	box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.3);
 	}
 
@@ -340,12 +354,12 @@ article {
 .button:active {
 	background-color:#EEDC83;
 	border: 0.67px solid rgb(238, 220, 131, 0);
-	transform: scale(0.95);
+	transform: scale(0.975);
 	box-shadow: 0px 3px 5px -10px rgba(0, 0, 0, 0);
 	}
 
 	/* away */
-.lang_button:active:not(:hover) {
+.button:active:not(:hover) {
 	transform: scale(1);
 	color: #EEDC83;
 	border: 0.67px solid rgb(238, 220, 131, 1);
@@ -365,7 +379,7 @@ article {
 	/* background-color: #EEDC83; */
 	/* background-color: rgba(0,0,0, 0.6); */
 	/* background-color: #222; */
-	background-color: #D33F37;
+	background: #D33F37;
 	border: 0.67px solid rgb(238, 220, 131, 0.1);
 	/* border:none; */
 	user-select: none;

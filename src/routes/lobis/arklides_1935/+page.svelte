@@ -40,7 +40,7 @@ if (browser) {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title>Stables — Markučiai Treasure</title>
+	<title>The Stables — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Конюшня – Клад Маркутья</title>
@@ -62,17 +62,34 @@ if (browser) {
 {:else if show_station}
 
 <section>
+<img class="illustration" src={map_piece}>
 {#if $language == "EN"}
 
-English
+
+<h1>The Stables</h1>
+<p class="subh">The third stop<br>in the quest for Markučiai Treasure</p>
+<article>
+You swiftly fulfilled the request: you handed over the saddle to the coachman and told him of your search for an important document. Mr. Michal had served the Pushkin estate in Markuchiai for many years, driving Grigory and Varvara to the city and neighboring provinces. 
+</article>
+<img width=105% src={stables}>
+<br><br>
+
+<img class="illustration" src={task}>
+
+<div class="where-next">
+Today, he found a similar scrap of paper by the stables, which he would gladly give to you if you don't mind taking his fishing rod to his younger son Taras.
+	<br><br>
+	<span class="highlighted-question">Where should you bring the&nbsp;fishing&nbsp;rod?</span>
+</div>
+
 
 {:else if $language == "RU"}
 
-<img class="illustration" src={map_piece}>
+
 <h1>Конюшня</h1>
 <p class="subh">Третья остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Вы легко справились с этой просьбой — передали кучеру седло и рассказали о поисках важного документа. Пан Михал много лет служил в усадьбе Пушкиных в Маркутье, возил Григория и Варвару в город и соседние губернии. 
+Вы легко справились с этой просьбой — передали кучеру седло и рассказали о поисках важного документа. Пан Михал много лет служил в усадьбе Пушкиных в Маркутье, возил Григория и Варвару в город и соседние губернии. 
 
 </article>
 <img width=105% src={stables}>
@@ -81,9 +98,9 @@ English
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Сегодня у конюшни он обнаружил похожий обрывок бумаги, который с удовольствием отдаст вам, если не откажетесь отнести удочку его младшему сыну Тарасу. 
-	<br><br>
-	<span class="highlighted-question">Куда нужно отнести&nbsp;удочку?</span>
+Сегодня у конюшни он обнаружил похожий обрывок бумаги, который с удовольствием отдаст вам, если не откажетесь отнести удочку его младшему сыну Тарасу. 
+<br><br>
+<span class="highlighted-question">Куда нужно отнести&nbsp;удочку?</span>
 </div>
 
 {:else if $language == "LA"}
@@ -92,7 +109,6 @@ Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<img class="illustration" src={map_piece}>
 <h1>Конюшня</h1>
 <p class="subh">Trečioji stotelė<br>ieškant Markučių lobio</p>
 <article>

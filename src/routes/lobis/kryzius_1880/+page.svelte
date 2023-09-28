@@ -63,9 +63,29 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
+
 {#if $language == "EN"}
 
-English
+<h1>The Cross</h1>
+<p class="subh">The first stop<br>in the quest for Markučiai Treasure</p>
+<article>
+In the past, in Varvara Pushkina's time, here, to the left of the park entrance, on a stone foundation stood a tall cross made of railway track. At it's base the estate mistress would leave a bowl of coins for the poor. 
+</article>
+
+
+<img width=105% src={cross}>
+<article>
+<br>
+Now, in that bowl there's only a piece of paper with a coat of arms and a signature. This looks like a document of some historical importance, but much of the text is missing. Who should be entrusted with this accidental find? 
+</article>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Perhaps the estate servants can&nbsp;be of&nbsp;assistance?&nbsp; You&nbsp;should find&nbsp;them right&nbsp;away!
+	<br><br>
+	<span class="highlighted-question">Where could one find the&nbsp;servants?</span>
+</div>
+
 
 {:else if $language == "RU"}
 

@@ -9,11 +9,11 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_language = subscribe(language, (value) => $language = value);
   $$unsubscribe_visited();
   $$unsubscribe_language();
-  return `${$$result.head += `<!-- HEAD_svelte-5lgucf_START -->${$language == "EN" ? `${$$result.title = `<title>Birdhouse and icehouse — Markučiai Treasure</title>`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1wzt3l2_START -->${$language == "EN" ? `${$$result.title = `<title>Chicken coop — Markučiai Treasure</title>`, ""}
 	<meta name="description" content="Quest">` : `${$language == "RU" ? `${$$result.title = `<title>Птичник и ледник – Клад Маркутья</title>`, ""}
 	<meta name="description" content="Квест">` : `${$language == "LA" ? `${$$result.title = `<title> – Markučiai Treasure</title>`, ""}
 	<meta name="description" content="Quest">` : `${$$result.title = `<title>Vištidė ir ledainė – Markučių Lobis</title>`, ""}
-	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-5lgucf_END -->`, ""}
+	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-1wzt3l2_END -->`, ""}
 
 
 ${`${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}`} `;

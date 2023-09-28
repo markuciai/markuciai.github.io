@@ -84,6 +84,33 @@ onMount(async () => {
 
 Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
+<h1>Markučiai Treasure</h1>
+<p class="subh">You set on your journey<br>at {date_started_h}:{date_started_m}:{date_started_s}</p>
+
+<article>
+Welcome to the game! Find the plaques planted arond the park. Read the hints and scan the plaques in the correct order.
+</article>
+
+<img src={instructions} width="100%" />
+
+<article>
+Any adventure begins at the entrance.<br>
+The manor had a gate, and near that gate there was a large cross made of railway track.
+</article>
+
+
+<div class="where-next">
+	<span class="highlighted-question">Where's the main entrance into the park? <br>Where did the cross once stand?</span>
+	<br><br>
+	<span>
+		Descend.<br>
+		From the museum to the entrance.<br>
+		From the present into the past.
+	</span>
+</div>
+
+
+
 {:else if $language == "RU"}
 
 
@@ -104,7 +131,7 @@ Started the game at {date_started_h}:{date_started_m}:{date_started_s}
 
 
 <div class="where-next">
-	<span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
+	<span class="highlighted-question">Где у парка главный вход? <br>Где раньше стоял крест?</span>
 	<br><br>
 	<span>
 		Спускайтесь вниз.<br>
@@ -138,7 +165,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 
 <div class="where-next">
-	<span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
+	<span class="highlighted-question">Kur yra pagrindinis įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
 	</span> <br/><br/>
 	<span>
 		Leiskitės žemyn.<br>
@@ -158,7 +185,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 {#if $visited > 0}
 <br>&nbsp;
-<button on:click={empty_storage} class="button" style="width: 160px">↻ Perkrauti žaidimą</button>
+<button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
 {/if}
 
 

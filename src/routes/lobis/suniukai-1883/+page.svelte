@@ -37,7 +37,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>Doggos — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Собачки – Клад Маркутья</title>
@@ -60,9 +60,30 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
+
+
 {#if $language == "EN"}
 
-English
+<h1>Doggos</h1>
+<p class="subh">The eleventh stop<br>in the quest for Markučiai Treasure</p>
+<article>
+The descendants of Fanka and Boyka are playing with the croquet ball. That‘s not right! 
+
+</article>
+
+
+<img width=105% src={doggie}>
+<article>
+<br>
+
+</article>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	The ball needs to be taken back to its place. As you pick up the ball from the ground, you notice a part of a sheet of paper with familiar handwriting. Now, head out to search for the last fragment.
+	<br><br>
+	<span class="highlighted-question">Where could one find croquet players?</span>
+</div>
 
 {:else if $language == "RU"}
 

@@ -41,7 +41,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>Croquet court — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Площадка для крокета – Клад Маркутья</title>
@@ -64,7 +64,44 @@ onMount(async () => {
 <img class="illustration" src={map_piece}>
 {#if $language == "EN"}
 
-English
+<h1>Croquet court</h1>
+<p class="subh">The twelfth and final stop<br>in the quest for Markučiai Treasure</p>
+<article>
+Near the monument to the poet, you see adults and children playing croquet. You give the ball to the head of the family, architect Vladimir Nazimov.
+</article>
+	<img width=105% src={nazimov}>
+<article>
+	<br>
+He came from Estonia and, on her last days, promised Varvara Pushkina that he would do everything possible to open a museum in the Markuchiai estate. The house holds unique furniture and personal belongings of Alexander Pushkin, brought from the village of Mikhailovskoye. 
+</article>
+
+<img width=105% src={kabinetas}>
+
+<article>
+	<br>
+You show Nazimov all the fragments of the document you have found. As he gives you the final twelfth part, he explains that in 1935 Varvara Pushkina had drawn up a will, the text of which you were able to gather today. 
+</article>
+
+
+<img width=100% src={testament_overlayed_ru}>
+
+
+<article>
+The original will is kept in a secure hiding place in the house, in a fireproof safe built in 1867. 
+</article>
+
+<img width=90% src={safe}>
+
+<article><br><br>
+However, to let as many people as possible learn about the last will of the Pushkin spouses, Nazimov and his children came up with this entertaining game for the guests of the estate. 
+
+</article>
+
+<div class="where-next">
+	Thanks to your attentiveness and logical thinking, you were able to find out what Varvara Alekseevna had written in her will. 
+	<br><br>
+	<span class="highlighted-question">Now, go to the museum and collect your reward.</span>
+</div>
 
 {:else if $language == "RU"}
 

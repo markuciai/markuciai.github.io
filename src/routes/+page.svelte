@@ -2,6 +2,8 @@
 import language from './stores/language';
 import dvaras from '$lib/images/archival/mdvaras.jpg';
 import map_foundation from '$lib/images/map/foundation.png';
+import { fade, blur, fly, slide, scale } from "svelte/transition";
+
 
 let bazinga = ""
 
@@ -23,9 +25,20 @@ let bazinga = ""
 {/if}
 </h1>
 
+<p in:fly="{{ y: -30, duration: 1000, delay: 60000 }}" out:fade style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p>
+
 <input bind:value={bazinga}>
 
-{#if bazinga == "Вольность"}
+{#if bazinga == "Вольность"
+	|| bazinga == "вольность"
+	|| bazinga == "Volnost"
+	|| bazinga == "volnost"
+	|| bazinga == "laisvė"
+	|| bazinga == "Laisvė"
+	|| bazinga == "laisve"
+	|| bazinga == "Laisve"
+	}
+	
 <br>&nbsp;
 <p><a href="https://www.markuciudvaras.lt/lobis">Lobis</a> → <a href="/lobis">Lobis:</a></p>
 <ol start="0">

@@ -43,7 +43,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>Servants' quarters — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Домик слуг – Клад Маркутья</title>
@@ -68,13 +68,37 @@ onMount(async () => {
 <img class="illustration" src={map_piece}>
 {#if $language == "EN"}
 
-English
+<h1>Servants' quarters</h1>
+<p class="subh">The second stop<br>in the quest for Markučiai Treasure</p>
+<article>
+	Anna the maid and her husband Vyacheslav welcome you to their cozy home.
+</article>
+<img width=105% src={servants}>
+<br>
+<article>
+	They too have found a piece of paper with similar handwriting in the park, but they don't know what to do with it yet.
+</article>
+
+<img width=105% src={servant_house}>
+<article>
+<br>
+The servants are busy in the garden, but if you can collect every piece of this document and bring it to the manor house, you will definitely be rewarded.
+</article>
+<img class="illustration task saddle" src={task}>
+
+<div class="where-next saddle-block">
+	The servants will give you their piece of the document, and in return, you have to fulfill their request - deliver a new saddle to pan Michal.
+<br><br>
+<span class="highlighted-question">
+	Where should you bring the saddle?
+</span>
+</div>
 
 {:else if $language == "RU"}
 
 
 <h1>Домик слуг</h1>
-<p class="subh">Вторая остановка<br>ieškant Markučių lobio</p>
+<p class="subh">Вторая остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Служанка Анна и ее супруг Вячеслав встречают вас на пороге своего уютного домика.
 </article>

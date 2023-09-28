@@ -1,4 +1,4 @@
-<script>
+ <script>
 import { onMount } from 'svelte';
 import language from '../../stores/language';
 import visited from '../../stores/visited';
@@ -38,7 +38,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title>Birdhouse and icehouse — Markučiai Treasure</title>
+	<title>Chicken coop — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Птичник и ледник – Клад Маркутья</title>
@@ -58,10 +58,31 @@ onMount(async () => {
 {:else if show_station}
 
 <section>
+
 <img class="illustration" src={map_piece}>
+
 {#if $language == "EN"}
 
-English
+<h1>Chicken Coop And Icehouse</h1>
+<p class="subh">The sixth stop<br>in the quest for Markučiai Treasure</p>
+<article>
+As you approach the chicken coop, you see Vanyusha waving at you excitedly. After you hand him the chicken feed and explain your quest for the missing document, he eagerly offers his help. 
+</article>
+
+
+<img width=105% src={vanyusha}>
+<article>
+<br>
+He has seen a similar piece of paper near a raspberry bush by the glacier. He'll to bring it to you right away. 
+</article>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+<img class="illustration" src={task}>
+
+<div class="where-next">
+In return, he asks you to deliver a basket of fresh eggs to Masha. She will make a big pie for the guests and a sweet cream puff for Ilyusha. Today is his birthday.
+	<br><br>
+	<span class="highlighted-question">Where should you bring a basket full of eggs?</span>
+</div>
 
 {:else if $language == "RU"}
 
@@ -77,7 +98,7 @@ English
 <br>
 Мальчик с радостью поможет вам — он видел похожий обрывок бумаги у куста малины рядом с ледником и сейчас же принесет его вам.
 </article>
-<br><br><br><br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
 <img class="illustration" src={task}>
 
 <div class="where-next">

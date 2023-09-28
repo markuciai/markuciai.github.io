@@ -36,7 +36,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>Orangery — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Оранжерея – Клад Маркутья</title>
@@ -58,9 +58,30 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
+
+
 {#if $language == "EN"}
 
-English
+<h1>Orangery</h1>
+<p class="subh">The ninth stop<br>in the quest for Markučiai Treasure</p>
+<article>
+You are incredibly astute! You have found the orchids in the orangery.
+</article>
+
+
+<img width=105% src={fruit_garden}>
+<article>
+<br>
+Here you meet a girl named Olya. You help her fill the watering cans with water and notice the fragment of the document you were looking for in one of the flowerpots. Take it!
+</article>
+<br><br>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Olya made beautiful bouquets and asks you to take them to the grave of Grigory and Varvara Pushkin.
+	<br><br>
+	<span class="highlighted-question">Where should you bring the flowers?</span>
+</div>
 
 {:else if $language == "RU"}
 

@@ -2,12 +2,11 @@
 import { onMount } from 'svelte';
 import { browser } from "$app/environment";
 import { fade, blur, fly, slide, scale } from "svelte/transition";
+import { flip } from 'svelte/animate';
 import './styles.css';
 // import { writable } from "svelte/store";
 import language from './stores/language.js'
 import visited from './stores/visited';
-
-
 
 import Offer from './lobis/Offer.svelte';
 
@@ -27,7 +26,7 @@ import icon_12 from '$lib/images/icons/12.png';
 
 
 import Map from './The_map.svelte';
-
+import Mounted from './Mounted.svelte';
 
 let scroll = Number(0)
 
@@ -42,9 +41,6 @@ const lines = {
 };
 
 // {lines[$language][0]}
-
-
-
 
 
 
@@ -100,10 +96,28 @@ function handleMousemove(event) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
 
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <svelte:window bind:scrollY={scroll} />
 <div on:mousemove={handleMousemove} />
@@ -113,12 +127,23 @@ function handleMousemove(event) {
 
 
 
-
+<Mounted>
 <div class="app">
 
 
+<!-- <p in:fly="{{ y: 200, duration: 20000 }}" out:fade   >ANIMATE ME</p>
 
-<div class="lang_switch appear" in:fade out:fade class:appear_visible="{emerge === true}">
+
+
+
+
+
+<p in:fly="{{ y: 200, duration: 2000 }}" out:fade >ANIMATE ME TOO</p>
+<p in:fly="{{ y: 10, duration: 200 }}" out:fade >ANIMATE ME THREE</p> -->
+
+
+
+<div class="lang_switch" in:fade out:fade >
 <!-- <button on:click={empty_storage} class="lang_button">↻</button> | -->
 
 {#if $visited > -1}
@@ -128,8 +153,8 @@ function handleMousemove(event) {
 
 <!--thin space: &#8239 -->
 
-<!-- <button on:click={() => $language = "EN"}
-	class="lang_button" class:selected={$language == "EN"}>EN</button> | -->
+<button on:click={() => $language = "EN"}
+	class="lang_button" class:selected={$language == "EN"}>EN</button> |
 <button on:click={() => $language = "RU"}
 	class="lang_button" class:selected={$language == "RU"}>RU</button> |
 <button on:click={() => $language = "LT"}
@@ -143,7 +168,7 @@ function handleMousemove(event) {
 
 <!-- <Header /> -->
 
-<main in:fly out:fade class="appear" class:appear_visible="{emerge === true}">
+<main in:fade="{{ duration: 500}}" out:fade >
 
 
 <!-- {#if $visited < 0 } <Offer /> {/if} -->
@@ -180,7 +205,7 @@ function handleMousemove(event) {
 	<li class="legend"><img src={icon_8} class="legend_icon">Water well</li>
 	<li class="legend"><img src={icon_3} class="legend_icon">Stables</li>
 	<li class="legend"><img src={icon_5} class="legend_icon">Kitchen</li>
-	<li class="legend"><img src={icon_9} class="legend_icon">Orchard</li>
+	<li class="legend"><img src={icon_9} class="legend_icon">Orangery</li>
 	<li class="legend"><img src={icon_1} class="legend_icon">Cross</li>
 </ul>
 <ul class="legend_ul">
@@ -237,6 +262,9 @@ function handleMousemove(event) {
 
 
 
+
+
+
 <footer>
 	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 	<!-- <p>// Demonstracinė versija. Vyksta darbai.</p> -->
@@ -245,14 +273,31 @@ function handleMousemove(event) {
 </footer>
 </div> <!-- / app -->
 
- 
+</Mounted>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 <style>
-
 
 
 /* Appearance effects */
@@ -294,6 +339,7 @@ function handleMousemove(event) {
 	padding-right: 20px;
 	color: #222;
 	user-select: none;
+	z-index: 2;
 	}
 
 .lang_button {
@@ -317,6 +363,7 @@ function handleMousemove(event) {
 	border: 0.67px solid rgb(238, 220, 131, 0.8);
 	cursor: pointer;
 	user-select: none;
+	pointer-events: all;
 
 	transition: 0.3s;
 	}
@@ -360,7 +407,7 @@ function handleMousemove(event) {
 
 .lang_button.selected, .lang_button.selected:hover {
 	transform: scale(1);
-	pointer-events: none;
+	/* pointer-events: none; */
 	cursor: default;
 	color: #006837;
 	color: #EEDC83;
@@ -468,6 +515,7 @@ main {
 	max-width: 800px;
 	margin: 0 auto;
 	box-sizing: border-box;
+	/* 	border: red 2px solid; */
 }
 
 footer {
@@ -506,6 +554,7 @@ footer a {
 	.lang_switch {
 		position: absolute;
 		right: 2vw;
+
 
 		/* funny vertical thing */
 		/* writing-mode: vertical-lr;

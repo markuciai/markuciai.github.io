@@ -38,7 +38,7 @@ if ($visited >= station_id) {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>Bakery — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Пекарня – Клад Маркутья</title>
@@ -61,9 +61,32 @@ if ($visited >= station_id) {
 
 <section>
 <img class="illustration" src={map_piece}>
+
+
 {#if $language == "EN"}
 
-English
+<h1>Bakery</h1>
+<p class="subh">The seventh stop<br>in the quest for Markučiai Treasure</p>
+<article>
+As you enter the bakery, the heat hits you immediately. Mashenka takes the basket of eggs from you and starts skilfully mixing the dough for the pie and the pastries.
+</article>
+
+<img width=105% src={bakery}>
+
+<article>
+<br>
+While standing near the oven, you spot the coveted scrap of the document on the box with firewood and shavings, in a pile of old newspapers used for kindling. 
+</article>
+
+<br><br>
+
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	The girl hands the scrap to you and asks you to fetch water and water the orchids.
+	<br><br>
+	<span class="highlighted-question">Where would you fill a bucket with water?</span>
+</div>
 
 {:else if $language == "RU"}
 
@@ -74,14 +97,15 @@ English
 	Ух, как жарко в пекарне. Машенька взяла у вас корзинку с яйцами и стала ловко готовить тесто для пирога и ватрушек. 
 </article>
 
-
 <img width=105% src={bakery}>
+
 <article>
 <br>
 Рядом с печью на ящике с дровами и щепками, среди старых газет для розжига огня, замечаете заветный клочок документа. 
-
 </article>
+
 <br><br>
+
 <img class="illustration" src={task}>
 
 <div class="where-next">

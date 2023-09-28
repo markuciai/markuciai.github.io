@@ -9,11 +9,11 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_language = subscribe(language, (value) => $language = value);
   $$unsubscribe_visited();
   $$unsubscribe_language();
-  return `${$$result.head += `<!-- HEAD_svelte-1urroxk_START -->${$language == "EN" ? `${$$result.title = `<title>Cerkvė — Markučiai Treasure</title>`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-zsgi23_START -->${$language == "EN" ? `${$$result.title = `<title>Chapel — Markučiai Treasure</title>`, ""}
 	<meta name="description" content="Quest">` : `${$language == "RU" ? `${$$result.title = `<title>Церковь – Клад Маркутья</title>`, ""}
 	<meta name="description" content="Квест">` : `${$language == "LA" ? `${$$result.title = `<title> – Markučiai Treasure</title>`, ""}
 	<meta name="description" content="Quest">` : `${$$result.title = `<title>Cerkvė – Markučių Lobis</title>`, ""}
-	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-1urroxk_END -->`, ""}
+	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-zsgi23_END -->`, ""}
 
 
 ${`${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}`} `;

@@ -9,25 +9,57 @@ import doggo from '$lib/images/illustrations/doggo.png';
 
 
 <section>
+<img class="illustration" src={head_signs}>
+
+
+
+
+
+
 {#if $language == "EN"}
 
+<h1>Markučiai treasure</h1>
+<p class="subh">A treasure hunt game<br> trough the Markučiai manor park</p>
+
+<article>
+Did you know that there's a treasure in Markučiai?<br/><br/>
+Markučiai manor museum presents a fun adventure (and an educational program) for single players or small groups.
+</article>
+<!-- <br><br> -->
+<article>
+Plaques containing QR codes are scattered troughout the park. Starting at the museum, visit every quest point in the correct order to dive into the museum's history and get a small prize.
+</article>
+
+<img  src={instructions} width="100%" />
+
+<article>
+To play, a player will need a phone or tablet with an internet connection (to scan QR-codes and open web pages). There's no need to install any additional apps.
+
+<br/><br/>It's possible to play in three languages: english, russian and lithuanian.
+</article>
+
+<img class="illustration" src={doggo}>
 
 <div class="where-next">
-    Užsakyti edukacija “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>
-
+If you're already at the park during the museum work hours and you wish to play right now — visit the museum and ask at the front desk.
+<br><br>
+And if you wish to book an educational program for a group, email at: <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>.
 </div>
+
+
+
+
+
 
 
 {:else if $language == "RU"}
 
-<img class="illustration" src={head_signs}>
-
 <h1>Клад Маркутья</h1>
-<p class="subh">Ориентационный квест <br> по парку Маркутского двора</p>
+<p class="subh">Ориентационный квест <br> по парку усадьбы Маркутья</p>
 
 <article>
 А вы знали, что в Маркутье спрятан клад? <br/><br/>
-Музей Двора Маркутья представляет образовательную программу и увлекательное приключение для небольших групп или одиночных игроков.
+Музей-усадьба Маркучай представляет образовательную программу и увлекательное приключение для небольших групп или одиночных игроков.
 </article>
 <!-- <br><br> -->
 <article>
@@ -39,7 +71,7 @@ import doggo from '$lib/images/illustrations/doggo.png';
 <article>
 Для игры каждому игроку понадобится телефон или планшет подключённый к интернету (чтобы сканировать кьюар-коды). Никаких дополнительных приложений ставить не нужно.
 
-<br/><br/>Играть можно на двух языках: литовском и русском.
+<br/><br/>Играть можно на трёх языках: английском, русском и литовском.
 </article>
 
 <img class="illustration" src={doggo}>
@@ -51,15 +83,25 @@ import doggo from '$lib/images/illustrations/doggo.png';
 </div>
 
 
+
+
+
+
+
 {:else if $language == "LA"}
 
 <div class="where-next">
     Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>
 </div>
 
-{:else}
 
-<img class="illustration" src={head_signs}>
+
+
+
+
+
+{:else} <!-- LT -->
+
 
 <h1>Markučių Lobis</h1>
 <p class="subh">ORIENTACINIS ŽAIDIMAS<br> PO MARKUČIŲ DVARO PARKĄ</p>
@@ -78,7 +120,7 @@ Markučių dvaro muziejus nedidelėms grupėms ir pavieniams žaidėjams pristat
 <article>
     Kiekvienam žaidėjui (ar žaidėjų komandai) reikės mobilaus telefono arba planšetinio kompiuterio su interneto prieiga. Jokių papildomų programėlių instaliuoti nereikia.
 
-<br/><br/>Žaidimas galimas dviem kalbomis: lietuvių ir rusų.
+<br/><br/>Žaidimas galimas angliškai, rusiškai ir lietuviškai.
 </article>
 
 <img class="illustration" src={doggo}>

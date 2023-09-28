@@ -38,7 +38,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>Well — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Колодец – Клад Маркутья</title>
@@ -62,7 +62,30 @@ onMount(async () => {
 <img class="illustration" src={map_piece}>
 {#if $language == "EN"}
 
-English
+
+<h1>Well</h1>
+<p class="subh">The eigth stop<br>in the quest for Markučiai Treasure</p>
+<article>
+In 1867, during the construction of the Melnikov estate in Markuchiai, a well was dug. Every morning, the groundskeeper pumped the water, which flowed through pipes into a special reservoir in the house.
+
+</article>
+
+
+<img width=105% src={sulinys}>
+<article>
+<br>
+Some of the water was heated and used for washing and bathing. Yes, that's right - in the 19th century, this house already had a bathroom and a toilet. But let's not get distracted, as you still need to fetch water and water the orchids. There's a bucket next to the well, but before you lower it, take a look inside - see that? There's a piece of paper on the bottom! Did you take it? Yes, that's what you need.
+</article>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Now go ahead and fetch the water, and continue your search for the orchids.
+	<br><br>
+	<span class="highlighted-question">Where could the orchids grow?</span>
+</div>
+
+
 
 {:else if $language == "RU"}
 

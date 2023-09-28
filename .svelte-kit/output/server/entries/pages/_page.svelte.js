@@ -19,6 +19,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section class="svelte-16le9m7"><h1 class="svelte-16le9m7">${$language == "EN" ? `Markučiai manor museum` : `${$language == "RU" ? `Музей-усадьба Маркучай` : `${$language == "LA" ? `Museum manerium Markucis` : `Markučių dvaro muziejus`}`}`}</h1>
 
+<p style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p>
+
 <input${add_attribute("value", bazinga, 0)}>
 
 ${``}

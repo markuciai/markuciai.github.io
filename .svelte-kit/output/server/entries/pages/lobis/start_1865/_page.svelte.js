@@ -23,7 +23,27 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 ${`<section><img class="illustration"${add_attribute("src", head_signs, 0)}>
-${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}` : `${$language == "RU" ? `<h1>Клад Маркутья</h1>
+${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}
+
+<h1>Markučiai Treasure</h1>
+<p class="subh">You set on your journey<br>at ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
+
+<article>Welcome to the game! Find the plaques planted arond the park. Read the hints and scan the plaques in the correct order.
+</article>
+
+<img${add_attribute("src", instructions, 0)} width="100%">
+
+<article>Any adventure begins at the entrance.<br>
+The manor had a gate, and near that gate there was a large cross made of railway track.
+</article>
+
+
+<div class="where-next"><span class="highlighted-question">Where&#39;s the main entrance into the park? <br>Where did the cross once stand?</span>
+	<br><br>
+	<span>Descend.<br>
+		From the museum to the entrance.<br>
+		From the present into the past.
+	</span></div>` : `${$language == "RU" ? `<h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в ${escape(date_started_h)}:${escape(date_started_m)}:${escape(date_started_s)}</p>
 
 <article>Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
@@ -37,7 +57,7 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 </article>
 
 
-<div class="where-next"><span class="highlighted-question">Где у парка вход? <br>Где раньше стоял крест?</span>
+<div class="where-next"><span class="highlighted-question">Где у парка главный вход? <br>Где раньше стоял крест?</span>
 	<br><br>
 	<span>Спускайтесь вниз.<br>
 		Из музея ко входу.<br>
@@ -58,7 +78,7 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 
 
 
-<div class="where-next"><span class="highlighted-question">Kur yra įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
+<div class="where-next"><span class="highlighted-question">Kur yra pagrindinis įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
 	</span> <br><br>
 	<span>Leiskitės žemyn.<br>
 		Iš muziejaus link paminklinės lentos.<br>
@@ -66,7 +86,7 @@ ${$language == "EN" ? `Started the game at ${escape(date_started_h)}:${escape(da
 	</span></div>`}`}`} </section>
 
 ${$visited > 0 ? `<br> 
-<button class="button" style="width: 160px">↻ Perkrauti žaidimą</button>` : ``}
+<button class="button">↻ Perkrauti žaidimą</button>` : ``}
 
 
 

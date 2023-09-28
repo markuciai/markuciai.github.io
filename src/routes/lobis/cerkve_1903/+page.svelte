@@ -37,7 +37,7 @@ if (browser) {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title>Cerkvė — Markučiai Treasure</title>
+	<title>Chapel — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Церковь – Клад Маркутья</title>
@@ -61,7 +61,28 @@ if (browser) {
 <img class="illustration" src={map_piece}>
 {#if $language == "EN"}
 
-English
+
+
+<h1>Chapel</h1>
+<p class="subh">The tenth stop<br>in the quest for Markučiai Treasure</p>
+<article>
+Search for the year when the construction of this chapel began. 
+
+</article>
+
+
+<img width=105% src={cerkve}>
+<article>
+	<br>
+	It was dedicated to Saint Great Martyr Barbara. While near the church, you also find another piece of the document.
+</article>
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	Your search for the next fragment will be aided by the Pushkin family's four-legged friends.
+	<br><br>
+	<span class="highlighted-question">Who's running around the cemetary?</span>
+</div>
 
 {:else if $language == "RU"}
 

@@ -37,7 +37,7 @@ onMount(async () => {
 
 <svelte:head>
 {#if $language == "EN"}
-	<title> — Markučiai Treasure</title>
+	<title>Kitchen — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if $language == "RU"}
 	<title>Кухня – Клад Маркутья</title>
@@ -58,12 +58,39 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
+
 {#if $language == "EN"}
 
-English
+<h1>Kitchen</h1>
+<p class="subh">The fifth stop<br>in the quest for Markučiai Treasure</p>
+<article>
+The cook was delighted with this successful catch - she will bake five large carp with vegetables and herbs according to the old Melnikov family recipe and serve the dish on the festive table.
+
+</article>
+
+<img width=105% src={cook}>
+
+<article>
+<br>
+You notice that, in her recipe book, instead of a bookmark the cook is using the exact scrap of paper you need.
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+</article>
+
+
+<img class="illustration" src={task}>
+
+<div class="where-next">
+	She will give you this scrap if you agree to bring some chicken feed to Vanyusha.
+	<br><br>
+	<span class="highlighted-question">Where should you bring the chicken feed?</span>
+</div>
+
+
+
+
+
 
 {:else if $language == "RU"}
-
 <h1>Кухня</h1>
 <p class="subh">Пятая остановка<br>в поисках Клада Маркутья</p>
 <article>
@@ -71,12 +98,11 @@ English
 
 </article>
 
-
 <img width=105% src={cook}>
 <article>
 <br>
 Вы видите, что в книге с рецептами вместо закладки кухарка использовала нужный вам обрывок документа. 
-<br><br><br><br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
 </article>
 <img class="illustration" src={task}>
 
@@ -104,7 +130,7 @@ Lorem ipsum dolor sit amet
 <article>
 <br>
 Netikėtai receptų knygoje pastebite jums jau matyto dokumento skiautę, kurį virėja naudoja kaip knygos skirtuką.
-<br><br><br><br>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
 </article>
 <img class="illustration" src={task}>
 
