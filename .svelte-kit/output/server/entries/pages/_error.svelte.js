@@ -1,8 +1,8 @@
-import { c as create_ssr_component, v as validate_component } from "../../chunks/index2.js";
+import "clsx";
 import { O as Offer } from "../../chunks/Offer.js";
-const Error = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}`;
-});
+function _error($$renderer) {
+  Offer($$renderer);
+}
 export {
-  Error as default
+  _error as default
 };

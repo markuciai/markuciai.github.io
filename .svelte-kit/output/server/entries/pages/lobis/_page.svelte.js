@@ -1,21 +1,33 @@
-import { c as create_ssr_component, v as validate_component } from "../../../chunks/index2.js";
+import { x as head } from "../../../chunks/index.js";
 import { O as Offer } from "../../../chunks/Offer.js";
-const scroller_svelte_svelte_type_style_lang = "";
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${$$result.head += `<!-- HEAD_svelte-9b4z94_START -->${`${`${`${$$result.title = `<title>Markučių Lobis</title>`, ""}
-	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-9b4z94_END -->`, ""}
-
-
-
-${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}
-<br>
-
-
-
-
-
- ${``}`;
-});
+function _page($$renderer, $$props) {
+  $$renderer.component(($$renderer2) => {
+    head($$renderer2, ($$renderer3) => {
+      {
+        $$renderer3.push("<!--[!-->");
+        {
+          $$renderer3.push("<!--[!-->");
+          {
+            $$renderer3.push("<!--[!-->");
+            $$renderer3.title(($$renderer4) => {
+              $$renderer4.push(`<title>Markučių Lobis</title>`);
+            });
+            $$renderer3.push(`<meta name="description" content="Žaidimas"/>`);
+          }
+          $$renderer3.push(`<!--]-->`);
+        }
+        $$renderer3.push(`<!--]-->`);
+      }
+      $$renderer3.push(`<!--]-->`);
+    });
+    Offer($$renderer2);
+    $$renderer2.push(`<!----> <br/>  `);
+    {
+      $$renderer2.push("<!--[!-->");
+    }
+    $$renderer2.push(`<!--]-->`);
+  });
+}
 export {
-  Page as default
+  _page as default
 };

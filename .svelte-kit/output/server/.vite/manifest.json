@@ -1,0 +1,509 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_environment.js"
+    ]
+  },
+  "_Offer.js": {
+    "file": "chunks/Offer.js",
+    "name": "Offer",
+    "imports": [
+      "_attributes.js",
+      "_instructions.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/doggo.D_Vb8Wrx.png"
+    ]
+  },
+  "_attributes.js": {
+    "file": "chunks/attributes.js",
+    "name": "attributes"
+  },
+  "_environment.js": {
+    "file": "chunks/environment.js",
+    "name": "environment"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index",
+    "imports": [
+      "_attributes.js"
+    ]
+  },
+  "_instructions.js": {
+    "file": "chunks/instructions.js",
+    "name": "instructions",
+    "assets": [
+      "_app/immutable/assets/head_signs.CJk7746j.png",
+      "_app/immutable/assets/instructions.B8OmXX0M.png"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_index.js",
+      "_environment.js"
+    ]
+  },
+  "_shared.js": {
+    "file": "chunks/shared.js",
+    "name": "shared"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
+    "file": "remote-entry.js",
+    "name": "remote-entry",
+    "src": "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js",
+    "isEntry": true,
+    "imports": [
+      "_shared.js",
+      "_environment.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_environment.js",
+      "_shared.js",
+      "_internal.js"
+    ]
+  },
+  "src/lib/images/archival/bakery.jpg": {
+    "file": "_app/immutable/assets/bakery.cLUMIVQE.jpg",
+    "src": "src/lib/images/archival/bakery.jpg"
+  },
+  "src/lib/images/archival/birdhouse.jpg": {
+    "file": "_app/immutable/assets/birdhouse.Dt0nN_bH.jpg",
+    "src": "src/lib/images/archival/birdhouse.jpg"
+  },
+  "src/lib/images/archival/cerkve.jpg": {
+    "file": "_app/immutable/assets/cerkve.Bp2UHJdu.jpg",
+    "src": "src/lib/images/archival/cerkve.jpg"
+  },
+  "src/lib/images/archival/cook.png": {
+    "file": "_app/immutable/assets/cook.D_N-fNRq.png",
+    "src": "src/lib/images/archival/cook.png"
+  },
+  "src/lib/images/archival/cross.jpg": {
+    "file": "_app/immutable/assets/cross.CqIizJrC.jpg",
+    "src": "src/lib/images/archival/cross.jpg"
+  },
+  "src/lib/images/archival/doggie.jpg": {
+    "file": "_app/immutable/assets/doggie.DVTutSGQ.jpg",
+    "src": "src/lib/images/archival/doggie.jpg"
+  },
+  "src/lib/images/archival/dvras_bw.jpg": {
+    "file": "_app/immutable/assets/dvras_bw.KK8Oaffd.jpg",
+    "src": "src/lib/images/archival/dvras_bw.jpg"
+  },
+  "src/lib/images/archival/fruit_garden.jpg": {
+    "file": "_app/immutable/assets/fruit_garden.CvoVAFYn.jpg",
+    "src": "src/lib/images/archival/fruit_garden.jpg"
+  },
+  "src/lib/images/archival/kabinetas.jpg": {
+    "file": "_app/immutable/assets/kabinetas.DdVzmDA4.jpg",
+    "src": "src/lib/images/archival/kabinetas.jpg"
+  },
+  "src/lib/images/archival/mdvaras.jpg": {
+    "file": "_app/immutable/assets/mdvaras.uf9U8GDs.jpg",
+    "src": "src/lib/images/archival/mdvaras.jpg"
+  },
+  "src/lib/images/archival/nazimov.jpg": {
+    "file": "_app/immutable/assets/nazimov.C3X2X70f.jpg",
+    "src": "src/lib/images/archival/nazimov.jpg"
+  },
+  "src/lib/images/archival/safe.jpg": {
+    "file": "_app/immutable/assets/safe.DfQ5pWWn.jpg",
+    "src": "src/lib/images/archival/safe.jpg"
+  },
+  "src/lib/images/archival/servant_house.jpg": {
+    "file": "_app/immutable/assets/servant_house.CHY_b4Fw.jpg",
+    "src": "src/lib/images/archival/servant_house.jpg"
+  },
+  "src/lib/images/archival/servants.jpg": {
+    "file": "_app/immutable/assets/servants.BL2Qxo_7.jpg",
+    "src": "src/lib/images/archival/servants.jpg"
+  },
+  "src/lib/images/archival/stables.jpg": {
+    "file": "_app/immutable/assets/stables.DFLcQvde.jpg",
+    "src": "src/lib/images/archival/stables.jpg"
+  },
+  "src/lib/images/archival/sulinys.png": {
+    "file": "_app/immutable/assets/sulinys.W5wKslFG.png",
+    "src": "src/lib/images/archival/sulinys.png"
+  },
+  "src/lib/images/archival/vanyusha.jpg": {
+    "file": "_app/immutable/assets/vanyusha.BwyvB6DS.jpg",
+    "src": "src/lib/images/archival/vanyusha.jpg"
+  },
+  "src/lib/images/archival/waters.jpg": {
+    "file": "_app/immutable/assets/waters.DIqdefA1.jpg",
+    "src": "src/lib/images/archival/waters.jpg"
+  },
+  "src/lib/images/icons/0.png": {
+    "file": "_app/immutable/assets/0.CsVUym6R.png",
+    "src": "src/lib/images/icons/0.png"
+  },
+  "src/lib/images/icons/3.png": {
+    "file": "_app/immutable/assets/3.CyIAL8xv.png",
+    "src": "src/lib/images/icons/3.png"
+  },
+  "src/lib/images/illustrations/ball.png": {
+    "file": "_app/immutable/assets/ball.BARvZG9d.png",
+    "src": "src/lib/images/illustrations/ball.png"
+  },
+  "src/lib/images/illustrations/bowl.png": {
+    "file": "_app/immutable/assets/bowl.D4mzeVJD.png",
+    "src": "src/lib/images/illustrations/bowl.png"
+  },
+  "src/lib/images/illustrations/bucket-empty.png": {
+    "file": "_app/immutable/assets/bucket-empty.1Iv6QKUb.png",
+    "src": "src/lib/images/illustrations/bucket-empty.png"
+  },
+  "src/lib/images/illustrations/bucket.png": {
+    "file": "_app/immutable/assets/bucket.D4_0hlxX.png",
+    "src": "src/lib/images/illustrations/bucket.png"
+  },
+  "src/lib/images/illustrations/doggo.png": {
+    "file": "_app/immutable/assets/doggo.D_Vb8Wrx.png",
+    "src": "src/lib/images/illustrations/doggo.png"
+  },
+  "src/lib/images/illustrations/eggs.png": {
+    "file": "_app/immutable/assets/eggs.D8dE7ceG.png",
+    "src": "src/lib/images/illustrations/eggs.png"
+  },
+  "src/lib/images/illustrations/fish.png": {
+    "file": "_app/immutable/assets/fish.C5T-fb7j.png",
+    "src": "src/lib/images/illustrations/fish.png"
+  },
+  "src/lib/images/illustrations/fishing_rod.png": {
+    "file": "_app/immutable/assets/fishing_rod.DfkhT1yh.png",
+    "src": "src/lib/images/illustrations/fishing_rod.png"
+  },
+  "src/lib/images/illustrations/flowers.png": {
+    "file": "_app/immutable/assets/flowers.BA_-ufaU.png",
+    "src": "src/lib/images/illustrations/flowers.png"
+  },
+  "src/lib/images/illustrations/fodder.png": {
+    "file": "_app/immutable/assets/fodder.BK57aF9V.png",
+    "src": "src/lib/images/illustrations/fodder.png"
+  },
+  "src/lib/images/illustrations/head_signs.png": {
+    "file": "_app/immutable/assets/head_signs.CJk7746j.png",
+    "src": "src/lib/images/illustrations/head_signs.png"
+  },
+  "src/lib/images/illustrations/instructions.png": {
+    "file": "_app/immutable/assets/instructions.B8OmXX0M.png",
+    "src": "src/lib/images/illustrations/instructions.png"
+  },
+  "src/lib/images/illustrations/saddle.png": {
+    "file": "_app/immutable/assets/saddle.CymgCf8n.png",
+    "src": "src/lib/images/illustrations/saddle.png"
+  },
+  "src/lib/images/illustrations/testament_overlayed_lt.png": {
+    "file": "_app/immutable/assets/testament_overlayed_lt.BHYUKKrn.png",
+    "src": "src/lib/images/illustrations/testament_overlayed_lt.png"
+  },
+  "src/lib/images/illustrations/testament_overlayed_ru.png": {
+    "file": "_app/immutable/assets/testament_overlayed_ru.CaC_hKpB.png",
+    "src": "src/lib/images/illustrations/testament_overlayed_ru.png"
+  },
+  "src/lib/images/map-pieces/1.png": {
+    "file": "_app/immutable/assets/1.DdtKga2p.png",
+    "src": "src/lib/images/map-pieces/1.png"
+  },
+  "src/lib/images/map-pieces/10.png": {
+    "file": "_app/immutable/assets/10.BXB5F2x3.png",
+    "src": "src/lib/images/map-pieces/10.png"
+  },
+  "src/lib/images/map-pieces/11.png": {
+    "file": "_app/immutable/assets/11.B7OIzOay.png",
+    "src": "src/lib/images/map-pieces/11.png"
+  },
+  "src/lib/images/map-pieces/12.png": {
+    "file": "_app/immutable/assets/12.CUn-df6Y.png",
+    "src": "src/lib/images/map-pieces/12.png"
+  },
+  "src/lib/images/map-pieces/2.png": {
+    "file": "_app/immutable/assets/2.C1I_knbg.png",
+    "src": "src/lib/images/map-pieces/2.png"
+  },
+  "src/lib/images/map-pieces/3.png": {
+    "file": "_app/immutable/assets/3.B4vcEFrM.png",
+    "src": "src/lib/images/map-pieces/3.png"
+  },
+  "src/lib/images/map-pieces/4.png": {
+    "file": "_app/immutable/assets/4.BETxnsTE.png",
+    "src": "src/lib/images/map-pieces/4.png"
+  },
+  "src/lib/images/map-pieces/5.png": {
+    "file": "_app/immutable/assets/5.DqZFK9-Y.png",
+    "src": "src/lib/images/map-pieces/5.png"
+  },
+  "src/lib/images/map-pieces/6.png": {
+    "file": "_app/immutable/assets/6.CK71jOxx.png",
+    "src": "src/lib/images/map-pieces/6.png"
+  },
+  "src/lib/images/map-pieces/7.png": {
+    "file": "_app/immutable/assets/7.DKHIbaJL.png",
+    "src": "src/lib/images/map-pieces/7.png"
+  },
+  "src/lib/images/map-pieces/8.png": {
+    "file": "_app/immutable/assets/8.Brmkmlmo.png",
+    "src": "src/lib/images/map-pieces/8.png"
+  },
+  "src/lib/images/map-pieces/9.png": {
+    "file": "_app/immutable/assets/9.bhW1xBP2.png",
+    "src": "src/lib/images/map-pieces/9.png"
+  },
+  "src/lib/images/map/foundation.png": {
+    "file": "_app/immutable/assets/foundation.D--8dSoM.png",
+    "src": "src/lib/images/map/foundation.png"
+  },
+  "src/lib/images/map/pieces/bakery.png": {
+    "file": "_app/immutable/assets/bakery.B3R11I6H.png",
+    "src": "src/lib/images/map/pieces/bakery.png"
+  },
+  "src/lib/images/map/pieces/boat.png": {
+    "file": "_app/immutable/assets/boat.ZCnjCID4.png",
+    "src": "src/lib/images/map/pieces/boat.png"
+  },
+  "src/lib/images/map/pieces/chapel.png": {
+    "file": "_app/immutable/assets/chapel.hUlT83s5.png",
+    "src": "src/lib/images/map/pieces/chapel.png"
+  },
+  "src/lib/images/map/pieces/coop.png": {
+    "file": "_app/immutable/assets/coop.mhUAcwQc.png",
+    "src": "src/lib/images/map/pieces/coop.png"
+  },
+  "src/lib/images/map/pieces/cross.png": {
+    "file": "_app/immutable/assets/cross.DvvjxrPc.png",
+    "src": "src/lib/images/map/pieces/cross.png"
+  },
+  "src/lib/images/map/pieces/dog.png": {
+    "file": "_app/immutable/assets/dog.CtJMmQSC.png",
+    "src": "src/lib/images/map/pieces/dog.png"
+  },
+  "src/lib/images/map/pieces/horse.png": {
+    "file": "_app/immutable/assets/horse.CnVwGBGI.png",
+    "src": "src/lib/images/map/pieces/horse.png"
+  },
+  "src/lib/images/map/pieces/house.png": {
+    "file": "_app/immutable/assets/house.Dx8HCWiN.png",
+    "src": "src/lib/images/map/pieces/house.png"
+  },
+  "src/lib/images/map/pieces/kitchen.png": {
+    "file": "_app/immutable/assets/kitchen.Bk4XyAJc.png",
+    "src": "src/lib/images/map/pieces/kitchen.png"
+  },
+  "src/lib/images/map/pieces/monument.png": {
+    "file": "_app/immutable/assets/monument._7xVxSdt.png",
+    "src": "src/lib/images/map/pieces/monument.png"
+  },
+  "src/lib/images/map/pieces/tree.png": {
+    "file": "_app/immutable/assets/tree.BgKC5BJL.png",
+    "src": "src/lib/images/map/pieces/tree.png"
+  },
+  "src/lib/images/map/pieces/well.png": {
+    "file": "_app/immutable/assets/well.DMpZe7tq.png",
+    "src": "src/lib/images/map/pieces/well.png"
+  },
+  "src/routes/+error.svelte": {
+    "file": "entries/pages/_error.svelte.js",
+    "name": "entries/pages/_error.svelte",
+    "src": "src/routes/+error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_Offer.js"
+    ]
+  },
+  "src/routes/+layout.js": {
+    "file": "entries/pages/_layout.js",
+    "name": "entries/pages/_layout",
+    "src": "src/routes/+layout.js",
+    "isEntry": true
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "css": [
+      "_app/immutable/assets/_layout.6R41vfB9.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_attributes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DF8On-Ys.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/mdvaras.uf9U8GDs.jpg"
+    ]
+  },
+  "src/routes/lobis/+page.svelte": {
+    "file": "entries/pages/lobis/_page.svelte.js",
+    "name": "entries/pages/lobis/_page.svelte",
+    "src": "src/routes/lobis/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/arklides_1935/+page.svelte": {
+    "file": "entries/pages/lobis/arklides_1935/_page.svelte.js",
+    "name": "entries/pages/lobis/arklides_1935/_page.svelte",
+    "src": "src/routes/lobis/arklides_1935/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/cerkve_1903/+page.svelte": {
+    "file": "entries/pages/lobis/cerkve_1903/_page.svelte.js",
+    "name": "entries/pages/lobis/cerkve_1903/_page.svelte",
+    "src": "src/routes/lobis/cerkve_1903/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/duonkepe_1868/+page.svelte": {
+    "file": "entries/pages/lobis/duonkepe_1868/_page.svelte.js",
+    "name": "entries/pages/lobis/duonkepe_1868/_page.svelte",
+    "src": "src/routes/lobis/duonkepe_1868/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/finish_1935/+page.svelte": {
+    "file": "entries/pages/lobis/finish_1935/_page.svelte.js",
+    "name": "entries/pages/lobis/finish_1935/_page.svelte",
+    "src": "src/routes/lobis/finish_1935/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/lobis/kroketas_1867/+page.svelte": {
+    "file": "entries/pages/lobis/kroketas_1867/_page.svelte.js",
+    "name": "entries/pages/lobis/kroketas_1867/_page.svelte",
+    "src": "src/routes/lobis/kroketas_1867/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/kryzius_1880/+page.svelte": {
+    "file": "entries/pages/lobis/kryzius_1880/_page.svelte.js",
+    "name": "entries/pages/lobis/kryzius_1880/_page.svelte",
+    "src": "src/routes/lobis/kryzius_1880/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/namelis_1855/+page.svelte": {
+    "file": "entries/pages/lobis/namelis_1855/_page.svelte.js",
+    "name": "entries/pages/lobis/namelis_1855/_page.svelte",
+    "src": "src/routes/lobis/namelis_1855/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/oranzerija_1875/+page.svelte": {
+    "file": "entries/pages/lobis/oranzerija_1875/_page.svelte.js",
+    "name": "entries/pages/lobis/oranzerija_1875/_page.svelte",
+    "src": "src/routes/lobis/oranzerija_1875/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/start_1865/+page.svelte": {
+    "file": "entries/pages/lobis/start_1865/_page.svelte.js",
+    "name": "entries/pages/lobis/start_1865/_page.svelte",
+    "src": "src/routes/lobis/start_1865/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_instructions.js",
+      "_attributes.js"
+    ]
+  },
+  "src/routes/lobis/sulinys_1867/+page.svelte": {
+    "file": "entries/pages/lobis/sulinys_1867/_page.svelte.js",
+    "name": "entries/pages/lobis/sulinys_1867/_page.svelte",
+    "src": "src/routes/lobis/sulinys_1867/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/suniukai-1883/+page.svelte": {
+    "file": "entries/pages/lobis/suniukai-1883/_page.svelte.js",
+    "name": "entries/pages/lobis/suniukai-1883/_page.svelte",
+    "src": "src/routes/lobis/suniukai-1883/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/tvenkiniai_1917/+page.svelte": {
+    "file": "entries/pages/lobis/tvenkiniai_1917/_page.svelte.js",
+    "name": "entries/pages/lobis/tvenkiniai_1917/_page.svelte",
+    "src": "src/routes/lobis/tvenkiniai_1917/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/virtuve_1899/+page.svelte": {
+    "file": "entries/pages/lobis/virtuve_1899/_page.svelte.js",
+    "name": "entries/pages/lobis/virtuve_1899/_page.svelte",
+    "src": "src/routes/lobis/virtuve_1899/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  },
+  "src/routes/lobis/vistide_1877/+page.svelte": {
+    "file": "entries/pages/lobis/vistide_1877/_page.svelte.js",
+    "name": "entries/pages/lobis/vistide_1877/_page.svelte",
+    "src": "src/routes/lobis/vistide_1877/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_Offer.js"
+    ]
+  }
+}

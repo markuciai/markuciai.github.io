@@ -7,10 +7,10 @@ function __memo(fn) {
 return {
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set([".DS_Store","favicon.png"]),
-	mimeTypes: {".png":"image/png"},
+	assets: new Set(["favicon.png","robots.txt"]),
+	mimeTypes: {".png":"image/png",".txt":"text/plain"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.92c91bdc.js","app":"_app/immutable/entry/app.f70d020b.js","imports":["_app/immutable/entry/start.92c91bdc.js","_app/immutable/chunks/index.91a1003d.js","_app/immutable/chunks/index.1ceca79a.js","_app/immutable/entry/app.f70d020b.js","_app/immutable/chunks/index.91a1003d.js"],"stylesheets":[],"fonts":[]},
+		client: {start:"_app/immutable/entry/start.DeQb9kfk.js",app:"_app/immutable/entry/app.B7Wbry_N.js",imports:["_app/immutable/entry/start.DeQb9kfk.js","_app/immutable/chunks/BIg5O1t6.js","_app/immutable/chunks/Bpo-ulRz.js","_app/immutable/chunks/BgyyFh00.js","_app/immutable/chunks/CLL6TOOd.js","_app/immutable/entry/app.B7Wbry_N.js","_app/immutable/chunks/Bpo-ulRz.js","_app/immutable/chunks/BgyyFh00.js","_app/immutable/chunks/CLL6TOOd.js","_app/immutable/chunks/BnSVTgLM.js","_app/immutable/chunks/BIg5O1t6.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
@@ -31,6 +31,9 @@ return {
 			__memo(() => import('./nodes/16.js')),
 			__memo(() => import('./nodes/17.js'))
 		],
+		remotes: {
+			
+		},
 		routes: [
 			{
 				id: "/",
@@ -145,10 +148,12 @@ return {
 				endpoint: null
 			}
 		],
+		prerendered_routes: new Set([]),
 		matchers: async () => {
 			
 			return {  };
-		}
+		},
+		server_assets: {}
 	}
 }
 })();

@@ -3,6 +3,6 @@
 export const index = 12;
 let component_cache;
 export const component = async () => component_cache ??= (await import('../entries/pages/lobis/start_1865/_page.svelte.js')).default;
-export const imports = ["_app/immutable/nodes/12.8c4ec4ea.js","_app/immutable/chunks/index.91a1003d.js","_app/immutable/chunks/language.5249e475.js","_app/immutable/chunks/index.1ceca79a.js","_app/immutable/chunks/visited.6c831d63.js","_app/immutable/chunks/doggo.9dde3cb1.js","_app/immutable/chunks/instructions.5703ab44.js","_app/immutable/chunks/Stopper.a24b91c8.js"];
+export const imports = ["_app/immutable/nodes/12.96flU8Dw.js","_app/immutable/chunks/BnSVTgLM.js","_app/immutable/chunks/Bpo-ulRz.js","_app/immutable/chunks/D4hOhbAj.js","_app/immutable/chunks/BIg5O1t6.js","_app/immutable/chunks/BgyyFh00.js","_app/immutable/chunks/CLL6TOOd.js","_app/immutable/chunks/Byk20Zc9.js","_app/immutable/chunks/Ms8_iHdC.js","_app/immutable/chunks/BzzhcScf.js"];
 export const stylesheets = [];
 export const fonts = [];

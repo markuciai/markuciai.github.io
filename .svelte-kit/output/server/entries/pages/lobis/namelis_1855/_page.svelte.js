@@ -1,24 +1,32 @@
-import { c as create_ssr_component, a as subscribe, v as validate_component } from "../../../../chunks/index2.js";
-import { l as language } from "../../../../chunks/language.js";
-import { v as visited } from "../../../../chunks/visited.js";
+import { x as head } from "../../../../chunks/index.js";
 import { O as Offer } from "../../../../chunks/Offer.js";
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$unsubscribe_visited;
-  let $language, $$unsubscribe_language;
-  $$unsubscribe_visited = subscribe(visited, (value) => value);
-  $$unsubscribe_language = subscribe(language, (value) => $language = value);
-  $$unsubscribe_visited();
-  $$unsubscribe_language();
-  return `${$$result.head += `<!-- HEAD_svelte-1yem9e6_START -->${$language == "EN" ? `${$$result.title = `<title>Servants&#39; quarters — Markučiai Treasure</title>`, ""}
-	<meta name="description" content="Quest">` : `${$language == "RU" ? `${$$result.title = `<title>Домик слуг – Клад Маркутья</title>`, ""}
-	<meta name="description" content="Квест">` : `${$language == "LA" ? `${$$result.title = `<title> – Markučiai Treasure</title>`, ""}
-	<meta name="description" content="Quest">` : `${$$result.title = `<title>Tarnų namelis – Markučių Lobis</title>`, ""}
-	<meta name="description" content="Žaidimas">`}`}`}<!-- HEAD_svelte-1yem9e6_END -->`, ""}
-
-
-
-${`${validate_component(Offer, "Offer").$$render($$result, {}, {}, {})}`} `;
-});
+function _page($$renderer, $$props) {
+  $$renderer.component(($$renderer2) => {
+    head($$renderer2, ($$renderer3) => {
+      {
+        $$renderer3.push("<!--[!-->");
+        {
+          $$renderer3.push("<!--[!-->");
+          {
+            $$renderer3.push("<!--[!-->");
+            $$renderer3.title(($$renderer4) => {
+              $$renderer4.push(`<title>Tarnų namelis – Markučių Lobis</title>`);
+            });
+            $$renderer3.push(`<meta name="description" content="Žaidimas"/>`);
+          }
+          $$renderer3.push(`<!--]-->`);
+        }
+        $$renderer3.push(`<!--]-->`);
+      }
+      $$renderer3.push(`<!--]-->`);
+    });
+    {
+      $$renderer2.push("<!--[-->");
+      Offer($$renderer2);
+    }
+    $$renderer2.push(`<!--]-->`);
+  });
+}
 export {
-  Page as default
+  _page as default
 };
