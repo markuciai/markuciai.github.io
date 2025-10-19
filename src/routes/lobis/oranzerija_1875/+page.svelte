@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/9.png';
 import task from '$lib/images/illustrations/flowers.png';
@@ -19,15 +19,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -35,13 +35,13 @@ onMount(async () => {
 </script>
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Orangery — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Оранжерея – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -60,7 +60,7 @@ onMount(async () => {
 <img class="illustration" src={map_piece}>
 
 
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>Orangery</h1>
 <p class="subh">The ninth stop<br>in the quest for Markučiai Treasure</p>
@@ -83,7 +83,7 @@ Here you meet a girl named Olya. You help her fill the watering cans with water 
 	<span class="highlighted-question">Where should you bring the flowers?</span>
 </div>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 <h1>Оранжерея</h1>
 <p class="subh">Девятая остановка<br>в поисках Клада Маркутья</p>
@@ -106,44 +106,52 @@ Here you meet a girl named Olya. You help her fill the watering cans with water 
 	<span class="highlighted-question">Куда нужно отнести цветы?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
 
+
+
+
+
+
+
+
+
 <h1>Oranžerija</h1>
 <p class="subh">Devintoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Jūs visiškai teisūs – orchidėjos auga oranžerijoj, kur šaltuoju metų sezonu nuo šalčio saugomi egzotiški šilumą mėgstantys augalai. 
+	Jūs visiškai teisūs – žiemą gėlės auga oranžerijoje, kur šaltuoju metų laiku nuo šalčio saugomi egzotiški, šilumą mėgstantys augalai.
 </article>
 
 
 <img width=105% src={fruit_garden}>
 <article>
 <br>
-Čia jūs sutinkate mergaitę Olią (mažąją Olgą), kuriai padedate supilti vandenį į laistytuvus ir viename gražiame gėlių vazonėlyje pastebite jums reikalingo dokumento skiautę. Pasiimkite ją!
+Čia jūs sutinkate mergaitę Olgą, kuriai padedate supilti vandenį į laistytuvus ir viename gražiame gėlių vazonėlyje pastebite jums reikalingo dokumento skiautę. Pasiimkite ją!
 </article>
 <br><br>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Olia sukomponavo gražias gėlių puokštes ir paprašė jas nunešti ant Varvaros ir Grigorijaus kapų.
+	Olga sukomponavo gražias gėlių puokštes ir paprašė jas nunešti ant Varvaros ir jos vyro Grigorijaus kapų.
 	<br><br>
 	<span class="highlighted-question">Kur reikėtų nešti gėles?</span>
 </div>
 
-{/if} <!-- Station $languages-->
+{/if} <!-- Station globe.languages-->
 </section>
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>The orangery smells of flowers. What did you come here for?</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>В оранжерее пахнет цветами. Но зачем вы сюда пришли?</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Oranžerijoje kvepia gėlėmis. O ko jūs čia atėjote?</Stopper>

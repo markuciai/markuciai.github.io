@@ -1,11 +1,11 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/8.png';
 import task from '$lib/images/illustrations/bucket.png';
@@ -20,15 +20,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -37,13 +37,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Well — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Колодец – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -60,7 +60,7 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 
 <h1>Well</h1>
@@ -87,7 +87,7 @@ Some of the water was heated and used for washing and bathing. Yes, that's right
 
 
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 <h1>Колодец</h1>
 <p class="subh">Восьмая остановка<br>в поисках Клада Маркутья</p>
@@ -111,43 +111,58 @@ Some of the water was heated and used for washing and bathing. Yes, that's right
 	<span class="highlighted-question">Где могут расти орхидеи?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
+
+
+
+
+
+
+
+
+
+
 <h1>Šulinys</h1>
 <p class="subh">Aštuntoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Šis šulinys buvo iškastas 1867 m., kuomet buvo statomas Melnikovų dvaras Markučiuose. Kiekvieną rytą kiemsargis specialia pompa pumpavo vandenį, kuris vamzdžiais tekėjo į specialią namuose esančią talpą.
+Šis šulinys buvo iškastas 1867 m., kuomet buvo statomas visas Melnikovų dvaras. Anksčiau vanduo nebėgdavo iš čiaupo. Kiekvieną rytą tarnai semdavo vandenį iš šulinio.
 </article>
 
 
 <img width=105% src={sulinys}>
 <article>
 <br>
-Dalį vandens šildydavo ir naudojo prausimuisi bei vonios malonumams. Taip, XIX a. šiame name jau buvo įrengta vonia ir tualetas. Na bet grįžkim prie mūsų reikalų, jums juk reikia pasemti vandens ir  palaistyti orchidėjas. Prie šulinio stovi kibiras. Neskubėkit. Prieš leidžiant kibirą į šulinį, žvilgtelkit į kibiro vidų. Matote? Ant dugno baltuoja popieriaus skiautė! Paėmėt ją? Tai būtent tai ko jums reikia.
+Dalį vandens šildydavo praustis bei vonios malonumams. Taip, 19&nbsp;a. šiame name jau buvo vonia ir tualetas! 
+</article>
+
+<article>
+Čia buvo šulinys. Įsivaizduokite, kad jums reikia pasemti vandens ir palaistyti gėles. Prie šulinio stovi kibiras. Neskubėkite. Prieš leisdami kibirą į šulinį, žvilgtelkite į kibiro vidų. 
+Ant dugno baltuoja dar viena popieriaus skiautė! Paimkite ją. Tai būtent tai, ko jums reikia.
 </article>
 <br><br><br><br>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Dabar drąsiai semkite vandenį ir eikite ieškoti orchidėjų
+	Dabar drąsiai semkite vandenį ir eikite&nbsp;ieškoti&nbsp;gėlių!
 	<br><br>
-	<span class="highlighted-question">Kur reikėtų ieškoti orchidėjų?</span>
+	<span class="highlighted-question">O kur žeimą ieškoti gėlių?</span>
 </div>
 
-{/if} <!-- Station $languages-->
+{/if} <!-- Station globe.languages-->
 </section>
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>You probably shouldn‘t toss whatever you‘re carrying into the well.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Наверно, не стоит закидывать в колодец то, что вы несёте.</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Tikriausiai neverta mesti į šulinį to, ką atsinešėte.</Stopper>

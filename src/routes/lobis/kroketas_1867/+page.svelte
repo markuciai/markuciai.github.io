@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/12.png';
 import task from '$lib/images/illustrations/fodder.png';
@@ -23,15 +23,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -40,13 +40,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Croquet court — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Площадка для крокета – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -62,7 +62,7 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>Croquet court</h1>
 <p class="subh">The twelfth and final stop<br>in the quest for Markučiai Treasure</p>
@@ -103,7 +103,7 @@ However, to let as many people as possible learn about the last will of the Push
 	<span class="highlighted-question">Now, go to the museum and collect your reward.</span>
 </div>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 
 <h1>Площадка для&nbsp;крокета</h1>
@@ -145,57 +145,70 @@ However, to let as many people as possible learn about the last will of the Push
 	<span class="highlighted-question">А теперь отправляйтесь в музей и получите за собранные фрагменты копии документа вознаграждение.</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1>Kroketo aikštelė</h1>
 <p class="subh">Dvyliktoji ir priešpaskutinė stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Prie poeto Aleksandro Puškino paminklo grupelė vaikų ir suaugusiųjų žaidžia kroketą. Vienas iš žaidėjų yra architektas ir geras Grigorijaus Puškino draugas Vladimiras Nazimovas.
+	Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse. Kroketas 19 a. buvo populiarus laisvalaikio žaidimas visoje Europoje. Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. 
 </article>
-	<img width=105% src={nazimov}>
+	<!-- <img width=105% src={nazimov}> -->
 <article>
-	<br>
-	Jis į Markučius atvyko paskutiniais Varvaros Puškinos gyvenimo metais ir pažadėjo padaryti viską, kas įmanoma, kad dvaro sodyboje būtų atidarytas muziejus, skirtas žymiam poetui Aleksandrui Puškinui. Sodyboje saugomi unikalūs baldai, poeto ir jo artimųjų asmeniniai daiktai čia atvežti iš poeto namų, buvusių Michailovsko gyvenvietėje.
+	<!-- <br> -->
+Žaidimo metu, ant lazdos rasite paskutiniąja dokumento skiautę. 
 </article>
 
 <img width=105% src={kabinetas}>
 
 <article>
 	<br>
-Vladimirui Nazimovui jūs atiduodate kroketo kamuoliuką bei parodote visas rastas dokumento skiautes. Architektas jums atiduoda paskutinę – dvyliktąją dokumento dalį – ir papasakoja, kad dokumentas, kurį jūs šiandien surinkote, yra ne kas kita, o 1935 m. Markučių dvaro šeimininkės Varvaros Puškinos surašytas testamentas!
+O dabar sudėkite visas skiautes drauge ir perskaitykite slaptą dokumentą. Kas jame parašyta? 
 </article>
 
 
 <img width=100% src={testament_overlayed_lt}>
-<article>
+<!-- <article>
 Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, nedegiame, dar 1867 m. prie vienos iš krosnių įrengtame seife.
 </article>
 <img width=90% src={safe}>
 <article><br/><br>
 Šį smagų žaidimą, kurio tikslas surinkti šį svarbų dokumentą, veikiausiai sugalvojo pats Varvaros testamento vykdytojas Vladimiras Nazimovas su savo vaikais, norėdamas plačiau paskleisti žinią apie Markučių dvaro šeimininkų paskutinę valią.
-</article>
+</article> -->
 
 <div class="where-next">
-	Loginio mąstymo ir dėmesingumo dėka jums pavyko surinkti dokumentą ir sužinoti, kas parašyta testamente! 
+	Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą!
 	<br><br>
-	<span class="highlighted-question">O dabar laikas užsukti į muziejų ir gauti apdovanojimą už nuveiktą darbą!</span>
+	<span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
 </div>
 
-{/if} <!-- Station $languages-->
+{/if} <!-- Station globe.languages-->
 </section>
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>Children are running around the croquet court frantically searching for the missing ball.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Вокруг площадки для крокета бегают дети и суетливо ищут пропавший шар.</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Aplink kroketo aikštelę bėgioja vaikai karštligiškai ieškodami dingusio kamuoliuko.</Stopper>

@@ -1,11 +1,11 @@
 <script>
-import { onMount } from 'svelte';
+// 
 import { browser } from "$app/environment";
-import language from '../../stores/language';
-import visited from '../../stores/visited';
+// 
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/3.png';
 import task from '$lib/images/illustrations/fishing_rod.png';
@@ -21,15 +21,15 @@ let show_station = false
 
 // onMount(async () => { 
 if (browser) {
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 }
@@ -39,13 +39,13 @@ if (browser) {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>The Stables — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Конюшня – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -63,7 +63,7 @@ if (browser) {
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 
 <h1>The Stables</h1>
@@ -83,7 +83,7 @@ Today, he found a similar scrap of paper by the stables, which he would gladly g
 </div>
 
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 
 <h1>Конюшня</h1>
@@ -103,16 +103,16 @@ Today, he found a similar scrap of paper by the stables, which he would gladly g
 <span class="highlighted-question">Куда нужно отнести&nbsp;удочку?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
-<h1>Конюшня</h1>
+<h1>Arklidės</h1>
 <p class="subh">Trečioji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Šaunuoliai, jūs lengvai įvykdėt tarnų prašymą – naują balną atidavėt vežikui-vadeliotojui ponui Michalui, kuris ilgą laiką tarnavo pas Puškinus Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.
+Šaunuoliai, jūs lengvai įvykdėte tarnų prašymą – naują balną atidavėt į arklides.  Arklidėse dirba Michalas, kuris ilgą laiką tarnavo Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.
 </article>
 <img width=105% src={stables}>
 <br><br>
@@ -120,21 +120,30 @@ Lorem ipsum dolor sit amet
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Jums užsiminus apie svarbaus dokumento paiešką, vežikas prisiminė, jog prie arklidžių kaip tik rado dokumento skiautę ir mielai ją atiduos, jeigu jūs nunešite meškerę jo jauniausiajam sūnui Tarasui.
+	Jums užsiminus apie svarbaus dokumento paiešką, šeimos vežikas prisiminė, jog prie arklidžių kaip tik rado dokumento skiautę ir mielai ją atiduos, jeigu jūs nunešite meškerę jo jauniausiajam sūnui Tarasui.
 	<br><br>
-	<span class="highlighted-question">Kur reikėtų nunešti&nbsp;meškerę?</span>
+	<span class="highlighted-question">Raskite, kur reikėtų nunešti&nbsp;meškerę.</span>
 </div>
+
+
+
+
+
+
+
+
+
 
 {/if} <!-- Station Languages-->
 </section>
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>The coachman has left, only the old horse looks at you and snorts.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Кучер отошёл, только старая лошадь смотрит вам в лицо и фыркает. </Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Vežikas nuėjo, tik senas arklys žiūri jums į akis ir prunkščia.</Stopper>

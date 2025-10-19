@@ -1,12 +1,12 @@
 
 <script>
-import { onMount } from 'svelte';
-import { browser } from "$app/environment";
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+import { browser } from "$app/environment";
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/7.png';
 import task from '$lib/images/illustrations/bucket-empty.png';
@@ -21,15 +21,15 @@ let show_station = false
 
 
 if (browser) {
-if ($visited >= 0) {
+if (globe.progress >= 0) {
 	show_offer = false
 }
 
-if($visited == station_id - 1) {
-	$visited = station_id
+if(globe.progress == station_id - 1) {
+	globe.progress = station_id
 }
 
-if ($visited >= station_id) {
+if (globe.progress >= station_id) {
 	show_station = true;
 }
 }
@@ -37,13 +37,13 @@ if ($visited >= station_id) {
 </script>
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Bakery — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Пекарня – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -63,7 +63,7 @@ if ($visited >= station_id) {
 <img class="illustration" src={map_piece}>
 
 
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>Bakery</h1>
 <p class="subh">The seventh stop<br>in the quest for Markučiai Treasure</p>
@@ -88,7 +88,7 @@ While standing near the oven, you spot the coveted scrap of the document on the 
 	<span class="highlighted-question">Where would you fill a bucket with water?</span>
 </div>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 
 <h1>Пекарня</h1>
@@ -114,44 +114,54 @@ While standing near the oven, you spot the coveted scrap of the document on the 
 	<span class="highlighted-question">Где можно набрать ведро воды?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
 
+
+
+
+
+
+
+
+
+
+
 <h1>Duonkepė</h1>
 <p class="subh">Septintoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Oi kaip karšta prie duonkepės! Mašenka (mažoji Marija) paima iš jūsų pintinę su kiaušiniais ir vikriai puola minkyti tešlą pyragui ir pyragėliams.
+Duonkepė 19 a. buvo pastatyta lauke, netoli pagrindinio dvaro pastato. Varvara ir jos šeima mėgo kepti savo duoną. Mergaitė Marija, paėmusi iš jūsų pintinę su kiaušiniais, vikriai puola minkyti tešlą pyragui ir bandelėms.
 </article>
 
 
 <img width=105% src={bakery}>
 <article>
 <br>
-Prie krosnies dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuroms pastebite jau pažįstamo dokumento skiautę.
+Prie krosnies, dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuroms pastebite jau pažįstamo dokumento skiautę.
 </article>
 <br><br>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Mergaitė ją jums atiduoda ir, įdavus kibirą, paprašo nueiti pasemti vandens ir palaistyti orchidėjas.
+	Mergaitė Marija jums atiduoda skiautę ir, įdavusi kibirą, paprašo nueiti pasemti vandens ir palaistyti gėles.
 	<br><br>
 	<span class="highlighted-question">Kur reikėtų eiti pasemti vandens?</span>
 </div>
 
-{/if} <!-- Station $languages-->
+{/if} <!-- Station globe.languages-->
 </section>
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>It's hot in the bakery. The young baker is too busy to give you hints</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Из пекарни несёт жаром. Девушка-пекарь слишком занята, чтобы давать вам подсказки.</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Kepykloje karšta. Jaunoji kepėja pernelyg užimta, kad duotų jums užuominas.</Stopper>

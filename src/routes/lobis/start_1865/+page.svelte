@@ -1,13 +1,13 @@
 <script>
 import {onMount} from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
+
+
 import head_signs from '$lib/images/illustrations/head_signs.png';
 import instructions from '$lib/images/illustrations/instructions.png';
 
 
 
-import Stopper from '../../Stopper.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import task from '$lib/images/illustrations/bowl.png';
 
@@ -31,22 +31,22 @@ function empty_storage() {
 onMount(async () => { 
 	// finished before, resetting completely
 	if (localStorage.finished) {
-		let a_lang = $language
+		let a_lang = globe.language
 		localStorage.clear(); // clears language too
-		$language = a_lang
+		globe.language = a_lang
 		window.location.reload();
 	}
 
 	// not playing → playing
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 		localStorage.date_started = date_started;
 	}
 
 
 
 	// already playing
-	if ($visited > station_id) {
+	if (globe.progress > station_id) {
 		date_started = new Date( Date.parse(localStorage.date_started) );
 		date_started_h = date_started.getHours().toString().padStart(2,"0");
 		date_started_m = date_started.getMinutes().toString().padStart(2,"0");
@@ -59,13 +59,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Start — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Старт – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title>Start – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -85,7 +85,7 @@ onMount(async () => {
 
 
 
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>Markučiai Treasure</h1>
 <p class="subh">You set on your journey<br>at {date_started_h}:{date_started_m}:{date_started_s}</p>
@@ -115,7 +115,7 @@ The manor had a gate, and near that gate there was a large cross made of railway
 
 
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 <h1>Клад Маркутья</h1>
 <p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
@@ -147,9 +147,17 @@ The manor had a gate, and near that gate there was a large cross made of railway
 
 
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
+
+
+
+
+
+
+
+
 
 
 
@@ -160,24 +168,29 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>
-	Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių, skaitykite užuominas ir skenuokite lenteles nurodyta tvarka. 
+Sveiki atvykę į žaidimą Markučių dvaro lobis! Ieškokite parke išdėliotų lentelių su QR kodais, skenuokite lenteles, skaitykite užuominas ir spręskite užduotis teisinga tvarka.
 </article>
 
 <img  src={instructions} width="100%" />
 
+
 <article>
-	Žaidimas prasideda prie įėjimo. Dvare buvo įėjimo vartai, o prie jų stovėjo didelis iš geležinkelio bėgių pagamintas kryžius.
+Žaidimas prasideda prie įėjimo į Markučių dvaro parką. 
+</article>
+
+
+<article>
+19 a. į Markučių dvarą buvo atvykstama karietomis pro pagrindinius vartus, o prie jų stovėjo didelis, iš geležinkelio bėgių padarytas kryžius. Šiuo metu ten stovi kitas objektas.
 </article>
 
 
 
 <div class="where-next">
-	<span class="highlighted-question">Kur yra pagrindinis įėjimas į parką? <br>Kur anksčiau stovėjo kryžius?
+	<span class="highlighted-question">Raskite kur buvo pagrindinis&nbsp;įėjimas į&nbsp;Markučių dvaro parką. <br>Kaip manote, kur anksčiau galėjo&nbsp;stovėti&nbsp;kryžius? 
 	</span> <br/><br/>
 	<span>
-		Leiskitės žemyn.<br>
-		Iš&nbsp;muziejaus link paminklinės lentos.<br>
-		Iš&nbsp;dabarties į praeitį.
+ 
+Pirma užuomina – leiskitės&nbsp;žemyn&nbsp;laiptais.
 	</span>
 
 </div>
@@ -192,7 +205,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 
 
-{#if $visited > 0}
+{#if globe.progress > 0}
 <br>&nbsp;
 <button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
 {/if}
@@ -206,11 +219,11 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Вы уже начали своё путешествие! </Stopper>
 {:else}
 <Stopper>Вы уже начали своё путешествие!</Stopper>

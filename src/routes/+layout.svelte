@@ -1,14 +1,17 @@
 <script>
-import { onMount } from 'svelte';
 import { browser } from "$app/environment";
 import { fade, blur, fly, slide, scale } from "svelte/transition";
 import { flip } from 'svelte/animate';
 import './styles.css';
-// import { writable } from "svelte/store";
-import language from './stores/language.js'
-import visited from './stores/visited';
 
-import Offer from './lobis/Offer.svelte';
+import Language_switcher from "$components/language_switcher.svelte";
+import Game_manager from "$components/game_manager.svelte"
+
+
+import Map from '$components/The_map.svelte';
+import Mounted from '$components/Mounted.svelte';
+
+// import Offer from './lobis/Offer.svelte';
 
 import icon_0 from '$lib/images/icons/0.png';
 import icon_1 from '$lib/images/icons/1.png';
@@ -25,8 +28,8 @@ import icon_11 from '$lib/images/icons/11.png';
 import icon_12 from '$lib/images/icons/12.png';
 
 
-import Map from './The_map.svelte';
-import Mounted from './Mounted.svelte';
+// import Map from './The_map.svelte';
+// import Mounted from './Mounted.svelte';
 
 let scroll = Number(0)
 
@@ -40,26 +43,26 @@ const lines = {
 	"LA": ["Zero", "First", "Double", "Trys"],
 };
 
-// {lines[$language][0]}
+// {lines[globe.language][0]}
 
 
 
-
+// 2025 These functions get deprecated for separate language_switcher and (modeled on it) game_manager
 
 if (browser) {
-	if(localStorage.getItem("visited") === null) {
-		localStorage.setItem("visited", $visited);
-		// window.location.reload();
-	}
+	// if(localStorage.getItem("visited") === null) {
+	// 	localStorage.setItem("visited", globe.visited);
+	// 	// window.location.reload();
+	// }
 
-	if(localStorage.getItem("language") === null) {
-		$language = localStorage.language
-	}
+	// if(localStorage.getItem("language") === null) {
+	// 	globe.language = localStorage.language
+	// } //deprecated
 	
-	$visited = Number(localStorage.visited);
-	$language = localStorage.language
+	// globe.visited = Number(localStorage.visited);
+	// globe.language = localStorage.language // deprecated
 	
-	console.log("Starting up. Language: ", $language, " || biggest visited:", $visited);
+	// console.log("Starting up. Language: ", globe.language, " || biggest visited:", globe.progress);
 	
 	// appear()
 	emerge = true
@@ -100,24 +103,13 @@ function handleMousemove(event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
 
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 
 <svelte:window bind:scrollY={scroll} />
 <div on:mousemove={handleMousemove} />
@@ -126,49 +118,28 @@ function handleMousemove(event) {
 
 
 
+<!-- {@render children()} -->
+
+
+
+
+
 
 <Mounted>
+<Game_manager />
+
+
 <div class="app">
 
 
-<!-- <p in:fly="{{ y: 200, duration: 20000 }}" out:fade   >ANIMATE ME</p>
-
-
-
-
-
-
-<p in:fly="{{ y: 200, duration: 2000 }}" out:fade >ANIMATE ME TOO</p>
-<p in:fly="{{ y: 10, duration: 200 }}" out:fade >ANIMATE ME THREE</p> -->
-
-
-
-<div class="lang_switch" in:fade out:fade >
-<!-- <button on:click={empty_storage} class="lang_button">↻</button> | -->
-
-{#if $visited > -1}
-<span class="visited_counter">{$visited} / 12</span>&nbsp;<!-- for debug only..? -->  
-{/if}
-
-
-<!--thin space: &#8239 -->
-
-<button on:click={() => $language = "EN"}
-	class="lang_button" class:selected={$language == "EN"}>EN</button> |
-<button on:click={() => $language = "RU"}
-	class="lang_button" class:selected={$language == "RU"}>RU</button> |
-<button on:click={() => $language = "LT"}
-	class="lang_button" class:selected={$language == "LT"}>LT</button>
-<!-- <button on:click={() => $language = "LA"}
-	class="lang_button" class:selected={$language == "LA"}>LA</button> -->
-
-</div>
-
-
-
-<!-- <Header /> -->
 
 <main in:fade="{{ duration: 500}}" out:fade >
+
+
+
+
+<Language_switcher />
+
 
 
 <!-- {#if $visited < 0 } <Offer /> {/if} -->
@@ -178,9 +149,11 @@ function handleMousemove(event) {
 <slot />
 <div class="map_and_stuff">
 <Map />
+
+
 <div class="legend_section">
 
-{#if $language == "RU"}
+{#if globe.language == "RU"}
 <ul class="legend_ul">
 	<li class="legend"><img src={icon_2} class="legend_icon">Домик слуг</li>
 	<li class="legend"><img src={icon_8} class="legend_icon">Колодец</li>
@@ -199,7 +172,7 @@ function handleMousemove(event) {
 	<li class="legend"><img src={icon_4} class="legend_icon">Пруды</li>
 </ul>
 
-{:else if $language == "EN"}
+{:else if globe.language == "EN"}
 <ul class="legend_ul">
 	<li class="legend"><img src={icon_2} class="legend_icon">Servants'&nbsp;quarters</li>
 	<li class="legend"><img src={icon_8} class="legend_icon">Water well</li>
@@ -218,7 +191,7 @@ function handleMousemove(event) {
 	<li class="legend"><img src={icon_4} class="legend_icon">Pond</li>
 </ul>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <ul class="legend_ul">
 	<li class="legend"><img src={icon_2} class="legend_icon">Servorum plagae</li>
 	<li class="legend"><img src={icon_8} class="legend_icon">Aqua bene</li>
@@ -261,10 +234,6 @@ function handleMousemove(event) {
 </main>
 
 
-
-
-
-
 <footer>
 	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 	<!-- <p>// Demonstracinė versija. Vyksta darbai.</p> -->
@@ -274,17 +243,6 @@ function handleMousemove(event) {
 </div> <!-- / app -->
 
 </Mounted>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -447,6 +405,7 @@ function handleMousemove(event) {
 	margin: 0;
 	color: white;
 	color: #EEDC83;
+	color:  var(--color-sepia);
 	/* width: clamp(200px, 100vw, 760px); */
 	/* width: 400px; */
 	margin-bottom: -40px;

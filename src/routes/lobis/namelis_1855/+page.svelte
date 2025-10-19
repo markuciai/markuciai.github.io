@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/2.png';
 import task from '$lib/images/illustrations/saddle.png';
@@ -20,15 +20,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -42,13 +42,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Servants' quarters — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Домик слуг – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -62,11 +62,11 @@ onMount(async () => {
 {#if show_offer}
 <Offer />
 {:else if show_station}
-<!-- Station $languages -->
+<!-- Station globe.languages -->
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>Servants' quarters</h1>
 <p class="subh">The second stop<br>in the quest for Markučiai Treasure</p>
@@ -94,7 +94,7 @@ The servants are busy in the garden, but if you can collect every piece of this 
 </span>
 </div>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 
 <h1>Домик слуг</h1>
@@ -123,36 +123,45 @@ The servants are busy in the garden, but if you can collect every piece of this 
 </span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Latin
 
 {:else} <!-- LT -->
 	
 
+
+
+
+
+
+
+
+
+
 <h1>Tarnų namelis</h1>
 <p class="subh">Antroji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Tarnaitė Ona ir jos vyras Viačeslavas jus pasitinka ant savo jaukių namų slenksčio.
+	Tarnų namelis anksčiau buvo vadinamas kumetynu. Markučių dvaro tarnaitė Ana ir jos vyras Viačeslavas čia gyveno, kol dirbo dvare.  
 </article>
 <img width=105% src={servants}>
 <br>
 <article>
-	Jie taip pat parke aptiko panašaus dokumento skiautę su įrašu, bet nežino, ką su ja daryti.
+	Ana ir Viačeslavas rado svarbaus dokumento skiautę, tačiau nežino, ką su ja daryti.
 </article>
 
 
 <img width=105% src={servant_house}>
 <article>
 <br>
-	Tarnai užsiėmę nesibaigiančiais darbais sode, todėl neturi laiko nežinomo dokumento paieškoms. Tačiau girdėjo, jog surinkus visas dokumento dalis ir nunešus jį į ponų namą galima gauti radybų.
+Tarnai užsiėmę darbais, todėl negali skirti laiko nežinomo dokumento paieškoms. Tačiau girdėjo, jog surinkus visas dokumento dalis ir nunešus jį į ponų namą, galima gauti radybų.
 </article>
 <img class="illustration task saddle" src={task}>
 
 <div class="where-next saddle-block">
-	Ana ir Viačeslavas sutinka jums atiduoti rastą dokumento dalį, jeigu jūs jiems pagelbėsit ir įvykdysit jų prašymą – nunešit naują balną ponui Michalui.
+Ana ir Viačeslavas sutinka jums atiduoti rastą dokumento dalį, jeigu jūs jiems pagelbėsite ir įvykdysite jų prašymą – nunešite naują balną ponui Michalui.
 	<br><br>
-<span class="highlighted-question">Kur reikėtų nunešti balną?</span>
+<span class="highlighted-question">Raskite, kur anksčiau buvo&nbsp;nešamas&nbsp;balnas?</span>
 </div>
 
 
@@ -160,16 +169,16 @@ Latin
 
 
 
-{/if} <!-- Main page $languages -->
+{/if} <!-- Main page globe.languages -->
 </section>
 {:else}
 
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>The door to the Servants' house is shut.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Двери домика слуг заперты.</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Двери домика слуг заперты. </Stopper>
 {:else}
 <Stopper>Tarnų namelio durys užrakintos.</Stopper>

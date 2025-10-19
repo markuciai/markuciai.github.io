@@ -1,11 +1,11 @@
 <script>
-import { onMount } from 'svelte';
-import { browser } from "$app/environment";
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+import { browser } from "$app/environment";
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/10.png';
 import task from '$lib/images/illustrations/doggo.png';
@@ -20,15 +20,15 @@ let show_station = false
 
 
 if (browser) {
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 }
@@ -36,13 +36,13 @@ if (browser) {
 </script>
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Chapel — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Церковь – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -59,7 +59,7 @@ if (browser) {
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 
 
@@ -84,7 +84,7 @@ Search for the year when the construction of this chapel began.
 	<span class="highlighted-question">Who's running around the cemetary?</span>
 </div>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 <h1>Церковь</h1>
 <p class="subh">Десятая остановка<br>в поисках Клада Маркутья</p>
@@ -107,7 +107,7 @@ Search for the year when the construction of this chapel began.
 	<span class="highlighted-question">Кто бегает недалеко от кладбища?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
@@ -117,21 +117,27 @@ Lorem ipsum dolor sit amet
 <h1>Cerkvė</h1>
 <p class="subh">Dešimtoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Padėję gėles ant kapų, atsisukite į cerkvę ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – koplyčios statybos?
+Padėję gėles ant kapų, atsisukite į šeimos maldos namus ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – lietuviškai vadinamos šeimos koplyčia – statybos?
 </article>
+
+
+
+
+
+
 
 
 <img width=105% src={cerkve}>
 <article>
 	<br>
-	Ji buvo pašventinta šventosios kankinės Barboros vardu. Šalia bažnyčios aptinkate dar vieną dokumento skiautę. Apeikite kapinaites.
+	Jai buvo suteiktas šventosios Barboros vardas. Šalia koplyčios aptinkate dar vieną dokumento skiautę. Apeikite kapinaites.
 
 
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Sekančią dokumento dalį jums padės surasti keturkojai Puškinų šeimos draugai.
+	Kitą dokumento dalį jums padės surasti keturkojai šeimos draugai.
 	<br><br>
 	<span class="highlighted-question">Ko reikėtų ieškoti kapinaitėse?</span>
 </div>
@@ -141,11 +147,11 @@ Lorem ipsum dolor sit amet
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>It‘s quiet near the chapel. The small cemetery is chilly and peaceful.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>У церквушки тихо. Небольшое кладбище отдаёт прохладой и спокойствием. </Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Prie cerkvės tylu. Nedidelės kapinaitės dvelkia vėsa ir ramybe.</Stopper>

@@ -1,5 +1,5 @@
 <script>
-import language from './stores/language';
+
 import dvaras from '$lib/images/archival/mdvaras.jpg';
 import map_foundation from '$lib/images/map/foundation.png';
 import { fade, blur, fly, slide, scale } from "svelte/transition";
@@ -18,10 +18,10 @@ let bazinga = ""
 
 <section>
 <h1>
-{#if $language == "EN"}			Markučiai manor museum
-{:else if $language == "RU"}	Музей-усадьба Маркучай
-{:else if $language == "LA"}	Museum manerium Markucis
-{:else}							Markučių dvaro&nbsp;muziejus
+{#if globe.language == "EN"}		Markučiai manor museum
+{:else if globe.language == "RU"}	Музей-усадьба Маркучай
+{:else if globe.language == "LA"}	Museum manerium Markucis
+{:else}								Markučių dvaro&nbsp;muziejus
 {/if}
 </h1>
 
@@ -66,8 +66,8 @@ let bazinga = ""
 
 
 </section>
-<br/>&nbsp;
-<img width=105% src={map_foundation}>
+<!-- <br/>&nbsp; -->
+<!-- <img width=105% src={map_foundation}> -->
 
 
 

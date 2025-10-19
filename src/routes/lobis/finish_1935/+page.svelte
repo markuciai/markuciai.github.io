@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import head_signs from '$lib/images/illustrations/head_signs.png';
 import dvras_bw from '$lib/images/archival/dvras_bw.jpg';
@@ -30,8 +30,8 @@ let time_delta
 
 
 onMount(async () => { 
-	if($visited == station_id - 1) {
-		$visited = -1
+	if(globe.progress == station_id - 1) {
+		globe.progress = -1
 		localStorage.finished = true
 		localStorage.date_finished = date_finished;
 	}
@@ -68,13 +68,13 @@ function ms_to_time(ms) {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Finish Line - Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Финиш - Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title>Finio – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -90,13 +90,13 @@ function ms_to_time(ms) {
 <section>
 <img class="illustration" src={head_signs}>
 
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <article>
 Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 </article>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 
 <h1>Финиш!</h1>
@@ -131,7 +131,7 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 
 
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Latin
 
@@ -168,7 +168,7 @@ Latin
 
 
 
-{/if} <!-- Main page $languages-->
+{/if} <!-- Main page globe.languages-->
 </section>
 
 
@@ -177,11 +177,11 @@ Latin
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>The safe is locked. <br> You're yet to collect every piece of the map!</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Вы дёргаете за ручку сейфа, но тот заперт. <br>Вы ещё собрали не все кусочки карты!</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Tuta clausa est. <br>Nondum es ad colligendas singulas chartas partes!</Stopper>
 {:else}
 <Stopper>Seifas užrakintas. <br>Jūs dar turite surinkti kiekvieną žemėlapio dalį!</Stopper>

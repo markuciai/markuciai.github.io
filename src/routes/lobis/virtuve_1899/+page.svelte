@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/5.png';
 import task from '$lib/images/illustrations/fodder.png';
@@ -19,15 +19,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -36,13 +36,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Kitchen — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Кухня – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -59,7 +59,7 @@ onMount(async () => {
 <section>
 <img class="illustration" src={map_piece}>
 
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>Kitchen</h1>
 <p class="subh">The fifth stop<br>in the quest for Markučiai Treasure</p>
@@ -90,7 +90,7 @@ You notice that, in her recipe book, instead of a bookmark the cook is using the
 
 
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <h1>Кухня</h1>
 <p class="subh">Пятая остановка<br>в поисках Клада Маркутья</p>
 <article>
@@ -112,7 +112,7 @@ You notice that, in her recipe book, instead of a bookmark the cook is using the
 	<span class="highlighted-question">Куда нужно отнести корм для цыплят?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
@@ -122,22 +122,22 @@ Lorem ipsum dolor sit amet
 <h1>Virtuvė</h1>
 <p class="subh">Penktoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Virėja nudžiunga pamačius puikų laimikį - net penkis karpius! Juos ji pagamins orkaitėje su daržovėmis ir visokiausiomis žolelėmis pagal senovinį Melnikovų šeimos receptą bei patieks per šventinius pietus.
+Virtuvėje, kuri stovi priestate šalia namo, dirba virėja. Virėja nudžiunga pamačiusi puikų laimikį - net penkis karpius! Ji juos iškeps krosnyje (ar žinote kas yra krosnis?) su daržovėmis ir visokiausiomis žolelėmis pagal Melnikovų šeimos receptą ir patieks šventiniams pietums.
 </article>
 
 
 <img width=105% src={cook}>
 <article>
 <br>
-Netikėtai receptų knygoje pastebite jums jau matyto dokumento skiautę, kurį virėja naudoja kaip knygos skirtuką.
+Netikėtai receptų knygoje pastebėsite jums jau matyto dokumento skiautę, kurią virėja naudoja kaip knygos skirtuką.
 <br>&nbsp;<br>&nbsp;<br>&nbsp;
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Virėja su džiaugsmu atiduos popierėlį jums, jeigu Vaniušai (mažajam Ivanui) nunešit paruoštą lesalą, kuriuo šis galėtų pamaitinti viščiukus.
+Virėja su džiaugsmu atiduos popierėlį jums, jeigu berniukui Vaniušai nunešite viščiukams paruoštą lesalą.
 	<br><br>
-	<span class="highlighted-question">Kur reikėtų nunešti viščiukų lesalą?</span>
+	<span class="highlighted-question">Kur nešti viščiukų lesalą?</span>
 </div>
 
 {/if} <!-- Station Languages-->
@@ -145,11 +145,11 @@ Netikėtai receptų knygoje pastebite jums jau matyto dokumento skiautę, kurį 
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>The cook is sitting by the entrance to the kitchen, flipping through a recipe book.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>У входа в кухню сидит кухарка и увлечённо листает рецепты.</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Prie įėjimo į virtuvę sėdi virėja ir susidomėjusi varto receptų knygą.</Stopper>

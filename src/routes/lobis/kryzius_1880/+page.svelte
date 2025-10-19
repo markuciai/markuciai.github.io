@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/1.png';
 import task from '$lib/images/illustrations/bowl.png';
@@ -20,15 +20,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -38,13 +38,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Cross — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Крест – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title>Crucis – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -64,7 +64,7 @@ onMount(async () => {
 <section>
 <img class="illustration" src={map_piece}>
 
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>The Cross</h1>
 <p class="subh">The first stop<br>in the quest for Markučiai Treasure</p>
@@ -87,7 +87,7 @@ Now, in that bowl there's only a piece of paper with a coat of arms and a signat
 </div>
 
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 
 <h1>Крест</h1>
@@ -116,7 +116,7 @@ Now, in that bowl there's only a piece of paper with a coat of arms and a signat
 
 
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem Ipsum Dolor sit amet
 
@@ -127,36 +127,37 @@ Lorem Ipsum Dolor sit amet
 <h1>Kryžius</h1>
 <p class="subh">Pirmoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Varvaros Puškinos laikais, prie įėjimo į parką iš kairės pusės ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. Prie pat jo pamatų dvaro šeimininkė palikdavo monetų pilną indelį skirtą vargingiems žmonėms.</article>
+Taip! Čia stovėjo metalinis kryžius. Varvaros laikais prie įėjimo į parką, kairėje (šiuo metu ten skelbimų lenta), ant akmeninio postamento stovėjo aukštas, iš geležinkelio bėgių pagamintas kryžius. O šalia jo dvaro savininkė palikdavo indelį su monetomis, skirtomis vargingiems žmonėms.
+</article>
 
 
 <img width=105% src={cross}>
 <article>
 <br>
-Šiandien tame indelyje rasite tik nedidelę popieriaus skiautę su parašu ir herbiniu antspaudu. Atrodo, jog tai turėtų būti svarbus istorinis dokumentas. Tačiau kur kita dokumento dalis? Kas jame parašyta? Kam vertėtų parodyti keistąjį radinį?
+Iš praeities jums palikome popieriaus skiautę su parašu ir antspaudu. Atrodo, kaip svarbaus istorinio dokumento dalis. Tačiau kur yra likusi dokumento dalis? 
 </article>
 <br><br>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Kam vertėtų parodyti keistąjį radinį? Galbūt dvaro tarnai galėtų jums&nbsp;padėti?
+	Galbūt dvaro tarnai galėtų jums&nbsp;padėti?
 	<br><br>
-	<span class="highlighted-question">Kur reikėtų ieškoti&nbsp;tarnų?</span>
+	<span class="highlighted-question">O dabar raskite žemėlapyje, kur&nbsp;19&nbsp;a.&nbsp;gyveno&nbsp;tarnai!</span>
 </div>
 
 
-{/if} <!-- Main page $languages-->
+{/if} <!-- Main page globe.languages-->
 </section>
 
 
 {:else}
 
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>Servants' house doors are shut.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>??? </Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Двери домика слуг заперты. </Stopper>
 {:else}
 <Stopper>Tarnu namelio durys užrakintos.</Stopper>

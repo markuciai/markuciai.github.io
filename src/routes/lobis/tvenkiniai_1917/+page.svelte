@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/4.png';
 import task from '$lib/images/illustrations/fish.png';
@@ -19,15 +19,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -35,13 +35,13 @@ onMount(async () => {
 </script>
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>The Ponds — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Пруды – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -57,7 +57,7 @@ onMount(async () => {
 
 <section>
 <img class="illustration" src={map_piece}>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>The Ponds</h1>
 <p class="subh">The fourth stop<br>in the quest for Markučiai Treasure</p>
@@ -80,7 +80,7 @@ You give Taras the fishing rod and notice that the sail on his boat is made of a
 	<span class="highlighted-question">Where should you bring the fish?</span>
 </div>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 <h1>Пруды</h1>
 <p class="subh">Четвёртая остановка<br>в поисках Клада Маркутья</p>
@@ -103,7 +103,7 @@ You give Taras the fishing rod and notice that the sail on his boat is made of a
 	<span class="highlighted-question">Куда нужно отнести рыбу?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
@@ -113,22 +113,22 @@ Lorem ipsum dolor sit amet
 <h1>Tvenkiniai</h1>
 <p class="subh">Ketvirtoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Surasti Tarasą nesudėtinga, nes berniukas visą savo laisvą laiką praleidžia prie dvaro tvenkinių. Jiems užšąlus žiemą, mėgsta čiuožinėti pačiūžomis, o vasarą maudytis ir iš nereikalingų skiedrų konstruoti laivo modeliukus.
+Surasti Tarasą nesudėtinga, nes berniukas visą laisvą laiką leidžia prie dvaro tvenkinių. Žiemą ant tvenkinių buvo čiuožinėjama pačiūžomis, o vasarą – maudomasi.
 </article>
 
 
 <img width=105% src={waters}>
 <article>
 <br>
-Šiandien Tarasas turi svarbią užduotį – tvenkiniuose pagauti žuvies šventiniams pietums.
+Šiandien Tarasas turi svarbią užduotį – pagauti žuvies šventiniams pietums.
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Atidavę meškerę berniukui, jūs pastebite, kad vieno iš jo laivelių burė padaryta iš jums reikiamo dokumento skiautės. Berniukas sutinka jums ją atiduoti su sąlyga, jeigu jūs kiek luktelsit ir vėliau nunešit jo pagautą žuvį virėjai.
+	Atidavę meškerę Terasui, jūs pastebite, kad jo valtyje yra dar viena dokumento skiautė! Berniukas sutinka jums ją atiduoti, jeigu jūs kiek luktelsite ir vėliau nunešite jo pagautą žuvį virėjai.
 
 	<br><br>
-	<span class="highlighted-question">Kur reikėtų nunešti žuvį?</span>
+	<span class="highlighted-question">Kaip galvojate, o kur nešti žuvį?</span>
 </div>
 
 {/if} <!-- Station Languages-->
@@ -136,11 +136,11 @@ Lorem ipsum dolor sit amet
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>Just a pond. There is a boy swimming in the middle.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Пруд как пруд. Посреди пруда плавает мальчик.</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Tvenkinys kaip tvenkinys. Tvenkinio viduryje plaukioja berniukas.</Stopper>

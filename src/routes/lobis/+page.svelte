@@ -1,7 +1,7 @@
 <script>
-import { onMount } from 'svelte';
-import Offer from './Offer.svelte';
-import Scroller from '../scroller.svelte';
+
+
+
 
 let language = "LT"
 

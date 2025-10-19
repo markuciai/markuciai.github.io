@@ -1,10 +1,10 @@
 <script>
-import { onMount } from 'svelte';
-import language from '../../stores/language';
-import visited from '../../stores/visited';
 
-import Offer from '../Offer.svelte';
-import Stopper from '../../Stopper.svelte';
+
+
+
+import Offer from '$components/Offer.svelte';
+import Stopper from '$components/Stopper.svelte';
 
 import map_piece from '$lib/images/map-pieces/11.png';
 import task from '$lib/images/illustrations/ball.png';
@@ -19,15 +19,15 @@ let show_station = false
 
 
 onMount(async () => { 
-	if ($visited >= 0) {
+	if (globe.progress >= 0) {
 		show_offer = false
 	}
 
-	if($visited == station_id - 1) {
-		$visited = station_id
+	if(globe.progress == station_id - 1) {
+		globe.progress = station_id
 	}
 
-	if ($visited >= station_id) {
+	if (globe.progress >= station_id) {
 		show_station = true;
 	}
 });
@@ -36,13 +36,13 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 	<title>Doggos — Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Собачки – Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 	<title> – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -62,7 +62,7 @@ onMount(async () => {
 <img class="illustration" src={map_piece}>
 
 
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 
 <h1>Doggos</h1>
 <p class="subh">The eleventh stop<br>in the quest for Markučiai Treasure</p>
@@ -85,7 +85,7 @@ The descendants of Fanka and Boyka are playing with the croquet ball. That‘s n
 	<span class="highlighted-question">Where could one find croquet players?</span>
 </div>
 
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 
 <h1>Собачки</h1>
 <p class="subh">Одинадцатая остановка<br>в поисках Клада Маркутья</p>
@@ -108,17 +108,24 @@ The descendants of Fanka and Boyka are playing with the croquet ball. That‘s n
 	<span class="highlighted-question">Где можно найти игроков в крокет?</span>
 </div>
 
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
 
 
+
+
+
+
+
+
+
 <h1>Šuniukai</h1>
 <p class="subh">Vienuolitkoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Šaunuoliai! Radote mylimų Puškinų šunelių kapus. Staiga matote, kad Fankos ir Boikos (šuniukų vardai) palikuonys žaidžia su kroketo kamuoliuku. Taip neturi būti, nes šis kamuoliukas yra ne šuns žaislas!
+Šaunuoliai! Radote šeimos mylimų šunelių kapus. Staiga pamatėte, kad Fankos ir Boikos (šuniukų vardai) giminės žaidžia su kroketo kamuoliuku. Taip neturi būti, šis kamuoliukas — ne šuns žaislas!
 </article>
 
 
@@ -132,7 +139,7 @@ Lorem ipsum dolor sit amet
 <div class="where-next">
 	Kamuoliuką nedelsiant reikia nunešti kroketo žaidėjams. Keldami jį nuo žemės, pastebite dar vieną jau pažįstamo dokumento skiautę. Paimkite ją ir eikite ieškoti paskutinės dokumento dalies.
 	<br><br>
-	<span class="highlighted-question">Kur reikėtų ieškoti kroketo žaidėjų?</span>
+	<span class="highlighted-question">Kur ieškoti kroketo žaidėjų?</span>
 </div>
 
 {/if} <!-- Station Languages-->
@@ -140,11 +147,11 @@ Lorem ipsum dolor sit amet
 
 {:else}
 <!-- Stopper-->
-{#if $language == "EN"}
+{#if globe.language == "EN"}
 <Stopper>You try to approach to the doggies, but they scatter.</Stopper>
-{:else if $language == "RU"}
+{:else if globe.language == "RU"}
 <Stopper>Вы пытаетесь пообщаться с собачками, но они убегают.</Stopper>
-{:else if $language == "LA"}
+{:else if globe.language == "LA"}
 <Stopper>Malum prohibitum.</Stopper>
 {:else}
 <Stopper>Jūs bandote pakalbinti šuniukus, tačiau jie pabėga.</Stopper>
