@@ -11,6 +11,8 @@ import Game_manager from "$components/game_manager.svelte"
 let bazinga = $state("")
 
 
+
+
 $effect(() => {
 	if(globe.laisve) {
 		bazinga = "laisve"

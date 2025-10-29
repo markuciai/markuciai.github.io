@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.8mJQ5rQg.js",
+    "file": "_app/immutable/entry/app.iOe3UThB.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -32,7 +32,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.ChM4F9Tr.js",
+    "file": "_app/immutable/nodes/0.Depw6bBM.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
@@ -48,7 +48,7 @@
       "_DLPUDWTP.js"
     ],
     "css": [
-      "_app/immutable/assets/0.CvhUwJ8C.css"
+      "_app/immutable/assets/0.CN7jqWxN.css"
     ],
     "assets": [
       "_app/immutable/assets/foundation.D--8dSoM.png",
@@ -65,7 +65,8 @@
       "_app/immutable/assets/dog.CtJMmQSC.png",
       "_app/immutable/assets/monument._7xVxSdt.png",
       "_app/immutable/assets/0.CsVUym6R.png",
-      "_app/immutable/assets/3.CyIAL8xv.png"
+      "_app/immutable/assets/3.CyIAL8xv.png",
+      "_app/immutable/assets/ornament.CWPLtSmL.png"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/1.js": {
@@ -81,7 +82,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/10.js": {
-    "file": "_app/immutable/nodes/10.gTx669cz.js",
+    "file": "_app/immutable/nodes/10.DVtn9cU2.js",
     "name": "nodes/10",
     "src": ".svelte-kit/generated/client-optimized/nodes/10.js",
     "isEntry": true,
@@ -98,7 +99,7 @@
       "_DJ0tfEzT.js"
     ],
     "assets": [
-      "_app/immutable/assets/2.C7bAt3BG.png",
+      "_app/immutable/assets/2.BoCmt176.png",
       "_app/immutable/assets/servant_house.CHY_b4Fw.jpg",
       "_app/immutable/assets/servants.BL2Qxo_7.jpg"
     ]
@@ -404,7 +405,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/9.js": {
-    "file": "_app/immutable/nodes/9.CSmS0ufK.js",
+    "file": "_app/immutable/nodes/9.zCY3gvQT.js",
     "name": "nodes/9",
     "src": ".svelte-kit/generated/client-optimized/nodes/9.js",
     "isEntry": true,
@@ -421,7 +422,7 @@
       "_DJ0tfEzT.js"
     ],
     "assets": [
-      "_app/immutable/assets/1.Ccq0tFwy.png",
+      "_app/immutable/assets/1.Bk0Qs8yo.png",
       "_app/immutable/assets/cross.CqIizJrC.jpg"
     ]
   },
@@ -563,7 +564,7 @@
     "src": "_game_manager.BOuoOUbW.css"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.CK0kS66i.js",
+    "file": "_app/immutable/entry/start.Cmgi_txP.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
@@ -713,7 +714,7 @@
     "src": "src/lib/images/illustrations/testament_overlayed_ru.png"
   },
   "src/lib/images/map-pieces/1.png": {
-    "file": "_app/immutable/assets/1.Ccq0tFwy.png",
+    "file": "_app/immutable/assets/1.Bk0Qs8yo.png",
     "src": "src/lib/images/map-pieces/1.png"
   },
   "src/lib/images/map-pieces/10.png": {
@@ -729,7 +730,7 @@
     "src": "src/lib/images/map-pieces/12.png"
   },
   "src/lib/images/map-pieces/2.png": {
-    "file": "_app/immutable/assets/2.C7bAt3BG.png",
+    "file": "_app/immutable/assets/2.BoCmt176.png",
     "src": "src/lib/images/map-pieces/2.png"
   },
   "src/lib/images/map-pieces/3.png": {
@@ -811,5 +812,9 @@
   "src/lib/images/map/pieces/well.png": {
     "file": "_app/immutable/assets/well.DMpZe7tq.png",
     "src": "src/lib/images/map/pieces/well.png"
+  },
+  "src/lib/images/ornament.png": {
+    "file": "_app/immutable/assets/ornament.CWPLtSmL.png",
+    "src": "src/lib/images/ornament.png"
   }
 }

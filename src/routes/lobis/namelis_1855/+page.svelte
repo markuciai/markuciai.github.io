@@ -65,7 +65,7 @@ onMount(async () => {
 <!-- Station globe.languages -->
 
 <section>
-<img class="illustration" src={map_piece}>
+<img class="map_piece_header_illustration" src={map_piece}>
 {#if globe.language == "EN"}
 
 <h1>Servants' quarters</h1>

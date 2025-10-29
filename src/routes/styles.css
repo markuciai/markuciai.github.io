@@ -209,6 +209,7 @@ h2 {
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
+	z-index: 20;
 }
 
 
@@ -230,7 +231,9 @@ article {
 	background: linear-gradient(0deg, #f7e8d4 0%, #f3e5d7 67%, #f7ece4 100%);
 
 
-	color: black;
+	color: #444;
+	color: #325939;
+	color: #384f3b;
 	width: 105%;
 	box-sizing: border-box;
 	padding: clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
@@ -305,6 +308,21 @@ article {
 	pointer-events: none;
 	transform: rotate(0.7deg);
 }
+
+
+.map_piece_header_illustration {
+	width: clamp(320px, 100vw, 640px);
+	width: 100%;
+	z-index: 10;
+	/* margin: clamp(-160px, -25vw, -80px) 0 clamp(-80px, -12.5vw, -40px) 0; */
+	/* margin: clamp(-80px, -12.5vw, -40px) 0 clamp(-160px, -25vw, -80px) 0; */
+	margin: clamp(-100px, -12.5vw, -40px) 0 clamp(-80px, -12.5vw, -40px) 0;
+	/* margin: clamp(-160px, -25vw, -40px) 0 clamp(-80px, -12.5vw, -40px) 0; */
+	/* margin: -80px 0 -80px 0; */
+	user-select: none;
+	pointer-events: none;
+}
+
 
 
 .map_section {
@@ -402,3 +420,18 @@ article {
 	user-select: none;
 	transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
+
+
+
+.ornament {
+	width: 100%;
+	height: 80px;
+	/* position: absolute; */
+	/* background-color: green; */
+	background: no-repeat  url('$lib/images/ornament.png');
+	background-size: contain;
+	margin-top: -1px;
+	/* rotate: -0.25deg; */
+	/* background-repeat: repeat-x; */
+	/* background: ; */
+}

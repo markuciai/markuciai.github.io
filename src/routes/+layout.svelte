@@ -471,7 +471,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
-	padding-top: 100px;
+	padding-top: 120px;
 	width: 100%;
 	max-width: 800px;
 	margin: 0 auto;

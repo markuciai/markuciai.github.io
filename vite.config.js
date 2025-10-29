@@ -12,6 +12,7 @@ export default defineConfig({
   			  globe: `import { globe } from '$components/globe.svelte.js'`,
   			  Stopper: `import Stopper from '$components/Stopper.svelte'`,
   			  Offer: `import Offer from '$components/Offer.svelte'`,
+  			  // Ornament: `import ornament from '$lib/images/ornament.png'`,
   			  is_browser: `import { is_browser } from '$app/environment'` // this one doesn't work?
 	      // components: ['./src/components'],
   			}

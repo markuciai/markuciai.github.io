@@ -1,11 +1,13 @@
 <script>
 import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
+// import ornament from '$lib/images/ornament.png';
 
 import map_piece from '$lib/images/map-pieces/1.png';
 import task from '$lib/images/illustrations/bowl.png';
 
 import cross from '$lib/images/archival/cross.jpg';
+
 
 
 const station_id = 1
@@ -58,7 +60,7 @@ onMount(async () => {
 {:else if show_station}
 
 <section>
-<img class="illustration" src={map_piece}>
+<img class="map_piece_header_illustration" src={map_piece}>
 
 {#if globe.language == "EN"}
 
@@ -136,14 +138,18 @@ Iš praeities jums palikome popieriaus skiautę su parašu ir antspaudu. Atrodo,
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Galbūt dvaro tarnai galėtų jums&nbsp;padėti?
+	Galbūt dvaro tarnai galėtų&nbsp;jums&nbsp;padėti?
 	<br><br>
 	<span class="highlighted-question">O dabar raskite žemėlapyje, kur&nbsp;19&nbsp;a.&nbsp;gyveno&nbsp;tarnai!</span>
 </div>
 
 
 {/if} <!-- Main page globe.languages-->
+
 </section>
+<!-- <img src="ornament.png" width = 100%> -->
+<div class="ornament" ></div>
+<!-- <img src={ornament} width=100%> -->
 
 
 {:else}
@@ -162,3 +168,5 @@ Iš praeities jums palikome popieriaus skiautę su parašu ir antspaudu. Atrodo,
 
 
 {/if} <!-- Module types-->
+
+

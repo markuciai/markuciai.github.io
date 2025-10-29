@@ -221,7 +221,7 @@
     "src": "src/lib/images/illustrations/testament_overlayed_ru.png"
   },
   "src/lib/images/map-pieces/1.png": {
-    "file": "_app/immutable/assets/1.Ccq0tFwy.png",
+    "file": "_app/immutable/assets/1.Bk0Qs8yo.png",
     "src": "src/lib/images/map-pieces/1.png"
   },
   "src/lib/images/map-pieces/10.png": {
@@ -237,7 +237,7 @@
     "src": "src/lib/images/map-pieces/12.png"
   },
   "src/lib/images/map-pieces/2.png": {
-    "file": "_app/immutable/assets/2.C7bAt3BG.png",
+    "file": "_app/immutable/assets/2.BoCmt176.png",
     "src": "src/lib/images/map-pieces/2.png"
   },
   "src/lib/images/map-pieces/3.png": {
@@ -320,6 +320,10 @@
     "file": "_app/immutable/assets/well.DMpZe7tq.png",
     "src": "src/lib/images/map/pieces/well.png"
   },
+  "src/lib/images/ornament.png": {
+    "file": "_app/immutable/assets/ornament.CWPLtSmL.png",
+    "src": "src/lib/images/ornament.png"
+  },
   "src/routes/+error.svelte": {
     "file": "entries/pages/_error.svelte.js",
     "name": "entries/pages/_error.svelte",
@@ -344,7 +348,10 @@
       "_game_manager.svelte_svelte_type_style_lang.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DzsXuuGx.css"
+      "_app/immutable/assets/_layout.DqtwUckN.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/ornament.CWPLtSmL.png"
     ]
   },
   "src/routes/+page.svelte": {
