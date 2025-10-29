@@ -11,24 +11,11 @@ function _page($$renderer, $$props) {
       });
       $$renderer3.push(`<meta name="description" content="Markučių dvaro muziejus"/>`);
     });
-    $$renderer2.push(`<section class="svelte-1uha8ag"><h1 class="svelte-1uha8ag">`);
-    {
-      $$renderer2.push("<!--[!-->");
-      {
-        $$renderer2.push("<!--[!-->");
-        {
-          $$renderer2.push("<!--[!-->");
-          $$renderer2.push(`Markučių dvaro muziejus`);
-        }
-        $$renderer2.push(`<!--]-->`);
-      }
-      $$renderer2.push(`<!--]-->`);
-    }
-    $$renderer2.push(`<!--]--></h1> <p style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p> <input${attr("value", bazinga)}/> `);
+    $$renderer2.push(`<section class="svelte-1uha8ag"><h1>LOBIS</h1> <p style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p> <input${attr("value", bazinga)}/> `);
     {
       $$renderer2.push("<!--[!-->");
     }
-    $$renderer2.push(`<!--]--> <br/> <br/>  <img width="98%"${attr("src", dvaras)}/></section>`);
+    $$renderer2.push(`<!--]--> <br/> <br/>  <img width="98%"${attr("src", dvaras)}/></section> <img src="ornament.png" width="100%"/>`);
   });
 }
 export {

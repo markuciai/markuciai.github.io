@@ -52,6 +52,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | "/lobis" | "/lobis/" | "/lobis/arklides_1935" | "/lobis/arklides_1935/" | "/lobis/cerkve_1903" | "/lobis/cerkve_1903/" | "/lobis/duonkepe_1868" | "/lobis/duonkepe_1868/" | "/lobis/finish_1935" | "/lobis/finish_1935/" | "/lobis/kroketas_1867" | "/lobis/kroketas_1867/" | "/lobis/kryzius_1880" | "/lobis/kryzius_1880/" | "/lobis/namelis_1855" | "/lobis/namelis_1855/" | "/lobis/oranzerija_1875" | "/lobis/oranzerija_1875/" | "/lobis/start_1865" | "/lobis/start_1865/" | "/lobis/sulinys_1867" | "/lobis/sulinys_1867/" | "/lobis/suniukai-1883" | "/lobis/suniukai-1883/" | "/lobis/tvenkiniai_1917" | "/lobis/tvenkiniai_1917/" | "/lobis/virtuve_1899" | "/lobis/virtuve_1899/" | "/lobis/vistide_1877" | "/lobis/vistide_1877/" | "/stores" | "/stores/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/favicon.png" | "/robots.txt" | string & {};
+		Asset(): "/favicon.png" | "/ornament.png" | "/robots.txt" | string & {};
 	}
 }

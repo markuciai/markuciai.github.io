@@ -1,7 +1,6 @@
 <script>
-// 
-import { browser } from "$app/environment";
-// 
+// import { browser } from "$app/environment";
+
 
 
 import Offer from '$components/Offer.svelte';
@@ -19,8 +18,8 @@ let show_offer = true
 let show_station = false
 
 
-// onMount(async () => { 
-if (browser) {
+onMount(async () => { 
+// if (browser) {
 	if (globe.progress >= 0) {
 		show_offer = false
 	}
@@ -32,8 +31,8 @@ if (browser) {
 	if (globe.progress >= station_id) {
 		show_station = true;
 	}
-}
-// });
+// }
+});
 
 </script>
 

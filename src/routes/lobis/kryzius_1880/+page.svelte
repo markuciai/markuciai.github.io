@@ -1,8 +1,4 @@
 <script>
-
-
-
-
 import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
 

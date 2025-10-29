@@ -123,6 +123,7 @@ button:focus:not(:focus-visible) {
 
 @media (min-width: 720px) {
 	h1 {
+		font-weight: 800;
 		font-size: 2.4rem;
 	}
 }
@@ -179,10 +180,12 @@ h1 {
 	line-height: clamp(40px, 12vw, 64px);;
 	color: #D33F37;
 	color: #9f0d17;
+	color: #c46d00; /* Vilniaus Museum colors */
 	/* color: #c11b1b; */
 	/* text-align: left; */
 	padding: 0;
 	margin: 50px 0 60px 0;
+	z-index: 10;
 }
 
 h2 {
@@ -295,7 +298,6 @@ article {
 
 
 .illustration {
-	
 	width: clamp(320px, 100vw, 640px);
 	z-index: 10;
 	margin: clamp(-160px, -25vw, -80px) 0 clamp(-80px, -12.5vw, -40px) 0;

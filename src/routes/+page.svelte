@@ -11,6 +11,25 @@ import Game_manager from "$components/game_manager.svelte"
 let bazinga = $state("")
 
 
+$effect(() => {
+	if(globe.laisve) {
+		bazinga = "laisve"
+	}
+
+	// if(
+	// bazinga == "Вольность"
+	// || bazinga == "вольность"
+	// || bazinga == "Volnost"
+	// || bazinga == "volnost"
+	// || bazinga == "laisvė"
+	// || bazinga == "Laisvė"
+	// || bazinga == "laisve"
+	// || bazinga == "Laisve") {
+	// 	globe.laisve = true
+	// }
+
+})
+
 // onMount(() => {
 // if (browser) {
 // 	if(globe.laisve) {
@@ -36,11 +55,12 @@ function empty_storage() {
 
 <section>
 <h1>
-{#if globe.language == "EN"}		Markučiai manor museum
+LOBIS
+<!-- {#if globe.language == "EN"}		Markučiai manor museum
 {:else if globe.language == "RU"}	Музей-усадьба Маркучай
 {:else if globe.language == "LA"}	Museum manerium Markucis
 {:else}								Markučių dvaro&nbsp;muziejus
-{/if}
+{/if} -->
 </h1>
 
 <p in:fly="{{ y: -30, duration: 1000, delay: 60000 }}" out:fade style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p>
@@ -63,7 +83,11 @@ function empty_storage() {
 <!-- <Game_manager /> -->
 <button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
 
-<button on:click={ () => globe.laisve = !globe.laisve } class="button">Sukčiauti: {globe.laisve}</button>
+{#if globe.laisve}
+<button on:click={ () => globe.laisve = false } class="button">Nebesukčiauti</button>
+{:else}
+<button on:click={ () => globe.laisve = true } class="button">Sukčiauti visur</button>
+{/if}
 
 <br>&nbsp;
 <p><a href="https://www.markuciudvaras.lt/lobis">Lobis</a> → <a href="/lobis">Lobis:</a></p>
@@ -92,6 +116,10 @@ function empty_storage() {
 
 
 </section>
+<img src="ornament.png" width = 100%>
+
+
+
 <!-- <br/>&nbsp; -->
 <!-- <img width=105% src={map_foundation}> -->
 
@@ -113,15 +141,7 @@ function empty_storage() {
 		font-size: 16pt;
 	}
 
-	h1 {
-		width: 90%;
-		font-weight: bold;
-		/* font-size: clamp(80px, 24vw, 128px); */
-		font-size: clamp(40px, 12vw, 64px);
-        /* line-height: 0px; */
-		color: #D33F37;
-        /* text-align: left; */
-	}
+
 
 	article {
 		padding: 0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);

@@ -221,51 +221,51 @@
     "src": "src/lib/images/illustrations/testament_overlayed_ru.png"
   },
   "src/lib/images/map-pieces/1.png": {
-    "file": "_app/immutable/assets/1.DdtKga2p.png",
+    "file": "_app/immutable/assets/1.Ccq0tFwy.png",
     "src": "src/lib/images/map-pieces/1.png"
   },
   "src/lib/images/map-pieces/10.png": {
-    "file": "_app/immutable/assets/10.BXB5F2x3.png",
+    "file": "_app/immutable/assets/10.DeRUYfa6.png",
     "src": "src/lib/images/map-pieces/10.png"
   },
   "src/lib/images/map-pieces/11.png": {
-    "file": "_app/immutable/assets/11.B7OIzOay.png",
+    "file": "_app/immutable/assets/11.m6tc0_by.png",
     "src": "src/lib/images/map-pieces/11.png"
   },
   "src/lib/images/map-pieces/12.png": {
-    "file": "_app/immutable/assets/12.CUn-df6Y.png",
+    "file": "_app/immutable/assets/12.Gx2vNGSe.png",
     "src": "src/lib/images/map-pieces/12.png"
   },
   "src/lib/images/map-pieces/2.png": {
-    "file": "_app/immutable/assets/2.C1I_knbg.png",
+    "file": "_app/immutable/assets/2.C7bAt3BG.png",
     "src": "src/lib/images/map-pieces/2.png"
   },
   "src/lib/images/map-pieces/3.png": {
-    "file": "_app/immutable/assets/3.B4vcEFrM.png",
+    "file": "_app/immutable/assets/3.VSpEzd-p.png",
     "src": "src/lib/images/map-pieces/3.png"
   },
   "src/lib/images/map-pieces/4.png": {
-    "file": "_app/immutable/assets/4.BETxnsTE.png",
+    "file": "_app/immutable/assets/4.CyZma425.png",
     "src": "src/lib/images/map-pieces/4.png"
   },
   "src/lib/images/map-pieces/5.png": {
-    "file": "_app/immutable/assets/5.DqZFK9-Y.png",
+    "file": "_app/immutable/assets/5.ASGpxxF4.png",
     "src": "src/lib/images/map-pieces/5.png"
   },
   "src/lib/images/map-pieces/6.png": {
-    "file": "_app/immutable/assets/6.CK71jOxx.png",
+    "file": "_app/immutable/assets/6.DiSA0Cj1.png",
     "src": "src/lib/images/map-pieces/6.png"
   },
   "src/lib/images/map-pieces/7.png": {
-    "file": "_app/immutable/assets/7.DKHIbaJL.png",
+    "file": "_app/immutable/assets/7.C-V-vm3a.png",
     "src": "src/lib/images/map-pieces/7.png"
   },
   "src/lib/images/map-pieces/8.png": {
-    "file": "_app/immutable/assets/8.Brmkmlmo.png",
+    "file": "_app/immutable/assets/8.DXAP49Pq.png",
     "src": "src/lib/images/map-pieces/8.png"
   },
   "src/lib/images/map-pieces/9.png": {
-    "file": "_app/immutable/assets/9.bhW1xBP2.png",
+    "file": "_app/immutable/assets/9.C9XkEETE.png",
     "src": "src/lib/images/map-pieces/9.png"
   },
   "src/lib/images/map/foundation.png": {
@@ -344,7 +344,7 @@
       "_game_manager.svelte_svelte_type_style_lang.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.6R41vfB9.css"
+      "_app/immutable/assets/_layout.DzsXuuGx.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -358,7 +358,7 @@
       "_attributes.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DF8On-Ys.css"
+      "_app/immutable/assets/_page.hERuRlns.css"
     ],
     "assets": [
       "_app/immutable/assets/mdvaras.uf9U8GDs.jpg"
