@@ -5,7 +5,7 @@ import { browser } from "$app/environment";
 onMount(() => {
 	console.log('game_manager component mounted');
 	// console.log("preferred languages:", navigator.languages)
-});
+
 
 
 
@@ -13,11 +13,31 @@ if (browser) {
 	if(localStorage.getItem("progress") !== null) {
 		globe.progress = Number(localStorage.progress);
 	}
+
+	if(localStorage.getItem("laisve") !== null) {
+		console.log('before load', localStorage.laisve,  globe.laisve, JSON.parse(globe.laisve) );
+		globe.laisve = JSON.parse(localStorage.laisve);
+		console.log('after load', localStorage.laisve,  globe.laisve, JSON.parse(globe.laisve) );
+	}
+	// console.log('what', localStorage.progress, localStorage.laisve)
+	// localStorage.progress = Number(globe.progress)
+	// localStorage.laisve = Boolean(globe.laisve)
+	
 }
+
+});
 
 $effect(() => {
 	localStorage.progress = Number(globe.progress)
 })
+
+$effect(() => {
+		console.log('laisve before', localStorage.laisve,  globe.laisve, globe.laisve );
+		localStorage.laisve = JSON.parse(globe.laisve)
+		console.log('after', localStorage.laisve,  globe.laisve, globe.laisve );
+
+})
+
 
 
 
@@ -34,7 +54,7 @@ $effect(() => {
 </script>
 
 
-
+{#if globe.laisve}
 <div class="enrult">
 	<button onclick={() => globe.progress = -1} class="lang_button" class:selected={globe.progress == -1}>-1</button>
 	<button onclick={() => globe.progress -=1} class="lang_button" >-</button>
@@ -42,7 +62,7 @@ $effect(() => {
 	<button onclick={() => globe.progress +=1} class="lang_button" >+</button>
 	<!-- <button onclick={() => globe.progress = 3} class="lang_button" class:selected={globe.progress == 3}>three</button> -->
 </div>
-
+{/if}
 
 
 <!-- <button class="button inline_button" onclick={print_a_thing}>Clicky: {a_number}</button> -->

@@ -1,5 +1,5 @@
 <script>
-import {onMount} from 'svelte';
+
 
 
 import head_signs from '$lib/images/illustrations/head_signs.png';

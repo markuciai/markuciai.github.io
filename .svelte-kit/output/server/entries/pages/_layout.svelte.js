@@ -1,4 +1,5 @@
 import "clsx";
+import "../../chunks/game_manager.svelte_svelte_type_style_lang.js";
 function Mounted($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     {

@@ -28,6 +28,10 @@
     "file": "chunks/environment.js",
     "name": "environment"
   },
+  "_game_manager.svelte_svelte_type_style_lang.js": {
+    "file": "chunks/game_manager.svelte_svelte_type_style_lang.js",
+    "name": "game_manager.svelte_svelte_type_style_lang"
+  },
   "_index.js": {
     "file": "chunks/index.js",
     "name": "index",
@@ -336,6 +340,9 @@
     "name": "entries/pages/_layout.svelte",
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
+    "imports": [
+      "_game_manager.svelte_svelte_type_style_lang.js"
+    ],
     "css": [
       "_app/immutable/assets/_layout.6R41vfB9.css"
     ]
@@ -347,6 +354,7 @@
     "isEntry": true,
     "imports": [
       "_index.js",
+      "_game_manager.svelte_svelte_type_style_lang.js",
       "_attributes.js"
     ],
     "css": [

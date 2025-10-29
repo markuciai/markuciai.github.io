@@ -6,8 +6,6 @@ const BLOCK_EFFECT = 1 << 4;
 const BRANCH_EFFECT = 1 << 5;
 const ROOT_EFFECT = 1 << 6;
 const BOUNDARY_EFFECT = 1 << 7;
-const UNOWNED = 1 << 8;
-const DISCONNECTED = 1 << 9;
 const CLEAN = 1 << 10;
 const DIRTY = 1 << 11;
 const MAYBE_DIRTY = 1 << 12;
@@ -15,10 +13,13 @@ const INERT = 1 << 13;
 const DESTROYED = 1 << 14;
 const EFFECT_RAN = 1 << 15;
 const EFFECT_TRANSPARENT = 1 << 16;
-const INSPECT_EFFECT = 1 << 17;
+const EAGER_EFFECT = 1 << 17;
 const HEAD_EFFECT = 1 << 18;
 const EFFECT_PRESERVED = 1 << 19;
 const USER_EFFECT = 1 << 20;
+const UNOWNED = 1 << 8;
+const DISCONNECTED = 1 << 9;
+const WAS_MARKED = 1 << 15;
 const REACTION_IS_UPDATING = 1 << 21;
 const ASYNC = 1 << 22;
 const ERROR_VALUE = 1 << 23;
@@ -81,6 +82,7 @@ function is_passive_event(name) {
 }
 const BLOCK_OPEN = `<!--${HYDRATION_START}-->`;
 const BLOCK_CLOSE = `<!--${HYDRATION_END}-->`;
+const EMPTY_COMMENT = `<!---->`;
 let controller = null;
 function abort() {
   controller?.abort(STALE_REACTION);
@@ -187,12 +189,56 @@ class Renderer {
     head2.child(fn);
   }
   /**
+   * @param {Array<Promise<void>>} blockers
    * @param {(renderer: Renderer) => void} fn
    */
-  async(fn) {
+  async_block(blockers, fn) {
     this.#out.push(BLOCK_OPEN);
-    this.child(fn);
+    this.async(blockers, fn);
     this.#out.push(BLOCK_CLOSE);
+  }
+  /**
+   * @param {Array<Promise<void>>} blockers
+   * @param {(renderer: Renderer) => void} fn
+   */
+  async(blockers, fn) {
+    let callback = fn;
+    if (blockers.length > 0) {
+      const context = ssr_context;
+      callback = (renderer) => {
+        return Promise.all(blockers).then(() => {
+          const previous_context = ssr_context;
+          try {
+            set_ssr_context(context);
+            return fn(renderer);
+          } finally {
+            set_ssr_context(previous_context);
+          }
+        });
+      };
+    }
+    this.child(callback);
+  }
+  /**
+   * @param {Array<() => void>} thunks
+   */
+  run(thunks) {
+    const context = ssr_context;
+    let promise = Promise.resolve(thunks[0]());
+    const promises = [promise];
+    for (const fn of thunks.slice(1)) {
+      promise = promise.then(() => {
+        const previous_context = ssr_context;
+        set_ssr_context(context);
+        try {
+          return fn();
+        } finally {
+          set_ssr_context(previous_context);
+        }
+      });
+      promises.push(promise);
+    }
+    return promises;
   }
   /**
    * Create a child renderer. The child renderer inherits the state from the parent,
@@ -423,7 +469,7 @@ class Renderer {
     return result;
   }
   /**
-   * Collect all of the `onDestroy` callbacks regsitered during rendering. In an async context, this is only safe to call
+   * Collect all of the `onDestroy` callbacks registered during rendering. In an async context, this is only safe to call
    * after awaiting `collect_async`.
    *
    * Child renderers are "porous" and don't affect execution order, but component body renderers
@@ -623,11 +669,11 @@ function render(component, options = {}) {
     options
   );
 }
-function head(renderer, fn) {
+function head(hash, renderer, fn) {
   renderer.head((renderer2) => {
-    renderer2.push(BLOCK_OPEN);
+    renderer2.push(`<!--${hash}-->`);
     renderer2.child(fn);
-    renderer2.push(BLOCK_CLOSE);
+    renderer2.push(EMPTY_COMMENT);
   });
 }
 function attributes(attrs, css_hash, classes, styles, flags = 0) {
@@ -676,6 +722,7 @@ export {
   ROOT_EFFECT as R,
   STATE_SYMBOL as S,
   UNOWNED as U,
+  WAS_MARKED as W,
   HYDRATION_END as a,
   HYDRATION_START as b,
   HYDRATION_START_ELSE as c,
@@ -688,7 +735,7 @@ export {
   DERIVED as j,
   EFFECT_TRANSPARENT as k,
   EFFECT_PRESERVED as l,
-  INSPECT_EFFECT as m,
+  EAGER_EFFECT as m,
   UNINITIALIZED as n,
   HEAD_EFFECT as o,
   STALE_REACTION as p,

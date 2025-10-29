@@ -1,10 +1,10 @@
-import { D as DEV, n as noop, a as assets, b as base, c as app_dir, r as relative, o as override, d as reset } from "./chunks/environment.js";
+import { D as DEV, a as assets, b as base, c as app_dir, r as relative, o as override, d as reset } from "./chunks/environment.js";
 import { json, text, error } from "@sveltejs/kit";
 import { HttpError, SvelteKitError, Redirect, ActionFailure } from "@sveltejs/kit/internal";
 import { with_request_store, merge_tracing, try_get_request_store } from "@sveltejs/kit/internal/server";
 import * as devalue from "devalue";
 import { b as base64_encode, t as text_decoder, a as text_encoder, g as get_relative_path, c as create_remote_cache_key, p as parse_remote_arg, s as stringify, T as TRAILING_SLASH_PARAM, I as INVALIDATED_PARAM } from "./chunks/shared.js";
-import { s as safe_not_equal, p as public_env, r as read_implementation, o as options, a as set_private_env, b as set_public_env, g as get_hooks, c as set_read_implementation } from "./chunks/internal.js";
+import { n as noop, s as safe_not_equal, p as public_env, r as read_implementation, o as options, a as set_private_env, b as set_public_env, g as get_hooks, c as set_read_implementation } from "./chunks/internal.js";
 import "clsx";
 import { parse, serialize } from "cookie";
 import * as set_cookie_parser from "set-cookie-parser";
@@ -626,46 +626,29 @@ function try_serialize(data, fn, route_id) {
     throw error2;
   }
 }
-function defer() {
-  let fulfil;
-  let reject;
-  const promise = new Promise((f, r) => {
-    fulfil = f;
-    reject = r;
-  });
-  return { promise, fulfil, reject };
-}
 function create_async_iterator() {
-  let count = 0;
-  const deferred = [defer()];
+  let resolved = -1;
+  let returned = -1;
+  const deferred = [];
   return {
     iterate: (transform = (x) => x) => {
       return {
         [Symbol.asyncIterator]() {
           return {
             next: async () => {
-              const next = await deferred[0].promise;
-              if (!next.done) {
-                deferred.shift();
-                return { value: transform(next.value), done: false };
-              }
-              return next;
+              const next = deferred[++returned];
+              if (!next) return { value: null, done: true };
+              const value = await next.promise;
+              return { value: transform(value), done: false };
             }
           };
         }
       };
     },
     add: (promise) => {
-      count += 1;
+      deferred.push(with_resolvers());
       void promise.then((value) => {
-        deferred[deferred.length - 1].fulfil({
-          value,
-          done: false
-        });
-        deferred.push(defer());
-        if (--count === 0) {
-          deferred[deferred.length - 1].fulfil({ done: true });
-        }
+        deferred[++resolved].resolve(value);
       });
     }
   };
@@ -2225,7 +2208,7 @@ ${indent}}`);
       async start(controller) {
         controller.enqueue(text_encoder.encode(transformed + "\n"));
         for await (const chunk of chunks) {
-          controller.enqueue(text_encoder.encode(chunk));
+          if (chunk.length) controller.enqueue(text_encoder.encode(chunk));
         }
         controller.close();
       },

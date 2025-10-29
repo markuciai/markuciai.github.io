@@ -1,11 +1,29 @@
 <script>
+// import { browser } from "$app/environment";
+
 
 import dvaras from '$lib/images/archival/mdvaras.jpg';
 import map_foundation from '$lib/images/map/foundation.png';
 import { fade, blur, fly, slide, scale } from "svelte/transition";
 
+import Game_manager from "$components/game_manager.svelte"
 
-let bazinga = ""
+let bazinga = $state("")
+
+
+// onMount(() => {
+// if (browser) {
+// 	if(globe.laisve) {
+// 		bazinga = "laisve"
+// 	}
+// }}
+
+
+function empty_storage() {
+	localStorage.clear();
+	window.location.reload();
+}
+
 
 </script>
 
@@ -29,7 +47,8 @@ let bazinga = ""
 
 <input bind:value={bazinga}>
 
-{#if bazinga == "Вольность"
+{#if globe.laisve
+	|| bazinga == "Вольность"
 	|| bazinga == "вольность"
 	|| bazinga == "Volnost"
 	|| bazinga == "volnost"
@@ -37,8 +56,15 @@ let bazinga = ""
 	|| bazinga == "Laisvė"
 	|| bazinga == "laisve"
 	|| bazinga == "Laisve"
-	}
-	
+}
+<br />
+<!-- <button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button> -->
+
+<!-- <Game_manager /> -->
+<button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
+
+<button on:click={ () => globe.laisve = !globe.laisve } class="button">Sukčiauti: {globe.laisve}</button>
+
 <br>&nbsp;
 <p><a href="https://www.markuciudvaras.lt/lobis">Lobis</a> → <a href="/lobis">Lobis:</a></p>
 <ol start="0">

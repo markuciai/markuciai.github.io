@@ -2,7 +2,7 @@ import { x as head } from "../../../../chunks/index.js";
 import { O as Offer } from "../../../../chunks/Offer.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
-    head($$renderer2, ($$renderer3) => {
+    head("1rjax15", $$renderer2, ($$renderer3) => {
       {
         $$renderer3.push("<!--[!-->");
         {

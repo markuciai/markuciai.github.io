@@ -126,6 +126,8 @@ function handleMousemove(event) {
 
 
 <Mounted>
+
+
 <Game_manager />
 
 
@@ -155,7 +157,7 @@ function handleMousemove(event) {
 
 {#if globe.language == "RU"}
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon">Домик слуг</li>
+	<li class="legend"><img src={icon_2} class="legend_icon">Домик&nbsp;слуг</li>
 	<li class="legend"><img src={icon_8} class="legend_icon">Колодец</li>
 	<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
 	<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
@@ -175,7 +177,7 @@ function handleMousemove(event) {
 {:else if globe.language == "EN"}
 <ul class="legend_ul">
 	<li class="legend"><img src={icon_2} class="legend_icon">Servants'&nbsp;quarters</li>
-	<li class="legend"><img src={icon_8} class="legend_icon">Water well</li>
+	<li class="legend"><img src={icon_8} class="legend_icon">Water&nbsp;well</li>
 	<li class="legend"><img src={icon_3} class="legend_icon">Stables</li>
 	<li class="legend"><img src={icon_5} class="legend_icon">Kitchen</li>
 	<li class="legend"><img src={icon_9} class="legend_icon">Orangery</li>
@@ -185,7 +187,7 @@ function handleMousemove(event) {
 	<li class="legend"><img src={icon_0} class="legend_icon">Museum</li>
 	<li class="legend"><img src={icon_7} class="legend_icon">Bakery</li>
 	<li class="legend"><img src={icon_6} class="legend_icon">Chicken coop</li>
-	<li class="legend"><img src={icon_12} class="legend_icon">Croquet court</li>
+	<li class="legend"><img src={icon_12} class="legend_icon">Croquet&nbsp;court</li>
 	<li class="legend"><img src={icon_10} class="legend_icon">Chapel</li>
 	<li class="legend"><img src={icon_11} class="legend_icon">Doggies</li>
 	<li class="legend"><img src={icon_4} class="legend_icon">Pond</li>
@@ -193,7 +195,7 @@ function handleMousemove(event) {
 
 {:else if globe.language == "LA"}
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon">Servorum plagae</li>
+	<li class="legend"><img src={icon_2} class="legend_icon">Servorum&nbsp;plagae</li>
 	<li class="legend"><img src={icon_8} class="legend_icon">Aqua bene</li>
 	<li class="legend"><img src={icon_3} class="legend_icon">Stabula</li>
 	<li class="legend"><img src={icon_5} class="legend_icon">Culina</li>
@@ -204,7 +206,7 @@ function handleMousemove(event) {
 	<li class="legend"><img src={icon_0} class="legend_icon">Manerium</li>
 	<li class="legend"><img src={icon_7} class="legend_icon">Pistrinum</li>
 	<li class="legend"><img src={icon_6} class="legend_icon">Pullus domus</li>
-	<li class="legend"><img src={icon_12} class="legend_icon">Croquet atrium</li>
+	<li class="legend"><img src={icon_12} class="legend_icon">Croquet&nbsp;atrium</li>
 	<li class="legend"><img src={icon_10} class="legend_icon">Capella</li>
 	<li class="legend"><img src={icon_11} class="legend_icon">Canes</li>
 	<li class="legend"><img src={icon_4} class="legend_icon">Piscine</li>
@@ -212,7 +214,7 @@ function handleMousemove(event) {
 
 {:else} <!-- LT-->
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon" >Tarnų&nbsp;namelis</li>
+	<li class="legend"><img src={icon_2} class="legend_icon">Tarnų&nbsp;namelis</li>
 	<li class="legend"><img src={icon_8} class="legend_icon">Šulinys</li>
 	<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
 	<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
@@ -238,7 +240,7 @@ function handleMousemove(event) {
 	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 	<!-- <p>// Demonstracinė versija. Vyksta darbai.</p> -->
 	<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a></p>
-	<p> </p>
+	<p></p>
 </footer>
 </div> <!-- / app -->
 

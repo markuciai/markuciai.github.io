@@ -5,6 +5,7 @@ import { browser } from "$app/environment";
 onMount(() => {
 	console.log('Language switcher component mounted');
 	console.log("preferred languages:", navigator.languages)
+	console.log('laisve in lang', localStorage.laisve,  globe.laisve, globe.laisve );
 });
 
 

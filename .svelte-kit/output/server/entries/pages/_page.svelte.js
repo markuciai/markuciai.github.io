@@ -1,10 +1,11 @@
 import { x as head } from "../../chunks/index.js";
+import "../../chunks/game_manager.svelte_svelte_type_style_lang.js";
 import { a as attr } from "../../chunks/attributes.js";
 const dvaras = "/_app/immutable/assets/mdvaras.uf9U8GDs.jpg";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let bazinga = "";
-    head($$renderer2, ($$renderer3) => {
+    head("1uha8ag", $$renderer2, ($$renderer3) => {
       $$renderer3.title(($$renderer4) => {
         $$renderer4.push(`<title>MDM</title>`);
       });
