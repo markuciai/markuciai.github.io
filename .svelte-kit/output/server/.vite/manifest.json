@@ -153,12 +153,56 @@
     "src": "src/lib/images/archival/waters.jpg"
   },
   "src/lib/images/icons/0.png": {
-    "file": "_app/immutable/assets/0.CsVUym6R.png",
+    "file": "_app/immutable/assets/0.DZcZNrsh.png",
     "src": "src/lib/images/icons/0.png"
   },
+  "src/lib/images/icons/1.png": {
+    "file": "_app/immutable/assets/1.5wxYuX8Q.png",
+    "src": "src/lib/images/icons/1.png"
+  },
+  "src/lib/images/icons/10.png": {
+    "file": "_app/immutable/assets/10.DckSRMSm.png",
+    "src": "src/lib/images/icons/10.png"
+  },
+  "src/lib/images/icons/11.png": {
+    "file": "_app/immutable/assets/11.jWjvAHXg.png",
+    "src": "src/lib/images/icons/11.png"
+  },
+  "src/lib/images/icons/12.png": {
+    "file": "_app/immutable/assets/12.B4uWdMHG.png",
+    "src": "src/lib/images/icons/12.png"
+  },
+  "src/lib/images/icons/2.png": {
+    "file": "_app/immutable/assets/2.BqlEKZJT.png",
+    "src": "src/lib/images/icons/2.png"
+  },
   "src/lib/images/icons/3.png": {
-    "file": "_app/immutable/assets/3.CyIAL8xv.png",
+    "file": "_app/immutable/assets/3.D2n1DbI7.png",
     "src": "src/lib/images/icons/3.png"
+  },
+  "src/lib/images/icons/4.png": {
+    "file": "_app/immutable/assets/4.gfGLFO_V.png",
+    "src": "src/lib/images/icons/4.png"
+  },
+  "src/lib/images/icons/5.png": {
+    "file": "_app/immutable/assets/5.BGw-T3to.png",
+    "src": "src/lib/images/icons/5.png"
+  },
+  "src/lib/images/icons/6.png": {
+    "file": "_app/immutable/assets/6.DsYVNPP8.png",
+    "src": "src/lib/images/icons/6.png"
+  },
+  "src/lib/images/icons/7.png": {
+    "file": "_app/immutable/assets/7.CGWbscHM.png",
+    "src": "src/lib/images/icons/7.png"
+  },
+  "src/lib/images/icons/8.png": {
+    "file": "_app/immutable/assets/8.DGWnSBE0.png",
+    "src": "src/lib/images/icons/8.png"
+  },
+  "src/lib/images/icons/9.png": {
+    "file": "_app/immutable/assets/9.DXgE_CHq.png",
+    "src": "src/lib/images/icons/9.png"
   },
   "src/lib/images/illustrations/ball.png": {
     "file": "_app/immutable/assets/ball.BARvZG9d.png",
@@ -229,7 +273,7 @@
     "src": "src/lib/images/map-pieces/10.png"
   },
   "src/lib/images/map-pieces/11.png": {
-    "file": "_app/immutable/assets/11.DSQpheQ7.png",
+    "file": "_app/immutable/assets/11.Bcts2DYt.png",
     "src": "src/lib/images/map-pieces/11.png"
   },
   "src/lib/images/map-pieces/12.png": {
@@ -265,7 +309,7 @@
     "src": "src/lib/images/map-pieces/8.png"
   },
   "src/lib/images/map-pieces/9.png": {
-    "file": "_app/immutable/assets/9.BrGQwCPy.png",
+    "file": "_app/immutable/assets/9.CPnQWumB.png",
     "src": "src/lib/images/map-pieces/9.png"
   },
   "src/lib/images/map/foundation.png": {
