@@ -201,6 +201,10 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 
 {/if} <!-- Station globe.languages-->
 </section>
+<div class="ornament" ></div>
+
+
+
 
 {:else}
 <!-- Stopper-->

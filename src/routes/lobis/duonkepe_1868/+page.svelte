@@ -27,7 +27,7 @@ if(globe.progress == station_id - 1) {
 	globe.progress = station_id
 }
 
-if (globe.progress >= station_id) {
+if (globe.progress == station_id) {
 	show_station = true;
 }
 }
@@ -112,21 +112,19 @@ While standing near the oven, you spot the coveted scrap of the document on the 
 	<span class="highlighted-question">Где можно набрать ведро воды?</span>
 </div>
 
+
+
+
+
 {:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 
+
+
+
+
 {:else} <!-- LT -->
-
-
-
-
-
-
-
-
-
-
 
 
 <h1>Duonkepė</h1>
@@ -152,6 +150,11 @@ Prie krosnies, dėžėje su malkomis, pliauskomis ir senais laikraščiais pakur
 
 {/if} <!-- Station globe.languages-->
 </section>
+<div class="ornament" ></div>
+
+
+
+
 
 {:else}
 <!-- Stopper-->

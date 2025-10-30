@@ -28,7 +28,7 @@ onMount(async () => {
 		globe.progress = station_id
 	}
 
-	if (globe.progress >= station_id) {
+	if (globe.progress == station_id) {
 		show_station = true;
 	}
 // }
@@ -135,6 +135,8 @@ Lorem ipsum dolor sit amet
 
 {/if} <!-- Station Languages-->
 </section>
+<div class="ornament" ></div>
+
 
 {:else}
 <!-- Stopper-->

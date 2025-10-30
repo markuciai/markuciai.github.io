@@ -27,7 +27,7 @@ onMount(async () => {
 		globe.progress = station_id
 	}
 
-	if (globe.progress >= station_id) {
+	if (globe.progress == station_id) {
 		show_station = true;
 	}
 });

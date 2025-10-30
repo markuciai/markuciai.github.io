@@ -24,11 +24,11 @@ if (browser) {
 		show_offer = false
 	}
 
-	if(globe.progress == station_id - 1) {
+	if (globe.progress == station_id - 1) {
 		globe.progress = station_id
 	}
 
-	if (globe.progress >= station_id) {
+	if (globe.progress == station_id) {
 		show_station = true;
 	}
 }
@@ -144,6 +144,8 @@ Padėję gėles ant kapų, atsisukite į šeimos maldos namus ir raskite datą �
 
 {/if} <!-- Station Languages-->
 </section>
+<div class="ornament" ></div>
+
 
 {:else}
 <!-- Stopper-->

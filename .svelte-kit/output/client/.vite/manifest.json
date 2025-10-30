@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.wxy1Ysk-.js",
+    "file": "_app/immutable/entry/app.CQ_LqNb7.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -82,7 +82,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/10.js": {
-    "file": "_app/immutable/nodes/10.Ch_98ieC.js",
+    "file": "_app/immutable/nodes/10.Cdmgttpd.js",
     "name": "nodes/10",
     "src": ".svelte-kit/generated/client-optimized/nodes/10.js",
     "isEntry": true,
@@ -99,13 +99,13 @@
       "_DJ0tfEzT.js"
     ],
     "assets": [
-      "_app/immutable/assets/2.BGPAnFcl.png",
+      "_app/immutable/assets/2.C2Cva-su.png",
       "_app/immutable/assets/servant_house.CHY_b4Fw.jpg",
       "_app/immutable/assets/servants.BL2Qxo_7.jpg"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/11.js": {
-    "file": "_app/immutable/nodes/11.BEVMXDK6.js",
+    "file": "_app/immutable/nodes/11.DYT60JPi.js",
     "name": "nodes/11",
     "src": ".svelte-kit/generated/client-optimized/nodes/11.js",
     "isEntry": true,
@@ -190,7 +190,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/15.js": {
-    "file": "_app/immutable/nodes/15.CuSy9QnF.js",
+    "file": "_app/immutable/nodes/15.DgX8RGQR.js",
     "name": "nodes/15",
     "src": ".svelte-kit/generated/client-optimized/nodes/15.js",
     "isEntry": true,
@@ -207,7 +207,7 @@
       "_DJ0tfEzT.js"
     ],
     "assets": [
-      "_app/immutable/assets/4.BXUqjPXL.png",
+      "_app/immutable/assets/4.HlR5vB0v.png",
       "_app/immutable/assets/waters.DIqdefA1.jpg"
     ]
   },
@@ -292,7 +292,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/4.js": {
-    "file": "_app/immutable/nodes/4.Cp4xqNMu.js",
+    "file": "_app/immutable/nodes/4.BdKP6ij7.js",
     "name": "nodes/4",
     "src": ".svelte-kit/generated/client-optimized/nodes/4.js",
     "isEntry": true,
@@ -309,12 +309,12 @@
       "_DJ0tfEzT.js"
     ],
     "assets": [
-      "_app/immutable/assets/3.BGjfto4Z.png",
+      "_app/immutable/assets/3.DFY3WtdA.png",
       "_app/immutable/assets/stables.DFLcQvde.jpg"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/5.js": {
-    "file": "_app/immutable/nodes/5.DNCNIqVR.js",
+    "file": "_app/immutable/nodes/5.8jrcSacx.js",
     "name": "nodes/5",
     "src": ".svelte-kit/generated/client-optimized/nodes/5.js",
     "isEntry": true,
@@ -336,7 +336,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/6.js": {
-    "file": "_app/immutable/nodes/6.B75ZmkYU.js",
+    "file": "_app/immutable/nodes/6.CblmMuAx.js",
     "name": "nodes/6",
     "src": ".svelte-kit/generated/client-optimized/nodes/6.js",
     "isEntry": true,
@@ -379,7 +379,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/8.js": {
-    "file": "_app/immutable/nodes/8.BAYUJW-Q.js",
+    "file": "_app/immutable/nodes/8.DtS61H_q.js",
     "name": "nodes/8",
     "src": ".svelte-kit/generated/client-optimized/nodes/8.js",
     "isEntry": true,
@@ -405,7 +405,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/9.js": {
-    "file": "_app/immutable/nodes/9.BClVbcym.js",
+    "file": "_app/immutable/nodes/9.DM9JArHv.js",
     "name": "nodes/9",
     "src": ".svelte-kit/generated/client-optimized/nodes/9.js",
     "isEntry": true,
@@ -422,7 +422,7 @@
       "_DJ0tfEzT.js"
     ],
     "assets": [
-      "_app/immutable/assets/1.CQHcVrRr.png",
+      "_app/immutable/assets/1.DeTA_E9r.png",
       "_app/immutable/assets/cross.CqIizJrC.jpg"
     ]
   },
@@ -564,7 +564,7 @@
     "src": "_game_manager.BOuoOUbW.css"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.DiJ1ngCi.js",
+    "file": "_app/immutable/entry/start.pIHFRwsG.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
@@ -714,7 +714,7 @@
     "src": "src/lib/images/illustrations/testament_overlayed_ru.png"
   },
   "src/lib/images/map-pieces/1.png": {
-    "file": "_app/immutable/assets/1.CQHcVrRr.png",
+    "file": "_app/immutable/assets/1.DeTA_E9r.png",
     "src": "src/lib/images/map-pieces/1.png"
   },
   "src/lib/images/map-pieces/10.png": {
@@ -730,15 +730,15 @@
     "src": "src/lib/images/map-pieces/12.png"
   },
   "src/lib/images/map-pieces/2.png": {
-    "file": "_app/immutable/assets/2.BGPAnFcl.png",
+    "file": "_app/immutable/assets/2.C2Cva-su.png",
     "src": "src/lib/images/map-pieces/2.png"
   },
   "src/lib/images/map-pieces/3.png": {
-    "file": "_app/immutable/assets/3.BGjfto4Z.png",
+    "file": "_app/immutable/assets/3.DFY3WtdA.png",
     "src": "src/lib/images/map-pieces/3.png"
   },
   "src/lib/images/map-pieces/4.png": {
-    "file": "_app/immutable/assets/4.BXUqjPXL.png",
+    "file": "_app/immutable/assets/4.HlR5vB0v.png",
     "src": "src/lib/images/map-pieces/4.png"
   },
   "src/lib/images/map-pieces/5.png": {
