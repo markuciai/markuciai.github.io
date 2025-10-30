@@ -58,7 +58,7 @@ if (browser) {
 {:else if show_station}
 
 <section>
-<img class="illustration" src={map_piece}>
+<img class="map_piece_header_illustration" src={map_piece}>
 {#if globe.language == "EN"}
 
 

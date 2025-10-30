@@ -1,7 +1,6 @@
 <script>
 import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
-// import ornament from '$lib/images/ornament.png';
 
 import map_piece from '$lib/images/map-pieces/1.png';
 import task from '$lib/images/illustrations/bowl.png';
@@ -147,9 +146,9 @@ Iš praeities jums palikome popieriaus skiautę su parašu ir antspaudu. Atrodo,
 {/if} <!-- Main page globe.languages-->
 
 </section>
-<!-- <img src="ornament.png" width = 100%> -->
+
 <div class="ornament" ></div>
-<!-- <img src={ornament} width=100%> -->
+
 
 
 {:else}
