@@ -16,6 +16,7 @@ const station_id = 3
 
 let show_offer = true
 let show_station = false
+// let show_station = $state(false);
 
 
 onMount(async () => { 
@@ -33,6 +34,13 @@ onMount(async () => {
 	}
 // }
 });
+
+
+
+
+
+
+
 
 </script>
 

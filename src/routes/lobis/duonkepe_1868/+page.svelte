@@ -35,6 +35,7 @@ if (globe.progress == station_id) {
 
 
 
+
 </script>
 
 <svelte:head>
@@ -58,7 +59,7 @@ if (globe.progress == station_id) {
 {#if show_offer}
 <Offer />
 
-{:else if show_station}
+{:else if globe.progress == station_id}
 
 <section>
 <img class="map_piece_header_illustration" src={map_piece}>

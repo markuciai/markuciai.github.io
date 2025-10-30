@@ -20,6 +20,7 @@ let show_station = false
 
 
 onMount(async () => { 
+
 	if (globe.progress >= 0) {
 		show_offer = false
 	}
