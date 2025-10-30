@@ -1,6 +1,6 @@
 <script>
 
-import { browser } from "$app/environment";
+// import { browser } from "$app/environment";
 
 
 
@@ -19,7 +19,7 @@ let show_offer = true
 let show_station = false
 
 
-if (browser) {
+onMount(async () => { 
 	if (globe.progress >= 0) {
 		show_offer = false
 	}
@@ -31,7 +31,7 @@ if (browser) {
 	if (globe.progress == station_id) {
 		show_station = true;
 	}
-}
+});
 
 </script>
 

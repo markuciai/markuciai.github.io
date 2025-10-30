@@ -17,8 +17,8 @@ const station_id = 7
 let show_offer = true
 let show_station = false
 
-
-if (browser) {
+onMount(async () => { 
+// if (browser) {
 if (globe.progress >= 0) {
 	show_offer = false
 }
@@ -30,7 +30,10 @@ if(globe.progress == station_id - 1) {
 if (globe.progress == station_id) {
 	show_station = true;
 }
-}
+// }
+});
+
+
 
 </script>
 
