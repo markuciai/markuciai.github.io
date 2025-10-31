@@ -174,21 +174,21 @@ function handleMousemove(event) {
 
 
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon">{legend_text[globe.language][2]}</li>
-	<li class="legend"><img src={icon_8} class="legend_icon">{legend_text[globe.language][8]}</li>
-	<li class="legend"><img src={icon_3} class="legend_icon">{legend_text[globe.language][3]}</li>
-	<li class="legend"><img src={icon_5} class="legend_icon">{legend_text[globe.language][5]}</li>
-	<li class="legend"><img src={icon_9} class="legend_icon">{legend_text[globe.language][9]}</li>
-	<li class="legend"><img src={icon_1} class="legend_icon">{legend_text[globe.language][1]}</li>
+	<li class="legend"><img src={icon_2} class="legend_icon"> {legend_text[globe.language][2]}</li>
+	<li class="legend"><img src={icon_8} class="legend_icon"> {legend_text[globe.language][8]}</li>
+	<li class="legend"><img src={icon_3} class="legend_icon"> {legend_text[globe.language][3]}</li>
+	<li class="legend"><img src={icon_5} class="legend_icon"> {legend_text[globe.language][5]}</li>
+	<li class="legend"><img src={icon_9} class="legend_icon"> {legend_text[globe.language][9]}</li>
+	<li class="legend"><img src={icon_1} class="legend_icon"> {legend_text[globe.language][1]}</li>
 </ul>
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_0} class="legend_icon">{legend_text[globe.language][0]}</li>
-	<li class="legend"><img src={icon_7} class="legend_icon">{legend_text[globe.language][7]}</li>
-	<li class="legend"><img src={icon_6} class="legend_icon">{legend_text[globe.language][6]}</li>
-	<li class="legend"><img src={icon_12} class="legend_icon">{legend_text[globe.language][12]}</li>
-	<li class="legend"><img src={icon_10} class="legend_icon">{legend_text[globe.language][10]}</li>
-	<li class="legend"><img src={icon_11} class="legend_icon">{legend_text[globe.language][11]}</li>
-	<li class="legend"><img src={icon_4} class="legend_icon">{legend_text[globe.language][4]}</li>
+	<li class="legend"><img src={icon_0} class="legend_icon"> {legend_text[globe.language][0]}</li>
+	<li class="legend"><img src={icon_7} class="legend_icon"> {legend_text[globe.language][7]}</li>
+	<li class="legend"><img src={icon_6} class="legend_icon"> {legend_text[globe.language][6]}</li>
+	<li class="legend"><img src={icon_12} class="legend_icon"> {legend_text[globe.language][12]}</li>
+	<li class="legend"><img src={icon_10} class="legend_icon"> {legend_text[globe.language][10]}</li>
+	<li class="legend"><img src={icon_11} class="legend_icon"> {legend_text[globe.language][11]}</li>
+	<li class="legend"><img src={icon_4} class="legend_icon"> {legend_text[globe.language][4]}</li>
 </ul>
 
 
@@ -249,19 +249,36 @@ function handleMousemove(event) {
 
 .legend_section {
 	/* display: grid; */
+
+
 	display: flex;
 	flex-wrap: wrap;
+
 	/* text-align: center; */
 	/* width: clamp(200px, 100vw, 760px); */
 	/* flex-basis: 400px; */
 	flex-grow: 0;
 	margin-bottom: 40px;
+
+	justify-content: center;
 	}
 
 .legend_ul {
+	/* background-color: purple; */
 	/* border: solid blue 2px; */
 	/* flex: initial; */
+
 	flex: 1 0 0;
+	flex-grow: 0;
+	/* align-self: flex-end; */
+
+/* 	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	justify-content: flex-end; */
+	/* text-align: center; /*??? */ */
+	/* text-align: right; /*??? */ */
+
 	list-style-type: none;
 	display: block;
 	padding: 0;
@@ -272,19 +289,28 @@ function handleMousemove(event) {
 	/* width: clamp(200px, 100vw, 760px); */
 	/* width: 400px; */
 	margin-bottom: -40px;
+
+	overflow-wrap: none;
+	word-wrap: none;
+	white-space: nowrap;
+	/* text-overflow: ; */
 	}
 
 .legend {
 	/* border: solid #D33F37 2px; */
 	display: block;
 	box-sizing: border-box;
+	/* background-color: teal; */
 	/* border: #D33F37 1px solid; */
 	/* height: 120px; */
 	/* padding: 20px; */
+
+
+
 	font-size: 28px;
 	border-radius: 8px;
 	/* vertical-align: middle; */
-	padding: 20px 0 20px 0;
+	padding: 30px 0 30px ;
 	/* margin: 0; */
 	margin: 40px 0 40px 0;
 	width: 370px;
@@ -292,8 +318,16 @@ function handleMousemove(event) {
 	/* transform: translate(0px, 2px); */
 	line-height: 20px;
 	letter-spacing: 1px;
+
+	/* font-family: var(--font-manrope); */
+	/* font-weight: 600; */
+
 	font-style: italic;
 	font-weight: 500;
+
+	overflow-wrap: none;
+	word-wrap: none;
+	white-space: nowrap;
 	}
 
 .legend_icon {

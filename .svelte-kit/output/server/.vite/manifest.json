@@ -153,7 +153,7 @@
     "src": "src/lib/images/archival/waters.jpg"
   },
   "src/lib/images/icons/0.png": {
-    "file": "_app/immutable/assets/0.DZcZNrsh.png",
+    "file": "_app/immutable/assets/0.mtatPHte.png",
     "src": "src/lib/images/icons/0.png"
   },
   "src/lib/images/icons/1.png": {
@@ -161,15 +161,15 @@
     "src": "src/lib/images/icons/1.png"
   },
   "src/lib/images/icons/10.png": {
-    "file": "_app/immutable/assets/10.vCNEVD7F.png",
+    "file": "_app/immutable/assets/10.BnydB37Q.png",
     "src": "src/lib/images/icons/10.png"
   },
   "src/lib/images/icons/11.png": {
-    "file": "_app/immutable/assets/11.BlJ69i5m.png",
+    "file": "_app/immutable/assets/11.D2R19gig.png",
     "src": "src/lib/images/icons/11.png"
   },
   "src/lib/images/icons/12.png": {
-    "file": "_app/immutable/assets/12.B4uWdMHG.png",
+    "file": "_app/immutable/assets/12.CGe5FmUc.png",
     "src": "src/lib/images/icons/12.png"
   },
   "src/lib/images/icons/2.png": {
@@ -177,7 +177,7 @@
     "src": "src/lib/images/icons/2.png"
   },
   "src/lib/images/icons/3.png": {
-    "file": "_app/immutable/assets/3.B2FlJ-mE.png",
+    "file": "_app/immutable/assets/3.BNP8cMPG.png",
     "src": "src/lib/images/icons/3.png"
   },
   "src/lib/images/icons/4.png": {
@@ -193,7 +193,7 @@
     "src": "src/lib/images/icons/6.png"
   },
   "src/lib/images/icons/7.png": {
-    "file": "_app/immutable/assets/7.CGWbscHM.png",
+    "file": "_app/immutable/assets/7.CQY8tVO_.png",
     "src": "src/lib/images/icons/7.png"
   },
   "src/lib/images/icons/8.png": {
@@ -389,7 +389,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "css": [
-      "_app/immutable/assets/_layout.DqtwUckN.css",
+      "_app/immutable/assets/_layout.nhTYJwcC.css",
       "_app/immutable/assets/game_manager.CeE_S-Yt.css"
     ],
     "assets": [
