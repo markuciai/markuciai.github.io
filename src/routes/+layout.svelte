@@ -28,6 +28,30 @@ import icon_11 from '$lib/images/icons/11.png';
 import icon_12 from '$lib/images/icons/12.png';
 
 
+
+let legend_text = {
+	"EN" : [
+		"Museum", "Cross", "Servants quarters", "Stables", "Pond", "Kitchen",
+		"Chicken coop", "Bakery", "Water well", "Orangery", "Chapel", "Doggies", "Croquet"
+		],
+	"RU" : [
+		"Музей", "Крест", "Домик слуг", "Конюшни", "Пруды", "Кухня",
+		"Птичник", "Пекарня", "Колодец", "Оранжерея", "Церковь", "Собачки", "Крокет",
+		],
+	"LT" : [
+		"Muziejus", "Kryžius", "Tarnų namelis", "Arklides", "Tvenkiniai", "Virtuvė",
+		"Vištidė", "Duonkepė", "Šulinys", "Oranžerija", "Cerkvė", "Šuniukai", "Kroketas",
+		],
+	"LA" : [
+		"Manerium", "Crucius", "Servorum plagae", "Stabula", "Piscine", "Culina",
+		"Pullus domus", "Pistrinum", "Aqua bene", "Pomarium", "Capella", "Canes", "Croquet atrium",
+		],
+};
+
+
+
+
+
 // import Map from './The_map.svelte';
 // import Mounted from './Mounted.svelte';
 
@@ -123,114 +147,52 @@ function handleMousemove(event) {
 
 
 
-
+<Game_manager />
 
 <Mounted>
 
 
-<Game_manager />
+
 
 
 <div class="app">
 
-
-
 <main in:fade="{{ duration: 500}}" out:fade >
-
-
 
 
 <Language_switcher />
 
 
-
-<!-- {#if $visited < 0 } <Offer /> {/if} -->
-<!-- {lines[$language][0]} -->
-
-
 <slot />
+
 <div class="map_and_stuff">
 <Map />
 
 
 <div class="legend_section">
 
-{#if globe.language == "RU"}
+
+
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon">Домик&nbsp;слуг</li>
-	<li class="legend"><img src={icon_8} class="legend_icon">Колодец</li>
-	<li class="legend"><img src={icon_3} class="legend_icon">Конюшни</li>
-	<li class="legend"><img src={icon_5} class="legend_icon">Кухня</li>
-	<li class="legend"><img src={icon_9} class="legend_icon">Оранжерея</li>
-	<li class="legend"><img src={icon_1} class="legend_icon">Крест</li>
+	<li class="legend"><img src={icon_2} class="legend_icon">{legend_text[globe.language][2]}</li>
+	<li class="legend"><img src={icon_8} class="legend_icon">{legend_text[globe.language][8]}</li>
+	<li class="legend"><img src={icon_3} class="legend_icon">{legend_text[globe.language][3]}</li>
+	<li class="legend"><img src={icon_5} class="legend_icon">{legend_text[globe.language][5]}</li>
+	<li class="legend"><img src={icon_9} class="legend_icon">{legend_text[globe.language][9]}</li>
+	<li class="legend"><img src={icon_1} class="legend_icon">{legend_text[globe.language][1]}</li>
 </ul>
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_0} class="legend_icon">Музей</li>
-	<li class="legend"><img src={icon_7} class="legend_icon">Пекарня</li>
-	<li class="legend"><img src={icon_6} class="legend_icon">Птичник</li>
-	<li class="legend"><img src={icon_12} class="legend_icon">Крокет</li>
-	<li class="legend"><img src={icon_10} class="legend_icon">Церковь</li>
-	<li class="legend"><img src={icon_11} class="legend_icon">Собачки</li>
-	<li class="legend"><img src={icon_4} class="legend_icon">Пруды</li>
+	<li class="legend"><img src={icon_0} class="legend_icon">{legend_text[globe.language][0]}</li>
+	<li class="legend"><img src={icon_7} class="legend_icon">{legend_text[globe.language][7]}</li>
+	<li class="legend"><img src={icon_6} class="legend_icon">{legend_text[globe.language][6]}</li>
+	<li class="legend"><img src={icon_12} class="legend_icon">{legend_text[globe.language][12]}</li>
+	<li class="legend"><img src={icon_10} class="legend_icon">{legend_text[globe.language][10]}</li>
+	<li class="legend"><img src={icon_11} class="legend_icon">{legend_text[globe.language][11]}</li>
+	<li class="legend"><img src={icon_4} class="legend_icon">{legend_text[globe.language][4]}</li>
 </ul>
 
-{:else if globe.language == "EN"}
-<ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon">Servants'&nbsp;quarters</li>
-	<li class="legend"><img src={icon_8} class="legend_icon">Water&nbsp;well</li>
-	<li class="legend"><img src={icon_3} class="legend_icon">Stables</li>
-	<li class="legend"><img src={icon_5} class="legend_icon">Kitchen</li>
-	<li class="legend"><img src={icon_9} class="legend_icon">Orangery</li>
-	<li class="legend"><img src={icon_1} class="legend_icon">Cross</li>
-</ul>
-<ul class="legend_ul">
-	<li class="legend"><img src={icon_0} class="legend_icon">Museum</li>
-	<li class="legend"><img src={icon_7} class="legend_icon">Bakery</li>
-	<li class="legend"><img src={icon_6} class="legend_icon">Chicken coop</li>
-	<li class="legend"><img src={icon_12} class="legend_icon">Croquet&nbsp;court</li>
-	<li class="legend"><img src={icon_10} class="legend_icon">Chapel</li>
-	<li class="legend"><img src={icon_11} class="legend_icon">Doggies</li>
-	<li class="legend"><img src={icon_4} class="legend_icon">Pond</li>
-</ul>
 
-{:else if globe.language == "LA"}
-<ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon">Servorum&nbsp;plagae</li>
-	<li class="legend"><img src={icon_8} class="legend_icon">Aqua bene</li>
-	<li class="legend"><img src={icon_3} class="legend_icon">Stabula</li>
-	<li class="legend"><img src={icon_5} class="legend_icon">Culina</li>
-	<li class="legend"><img src={icon_9} class="legend_icon">Pomarium</li>
-	<li class="legend"><img src={icon_1} class="legend_icon">Crucius</li>
-</ul>
-<ul class="legend_ul">
-	<li class="legend"><img src={icon_0} class="legend_icon">Manerium</li>
-	<li class="legend"><img src={icon_7} class="legend_icon">Pistrinum</li>
-	<li class="legend"><img src={icon_6} class="legend_icon">Pullus domus</li>
-	<li class="legend"><img src={icon_12} class="legend_icon">Croquet&nbsp;atrium</li>
-	<li class="legend"><img src={icon_10} class="legend_icon">Capella</li>
-	<li class="legend"><img src={icon_11} class="legend_icon">Canes</li>
-	<li class="legend"><img src={icon_4} class="legend_icon">Piscine</li>
-</ul>
 
-{:else} <!-- LT-->
-<ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon">Tarnų&nbsp;namelis</li>
-	<li class="legend"><img src={icon_8} class="legend_icon">Šulinys</li>
-	<li class="legend"><img src={icon_3} class="legend_icon">Arklides</li>
-	<li class="legend"><img src={icon_5} class="legend_icon">Virtuvė</li>
-	<li class="legend"><img src={icon_9} class="legend_icon">Oranžerija</li>
-	<li class="legend"><img src={icon_1} class="legend_icon">Kryžius</li>
-</ul>
-<ul class="legend_ul">
-	<li class="legend"><img src={icon_0} class="legend_icon">Muziejus</li>
-	<li class="legend"><img src={icon_7} class="legend_icon">Duonkepė</li>
-	<li class="legend"><img src={icon_6} class="legend_icon">Vištidė&nbsp;ir&nbsp;ledainė</li>
-	<li class="legend"><img src={icon_12} class="legend_icon">Kroketo&nbsp;aikštelė</li>
-	<li class="legend"><img src={icon_10} class="legend_icon">Cerkvė</li>
-	<li class="legend"><img src={icon_11} class="legend_icon">Šuniukai</li>
-	<li class="legend"><img src={icon_4} class="legend_icon">Tvenkiniai</li>
-</ul>
-{/if}
 </div>
 </div> <!-- map stuff-->
 </main>
@@ -280,107 +242,6 @@ function handleMousemove(event) {
 	font-style: italic;
 	font-weight: 400;
 }
-
-
-.lang_switch {
-	/* width: 100vw; */
-	/* text-align: center; */
-	/* text-align: right; */
-	/* margin: 5px 25vw 40px 0; */
-	/* position:absolute; */
-	/* right: ; */
-	align-items: center;
-	align-self: center;
-	text-align: right;
-	width: 100%;
-	max-width: 800px;
-	margin: 10px auto;
-	box-sizing: border-box;
-	padding-right: 20px;
-	color: #222;
-	user-select: none;
-	z-index: 2;
-	}
-
-.lang_button {
-	appearance: none;
-	box-sizing: border-box;
-	text-decoration: none;
-	text-align: center;
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 600;
-	/* letter-spacing: 2px; */
-	border: none;
- 	background-color: rgba(255, 255, 255, 0);
-	width: 40px;
-	height: 26px;
-	margin: 5px;
-	/* padding-bottom: 10px; */
-	border-radius: 3px;
-	/* border: 0px; */
-	color: #EEDC83;
-	border: 0.67px solid rgb(238, 220, 131, 0.8);
-	cursor: pointer;
-	user-select: none;
-	pointer-events: all;
-
-	transition: 0.3s;
-	}
-
-.lang_button::first-letter {
-	letter-spacing: 2px;
-}
-
-.lang_button:hover {
-	background-color:#EEDC83;
-	color: #D33F37;
-	/* border: 0.67px  solid #a29349; */
-	/* border-top-color: white;
-  	border-left-color: white;
-  	border-right-color: white;
- 	 border-bottom-color: white; */
-	border: 0.67px solid rgb(238, 220, 131, 1);
-	transition: 0.05s;
-	transform: scale(1.1);
-	box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.3);
-	}
-
-
-.lang_button:active {
-	background-color:#EEDC83;
-	border: 0.67px solid rgb(238, 220, 131, 0);
-	transform: scale(0.95);
-	box-shadow: 0px 3px 5px -10px rgba(0, 0, 0, 0);
-	}
-
-	/* away */
-.lang_button:active:not(:hover) {
-	transform: scale(1);
-	color: #EEDC83;
-	border: 0.67px solid rgb(238, 220, 131, 1);
-	background-color:rgba(238, 220, 131, 0.2);
-	}
-/* .lang_button.selected:hover {
-	
-} */
-
-.lang_button.selected, .lang_button.selected:hover {
-	transform: scale(1);
-	/* pointer-events: none; */
-	cursor: default;
-	color: #006837;
-	color: #EEDC83;
-	/* background-color: white; */
-	/* background-color: #EEDC83; */
-	/* background-color: rgba(0,0,0, 0.6); */
-	/* background-color: #222; */
-	background-color: #D33F37;
-	border: 0.67px solid rgb(238, 220, 131, 0.1);
-	/* border:none; */
-	user-select: none;
-	transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
 
 
 
@@ -512,17 +373,7 @@ footer a {
 
 
 @media (min-width: 950px){
-	.lang_switch {
-		position: absolute;
-		right: 2vw;
 
-
-		/* funny vertical thing */
-		/* writing-mode: vertical-lr;
-		right: calc(50vw - 1190px);
-		top: 120px; */
-
-	}
 	/* .lang_switch > * {
 		writing-mode: horizontal-tb;
 	} */

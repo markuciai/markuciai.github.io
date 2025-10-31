@@ -1,5 +1,5 @@
 import { x as head } from "../../chunks/index.js";
-import "../../chunks/game_manager.svelte_svelte_type_style_lang.js";
+/* empty css                                                      */
 import { a as attr } from "../../chunks/attributes.js";
 const dvaras = "/_app/immutable/assets/mdvaras.uf9U8GDs.jpg";
 function _page($$renderer, $$props) {

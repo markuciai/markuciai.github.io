@@ -28,9 +28,9 @@
     "file": "chunks/environment.js",
     "name": "environment"
   },
-  "_game_manager.svelte_svelte_type_style_lang.js": {
-    "file": "chunks/game_manager.svelte_svelte_type_style_lang.js",
-    "name": "game_manager.svelte_svelte_type_style_lang"
+  "_game_manager.CeE_S-Yt.css": {
+    "file": "_app/immutable/assets/game_manager.CeE_S-Yt.css",
+    "src": "_game_manager.CeE_S-Yt.css"
   },
   "_index.js": {
     "file": "chunks/index.js",
@@ -161,11 +161,11 @@
     "src": "src/lib/images/icons/1.png"
   },
   "src/lib/images/icons/10.png": {
-    "file": "_app/immutable/assets/10.DckSRMSm.png",
+    "file": "_app/immutable/assets/10.vCNEVD7F.png",
     "src": "src/lib/images/icons/10.png"
   },
   "src/lib/images/icons/11.png": {
-    "file": "_app/immutable/assets/11.jWjvAHXg.png",
+    "file": "_app/immutable/assets/11.BlJ69i5m.png",
     "src": "src/lib/images/icons/11.png"
   },
   "src/lib/images/icons/12.png": {
@@ -173,11 +173,11 @@
     "src": "src/lib/images/icons/12.png"
   },
   "src/lib/images/icons/2.png": {
-    "file": "_app/immutable/assets/2.BqlEKZJT.png",
+    "file": "_app/immutable/assets/2.DJ6_VLMd.png",
     "src": "src/lib/images/icons/2.png"
   },
   "src/lib/images/icons/3.png": {
-    "file": "_app/immutable/assets/3.D2n1DbI7.png",
+    "file": "_app/immutable/assets/3.B2FlJ-mE.png",
     "src": "src/lib/images/icons/3.png"
   },
   "src/lib/images/icons/4.png": {
@@ -185,11 +185,11 @@
     "src": "src/lib/images/icons/4.png"
   },
   "src/lib/images/icons/5.png": {
-    "file": "_app/immutable/assets/5.BGw-T3to.png",
+    "file": "_app/immutable/assets/5.Dk_z5uta.png",
     "src": "src/lib/images/icons/5.png"
   },
   "src/lib/images/icons/6.png": {
-    "file": "_app/immutable/assets/6.DsYVNPP8.png",
+    "file": "_app/immutable/assets/6.3nqWzWW8.png",
     "src": "src/lib/images/icons/6.png"
   },
   "src/lib/images/icons/7.png": {
@@ -201,7 +201,7 @@
     "src": "src/lib/images/icons/8.png"
   },
   "src/lib/images/icons/9.png": {
-    "file": "_app/immutable/assets/9.DXgE_CHq.png",
+    "file": "_app/immutable/assets/9.DjUInt2Y.png",
     "src": "src/lib/images/icons/9.png"
   },
   "src/lib/images/illustrations/ball.png": {
@@ -388,11 +388,9 @@
     "name": "entries/pages/_layout.svelte",
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
-    "imports": [
-      "_game_manager.svelte_svelte_type_style_lang.js"
-    ],
     "css": [
-      "_app/immutable/assets/_layout.DqtwUckN.css"
+      "_app/immutable/assets/_layout.DqtwUckN.css",
+      "_app/immutable/assets/game_manager.CeE_S-Yt.css"
     ],
     "assets": [
       "_app/immutable/assets/ornament.CWPLtSmL.png"
@@ -405,11 +403,11 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_game_manager.svelte_svelte_type_style_lang.js",
       "_attributes.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.hERuRlns.css"
+      "_app/immutable/assets/_page.hERuRlns.css",
+      "_app/immutable/assets/game_manager.CeE_S-Yt.css"
     ],
     "assets": [
       "_app/immutable/assets/mdvaras.uf9U8GDs.jpg"
