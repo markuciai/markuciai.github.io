@@ -194,7 +194,7 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 </article> -->
 
 <div class="where-next">
-	Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą!
+	Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
 	<br><br>
 	<span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
 </div>

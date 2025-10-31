@@ -124,7 +124,7 @@ Berniukas, vardu Vania, jus pastebi iš tolo ir pamojuoja. Jūs atiduodate jam v
 
 <article>
 <br>
-Berniukas su džiaugsmu pasiruošęs jums padėti – jis matė panašią popieriaus skiautę prie vištidės  ir tuoj pat ją atneš.
+Berniukas su džiaugsmu pasiruošęs jums padėti – jis matė panašią popieriaus skiautę prie vištidės ir tuoj pat ją atneš.
 </article>
 <br><br><br><br>
 <img class="illustration" src={task}>

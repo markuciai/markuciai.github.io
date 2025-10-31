@@ -175,7 +175,7 @@ Sveiki atvykę į žaidimą Markučių dvaro lobis! Ieškokite parke išdėliot�
 
 
 <article>
-Žaidimas prasideda prie įėjimo į Markučių dvaro parką. 
+Žaidimas prasideda prie įėjimo į Markučių dvaro parką.
 </article>
 
 
@@ -186,7 +186,7 @@ Sveiki atvykę į žaidimą Markučių dvaro lobis! Ieškokite parke išdėliot�
 
 
 <div class="where-next">
-	<span class="highlighted-question">Raskite kur buvo pagrindinis&nbsp;įėjimas į&nbsp;Markučių dvaro parką. <br>Kaip manote, kur anksčiau galėjo&nbsp;stovėti&nbsp;kryžius? 
+	<span class="highlighted-question">Raskite kur buvo pagrindinis&nbsp;įėjimas į&nbsp;Markučių dvaro parką. <br>Kaip manote, kur anksčiau galėjo&nbsp;stovėti&nbsp;kryžius?
 	</span> <br/><br/>
 	<span>
  
