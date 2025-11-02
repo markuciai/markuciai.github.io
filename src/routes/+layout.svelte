@@ -359,6 +359,7 @@ function handleMousemove(event) {
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: "Lora";
+	overflow: hidden;
 }
 
 main {
