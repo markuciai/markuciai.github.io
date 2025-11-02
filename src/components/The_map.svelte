@@ -202,13 +202,13 @@ onMount(async () => {
 {#if globe.progress >= 2} <img src={piece_2} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
 {#if globe.progress >= 3} <img src={piece_3} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
 {#if globe.progress >= 4} <img src={piece_4} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: -0.8;"> {/if}
-{#if globe.progress >= 5} <img src={piece_5} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.1; --x_ratio: 0.5;"> {/if}
-{#if globe.progress >= 6} <img src={piece_6} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.1;"> {/if}
+{#if globe.progress >= 5} <img src={piece_5} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.1; --x_ratio: -1.5;"> {/if}
+{#if globe.progress >= 6} <img src={piece_6} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
 {#if globe.progress >= 7} <img src={piece_7} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.55; --x_ratio: 0.5;"> {/if}
 {#if globe.progress >= 8} <img src={piece_8} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.5;"> {/if}
 {#if globe.progress >= 9} <img src={piece_9} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.234; --x_ratio: -1.2;"> {/if}
 {#if globe.progress >= 10} <img src={piece_10} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.6; --x_ratio: 1.5;"> {/if}
-{#if globe.progress >= 11} <img src={piece_11} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: 0.25;"> {/if}
+{#if globe.progress >= 11} <img src={piece_11} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 2.8; --x_ratio: 0.25;"> {/if}
 {#if globe.progress >= 12} <img src={piece_12} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.2; --x_ratio: -1.5;"> {/if}
 
 
@@ -273,6 +273,7 @@ onMount(async () => {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 500;
     --x_ratio: 0;
     --y_ratio: 1;
     --map_scroll:  0;
@@ -284,10 +285,21 @@ onMount(async () => {
 
 /* good, byt samey and attr() isn't implemented in browsers yet */
     /* transform: translate3d(0px, calc( min(var(--scroll_minus_map), 0) * 0.25px), 20px); */
-    transform: perspective(500px) translate3d(
-        calc( var(--map_scroll) * var(--x_ratio) * -0.25px), 
-        calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
-        calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px));
+    transform:
+        perspective(500px)
+        translate3d(
+            calc( var(--map_scroll) * var(--x_ratio) * -0.25px), 
+            calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
+            calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px))
+
+        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg))
+        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
+        rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.2deg))
+        ;
+
+
+
+
 
 
     /* transform: rotate(20deg), translate(0, 10px); */
