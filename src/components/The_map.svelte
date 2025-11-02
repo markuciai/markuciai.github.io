@@ -55,15 +55,21 @@ import piece_12 from '$lib/images/map/pieces/monument.png';
 
 let scroll = $state(Number(0))
 let map_scroll = $state(Number(0))
-// let map_position_y = document.getElementsByID(map_wrapper).offsetTop
+
+// let map_position_y
+
+
+// let map_position_y = Number(0) # doesn't work
+
 // works globally. Performance?
 
 // good, but disabled because i can't get unique effects for each item
 $effect(() => {
-    document.querySelector(':root').style.setProperty('--scroll', scroll)
+    // document.querySelector(':root').style.setProperty('--scroll', scroll)
     // scroll_minus_map = Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -300, 0)
     // map_scroll = Math.min(Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 +100, 0), 500)
-    map_scroll = Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
+    map_scroll =  Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
+    // map_scroll = (map_scroll + Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)) * 0.5
 
 
     // document.querySelector(':root').style.setProperty('--scroll_minus_map', scroll_minus_map )
@@ -159,6 +165,7 @@ if (browser) {
 
 
 onMount(async () => { 
+    // map_position_y = document.getElementById("map_wrapper").offsetTop
     // document.getElementsBy
 });
 
@@ -167,7 +174,7 @@ onMount(async () => {
 
 
 
-
+// some function i got from the web. Does it work??
 function fixScrollUpdateSafariIOs() {
     const isIosSafari = navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/);
     // Check if it's an iOS device and Safari
@@ -234,7 +241,7 @@ function fixScrollUpdateSafariIOs() {
 <!-- one set of layers for progress, another for location-->
 <!-- actually, just do layers for locations, foundation is too hard -->
 
-
+HELLO
 {#if globe.progress >= 1} <img src={piece_1} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
 {#if globe.progress >= 2} <img src={piece_2} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
 {#if globe.progress >= 3} <img src={piece_3} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
@@ -311,6 +318,7 @@ function fixScrollUpdateSafariIOs() {
     left: 0;
     top: 0;
     z-index: 500;
+
     --x_ratio: 0;
     --y_ratio: 1;
     --map_scroll:  0;
@@ -333,8 +341,7 @@ function fixScrollUpdateSafariIOs() {
         rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
         rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.2deg))
         ;
-
-
+    transition: transform 0.1s;
 
 
 
@@ -342,6 +349,32 @@ function fixScrollUpdateSafariIOs() {
     /* transform: rotate(20deg), translate(0, 10px); */
     /* opacity: 0%; */
 }
+
+
+ /* keyframes instead of calc? */
+ /* Probably not, since they can only remove the map_scroll variable... and all the calc action remains, to stay specific per-piece */
+/* @keyframes puzzle_flight {
+    0% {
+
+    }
+
+    100% {
+    transform:
+        perspective(500px)
+        translate3d(
+            calc( var(--map_scroll) * var(--x_ratio) * -0.25px), 
+            calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
+            calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px))
+
+        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg))
+        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
+        rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.2deg))
+        ;
+    transition: transform 0.1s;
+    }
+} */
+
+
 
 
 @media (max-aspect-ratio: 5/8) and (orientation:portrait) {
