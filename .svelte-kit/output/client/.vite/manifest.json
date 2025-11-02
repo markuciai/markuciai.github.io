@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.CxR5W-dF.js",
+    "file": "_app/immutable/entry/app.DaQcCyjs.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -32,7 +32,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.DhCveWqa.js",
+    "file": "_app/immutable/nodes/0.CRQ4N36m.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
@@ -48,22 +48,22 @@
       "_DzEbYLO3.js"
     ],
     "css": [
-      "_app/immutable/assets/0.un1WfZ6U.css"
+      "_app/immutable/assets/0.cUi-znpL.css"
     ],
     "assets": [
       "_app/immutable/assets/foundation.D--8dSoM.png",
-      "_app/immutable/assets/cross.DvvjxrPc.png",
-      "_app/immutable/assets/house.Dx8HCWiN.png",
-      "_app/immutable/assets/horse.CnVwGBGI.png",
-      "_app/immutable/assets/boat.ZCnjCID4.png",
-      "_app/immutable/assets/kitchen.Bk4XyAJc.png",
-      "_app/immutable/assets/coop.mhUAcwQc.png",
-      "_app/immutable/assets/bakery.B3R11I6H.png",
-      "_app/immutable/assets/well.DMpZe7tq.png",
-      "_app/immutable/assets/tree.BgKC5BJL.png",
-      "_app/immutable/assets/chapel.hUlT83s5.png",
-      "_app/immutable/assets/dog.CtJMmQSC.png",
-      "_app/immutable/assets/monument._7xVxSdt.png",
+      "_app/immutable/assets/cross.D7-bOGUG.png",
+      "_app/immutable/assets/house.6zuHur95.png",
+      "_app/immutable/assets/horse.BSbkO0Rc.png",
+      "_app/immutable/assets/boat.BWJfnpEs.png",
+      "_app/immutable/assets/kitchen.BA0W-ctk.png",
+      "_app/immutable/assets/coop.TQpaCHsG.png",
+      "_app/immutable/assets/bakery.pN7TPK2h.png",
+      "_app/immutable/assets/well.KGX265J9.png",
+      "_app/immutable/assets/tree.Dvr33hxl.png",
+      "_app/immutable/assets/chapel.3wPjoqLk.png",
+      "_app/immutable/assets/dog.DIvgBRsf.png",
+      "_app/immutable/assets/monument.DbfJSu-J.png",
       "_app/immutable/assets/0.mtatPHte.png",
       "_app/immutable/assets/1.5wxYuX8Q.png",
       "_app/immutable/assets/2.DJ6_VLMd.png",
@@ -577,7 +577,7 @@
     "src": "_game_manager.BOuoOUbW.css"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.BnPVAj9X.js",
+    "file": "_app/immutable/entry/start.CZcb2xLX.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
@@ -823,51 +823,51 @@
     "src": "src/lib/images/map/foundation.png"
   },
   "src/lib/images/map/pieces/bakery.png": {
-    "file": "_app/immutable/assets/bakery.B3R11I6H.png",
+    "file": "_app/immutable/assets/bakery.pN7TPK2h.png",
     "src": "src/lib/images/map/pieces/bakery.png"
   },
   "src/lib/images/map/pieces/boat.png": {
-    "file": "_app/immutable/assets/boat.ZCnjCID4.png",
+    "file": "_app/immutable/assets/boat.BWJfnpEs.png",
     "src": "src/lib/images/map/pieces/boat.png"
   },
   "src/lib/images/map/pieces/chapel.png": {
-    "file": "_app/immutable/assets/chapel.hUlT83s5.png",
+    "file": "_app/immutable/assets/chapel.3wPjoqLk.png",
     "src": "src/lib/images/map/pieces/chapel.png"
   },
   "src/lib/images/map/pieces/coop.png": {
-    "file": "_app/immutable/assets/coop.mhUAcwQc.png",
+    "file": "_app/immutable/assets/coop.TQpaCHsG.png",
     "src": "src/lib/images/map/pieces/coop.png"
   },
   "src/lib/images/map/pieces/cross.png": {
-    "file": "_app/immutable/assets/cross.DvvjxrPc.png",
+    "file": "_app/immutable/assets/cross.D7-bOGUG.png",
     "src": "src/lib/images/map/pieces/cross.png"
   },
   "src/lib/images/map/pieces/dog.png": {
-    "file": "_app/immutable/assets/dog.CtJMmQSC.png",
+    "file": "_app/immutable/assets/dog.DIvgBRsf.png",
     "src": "src/lib/images/map/pieces/dog.png"
   },
   "src/lib/images/map/pieces/horse.png": {
-    "file": "_app/immutable/assets/horse.CnVwGBGI.png",
+    "file": "_app/immutable/assets/horse.BSbkO0Rc.png",
     "src": "src/lib/images/map/pieces/horse.png"
   },
   "src/lib/images/map/pieces/house.png": {
-    "file": "_app/immutable/assets/house.Dx8HCWiN.png",
+    "file": "_app/immutable/assets/house.6zuHur95.png",
     "src": "src/lib/images/map/pieces/house.png"
   },
   "src/lib/images/map/pieces/kitchen.png": {
-    "file": "_app/immutable/assets/kitchen.Bk4XyAJc.png",
+    "file": "_app/immutable/assets/kitchen.BA0W-ctk.png",
     "src": "src/lib/images/map/pieces/kitchen.png"
   },
   "src/lib/images/map/pieces/monument.png": {
-    "file": "_app/immutable/assets/monument._7xVxSdt.png",
+    "file": "_app/immutable/assets/monument.DbfJSu-J.png",
     "src": "src/lib/images/map/pieces/monument.png"
   },
   "src/lib/images/map/pieces/tree.png": {
-    "file": "_app/immutable/assets/tree.BgKC5BJL.png",
+    "file": "_app/immutable/assets/tree.Dvr33hxl.png",
     "src": "src/lib/images/map/pieces/tree.png"
   },
   "src/lib/images/map/pieces/well.png": {
-    "file": "_app/immutable/assets/well.DMpZe7tq.png",
+    "file": "_app/immutable/assets/well.KGX265J9.png",
     "src": "src/lib/images/map/pieces/well.png"
   },
   "src/lib/images/ornament.png": {
