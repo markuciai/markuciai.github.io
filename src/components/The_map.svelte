@@ -241,7 +241,7 @@ function fixScrollUpdateSafariIOs() {
 <!-- one set of layers for progress, another for location-->
 <!-- actually, just do layers for locations, foundation is too hard -->
 
-OPTIMISED IMAGES
+<!-- OPTIMISED IMAGES -->
 {#if globe.progress >= 1} <img src={piece_1} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
 {#if globe.progress >= 2} <img src={piece_2} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
 {#if globe.progress >= 3} <img src={piece_3} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
@@ -298,8 +298,8 @@ OPTIMISED IMAGES
 #map_wrapper {
     position: relative;
     margin-bottom: 30px;
-    /* border: 1px solid purple; */
-    /* background-color: aqua; */
+    border: 1px solid purple;
+    background-color: aqua;
 }
 
 
@@ -341,51 +341,25 @@ OPTIMISED IMAGES
         rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
         rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.2deg))
         ;
-    /* transition: transform 0.16s; */
+    transition: transform 0.16s;
 
-
-
-
-    /* transform: rotate(20deg), translate(0, 10px); */
-    /* opacity: 0%; */
 }
-
-
- /* keyframes instead of calc? */
- /* Probably not, since they can only remove the map_scroll variable... and all the calc action remains, to stay specific per-piece */
-/* @keyframes puzzle_flight {
-    0% {
-
-    }
-
-    100% {
-    transform:
-        perspective(500px)
-        translate3d(
-            calc( var(--map_scroll) * var(--x_ratio) * -0.25px), 
-            calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
-            calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px))
-
-        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg))
-        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
-        rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.2deg))
-        ;
-    transition: transform 0.1s;
-    }
-} */
 
 
 
 
 @media (max-aspect-ratio: 5/8) and (orientation:portrait) {
     .map_wrapper {
+        background: red;
+        border: 1px solid orange;
         width: 100vw;
         height: 100vw;
         margin-left: -19px; /* hacky! */
         z-index: 10;
-        position: sticky;
         top: -20px;
+        position: sticky;
         position: -webkit-sticky; /* Safari */
+
 
  
 
