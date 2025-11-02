@@ -359,6 +359,7 @@ function handleMousemove(event) {
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: "Lora";
+	contain: paint; /*breaks cheating thing? what?*/
 	/* overflow: hidden; */
 }
 
@@ -372,6 +373,7 @@ main {
 	max-width: 800px;
 	margin: 0 auto;
 	box-sizing: border-box;
+	/* contain: paint; */
 	/* 	border: red 2px solid; */
 }
 

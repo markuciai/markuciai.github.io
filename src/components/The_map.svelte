@@ -241,7 +241,7 @@ function fixScrollUpdateSafariIOs() {
 <!-- one set of layers for progress, another for location-->
 <!-- actually, just do layers for locations, foundation is too hard -->
 
-<!-- OPTIMISED IMAGES -->
+<!-- Y NO STICKYYY -->
 {#if globe.progress >= 1} <img src={piece_1} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
 {#if globe.progress >= 2} <img src={piece_2} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
 {#if globe.progress >= 3} <img src={piece_3} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
@@ -250,7 +250,7 @@ function fixScrollUpdateSafariIOs() {
 {#if globe.progress >= 6} <img src={piece_6} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
 {#if globe.progress >= 7} <img src={piece_7} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.55; --x_ratio: 0.5;"> {/if}
 {#if globe.progress >= 8} <img src={piece_8} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.5;"> {/if}
-{#if globe.progress >= 9} <img src={piece_9} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.234; --x_ratio: -1.2;"> {/if}
+{#if globe.progress >= 9} <img src={piece_9} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: -2.2;"> {/if}
 {#if globe.progress >= 10} <img src={piece_10} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.6; --x_ratio: 1.5;"> {/if}
 {#if globe.progress >= 11} <img src={piece_11} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 2.8; --x_ratio: 0.25;"> {/if}
 {#if globe.progress >= 12} <img src={piece_12} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.2; --x_ratio: -1.5;"> {/if}
@@ -298,9 +298,40 @@ function fixScrollUpdateSafariIOs() {
 #map_wrapper {
     position: relative;
     margin-bottom: 30px;
-    border: 1px solid purple;
-    background-color: aqua;
+    /* border: 1px solid purple; */
+    /* background-color: aqua; */
+
 }
+
+@media (max-aspect-ratio: 5/8) and (orientation:portrait) {
+/* @media (max-width: 200px) { */
+    #map_wrapper {
+        /* background: red; */
+        /* border: 1px solid orange; */
+        width: 100vw;
+        height: 100vw;
+        margin-left: -19px; /* hacky! */
+        z-index: 10;
+        top: -20px;
+        position: sticky;
+        position: -webkit-sticky; /* Safari */
+
+        box-shadow: 0px 30px 50px 50px var(--color-bg-1) ;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    #map_wrapper {
+        margin: 5vw 0 0 0;
+        width: 90vw;
+        /* height: 90vw; */
+        /* border: red solid 1px; */
+    }
+}
+
+
+
 
 
 .map_foundation {
@@ -317,7 +348,7 @@ function fixScrollUpdateSafariIOs() {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 500;
+    z-index: 20;
 
     --x_ratio: 0;
     --y_ratio: 1;
@@ -348,34 +379,7 @@ function fixScrollUpdateSafariIOs() {
 
 
 
-@media (max-aspect-ratio: 5/8) and (orientation:portrait) {
-    .map_wrapper {
-        background: red;
-        border: 1px solid orange;
-        width: 100vw;
-        height: 100vw;
-        margin-left: -19px; /* hacky! */
-        z-index: 10;
-        top: -20px;
-        position: sticky;
-        position: -webkit-sticky; /* Safari */
 
-
- 
-
-        box-shadow: 0px 30px 50px 50px var(--color-bg-1) ;
-    }
-}
-
-
-@media (min-width: 1400px) {
-    .map_wrapper {
-        margin: 5vw 0 0 0;
-        width: 90vw;
-        /* height: 90vw; */
-        /* border: red solid 1px; */
-    }
-}
 
 </style>
 

@@ -87,6 +87,7 @@ $effect(() => {
 
 
 .enrult {
+	z-index: 200;
 	position: absolute;
 
   left: calc(12vw - 37.5px + 15.625px - 34px + 20px);
