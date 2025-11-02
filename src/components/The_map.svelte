@@ -38,16 +38,49 @@ import piece_12 from '$lib/images/map/pieces/monument.png';
 
 
 
-let scroll
+// intersection observer code from MDN, untouched:
+// const options = {
+//   root: document.querySelector("#scrollArea"),
+//   rootMargin: "0px",
+//   scrollMargin: "0px",
+//   threshold: 1.0,
+// };
+// const observer = new IntersectionObserver(callback, options);
 
-var an_error = "all is good"
 
 
-var geolocation_permitted = false
-$: location_x = -200 // 0...100, percentage
-$: location_y = -200
-$: heading = 0 //heading is null if there's no speed. Direction only shows up when user moves
-// $: orientation = 0
+
+// The current, idiotic way of parallax: scroll bound to scroll value, $effect, then find position of map and edit GLOBAL css variable.
+// Absolute dogshit
+
+let scroll = $state(Number(0))
+let map_scroll = $state(Number(0))
+// let map_position_y = document.getElementsByID(map_wrapper).offsetTop
+// works globally. Performance?
+
+// good, but disabled because i can't get unique effects for each item
+$effect(() => {
+    document.querySelector(':root').style.setProperty('--scroll', scroll)
+    // scroll_minus_map = Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -300, 0)
+    // map_scroll = Math.min(Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 +100, 0), 500)
+    map_scroll = Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
+
+
+    // document.querySelector(':root').style.setProperty('--scroll_minus_map', scroll_minus_map )
+})
+// let scroll = Number(0)
+
+// $effect
+
+
+let an_error = "all is good"
+
+
+let geolocation_permitted = false
+let location_x = $state(-200) // 0...100, percentage
+let location_y = $state(-200)
+let heading = $state(0) //heading is null if there's no speed. Direction only shows up when user moves
+let orientation = $state(0)
 
 
 function show_position() {
@@ -88,7 +121,7 @@ function set_geolocation_marker(position) {
     heading = position.coords.heading
     console.log("_________________________")
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
-	console.log("location %: ", location_x, location_y, " | heading: ", heading)
+	console.log("location %: ", location_x, location_y, " | heading: ", heading) // reenable when runes moded
 	// console.log(position.coords.latitude)
 	
 }
@@ -121,6 +154,14 @@ if (browser) {
 }
 
 
+
+
+onMount(async () => { 
+    // document.getElementsBy
+});
+
+
+
 </script>
 
 
@@ -129,18 +170,22 @@ if (browser) {
 
 
 <svelte:window bind:scrollY={scroll} />
+
+
 <br><br>
 
-<div class="map_wrapper">
+<div id="map_wrapper">
 
 <div id="marker_container">
+    <!-- <div>{scroll} / {map_scroll}</div> -->
     <div
         id="position_marker"
         style="
             left: {location_x}%;
             top: {location_y}%;
             rotate: {heading}deg;
-            ">
+            "
+            >
         {location_x}, {location_y}
         <br/> H: {heading}
     </div>
@@ -153,18 +198,18 @@ if (browser) {
 <!-- actually, just do layers for locations, foundation is too hard -->
 
 
-{#if globe.progress >= 1} <img src={piece_1} class="map_layer" > {/if}
-{#if globe.progress >= 2} <img src={piece_2} class="map_layer" > {/if}
-{#if globe.progress >= 3} <img src={piece_3} class="map_layer" > {/if}
-{#if globe.progress >= 4} <img src={piece_4} class="map_layer" > {/if}
-{#if globe.progress >= 5} <img src={piece_5} class="map_layer" > {/if}
-{#if globe.progress >= 6} <img src={piece_6} class="map_layer" > {/if}
-{#if globe.progress >= 7} <img src={piece_7} class="map_layer" > {/if}
-{#if globe.progress >= 8} <img src={piece_8} class="map_layer" > {/if}
-{#if globe.progress >= 9} <img src={piece_9} class="map_layer" > {/if}
-{#if globe.progress >= 10} <img src={piece_10} class="map_layer" > {/if}
-{#if globe.progress >= 11} <img src={piece_11} class="map_layer" > {/if}
-{#if globe.progress >= 12} <img src={piece_12} class="map_layer" > {/if}
+{#if globe.progress >= 1} <img src={piece_1} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
+{#if globe.progress >= 2} <img src={piece_2} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
+{#if globe.progress >= 3} <img src={piece_3} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
+{#if globe.progress >= 4} <img src={piece_4} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: -0.8;"> {/if}
+{#if globe.progress >= 5} <img src={piece_5} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.1; --x_ratio: 0.5;"> {/if}
+{#if globe.progress >= 6} <img src={piece_6} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.1;"> {/if}
+{#if globe.progress >= 7} <img src={piece_7} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.55; --x_ratio: 0.5;"> {/if}
+{#if globe.progress >= 8} <img src={piece_8} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.5;"> {/if}
+{#if globe.progress >= 9} <img src={piece_9} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.234; --x_ratio: -1.2;"> {/if}
+{#if globe.progress >= 10} <img src={piece_10} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.6; --x_ratio: 1.5;"> {/if}
+{#if globe.progress >= 11} <img src={piece_11} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: 0.25;"> {/if}
+{#if globe.progress >= 12} <img src={piece_12} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.2; --x_ratio: -1.5;"> {/if}
 
 
 
@@ -191,16 +236,22 @@ if (browser) {
 }
 
 #position_marker {
-	position: absolute;
+	/* position: absolute; */ 
+    /* why not absolute any more? change to foundation/layers? relative seems to work */
+    position: relative; 
     width: 50px;
     height: 50px;
     border-radius: 25px;
     background: magenta;
 	z-index: 200;
+    top: calc(var(--scroll) * 0.1px);
+
+/*     left: 10%;
+    top: 20%; */
 }
 
 
-.map_wrapper {
+#map_wrapper {
     position: relative;
     margin-bottom: 30px;
     /* border: 1px solid purple; */
@@ -216,10 +267,30 @@ if (browser) {
 
 .map_layer {
     /* visibility: hidden; */
+    pointer-events: none; /*because images get dragged but shouldn't*/
+
     width: 100%;
     position: absolute;
     left: 0;
     top: 0;
+    --x_ratio: 0;
+    --y_ratio: 1;
+    --map_scroll:  0;
+
+
+
+    /* top: calc(var(--scroll_minus_map) * 1px) ; */
+    /* transform: perspective( calc  500px   ) translate3d(10px, 0, 20px) rotateY(30deg); */
+
+/* good, byt samey and attr() isn't implemented in browsers yet */
+    /* transform: translate3d(0px, calc( min(var(--scroll_minus_map), 0) * 0.25px), 20px); */
+    transform: perspective(500px) translate3d(
+        calc( var(--map_scroll) * var(--x_ratio) * -0.25px), 
+        calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
+        calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px));
+
+
+    /* transform: rotate(20deg), translate(0, 10px); */
     /* opacity: 0%; */
 }
 

@@ -389,7 +389,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "css": [
-      "_app/immutable/assets/_layout.nhTYJwcC.css",
+      "_app/immutable/assets/_layout.D2pY8Fqk.css",
       "_app/immutable/assets/game_manager.CeE_S-Yt.css"
     ],
     "assets": [
