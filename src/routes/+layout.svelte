@@ -4,9 +4,11 @@ import { fade, blur, fly, slide, scale } from "svelte/transition";
 import { flip } from 'svelte/animate';
 import './styles.css';
 
+
+let { children } = $props();
+
 import Language_switcher from "$components/language_switcher.svelte";
 import Game_manager from "$components/game_manager.svelte"
-
 
 import Map from '$components/The_map.svelte';
 import Mounted from '$components/Mounted.svelte';
@@ -59,15 +61,8 @@ let scroll = Number(0)
 
 var emerge = false
 
-// dictionary lines test
-const lines = {
-	"EN": ["Ze<br>ro", "First", "Double", "three"],
-	"RU": ["ноль", "один", "два", "три"],
-	"LT": ["Zero", "First", "Double", "Trys"],
-	"LA": ["Zero", "First", "Double", "Trys"],
-};
 
-// {lines[globe.language][0]}
+
 
 
 
@@ -93,7 +88,7 @@ if (browser) {
 
 
 
-	console.log("preferred languages:", navigator.languages)
+	// console.log("preferred languages:", navigator.languages)
 
 }
 
@@ -150,29 +145,23 @@ function handleMousemove(event) {
 <Game_manager />
 
 <Mounted>
-
-
-
-
-
 <div class="app">
-
 <main in:fade="{{ duration: 500}}" out:fade >
 
 
 <Language_switcher />
 
 
-<slot />
+
+{@render children?.()}
+
+
 
 <div class="map_and_stuff">
 <Map />
 
 
 <div class="legend_section">
-
-
-
 <ul class="legend_ul">
 	<li class="legend"><img src={icon_2} class="legend_icon"> {legend_text[globe.language][2]}</li>
 	<li class="legend"><img src={icon_8} class="legend_icon"> {legend_text[globe.language][8]}</li>
@@ -190,11 +179,10 @@ function handleMousemove(event) {
 	<li class="legend"><img src={icon_11} class="legend_icon"> {legend_text[globe.language][11]}</li>
 	<li class="legend"><img src={icon_4} class="legend_icon"> {legend_text[globe.language][4]}</li>
 </ul>
-
-
-
 </div>
+
 </div> <!-- map stuff-->
+
 </main>
 
 
@@ -359,7 +347,10 @@ function handleMousemove(event) {
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: "Lora";
-	contain: paint; /*breaks cheating thing? what?*/
+
+	/* When scroll-pulling down there's an unfortunate crop. */
+	/* Without this the pieces create insane width */
+	contain: paint;
 	/* overflow: hidden; */
 }
 
@@ -373,7 +364,6 @@ main {
 	max-width: 800px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	/* contain: paint; */
 	/* 	border: red 2px solid; */
 }
 
@@ -391,8 +381,9 @@ footer {
 
 	/* font-style: italic; */
 	font-weight: bold;
-	font-family: "Lora";
+	/* font-family: "Lora"; */
 	color: wheat;
+	/* color: var(--color-sepia); */
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 	margin: 10px 0 80px 0;

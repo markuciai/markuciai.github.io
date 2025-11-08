@@ -14,7 +14,13 @@ import task from '$lib/images/illustrations/bowl.png';
 
 
 const station_id = 0
-let show_station = true
+
+onMount(async () => { 
+	globe.location = station_id
+});
+
+
+// let show_station = true
 
 
 let date_started = new Date();
@@ -76,7 +82,7 @@ onMount(async () => {
 
 
 
-{#if show_station}
+<!-- {#if show_station} -->
 
 <section>
 <img class="illustration" src={head_signs}>
@@ -217,9 +223,9 @@ Pirma užuomina – leiskitės&nbsp;žemyn&nbsp;laiptais.
 	Спускайтесь вниз. Из музея ко входу. Из настоящего в прошлое.
 </div> -->
 
-{:else}
+<!-- {:else} -->
 <!-- Stopper-->
-{#if globe.language == "EN"}
+<!-- {#if globe.language == "EN"}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
 {:else if globe.language == "RU"}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
@@ -227,8 +233,9 @@ Pirma užuomina – leiskitės&nbsp;žemyn&nbsp;laiptais.
 <Stopper>Вы уже начали своё путешествие! </Stopper>
 {:else}
 <Stopper>Вы уже начали своё путешествие!</Stopper>
-{/if}
+{/if} -->
 
 
 
-{/if} <!-- Module types-->
+<!-- {/if}  -->
+<!-- Module types-->

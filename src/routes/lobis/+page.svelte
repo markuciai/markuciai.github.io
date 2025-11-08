@@ -3,24 +3,16 @@
 
 
 
-let language = "LT"
-
-
-
-onMount(async () => { 
-	language = localStorage.language;
-});
-
 </script>
 
 <svelte:head>
-{#if language == "EN"}
+{#if globe.language == "EN"}
 	<title>Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
-{:else if language == "RU"}
+{:else if globe.language == "RU"}
 	<title>Клад Маркутья</title>
 	<meta name="description" content="Квест" />
-{:else if language == "LA"}
+{:else if globe.language == "LA"}
 	<title>Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
@@ -38,15 +30,15 @@ onMount(async () => {
 <!-- <Scroller /> -->
 <!-- blabl -->
 
- {#if 0 == 1}
+{#if 0 == 1}
 <section>
-{#if language == "EN"}
+{#if globe.language == "EN"}
 
 
 Markuchiai Estate was built in 1867 by railway engineer Alexei Melnikov for his wife and five children. The estate consisted of a manor house, an English park, fruit gardens, ponds, a well, and several other buildings including a servants' house, stables, orangery, bakery, icehouse with an aviary, kitchen, cricket and tennis court. When Melnikov's children grew up, he gifted the 270-hectare estate to his eldest daughter, Varvara. In 1883, Alexander Pushkin's son Grigory came to Markuchiai and married Varvara. The couple lived together for 22 years, during which they traveled extensively and maintained a children's home in Vilnius called "The Crib of Jesus". After her husband's death, Varvara lived for another 30 years and dreamed of opening a museum at the estate to display the poet's belongings. She died in 1935 and was buried next to her husband. Imagine that you have traveled back in time to see the Markuchiai Estate in its former glory. Try to solve 12 riddles, collect a mysterious document and, thanks to its content, find the estate's treasure.
 
 
-{:else if language == "RU"}
+{:else if globe.language == "RU"}
 
 <br />
 <h1>Markučių Lobis</h1>
@@ -62,7 +54,7 @@ Markuchiai Estate was built in 1867 by railway engineer Alexei Melnikov for his 
 </article>
 
 
-{:else if language == "LA"}
+{:else if globe.language == "LA"}
 
 Lorem ipsum dolor sit amet
 

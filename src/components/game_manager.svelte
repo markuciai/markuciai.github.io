@@ -14,6 +14,10 @@ if (browser) {
 		globe.progress = Number(localStorage.progress);
 	}
 
+	if(localStorage.getItem("location") !== null) {
+		globe.location = Number(localStorage.location);
+	}
+
 	if(localStorage.getItem("laisve") !== null) {
 		console.log('before load', localStorage.laisve,  globe.laisve, JSON.parse(globe.laisve) );
 		globe.laisve = JSON.parse(localStorage.laisve);
@@ -28,14 +32,23 @@ if (browser) {
 });
 
 $effect(() => {
+	console.log('resolving progress and location:', globe.progress, " ", globe.location)
+	if(globe.progress > -1 && globe.progress == globe.location - 1) {
+		globe.progress = globe.location
+	}
+// })
+
+
+// $effect(() => {
 	localStorage.progress = Number(globe.progress)
+	localStorage.location = Number(globe.location)
+	console.log('resolved progress and location:', globe.progress, " ", globe.location)
 })
 
 $effect(() => {
-		console.log('laisve before', localStorage.laisve,  globe.laisve, globe.laisve );
+		// console.log('laisve before', localStorage.laisve,  globe.laisve, globe.laisve );
 		localStorage.laisve = JSON.parse(globe.laisve)
-		console.log('after', localStorage.laisve,  globe.laisve, globe.laisve );
-
+		// console.log('after', localStorage.laisve,  globe.laisve, globe.laisve );
 })
 
 
@@ -56,7 +69,11 @@ $effect(() => {
 
 {#if globe.laisve}
 <div class="enrult">
-	<button onclick={() => globe.progress = -1} class="lang_button" class:selected={globe.progress == -1}>-1</button>
+	<!-- <button onclick={() => globe.progress = -1} class="lang_button" class:selected={globe.progress == -1}>-1</button> -->
+
+
+	<button class="lang_button selected"> {globe.location}</button>
+
 	<button onclick={() => globe.progress -=1} class="lang_button" >-</button>
 	<button class="lang_button selected"> {globe.progress}</button>
 	<button onclick={() => globe.progress +=1} class="lang_button" >+</button>

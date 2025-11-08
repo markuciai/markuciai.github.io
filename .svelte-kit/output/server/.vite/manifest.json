@@ -389,7 +389,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "css": [
-      "_app/immutable/assets/_layout.BIlSr0gD.css",
+      "_app/immutable/assets/_layout.Bz5ANbjC.css",
       "_app/immutable/assets/game_manager.Co3hRxNP.css"
     ],
     "assets": [
@@ -430,7 +430,8 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_Offer.js"
+      "_Offer.js",
+      "_attributes.js"
     ]
   },
   "src/routes/lobis/cerkve_1903/+page.svelte": {

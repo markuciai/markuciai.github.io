@@ -14,23 +14,8 @@ import bakery from '$lib/images/archival/bakery.jpg';
 
 const station_id = 7
 
-let show_offer = true
-let show_station = false
-
 onMount(async () => { 
-// if (browser) {
-if (globe.progress >= 0) {
-	show_offer = false
-}
-
-if(globe.progress == station_id - 1) {
-	globe.progress = station_id
-}
-
-if (globe.progress == station_id) {
-	show_station = true;
-}
-// }
+	globe.location = station_id
 });
 
 
@@ -56,10 +41,10 @@ if (globe.progress == station_id) {
 
 
 
-{#if show_offer}
+{#if (globe.progress < 0)}
 <Offer />
 
-{:else if globe.progress == station_id}
+{:else if (globe.progress == globe.location)}
 
 <section>
 <img class="map_piece_header_illustration" src={map_piece}>

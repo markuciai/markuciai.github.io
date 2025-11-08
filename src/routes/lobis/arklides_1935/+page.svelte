@@ -1,8 +1,4 @@
 <script>
-// import { browser } from "$app/environment";
-
-
-
 import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
 
@@ -14,30 +10,24 @@ import stables from '$lib/images/archival/stables.jpg';
 
 const station_id = 3
 
-let show_offer = true
-let show_station = false
-// let show_station = $state(false);
-
-
 onMount(async () => { 
-// if (browser) {
-	if (globe.progress >= 0) {
-		show_offer = false
-	}
-
-	if(globe.progress == station_id - 1) {
-		globe.progress = station_id
-	}
-
-	if (globe.progress == station_id) {
-		show_station = true;
-	}
-// }
+	globe.location = station_id
 });
 
 
+let header_title_text = {
+	"EN" : "The Stables — Markučiai Treasure",
+	"RU" : "Конюшня – Клад Маркутья",
+	"LT" : "Arklidės – Markučių Lobis",
+	"LA" : "Stables – Markučiai Treasure",
+}
 
-
+let header_description_text = {
+	"EN" : "Quest",
+	"RU" : "Квест",
+	"LT" : "Žaidimas",
+	"LA" : "Quest",
+}
 
 
 
@@ -46,27 +36,16 @@ onMount(async () => {
 
 
 <svelte:head>
-{#if globe.language == "EN"}
-	<title>The Stables — Markučiai Treasure</title>
-	<meta name="description" content="Quest" />
-{:else if globe.language == "RU"}
-	<title>Конюшня – Клад Маркутья</title>
-	<meta name="description" content="Квест" />
-{:else if globe.language == "LA"}
-	<title> – Markučiai Treasure</title>
-	<meta name="description" content="Quest" />
-{:else}
-	<title>Arklidės – Markučių Lobis</title>
-	<meta name="description" content="Žaidimas" />
-{/if}
+<title>{header_title_text[globe.language]}</title>
+<meta name="description" content="{header_description_text[globe.language]}" />
 </svelte:head>
 
  
 
 
-{#if show_offer}
+{#if (globe.progress < 0) }
 <Offer />
-{:else if show_station}
+{:else if (globe.progress == globe.location) }
 
 <section>
 <img class="map_piece_header_illustration" src={map_piece}>

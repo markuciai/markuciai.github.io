@@ -18,22 +18,8 @@ import testament_overlayed_lt from '$lib/images/illustrations/testament_overlaye
 const station_id = 12
 
 
-let show_offer = true
-let show_station = false
-
-
 onMount(async () => { 
-	if (globe.progress >= 0) {
-		show_offer = false
-	}
-
-	if(globe.progress == station_id - 1) {
-		globe.progress = station_id
-	}
-
-	if (globe.progress >= station_id) {
-		show_station = true;
-	}
+	globe.location = station_id
 });
 
 </script>
@@ -55,10 +41,10 @@ onMount(async () => {
 {/if}
 </svelte:head>
 
-{#if show_offer}
+{#if (globe.progress < 0)}
 <Offer />
 
-{:else if show_station}
+{:else if (globe.progress == globe.location)}
 
 <section>
 <img class="map_piece_header_illustration" src={map_piece}>

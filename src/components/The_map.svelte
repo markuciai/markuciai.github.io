@@ -46,41 +46,43 @@ import piece_12 from '$lib/images/map/pieces/monument.png';
 //   threshold: 1.0,
 // };
 // const observer = new IntersectionObserver(callback, options);
+// I think i had some intersection observer success... somewhere.
 
 
+// How the pieces flight scroll parallax works:
+// 1. Catch scroll in html and bind to scroll variable.
+// 2. $effect catches change and sets map_scroll
+// 3. Each item in the list gets the value passed --map_scroll variable it via style=" --map_scroll = {map_scroll} "
+// 4. Each item also gets unique values for the animation
+// 5. CSS style computes CSS transform from CSS variables.
+// Images have been decently shrunken and optimised. There are a few quality options stuck in folders.
 
-
-// The current, idiotic way of parallax: scroll bound to scroll value, $effect, then find position of map and edit GLOBAL css variable.
-// Absolute dogshit
+// I need a better way to construct parallaxes, but this custom thing is good for being
 
 let scroll = $state(Number(0))
-let map_scroll = $state(Number(0))
-
-// let map_position_y
+let map_scroll = $state(Number(100))
 
 
-// let map_position_y = Number(0) # doesn't work
-
-// works globally. Performance?
-
-// good, but disabled because i can't get unique effects for each item
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
-    // scroll_minus_map = Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -300, 0)
-    // map_scroll = Math.min(Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 +100, 0), 500)
+
+    // Linear
     map_scroll =  Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
-    // map_scroll = (map_scroll + Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)) * 0.5
 
+    // Eased in different directions:
+    // map_scroll =  Math.pow(Math.max((scroll - document.getElementById("map_wrapper").offsetTop)  * -1 -100, 0), 0.5) * 20
+    // map_scroll =  Math.pow(Math.max((scroll - document.getElementById("map_wrapper").offsetTop)  * -1 -100, 0), 3) * 0.000005
 
-    // document.querySelector(':root').style.setProperty('--scroll_minus_map', scroll_minus_map )
+    // Browser killer, apparently:
+    // map_scroll =  (map_scroll + Math.pow(Math.max((scroll - document.getElementById("map_wrapper").offsetTop)  * -1 -100, 0), 3)) * 0.000005
 })
-// let scroll = Number(0)
-
-// $effect
 
 
+
+
+// GEOLOCATION
+// I coded this so long ago i forget how it works.
 let an_error = "all is good"
-
 
 let geolocation_permitted = false
 let location_x = $state(-200) // 0...100, percentage
@@ -157,7 +159,7 @@ if (browser) {
     // show_position()
     // watch_position()
     console.log("i'm a map")
-    fixScrollUpdateSafariIOs()
+    fixScrollUpdateSafariIOs() // Does it do anything? I don't think so
 
 
 }
@@ -216,8 +218,6 @@ function fixScrollUpdateSafariIOs() {
 <svelte:window bind:scrollY={scroll} />
 
 
-<br><br>
-
 <div id="map_wrapper">
 
 <div id="marker_container">
@@ -241,7 +241,7 @@ function fixScrollUpdateSafariIOs() {
 <!-- one set of layers for progress, another for location-->
 <!-- actually, just do layers for locations, foundation is too hard -->
 
-<!-- Y NO STICKYYY -->
+<!-- {map_scroll} -->
 {#if globe.progress >= 1} <img src={piece_1} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
 {#if globe.progress >= 2} <img src={piece_2} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
 {#if globe.progress >= 3} <img src={piece_3} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
@@ -298,6 +298,9 @@ function fixScrollUpdateSafariIOs() {
 #map_wrapper {
     position: relative;
     margin-bottom: 30px;
+    margin-top: 40px;
+    perspective: 500px;
+    z-index: 10;
     /* border: 1px solid purple; */
     /* background-color: aqua; */
 
@@ -311,8 +314,8 @@ function fixScrollUpdateSafariIOs() {
         width: 100vw;
         height: 100vw;
         margin-left: -19px; /* hacky! */
-        z-index: 10;
-        top: -20px;
+        /* top: 20px; */
+        top: 0px;
         position: sticky;
         position: -webkit-sticky; /* Safari */
 
@@ -346,6 +349,7 @@ function fixScrollUpdateSafariIOs() {
 
     width: 100%;
     position: absolute;
+
     left: 0;
     top: 0;
     z-index: 20;
@@ -353,6 +357,7 @@ function fixScrollUpdateSafariIOs() {
     --x_ratio: 0;
     --y_ratio: 1;
     --map_scroll:  0;
+    /* --z_value: calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px) ; */
 
 
 
@@ -361,8 +366,10 @@ function fixScrollUpdateSafariIOs() {
 
 /* good, byt samey and attr() isn't implemented in browsers yet */
     /* transform: translate3d(0px, calc( min(var(--scroll_minus_map), 0) * 0.25px), 20px); */
+    transform-style: preserve-3d;
+
     transform:
-        perspective(500px)
+        /* perspective(500px) */
         translate3d(
             calc( var(--map_scroll) * var(--x_ratio) * -0.25px), 
             calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
@@ -372,12 +379,31 @@ function fixScrollUpdateSafariIOs() {
         rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
         rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.2deg))
         ;
-    transition: transform 0.16s;
+    transition: transform 0.16s; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
+
+
+    /* Filters work, but the visual effect is a negligible and performance cost may be a problem */
+    /* filter:  */
+        /* brightness( calc(var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.001 + 1 )   ) */
+        /* drop-shadow(0px 4px 8px rgba(0.9, 1, 0.9, 0.5) ) */
+
+        /* tilt-shift */
+        /* blur( calc(var(--map_scroll) * 0.01px) ), */
+        /* blur( calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.01px) ) */
+        /* ; */
 
 }
 
 
+/* WIP have two sides as children of the same .map_layer div. Pass the other side of the piece. */
+.front {
+    backface-visibility: hidden;
+}
 
+.back {
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
 
 
 
