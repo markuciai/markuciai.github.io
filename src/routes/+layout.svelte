@@ -154,7 +154,7 @@ function handleMousemove(event) {
 
 
 {@render children?.()}
-
+<div class="ornament" ></div>
 
 
 <div class="map_and_stuff">

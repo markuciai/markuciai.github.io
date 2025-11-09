@@ -1,4 +1,4 @@
-import { t as to_style, c as clsx, b as to_class, a as attr } from "./attributes.js";
+import { t as to_class, e as escape_html, b as to_style, c as clsx, a as attr } from "./attributes.js";
 const DERIVED = 1 << 1;
 const EFFECT = 1 << 2;
 const RENDER_EFFECT = 1 << 3;
@@ -709,6 +709,19 @@ function attributes(attrs, css_hash, classes, styles, flags = 0) {
   }
   return attr_str;
 }
+function attr_class(value, hash, directives) {
+  var result = to_class(value, hash, directives);
+  return result ? ` class="${escape_html(result, true)}"` : "";
+}
+function slot(renderer, $$props, name, slot_props, fallback_fn) {
+  var slot_fn = $$props.$$slots?.[name];
+  if (slot_fn === true) {
+    slot_fn = $$props["children"];
+  }
+  if (slot_fn !== void 0) {
+    slot_fn(renderer, slot_props);
+  }
+}
 export {
   ASYNC as A,
   BOUNDARY_EFFECT as B,
@@ -746,5 +759,7 @@ export {
   is_passive_event as u,
   render as v,
   setContext as w,
-  head as x
+  head as x,
+  attr_class as y,
+  slot as z
 };

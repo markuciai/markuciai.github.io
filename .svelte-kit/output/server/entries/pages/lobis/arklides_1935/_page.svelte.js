@@ -1,8 +1,7 @@
 import { x as head } from "../../../../chunks/index.js";
-import "clsx";
+import { g as globe } from "../../../../chunks/globe.svelte.js";
 import { O as Offer } from "../../../../chunks/Offer.js";
 import { e as escape_html, a as attr } from "../../../../chunks/attributes.js";
-const globe = { language: "LT" };
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let header_title_text = {

@@ -118,7 +118,7 @@ LOBIS
 
 
 </section>
-<img src="ornament.png" width = 100%>
+
 
 
 

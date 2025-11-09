@@ -139,7 +139,7 @@ Prie krosnies, dėžėje su malkomis, pliauskomis ir senais laikraščiais pakur
 
 {/if} <!-- Station globe.languages-->
 </section>
-<div class="ornament" ></div>
+
 
 
 

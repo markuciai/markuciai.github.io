@@ -136,7 +136,7 @@ Iš praeities jums palikome popieriaus skiautę su parašu ir antspaudu. Atrodo,
 
 </section>
 
-<div class="ornament" ></div>
+
 
 
 

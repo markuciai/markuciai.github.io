@@ -39,11 +39,11 @@ function _page($$renderer, $$props) {
       }
       $$renderer2.push(`<!--]-->`);
     }
-    $$renderer2.push(`<!--]--></section> `);
+    $$renderer2.push(`<!--]--> `);
     {
       $$renderer2.push("<!--[!-->");
     }
-    $$renderer2.push(`<!--]-->`);
+    $$renderer2.push(`<!--]--></section>`);
   });
 }
 export {

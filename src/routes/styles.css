@@ -22,6 +22,7 @@
 
 	--color-sepia: #ddc0a4;
 	--color-sepia: #f3e5d7;
+	--color-mdm-sepia: #c6a175;
 
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
@@ -268,14 +269,36 @@ article {
 		0 35px 25px -30px rgba(0,0,0, 0.3),
 		0 20px 50px -20px rgba(211,63,55,0.8);
 
-	color: #EEDC83;
+	/* color: #EEDC83; */
+	color: var(--color-sepia)
 }
 
 .where-next.too_early:hover {
-	background-color: #c0352e;
-
-	
+	background-color: #c0352e;	
 }
+
+
+.where-next.already_visited {
+	background-color: #384f3b;
+	background: 
+		linear-gradient(0deg,
+		rgba(56,79,59,1) 0%,
+		rgba(56,79,59,1) 67%,
+		rgba(71,92,66,1) 100%);
+	box-shadow:
+		0 35px 25px -30px rgba(0,0,0, 0.3),
+		0 20px 50px -20px rgba(56,79,59, 0.8);
+
+	color: var(--color-mdm-sepia);
+}
+
+.where-next.already_visited:hover {
+	background-color: #2e422f;	
+}
+
+
+
+
 
 .where-next:hover {
 	background-color: #ccaa85;

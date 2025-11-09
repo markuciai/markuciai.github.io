@@ -130,7 +130,7 @@ Padėję gėles ant kapų, atsisukite į šeimos maldos namus ir raskite datą �
 
 {/if} <!-- Station Languages-->
 </section>
-<div class="ornament" ></div>
+
 
 
 {:else}

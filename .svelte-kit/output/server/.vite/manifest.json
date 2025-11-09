@@ -14,15 +14,20 @@
     "name": "Offer",
     "imports": [
       "_attributes.js",
-      "_instructions.js"
-    ],
-    "assets": [
-      "_app/immutable/assets/doggo.D_Vb8Wrx.png"
+      "_instructions.js",
+      "_doggo.js"
     ]
   },
   "_attributes.js": {
     "file": "chunks/attributes.js",
     "name": "attributes"
+  },
+  "_doggo.js": {
+    "file": "chunks/doggo.js",
+    "name": "doggo",
+    "assets": [
+      "_app/immutable/assets/doggo.D_Vb8Wrx.png"
+    ]
   },
   "_environment.js": {
     "file": "chunks/environment.js",
@@ -31,6 +36,10 @@
   "_game_manager.Co3hRxNP.css": {
     "file": "_app/immutable/assets/game_manager.Co3hRxNP.css",
     "src": "_game_manager.Co3hRxNP.css"
+  },
+  "_globe.svelte.js": {
+    "file": "chunks/globe.svelte.js",
+    "name": "globe.svelte"
   },
   "_index.js": {
     "file": "chunks/index.js",
@@ -389,7 +398,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "css": [
-      "_app/immutable/assets/_layout.Bz5ANbjC.css",
+      "_app/immutable/assets/_layout.BpoixYg-.css",
       "_app/immutable/assets/game_manager.Co3hRxNP.css"
     ],
     "assets": [
@@ -430,6 +439,7 @@
     "isEntry": true,
     "imports": [
       "_index.js",
+      "_globe.svelte.js",
       "_Offer.js",
       "_attributes.js"
     ]
@@ -460,7 +470,22 @@
     "src": "src/routes/lobis/finish_1935/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_globe.svelte.js",
+      "_doggo.js",
+      "_attributes.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/ball.BARvZG9d.png",
+      "_app/immutable/assets/bowl.D4mzeVJD.png",
+      "_app/immutable/assets/bucket-empty.1Iv6QKUb.png",
+      "_app/immutable/assets/bucket.D4_0hlxX.png",
+      "_app/immutable/assets/eggs.D8dE7ceG.png",
+      "_app/immutable/assets/fish.C5T-fb7j.png",
+      "_app/immutable/assets/fishing_rod.DfkhT1yh.png",
+      "_app/immutable/assets/flowers.BA_-ufaU.png",
+      "_app/immutable/assets/fodder.BK57aF9V.png",
+      "_app/immutable/assets/saddle.CymgCf8n.png"
     ]
   },
   "src/routes/lobis/kroketas_1867/+page.svelte": {

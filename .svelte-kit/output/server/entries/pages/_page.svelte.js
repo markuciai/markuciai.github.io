@@ -15,7 +15,7 @@ function _page($$renderer, $$props) {
     {
       $$renderer2.push("<!--[!-->");
     }
-    $$renderer2.push(`<!--]--> <br/> <br/>  <img width="98%"${attr("src", dvaras)}/></section> <img src="ornament.png" width="100%"/>`);
+    $$renderer2.push(`<!--]--> <br/> <br/>  <img width="98%"${attr("src", dvaras)}/></section>`);
   });
 }
 export {

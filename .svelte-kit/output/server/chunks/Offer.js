@@ -1,6 +1,6 @@
 import { a as attr } from "./attributes.js";
 import { h as head_signs, i as instructions } from "./instructions.js";
-const task = "/_app/immutable/assets/doggo.D_Vb8Wrx.png";
+import { t as task } from "./doggo.js";
 function Offer($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     $$renderer2.push(`<section><img class="illustration"${attr("src", head_signs)}/> `);

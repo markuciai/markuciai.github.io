@@ -205,16 +205,16 @@ Pirma užuomina – leiskitės&nbsp;žemyn&nbsp;laiptais.
 
 
 
-
+{#if globe.progress > 0}
+<button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
+<br>&nbsp;
+{/if}
 </section>
 
 
 
 
-{#if globe.progress > 0}
-<br>&nbsp;
-<button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
-{/if}
+
 
 
 
