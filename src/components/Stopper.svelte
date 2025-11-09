@@ -38,6 +38,8 @@ let illustrations = [zero, bowl, saddle, fishing_rod, fish, fodder, eggs, bucket
 	class:saddle-block={globe.progress == 2}
 	>
 
+<p><slot/></p>
+
 <p>
 {#if globe.progress < globe.location}
 {#if globe.language == "EN"}		   	You're too early!
@@ -48,14 +50,14 @@ let illustrations = [zero, bowl, saddle, fishing_rod, fish, fodder, eggs, bucket
 
 {:else if globe.progress > globe.location}
 {#if globe.language == "EN"}		   	You've already completed this location!
-{:else if globe.language == "RU"}		Nут уже всё сделали!
+{:else if globe.language == "RU"}		Тут уже разобрались!
 {:else if globe.language == "LA"}		hmm
 {:else}	<!-- LT-->		   		 		Čia jau susitvarkėt!
 {/if}
 
 {/if}
 </p>
-<p><slot/></p>
+
 
 <br>
 <p style="font-style: italic; font-weight: bold;">
@@ -104,9 +106,9 @@ let illustrations = [zero, bowl, saddle, fishing_rod, fish, fodder, eggs, bucket
 
 {:else if globe.progress == 6}
 {#if globe.language == "EN"}		    Eggs are needed to bake a&nbsp;cake <br>And where can they bake a&nbsp;cake?
-{:else if globe.language == "RU"}		Чтобы испечь пирог нужны яйца. <br>А где могут испечь&nbsp;пирог?
+{:else if globe.language == "RU"}		Яйца нужны чтобы испечь&nbsp;пирог. <br>А где могут испечь&nbsp;пирог?
 {:else if globe.language == "LA"}		Nimis mane es! <br>Alicubi ire necesse est.
-{:else}	<!-- LT-->		    			Kiaušinių reikia, norint iškepti pyragą <br>O kur gali iškepti&nbsp;pyragą?
+{:else}	<!-- LT-->		    			Kiaušinių reikia, norint iškepti pyragą. <br>O kur gali iškepti&nbsp;pyragą?
 {/if}
 
 {:else if globe.progress == 7}

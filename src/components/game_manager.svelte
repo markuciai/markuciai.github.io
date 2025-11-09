@@ -32,6 +32,9 @@ if (browser) {
 });
 
 $effect(() => {
+	globe.progress = Math.max(Math.min(globe.progress, 12), -1)
+	globe.location = Math.max(Math.min(globe.location, 12), -1)
+
 	console.log('resolving progress and location:', globe.progress, " ", globe.location)
 	if(globe.progress > -1 && globe.progress == globe.location - 1) {
 		globe.progress = globe.location
@@ -53,18 +56,10 @@ $effect(() => {
 
 
 
-
-// var a_number = 0
-
-// function print_a_thing() {
-// 	a_number += 1
-// 	console.log("hello", a_number)
-// }
-
-
-// var randf = Math.random()
-
 </script>
+
+
+
 
 
 {#if globe.laisve}
@@ -72,7 +67,7 @@ $effect(() => {
 	<!-- <button onclick={() => globe.progress = -1} class="lang_button" class:selected={globe.progress == -1}>-1</button> -->
 
 
-	<button class="lang_button selected"> {globe.location}</button>
+	<button class="lang_button" onclick={window.location.href='/'} >{globe.location}</button> |||| 
 
 	<button onclick={() => globe.progress -=1} class="lang_button" >-</button>
 	<button class="lang_button selected"> {globe.progress}</button>
@@ -167,6 +162,7 @@ $effect(() => {
 /* 	border: none; */
 	border: 0.67px solid rgb(255, 200, 0, 0);
  	background-color: rgba(255, 255, 255, 0);
+ 	background-color: var(--color-mdm-sepia);
 	width: 32px;
 	height: 28px;
 	margin: 0px;
@@ -174,6 +170,8 @@ $effect(() => {
 	border-radius: 3px;
 	/* border: 0px; */
 	color: var(--color-sepia);
+	color: #222;
+	font-weight: bold;
 	text-shadow: 0px 1px 0.5px rgba(255,255,200, 0);
 /* 	border: 0.67px solid rgb(238, 220, 131, 0.8); */
 	cursor: pointer;
@@ -248,6 +246,7 @@ $effect(() => {
 	/* color: #006837; */
 	color: rgba(0,0,0, 0.8);
 	text-shadow: 0px 0.75px 0.5px rgba(255,255,200, 0);
+	background-color: rgba(0, 0, 0, 0.0);
 	/* background-color: white; */
 	/* background-color: #EEDC83; */
 	/* background-color: rgba(0,0,0, 0.6); */

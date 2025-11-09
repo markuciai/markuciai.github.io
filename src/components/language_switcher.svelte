@@ -135,6 +135,7 @@ var randf = Math.random()
 	/* border: 0px; */
 	color: var(--color-theme-1);
 	color: var(--color-sepia);
+	color: var(--color-mdm-sepia);
 
 	text-shadow: 0px 1px 0.5px rgba(255,255,200, 0);
 /* 	border: 0.67px solid rgb(238, 220, 131, 0.8); */
@@ -212,6 +213,7 @@ var randf = Math.random()
 	cursor: default;
 	color: #006837;
 	color: rgba(0, 0, 0, 0.8);
+	color: var(--color_green_dark);
 	text-shadow: 0px 0.75px 0.5px rgba(255,255,200, 0);
 	/* background-color: white; */
 	/* background-color: #EEDC83; */

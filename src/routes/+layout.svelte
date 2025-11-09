@@ -248,8 +248,9 @@ function handleMousemove(event) {
 	/* width: clamp(200px, 100vw, 760px); */
 	/* flex-basis: 400px; */
 	/* flex-grow: 0; */
-	margin-bottom: 40px;
-	margin-top: 80px;
+	margin: 80px 0 40px 20px;
+/* 	margin-bottom: 40px;
+	margin-top: 80px; */
 
 	justify-content: center;
 	}

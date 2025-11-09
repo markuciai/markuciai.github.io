@@ -33,7 +33,9 @@ function Stopper($$renderer, $$props) {
       "too_early": globe.progress < globe.location,
       "already_visited": globe.progress > globe.location,
       "saddle-block": globe.progress == 2
-    })}><p>`);
+    })}><p><!--[-->`);
+    slot($$renderer2, $$props, "default", {});
+    $$renderer2.push(`<!--]--></p> <p>`);
     {
       $$renderer2.push("<!--[!-->");
       {
@@ -41,8 +43,6 @@ function Stopper($$renderer, $$props) {
       }
       $$renderer2.push(`<!--]-->`);
     }
-    $$renderer2.push(`<!--]--></p> <p><!--[-->`);
-    slot($$renderer2, $$props, "default", {});
     $$renderer2.push(`<!--]--></p> <br/> <p style="font-style: italic; font-weight: bold;">`);
     {
       $$renderer2.push("<!--[!-->");

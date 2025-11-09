@@ -14,6 +14,8 @@ import kabinetas from '$lib/images/archival/kabinetas.jpg';
 import safe from '$lib/images/archival/safe.jpg';
 import testament_overlayed_ru from '$lib/images/illustrations/testament_overlayed_ru.png';
 import testament_overlayed_lt from '$lib/images/illustrations/testament_overlayed_lt.png';
+import testament from '$lib/images/illustrations/testament.png';
+
 
 const station_id = 12
 
@@ -69,7 +71,8 @@ You show Nazimov all the fragments of the document you have found. As he gives y
 </article>
 
 
-<img width=100% src={testament_overlayed_ru}>
+<!-- <img width=100% src={testament_overlayed_ru}> -->
+<img width=100% src={testament}>
 
 
 <article>
@@ -170,7 +173,8 @@ O dabar sudėkite visas skiautes drauge ir perskaitykite slaptą dokumentą. Kas
 </article>
 
 
-<img width=100% src={testament_overlayed_lt}>
+<!-- <img width=100% src={testament_overlayed_lt}> -->
+<img class="testament" src={testament}>
 <!-- <article>
 Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, nedegiame, dar 1867 m. prie vienos iš krosnių įrengtame seife.
 </article>
@@ -187,7 +191,7 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 
 {/if} <!-- Station globe.languages-->
 </section>
-<div class="ornament" ></div>
+
 
 
 
@@ -207,3 +211,13 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 
 {/if} <!-- Module types-->
 
+
+
+<style>
+	
+.testament {
+	width: 160%;
+	margin: 0 0 -20vw 0;
+}
+
+</style>

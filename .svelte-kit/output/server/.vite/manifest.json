@@ -33,9 +33,9 @@
     "file": "chunks/environment.js",
     "name": "environment"
   },
-  "_game_manager.Co3hRxNP.css": {
-    "file": "_app/immutable/assets/game_manager.Co3hRxNP.css",
-    "src": "_game_manager.Co3hRxNP.css"
+  "_game_manager.BYTWXJds.css": {
+    "file": "_app/immutable/assets/game_manager.BYTWXJds.css",
+    "src": "_game_manager.BYTWXJds.css"
   },
   "_globe.svelte.js": {
     "file": "chunks/globe.svelte.js",
@@ -317,6 +317,10 @@
     "file": "_app/immutable/assets/saddle.CymgCf8n.png",
     "src": "src/lib/images/illustrations/saddle.png"
   },
+  "src/lib/images/illustrations/testament.png": {
+    "file": "_app/immutable/assets/testament.B3X03ieB.png",
+    "src": "src/lib/images/illustrations/testament.png"
+  },
   "src/lib/images/illustrations/testament_overlayed_lt.png": {
     "file": "_app/immutable/assets/testament_overlayed_lt.BHYUKKrn.png",
     "src": "src/lib/images/illustrations/testament_overlayed_lt.png"
@@ -450,8 +454,8 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "css": [
-      "_app/immutable/assets/_layout.DOPOxRW_.css",
-      "_app/immutable/assets/game_manager.Co3hRxNP.css"
+      "_app/immutable/assets/_layout.Bk_PgauM.css",
+      "_app/immutable/assets/game_manager.BYTWXJds.css"
     ],
     "assets": [
       "_app/immutable/assets/ornament.CWPLtSmL.png"
@@ -468,7 +472,7 @@
     ],
     "css": [
       "_app/immutable/assets/_page.hERuRlns.css",
-      "_app/immutable/assets/game_manager.Co3hRxNP.css"
+      "_app/immutable/assets/game_manager.BYTWXJds.css"
     ],
     "assets": [
       "_app/immutable/assets/mdvaras.uf9U8GDs.jpg"
@@ -548,6 +552,9 @@
     "imports": [
       "_index.js",
       "_Offer.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.Dfv9w9hu.css"
     ]
   },
   "src/routes/lobis/kryzius_1880/+page.svelte": {
