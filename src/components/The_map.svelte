@@ -242,9 +242,9 @@ function fixScrollUpdateSafariIOs() {
 <!-- actually, just do layers for locations, foundation is too hard -->
 
 <!-- {map_scroll} -->
-{#if globe.progress >= 1} <img src={piece_1} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
-{#if globe.progress >= 2} <img src={piece_2} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
-{#if globe.progress >= 3} <img src={piece_3} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
+{#if globe.progress >= 1} <img src={piece_1} class="map_layer" class:current={globe.location == 1} style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
+{#if globe.progress >= 2} <img src={piece_2} class="map_layer" class:current={globe.location == 2} style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
+{#if globe.progress >= 3} <img src={piece_3} class="map_layer" class:current={globe.location == 3} style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
 {#if globe.progress >= 4} <img src={piece_4} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: -0.8;"> {/if}
 {#if globe.progress >= 5} <img src={piece_5} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: -1.5;"> {/if}
 {#if globe.progress >= 6} <img src={piece_6} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
@@ -393,6 +393,12 @@ function fixScrollUpdateSafariIOs() {
         /* ; */
 
 }
+
+
+.map_layer.current {
+filter: brightness(1.3) contrast(1.25) saturate(0.5);
+}
+
 
 
 /* WIP have two sides as children of the same .map_layer div. Pass the other side of the piece. */

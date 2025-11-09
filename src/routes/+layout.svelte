@@ -51,11 +51,19 @@ let legend_text = {
 };
 
 
+let order_of_items = [2, 8, 3, 5, 9, 1, 0, 7, 6, 12, 10, 11, 4]
+let icon_array = [icon_0, icon_1, icon_2, icon_3, icon_4, icon_5, icon_6, icon_7, icon_8, icon_9, icon_10, icon_11, icon_12]
 
 
 
-// import Map from './The_map.svelte';
-// import Mounted from './Mounted.svelte';
+function shuffle_order_of_items(order_of_items) {
+  	order_of_items.sort(function (a, b) {
+    	return Math.random() - 0.5;
+  	});
+}
+
+
+
 
 let scroll = Number(0)
 
@@ -64,32 +72,10 @@ var emerge = false
 
 
 
-
-
-// 2025 These functions get deprecated for separate language_switcher and (modeled on it) game_manager
-
 if (browser) {
-	// if(localStorage.getItem("visited") === null) {
-	// 	localStorage.setItem("visited", globe.visited);
-	// 	// window.location.reload();
-	// }
+	shuffle_order_of_items(order_of_items)
 
-	// if(localStorage.getItem("language") === null) {
-	// 	globe.language = localStorage.language
-	// } //deprecated
-	
-	// globe.visited = Number(localStorage.visited);
-	// globe.language = localStorage.language // deprecated
-	
-	// console.log("Starting up. Language: ", globe.language, " || biggest visited:", globe.progress);
-	
-	// appear()
 	emerge = true
-
-
-
-	// console.log("preferred languages:", navigator.languages)
-
 }
 
 
@@ -163,21 +149,15 @@ function handleMousemove(event) {
 
 <div class="legend_section">
 <ul class="legend_ul">
-	<li class="legend"><img src={icon_2} class="legend_icon"> {legend_text[globe.language][2]}</li>
-	<li class="legend"><img src={icon_8} class="legend_icon"> {legend_text[globe.language][8]}</li>
-	<li class="legend"><img src={icon_3} class="legend_icon"> {legend_text[globe.language][3]}</li>
-	<li class="legend"><img src={icon_5} class="legend_icon"> {legend_text[globe.language][5]}</li>
-	<li class="legend"><img src={icon_9} class="legend_icon"> {legend_text[globe.language][9]}</li>
-	<li class="legend"><img src={icon_1} class="legend_icon"> {legend_text[globe.language][1]}</li>
-</ul>
-<ul class="legend_ul">
-	<li class="legend"><img src={icon_0} class="legend_icon"> {legend_text[globe.language][0]}</li>
-	<li class="legend"><img src={icon_7} class="legend_icon"> {legend_text[globe.language][7]}</li>
-	<li class="legend"><img src={icon_6} class="legend_icon"> {legend_text[globe.language][6]}</li>
-	<li class="legend"><img src={icon_12} class="legend_icon"> {legend_text[globe.language][12]}</li>
-	<li class="legend"><img src={icon_10} class="legend_icon"> {legend_text[globe.language][10]}</li>
-	<li class="legend"><img src={icon_11} class="legend_icon"> {legend_text[globe.language][11]}</li>
-	<li class="legend"><img src={icon_4} class="legend_icon"> {legend_text[globe.language][4]}</li>
+
+
+{#each {length: 13 }, index}
+	<li class="legend_li" class:current={globe.location == order_of_items[index]}>
+		<img src={icon_array[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
+		 {legend_text[globe.language][order_of_items[index]]}
+	</li>
+{/each}
+
 </ul>
 </div>
 
@@ -236,6 +216,7 @@ function handleMousemove(event) {
 /* Legend */
 
 .legend_section {
+	/* border: 1px red solid; */
 	/* display: grid; */
 
 
@@ -245,35 +226,42 @@ function handleMousemove(event) {
 	/* text-align: center; */
 	/* width: clamp(200px, 100vw, 760px); */
 	/* flex-basis: 400px; */
-	flex-grow: 0;
+	/* flex-grow: 0; */
 	margin-bottom: 40px;
+	margin-top: 80px;
 
 	justify-content: center;
 	}
 
+
+/* tried doing multiple things... there's some trash here */
 .legend_ul {
 	/* background-color: purple; */
 	/* border: solid blue 2px; */
 	/* flex: initial; */
 
 	flex: 1 0 0;
-	flex-grow: 0;
+	width: 100%;
+	max-width: 800px;
+	flex-grow: 1;
+	align-items: flex-end;
+	justify-content: center;
 	/* align-self: flex-end; */
 
-/* 	display: flex;
-	flex-flow: column wrap;
-	justify-content: space-between;
-	justify-content: flex-end; */
-	/* text-align: center; /*??? */ */
-	/* text-align: right; /*??? */ */
+
 
 	list-style-type: none;
-	display: block;
+	/* display: block; */
 	padding: 0;
 	margin: 0;
+
+	display: flex;
+	flex-flow: row wrap;
+	/* max-width: 100vw; */
+
 	color: white;
 	color: #EEDC83;
-	color:  var(--color-sepia);
+	color:  var(--color-mdm-sepia);
 	/* width: clamp(200px, 100vw, 760px); */
 	/* width: 400px; */
 	margin-bottom: -40px;
@@ -284,7 +272,8 @@ function handleMousemove(event) {
 	/* text-overflow: ; */
 	}
 
-.legend {
+
+.legend_li {
 	/* border: solid #D33F37 2px; */
 	display: block;
 	box-sizing: border-box;
@@ -300,7 +289,7 @@ function handleMousemove(event) {
 	/* vertical-align: middle; */
 	padding: 30px 0 30px ;
 	/* margin: 0; */
-	margin: 40px 0 40px 0;
+	margin: 20px 0 20px 0;
 	width: 370px;
 	vertical-align: middle;
 	/* transform: translate(0px, 2px); */
@@ -317,6 +306,15 @@ function handleMousemove(event) {
 	word-wrap: none;
 	white-space: nowrap;
 	}
+
+.legend_li.current {
+	color: var(--color-sepia);
+}
+
+.legend_icon.current {
+	filter: brightness(1.4) contrast(1.25) saturate(0.5);
+}
+
 
 .legend_icon {
 	position: relative;
@@ -335,6 +333,8 @@ function handleMousemove(event) {
 	/* background-color: #D33F37; */
 	color: white;
 	}
+
+
 
 .visited {
 	background-color: #D33F37;

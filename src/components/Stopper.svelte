@@ -103,10 +103,10 @@ let illustrations = [zero, bowl, saddle, fishing_rod, fish, fodder, eggs, bucket
 {/if}
 
 {:else if globe.progress == 6}
-{#if globe.language == "EN"}		    Eggs are needed to bake a cake <br>And where can they bake a cake?
-{:else if globe.language == "RU"}		Чтобы испечь пирог нужны яйца. <br>А где могут испечь пирог?
+{#if globe.language == "EN"}		    Eggs are needed to bake a&nbsp;cake <br>And where can they bake a&nbsp;cake?
+{:else if globe.language == "RU"}		Чтобы испечь пирог нужны яйца. <br>А где могут испечь&nbsp;пирог?
 {:else if globe.language == "LA"}		Nimis mane es! <br>Alicubi ire necesse est.
-{:else}	<!-- LT-->		    			Kiaušinių reikia, norint iškepti pyragą <br>O kur gali iškepti pyragą?
+{:else}	<!-- LT-->		    			Kiaušinių reikia, norint iškepti pyragą <br>O kur gali iškepti&nbsp;pyragą?
 {/if}
 
 {:else if globe.progress == 7}
