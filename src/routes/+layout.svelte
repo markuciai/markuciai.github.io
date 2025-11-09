@@ -30,6 +30,22 @@ import icon_11 from '$lib/images/icons/11.png';
 import icon_12 from '$lib/images/icons/12.png';
 
 
+import icon_0_collected from '$lib/images/icons_collected/0.png';
+import icon_1_collected from '$lib/images/icons_collected/1.png';
+import icon_2_collected from '$lib/images/icons_collected/2.png';
+import icon_3_collected from '$lib/images/icons_collected/3.png';
+import icon_4_collected from '$lib/images/icons_collected/4.png';
+import icon_5_collected from '$lib/images/icons_collected/5.png';
+import icon_6_collected from '$lib/images/icons_collected/6.png';
+import icon_7_collected from '$lib/images/icons_collected/7.png';
+import icon_8_collected from '$lib/images/icons_collected/8.png';
+import icon_9_collected from '$lib/images/icons_collected/9.png';
+import icon_10_collected from '$lib/images/icons_collected/10.png';
+import icon_11_collected from '$lib/images/icons_collected/11.png';
+import icon_12_collected from '$lib/images/icons_collected/12.png';
+
+
+
 
 let legend_text = {
 	"EN" : [
@@ -53,6 +69,7 @@ let legend_text = {
 
 let order_of_items = [2, 8, 3, 5, 9, 1, 0, 7, 6, 12, 10, 11, 4]
 let icon_array = [icon_0, icon_1, icon_2, icon_3, icon_4, icon_5, icon_6, icon_7, icon_8, icon_9, icon_10, icon_11, icon_12]
+let icon_array_collected = [icon_0_collected, icon_1_collected, icon_2_collected, icon_3_collected, icon_4_collected, icon_5_collected, icon_6_collected, icon_7_collected, icon_8_collected, icon_9_collected, icon_10_collected, icon_11_collected, icon_12_collected]
 
 
 
@@ -153,7 +170,11 @@ function handleMousemove(event) {
 
 {#each {length: 13 }, index}
 	<li class="legend_li" class:current={globe.location == order_of_items[index]}>
-		<img src={icon_array[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
+		{#if globe.progress >= order_of_items[index]}
+			<img src={icon_array_collected[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
+		{:else}
+			<img src={icon_array[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
+		{/if}
 		 {legend_text[globe.language][order_of_items[index]]}
 	</li>
 {/each}
@@ -312,7 +333,7 @@ function handleMousemove(event) {
 }
 
 .legend_icon.current {
-	filter: brightness(1.4) contrast(1.25) saturate(0.5);
+	filter: brightness(1.25) contrast(1.2) saturate(0.6);
 }
 
 

@@ -162,56 +162,108 @@
     "src": "src/lib/images/archival/waters.jpg"
   },
   "src/lib/images/icons/0.png": {
-    "file": "_app/immutable/assets/0.mtatPHte.png",
+    "file": "_app/immutable/assets/0.BsCJyTSS.png",
     "src": "src/lib/images/icons/0.png"
   },
   "src/lib/images/icons/1.png": {
-    "file": "_app/immutable/assets/1.5wxYuX8Q.png",
+    "file": "_app/immutable/assets/1.DNIQwUdc.png",
     "src": "src/lib/images/icons/1.png"
   },
   "src/lib/images/icons/10.png": {
-    "file": "_app/immutable/assets/10.BnydB37Q.png",
+    "file": "_app/immutable/assets/10.2VAuBTbS.png",
     "src": "src/lib/images/icons/10.png"
   },
   "src/lib/images/icons/11.png": {
-    "file": "_app/immutable/assets/11.D2R19gig.png",
+    "file": "_app/immutable/assets/11.DJIaiVMU.png",
     "src": "src/lib/images/icons/11.png"
   },
   "src/lib/images/icons/12.png": {
-    "file": "_app/immutable/assets/12.CGe5FmUc.png",
+    "file": "_app/immutable/assets/12.D2rYi47k.png",
     "src": "src/lib/images/icons/12.png"
   },
   "src/lib/images/icons/2.png": {
-    "file": "_app/immutable/assets/2.DJ6_VLMd.png",
+    "file": "_app/immutable/assets/2.DSnUCzgI.png",
     "src": "src/lib/images/icons/2.png"
   },
   "src/lib/images/icons/3.png": {
-    "file": "_app/immutable/assets/3.BNP8cMPG.png",
+    "file": "_app/immutable/assets/3.DjgCMjGh.png",
     "src": "src/lib/images/icons/3.png"
   },
   "src/lib/images/icons/4.png": {
-    "file": "_app/immutable/assets/4.gfGLFO_V.png",
+    "file": "_app/immutable/assets/4.B6_b5qyW.png",
     "src": "src/lib/images/icons/4.png"
   },
   "src/lib/images/icons/5.png": {
-    "file": "_app/immutable/assets/5.Dk_z5uta.png",
+    "file": "_app/immutable/assets/5.BZl_Vsz-.png",
     "src": "src/lib/images/icons/5.png"
   },
   "src/lib/images/icons/6.png": {
-    "file": "_app/immutable/assets/6.3nqWzWW8.png",
+    "file": "_app/immutable/assets/6.D1-b_NtU.png",
     "src": "src/lib/images/icons/6.png"
   },
   "src/lib/images/icons/7.png": {
-    "file": "_app/immutable/assets/7.CQY8tVO_.png",
+    "file": "_app/immutable/assets/7.DPxbg-RD.png",
     "src": "src/lib/images/icons/7.png"
   },
   "src/lib/images/icons/8.png": {
-    "file": "_app/immutable/assets/8.DGWnSBE0.png",
+    "file": "_app/immutable/assets/8.BvbsR7lp.png",
     "src": "src/lib/images/icons/8.png"
   },
   "src/lib/images/icons/9.png": {
-    "file": "_app/immutable/assets/9.DjUInt2Y.png",
+    "file": "_app/immutable/assets/9.DOPBTevA.png",
     "src": "src/lib/images/icons/9.png"
+  },
+  "src/lib/images/icons_collected/0.png": {
+    "file": "_app/immutable/assets/0.mtatPHte.png",
+    "src": "src/lib/images/icons_collected/0.png"
+  },
+  "src/lib/images/icons_collected/1.png": {
+    "file": "_app/immutable/assets/1.5wxYuX8Q.png",
+    "src": "src/lib/images/icons_collected/1.png"
+  },
+  "src/lib/images/icons_collected/10.png": {
+    "file": "_app/immutable/assets/10.BnydB37Q.png",
+    "src": "src/lib/images/icons_collected/10.png"
+  },
+  "src/lib/images/icons_collected/11.png": {
+    "file": "_app/immutable/assets/11.D2R19gig.png",
+    "src": "src/lib/images/icons_collected/11.png"
+  },
+  "src/lib/images/icons_collected/12.png": {
+    "file": "_app/immutable/assets/12.CGe5FmUc.png",
+    "src": "src/lib/images/icons_collected/12.png"
+  },
+  "src/lib/images/icons_collected/2.png": {
+    "file": "_app/immutable/assets/2.DJ6_VLMd.png",
+    "src": "src/lib/images/icons_collected/2.png"
+  },
+  "src/lib/images/icons_collected/3.png": {
+    "file": "_app/immutable/assets/3.BNP8cMPG.png",
+    "src": "src/lib/images/icons_collected/3.png"
+  },
+  "src/lib/images/icons_collected/4.png": {
+    "file": "_app/immutable/assets/4.gfGLFO_V.png",
+    "src": "src/lib/images/icons_collected/4.png"
+  },
+  "src/lib/images/icons_collected/5.png": {
+    "file": "_app/immutable/assets/5.Dk_z5uta.png",
+    "src": "src/lib/images/icons_collected/5.png"
+  },
+  "src/lib/images/icons_collected/6.png": {
+    "file": "_app/immutable/assets/6.3nqWzWW8.png",
+    "src": "src/lib/images/icons_collected/6.png"
+  },
+  "src/lib/images/icons_collected/7.png": {
+    "file": "_app/immutable/assets/7.CQY8tVO_.png",
+    "src": "src/lib/images/icons_collected/7.png"
+  },
+  "src/lib/images/icons_collected/8.png": {
+    "file": "_app/immutable/assets/8.DGWnSBE0.png",
+    "src": "src/lib/images/icons_collected/8.png"
+  },
+  "src/lib/images/icons_collected/9.png": {
+    "file": "_app/immutable/assets/9.DjUInt2Y.png",
+    "src": "src/lib/images/icons_collected/9.png"
   },
   "src/lib/images/illustrations/ball.png": {
     "file": "_app/immutable/assets/ball.BARvZG9d.png",
@@ -398,7 +450,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "css": [
-      "_app/immutable/assets/_layout.Dr3YaXbF.css",
+      "_app/immutable/assets/_layout.DOPOxRW_.css",
       "_app/immutable/assets/game_manager.Co3hRxNP.css"
     ],
     "assets": [

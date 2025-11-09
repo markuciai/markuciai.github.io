@@ -245,15 +245,15 @@ function fixScrollUpdateSafariIOs() {
 {#if globe.progress >= 1} <img src={piece_1} class="map_layer" class:current={globe.location == 1} style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
 {#if globe.progress >= 2} <img src={piece_2} class="map_layer" class:current={globe.location == 2} style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
 {#if globe.progress >= 3} <img src={piece_3} class="map_layer" class:current={globe.location == 3} style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
-{#if globe.progress >= 4} <img src={piece_4} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: -0.8;"> {/if}
-{#if globe.progress >= 5} <img src={piece_5} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: -1.5;"> {/if}
-{#if globe.progress >= 6} <img src={piece_6} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
-{#if globe.progress >= 7} <img src={piece_7} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.55; --x_ratio: 0.5;"> {/if}
-{#if globe.progress >= 8} <img src={piece_8} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.5;"> {/if}
-{#if globe.progress >= 9} <img src={piece_9} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: -2.2;"> {/if}
-{#if globe.progress >= 10} <img src={piece_10} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.6; --x_ratio: 1.5;"> {/if}
-{#if globe.progress >= 11} <img src={piece_11} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: 2.8; --x_ratio: 0.25;"> {/if}
-{#if globe.progress >= 12} <img src={piece_12} class="map_layer" style="--map_scroll: {map_scroll}; --y_ratio: -0.2; --x_ratio: -1.5;"> {/if}
+{#if globe.progress >= 4} <img src={piece_4} class="map_layer" class:current={globe.location == 4} style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: -0.8;"> {/if}
+{#if globe.progress >= 5} <img src={piece_5} class="map_layer" class:current={globe.location == 5} style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: -1.5;"> {/if}
+{#if globe.progress >= 6} <img src={piece_6} class="map_layer" sclass:current={globe.location == 6} tyle="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
+{#if globe.progress >= 7} <img src={piece_7} class="map_layer" class:current={globe.location == 7} style="--map_scroll: {map_scroll}; --y_ratio: 0.55; --x_ratio: 0.5;"> {/if}
+{#if globe.progress >= 8} <img src={piece_8} class="map_layer" class:current={globe.location == 8} style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.5;"> {/if}
+{#if globe.progress >= 9} <img src={piece_9} class="map_layer" class:current={globe.location == 9} style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: -2.2;"> {/if}
+{#if globe.progress >= 10} <img src={piece_10} class="map_layer" class:current={globe.location == 10} style="--map_scroll: {map_scroll}; --y_ratio: -0.6; --x_ratio: 1.5;"> {/if}
+{#if globe.progress >= 11} <img src={piece_11} class="map_layer" class:current={globe.location == 11} style="--map_scroll: {map_scroll}; --y_ratio: 2.8; --x_ratio: 0.25;"> {/if}
+{#if globe.progress >= 12} <img src={piece_12} class="map_layer" class:current={globe.location == 12} style="--map_scroll: {map_scroll}; --y_ratio: -0.2; --x_ratio: -1.5;"> {/if}
 
 
 
@@ -396,7 +396,7 @@ function fixScrollUpdateSafariIOs() {
 
 
 .map_layer.current {
-filter: brightness(1.3) contrast(1.25) saturate(0.5);
+filter: brightness(1.2) contrast(1.25) saturate(0.5);
 }
 
 
