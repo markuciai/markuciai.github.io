@@ -247,7 +247,7 @@ function fixScrollUpdateSafariIOs() {
 {#if globe.progress >= 3} <img src={piece_3} class="map_layer" class:current={globe.location == 3} style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
 {#if globe.progress >= 4} <img src={piece_4} class="map_layer" class:current={globe.location == 4} style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: -0.8;"> {/if}
 {#if globe.progress >= 5} <img src={piece_5} class="map_layer" class:current={globe.location == 5} style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: -1.5;"> {/if}
-{#if globe.progress >= 6} <img src={piece_6} class="map_layer" sclass:current={globe.location == 6} tyle="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
+{#if globe.progress >= 6} <img src={piece_6} class="map_layer" sclass:current={globe.location == 6} style="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
 {#if globe.progress >= 7} <img src={piece_7} class="map_layer" class:current={globe.location == 7} style="--map_scroll: {map_scroll}; --y_ratio: 0.55; --x_ratio: 0.5;"> {/if}
 {#if globe.progress >= 8} <img src={piece_8} class="map_layer" class:current={globe.location == 8} style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.5;"> {/if}
 {#if globe.progress >= 9} <img src={piece_9} class="map_layer" class:current={globe.location == 9} style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: -2.2;"> {/if}
