@@ -14,8 +14,11 @@
     "name": "Offer",
     "imports": [
       "_attributes.js",
-      "_instructions.js",
+      "_steps.js",
       "_doggo.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/instructions.CX_XWdQk.png"
     ]
   },
   "_attributes.js": {
@@ -48,14 +51,6 @@
       "_attributes.js"
     ]
   },
-  "_instructions.js": {
-    "file": "chunks/instructions.js",
-    "name": "instructions",
-    "assets": [
-      "_app/immutable/assets/head_signs.CJk7746j.png",
-      "_app/immutable/assets/instructions.B8OmXX0M.png"
-    ]
-  },
   "_internal.js": {
     "file": "chunks/internal.js",
     "name": "internal",
@@ -67,6 +62,14 @@
   "_shared.js": {
     "file": "chunks/shared.js",
     "name": "shared"
+  },
+  "_steps.js": {
+    "file": "chunks/steps.js",
+    "name": "steps",
+    "assets": [
+      "_app/immutable/assets/splash.CFG--8IQ.png",
+      "_app/immutable/assets/steps.COm-BiQs.png"
+    ]
   },
   "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
     "file": "remote-entry.js",
@@ -305,20 +308,24 @@
     "file": "_app/immutable/assets/fodder.BK57aF9V.png",
     "src": "src/lib/images/illustrations/fodder.png"
   },
-  "src/lib/images/illustrations/head_signs.png": {
-    "file": "_app/immutable/assets/head_signs.CJk7746j.png",
-    "src": "src/lib/images/illustrations/head_signs.png"
-  },
   "src/lib/images/illustrations/instructions.png": {
-    "file": "_app/immutable/assets/instructions.B8OmXX0M.png",
+    "file": "_app/immutable/assets/instructions.CX_XWdQk.png",
     "src": "src/lib/images/illustrations/instructions.png"
   },
   "src/lib/images/illustrations/saddle.png": {
     "file": "_app/immutable/assets/saddle.CymgCf8n.png",
     "src": "src/lib/images/illustrations/saddle.png"
   },
+  "src/lib/images/illustrations/splash.png": {
+    "file": "_app/immutable/assets/splash.CFG--8IQ.png",
+    "src": "src/lib/images/illustrations/splash.png"
+  },
+  "src/lib/images/illustrations/steps.png": {
+    "file": "_app/immutable/assets/steps.COm-BiQs.png",
+    "src": "src/lib/images/illustrations/steps.png"
+  },
   "src/lib/images/illustrations/testament.png": {
-    "file": "_app/immutable/assets/testament.B3X03ieB.png",
+    "file": "_app/immutable/assets/testament.Dek0Lh7Q.png",
     "src": "src/lib/images/illustrations/testament.png"
   },
   "src/lib/images/illustrations/testament_overlayed_lt.png": {
@@ -342,7 +349,7 @@
     "src": "src/lib/images/map-pieces/11.png"
   },
   "src/lib/images/map-pieces/12.png": {
-    "file": "_app/immutable/assets/12.CbqhUa8u.png",
+    "file": "_app/immutable/assets/12.CBVkZ-Du.png",
     "src": "src/lib/images/map-pieces/12.png"
   },
   "src/lib/images/map-pieces/2.png": {
@@ -454,7 +461,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "css": [
-      "_app/immutable/assets/_layout.Bk_PgauM.css",
+      "_app/immutable/assets/_layout.DNOMQV2C.css",
       "_app/immutable/assets/game_manager.BYTWXJds.css"
     ],
     "assets": [
@@ -554,7 +561,7 @@
       "_Offer.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.Dfv9w9hu.css"
+      "_app/immutable/assets/_page.DnOwW3iI.css"
     ]
   },
   "src/routes/lobis/kryzius_1880/+page.svelte": {
@@ -594,7 +601,7 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_instructions.js",
+      "_steps.js",
       "_attributes.js"
     ]
   },

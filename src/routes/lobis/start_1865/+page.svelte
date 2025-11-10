@@ -2,9 +2,10 @@
 
 
 
-import head_signs from '$lib/images/illustrations/head_signs.png';
-import instructions from '$lib/images/illustrations/instructions.png';
 
+import splash from '$lib/images/illustrations/splash.png';
+import instructions from '$lib/images/illustrations/instructions.png';
+import steps from '$lib/images/illustrations/steps.png';
 
 
 import Stopper from '$components/Stopper.svelte';
@@ -85,7 +86,7 @@ onMount(async () => {
 <!-- {#if show_station} -->
 
 <section>
-<img class="illustration" src={head_signs}>
+<img class="map_piece_header_illustration" src={splash}>
 
 
 
@@ -177,15 +178,16 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 Sveiki atvykę į žaidimą Markučių dvaro lobis! Ieškokite parke išdėliotų lentelių su QR kodais, skenuokite lenteles, skaitykite užuominas ir spręskite užduotis teisinga tvarka.
 </article>
 
-<img  src={instructions} width="100%" />
+<img  src={steps} width="100%" />
 
 
 <article>
 Žaidimas prasideda prie įėjimo į Markučių dvaro parką.
-</article>
+<br /><br />
+<!-- </article>
 
 
-<article>
+<article> -->
 19 a. į Markučių dvarą buvo atvykstama karietomis pro pagrindinius vartus, o prie jų stovėjo didelis, iš geležinkelio bėgių padarytas kryžius. Šiuo metu ten stovi kitas objektas.
 </article>
 

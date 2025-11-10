@@ -6,7 +6,7 @@
 import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
 
-import head_signs from '$lib/images/illustrations/head_signs.png';
+import splash from '$lib/images/illustrations/splash.png';
 import dvras_bw from '$lib/images/archival/dvras_bw.jpg';
 
 
@@ -88,7 +88,7 @@ function ms_to_time(ms) {
 {#if show_station}
 
 <section>
-<img class="illustration" src={head_signs}>
+<img class="map_piece_header_illustration" src={splash}>
 
 {#if globe.language == "EN"}
 

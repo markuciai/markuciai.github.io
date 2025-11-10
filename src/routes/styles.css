@@ -255,9 +255,19 @@ article {
 	font-size: clamp(24px, 6vw, 32px);
 	transition: 1s;
 	transform: rotate(0.7deg);
-	
-
 }
+
+
+@media (min-width: 720px) {
+	.where-next {
+		width: clamp(105%, calc(105% + 10vw), 100vw);
+	}
+/* 	.illustration {
+		width: clamp(320px, 100vw, 800px);
+		width: clamp(105%, calc(105% + 10vw), 100vw);
+	} */
+}
+
 
 .where-next.too_early {
 	background-color: #D33F37;

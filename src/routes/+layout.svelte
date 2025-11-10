@@ -49,7 +49,7 @@ import icon_12_collected from '$lib/images/icons_collected/12.png';
 
 let legend_text = {
 	"EN" : [
-		"Museum", "Cross", "Servants quarters", "Stables", "Pond", "Kitchen",
+		"Museum", "Cross", "Servants' quarters", "Stables", "Pond", "Kitchen",
 		"Chicken coop", "Bakery", "Water well", "Orangery", "Chapel", "Doggies", "Croquet"
 		],
 	"RU" : [
@@ -240,7 +240,7 @@ function handleMousemove(event) {
 	/* border: 1px red solid; */
 	/* display: grid; */
 
-
+	width: 110%;
 	display: flex;
 	flex-wrap: wrap;
 
@@ -252,7 +252,7 @@ function handleMousemove(event) {
 /* 	margin-bottom: 40px;
 	margin-top: 80px; */
 
-	justify-content: center;
+	justify-content: left;
 	}
 
 
@@ -264,8 +264,15 @@ function handleMousemove(event) {
 
 	flex: 1 0 0;
 	width: 100%;
-	max-width: 800px;
-	flex-grow: 1;
+	/* width: 100vw; */
+	max-width: 860px;
+	padding: 0;
+	margin: -40px 0 40px 0;
+
+	flex-grow: 2;
+
+	display: flex;
+	flex-flow: row wrap;
 	align-items: flex-end;
 	justify-content: center;
 	/* align-self: flex-end; */
@@ -273,20 +280,10 @@ function handleMousemove(event) {
 
 
 	list-style-type: none;
-	/* display: block; */
-	padding: 0;
-	margin: 0;
 
-	display: flex;
-	flex-flow: row wrap;
-	/* max-width: 100vw; */
 
-	color: white;
-	color: #EEDC83;
 	color:  var(--color-mdm-sepia);
-	/* width: clamp(200px, 100vw, 760px); */
-	/* width: 400px; */
-	margin-bottom: -40px;
+
 
 	overflow-wrap: none;
 	word-wrap: none;
@@ -311,8 +308,8 @@ function handleMousemove(event) {
 	/* vertical-align: middle; */
 	padding: 30px 0 30px ;
 	/* margin: 0; */
-	margin: 20px 0 20px 0;
-	width: 370px;
+	margin: 30px 20px 30px 0;
+	width: 375px;
 	vertical-align: middle;
 	/* transform: translate(0px, 2px); */
 	line-height: 20px;

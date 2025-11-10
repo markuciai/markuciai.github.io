@@ -1,7 +1,8 @@
 <script>
 
-import head_signs from '$lib/images/illustrations/head_signs.png';
+import head_signs from '$lib/images/illustrations/splash.png';
 import instructions from '$lib/images/illustrations/instructions.png';
+import steps from '$lib/images/illustrations/steps.png';
 import doggo from '$lib/images/illustrations/doggo.png';
 
 </script>
@@ -9,7 +10,7 @@ import doggo from '$lib/images/illustrations/doggo.png';
 
 
 <section>
-<img class="illustration" src={head_signs}>
+<img class="map_piece_header_illustration" src={head_signs}>
 
 
 
@@ -115,8 +116,14 @@ Markučių dvaro muziejus nedidelėms grupėms ir pavieniams lankytojams pristat
 
 <article>
 Parko teritorijoje išdėliotos lentelės su QR-kodais. Kiekvienam žaidėjui (ar žaidėjų komandai) reikės mobilaus telefono arba planšetinio kompiuterio su interneto prieiga. Jokių papildomų programėlių instaliuoti nereikia.
+</article>
 
-<br/><br/>Žaisti galima lietuvių, anglų, rusų arba ukrainiečių kalbomis.
+<img  src={steps} width="100%" />
+
+<article>
+<p>
+Žaisti galima lietuvių, anglų, rusų arba ukrainiečių kalbomis.
+</p>
 </article>
 
 <img class="illustration" src={doggo}>

@@ -1,5 +1,5 @@
 import { x as head } from "../../../../chunks/index.js";
-import { h as head_signs, i as instructions } from "../../../../chunks/instructions.js";
+import { s as splash, a as steps } from "../../../../chunks/steps.js";
 import { a as attr, e as escape_html } from "../../../../chunks/attributes.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
@@ -26,14 +26,14 @@ function _page($$renderer, $$props) {
       }
       $$renderer3.push(`<!--]-->`);
     });
-    $$renderer2.push(`<section><img class="illustration"${attr("src", head_signs)}/> `);
+    $$renderer2.push(`<section><img class="map_piece_header_illustration"${attr("src", splash)}/> `);
     {
       $$renderer2.push("<!--[!-->");
       {
         $$renderer2.push("<!--[!-->");
         {
           $$renderer2.push("<!--[!-->");
-          $$renderer2.push(`<h1>Markučių Lobis</h1> <p class="subh">JŪS PRADĖJOTE KELIONĘ<br/>${escape_html(date_started_h)}:${escape_html(date_started_m)}:${escape_html(date_started_s)}</p> <article>Sveiki atvykę į žaidimą Markučių dvaro lobis! Ieškokite parke išdėliotų lentelių su QR kodais, skenuokite lenteles, skaitykite užuominas ir spręskite užduotis teisinga tvarka.</article> <img${attr("src", instructions)} width="100%"/> <article>Žaidimas prasideda prie įėjimo į Markučių dvaro parką.</article> <article>19 a. į Markučių dvarą buvo atvykstama karietomis pro pagrindinius vartus, o prie jų stovėjo didelis, iš geležinkelio bėgių padarytas kryžius. Šiuo metu ten stovi kitas objektas.</article> <div class="where-next"><span class="highlighted-question">Raskite kur buvo pagrindinis įėjimas į Markučių dvaro parką. <br/>Kaip manote, kur anksčiau galėjo stovėti kryžius?</span> <br/><br/> <span>Pirma užuomina – leiskitės žemyn laiptais.</span></div>`);
+          $$renderer2.push(`<h1>Markučių Lobis</h1> <p class="subh">JŪS PRADĖJOTE KELIONĘ<br/>${escape_html(date_started_h)}:${escape_html(date_started_m)}:${escape_html(date_started_s)}</p> <article>Sveiki atvykę į žaidimą Markučių dvaro lobis! Ieškokite parke išdėliotų lentelių su QR kodais, skenuokite lenteles, skaitykite užuominas ir spręskite užduotis teisinga tvarka.</article> <img${attr("src", steps)} width="100%"/> <article>Žaidimas prasideda prie įėjimo į Markučių dvaro parką. <br/><br/> 19 a. į Markučių dvarą buvo atvykstama karietomis pro pagrindinius vartus, o prie jų stovėjo didelis, iš geležinkelio bėgių padarytas kryžius. Šiuo metu ten stovi kitas objektas.</article> <div class="where-next"><span class="highlighted-question">Raskite kur buvo pagrindinis įėjimas į Markučių dvaro parką. <br/>Kaip manote, kur anksčiau galėjo stovėti kryžius?</span> <br/><br/> <span>Pirma užuomina – leiskitės žemyn laiptais.</span></div>`);
         }
         $$renderer2.push(`<!--]-->`);
       }

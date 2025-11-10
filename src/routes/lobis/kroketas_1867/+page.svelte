@@ -72,7 +72,7 @@ You show Nazimov all the fragments of the document you have found. As he gives y
 
 
 <!-- <img width=100% src={testament_overlayed_ru}> -->
-<img width=100% src={testament}>
+<img src={testament} class="testament">
 
 
 <article>
@@ -216,8 +216,11 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 <style>
 	
 .testament {
-	width: 160%;
-	margin: 0 0 -20vw 0;
+	width: 150%;
+	margin: 0 0 calc(-4vw - 20px) 0;
+	rotation: 0;
+	z-index: 10;
+
 }
 
 </style>
