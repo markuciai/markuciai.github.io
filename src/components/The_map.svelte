@@ -37,6 +37,14 @@ import piece_11 from '$lib/images/map/pieces/dog.png';
 import piece_12 from '$lib/images/map/pieces/monument.png';
 
 
+let piece_array_front = [piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
+let piece_array_back = [piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
+let x_ratio_array = [1.5, 1, 0.2, -0.8, -1.5, 2, 0.5, 0.5, -2.2, 1.5, 0.25, -1.5]
+let y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, -0.2]
+
+
+
+
 
 // intersection observer code from MDN, untouched:
 // const options = {
@@ -61,7 +69,7 @@ import piece_12 from '$lib/images/map/pieces/monument.png';
 
 let scroll = $state(Number(0))
 let map_scroll = $state(Number(100))
-
+let flipped = $state(false);
 
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
@@ -218,6 +226,12 @@ function fixScrollUpdateSafariIOs() {
 <svelte:window bind:scrollY={scroll} />
 
 
+<button 
+    class="button"
+    onclick={() => flipped = !flipped}>
+Apversti
+</button>
+
 <div id="map_wrapper">
 
 <div id="marker_container">
@@ -242,18 +256,20 @@ function fixScrollUpdateSafariIOs() {
 <!-- actually, just do layers for locations, foundation is too hard -->
 
 <!-- {map_scroll} -->
-{#if globe.progress >= 1} <img src={piece_1} class="map_layer" class:current={globe.location == 1} style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: 1.5;"> {/if}
-{#if globe.progress >= 2} <img src={piece_2} class="map_layer" class:current={globe.location == 2} style="--map_scroll: {map_scroll}; --y_ratio: 0.8; --x_ratio: 1;"> {/if}
-{#if globe.progress >= 3} <img src={piece_3} class="map_layer" class:current={globe.location == 3} style="--map_scroll: {map_scroll}; --y_ratio: 0.6; --x_ratio: 0.2;"> {/if}
-{#if globe.progress >= 4} <img src={piece_4} class="map_layer" class:current={globe.location == 4} style="--map_scroll: {map_scroll}; --y_ratio: -0.8; --x_ratio: -0.8;"> {/if}
-{#if globe.progress >= 5} <img src={piece_5} class="map_layer" class:current={globe.location == 5} style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: -1.5;"> {/if}
-{#if globe.progress >= 6} <img src={piece_6} class="map_layer" sclass:current={globe.location == 6} style="--map_scroll: {map_scroll}; --y_ratio: 0.33; --x_ratio: 2;"> {/if}
-{#if globe.progress >= 7} <img src={piece_7} class="map_layer" class:current={globe.location == 7} style="--map_scroll: {map_scroll}; --y_ratio: 0.55; --x_ratio: 0.5;"> {/if}
-{#if globe.progress >= 8} <img src={piece_8} class="map_layer" class:current={globe.location == 8} style="--map_scroll: {map_scroll}; --y_ratio: 0.2; --x_ratio: 0.5;"> {/if}
-{#if globe.progress >= 9} <img src={piece_9} class="map_layer" class:current={globe.location == 9} style="--map_scroll: {map_scroll}; --y_ratio: 0.5; --x_ratio: -2.2;"> {/if}
-{#if globe.progress >= 10} <img src={piece_10} class="map_layer" class:current={globe.location == 10} style="--map_scroll: {map_scroll}; --y_ratio: -0.6; --x_ratio: 1.5;"> {/if}
-{#if globe.progress >= 11} <img src={piece_11} class="map_layer" class:current={globe.location == 11} style="--map_scroll: {map_scroll}; --y_ratio: 2.8; --x_ratio: 0.25;"> {/if}
-{#if globe.progress >= 12} <img src={piece_12} class="map_layer" class:current={globe.location == 12} style="--map_scroll: {map_scroll}; --y_ratio: -0.2; --x_ratio: -1.5;"> {/if}
+
+
+
+{#each {length: globe.progress }, index}
+<div class="map_layer"
+    class:current={globe.location == index}
+    style="--map_scroll: {map_scroll}; --y_ratio: {y_ratio_array[index]}; --x_ratio: {x_ratio_array[index]};"
+    class:flipped={flipped}
+    > 
+
+    <img src={piece_array_front[index]} class ="map_layer_img" />
+    <img src={piece_array_back[index]} class ="map_layer_img backside" />
+</div>
+{/each}
 
 
 
@@ -300,6 +316,7 @@ function fixScrollUpdateSafariIOs() {
     margin-bottom: 30px;
     margin-top: 40px;
     perspective: 500px;
+    /* transform-style: preserve-3d; */
     z-index: 10;
     /* border: 1px solid purple; */
     /* background-color: aqua; */
@@ -345,9 +362,11 @@ function fixScrollUpdateSafariIOs() {
 
 .map_layer {
     /* visibility: hidden; */
+    /* border: 1px red solid; */
     pointer-events: none; /*because images get dragged but shouldn't*/
 
     width: 100%;
+    height: 100%;
     position: absolute;
 
     left: 0;
@@ -367,6 +386,10 @@ function fixScrollUpdateSafariIOs() {
 /* good, byt samey and attr() isn't implemented in browsers yet */
     /* transform: translate3d(0px, calc( min(var(--scroll_minus_map), 0) * 0.25px), 20px); */
     transform-style: preserve-3d;
+    /* transform-origin: 50% 50%; */
+    /* transform-origin: 100% 100%; */
+    /* transform-origin: top left; */
+    /* perspective: 500px; */
 
     transform:
         /* perspective(500px) */
@@ -392,6 +415,41 @@ function fixScrollUpdateSafariIOs() {
         /* blur( calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.01px) ) */
         /* ; */
 
+}
+
+
+.map_layer_img {
+    width: 100%;
+    /* transform-origin: center center; */
+    /* top: 0; */
+    /* left: 0; */
+    /* border: 1px blue solid; */
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.backside {
+    filter: hue-rotate(45deg);
+    transform: scaleX(-1) rotateY(180deg);
+    /* transform: rotateY(180deg); */
+    backface-visibility: hidden;
+
+}
+
+/* .map_layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.5s;
+} */
+
+
+.flipped {
+    transform: rotateY(-180deg);
+    transition: 0.5s;
+    /* transform: rotateY(45deg); */
+    /* scale: 1.2; */
 }
 
 
