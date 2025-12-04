@@ -8,7 +8,7 @@
 	--font-manrope: 'Manrope', Times, Helvetica, Arial, sans;
 	/* --color-bg-0: rgb(202, 216, 228); */
 	--color-bg-0: rgb(71, 92, 66);
-	--color-bg-1: #475c42;
+	--color-bg-1: #475c42; /*bg green*/
 	--color_green_medium_dark: #384f3b;
 	--color_green_dark: #263122;
 	--color-bg-1: #366840;
@@ -24,6 +24,7 @@
 	--color-sepia: #ddc0a4;
 	--color-sepia: #f3e5d7;
 	--color-mdm-sepia: #c6a175;
+	--color-vm-orange: #c46d00;
 
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
@@ -171,6 +172,8 @@ h1 {
 	width: 90%;
 	font-family: var(--font-manrope);
 	font-weight: 800;
+	/* text-transform: uppercase; */
+	letter-spacing: -2.5%;
 
 
 	font-size: 2rem;
@@ -185,6 +188,8 @@ h1 {
 	color: #D33F37;
 	color: #9f0d17;
 	color: #c46d00; /* Vilniaus Museum colors */
+	color: var(--color-mdm-sepia);
+	color: var(--color-vm-orange);
 	/* color: #c11b1b; */
 	/* text-align: left; */
 	padding: 0;

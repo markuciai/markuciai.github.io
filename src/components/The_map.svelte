@@ -23,6 +23,78 @@ import Map_foundation from '$lib/images/map/foundation.png';
 
 
 
+
+
+import icon_0 from '$lib/images/icons/0.png';
+import icon_1 from '$lib/images/icons/1.png';
+import icon_2 from '$lib/images/icons/2.png';
+import icon_3 from '$lib/images/icons/3.png';
+import icon_4 from '$lib/images/icons/4.png';
+import icon_5 from '$lib/images/icons/5.png';
+import icon_6 from '$lib/images/icons/6.png';
+import icon_7 from '$lib/images/icons/7.png';
+import icon_8 from '$lib/images/icons/8.png';
+import icon_9 from '$lib/images/icons/9.png';
+import icon_10 from '$lib/images/icons/10.png';
+import icon_11 from '$lib/images/icons/11.png';
+import icon_12 from '$lib/images/icons/12.png';
+
+import icon_0_collected from '$lib/images/icons_collected/0.png';
+import icon_1_collected from '$lib/images/icons_collected/1.png';
+import icon_2_collected from '$lib/images/icons_collected/2.png';
+import icon_3_collected from '$lib/images/icons_collected/3.png';
+import icon_4_collected from '$lib/images/icons_collected/4.png';
+import icon_5_collected from '$lib/images/icons_collected/5.png';
+import icon_6_collected from '$lib/images/icons_collected/6.png';
+import icon_7_collected from '$lib/images/icons_collected/7.png';
+import icon_8_collected from '$lib/images/icons_collected/8.png';
+import icon_9_collected from '$lib/images/icons_collected/9.png';
+import icon_10_collected from '$lib/images/icons_collected/10.png';
+import icon_11_collected from '$lib/images/icons_collected/11.png';
+import icon_12_collected from '$lib/images/icons_collected/12.png';
+
+
+let order_of_items = [2, 8, 3, 5, 9, 1, 0, 7, 6, 12, 10, 11, 4]
+let icon_array = [icon_0, icon_1, icon_2, icon_3, icon_4, icon_5, icon_6, icon_7, icon_8, icon_9, icon_10, icon_11, icon_12]
+let icon_array_collected = [icon_0_collected, icon_1_collected, icon_2_collected, icon_3_collected, icon_4_collected, icon_5_collected, icon_6_collected, icon_7_collected, icon_8_collected, icon_9_collected, icon_10_collected, icon_11_collected, icon_12_collected]
+
+
+let legend_text = {
+    "EN" : [
+        "Museum", "Cross", "Servants' quarters", "Stables", "Pond", "Kitchen",
+        "Chicken coop", "Bakery", "Water well", "Orangery", "Chapel", "Doggies", "Croquet"
+        ],
+    "RU" : [
+        "Музей", "Крест", "Домик слуг", "Конюшни", "Пруды", "Кухня",
+        "Птичник", "Пекарня", "Колодец", "Оранжерея", "Церковь", "Собачки", "Крокет",
+        ],
+    "LT" : [
+        "Muziejus", "Kryžius", "Tarnų namelis", "Arklides", "Tvenkiniai", "Virtuvė",
+        "Vištidė", "Duonkepė", "Šulinys", "Oranžerija", "Cerkvė", "Šuniukai", "Kroketas",
+        ],
+    "LA" : [
+        "Manerium", "Crucius", "Servorum plagae", "Stabula", "Piscine", "Culina",
+        "Pullus domus", "Pistrinum", "Aqua bene", "Pomarium", "Capella", "Canes", "Croquet atrium",
+        ],
+};
+
+
+
+
+
+function shuffle_order_of_items(order_of_items) {
+    order_of_items.sort(function (a, b) {
+        return Math.random() - 0.5;
+    });
+}
+
+
+
+
+
+
+
+
 import piece_1 from '$lib/images/map/pieces/cross.png';
 import piece_2 from '$lib/images/map/pieces/house.png';
 import piece_3 from '$lib/images/map/pieces/horse.png';
@@ -37,8 +109,11 @@ import piece_11 from '$lib/images/map/pieces/dog.png';
 import piece_12 from '$lib/images/map/pieces/monument.png';
 
 
+import piece_1_back from '$lib/images/illustrations/testament_full.png';
+
+
 let piece_array_front = [piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
-let piece_array_back = [piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
+let piece_array_back = [piece_1_back, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
 let x_ratio_array = [1.5, 1, 0.2, -0.8, -1.5, 2, 0.5, 0.5, -2.2, 1.5, 0.25, -1.5]
 let y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, -0.2]
 
@@ -164,9 +239,10 @@ function geolocation_to_location(a_latitude, a_longitude) {
 
 
 if (browser) {
+    shuffle_order_of_items(order_of_items)
     // show_position()
     // watch_position()
-    console.log("i'm a map")
+    // console.log("i'm a map")
     fixScrollUpdateSafariIOs() // Does it do anything? I don't think so
 
 
@@ -214,21 +290,17 @@ function fixScrollUpdateSafariIOs() {
 
 
 
-
-
 </script>
-
-
-
-
 
 
 <svelte:window bind:scrollY={scroll} />
 
+<div class="map_and_stuff">
 
-<button 
-    class="button"
-    onclick={() => flipped = !flipped}>
+
+
+
+<button class="button" style="scale: 2; position: absolute; z-index: 10; left: 100px" onclick={() => flipped = !flipped}>
 Apversti
 </button>
 
@@ -279,6 +351,29 @@ Apversti
 <!-- TODO use $location to highlight where the player is -->
 <!-- set location from stations -->
 <!-- port the legend here from layout-->
+
+
+
+
+<div class="legend_section">
+<ul class="legend_ul">
+
+
+{#each {length: 13 }, index}
+    <li class="legend_li" class:current={globe.location == order_of_items[index]}>
+        {#if globe.progress >= order_of_items[index]}
+            <img src={icon_array_collected[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
+        {:else}
+            <img src={icon_array[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
+        {/if}
+         {legend_text[globe.language][order_of_items[index]]}
+    </li>
+{/each}
+
+</ul>
+</div> <!-- Legend section -->
+
+</div>   <!--map_and_stuff-->
 
 
 
@@ -348,6 +443,20 @@ Apversti
         /* height: 90vw; */
         /* border: red solid 1px; */
     }
+
+    .map_and_stuff {
+        /* position: absolute; */
+        left: 0;
+        width: 100vw;
+        display: flex;
+        flex: 1;
+        margin: 40px 0 0 -30vw;
+    }
+
+    .legend_section {
+        margin: calc(40px + 5vw) 0 0 40px;
+        min-width: 760px;
+    }
 }
 
 
@@ -398,9 +507,10 @@ Apversti
             calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
             calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px))
 
-        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg))
-        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
-        rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.2deg))
+        /* rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg)) */
+        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.25deg))
+        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.25deg))
+        rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.5deg))
         ;
     transition: transform 0.16s; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
 
@@ -448,6 +558,7 @@ Apversti
 .flipped {
     transform: rotateY(-180deg);
     transition: 0.5s;
+    transition: calc( abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5s);
     /* transform: rotateY(45deg); */
     /* scale: 1.2; */
 }
@@ -459,15 +570,138 @@ filter: brightness(1.2) contrast(1.25) saturate(0.5);
 
 
 
-/* WIP have two sides as children of the same .map_layer div. Pass the other side of the piece. */
-.front {
-    backface-visibility: hidden;
+/* Legend */
+
+.legend_section {
+    /* border: 1px red solid; */
+    /* display: grid; */
+
+    width: 110%;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* text-align: center; */
+    /* width: clamp(200px, 100vw, 760px); */
+    /* flex-basis: 400px; */
+    /* flex-grow: 0; */
+    margin: 80px 0 40px 20px;
+/*  margin-bottom: 40px;
+    margin-top: 80px; */
+
+    justify-content: left;
+    }
+
+
+/* tried doing multiple things... there's some trash here */
+.legend_ul {
+    /* background-color: purple; */
+    /* border: solid blue 2px; */
+    /* flex: initial; */
+
+    flex: 1 0 0;
+    width: 100%;
+    /* width: 100vw; */
+    max-width: 860px;
+    padding: 0;
+    margin: -40px 0 40px 0;
+
+    flex-grow: 2;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: center;
+    /* align-self: flex-end; */
+
+
+
+    list-style-type: none;
+
+
+    color:  var(--color-mdm-sepia);
+
+
+    overflow-wrap: none;
+    word-wrap: none;
+    white-space: nowrap;
+    /* text-overflow: ; */
+    }
+
+
+.legend_li {
+    /* border: solid #D33F37 2px; */
+    display: block;
+    box-sizing: border-box;
+    /* background-color: teal; */
+    /* border: #D33F37 1px solid; */
+    /* height: 120px; */
+    /* padding: 20px; */
+
+
+
+    font-size: 28px;
+    border-radius: 8px;
+    /* vertical-align: middle; */
+    padding: 30px 0 30px ;
+    /* margin: 0; */
+    margin: 30px 20px 30px 0;
+    width: 375px;
+    vertical-align: middle;
+    /* transform: translate(0px, 2px); */
+    line-height: 20px;
+    letter-spacing: 1px;
+
+    /* font-family: var(--font-manrope); */
+    /* font-weight: 600; */
+
+    font-style: italic;
+    font-weight: 500;
+
+    overflow-wrap: none;
+    word-wrap: none;
+    white-space: nowrap;
+    }
+
+.legend_li.current {
+    color: var(--color-sepia);
 }
 
-.back {
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
+.legend_icon.current {
+    filter: brightness(1.25) contrast(1.2) saturate(0.6);
 }
+
+
+.legend_icon {
+    position: relative;
+    /* top: 40px; */
+    left: 4px;
+    width: 120px;
+    /* padding-bottom: 20; */
+    /* padding-bottom: 20px; */
+    margin: -100px 0px -45px -10px;
+    }
+
+.current_location {
+    /* background-color: #D33F37; */
+    border: dashed 2px white;
+    /* padding: 18px -2px 18px -2px; */
+    /* background-color: #D33F37; */
+    color: white;
+    }
+
+
+
+.visited {
+    background-color: #D33F37;
+    }
+
+
+
+
+
+
+
+
 
 
 

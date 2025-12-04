@@ -2,10 +2,12 @@ import { t as to_class, e as escape_html, b as to_style, c as clsx, a as attr } 
 const DERIVED = 1 << 1;
 const EFFECT = 1 << 2;
 const RENDER_EFFECT = 1 << 3;
+const MANAGED_EFFECT = 1 << 24;
 const BLOCK_EFFECT = 1 << 4;
 const BRANCH_EFFECT = 1 << 5;
 const ROOT_EFFECT = 1 << 6;
 const BOUNDARY_EFFECT = 1 << 7;
+const CONNECTED = 1 << 9;
 const CLEAN = 1 << 10;
 const DIRTY = 1 << 11;
 const MAYBE_DIRTY = 1 << 12;
@@ -17,8 +19,6 @@ const EAGER_EFFECT = 1 << 17;
 const HEAD_EFFECT = 1 << 18;
 const EFFECT_PRESERVED = 1 << 19;
 const USER_EFFECT = 1 << 20;
-const UNOWNED = 1 << 8;
-const DISCONNECTED = 1 << 9;
 const WAS_MARKED = 1 << 15;
 const REACTION_IS_UPDATING = 1 << 21;
 const ASYNC = 1 << 22;
@@ -95,6 +95,13 @@ https://svelte.dev/e/await_invalid`);
   error.name = "Svelte error";
   throw error;
 }
+function server_context_required() {
+  const error = new Error(`server_context_required
+Could not resolve \`render\` context.
+https://svelte.dev/e/server_context_required`);
+  error.name = "Svelte error";
+  throw error;
+}
 var ssr_context = null;
 function set_ssr_context(v) {
   ssr_context = v;
@@ -127,6 +134,19 @@ function get_parent_context(ssr_context2) {
   }
   return null;
 }
+function unresolved_hydratable(key, stack) {
+  {
+    console.warn(`https://svelte.dev/e/unresolved_hydratable`);
+  }
+}
+function get_render_context() {
+  const store = als?.getStore();
+  {
+    server_context_required();
+  }
+  return store;
+}
+let als = null;
 class Renderer {
   /**
    * The contents of the renderer.
@@ -538,14 +558,18 @@ class Renderer {
    * @returns {Promise<AccumulatedContent>}
    */
   static async #render_async(component, options) {
-    var previous_context = ssr_context;
+    const previous_context = ssr_context;
     try {
       const renderer = Renderer.#open_render("async", component, options);
       const content = await renderer.#collect_content_async();
+      const hydratables = await renderer.#collect_hydratables();
+      if (hydratables !== null) {
+        content.head = hydratables + content.head;
+      }
       return Renderer.#close_render(content, renderer);
     } finally {
-      abort();
       set_ssr_context(previous_context);
+      abort();
     }
   }
   /**
@@ -578,6 +602,16 @@ class Renderer {
       }
     }
     return content;
+  }
+  async #collect_hydratables() {
+    const ctx = get_render_context().hydratable;
+    for (const [_, key] of ctx.unresolved_promises) {
+      unresolved_hydratable(key, ctx.lookup.get(key)?.stack ?? "<missing stack trace>");
+    }
+    for (const comparison of ctx.comparisons) {
+      await comparison;
+    }
+    return await Renderer.#hydratable_block(ctx);
   }
   /**
    * @template {Record<string, any>} Props
@@ -620,6 +654,40 @@ class Renderer {
       head: head2,
       body
     };
+  }
+  /**
+   * @param {HydratableContext} ctx
+   */
+  static async #hydratable_block(ctx) {
+    if (ctx.lookup.size === 0) {
+      return null;
+    }
+    let entries = [];
+    let has_promises = false;
+    for (const [k, v] of ctx.lookup) {
+      if (v.promises) {
+        has_promises = true;
+        for (const p of v.promises) await p;
+      }
+      entries.push(`[${JSON.stringify(k)},${v.serialized}]`);
+    }
+    let prelude = `const h = (window.__svelte ??= {}).h ??= new Map();`;
+    if (has_promises) {
+      prelude = `const r = (v) => Promise.resolve(v);
+				${prelude}`;
+    }
+    return `
+		<script>
+			{
+				${prelude}
+
+				for (const [k, v] of [
+					${entries.join(",\n					")}
+				]) {
+					h.set(k, v);
+				}
+			}
+		<\/script>`;
   }
 }
 class SSRState {
@@ -734,7 +802,7 @@ export {
   MAYBE_DIRTY as M,
   ROOT_EFFECT as R,
   STATE_SYMBOL as S,
-  UNOWNED as U,
+  UNINITIALIZED as U,
   WAS_MARKED as W,
   HYDRATION_END as a,
   HYDRATION_START as b,
@@ -743,18 +811,18 @@ export {
   CLEAN as e,
   EFFECT as f,
   BLOCK_EFFECT as g,
-  BRANCH_EFFECT as h,
-  DESTROYED as i,
-  DERIVED as j,
-  EFFECT_TRANSPARENT as k,
-  EFFECT_PRESERVED as l,
-  EAGER_EFFECT as m,
-  UNINITIALIZED as n,
-  HEAD_EFFECT as o,
+  DERIVED as h,
+  BRANCH_EFFECT as i,
+  DESTROYED as j,
+  HEAD_EFFECT as k,
+  EFFECT_TRANSPARENT as l,
+  EFFECT_PRESERVED as m,
+  CONNECTED as n,
+  EAGER_EFFECT as o,
   STALE_REACTION as p,
   RENDER_EFFECT as q,
   USER_EFFECT as r,
-  DISCONNECTED as s,
+  MANAGED_EFFECT as s,
   REACTION_IS_UPDATING as t,
   is_passive_event as u,
   render as v,

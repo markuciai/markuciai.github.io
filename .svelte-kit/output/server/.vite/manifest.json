@@ -92,6 +92,10 @@
       "_internal.js"
     ]
   },
+  "src/lib/assets/favicon.svg": {
+    "file": "_app/immutable/assets/favicon.XN9wP4KE.svg",
+    "src": "src/lib/assets/favicon.svg"
+  },
   "src/lib/images/archival/bakery.jpg": {
     "file": "_app/immutable/assets/bakery.cLUMIVQE.jpg",
     "src": "src/lib/images/archival/bakery.jpg"
@@ -328,6 +332,10 @@
     "file": "_app/immutable/assets/testament.Dek0Lh7Q.png",
     "src": "src/lib/images/illustrations/testament.png"
   },
+  "src/lib/images/illustrations/testament_full.png": {
+    "file": "_app/immutable/assets/testament_full.CRK0zfrH.png",
+    "src": "src/lib/images/illustrations/testament_full.png"
+  },
   "src/lib/images/illustrations/testament_overlayed_lt.png": {
     "file": "_app/immutable/assets/testament_overlayed_lt.BHYUKKrn.png",
     "src": "src/lib/images/illustrations/testament_overlayed_lt.png"
@@ -460,11 +468,16 @@
     "name": "entries/pages/_layout.svelte",
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_attributes.js"
+    ],
     "css": [
-      "_app/immutable/assets/_layout.DNOMQV2C.css",
+      "_app/immutable/assets/_layout.xPP1b6EC.css",
       "_app/immutable/assets/game_manager.BYTWXJds.css"
     ],
     "assets": [
+      "_app/immutable/assets/favicon.XN9wP4KE.svg",
       "_app/immutable/assets/ornament.CWPLtSmL.png"
     ]
   },

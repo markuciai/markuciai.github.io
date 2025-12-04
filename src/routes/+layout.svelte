@@ -4,6 +4,7 @@ import { fade, blur, fly, slide, scale } from "svelte/transition";
 import { flip } from 'svelte/animate';
 import './styles.css';
 
+import favicon from '$lib/assets/favicon.svg'
 
 let { children } = $props();
 
@@ -13,76 +14,8 @@ import Game_manager from "$components/game_manager.svelte"
 import Map from '$components/The_map.svelte';
 import Mounted from '$components/Mounted.svelte';
 
-// import Offer from './lobis/Offer.svelte';
 
-import icon_0 from '$lib/images/icons/0.png';
-import icon_1 from '$lib/images/icons/1.png';
-import icon_2 from '$lib/images/icons/2.png';
-import icon_3 from '$lib/images/icons/3.png';
-import icon_4 from '$lib/images/icons/4.png';
-import icon_5 from '$lib/images/icons/5.png';
-import icon_6 from '$lib/images/icons/6.png';
-import icon_7 from '$lib/images/icons/7.png';
-import icon_8 from '$lib/images/icons/8.png';
-import icon_9 from '$lib/images/icons/9.png';
-import icon_10 from '$lib/images/icons/10.png';
-import icon_11 from '$lib/images/icons/11.png';
-import icon_12 from '$lib/images/icons/12.png';
-
-
-import icon_0_collected from '$lib/images/icons_collected/0.png';
-import icon_1_collected from '$lib/images/icons_collected/1.png';
-import icon_2_collected from '$lib/images/icons_collected/2.png';
-import icon_3_collected from '$lib/images/icons_collected/3.png';
-import icon_4_collected from '$lib/images/icons_collected/4.png';
-import icon_5_collected from '$lib/images/icons_collected/5.png';
-import icon_6_collected from '$lib/images/icons_collected/6.png';
-import icon_7_collected from '$lib/images/icons_collected/7.png';
-import icon_8_collected from '$lib/images/icons_collected/8.png';
-import icon_9_collected from '$lib/images/icons_collected/9.png';
-import icon_10_collected from '$lib/images/icons_collected/10.png';
-import icon_11_collected from '$lib/images/icons_collected/11.png';
-import icon_12_collected from '$lib/images/icons_collected/12.png';
-
-
-
-
-let legend_text = {
-	"EN" : [
-		"Museum", "Cross", "Servants' quarters", "Stables", "Pond", "Kitchen",
-		"Chicken coop", "Bakery", "Water well", "Orangery", "Chapel", "Doggies", "Croquet"
-		],
-	"RU" : [
-		"Музей", "Крест", "Домик слуг", "Конюшни", "Пруды", "Кухня",
-		"Птичник", "Пекарня", "Колодец", "Оранжерея", "Церковь", "Собачки", "Крокет",
-		],
-	"LT" : [
-		"Muziejus", "Kryžius", "Tarnų namelis", "Arklides", "Tvenkiniai", "Virtuvė",
-		"Vištidė", "Duonkepė", "Šulinys", "Oranžerija", "Cerkvė", "Šuniukai", "Kroketas",
-		],
-	"LA" : [
-		"Manerium", "Crucius", "Servorum plagae", "Stabula", "Piscine", "Culina",
-		"Pullus domus", "Pistrinum", "Aqua bene", "Pomarium", "Capella", "Canes", "Croquet atrium",
-		],
-};
-
-
-let order_of_items = [2, 8, 3, 5, 9, 1, 0, 7, 6, 12, 10, 11, 4]
-let icon_array = [icon_0, icon_1, icon_2, icon_3, icon_4, icon_5, icon_6, icon_7, icon_8, icon_9, icon_10, icon_11, icon_12]
-let icon_array_collected = [icon_0_collected, icon_1_collected, icon_2_collected, icon_3_collected, icon_4_collected, icon_5_collected, icon_6_collected, icon_7_collected, icon_8_collected, icon_9_collected, icon_10_collected, icon_11_collected, icon_12_collected]
-
-
-
-function shuffle_order_of_items(order_of_items) {
-  	order_of_items.sort(function (a, b) {
-    	return Math.random() - 0.5;
-  	});
-}
-
-
-
-
-let scroll = Number(0)
+// let scroll = Number(0)
 
 var emerge = false
 
@@ -90,12 +23,8 @@ var emerge = false
 
 
 if (browser) {
-	shuffle_order_of_items(order_of_items)
-
 	emerge = true
 }
-
-
 
 
 
@@ -113,15 +42,15 @@ function handleMousemove(event) {
 }
 
 
-
 </script>
 
 
 
 
 
-
-
+<svelte:head>
+  <link rel="icon" type="image/svg" href={favicon} />
+</svelte:head>
 
 
 
@@ -133,15 +62,8 @@ function handleMousemove(event) {
 <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 
-<svelte:window bind:scrollY={scroll} />
+<!-- <svelte:window bind:scrollY={scroll} /> -->
 <div on:mousemove={handleMousemove} />
-
-
-
-
-
-<!-- {@render children()} -->
-
 
 
 
@@ -160,29 +82,9 @@ function handleMousemove(event) {
 <div class="ornament" ></div>
 
 
-<div class="map_and_stuff">
+
 <Map />
 
-
-<div class="legend_section">
-<ul class="legend_ul">
-
-
-{#each {length: 13 }, index}
-	<li class="legend_li" class:current={globe.location == order_of_items[index]}>
-		{#if globe.progress >= order_of_items[index]}
-			<img src={icon_array_collected[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
-		{:else}
-			<img src={icon_array[order_of_items[index]] } class="legend_icon" class:current={globe.location == order_of_items[index]}>
-		{/if}
-		 {legend_text[globe.language][order_of_items[index]]}
-	</li>
-{/each}
-
-</ul>
-</div>
-
-</div> <!-- map stuff-->
 
 </main>
 
@@ -234,130 +136,6 @@ function handleMousemove(event) {
 
 
 
-/* Legend */
-
-.legend_section {
-	/* border: 1px red solid; */
-	/* display: grid; */
-
-	width: 110%;
-	display: flex;
-	flex-wrap: wrap;
-
-	/* text-align: center; */
-	/* width: clamp(200px, 100vw, 760px); */
-	/* flex-basis: 400px; */
-	/* flex-grow: 0; */
-	margin: 80px 0 40px 20px;
-/* 	margin-bottom: 40px;
-	margin-top: 80px; */
-
-	justify-content: left;
-	}
-
-
-/* tried doing multiple things... there's some trash here */
-.legend_ul {
-	/* background-color: purple; */
-	/* border: solid blue 2px; */
-	/* flex: initial; */
-
-	flex: 1 0 0;
-	width: 100%;
-	/* width: 100vw; */
-	max-width: 860px;
-	padding: 0;
-	margin: -40px 0 40px 0;
-
-	flex-grow: 2;
-
-	display: flex;
-	flex-flow: row wrap;
-	align-items: flex-end;
-	justify-content: center;
-	/* align-self: flex-end; */
-
-
-
-	list-style-type: none;
-
-
-	color:  var(--color-mdm-sepia);
-
-
-	overflow-wrap: none;
-	word-wrap: none;
-	white-space: nowrap;
-	/* text-overflow: ; */
-	}
-
-
-.legend_li {
-	/* border: solid #D33F37 2px; */
-	display: block;
-	box-sizing: border-box;
-	/* background-color: teal; */
-	/* border: #D33F37 1px solid; */
-	/* height: 120px; */
-	/* padding: 20px; */
-
-
-
-	font-size: 28px;
-	border-radius: 8px;
-	/* vertical-align: middle; */
-	padding: 30px 0 30px ;
-	/* margin: 0; */
-	margin: 30px 20px 30px 0;
-	width: 375px;
-	vertical-align: middle;
-	/* transform: translate(0px, 2px); */
-	line-height: 20px;
-	letter-spacing: 1px;
-
-	/* font-family: var(--font-manrope); */
-	/* font-weight: 600; */
-
-	font-style: italic;
-	font-weight: 500;
-
-	overflow-wrap: none;
-	word-wrap: none;
-	white-space: nowrap;
-	}
-
-.legend_li.current {
-	color: var(--color-sepia);
-}
-
-.legend_icon.current {
-	filter: brightness(1.25) contrast(1.2) saturate(0.6);
-}
-
-
-.legend_icon {
-	position: relative;
-	/* top: 40px; */
-	left: 4px;
-	width: 120px;
-	/* padding-bottom: 20; */
-	/* padding-bottom: 20px; */
-	margin: -100px 0px -45px -10px;
-	}
-
-.current_location {
-	/* background-color: #D33F37; */
-	border: dashed 2px white;
-	/* padding: 18px -2px 18px -2px; */
-	/* background-color: #D33F37; */
-	color: white;
-	}
-
-
-
-.visited {
-	background-color: #D33F37;
-	}
 
 
 /* Wrapper styles */
@@ -428,19 +206,7 @@ footer a {
 }
 
 @media (min-width: 1400px) {
-	.map_and_stuff {
-		/* position: absolute; */
-		left: 0;
-		width: 100vw;
-		display: flex;
-		flex: 1;
-		margin: 40px 0 0 -30vw;
-	}
 
-	.legend_section {
-		margin: calc(40px + 5vw) 0 0 40px;
-		min-width: 760px;
-	}
 	}
 
 

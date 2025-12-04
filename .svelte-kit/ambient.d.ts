@@ -32,11 +32,12 @@ declare module '$env/static/private' {
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const NVM_CD_FLAGS: string;
-	export const TERM: string;
 	export const SHELL: string;
+	export const TERM: string;
 	export const HOMEBREW_REPOSITORY: string;
 	export const TMPDIR: string;
 	export const TERM_PROGRAM_VERSION: string;
+	export const HERD_PHP_85_INI_SCAN_DIR: string;
 	export const npm_config_local_prefix: string;
 	export const HERD_PHP_83_INI_SCAN_DIR: string;
 	export const NVM_DIR: string;
@@ -45,6 +46,7 @@ declare module '$env/static/private' {
 	export const SSH_AUTH_SOCK: string;
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
+	export const HERD_PHP_82_INI_SCAN_DIR: string;
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const _: string;
@@ -71,6 +73,7 @@ declare module '$env/static/private' {
 	export const npm_config_user_agent: string;
 	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
+	export const OSLogRateLimit: string;
 	export const npm_node_execpath: string;
 	export const COLORTERM: string;
 	export const NODE_ENV: string;
@@ -109,11 +112,12 @@ declare module '$env/dynamic/private' {
 		TERM_PROGRAM: string;
 		NODE: string;
 		NVM_CD_FLAGS: string;
-		TERM: string;
 		SHELL: string;
+		TERM: string;
 		HOMEBREW_REPOSITORY: string;
 		TMPDIR: string;
 		TERM_PROGRAM_VERSION: string;
+		HERD_PHP_85_INI_SCAN_DIR: string;
 		npm_config_local_prefix: string;
 		HERD_PHP_83_INI_SCAN_DIR: string;
 		NVM_DIR: string;
@@ -122,6 +126,7 @@ declare module '$env/dynamic/private' {
 		SSH_AUTH_SOCK: string;
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
+		HERD_PHP_82_INI_SCAN_DIR: string;
 		PATH: string;
 		npm_package_json: string;
 		_: string;
@@ -148,6 +153,7 @@ declare module '$env/dynamic/private' {
 		npm_config_user_agent: string;
 		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
+		OSLogRateLimit: string;
 		npm_node_execpath: string;
 		COLORTERM: string;
 		NODE_ENV: string;

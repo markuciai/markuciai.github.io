@@ -1,0 +1,1 @@
+import{V as u,e as _,aX as g,h as t,U as o,$ as p,ag as i,Z as l,T as d,_ as m}from"./CkTZ_q4L.js";function E(n,r){let a=null,f=t;var s;if(t){a=m;for(var e=o(document.head);e!==null&&(e.nodeType!==p||e.data!==n);)e=i(e);if(e===null)l(!1);else{var y=i(e);e.remove(),d(y)}}t||(s=document.head.appendChild(u()));try{_(()=>r(s),g)}finally{f&&(l(!0),d(a))}}export{E as h};
