@@ -295,11 +295,8 @@ function fixScrollUpdateSafariIOs() {
 
 <svelte:window bind:scrollY={scroll} />
 
-<div class="map_and_stuff">
-
-
-
 <!-- {#if globe.progress == 12} -->
+<!-- or do a progress bar -->
 <button class="button apversti"  onclick={() => flipped = !flipped}>
 {#if globe.language == "EN"}
 Turn over
@@ -310,6 +307,15 @@ Apversti
 {/if}
 </button>
 <!-- {/if} -->
+
+
+<div class="map_and_stuff">
+
+
+
+
+
+
 
 <div id="map_wrapper">
 
@@ -418,10 +424,10 @@ Apversti
     /* position: absolute; */
     z-index: 10;
     /* left: 100px */
-    width: 80%;
-    margin: 0 10% 0 10%;
+    width: 90%;
+    margin: 10px 5% 0 5%;
     height: 80px;
-    font-size: 40px;
+    font-size: 36px;
     left: 0;
     background-color:  var(--color-mdm-sepia);
     color: var(--color_green_medium_dark);
@@ -435,7 +441,7 @@ Apversti
 }
 
 .button.apversti:hover {
-    transform: scale(1.025);
+    transform: scale(1.02);
     background-color: var(--color-sepia);
     color: var(--color-vm-orange);
     border: none;
@@ -443,13 +449,21 @@ Apversti
 }
 
 .button.apversti:active {
-    transform: scale(0.975);
+    transform: scale(0.98);
     background-color: var(--color-mdm-sepia);
     background-color: var(--color-vm-orange);
     color: var(--color-sepia);
     border: none;
     /* transition: 0.1s; */
 }
+
+
+.button.apversti:active:not(:hover) {
+    transform: scale(1);
+    background-color:  var(--color-vm-orange);
+    color: var(--color_green_medium_dark);
+    }
+
 
 
 #map_wrapper {
@@ -585,11 +599,10 @@ Apversti
 }
 
 .backside {
-    filter: hue-rotate(45deg);
+    filter: hue-rotate(60deg);
     transform: scaleX(-1) rotateY(180deg);
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
-
 }
 
 /* .map_layers {
@@ -604,7 +617,7 @@ Apversti
 .flipped {
     transform: rotateY(-180deg);
     transition: 0.5s;
-    transition: calc( abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5s);
+    transition: calc( abs(var(--x_ratio)) * abs(var(--y_ratio)) * 2.5s);
     /* transform: rotateY(45deg); */
     /* scale: 1.2; */
 }
