@@ -299,10 +299,17 @@ function fixScrollUpdateSafariIOs() {
 
 
 
-
-<button class="button" style="scale: 2; position: absolute; z-index: 10; left: 100px" onclick={() => flipped = !flipped}>
+<!-- {#if globe.progress == 12} -->
+<button class="button apversti"  onclick={() => flipped = !flipped}>
+{#if globe.language == "EN"}
+Turn over
+{:else if globe.language == "RU"}
+Перевернуть
+{:else}
 Apversti
+{/if}
 </button>
+<!-- {/if} -->
 
 <div id="map_wrapper">
 
@@ -403,6 +410,45 @@ Apversti
 
 /*     left: 10%;
     top: 20%; */
+}
+
+.button.apversti {
+    /* scale: 2; */
+    transform: scale(1)
+    /* position: absolute; */
+    z-index: 10;
+    /* left: 100px */
+    width: 80%;
+    margin: 0 10% 0 10%;
+    height: 80px;
+    font-size: 40px;
+    left: 0;
+    background-color:  var(--color-mdm-sepia);
+    color: var(--color_green_medium_dark);
+    /* color: var(--color-bg-1); */
+    /* font-family: var(--font-manrope); */
+    font-weight: 800;
+
+    transition: 0.1s;
+    border: none;
+    /* padding: 40px; */
+}
+
+.button.apversti:hover {
+    transform: scale(1.025);
+    background-color: var(--color-sepia);
+    color: var(--color-vm-orange);
+    border: none;
+    /* transition: 0.1s; */
+}
+
+.button.apversti:active {
+    transform: scale(0.975);
+    background-color: var(--color-mdm-sepia);
+    background-color: var(--color-vm-orange);
+    color: var(--color-sepia);
+    border: none;
+    /* transition: 0.1s; */
 }
 
 

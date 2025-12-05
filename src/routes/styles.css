@@ -120,6 +120,7 @@ input,
 button {
 	font-size: inherit;
 	font-family: inherit;
+	touch-action: manipulation; /* Should disable double-tap to zoom on touchscreen. */
 }
 
 button:focus:not(:focus-visible) {
