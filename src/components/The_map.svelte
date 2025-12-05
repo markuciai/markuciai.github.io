@@ -599,7 +599,7 @@ Apversti
 }
 
 .backside {
-    filter: hue-rotate(60deg);
+    filter: hue-rotate(200deg);
     transform: scaleX(-1) rotateY(180deg);
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
@@ -616,7 +616,7 @@ Apversti
 
 .flipped {
     transform: rotateY(-180deg);
-    transition: 0.5s;
+    transition: 10.5s;
     transition: calc( abs(var(--x_ratio)) * abs(var(--y_ratio)) * 2.5s);
     /* transform: rotateY(45deg); */
     /* scale: 1.2; */
