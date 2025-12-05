@@ -573,9 +573,9 @@ Apversti
             calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px))
 
         /* rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg)) */
-        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.25deg))
-        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.25deg))
-        rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.5deg))
+        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg))
+        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
+        rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.25deg))
         ;
     transition: transform 0.16s ease-out; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
 
@@ -607,7 +607,7 @@ Apversti
 }
 
 .backside {
-    filter: hue-rotate(220deg);
+    /* filter: hue-rotate(220deg); */
     transform: scaleX(-1) rotateY(180deg);
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
