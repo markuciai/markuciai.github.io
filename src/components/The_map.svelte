@@ -569,12 +569,12 @@ Apversti
         /* perspective(500px) */
         translate3d(
             calc( var(--map_scroll) * var(--x_ratio) * -0.25px), 
-            calc( var(--map_scroll) * var(--y_ratio) * -0.25px), 
+            calc( var(--map_scroll) * var(--y_ratio) * -0.5px), 
             calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px))
 
         /* rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg)) */
-        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.1deg))
-        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.1deg))
+        rotateY( calc( var(--map_scroll) * var(--y_ratio) * 0.2deg))
+        rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.2deg))
         rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.25deg))
         ;
     transition: transform 0.16s ease-out; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
