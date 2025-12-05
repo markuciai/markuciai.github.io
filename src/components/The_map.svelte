@@ -347,7 +347,11 @@ Apversti
 {#each {length: globe.progress }, index}
 <div class="map_layer"
     class:current={globe.location == index}
-    style="--map_scroll: {map_scroll}; --y_ratio: {y_ratio_array[index]}; --x_ratio: {x_ratio_array[index]};"
+    style="
+        --transition_time_base: { +flipped  }s;
+        --map_scroll: {map_scroll};
+        --y_ratio: {y_ratio_array[index]};
+        --x_ratio: {x_ratio_array[index]};"
     class:flipped={flipped}
     > 
 
@@ -542,6 +546,7 @@ Apversti
     top: 0;
     z-index: 20;
 
+    --transition_time_base: 10.5s;
     --x_ratio: 0;
     --y_ratio: 1;
     --map_scroll:  0;
@@ -574,6 +579,9 @@ Apversti
         ;
     transition: transform 0.16s ease-out; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
 
+    transition: transform calc(abs(var(--x_ratio)) * abs(var(--y_ratio)) * var(--transition_time_base) + 0.16s);
+
+
 
     /* Filters work, but the visual effect is a negligible and performance cost may be a problem */
     /* filter:  */
@@ -599,7 +607,7 @@ Apversti
 }
 
 .backside {
-    filter: hue-rotate(120deg);
+    filter: hue-rotate(220deg);
     transform: scaleX(-1) rotateY(180deg);
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
@@ -619,7 +627,9 @@ Apversti
     /* transition: transform 2s; */
     /* transition: transform calc(abs(var(--x_ratio)) * abs(var(--y_ratio)) * 2.5s); */
     /* transition: transform calc(2 * 2.5s); */
-    transition: transform calc( abs(var(--x_ratio))  * 2.5s);
+
+    /* transition: transform calc( abs(var(--x_ratio))  * 2.5s); */
+
     /* transform: rotateY(45deg); */
     /* scale: 1.2; */
 }
