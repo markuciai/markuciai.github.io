@@ -572,7 +572,7 @@ Apversti
         rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.25deg))
         rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.5deg))
         ;
-    transition: transform 0.16s; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
+    transition: transform 0.16s ease-out; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
 
 
     /* Filters work, but the visual effect is a negligible and performance cost may be a problem */
@@ -599,7 +599,7 @@ Apversti
 }
 
 .backside {
-    filter: hue-rotate(200deg);
+    filter: hue-rotate(250deg);
     transform: scaleX(-1) rotateY(180deg);
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
@@ -616,8 +616,8 @@ Apversti
 
 .flipped {
     transform: rotateY(-180deg);
-    transition: 10.5s;
-    transition: calc( abs(var(--x_ratio)) * abs(var(--y_ratio)) * 2.5s);
+    /* transition: 10.5s; */
+    transition: transform calc( abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5s) ease-out;
     /* transform: rotateY(45deg); */
     /* scale: 1.2; */
 }
