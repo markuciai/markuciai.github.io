@@ -15,7 +15,7 @@ let bazinga = $state("")
 
 $effect(() => {
 	if(globe.laisve) {
-		bazinga = "laisve"
+		bazinga = "Laisvė"
 	}
 
 	// if(
@@ -67,7 +67,14 @@ LOBIS
 
 <p in:fly="{{ y: -30, duration: 1000, delay: 60000 }}" out:fade style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p>
 
-<input bind:value={bazinga}>
+<input
+	bind:value={bazinga} 
+	class="laisve_input" 
+	class:laisvė_success={globe.laisve}
+	name="password" 
+	placeholder="Slaptažodis"
+
+	>
 
 {#if globe.laisve
 	|| bazinga == "Вольность"
@@ -83,13 +90,17 @@ LOBIS
 <!-- <button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button> -->
 
 <!-- <Game_manager /> -->
-<button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
+
 
 {#if globe.laisve}
 <button on:click={ () => globe.laisve = false } class="button">Nebesukčiauti</button>
 {:else}
 <button on:click={ () => globe.laisve = true } class="button">Sukčiauti visur</button>
 {/if}
+
+
+<button on:click={empty_storage} class="button">↻ Perkrauti žaidimą</button>
+
 
 <br>&nbsp;
 <p><a href="https://www.markuciudvaras.lt/lobis">Lobis</a> → <a href="/lobis">Lobis:</a></p>
@@ -131,60 +142,27 @@ LOBIS
 
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-		background-color: white;
-		border-radius: 5px;
-		box-shadow: 0 20px 20px -15px rgba(0,0,0, 0.4);
-		font-size: 16pt;
-	}
 
 
 
-	article {
-		padding: 0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);
-	}
+.laisve_input {
+	width: 300px;
+	height: 40px;
+	padding: 10px;
+	border-radius: 3px;
+	border: solid 0px var(--color-bg-1);
+	font-size: 21px;
+	background: var(--color-sepia);
+	color: var(--color-vm-orange);
+	cursor: text;
+	letter-spacing: 1px;
+	font-style: italic;
+	margin: 5px;
+}
 
-	.highlighted-question {
-		font-style: italic;
-		font-weight: bold;
-		color: #D33F37;
-	}
-
-	.where-next {
-		background-color: #EEDC83;
-		color: black;
-		width: 105%;
-		box-sizing: border-box;
-		padding: clamp(40px, 12.5vw, 80px) clamp(40px, 10vw, 120px) clamp(40px, 10vw, 120px) clamp(20px, 5vw, 80px);
-		margin: 0px 0 20px 0;
-		box-shadow: 0 20px 20px -15px rgba(0,0,0, 0.4);
-		border-radius: 5px;
-		
-
-		font-size: 24px;
-		font-size: clamp(24px, 6vw, 32px);
-
-	}
-
-	.illustration {
-		width: clamp(320px, 100vw, 640px);
-		z-index: 10;
-		margin: clamp(-160px, -25vw, -80px) 0 clamp(-80px, -12.5vw, -40px) 0;
-		user-select: none;
-		pointer-events: none;
-	}
-
-
-	.appendix {
-		color: white;
-		font-size: 16pt;
-		padding: 20px;
-	}
-
+.laisvė_success {
+	background: #54715f33;
+	color: #54715f;
+}
 
 </style>

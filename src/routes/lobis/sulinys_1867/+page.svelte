@@ -49,7 +49,7 @@ onMount(async () => {
 {#if globe.language == "EN"}
 
 
-<h1>Well</h1>
+<h1>Water Well</h1>
 <p class="subh">The eigth stop<br>in the quest for Markučiai Treasure</p>
 <article>
 In 1867, during the construction of the Melnikov estate in Markuchiai, a well was dug. Every morning, the groundskeeper pumped the water, which flowed through pipes into a special reservoir in the house.

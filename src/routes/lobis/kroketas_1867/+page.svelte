@@ -17,6 +17,8 @@ import testament_overlayed_lt from '$lib/images/illustrations/testament_overlaye
 import testament from '$lib/images/illustrations/testament.png';
 
 
+import dvaras from '$lib/images/archival/mdvaras.jpg';
+
 const station_id = 12
 
 
@@ -95,7 +97,7 @@ However, to let as many people as possible learn about the last will of the Push
 {:else if globe.language == "RU"}
 
 
-<h1>Площадка для&nbsp;крокета</h1>
+<h1>Площадка для крокета</h1>
 <p class="subh">Двенадцатая и предпоследняя остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Рядом с памятником поэту вы видите взрослых и детей, которые играют в крокет. Вы отдаете шар главе семейства — это старинный друг Григория Пушкина, архитектор Владимир Назимов.	
@@ -165,13 +167,15 @@ Lorem ipsum dolor sit amet
 Žaidimo metu, ant lazdos rasite paskutiniąja dokumento skiautę. 
 </article>
 
-<img width=105% src={kabinetas}>
+<!-- <img width=105% src={kabinetas}> -->
 
 <article>
 	<br>
 O dabar sudėkite visas skiautes drauge ir perskaitykite slaptą dokumentą. Kas jame parašyta? 
 </article>
 
+
+<img width=98% src={dvaras}>
 
 <!-- <img width=100% src={testament_overlayed_lt}> -->
 <img class="testament" src={testament}>

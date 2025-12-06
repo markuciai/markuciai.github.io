@@ -15,7 +15,8 @@
     "imports": [
       "_attributes.js",
       "_steps.js",
-      "_doggo.js"
+      "_doggo.js",
+      "_mdvaras.js"
     ],
     "assets": [
       "_app/immutable/assets/instructions.CX_XWdQk.png"
@@ -57,6 +58,13 @@
     "imports": [
       "_index.js",
       "_environment.js"
+    ]
+  },
+  "_mdvaras.js": {
+    "file": "chunks/mdvaras.js",
+    "name": "mdvaras",
+    "assets": [
+      "_app/immutable/assets/mdvaras.uf9U8GDs.jpg"
     ]
   },
   "_shared.js": {
@@ -473,7 +481,7 @@
       "_attributes.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.CXAQyMdV.css",
+      "_app/immutable/assets/_layout.BbKTmO0B.css",
       "_app/immutable/assets/game_manager.BYTWXJds.css"
     ],
     "assets": [
@@ -488,14 +496,13 @@
     "isEntry": true,
     "imports": [
       "_index.js",
+      "_globe.svelte.js",
+      "_mdvaras.js",
       "_attributes.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.hERuRlns.css",
+      "_app/immutable/assets/_page.BUVafwWG.css",
       "_app/immutable/assets/game_manager.BYTWXJds.css"
-    ],
-    "assets": [
-      "_app/immutable/assets/mdvaras.uf9U8GDs.jpg"
     ]
   },
   "src/routes/lobis/+page.svelte": {

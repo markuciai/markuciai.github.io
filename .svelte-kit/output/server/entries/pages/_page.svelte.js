@@ -1,7 +1,8 @@
-import { x as head } from "../../chunks/index.js";
+import { x as head, y as attr_class } from "../../chunks/index.js";
+import { g as globe } from "../../chunks/globe.svelte.js";
+import { d as dvaras } from "../../chunks/mdvaras.js";
 /* empty css                                                      */
 import { a as attr } from "../../chunks/attributes.js";
-const dvaras = "/_app/immutable/assets/mdvaras.uf9U8GDs.jpg";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let bazinga = "";
@@ -11,7 +12,7 @@ function _page($$renderer, $$props) {
       });
       $$renderer3.push(`<meta name="description" content="Markučių dvaro muziejus"/>`);
     });
-    $$renderer2.push(`<section class="svelte-1uha8ag"><h1>LOBIS</h1> <p style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p> <input${attr("value", bazinga)}/> `);
+    $$renderer2.push(`<section><h1>LOBIS</h1> <p style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p> <input${attr("value", bazinga)}${attr_class("laisve_input svelte-1uha8ag", void 0, { "laisvė_success": globe.laisve })} name="password" placeholder="Slaptažodis"/> `);
     {
       $$renderer2.push("<!--[!-->");
     }

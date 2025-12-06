@@ -72,7 +72,7 @@ In return, he asks you to deliver a basket of fresh eggs to Masha. She will make
 
 {:else if globe.language == "RU"}
 
-<h1>Птичник и ледник</h1>
+<h1>Птичник и&nbsp;ледник</h1>
 <p class="subh">Шестая остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Ванюша увидел вас еще издали и весело замахал руками. Вы отдали ему корм для цыплят и рассказали о своих поисках.
@@ -100,7 +100,7 @@ Lorem ipsum dolor sit amet
 {:else} <!-- LT -->
 
 
-<h1>Vištidė ir ledainė</h1>
+<h1>Vištidė ir&nbsp;ledainė</h1>
 <p class="subh">Šeštoji stotelė<br>ieškant Markučių lobio</p>
 <article>
 Berniukas, vardu Vania, jus pastebi iš tolo ir pamojuoja. Jūs atiduodate jam viščiukų lesalą ir papasakojate apie savo paieškas.

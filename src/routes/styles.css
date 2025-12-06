@@ -42,6 +42,7 @@
 	-ms-user-select: none;
 	user-select: none;
 	cursor: default;
+	text-wrap: pretty;
 }
 
 .unlock_cursor, article, a, p, h1, h2, ul, li, .subh, .where-next, .highlighted-question {
@@ -63,6 +64,7 @@ body {
 	transition: 1s;
 	overflow-x: hidden;
 
+
 }
 /* 
 body:hover {
@@ -82,12 +84,15 @@ p {
 
 a {
 	color: var(--color-theme-1);
+	color: var(--color-vm-orange);
+	border-bottom: solid 0.67px;
 	text-decoration: none;
 	cursor: pointer;
 }
 
 a:hover {
-	text-decoration: underline;
+	/* text-decoration: underline; */
+	color: var(--color-bg-1);
 }
 
 
@@ -176,35 +181,42 @@ section {
 	font-size: 16pt;
 	transform: rotate(-0.2deg);
 	/* perspective: 1px; */
+
 }
 
 h1 {
-	width: 90%;
+	width: 91%;
 	font-family: var(--font-manrope);
 	font-weight: 800;
 	/* text-transform: uppercase; */
 	letter-spacing: -2.5%;
+	letter-spacing: -3%;
 
 
 	font-size: 2rem;
-	text-align: center;
+	/* text-align: center; */
 
 	/* text-transform: uppercase;
 	letter-spacing: 5px; */
 	/* font-style: italic; */
-	/* font-size: clamp(80px, 24vw, 128px); */
-	font-size: clamp(40px, 12vw, 64px);
-	line-height: clamp(40px, 12vw, 64px);;
+	font-size: clamp(60px, 16vw, 80px);
+	/* font-size: clamp(40px, 12vw, 64px); */
+	/* line-height: clamp(40px, 12vw, 64px); */
+	line-height: clamp(52.5px, 14vw, 70px);
 	color: #D33F37;
 	color: #9f0d17;
-	color: #c46d00; /* Vilniaus Museum colors */
+
 	color: var(--color-mdm-sepia);
+	/* color: var(--color_green_medium_dark); */
 	color: var(--color-vm-orange);
 	/* color: #c11b1b; */
 	/* text-align: left; */
 	padding: 0;
-	margin: 50px 0 60px 0;
+	margin: 50px 0 15px 0;
 	z-index: 10;
+	text-wrap: pretty;
+
+
 }
 
 h2 {
@@ -221,14 +233,16 @@ h2 {
 .subh {
 	font-size: 12px;
 	/* text-align: left; */
-	text-align: center;
+	/* text-align: center; */
 	width: 89%;
-	margin: -40px 0 35px 0;
+	margin: -0px 0 40px 0;
 	/* font-style: italic; */
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 	z-index: 20;
+
+
 }
 
 
@@ -236,6 +250,7 @@ article {
 	padding: 0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);
 	margin-bottom: 20px;
 	min-width: 80%;
+
 	/* width should account for padding. may bug out! */
 }
 
@@ -391,29 +406,50 @@ article {
 
 	text-decoration: none;
 	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 20px;
-	font-weight: 600;
+	font-weight: 800;
+	font-family: var(--font-manrope);
 	letter-spacing: 1px;
 	text-transform: uppercase;
 
-	border: none;
- 	background-color: rgba(255, 255, 255, 0);
+
+    background-color:  var(--color-mdm-sepia);
+    /* background-color:  var(--color-vm-orange); */
+    color: var(--color_green_medium_dark);
+    color: #475c42;
+    text-shadow:
+		0px 0.5px 1px #ffffff66,
+		0px -0.5px 1px #00000044
+		;
+    /* color: var(--color-sepia); */
+
 	/* width: 40px; */
 	width: max-content;
-	padding: 0px 20px;
-	height: 32px;
+	width: 300px;
+	padding: 0px 30px;
+	height: 40px;
 	margin: 5px;
 	/* padding-bottom: 10px; */
 	border-radius: 3px;
-	/* border: 0px; */
-	color: #EEDC83;
-	border: 0.67px solid rgb(238, 220, 131, 0.8);
+	border: none;
+    border: 0.67px solid #FFFFFF77;
+	/* border: 10.67px solid rgba(1,1,1, 0.5); */
 	cursor: pointer;
 	user-select: none;
-	background: #006837;
 	transition: 0.3s;
+	transform: scale(1);
+
+    box-shadow: 
+        0px 3px 7px -3px #7a665199,
+        inset 0px 10px 25px -20px var(--color-sepia),
+        inset 0px -5px 25px -25px var(--color-bg-1)
+        ;
+
 	}
+
+
+
 
 /* .button::first-letter {
 	letter-spacing: 2px;
@@ -421,40 +457,32 @@ article {
 
 
 @media (any-hover: hover) {
-  .button:hover {
-	background-color:#EEDC83;
-	color: #D33F37;
-	border: 0.67px solid rgb(238, 220, 131, 1);
+.button:hover {
+	background-color: var(--color-sepia);
+	color: var(--color-vm-orange);
+	/* border: 0.67px solid rgb(238, 220, 131, 1); */
 	transition: 0.05s;
-	transform: scale(1.05);
-	box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.3);
-  }
-}
-
-/* .button:hover {
-	background-color:#EEDC83;
-	color: #D33F37;
-	border: 0.67px solid rgb(238, 220, 131, 1);
-	transition: 0.05s;
-	transform: scale(1.05);
-	box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.3);
-	} */
-
-
-.button:active {
-	background-color:#EEDC83;
-	border: 0.67px solid rgb(238, 220, 131, 0);
-	transform: scale(0.975);
-	box-shadow: 0px 3px 5px -10px rgba(0, 0, 0, 0);
 	}
-
-	/* away */
 .button:active:not(:hover) {
 	transform: scale(1);
-	color: #EEDC83;
-	border: 0.67px solid rgb(238, 220, 131, 1);
-	background-color:rgba(238, 220, 131, 0.2);
+	/* background-color:  var(--color-vm-orange); */
+	/* border: 0.67px solid rgb(238, 220, 131, 1); */
+	background-color:  var(--color-mdm-sepia);
 	}
+}
+
+.button:active {
+	background-color:  var(--color-vm-orange);
+	/* border: 0.67px solid rgb(238, 220, 131, 0); */
+	transform: scale(0.975);
+	/* box-shadow: 0px 3px 5px -10px rgba(0, 0, 0, 0); */
+    transform: scale(0.98);
+    color: var(--color-sepia);
+	}
+
+
+	/* away */
+
 /* .lang_button.selected:hover {
 	
 } */

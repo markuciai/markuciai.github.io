@@ -295,7 +295,7 @@ function fixScrollUpdateSafariIOs() {
 
 <svelte:window bind:scrollY={scroll} />
 
-<!-- {#if globe.progress == 12} -->
+{#if globe.progress == 12}
 <!-- or do a progress bar -->
 <button class="button apversti"  onclick={() => flipped = !flipped}>
 {#if globe.language == "EN"}
@@ -306,7 +306,7 @@ Turn over
 Apversti
 {/if}
 </button>
-<!-- {/if} -->
+{/if}
 
 
 <div class="map_and_stuff">
@@ -433,40 +433,24 @@ Apversti
     height: 80px;
     font-size: 36px;
     left: 0;
-    background-color:  var(--color-mdm-sepia);
-    color: var(--color_green_medium_dark);
-    /* color: var(--color-bg-1); */
-    /* font-family: var(--font-manrope); */
+
     font-weight: 800;
 
     transition: 0.1s;
     border: none;
+    border: 2px solid #FFFFFF05;
+    border-radius: 6px;
     /* padding: 40px; */
-}
-
-.button.apversti:hover {
-    transform: scale(1.02);
-    background-color: var(--color-sepia);
-    color: var(--color-vm-orange);
-    border: none;
-    /* transition: 0.1s; */
-}
-
-.button.apversti:active {
-    transform: scale(0.98);
-    background-color: var(--color-mdm-sepia);
-    background-color: var(--color-vm-orange);
-    color: var(--color-sepia);
-    border: none;
-    /* transition: 0.1s; */
+    /* box-shadow: 0px 0px 40px -10px rgba(230,255,200,0.25); */
+    box-shadow: 
+        0px 10px 15px -10px var(--color_green_dark),
+        inset 0px -10px 30px -25px var(--color_green_dark)
+        ;
 }
 
 
-.button.apversti:active:not(:hover) {
-    transform: scale(1);
-    background-color:  var(--color-vm-orange);
-    color: var(--color_green_medium_dark);
-    }
+
+
 
 
 

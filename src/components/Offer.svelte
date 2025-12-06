@@ -4,6 +4,8 @@ import head_signs from '$lib/images/illustrations/splash.png';
 import instructions from '$lib/images/illustrations/instructions.png';
 import steps from '$lib/images/illustrations/steps.png';
 import doggo from '$lib/images/illustrations/doggo.png';
+import dvaras from '$lib/images/archival/mdvaras.jpg';
+
 
 </script>
     
@@ -145,9 +147,11 @@ Norėdami iš anksto užsakyti orientacinį žaidimą grupei, rašykite <a href=
 <article>
 Markučių dvaras stovi šioje vietoje nuo 1867 m. – nuo 19 amžiaus.
 </article>
+<img width=98% src={dvaras}>
 <article>
 Tuometinės carinės Rusijos geležinkelių inžinierius Aleksejus Melnikovas Markučių dvarą pastatė savo šeimai – dviems sūnums ir trims dukterims. Dvaro teritorijoje 19 a. buvo įkurtas angliškas parkas, pasodintas vaismedžių sodas, iškasti tvenkiniai ir šulinys, pastatytos medinės arklidės, oranžerija, duonkepė (kepyklėlė), tarnų namelis, ledainė, vištidė, virtuvė, įrengta kroketo aikštelė.
 </article>
+
 <article>
 Dvaras ir jo didžiulė valda – visi Markučiai ir dalis kitų rajonų — buvo palikti kaip kraitis vyriausiajai Aleksejaus dukrai Varvarai. 
 </article>
