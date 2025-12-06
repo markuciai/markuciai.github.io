@@ -1,7 +1,7 @@
 <script>
 import { browser } from "$app/environment";
 // 
-   
+import { fade, blur, fly, slide, scale } from "svelte/transition";
 // import location from './stores/location';
 
 import Map_foundation from '$lib/images/map/foundation.png';
@@ -306,12 +306,24 @@ Turn over
 Apversti
 {/if}
 </button>
+{:else}
+<div class="progress_block">
+<div class="progress_bar">&nbsp;</div>
+<p class="progress_description">
+Jūs surinkote {globe.progress} gabaliukus iš 12
+</p>
+
+
+</div>
 {/if}
 
 
+
+
+
+
+
 <div class="map_and_stuff">
-
-
 
 
 
@@ -334,13 +346,9 @@ Apversti
     </div>
 </div>
 
-<!-- <img src="{Map_foundation}" width="100%" > -->
+
 <img src="{Map_foundation}" class="map_foundation" >
 
-<!-- one set of layers for progress, another for location-->
-<!-- actually, just do layers for locations, foundation is too hard -->
-
-<!-- {map_scroll} -->
 
 
 
@@ -422,6 +430,38 @@ Apversti
     top: 20%; */
 }
 
+
+
+.progress_block {
+    z-index: 20;
+    width: 90%;
+    margin: -10px 5% 20px 5%;
+    height: 80px;
+    left: 0;
+    padding: 0px;
+    border-radius: 6px;
+    background: #325939;
+    color: var(--color-mdm-sepia);
+}
+
+.progress_bar {
+    --progress_percent: 30%;
+    width: var(--progress_percent);
+    height: 80px;
+    border-radius: 6px;
+    background: var(--color-mdm-sepia);
+    background: var(--color_green_medium_dark);
+    background: #0c4428;
+    transition: 1s;
+}
+
+@starting-style {
+    .progress_bar {
+        width: 0%;
+    }
+}
+
+
 .button.apversti {
     /* scale: 2; */
     transform: scale(1)
@@ -429,11 +469,11 @@ Apversti
     z-index: 10;
     /* left: 100px */
     width: 90%;
-    margin: 10px 5% 0 5%;
+    margin: -10px 5% 0 5%;
     height: 80px;
-    font-size: 36px;
     left: 0;
 
+    font-size: 36px;
     font-weight: 800;
 
     transition: 0.1s;
@@ -460,7 +500,7 @@ Apversti
     margin-top: 40px;
     perspective: 500px;
     /* transform-style: preserve-3d; */
-    z-index: 10;
+    z-index: 20;
     /* border: 1px solid purple; */
     /* background-color: aqua; */
 
@@ -528,7 +568,7 @@ Apversti
 
     left: 0;
     top: 0;
-    z-index: 20;
+    z-index: 40;
 
     --transition_time_base: 10.5s;
     --x_ratio: 0;

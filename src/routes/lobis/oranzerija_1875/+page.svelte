@@ -70,8 +70,8 @@ Here you meet a girl named Olya. You help her fill the watering cans with water 
 </div>
 
 {:else if globe.language == "RU"}
-
-<h1>Оранжерея</h1>
+<!-- this h1 doesn't fit on mobile without the smaller font and a shift left -->
+<h1 style="font-size: clamp(55px, 15vw, 75px); width: 95%;">Оранжерея</h1>
 <p class="subh">Девятая остановка<br>в поисках Клада Маркутья</p>
 <article>
 	Вы невероятно догадливы — орхидеи растут в оранжерее.
