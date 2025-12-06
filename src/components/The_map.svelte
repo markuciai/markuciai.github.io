@@ -308,7 +308,7 @@ Apversti
 </button>
 {:else}
 <div class="progress_block">
-<div class="progress_bar">&nbsp;</div>
+<div class="progress_bar" style="--progress_percent: {100*globe.progress/12}%">&nbsp;</div>
 <p class="progress_description">
 Jūs surinkote {globe.progress} gabaliukus iš 12
 </p>
@@ -381,6 +381,24 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
 
 
 <div class="legend_section">
+
+{#if flipped}
+<div class="testamento_tekstas" >
+<p>„Atidaviau savo dukrai Varvarai Moškovai kaip kraitį nekilnojamą turtą — dvarą:</p>
+
+<p>a) su visomis žemėmis, miškais, vandens telkiniais. Tos žemės iš viso yra 54 dešimtinės 72 sieksniai;</p>
+<p>b) su visais ponų namais ir su visais kitais pastatais, su žuvų tvenkiniais ir kitomis verslovėmis, o taip pat su žiemkenčių, vasarojaus ir daržovių pasėliais.</p>
+<br />
+~
+<br /><br />
+<p>Šį kraičiui skirtą kilnojamą ir nekilnojamą turtą vertinu, kaip liepia sąžinė</p>
+<p>a) nekilnojamą turtą 45 000 rub.</p>
+
+<p>ir b) kilnojamą turtą, kartu ir vertingus daiktus — 15 000 rub., kas drauge su grynaisiais pinigais sudaro 40 000 rub., iš viso 100 tūkstančių rublių sidabru“</p>
+</div>
+{:else}
+
+
 <ul class="legend_ul">
 
 
@@ -396,7 +414,16 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
 {/each}
 
 </ul>
+{/if}
+
 </div> <!-- Legend section -->
+
+
+
+
+
+
+
 
 </div>   <!--map_and_stuff-->
 
@@ -445,7 +472,7 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
 }
 
 .progress_bar {
-    --progress_percent: 30%;
+    --progress_percent: 0%;
     width: var(--progress_percent);
     height: 80px;
     border-radius: 6px;
@@ -519,7 +546,7 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
         position: sticky;
         position: -webkit-sticky; /* Safari */
 
-        box-shadow: 0px 30px 50px 50px var(--color-bg-1) ;
+        box-shadow: 0px 30px 50px 30px var(--color-bg-1) ;
     }
 }
 
@@ -687,6 +714,41 @@ filter: brightness(1.2) contrast(1.25) saturate(0.5);
     }
 
 
+@starting-style {
+    .testamento_tekstas, .legend_ul {
+        opacity: 0;
+        translate: 0 20px;
+    }
+}
+
+
+.testamento_tekstas {
+    width: 90%;
+    /* width: 100vw; */
+    max-width: 860px;
+    padding: 0;
+    margin: 0px 0 40px 0;
+
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    font-style: italic;
+    font-weight: 500;
+
+    color:  var(--color-mdm-sepia);
+
+    transition: 0.5s;
+
+
+    /* overflow-wrap: none; */
+    /* word-wrap: none; */
+    /* white-space: nowrap; */
+
+}
+
+
+
+
 /* tried doing multiple things... there's some trash here */
 .legend_ul {
     /* background-color: purple; */
@@ -720,6 +782,7 @@ filter: brightness(1.2) contrast(1.25) saturate(0.5);
     word-wrap: none;
     white-space: nowrap;
     /* text-overflow: ; */
+    transition: 0.5s;
     }
 
 
@@ -734,7 +797,7 @@ filter: brightness(1.2) contrast(1.25) saturate(0.5);
 
 
 
-    font-size: 28px;
+
     border-radius: 8px;
     /* vertical-align: middle; */
     padding: 30px 0 30px ;
@@ -743,6 +806,8 @@ filter: brightness(1.2) contrast(1.25) saturate(0.5);
     width: 375px;
     vertical-align: middle;
     /* transform: translate(0px, 2px); */
+
+    font-size: 28px;
     line-height: 20px;
     letter-spacing: 1px;
 
