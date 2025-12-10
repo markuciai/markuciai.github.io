@@ -7,7 +7,7 @@ import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
 
 import splash from '$lib/images/illustrations/splash.png';
-import dvras_bw from '$lib/images/archival/dvras_bw.jpg';
+import dvaras_bw from '$lib/images/archival/dvaras_bw.jpg';
 
 
 
@@ -117,7 +117,7 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 	Спасибо, что играли! 
 </article>
 
-<img  src={dvras_bw} width="105%" />
+<img  src={dvaras_bw} width="105%" />
 
 <article>
 	<br/>

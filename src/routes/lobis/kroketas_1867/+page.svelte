@@ -159,7 +159,7 @@ Lorem ipsum dolor sit amet
 <h1>Kroketo aikštelė</h1>
 <p class="subh">Dvyliktoji ir priešpaskutinė stotelė<br>ieškant Markučių lobio</p>
 <article>
-	Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse. Kroketas 19 a. buvo populiarus laisvalaikio žaidimas visoje Europoje. Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. 
+Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse. Kroketas 19 a. buvo populiarus laisvalaikio žaidimas visoje Europoje. Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. 
 </article>
 	<!-- <img width=105% src={nazimov}> -->
 <article>
@@ -175,10 +175,10 @@ O dabar sudėkite visas skiautes drauge ir perskaitykite slaptą dokumentą. Kas
 </article>
 
 
-<img width=98% src={dvaras}>
+
 
 <!-- <img width=100% src={testament_overlayed_lt}> -->
-<img class="testament" src={testament}>
+<!-- <img class="testament" src={testament}> -->
 <!-- <article>
 Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, nedegiame, dar 1867 m. prie vienos iš krosnių įrengtame seife.
 </article>
@@ -187,11 +187,7 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 Šį smagų žaidimą, kurio tikslas surinkti šį svarbų dokumentą, veikiausiai sugalvojo pats Varvaros testamento vykdytojas Vladimiras Nazimovas su savo vaikais, norėdamas plačiau paskleisti žinią apie Markučių dvaro šeimininkų paskutinę valią.
 </article> -->
 
-<div class="where-next">
-	Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
-	<br><br>
-	<span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
-</div>
+
 
 {/if} <!-- Station globe.languages-->
 </section>

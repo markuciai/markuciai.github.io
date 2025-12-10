@@ -44,6 +44,8 @@ onMount(async () => {
 
 {:else if (globe.progress == globe.location)}
 
+
+
 <section>
 <img class="map_piece_header_illustration" src={map_piece}>
 

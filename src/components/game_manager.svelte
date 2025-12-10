@@ -71,7 +71,7 @@ $effect(() => {
 
 	<button onclick={() => globe.progress -=1} class="lang_button" >-</button>
 	<button class="lang_button selected"> {globe.progress}</button>
-	<button onclick={() => globe.progress +=1} class="lang_button" >+</button>
+	<button onclick={() => globe.progress +=1} class="lang_button">+</button>
 	<!-- <button onclick={() => globe.progress = 3} class="lang_button" class:selected={globe.progress == 3}>three</button> -->
 </div>
 {/if}
@@ -100,7 +100,11 @@ $effect(() => {
 
 .enrult {
 	z-index: 200;
-	position: absolute;
+	position: fixed;
+	z-index: 100;
+	background-color: var(--color_green_medium_dark);
+	padding: 5px;
+	border-radius: 6px;
 
   left: calc(12vw - 37.5px + 15.625px - 34px + 20px);
   /* right: calc(12vw - 37.5px + 15.625px - 5vw + 15.625px - 5vw ); */

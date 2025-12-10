@@ -37,9 +37,9 @@
     "file": "chunks/environment.js",
     "name": "environment"
   },
-  "_game_manager.BYTWXJds.css": {
-    "file": "_app/immutable/assets/game_manager.BYTWXJds.css",
-    "src": "_game_manager.BYTWXJds.css"
+  "_game_manager.DItaEOxa.css": {
+    "file": "_app/immutable/assets/game_manager.DItaEOxa.css",
+    "src": "_game_manager.DItaEOxa.css"
   },
   "_globe.svelte.js": {
     "file": "chunks/globe.svelte.js",
@@ -128,9 +128,9 @@
     "file": "_app/immutable/assets/doggie.DVTutSGQ.jpg",
     "src": "src/lib/images/archival/doggie.jpg"
   },
-  "src/lib/images/archival/dvras_bw.jpg": {
-    "file": "_app/immutable/assets/dvras_bw.KK8Oaffd.jpg",
-    "src": "src/lib/images/archival/dvras_bw.jpg"
+  "src/lib/images/archival/dvaras_bw.jpg": {
+    "file": "_app/immutable/assets/dvaras_bw.KK8Oaffd.jpg",
+    "src": "src/lib/images/archival/dvaras_bw.jpg"
   },
   "src/lib/images/archival/fruit_garden.jpg": {
     "file": "_app/immutable/assets/fruit_garden.CvoVAFYn.jpg",
@@ -147,6 +147,10 @@
   "src/lib/images/archival/nazimov.jpg": {
     "file": "_app/immutable/assets/nazimov.C3X2X70f.jpg",
     "src": "src/lib/images/archival/nazimov.jpg"
+  },
+  "src/lib/images/archival/pond.jpg": {
+    "file": "_app/immutable/assets/pond.B0l6QNkj.jpg",
+    "src": "src/lib/images/archival/pond.jpg"
   },
   "src/lib/images/archival/safe.jpg": {
     "file": "_app/immutable/assets/safe.DfQ5pWWn.jpg",
@@ -171,6 +175,10 @@
   "src/lib/images/archival/vanyusha.jpg": {
     "file": "_app/immutable/assets/vanyusha.BwyvB6DS.jpg",
     "src": "src/lib/images/archival/vanyusha.jpg"
+  },
+  "src/lib/images/archival/varvara.jpg": {
+    "file": "_app/immutable/assets/varvara.BHQkwufB.jpg",
+    "src": "src/lib/images/archival/varvara.jpg"
   },
   "src/lib/images/archival/waters.jpg": {
     "file": "_app/immutable/assets/waters.DIqdefA1.jpg",
@@ -323,6 +331,10 @@
   "src/lib/images/illustrations/instructions.png": {
     "file": "_app/immutable/assets/instructions.CX_XWdQk.png",
     "src": "src/lib/images/illustrations/instructions.png"
+  },
+  "src/lib/images/illustrations/mapushkin.png": {
+    "file": "_app/immutable/assets/mapushkin.D8x_gUva.png",
+    "src": "src/lib/images/illustrations/mapushkin.png"
   },
   "src/lib/images/illustrations/saddle.png": {
     "file": "_app/immutable/assets/saddle.CymgCf8n.png",
@@ -481,8 +493,8 @@
       "_attributes.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.RvprFGNv.css",
-      "_app/immutable/assets/game_manager.BYTWXJds.css"
+      "_app/immutable/assets/_layout.CrxDGdtH.css",
+      "_app/immutable/assets/game_manager.DItaEOxa.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",
@@ -502,7 +514,7 @@
     ],
     "css": [
       "_app/immutable/assets/_page.BUVafwWG.css",
-      "_app/immutable/assets/game_manager.BYTWXJds.css"
+      "_app/immutable/assets/game_manager.DItaEOxa.css"
     ]
   },
   "src/routes/lobis/+page.svelte": {

@@ -10,7 +10,11 @@ import Game_manager from "$components/game_manager.svelte"
 
 let bazinga = $state("")
 
+const station_id = 0
 
+onMount(async () => { 
+	globe.location = station_id
+});
 
 
 $effect(() => {

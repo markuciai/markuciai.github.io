@@ -242,7 +242,7 @@ img {
 @starting-style {
 	section {
 		/* rotate: -1deg; */
-		rotate: 0deg;
+		/* rotate: 0deg; */
 		/* padding: 20px 0; */
 		margin-top: -200px;
 		scale: 1.1;

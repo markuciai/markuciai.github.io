@@ -1,9 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
-    let mounted = false;
-    onMount(() => {
-        mounted = true;
-    });
+let mounted = false;
+onMount(() => {
+    mounted = true;
+});
 </script>
 
 {#if mounted}

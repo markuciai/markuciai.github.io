@@ -5,6 +5,14 @@ import { fade, blur, fly, slide, scale } from "svelte/transition";
 // import location from './stores/location';
 
 import Map_foundation from '$lib/images/map/foundation.png';
+import mapushkin from '$lib/images/illustrations/mapushkin.png';
+
+import dvaras_bw from '$lib/images/archival/dvaras_bw.jpg';
+import varvara from '$lib/images/archival/varvara.jpg';
+import pond from '$lib/images/archival/pond.jpg';
+import fruit_garden from '$lib/images/archival/fruit_garden.jpg';
+import doggo from '$lib/images/illustrations/doggo.png';
+
 
 // import Map_0 from '$lib/images/map/0.png';
 // import Map_1 from '$lib/images/map/1.png';
@@ -79,6 +87,20 @@ let legend_text = {
 };
 
 
+let gabaliuku_text = {
+    "EN" : [
+        "pieces", "piece", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces",
+        ],
+    "RU" : [
+        "кусочков", "кусочек", "кусочка", "кусочка", "кусочка", "кусочков", "кусочков", "кусочков", "кусочков", "кусочков", "кусочков", "кусочков", "кусочков",
+        ],
+    "LT" : [
+        "gabaliuku", "gabaliuka", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliuku", "gabaliuku", "gabaliuku",
+        ],
+    "LA" : [
+        "gabaliuku", "gabaliuka", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliukus", "gabaliuku", "gabaliuku", "gabaliuku",
+        ],
+}
 
 
 
@@ -310,9 +332,12 @@ Apversti
 <div class="progress_block">
 <div class="progress_bar" style="--progress_percent: {100*globe.progress/12}%">&nbsp;</div>
 <p class="progress_description">
-Jūs surinkote {globe.progress} gabaliukus iš 12
+Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]} iš 12
 </p>
+<!-- 
+[gabaliuku, gabaliuka, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliuku, gabaliuku, gabaliuku][]
 
+ -->
 
 </div>
 {/if}
@@ -346,9 +371,11 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
     </div>
 </div>
 
-
+{#if flipped}
+<img src="{mapushkin}" class="map_foundation mapushkin" >
+{:else}
 <img src="{Map_foundation}" class="map_foundation" >
-
+{/if}
 
 
 
@@ -382,23 +409,34 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
 
 <div class="legend_section">
 
-{#if flipped}
-<div class="testamento_tekstas" >
-<p>„Atidaviau savo dukrai Varvarai Moškovai kaip kraitį nekilnojamą turtą — dvarą:</p>
-
-<p>a) su visomis žemėmis, miškais, vandens telkiniais. Tos žemės iš viso yra 54 dešimtinės 72 sieksniai;</p>
-<p>b) su visais ponų namais ir su visais kitais pastatais, su žuvų tvenkiniais ir kitomis verslovėmis, o taip pat su žiemkenčių, vasarojaus ir daržovių pasėliais.</p>
-<br />
-~
-<br /><br />
-<p>Šį kraičiui skirtą kilnojamą ir nekilnojamą turtą vertinu, kaip liepia sąžinė</p>
-<p>a) nekilnojamą turtą 45 000 rub.</p>
-
-<p>ir b) kilnojamą turtą, kartu ir vertingus daiktus — 15 000 rub., kas drauge su grynaisiais pinigais sudaro 40 000 rub., iš viso 100 tūkstančių rublių sidabru“</p>
-</div>
-{:else}
 
 
+
+
+
+
+
+<!-- <section> -->
+
+<!-- </section> -->
+
+<!--
+"Отдал в приданое дочери моей Варваре Мошковой недвижимое имение: а) со всеми землями, лесами, водами, в мерою всей земли 54 десятины 72 сажени; б) со всеми господскими домами и со всеми другими строениями, с рыбнами  ловлями и другими заведениями, а равно с озимыми, яровыми и огородными посевами. <...> Каковое отдаваемое в приданое недвижимое и движимое имение оцениваю по совести а) недвижимое имение в 45 000 руб. и б) движимое, в том числе драгоценные вещи в 15 000 руб., что составит с наличными 40 000 руб.,   всего 100 тысяч рублей серебром".
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#if !flipped}
 <ul class="legend_ul">
 
 
@@ -430,7 +468,104 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
 
 
 
+{#if flipped}
+
+
+
+
+
+
+<section class="testament_section">
+<h1>Markučių lobis</h1>
+<div class="testamento_tekstas" >
+<!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
+<p class="subh">Aleksėjaus Melnikovo<br/> dukrai Vavarai<br/> palikto kraičio tekstas</p>
+
+<p style="rotate: -2deg">„Atidaviau savo dukrai Varvarai Moškovai kaip kraitį nekilnojamą turtą — dvarą:</p>
+</div>
+<img width=120% src={dvaras_bw} style="margin-bottom:40px; rotate: -4deg;">
+
+
+<div class="testamento_tekstas" style="rotate: 1.5deg">
+<p>a) su visomis žemėmis, miškais, vandens telkiniais. Tos žemės iš viso yra 54 dešimtinės 72 sieksniai;</p>
+</div>
+
+<img width=110% src={pond} style="margin-bottom:40px; rotate: 2deg;">
+
+<div class="testamento_tekstas" style="rotate: -2.5deg">
+<p>b) su visais ponų namais ir su visais kitais pastatais, su žuvų tvenkiniais ir kitomis verslovėmis, o taip pat su žiemkenčių, vasarojaus ir daržovių pasėliais.</p>
+</div>
+
+
+<img width=120% src={fruit_garden} style="margin-bottom:40px; rotate: -3deg;">
+
+
+
+<div class="testamento_tekstas" style="rotate: 1deg">
+<p>Šį kraičiui skirtą kilnojamą ir nekilnojamą turtą vertinu, kaip liepia sąžinė</p>
+<p>a) nekilnojamą turtą 45 000 rub.</p>
+
+
+</div>
+<img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
+
+<div class="testamento_tekstas" style="rotate: 1.5deg">
+<p>ir b) kilnojamą turtą, kartu ir vertingus daiktus — 15 000 rub., kas drauge su grynaisiais pinigais sudaro 40 000 rub., iš viso 100 tūkstančių rublių sidabru“</p>
+</div>
+
+<img class="illustration" src={doggo}>
+<div class="where-next">
+    Veliau, Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kuris dirba ir iki šiol. Jis ir tapo tikrojų Markučių Lobių.
+    <br><br>
+    Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
+    <br><br>
+    <span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
+</div>
+</section>
+<div class="ornament" ></div>
+
+{/if}
+
+
+
+
 <style>
+
+
+
+
+.testament_section {
+    z-index: 100;
+    margin-top: 50px;
+    background: var(--color_green_medium_dark);
+    /* background: var(--color_green_dark); */
+    /* border: 1px solid; */
+}
+
+.illustration {
+    margin-top: -120px;
+}
+
+.where-next {
+    color: var(--color-sepia);
+    background: var(--color-vm-orange);
+    box-shadow: 
+        
+        0px -200px 150px -100px var(--color-sepia),
+        0px -40px 200px 20px var(--color-vm-orange)
+        ;
+
+
+}
+
+.highlighted-question {
+    color: white;
+}
+
+
+
+
+
 /* put the marker image inside, position it top left corner, lose the background */
 #marker_container {
     position: absolute;
@@ -545,7 +680,6 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
         top: 0px;
         position: sticky;
         position: -webkit-sticky; /* Safari */
-
         box-shadow: 0px 30px 50px 30px var(--color-bg-1) ;
     }
 }
@@ -583,6 +717,16 @@ Jūs surinkote {globe.progress} gabaliukus iš 12
     /* position: absolute; */
     /* left: -5vw; */
 }
+
+
+.mapushkin {
+    width: 120vw;
+    left: -10vw;
+    top: 8vw;
+    position: absolute;
+}
+
+
 
 .map_layer {
     /* visibility: hidden; */
