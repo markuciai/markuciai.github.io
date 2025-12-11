@@ -15,6 +15,7 @@ import safe from '$lib/images/archival/safe.jpg';
 import testament_overlayed_ru from '$lib/images/illustrations/testament_overlayed_ru.png';
 import testament_overlayed_lt from '$lib/images/illustrations/testament_overlayed_lt.png';
 import testament from '$lib/images/illustrations/testament.png';
+import croquet from '$lib/images/archival/croquet.jpg';
 
 
 import dvaras from '$lib/images/archival/mdvaras.jpg';
@@ -159,19 +160,19 @@ Lorem ipsum dolor sit amet
 <h1>Kroketo aikštelė</h1>
 <p class="subh">Dvyliktoji ir priešpaskutinė stotelė<br>ieškant Markučių lobio</p>
 <article>
-Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse. Kroketas 19 a. buvo populiarus laisvalaikio žaidimas visoje Europoje. Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. 
+Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse. Kroketas XIX a. buvo populiarus laisvalaikio žaidimas visoje Europoje.
 </article>
-	<!-- <img width=105% src={nazimov}> -->
 <article>
-	<!-- <br> -->
+Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. 
+</article>
+	<img width=105% src={croquet}>
+<article>
+<br/>
 Žaidimo metu, ant lazdos rasite paskutiniąja dokumento skiautę. 
 </article>
 
-<!-- <img width=105% src={kabinetas}> -->
-
 <article>
-	<br>
-O dabar sudėkite visas skiautes drauge ir perskaitykite slaptą dokumentą. Kas jame parašyta? 
+O dabar, sudėjus visas skiautes drauge, apverskite ir perskaitykite slaptą dokumentą. Kas jame parašyta? 
 </article>
 
 

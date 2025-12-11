@@ -131,11 +131,24 @@ import piece_11 from '$lib/images/map/pieces/dog.png';
 import piece_12 from '$lib/images/map/pieces/monument.png';
 
 
+import piece_testament_cross from '$lib/images/map/pieces/testamentas/cross.png';
+import piece_testament_house from '$lib/images/map/pieces/testamentas/house.png';
+import piece_testament_stables from '$lib/images/map/pieces/testamentas/stables.png';
+import piece_testament_pond from '$lib/images/map/pieces/testamentas/pond.png';
+import piece_testament_kitchen from '$lib/images/map/pieces/testamentas/kitchen.png';
+import piece_testament_coop from '$lib/images/map/pieces/testamentas/coop.png';
+import piece_testament_bakery from '$lib/images/map/pieces/testamentas/bakery.png';
+import piece_testament_well from '$lib/images/map/pieces/testamentas/well.png';
+import piece_testament_orangery from '$lib/images/map/pieces/testamentas/orangery.png';
+import piece_testament_chapel from '$lib/images/map/pieces/testamentas/chapel.png';
+import piece_testament_doggo from '$lib/images/map/pieces/testamentas/doggo.png';
+import piece_testament_croquet from '$lib/images/map/pieces/testamentas/croquet.png';
+
 import piece_1_back from '$lib/images/illustrations/testament_full.png';
 
 
 let piece_array_front = [piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
-let piece_array_back = [piece_1_back, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
+let piece_array_back = [piece_testament_cross, piece_testament_house, piece_testament_stables, piece_testament_pond, piece_testament_kitchen, piece_testament_coop, piece_testament_bakery, piece_testament_well, piece_testament_orangery, piece_testament_chapel, piece_testament_doggo, piece_testament_croquet]
 let x_ratio_array = [1.5, 1, 0.2, -0.8, -1.5, 2, 0.5, 0.5, -2.2, 1.5, 0.25, -1.5]
 let y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, -0.2]
 
@@ -464,7 +477,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 <h1>Markučių Lobis</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
-<p class="subh">?Aleksėjaus Melnikovo<br/> dukrai Vavarai<br/> palikto kraičio tekstas</p>
+<p class="subh">Aleksėjaus Melnikovo<br/> dukrai Vavarai<br/> palikto kraičio tekstas</p>
 
 <p style="rotate: -2deg">„Atidaviau savo dukrai Varvarai Moškovai kaip kraitį nekilnojamą turtą — dvarą:</p>
 </div>
@@ -500,11 +513,13 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 <img class="illustration" src={doggo}>
 <div class="where-next">
-    Veliau, Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kuris dirba ir iki šiol. Jis ir tapo tikrojų Markučių Lobių.
+    Veliau Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kad paliktas jai lobis tarnautu kultūros ir švietimo tikslams. Muziejus dirba ir iki šiol.
+{#if globe.location == 12}
     <br><br>
     Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
     <br><br>
     <span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
+{/if}
 </div>
 </section>
 <div class="ornament" ></div>
@@ -833,7 +848,8 @@ h1 {
 
 .backside {
     /* filter: hue-rotate(220deg); */
-    transform: scaleX(-1) rotateY(180deg);
+    /* transform: scaleX(-1) rotateY(180deg); */
+    transform: rotateY(180deg);
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
 }

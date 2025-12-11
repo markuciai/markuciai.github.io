@@ -148,7 +148,8 @@ h1 {
 
 .title {
 	background:  none;
-	/* position: absolute; */
+	position: absolute;
+
 }
 
 
