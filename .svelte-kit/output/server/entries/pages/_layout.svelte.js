@@ -7,6 +7,7 @@ function Game_manager($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     {
       $$renderer2.push("<!--[!-->");
+      $$renderer2.push(`<div class="enrult title svelte-gieire"><h1 class="svelte-gieire">Markučių<br class="svelte-gieire"/>Lobis</h1></div>`);
     }
     $$renderer2.push(`<!--]-->`);
   });

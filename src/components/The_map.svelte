@@ -416,21 +416,6 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 
-<!-- <section> -->
-
-<!-- </section> -->
-
-<!--
-"Отдал в приданое дочери моей Варваре Мошковой недвижимое имение: а) со всеми землями, лесами, водами, в мерою всей земли 54 десятины 72 сажени; б) со всеми господскими домами и со всеми другими строениями, с рыбнами  ловлями и другими заведениями, а равно с озимыми, яровыми и огородными посевами. <...> Каковое отдаваемое в приданое недвижимое и движимое имение оцениваю по совести а) недвижимое имение в 45 000 руб. и б) движимое, в том числе драгоценные вещи в 15 000 руб., что составит с наличными 40 000 руб.,   всего 100 тысяч рублей серебром".
--->
-
-
-
-
-
-
-
-
 
 
 
@@ -476,10 +461,10 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 <section class="testament_section">
-<h1>Markučių lobis</h1>
+<h1>Markučių Lobis</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
-<p class="subh">Aleksėjaus Melnikovo<br/> dukrai Vavarai<br/> palikto kraičio tekstas</p>
+<p class="subh">?Aleksėjaus Melnikovo<br/> dukrai Vavarai<br/> palikto kraičio tekstas</p>
 
 <p style="rotate: -2deg">„Atidaviau savo dukrai Varvarai Moškovai kaip kraitį nekilnojamą turtą — dvarą:</p>
 </div>
@@ -528,18 +513,38 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 
+<!--
+"Отдал в приданое дочери моей Варваре Мошковой недвижимое имение: а) со всеми землями, лесами, водами, в мерою всей земли 54 десятины 72 сажени; б) со всеми господскими домами и со всеми другими строениями, с рыбнами  ловлями и другими заведениями, а равно с озимыми, яровыми и огородными посевами. <...> Каковое отдаваемое в приданое недвижимое и движимое имение оцениваю по совести а) недвижимое имение в 45 000 руб. и б) движимое, в том числе драгоценные вещи в 15 000 руб., что составит с наличными 40 000 руб.,   всего 100 тысяч рублей серебром".
+-->
+
 
 <style>
 
+
+/* :global(body) {
+    opacity: 0.5;
+} */
 
 
 
 .testament_section {
     z-index: 100;
     margin-top: 50px;
+    margin-top: 0px;
+    top: 0px;
     background: var(--color_green_medium_dark);
     /* background: var(--color_green_dark); */
     /* border: 1px solid; */
+    transition: all 1s;
+
+    transition:
+        all 1.25s cubic-bezier(0.34, 1.56, 0.64, 1) 0s,
+        transform 1.25s cubic-bezier(0.34, 1.56, 0.64, 1) 0s
+        ;
+    @starting-style {
+        translate: 0 0px;
+        /* opacity: 0; */
+    }
 }
 
 .illustration {
@@ -550,9 +555,12 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     color: var(--color-sepia);
     background: var(--color-vm-orange);
     box-shadow: 
-        
-        0px -200px 150px -100px var(--color-sepia),
-        0px -40px 200px 20px var(--color-vm-orange)
+        0px 10px 20px -10px var(--color_green_dark),
+        0px -100px 150px -100px var(--color-sepia),
+        0px -50px 200px -20px var(--color-vm-orange),
+
+        0px 50px 200px -50px #FFFFFF55 inset
+        /* 0px -80px 200px -80px var(--color-bg-1) inset */
         ;
 
 
@@ -562,6 +570,15 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     color: white;
 }
 
+
+h1 {
+    transition:
+        scale 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0s
+        ;
+    @starting-style {
+        /* translate: 0 0px; */
+    }
+}
 
 
 
@@ -665,6 +682,8 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     z-index: 20;
     /* border: 1px solid purple; */
     /* background-color: aqua; */
+    top: 0px;
+
 
 }
 
@@ -716,7 +735,13 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     width: 100%;
     /* position: absolute; */
     /* left: -5vw; */
+    transition: 0.25s;
+    @starting-style {
+        /* translate: 0 100px; */
+        opacity: 0;
+    }
 }
+
 
 
 .mapushkin {
@@ -724,6 +749,11 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     left: -10vw;
     top: 8vw;
     position: absolute;
+    transition: 1s;
+    @starting-style {
+        translate: 0 100px;
+        /* opacity: 0; */
+    }
 }
 
 
@@ -774,7 +804,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
         ;
     transition: transform 0.16s ease-out; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
 
-    transition: transform calc(abs(var(--x_ratio)) * abs(var(--y_ratio)) * var(--transition_time_base) + 0.16s);
+    transition: transform calc(abs(var(--x_ratio)) * abs(var(--y_ratio)) * var(--transition_time_base) + 0.16s) ease-out;
 
 
 

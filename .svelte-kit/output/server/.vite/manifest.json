@@ -37,9 +37,9 @@
     "file": "chunks/environment.js",
     "name": "environment"
   },
-  "_game_manager.DItaEOxa.css": {
-    "file": "_app/immutable/assets/game_manager.DItaEOxa.css",
-    "src": "_game_manager.DItaEOxa.css"
+  "_game_manager.DBEf1EI2.css": {
+    "file": "_app/immutable/assets/game_manager.DBEf1EI2.css",
+    "src": "_game_manager.DBEf1EI2.css"
   },
   "_globe.svelte.js": {
     "file": "chunks/globe.svelte.js",
@@ -493,8 +493,8 @@
       "_attributes.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.CrxDGdtH.css",
-      "_app/immutable/assets/game_manager.DItaEOxa.css"
+      "_app/immutable/assets/_layout.Zhj4GyEi.css",
+      "_app/immutable/assets/game_manager.DBEf1EI2.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",
@@ -514,7 +514,7 @@
     ],
     "css": [
       "_app/immutable/assets/_page.BUVafwWG.css",
-      "_app/immutable/assets/game_manager.DItaEOxa.css"
+      "_app/immutable/assets/game_manager.DBEf1EI2.css"
     ]
   },
   "src/routes/lobis/+page.svelte": {

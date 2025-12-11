@@ -60,10 +60,11 @@ $effect(() => {
 
 
 
-
-
 {#if globe.laisve}
 <div class="enrult">
+
+
+
 	<!-- <button onclick={() => globe.progress = -1} class="lang_button" class:selected={globe.progress == -1}>-1</button> -->
 
 
@@ -73,6 +74,10 @@ $effect(() => {
 	<button class="lang_button selected"> {globe.progress}</button>
 	<button onclick={() => globe.progress +=1} class="lang_button">+</button>
 	<!-- <button onclick={() => globe.progress = 3} class="lang_button" class:selected={globe.progress == 3}>three</button> -->
+</div>
+{:else}
+<div class="enrult title">
+<h1>Markučių<br />Lobis</h1>
 </div>
 {/if}
 
@@ -89,6 +94,18 @@ $effect(() => {
 		opacity: 0;
 	}
 }
+
+
+h1 {
+	/* scale: 1; */
+	font-size: 16px;
+	line-height: 16px;
+	transform-origin: top left;
+	margin: 0 0 0 20px;
+	padding: 0;
+	color: var(--color_green_dark);
+}
+
 
 .button, .button:hover, .button.active {
 	height: 40px;
@@ -129,6 +146,10 @@ $effect(() => {
 }
 
 
+.title {
+	background:  none;
+	/* position: absolute; */
+}
 
 
 .lang_switch {
