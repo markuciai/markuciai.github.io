@@ -1,7 +1,5 @@
 <script>
-
-
-
+import { browser } from "$app/environment";
 
 import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
@@ -13,7 +11,7 @@ import dvaras_bw from '$lib/images/archival/dvaras_bw.jpg';
 
 
 const station_id = 13
-let show_station = false
+let show_station = $state(false)
 
 
 let date_started = new Date();
@@ -26,18 +24,25 @@ let date_finished_h
 let date_finished_m
 let date_finished_s
 
-let time_delta
+let time_delta = 0
 
 
+// if (browser) {
 onMount(async () => { 
+	console.log("mount", show_station)
 	if(globe.progress == station_id - 1) {
 		globe.progress = -1
 		localStorage.finished = true
 		localStorage.date_finished = date_finished;
+		show_station = true
+		console.log("finished")
 	}
 	
 	if (localStorage.finished) {
-		show_station = true;
+		console.log("setting")
+		show_station = true
+		console.log("setting", show_station)
+
 
 		date_started = new Date( Date.parse(localStorage.date_started) );
 		date_started_h = date_started.getHours().toString().padStart(2,"0");
@@ -50,8 +55,9 @@ onMount(async () => {
 		date_finished_s = date_finished.getSeconds().toString().padStart(2,"0");
 		
 		time_delta = ms_to_time(Math.abs(date_finished.getTime() - date_started.getTime() ) ) ;
+		console.log("setting", time_delta)
 	}
-
+// }
 });
 
 function ms_to_time(ms) {
@@ -61,7 +67,7 @@ function ms_to_time(ms) {
 	ms -= minutes * 1000 * 60
 	let seconds = (ms / 1000).toFixed(0);
 	return hours.toString().padStart(2,"0") + ":" + minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0");
-	}
+}
 
 </script>
 
@@ -88,6 +94,12 @@ function ms_to_time(ms) {
 {#if show_station}
 
 <section>
+
+
+<article>
+Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
+</article>
+
 <img class="map_piece_header_illustration" src={splash}>
 
 {#if globe.language == "EN"}
@@ -155,7 +167,7 @@ Latin
 	Ačiū už žaidimą!
 </article>
 
-<img  src={dvras_bw} width="105%" />
+<img  src={dvaras_bw} width="105%" />
 
 <article>
 	<br/><br/>
@@ -169,6 +181,11 @@ Latin
 
 
 {/if} <!-- Main page globe.languages-->
+
+
+
+
+
 </section>
 
 

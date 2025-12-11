@@ -544,7 +544,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 .testament_section {
     z-index: 20;
-    margin-top: 800px;
+    margin-top: 00px;
     top: 0px;
     background: var(--color_green_medium_dark);
     /* background: var(--color_green_dark); */
@@ -716,8 +716,8 @@ h1 {
 
 .mapushkin {
     width: 120%;
-    left: -5vw;
-    top: 8vw;
+    left: -6vw;
+    top: 4vw;
     position: absolute;
     transition: 1s;
     @starting-style {
