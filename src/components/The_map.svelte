@@ -393,7 +393,8 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 {#each {length: globe.progress }, index}
-<div class="map_layer"
+<div 
+    class="map_layer"
     style="
         --transition_time_base: { +flipped  }s;
         --map_scroll: {map_scroll};
@@ -542,9 +543,8 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 .testament_section {
-    z-index: 100;
-    margin-top: 50px;
-    margin-top: 0px;
+    z-index: 20;
+    margin-top: 800px;
     top: 0px;
     background: var(--color_green_medium_dark);
     /* background: var(--color_green_dark); */
@@ -662,9 +662,10 @@ h1 {
     z-index: 10;
     /* left: 100px */
     width: 90%;
-    margin: -10px 5% 0 5%;
+    margin: 0px 5% 0px 5%;
     height: 80px;
     left: 0;
+    top: 0;
 
     font-size: 36px;
     font-weight: 800;
@@ -701,6 +702,32 @@ h1 {
 
 }
 
+
+.map_foundation {
+    width: 100%;
+    /* position: absolute; */
+    /* left: -5vw; */
+    transition: 0.25s;
+    @starting-style {
+        /* translate: 0 100px; */
+        opacity: 0;
+    }
+}
+
+.mapushkin {
+    width: 120%;
+    left: -5vw;
+    top: 8vw;
+    position: absolute;
+    transition: 1s;
+    @starting-style {
+        translate: 0 100px;
+        /* opacity: 0; */
+    }
+}
+
+
+
 @media (max-aspect-ratio: 5/8) and (orientation:portrait) {
 /* @media (max-width: 200px) { */
     #map_wrapper {
@@ -715,15 +742,29 @@ h1 {
         position: -webkit-sticky; /* Safari */
         box-shadow: 0px 30px 50px 30px var(--color-bg-1) ;
     }
+
+    .testament_section {
+         margin-top: 0px;
+    }
+
+    .mapushkin {
+        /* filter: hue-rotate(180deg); */
+        width: 120vw;
+        left: -10vw;
+        top: 8vw;
+    }
+
 }
 
 
 @media (min-width: 1400px) {
     #map_wrapper {
+        top: 0px;
         margin: 5vw 0 0 0;
         width: 90vw;
         /* height: 90vw; */
         /* border: red solid 1px; */
+        perspective: 1000px;
     }
 
     .map_and_stuff {
@@ -735,40 +776,33 @@ h1 {
         margin: 40px 0 0 -30vw;
     }
 
-    .legend_section {
+    .legend_section{
         margin: calc(40px + 5vw) 0 0 40px;
         min-width: 760px;
     }
-}
 
-
-
-
-
-.map_foundation {
-    width: 100%;
-    /* position: absolute; */
-    /* left: -5vw; */
-    transition: 0.25s;
-    @starting-style {
-        /* translate: 0 100px; */
-        opacity: 0;
+    .testament_section, .ornament {
+        /* margin-left: 500px; */
+        translate: 200px -100px;
     }
-}
 
-
-
-.mapushkin {
-    width: 120vw;
-    left: -10vw;
-    top: 8vw;
-    position: absolute;
-    transition: 1s;
-    @starting-style {
-        translate: 0 100px;
-        /* opacity: 0; */
+    .button.apversti, .progress_block {
+        width: 80%;
+        margin: 10px 10% 0 10%;
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
