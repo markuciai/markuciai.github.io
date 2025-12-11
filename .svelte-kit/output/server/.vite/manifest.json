@@ -37,9 +37,9 @@
     "file": "chunks/environment.js",
     "name": "environment"
   },
-  "_game_manager.DBEf1EI2.css": {
-    "file": "_app/immutable/assets/game_manager.DBEf1EI2.css",
-    "src": "_game_manager.DBEf1EI2.css"
+  "_game_manager.CFc9uwl0.css": {
+    "file": "_app/immutable/assets/game_manager.CFc9uwl0.css",
+    "src": "_game_manager.CFc9uwl0.css"
   },
   "_globe.svelte.js": {
     "file": "chunks/globe.svelte.js",
@@ -119,6 +119,10 @@
   "src/lib/images/archival/cook.png": {
     "file": "_app/immutable/assets/cook.D_N-fNRq.png",
     "src": "src/lib/images/archival/cook.png"
+  },
+  "src/lib/images/archival/croquet.jpg": {
+    "file": "_app/immutable/assets/croquet.CZ1kb2od.jpg",
+    "src": "src/lib/images/archival/croquet.jpg"
   },
   "src/lib/images/archival/cross.jpg": {
     "file": "_app/immutable/assets/cross.CqIizJrC.jpg",
@@ -456,6 +460,54 @@
     "file": "_app/immutable/assets/monument.DbfJSu-J.png",
     "src": "src/lib/images/map/pieces/monument.png"
   },
+  "src/lib/images/map/pieces/testamentas/bakery.png": {
+    "file": "_app/immutable/assets/bakery.5uPvOWIY.png",
+    "src": "src/lib/images/map/pieces/testamentas/bakery.png"
+  },
+  "src/lib/images/map/pieces/testamentas/chapel.png": {
+    "file": "_app/immutable/assets/chapel.BWb7pbJT.png",
+    "src": "src/lib/images/map/pieces/testamentas/chapel.png"
+  },
+  "src/lib/images/map/pieces/testamentas/coop.png": {
+    "file": "_app/immutable/assets/coop.BM3UlAiC.png",
+    "src": "src/lib/images/map/pieces/testamentas/coop.png"
+  },
+  "src/lib/images/map/pieces/testamentas/croquet.png": {
+    "file": "_app/immutable/assets/croquet.BdZsISpn.png",
+    "src": "src/lib/images/map/pieces/testamentas/croquet.png"
+  },
+  "src/lib/images/map/pieces/testamentas/cross.png": {
+    "file": "_app/immutable/assets/cross.C9X5KmeT.png",
+    "src": "src/lib/images/map/pieces/testamentas/cross.png"
+  },
+  "src/lib/images/map/pieces/testamentas/doggo.png": {
+    "file": "_app/immutable/assets/doggo.D3CxzNTR.png",
+    "src": "src/lib/images/map/pieces/testamentas/doggo.png"
+  },
+  "src/lib/images/map/pieces/testamentas/house.png": {
+    "file": "_app/immutable/assets/house.Bq_2MWem.png",
+    "src": "src/lib/images/map/pieces/testamentas/house.png"
+  },
+  "src/lib/images/map/pieces/testamentas/kitchen.png": {
+    "file": "_app/immutable/assets/kitchen.-_fxHPFi.png",
+    "src": "src/lib/images/map/pieces/testamentas/kitchen.png"
+  },
+  "src/lib/images/map/pieces/testamentas/orangery.png": {
+    "file": "_app/immutable/assets/orangery.Cz9IfxAk.png",
+    "src": "src/lib/images/map/pieces/testamentas/orangery.png"
+  },
+  "src/lib/images/map/pieces/testamentas/pond.png": {
+    "file": "_app/immutable/assets/pond.D-lnmci7.png",
+    "src": "src/lib/images/map/pieces/testamentas/pond.png"
+  },
+  "src/lib/images/map/pieces/testamentas/stables.png": {
+    "file": "_app/immutable/assets/stables.DIBo-nJT.png",
+    "src": "src/lib/images/map/pieces/testamentas/stables.png"
+  },
+  "src/lib/images/map/pieces/testamentas/well.png": {
+    "file": "_app/immutable/assets/well.BtU5WjJt.png",
+    "src": "src/lib/images/map/pieces/testamentas/well.png"
+  },
   "src/lib/images/map/pieces/tree.png": {
     "file": "_app/immutable/assets/tree.Dvr33hxl.png",
     "src": "src/lib/images/map/pieces/tree.png"
@@ -494,7 +546,7 @@
     ],
     "css": [
       "_app/immutable/assets/_layout.Zhj4GyEi.css",
-      "_app/immutable/assets/game_manager.DBEf1EI2.css"
+      "_app/immutable/assets/game_manager.CFc9uwl0.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",
@@ -514,7 +566,7 @@
     ],
     "css": [
       "_app/immutable/assets/_page.BUVafwWG.css",
-      "_app/immutable/assets/game_manager.DBEf1EI2.css"
+      "_app/immutable/assets/game_manager.CFc9uwl0.css"
     ]
   },
   "src/routes/lobis/+page.svelte": {
