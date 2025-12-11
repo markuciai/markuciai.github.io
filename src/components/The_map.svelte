@@ -394,7 +394,6 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 {#each {length: globe.progress }, index}
 <div class="map_layer"
-    class:current={globe.location == index}
     style="
         --transition_time_base: { +flipped  }s;
         --map_scroll: {map_scroll};
@@ -403,7 +402,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     class:flipped={flipped}
     > 
 
-    <img src={piece_array_front[index]} class ="map_layer_img" />
+    <img src={piece_array_front[index]} class ="map_layer_img" class:current_piece={globe.location == index} />
     <img src={piece_array_back[index]} class ="map_layer_img backside" />
 </div>
 {/each}
@@ -848,8 +847,12 @@ h1 {
 
 .backside {
     /* filter: hue-rotate(220deg); */
+
     /* transform: scaleX(-1) rotateY(180deg); */
+    /* transform: scaleX(-1) rotateY(180deg); */
+
     transform: rotateY(180deg);
+    /* transform: scaleX(-1); */
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
 }
@@ -865,6 +868,7 @@ h1 {
 
 .flipped {
     transform: rotateY(-180deg);
+    filter: none;
     /* transition: transform 2s; */
     /* transition: transform calc(abs(var(--x_ratio)) * abs(var(--y_ratio)) * 2.5s); */
     /* transition: transform calc(2 * 2.5s); */
@@ -876,8 +880,10 @@ h1 {
 }
 
 
-.map_layer.current {
-filter: brightness(1.2) contrast(1.25) saturate(0.5);
+/* .map_layer.current { */
+.current_piece {
+    filter: brightness(1.2) contrast(1.25) saturate(0.5);
+    /* backface-visibility: hidden; */
 }
 
 
