@@ -53,6 +53,9 @@ onMount(async () => {
 
 <section>
 <img class="map_piece_header_illustration" src={map_piece}>
+
+
+{#if localStorage.barboba}
 {#if globe.language == "EN"}
 
 <h1>Croquet court</h1>
@@ -142,6 +145,10 @@ However, to let as many people as possible learn about the last will of the Push
 Lorem ipsum dolor sit amet
 
 {:else} <!-- LT -->
+..
+{/if}
+
+{:else} <!-- localStorage.barboba -->
 
 
 
@@ -150,10 +157,44 @@ Lorem ipsum dolor sit amet
 
 
 
+{#if globe.language == "EN"}
+<h1>Croquet court</h1>
+<p class="subh">The twelfth and final stop<br>in the quest for Markučiai Treasure</p>
+<article>
+There's a game going at the croquet court, a game once played at the 1900 olympics. During the XIX century croquet was a popular game all acros Europe.
+</article>
+
+<img width=105% src={croquet}>
+<article>
+<br/>
+In this game players hit balls with mallots, trying to get the balls trough hoops. As you play, you find the last piece of the document.
+</article>
+
+<article>
+Now, after putting together the pieces, turn them over and read the combined document. What does it say?
+</article>
 
 
 
+{:else if globe.language == "RU"}
+<h1>Площадка для крокета</h1>
+<p class="subh">Двенадцатая и предпоследняя остановка<br>в поисках Клада Маркутья</p>
+<article>
+На площадке для крокета дети играют в уникальную игру, которую играли на олимпиаде 1900 года. В XIX веке крокет был популярным времяпрепровождением по всей Европе.
+</article>
 
+<img width=105% src={croquet}>
+<article>
+<br/>
+Это игра, в которой молотками бьют по шарам, чтобы забить их в расставленные по пространству воротца. Играя, вы находите последний кусочек документа на молотке.
+</article>
+
+<article>
+А теперь, сложив все кусочки вместе, переверните и прочитайте собранный документ. Что на нём написано?
+</article>
+
+{:else if globe.language == "LA"}
+{:else} <!-- LT -->
 
 
 
@@ -162,13 +203,12 @@ Lorem ipsum dolor sit amet
 <article>
 Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse. Kroketas XIX a. buvo populiarus laisvalaikio žaidimas visoje Europoje.
 </article>
-<article>
-Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. 
-</article>
-	<img width=105% src={croquet}>
+
+<img width=105% src={croquet}>
+
 <article>
 <br/>
-Žaidimo metu, ant lazdos rasite paskutiniąja dokumento skiautę. 
+Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. Žaidimo metu, ant lazdos rasite paskutiniąja dokumento skiautę. 
 </article>
 
 <article>
@@ -191,6 +231,10 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 
 
 {/if} <!-- Station globe.languages-->
+{/if} <!-- localStorage.barboba -->
+
+
+
 </section>
 
 

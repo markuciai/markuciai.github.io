@@ -474,9 +474,6 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 
-
-
-
 <section class="testament_section">
 <h1>Markučių Lobis</h1>
 <div class="testamento_tekstas" >

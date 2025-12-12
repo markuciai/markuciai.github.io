@@ -46,10 +46,10 @@ To play, a player will need a phone or tablet with an internet connection (to sc
 <div class="where-next">
 If you're already at the park during museum work hours and wish to play immediately — visit the museum and ask at the front desk.
 <br><br>
-And if you wish to book an educational program for a group, email at: <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>.
+And if you wish to book an educational program for a group <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">email us</a>.
+<br><br>
+<a href="https://md.vilniausmuziejus.lt/#educations">More info about the Markučiai educational opportunities.</a>.
 </div>
-
-
 
 
 
@@ -82,8 +82,11 @@ And if you wish to book an educational program for a group, email at: <a href="m
 <div class="where-next">
 Если вы уже в парке (в часы работы музея) и хотите поиграть прямо сейчас — заходите в музей и обращайтесь в кассу.
 <br><br>
-А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>.
+А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">электропочту</a>.
+<br><br>
+<a href="https://md.vilniausmuziejus.lt/#educations">Подробная информация об эдукациях двора Маркучай</a>
 </div>
+
 
 
 
