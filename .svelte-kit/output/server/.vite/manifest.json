@@ -104,6 +104,18 @@
     "file": "_app/immutable/assets/favicon.XN9wP4KE.svg",
     "src": "src/lib/assets/favicon.svg"
   },
+  "src/lib/audio/sound-10-2.mp3": {
+    "file": "_app/immutable/assets/sound-10-2.DeQaXnQn.mp3",
+    "src": "src/lib/audio/sound-10-2.mp3"
+  },
+  "src/lib/audio/sound-8-2.mp3": {
+    "file": "_app/immutable/assets/sound-8-2._BU3LiBy.mp3",
+    "src": "src/lib/audio/sound-8-2.mp3"
+  },
+  "src/lib/audio/sound-9-2.mp3": {
+    "file": "_app/immutable/assets/sound-9-2.zmgai9F-.mp3",
+    "src": "src/lib/audio/sound-9-2.mp3"
+  },
   "src/lib/images/archival/bakery.jpg": {
     "file": "_app/immutable/assets/bakery.cLUMIVQE.jpg",
     "src": "src/lib/images/archival/bakery.jpg"
@@ -545,11 +557,12 @@
       "_attributes.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.Zhj4GyEi.css",
+      "_app/immutable/assets/_layout.DTwzjCv0.css",
       "_app/immutable/assets/game_manager.CFc9uwl0.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",
+      "_app/immutable/assets/sound-8-2._BU3LiBy.mp3",
       "_app/immutable/assets/ornament.CWPLtSmL.png"
     ]
   },
@@ -621,6 +634,9 @@
       "_globe.svelte.js",
       "_doggo.js",
       "_attributes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.CEAoJ1Cx.css"
     ],
     "assets": [
       "_app/immutable/assets/ball.BARvZG9d.png",

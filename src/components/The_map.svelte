@@ -180,12 +180,14 @@ let y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, 
 let scroll = $state(Number(0))
 let map_scroll = $state(Number(100))
 let flipped = $state(false);
+let map_offset = Number(0)
 
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
 
     // Linear
-    map_scroll =  Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
+    // map_scroll =  Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
+    map_scroll =  Math.max((scroll - map_offset) * -1 -100, 0)
 
     // Eased in different directions:
     // map_scroll =  Math.pow(Math.max((scroll - document.getElementById("map_wrapper").offsetTop)  * -1 -100, 0), 0.5) * 20
@@ -286,6 +288,7 @@ if (browser) {
 
 
 onMount(async () => { 
+    map_offset = document.getElementById("map_wrapper").offsetTop
     // map_position_y = document.getElementById("map_wrapper").offsetTop
     // document.getElementsBy
 });
@@ -341,12 +344,13 @@ Turn over
 Apversti
 {/if}
 </button>
-{:else}
+{:else if globe.progress != -1}
+<!-- {:else} -->
 <div class="progress_block">
 <div class="progress_bar" style="--progress_percent: {100*globe.progress/12}%">&nbsp;</div>
-<p class="progress_description">
+<!-- <p class="progress_description">
 Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]} iš 12
-</p>
+</p> -->
 <!-- 
 [gabaliuku, gabaliuka, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliukus, gabaliuku, gabaliuku, gabaliuku][]
 

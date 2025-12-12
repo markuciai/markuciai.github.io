@@ -27,6 +27,7 @@ let date_finished_s
 let time_delta = 0
 
 
+
 // if (browser) {
 onMount(async () => { 
 	console.log("mount", show_station)
@@ -96,9 +97,7 @@ function ms_to_time(ms) {
 <section>
 
 
-<article>
-Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
-</article>
+
 
 <img class="map_piece_header_illustration" src={splash}>
 
@@ -151,21 +150,28 @@ Latin
 
 <h1>Finišas!</h1>
 <p class="subh">MARKUČIŲ DVARO<br>ORIENTACINIO ŽAIDIMO pabaiga</p>
-<article>
-	Jūs surinkote dvaro žemėlapį ir Varvaros testamentą.
-</article>
+<!-- <article>
+	Jūs surinkote dvaro žemėlapį ir Aleksėejaus Melnikovo dokumentaą.
+</article> -->
 
-<article>
-	<ul>
-	<li>Žaidimo pradžia: {date_started_h}:{date_started_m}:{date_started_s}</li> 
-	<li>Lobis rastas: {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
-	<li>Laikas: {time_delta}</li>
-	</ul>
-</article>
+<div class="stats_wrapper">
+<div class="stats_block">
 
-<article>
-	Ačiū už žaidimą!
-</article>
+<!-- <article> -->
+
+	<p>Žaidimo pradžia<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
+	<p>Lobis rastas<br>{date_finished_h}:{date_finished_m}:{date_finished_s}</p>
+	<p>Klaidos<br>{globe.mistakes}</p>
+</div>
+<div class="stats_block_bottom">
+	<p>Laikas </p>
+	<p class="laikas">{time_delta}</p>
+<!-- </article> -->
+</div>
+</div>
+
+<!-- <h1>Ačiū už žaidimą</h1> -->
+
 
 <img  src={dvaras_bw} width="105%" />
 
@@ -174,10 +180,12 @@ Latin
 	Kokias paslaptis saugo pati dvaro sodyba? Kur buvo „slaptasis“ kambarys? Ką slėpė krosnyje? Kokias galvas kapodavo valgomajame?
 </article>
 <article>
-	Pratęsti pažintį su Markučių dvaru galite užsisakę ekskursiją muziejaus kasoje arba iš anksto susisiekę elektropaštu <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
+	Pratęsti pažintį su Markučių dvaru galite užsisakę ekskursiją muziejaus kasoje arba iš anksto susisiekę <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">elektropaštu</a>.
+</article>
+<article>
+<a href="https://md.vilniausmuziejus.lt/#educations">Daugiau informacijos apie Markučių dvare vykdomas edukacijas</a>.
 	<br/>&nbsp;
 </article>
-
 
 
 {/if} <!-- Main page globe.languages-->
@@ -206,3 +214,75 @@ Latin
 
 
 {/if} <!-- Module types-->
+
+
+<style>
+.stats_block p {
+	font-family: var(--font-manrope);
+	font-weight: bold;
+	display: inline-block;
+	margin-right: 16px;
+	/* font-size: 18px; */
+}
+
+.stats_block_bottom p {
+	font-family: var(--font-manrope);
+	font-weight: bold;
+	/* font-size: 18px; */
+}
+
+
+.laikas {
+	margin: -20px -3px;
+	font-size: 64px;
+}
+
+.stats_block {
+	font-family: var(--font-manrope);
+	font-weight: bold;
+	width: 95%;
+	height: 80px;
+	background: var(--color_green_medium_dark);
+	color: var(--color-sepia);
+	border-radius: 6px 6px 0 0;
+	padding: 15px 20px;
+	font-size: 14px;
+	box-shadow: 
+		0px -10px 30px 0px #00331166 inset
+	;
+	flex: 1 1 100px;
+
+}
+
+.stats_block_bottom {
+	font-family: var(--font-manrope);
+	font-weight: bold;
+	width: 95%;
+	height: 160px;
+	background: var(--color-vm-orange);
+	color: var(--color-sepia);
+	border-radius: 0 0 6px 6px;
+	padding: 50px 20px;
+	font-size: 24px;
+	margin-top: -1px;
+	box-shadow: 
+		0px 0px 20px 0px #FFFFBB33 inset
+	;
+
+}
+
+.stats_wrapper {
+	width: 90vw;
+	left: 0px;
+	padding: -0px 0px;
+	margin: -20px 0 20px 5%;
+	/* scale: 1.1; */
+	rotate: 0deg;
+	transition: cubic-bezier(0.34, 2.56, 0.64, 1) 1s;
+	@starting-style {
+		scale: 0.5;
+		rotate: 2deg;
+	}
+}
+
+</style>

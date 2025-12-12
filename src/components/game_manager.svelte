@@ -1,15 +1,30 @@
 <script>
-import { browser } from "$app/environment";
+import { browser } from "$app/environment"
 
+import sound_correct from '$lib/audio/sound-8-2.mp3'
+import sound_last_piece from '$lib/audio/sound-10-2.mp3'
+import sound_finish from '$lib/audio/sound-9-2.mp3'
+
+// let a_sound_correct = new Audio('sound_correct')
+// let a_sound_last_piece = new Audio('sound_last_piece')
+// let a_sound_finish = new Audio('sound_finish')
+
+// const audioContext = new AudioContext();
+
+// const
 
 onMount(() => {
 	console.log('game_manager component mounted');
+	// a_sound_correct.play()
 	// console.log("preferred languages:", navigator.languages)
 
 
 
 
-if (browser) {
+
+
+if (browser) {	
+
 	if(localStorage.getItem("progress") !== null) {
 		globe.progress = Number(localStorage.progress);
 	}
@@ -17,6 +32,20 @@ if (browser) {
 	if(localStorage.getItem("location") !== null) {
 		globe.location = Number(localStorage.location);
 	}
+
+	if(localStorage.getItem("mistakes") !== null) {
+		globe.mistakes = Number(localStorage.mistakes);
+	}
+	// localStorage.mistakes = Number(globe.mistakes)
+
+	if(globe.progress > -1 && globe.progress != globe.location) {
+		globe.mistakes += 1
+		// if(localStorage.getItem("mistakes") !== null) {
+		// localStorage.mistakes = Number(localStorage.mistakes) + 1;
+		// }
+		console.log("mistake!", globe.mistakes)
+		}
+
 
 	if(localStorage.getItem("laisve") !== null) {
 		console.log('before load', localStorage.laisve,  globe.laisve, JSON.parse(globe.laisve) );
@@ -31,22 +60,42 @@ if (browser) {
 
 });
 
+
+
+
+
 $effect(() => {
 	globe.progress = Math.max(Math.min(globe.progress, 12), -1)
 	globe.location = Math.max(Math.min(globe.location, 12), -1)
 
 	console.log('resolving progress and location:', globe.progress, " ", globe.location)
+
+
+
 	if(globe.progress > -1 && globe.progress == globe.location - 1) {
 		globe.progress = globe.location
+		setTimeout(function(){  document.getElementById("audio_correct").play()  }, 500)
+	}	else {
+		// console.log("mistake?")
 	}
+
 // })
 
 
 // $effect(() => {
 	localStorage.progress = Number(globe.progress)
 	localStorage.location = Number(globe.location)
-	console.log('resolved progress and location:', globe.progress, " ", globe.location)
+	localStorage.mistakes = Number(globe.mistakes)
+	console.log('resolved progress and location:', globe.progress, " ", globe.location, " ",globe.mistakes)
 })
+
+
+$effect(() => {
+	// if(globe.progress != globe.location){
+	// 	globe.mistakes += 1
+	// }
+})
+
 
 $effect(() => {
 		// console.log('laisve before', localStorage.laisve,  globe.laisve, globe.laisve );
@@ -58,7 +107,9 @@ $effect(() => {
 
 </script>
 
-
+<audio src={sound_correct} id="audio_correct"></audio>
+<audio src={sound_correct} id="audio_last_piece"></audio>
+<audio src={sound_correct} id="audio_finish"></audio>
 
 {#if globe.laisve}
 <div class="enrult">
@@ -71,7 +122,7 @@ $effect(() => {
 	<button class="lang_button" onclick={window.location.href='/'} >{globe.location}</button> |||| 
 
 	<button onclick={() => globe.progress -=1} class="lang_button" >-</button>
-	<button class="lang_button selected"> {globe.progress}</button>
+	<button class="lang_button selected">{globe.progress}</button>
 	<button onclick={() => globe.progress +=1} class="lang_button">+</button>
 	<!-- <button onclick={() => globe.progress = 3} class="lang_button" class:selected={globe.progress == 3}>three</button> -->
 </div>

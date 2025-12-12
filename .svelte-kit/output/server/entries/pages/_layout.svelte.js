@@ -1,10 +1,23 @@
 import { x as head } from "../../chunks/index.js";
-import "clsx";
-/* empty css                                                      */
 import { a as attr } from "../../chunks/attributes.js";
+/* empty css                                                      */
+import "clsx";
 const favicon = "/_app/immutable/assets/favicon.XN9wP4KE.svg";
+const sound_correct = "/_app/immutable/assets/sound-8-2._BU3LiBy.mp3";
 function Game_manager($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
+    $$renderer2.push(`<audio${attr(
+      "src",
+      // console.log("mistake?")
+      // })
+      // $effect(() => {
+      // if(globe.progress != globe.location){
+      // 	globe.mistakes += 1
+      // }
+      // console.log('laisve before', localStorage.laisve,  globe.laisve, globe.laisve );
+      // console.log('after', localStorage.laisve,  globe.laisve, globe.laisve );
+      sound_correct
+    )} id="audio_correct" class="svelte-gieire"></audio> <audio${attr("src", sound_correct)} id="audio_last_piece" class="svelte-gieire"></audio> <audio${attr("src", sound_correct)} id="audio_finish" class="svelte-gieire"></audio> `);
     {
       $$renderer2.push("<!--[!-->");
       $$renderer2.push(`<div class="enrult title svelte-gieire"><h1 class="svelte-gieire">Markučių<br class="svelte-gieire"/>Lobis</h1></div>`);
