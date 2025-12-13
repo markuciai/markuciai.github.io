@@ -181,13 +181,16 @@ let scroll = $state(Number(0))
 let map_scroll = $state(Number(100))
 let flipped = $state(false);
 let map_offset = Number(0)
+let map_wrapper_element
 
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
 
     // Linear
-    // map_scroll =  Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
-    map_scroll =  Math.max((scroll - map_offset) * -1 -100, 0)
+    map_scroll =  Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
+    // console.log("map scroll", map_scroll)
+
+
 
     // Eased in different directions:
     // map_scroll =  Math.pow(Math.max((scroll - document.getElementById("map_wrapper").offsetTop)  * -1 -100, 0), 0.5) * 20
@@ -288,7 +291,9 @@ if (browser) {
 
 
 onMount(async () => { 
-    map_offset = document.getElementById("map_wrapper").offsetTop
+    map_wrapper_element = document.getElementById("map_wrapper")
+    // console.log(map_wrapper_element)
+    map_offset = map_wrapper_element.offsetTop
     // map_position_y = document.getElementById("map_wrapper").offsetTop
     // document.getElementsBy
 });

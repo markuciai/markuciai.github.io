@@ -1,4 +1,4 @@
-import { H as HYDRATION_ERROR, C as COMMENT_NODE, a as HYDRATION_END, b as HYDRATION_START, c as HYDRATION_START_ELSE, B as BOUNDARY_EFFECT, E as ERROR_VALUE, d as EFFECT_RAN, e as CLEAN, I as INERT, f as EFFECT, g as BLOCK_EFFECT, D as DIRTY, h as DERIVED, W as WAS_MARKED, i as BRANCH_EFFECT, R as ROOT_EFFECT, M as MAYBE_DIRTY, j as DESTROYED, A as ASYNC, k as HEAD_EFFECT, l as EFFECT_TRANSPARENT, m as EFFECT_PRESERVED, n as CONNECTED, o as EAGER_EFFECT, S as STATE_SYMBOL, U as UNINITIALIZED, p as STALE_REACTION, q as RENDER_EFFECT, r as USER_EFFECT, s as MANAGED_EFFECT, t as REACTION_IS_UPDATING, u as is_passive_event, L as LEGACY_PROPS, v as render, w as setContext } from "./index.js";
+import { H as HYDRATION_ERROR, C as COMMENT_NODE, a as HYDRATION_END, b as HYDRATION_START, c as HYDRATION_START_ELSE, B as BOUNDARY_EFFECT, E as ERROR_VALUE, d as EFFECT_RAN, e as CLEAN, I as INERT, f as EFFECT, g as BLOCK_EFFECT, D as DIRTY, M as MAYBE_DIRTY, h as DERIVED, W as WAS_MARKED, i as BRANCH_EFFECT, R as ROOT_EFFECT, j as DESTROYED, A as ASYNC, k as HEAD_EFFECT, l as EFFECT_TRANSPARENT, m as EFFECT_PRESERVED, n as CONNECTED, o as EAGER_EFFECT, S as STATE_SYMBOL, U as UNINITIALIZED, p as STALE_REACTION, q as RENDER_EFFECT, r as USER_EFFECT, s as MANAGED_EFFECT, t as REACTION_IS_UPDATING, u as is_passive_event, L as LEGACY_PROPS, v as render, w as setContext } from "./index.js";
 import { D as DEV } from "./environment.js";
 import "clsx";
 let public_env = {};
@@ -266,14 +266,14 @@ class Batch {
   #deferred = null;
   /**
    * Deferred effects (which run after async work has completed) that are DIRTY
-   * @type {Effect[]}
+   * @type {Set<Effect>}
    */
-  #dirty_effects = [];
+  #dirty_effects = /* @__PURE__ */ new Set();
   /**
    * Deferred effects that are MAYBE_DIRTY
-   * @type {Effect[]}
+   * @type {Set<Effect>}
    */
-  #maybe_dirty_effects = [];
+  #maybe_dirty_effects = /* @__PURE__ */ new Set();
   /**
    * A set of branches that still exist, but will be destroyed when this batch
    * is committed — we skip over these during `process`
@@ -295,8 +295,7 @@ class Batch {
       parent: null,
       effect: null,
       effects: [],
-      render_effects: [],
-      block_effects: []
+      render_effects: []
     };
     for (const root2 of root_effects) {
       this.#traverse_effect_tree(root2, target);
@@ -307,7 +306,6 @@ class Batch {
     if (this.is_deferred()) {
       this.#defer_effects(target.effects);
       this.#defer_effects(target.render_effects);
-      this.#defer_effects(target.block_effects);
     } else {
       current_batch = null;
       flush_queued_effects(target.render_effects);
@@ -335,8 +333,7 @@ class Batch {
           parent: target,
           effect,
           effects: [],
-          render_effects: [],
-          block_effects: []
+          render_effects: []
         };
       }
       if (!skip && effect.fn !== null) {
@@ -345,7 +342,7 @@ class Batch {
         } else if ((flags2 & EFFECT) !== 0) {
           target.effects.push(effect);
         } else if (is_dirty(effect)) {
-          if ((effect.f & BLOCK_EFFECT) !== 0) target.block_effects.push(effect);
+          if ((effect.f & BLOCK_EFFECT) !== 0) this.#dirty_effects.add(effect);
           update_effect(effect);
         }
         var child = effect.first;
@@ -360,7 +357,6 @@ class Batch {
         if (parent === target.effect) {
           this.#defer_effects(target.effects);
           this.#defer_effects(target.render_effects);
-          this.#defer_effects(target.block_effects);
           target = /** @type {EffectTarget} */
           target.parent;
         }
@@ -374,8 +370,11 @@ class Batch {
    */
   #defer_effects(effects) {
     for (const e of effects) {
-      const target = (e.f & DIRTY) !== 0 ? this.#dirty_effects : this.#maybe_dirty_effects;
-      target.push(e);
+      if ((e.f & DIRTY) !== 0) {
+        this.#dirty_effects.add(e);
+      } else if ((e.f & MAYBE_DIRTY) !== 0) {
+        this.#maybe_dirty_effects.add(e);
+      }
       this.#clear_marked(e.deps);
       set_signal_status(e, CLEAN);
     }
@@ -454,8 +453,7 @@ class Batch {
         parent: null,
         effect: null,
         effects: [],
-        render_effects: [],
-        block_effects: []
+        render_effects: []
       };
       for (const batch of batches) {
         if (batch === this) {
@@ -521,6 +519,7 @@ class Batch {
   }
   revive() {
     for (const e of this.#dirty_effects) {
+      this.#maybe_dirty_effects.delete(e);
       set_signal_status(e, DIRTY);
       schedule_effect(e);
     }
@@ -528,8 +527,6 @@ class Batch {
       set_signal_status(e, MAYBE_DIRTY);
       schedule_effect(e);
     }
-    this.#dirty_effects = [];
-    this.#maybe_dirty_effects = [];
     this.flush();
   }
   /** @param {() => void} fn */
@@ -2474,8 +2471,8 @@ function set_manifest(_) {
 }
 function asClassComponent(component) {
   const component_constructor = asClassComponent$1(component);
-  const _render = (props, { context } = {}) => {
-    const result = render(component, { props, context });
+  const _render = (props, { context, csp } = {}) => {
+    const result = render(component, { props, context, csp });
     const munged = Object.defineProperties(
       /** @type {LegacyRenderResult & PromiseLike<LegacyRenderResult>} */
       {},
@@ -2654,7 +2651,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1jwetkp"
+  version_hash: "oe4vsj"
 };
 async function get_hooks() {
   let handle;

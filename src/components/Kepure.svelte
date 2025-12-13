@@ -1,7 +1,7 @@
 <script>
 // Very animated hat for the game
 
-import { browser } from "$app/environment"
+// import { browser } from "$app/environment"
 // 
 // import { fade, blur, fly, slide, scale } from "svelte/transition";
 
@@ -14,15 +14,14 @@ import { browser } from "$app/environment"
 let scroll = $state(Number(0))
 
 
-
+let station_id = 88
 
 </script>
 
 
 <svelte:window bind:scrollY={scroll} />
 
-{#if globe.progress == 12}
-<!-- or do a progress bar -->
+<!-- {#if globe.progress == 12}
 <button class="button apversti"  onclick={() => flipped = !flipped}>
 {#if globe.language == "EN"}
 Turn over
@@ -34,13 +33,11 @@ Apversti
 </button>
 {:else}
 
-
-</div>
-{/if}
+{/if} -->
 
 
 <div class="square qr"></div>
-<div class="square fail"></div>
+<div class="square fail">??</div>
 <div class="square the_id">{station_id}</div>
 <div class="piece"></div>
 <!-- Or borrow from map? so map piece if matches loc takes special instructions, flies down visibly -->
@@ -56,7 +53,35 @@ Apversti
 
 
 <style>
+/* Alternatively: just have one SVG and animate it, change id text dynamically */
 
+.square {
+    position: absolute;
+    top: 0cqw;
+    left: 20%;
+    width: 160px;
+    height: 160px;
+    padding: 25px;
+
+    
+    border-radius: 16px;
+
+    text-align: center;
+    font-family: var(--font-manrope);
+    font-weight: 800;
+    font-size: 80px;
+    color: var(--color-sepia);
+}
+
+.square.fail {
+    box-shadow: 0px 0px 0px 5px inset #FFCCCC33;
+    background: brown;
+}
+
+.square.the_id {
+    box-shadow: 0px 0px 0px 5px inset #FFFFBB33;
+    background: var(--color-vm-orange);
+}
 
 /* On startup, we show qr on white background (or with sign line visible) */
 /* qr pulls back, creating tensions */

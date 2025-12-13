@@ -95,6 +95,13 @@ https://svelte.dev/e/await_invalid`);
   error.name = "Svelte error";
   throw error;
 }
+function invalid_csp() {
+  const error = new Error(`invalid_csp
+\`csp.nonce\` was set while \`csp.hash\` was \`true\`. These options cannot be used simultaneously.
+https://svelte.dev/e/invalid_csp`);
+  error.name = "Svelte error";
+  throw error;
+}
 function server_context_required() {
   const error = new Error(`server_context_required
 Could not resolve \`render\` context.
@@ -147,6 +154,27 @@ function get_render_context() {
   return store;
 }
 let als = null;
+let text_encoder;
+let crypto;
+async function sha256(data) {
+  text_encoder ??= new TextEncoder();
+  crypto ??= globalThis.crypto?.subtle?.digest ? globalThis.crypto : (
+    // @ts-ignore - we don't install node types in the prod build
+    (await import("node:crypto")).webcrypto
+  );
+  const hash_buffer = await crypto.subtle.digest("SHA-256", text_encoder.encode(data));
+  return base64_encode(hash_buffer);
+}
+function base64_encode(bytes) {
+  if (globalThis.Buffer) {
+    return globalThis.Buffer.from(bytes).toString("base64");
+  }
+  let binary = "";
+  for (let i = 0; i < bytes.length; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
 class Renderer {
   /**
    * The contents of the renderer.
@@ -437,7 +465,7 @@ class Renderer {
    * Takes a component and returns an object with `body` and `head` properties on it, which you can use to populate the HTML when server-rendering your app.
    * @template {Record<string, any>} Props
    * @param {Component<Props>} component
-   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string }} [options]
+   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string; csp?: Csp }} [options]
    * @returns {RenderOutput}
    */
   static render(component, options = {}) {
@@ -462,6 +490,11 @@ class Renderer {
           return (sync ??= Renderer.#render(component, options)).body;
         }
       },
+      hashes: {
+        value: {
+          script: ""
+        }
+      },
       then: {
         value: (
           /**
@@ -478,7 +511,8 @@ class Renderer {
               const user_result = onfulfilled({
                 head: result2.head,
                 body: result2.body,
-                html: result2.body
+                html: result2.body,
+                hashes: { script: [] }
               });
               return Promise.resolve(user_result);
             }
@@ -554,8 +588,8 @@ class Renderer {
    *
    * @template {Record<string, any>} Props
    * @param {Component<Props>} component
-   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string }} options
-   * @returns {Promise<AccumulatedContent>}
+   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string; csp?: Csp }} options
+   * @returns {Promise<AccumulatedContent & { hashes: { script: Sha256Source[] } }>}
    */
   static async #render_async(component, options) {
     const previous_context = ssr_context;
@@ -611,18 +645,18 @@ class Renderer {
     for (const comparison of ctx.comparisons) {
       await comparison;
     }
-    return await Renderer.#hydratable_block(ctx);
+    return await this.#hydratable_block(ctx);
   }
   /**
    * @template {Record<string, any>} Props
    * @param {'sync' | 'async'} mode
    * @param {import('svelte').Component<Props>} component
-   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string }} options
+   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string; csp?: Csp }} options
    * @returns {Renderer}
    */
   static #open_render(mode, component, options) {
     const renderer = new Renderer(
-      new SSRState(mode, options.idPrefix ? options.idPrefix + "-" : "")
+      new SSRState(mode, options.idPrefix ? options.idPrefix + "-" : "", options.csp)
     );
     renderer.push(BLOCK_OPEN);
     if (options.context) {
@@ -640,6 +674,7 @@ class Renderer {
   /**
    * @param {AccumulatedContent} content
    * @param {Renderer} renderer
+   * @returns {AccumulatedContent & { hashes: { script: Sha256Source[] } }}
    */
   static #close_render(content, renderer) {
     for (const cleanup of renderer.#collect_on_destroy()) {
@@ -652,13 +687,16 @@ class Renderer {
     }
     return {
       head: head2,
-      body
+      body,
+      hashes: {
+        script: renderer.global.csp.script_hashes
+      }
     };
   }
   /**
    * @param {HydratableContext} ctx
    */
-  static async #hydratable_block(ctx) {
+  async #hydratable_block(ctx) {
     if (ctx.lookup.size === 0) {
       return null;
     }
@@ -676,8 +714,7 @@ class Renderer {
       prelude = `const r = (v) => Promise.resolve(v);
 				${prelude}`;
     }
-    return `
-		<script>
+    const body = `
 			{
 				${prelude}
 
@@ -687,10 +724,21 @@ class Renderer {
 					h.set(k, v);
 				}
 			}
-		<\/script>`;
+		`;
+    let csp_attr = "";
+    if (this.global.csp.nonce) {
+      csp_attr = ` nonce="${this.global.csp.nonce}"`;
+    } else if (this.global.csp.hash) {
+      const hash = await sha256(body);
+      this.global.csp.script_hashes.push(`sha256-${hash}`);
+    }
+    return `
+		<script${csp_attr}>${body}<\/script>`;
   }
 }
 class SSRState {
+  /** @readonly @type {Csp & { script_hashes: Sha256Source[] }} */
+  csp;
   /** @readonly @type {'sync' | 'async'} */
   mode;
   /** @readonly @type {() => string} */
@@ -701,10 +749,12 @@ class SSRState {
   #title = { path: [], value: "" };
   /**
    * @param {'sync' | 'async'} mode
-   * @param {string} [id_prefix]
+   * @param {string} id_prefix
+   * @param {Csp} csp
    */
-  constructor(mode, id_prefix = "") {
+  constructor(mode, id_prefix = "", csp = { hash: false }) {
     this.mode = mode;
+    this.csp = { ...csp, script_hashes: [] };
     let uid = 1;
     this.uid = () => `${id_prefix}s${uid++}`;
   }
@@ -731,6 +781,9 @@ class SSRState {
 }
 const INVALID_ATTR_NAME_CHAR_REGEX = /[\s'">/=\u{FDD0}-\u{FDEF}\u{FFFE}\u{FFFF}\u{1FFFE}\u{1FFFF}\u{2FFFE}\u{2FFFF}\u{3FFFE}\u{3FFFF}\u{4FFFE}\u{4FFFF}\u{5FFFE}\u{5FFFF}\u{6FFFE}\u{6FFFF}\u{7FFFE}\u{7FFFF}\u{8FFFE}\u{8FFFF}\u{9FFFE}\u{9FFFF}\u{AFFFE}\u{AFFFF}\u{BFFFE}\u{BFFFF}\u{CFFFE}\u{CFFFF}\u{DFFFE}\u{DFFFF}\u{EFFFE}\u{EFFFF}\u{FFFFE}\u{FFFFF}\u{10FFFE}\u{10FFFF}]/u;
 function render(component, options = {}) {
+  if (options.csp?.hash && options.csp.nonce) {
+    invalid_csp();
+  }
   return Renderer.render(
     /** @type {Component<Props>} */
     component,

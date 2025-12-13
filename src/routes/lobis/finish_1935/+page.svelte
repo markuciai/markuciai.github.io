@@ -1,9 +1,10 @@
 <script>
-import { browser } from "$app/environment";
+// import { browser } from "$app/environment";
 
 import Offer from '$components/Offer.svelte';
 import Stopper from '$components/Stopper.svelte';
 
+import Kepure from '$components/Kepure.svelte';
 import splash from '$lib/images/illustrations/splash.png';
 import dvaras_bw from '$lib/images/archival/dvaras_bw.jpg';
 
@@ -95,11 +96,10 @@ function ms_to_time(ms) {
 {#if show_station}
 
 <section>
+<!-- <img class="map_piece_header_illustration" src={splash}> -->
+<Kepure></Kepure>
 
 
-
-
-<img class="map_piece_header_illustration" src={splash}>
 
 {#if globe.language == "EN"}
 
@@ -216,7 +216,15 @@ Latin
 {/if} <!-- Module types-->
 
 
+
+
+
 <style>
+
+
+
+/* Stats */
+
 .stats_block p {
 	font-family: var(--font-manrope);
 	font-weight: bold;
