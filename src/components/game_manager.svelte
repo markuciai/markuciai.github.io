@@ -1,76 +1,110 @@
 <script>
-import { browser } from "$app/environment"
+// import { browser } from "$app/environment"
+import {
+	afterNavigate,
+	beforeNavigate,
+	disableScrollHandling,
+	goto,
+	invalidate,
+	invalidateAll,
+	onNavigate,
+	preloadCode,
+	preloadData,
+	pushState,
+	refreshAll,
+	replaceState
+} from '$app/navigation';
 
 import sound_correct from '$lib/audio/sound-8-2.mp3'
 import sound_last_piece from '$lib/audio/sound-10-2.mp3'
 import sound_finish from '$lib/audio/sound-9-2.mp3'
 
-// let a_sound_correct = new Audio('sound_correct')
-// let a_sound_last_piece = new Audio('sound_last_piece')
-// let a_sound_finish = new Audio('sound_finish')
 
-// const audioContext = new AudioContext();
+let have_checked_for_mistake = false
 
-// const
 
 onMount(() => {
-	console.log('game_manager component mounted');
-	// a_sound_correct.play()
-	// console.log("preferred languages:", navigator.languages)
+	console.log('Game manager mounted')
 
 
-
-
-
-
-if (browser) {	
+// if (browser) {	
 
 	if(localStorage.getItem("progress") !== null) {
-		globe.progress = Number(localStorage.progress);
+		globe.progress = Number(localStorage.progress)
 	}
 
-	if(localStorage.getItem("location") !== null) {
-		globe.location = Number(localStorage.location);
-	}
+	// if(localStorage.getItem("location") !== null) {
+	// 	globe.location = Number(localStorage.location)
+	// }
 
-	if(localStorage.getItem("mistakes") !== null) {
-		globe.mistakes = Number(localStorage.mistakes);
-	}
+	// if(localStorage.getItem("mistakes") !== null) {
+	// 	globe.mistakes = Number(localStorage.mistakes)
+	// }
 	// localStorage.mistakes = Number(globe.mistakes)
 
-	if(globe.progress > -1 && globe.progress != globe.location) {
-		globe.mistakes += 1
-		// if(localStorage.getItem("mistakes") !== null) {
-		// localStorage.mistakes = Number(localStorage.mistakes) + 1;
-		// }
-		console.log("mistake!", globe.mistakes)
-		}
+	console.log(
+		"Loaded from storage.", 
+		"Progress:", globe.progress, 
+		// "Location:", globe.location,
+		// "Mistakes:", localStorage.mistakes
+		)
+
+
 
 
 	if(localStorage.getItem("laisve") !== null) {
-		console.log('before load', localStorage.laisve,  globe.laisve, JSON.parse(globe.laisve) );
 		globe.laisve = JSON.parse(localStorage.laisve);
-		console.log('after load', localStorage.laisve,  globe.laisve, JSON.parse(globe.laisve) );
 	}
-	// console.log('what', localStorage.progress, localStorage.laisve)
-	// localStorage.progress = Number(globe.progress)
-	// localStorage.laisve = Boolean(globe.laisve)
 	
+// }
+
+})
+
+// BUG Mistake check still happens on load, using last time's data
+function check_for_mistake(a_progress = globe.progress, a_location = globe.location) {
+	if(
+		have_checked_for_mistake
+		|| a_location == -1
+		|| a_location == 0
+			) {return}
+
+	if(localStorage.getItem("mistakes") == null) {
+		localStorage.mistakes = 0
+	}
+	// have_checked_for_mistake = true // not strictly necessary, but there may be some mistake stacking due to navigation? Or should those simply... count?
+
+	if(a_progress > -1 && a_location != 0 && a_progress != a_location) {
+	// console.log("Mistake! Total:", globe.mistakes, "+1")
+	console.log("Mistake! Total:", localStorage.mistakes, "+1")
+	// globe.mistakes += 1
+	// localStorage.mistakes = Number(globe.mistakes)
+	localStorage.mistakes = Number(localStorage.mistakes) + 1
+	// if(localStorage.getItem("mistakes") !== null) {
+	// localStorage.mistakes = Number(localStorage.mistakes) + 1;
+	// }
+	
+	} else {
+	// console.log("No mistake. Mistakes so far:", globe.mistakes)
+	console.log("No mistake. Mistakes so far:", localStorage.mistakes)
+	}
 }
 
-});
-
-
+function save_globe_to_localstorage() {
+	localStorage.progress = Number(globe.progress)
+	localStorage.location = Number(globe.location)
+}
 
 
 
 $effect(() => {
 	globe.progress = Math.max(Math.min(globe.progress, 12), -1)
 	globe.location = Math.max(Math.min(globe.location, 12), -1)
+	if(globe.location == -1){return}
 
-	console.log('resolving progress and location:', globe.progress, " ", globe.location)
 
+	console.log('resolving progress and location:', globe.progress, globe.location)
 
+	
 
 	if(globe.progress > -1 && globe.progress == globe.location - 1) {
 		globe.progress = globe.location
@@ -79,22 +113,22 @@ $effect(() => {
 		// console.log("mistake?")
 	}
 
+
+	// check_for_mistake()
+	if(!have_checked_for_mistake) {
+		check_for_mistake()
+	}
+
 // })
 
 
 // $effect(() => {
-	localStorage.progress = Number(globe.progress)
-	localStorage.location = Number(globe.location)
-	localStorage.mistakes = Number(globe.mistakes)
-	console.log('resolved progress and location:', globe.progress, " ", globe.location, " ",globe.mistakes)
+	save_globe_to_localstorage()
+	console.log('resolved progress and location:', globe.progress, globe.location)
 })
 
 
-$effect(() => {
-	// if(globe.progress != globe.location){
-	// 	globe.mistakes += 1
-	// }
-})
+
 
 
 $effect(() => {
@@ -102,6 +136,12 @@ $effect(() => {
 		localStorage.laisve = JSON.parse(globe.laisve)
 		// console.log('after', localStorage.laisve,  globe.laisve, globe.laisve );
 })
+
+
+
+
+
+
 
 
 

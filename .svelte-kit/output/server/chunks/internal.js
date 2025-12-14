@@ -1,36 +1,12 @@
 import { H as HYDRATION_ERROR, C as COMMENT_NODE, a as HYDRATION_END, b as HYDRATION_START, c as HYDRATION_START_ELSE, B as BOUNDARY_EFFECT, E as ERROR_VALUE, d as EFFECT_RAN, e as CLEAN, I as INERT, f as EFFECT, g as BLOCK_EFFECT, D as DIRTY, M as MAYBE_DIRTY, h as DERIVED, W as WAS_MARKED, i as BRANCH_EFFECT, R as ROOT_EFFECT, j as DESTROYED, A as ASYNC, k as HEAD_EFFECT, l as EFFECT_TRANSPARENT, m as EFFECT_PRESERVED, n as CONNECTED, o as EAGER_EFFECT, S as STATE_SYMBOL, U as UNINITIALIZED, p as STALE_REACTION, q as RENDER_EFFECT, r as USER_EFFECT, s as MANAGED_EFFECT, t as REACTION_IS_UPDATING, u as is_passive_event, L as LEGACY_PROPS, v as render, w as setContext } from "./index.js";
 import { D as DEV } from "./environment.js";
+import { r as run_all, d as deferred, o as object_prototype, a as array_prototype, g as get_descriptor, b as get_prototype_of, i as is_array, c as is_extensible, e as index_of, f as define_property, h as array_from } from "./utils2.js";
 import "clsx";
 let public_env = {};
 function set_private_env(environment) {
 }
 function set_public_env(environment) {
   public_env = environment;
-}
-var is_array = Array.isArray;
-var index_of = Array.prototype.indexOf;
-var array_from = Array.from;
-var define_property = Object.defineProperty;
-var get_descriptor = Object.getOwnPropertyDescriptor;
-var object_prototype = Object.prototype;
-var array_prototype = Array.prototype;
-var get_prototype_of = Object.getPrototypeOf;
-var is_extensible = Object.isExtensible;
-const noop = () => {
-};
-function run_all(arr) {
-  for (var i = 0; i < arr.length; i++) {
-    arr[i]();
-  }
-}
-function deferred() {
-  var resolve;
-  var reject;
-  var promise = new Promise((res, rej) => {
-    resolve = res;
-    reject = rej;
-  });
-  return { promise, resolve, reject };
 }
 function equals(value) {
   return value === this.v;
@@ -2651,7 +2627,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "oe4vsj"
+  version_hash: "52vuj7"
 };
 async function get_hooks() {
   let handle;
@@ -2677,7 +2653,6 @@ export {
   set_read_implementation as c,
   set_manifest as d,
   get_hooks as g,
-  noop as n,
   options as o,
   public_env as p,
   read_implementation as r,

@@ -140,6 +140,7 @@ var randf = Math.random()
 	text-shadow: 0px 1px 0.5px rgba(255,255,200, 0);
 /* 	border: 0.67px solid rgb(238, 220, 131, 0.8); */
 	cursor: pointer;
+	
 	user-select: none;
 	pointer-events: all;
 

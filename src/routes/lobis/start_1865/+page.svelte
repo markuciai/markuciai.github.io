@@ -3,14 +3,14 @@
 
 
 
-import splash from '$lib/images/illustrations/splash.png';
-import instructions from '$lib/images/illustrations/instructions.png';
-import steps from '$lib/images/illustrations/steps.png';
+import splash from '$lib/images/illustrations/splash.png'
+import instructions from '$lib/images/illustrations/instructions.png'
+import steps from '$lib/images/illustrations/steps.png'
 
 
-import Stopper from '$components/Stopper.svelte';
+// import Stopper from '$components/Stopper.svelte';
 
-import task from '$lib/images/illustrations/bowl.png';
+import task from '$lib/images/illustrations/bowl.png'
 
 
 
@@ -35,6 +35,7 @@ function empty_storage() {
 	window.location.reload();
 }
 
+// TODO move to game manager
 onMount(async () => { 
 	// finished before, resetting completely
 	if (localStorage.finished) {
@@ -45,15 +46,17 @@ onMount(async () => {
 	}
 
 	// not playing → playing
-	if(globe.progress == station_id - 1) {
-		globe.progress = station_id
+	if(globe.progress == -1) {
+		globe.progress = 0
+		globe.mistakes = 0
 		localStorage.date_started = date_started;
 	}
 
 
 
 	// already playing
-	if (globe.progress > station_id) {
+	//??? what's the point of this?
+	if (globe.progress > 0) {
 		date_started = new Date( Date.parse(localStorage.date_started) );
 		date_started_h = date_started.getHours().toString().padStart(2,"0");
 		date_started_m = date_started.getMinutes().toString().padStart(2,"0");

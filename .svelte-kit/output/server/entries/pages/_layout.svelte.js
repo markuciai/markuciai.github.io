@@ -1,6 +1,10 @@
 import { x as head } from "../../chunks/index.js";
 import { a as attr } from "../../chunks/attributes.js";
-/* empty css                                                      */
+import "@sveltejs/kit/internal";
+import "../../chunks/exports.js";
+import "../../chunks/utils.js";
+import "@sveltejs/kit/internal/server";
+import "../../chunks/game_manager.svelte_svelte_type_style_lang.js";
 import "clsx";
 const favicon = "/_app/immutable/assets/favicon.XN9wP4KE.svg";
 const sound_correct = "/_app/immutable/assets/sound-8-2._BU3LiBy.mp3";
@@ -9,11 +13,9 @@ function Game_manager($$renderer, $$props) {
     $$renderer2.push(`<audio${attr(
       "src",
       // console.log("mistake?")
+      // check_for_mistake()
       // })
       // $effect(() => {
-      // if(globe.progress != globe.location){
-      // 	globe.mistakes += 1
-      // }
       // console.log('laisve before', localStorage.laisve,  globe.laisve, globe.laisve );
       // console.log('after', localStorage.laisve,  globe.laisve, globe.laisve );
       sound_correct

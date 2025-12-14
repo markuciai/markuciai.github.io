@@ -161,7 +161,7 @@ Latin
 
 	<p>Žaidimo pradžia<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
 	<p>Lobis rastas<br>{date_finished_h}:{date_finished_m}:{date_finished_s}</p>
-	<p>Klaidos<br>{globe.mistakes}</p>
+	<p>Klaidos<br>{localStorage.mistakes}</p>
 </div>
 <div class="stats_block_bottom">
 	<p>Laikas </p>

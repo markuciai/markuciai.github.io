@@ -1,40 +1,5 @@
 import * as devalue from "devalue";
-const text_encoder = new TextEncoder();
-const text_decoder = new TextDecoder();
-function get_relative_path(from, to) {
-  const from_parts = from.split(/[/\\]/);
-  const to_parts = to.split(/[/\\]/);
-  from_parts.pop();
-  while (from_parts[0] === to_parts[0]) {
-    from_parts.shift();
-    to_parts.shift();
-  }
-  let i = from_parts.length;
-  while (i--) from_parts[i] = "..";
-  return from_parts.concat(to_parts).join("/");
-}
-function base64_encode(bytes) {
-  if (globalThis.Buffer) {
-    return globalThis.Buffer.from(bytes).toString("base64");
-  }
-  let binary = "";
-  for (let i = 0; i < bytes.length; i++) {
-    binary += String.fromCharCode(bytes[i]);
-  }
-  return btoa(binary);
-}
-function base64_decode(encoded) {
-  if (globalThis.Buffer) {
-    const buffer = globalThis.Buffer.from(encoded, "base64");
-    return new Uint8Array(buffer);
-  }
-  const binary = atob(encoded);
-  const bytes = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) {
-    bytes[i] = binary.charCodeAt(i);
-  }
-  return bytes;
-}
+import { t as text_decoder, b as base64_encode, c as base64_decode } from "./utils.js";
 function set_nested_value(object, path_string, value) {
   if (path_string.startsWith("n:")) {
     path_string = path_string.slice(2);
@@ -544,18 +509,14 @@ export {
   BINARY_FORM_CONTENT_TYPE as B,
   INVALIDATED_PARAM as I,
   TRAILING_SLASH_PARAM as T,
-  text_encoder as a,
-  base64_encode as b,
+  stringify_remote_arg as a,
+  create_field_proxy as b,
   create_remote_key as c,
   deserialize_binary_form as d,
-  stringify_remote_arg as e,
+  set_nested_value as e,
   flatten_issues as f,
-  get_relative_path as g,
-  create_field_proxy as h,
-  set_nested_value as i,
-  deep_set as j,
+  deep_set as g,
   normalize_issue as n,
   parse_remote_arg as p,
-  stringify as s,
-  text_decoder as t
+  stringify as s
 };

@@ -2,9 +2,12 @@ import { D as DEV, a as assets, b as base, c as app_dir, r as relative, o as ove
 import { json, text, error } from "@sveltejs/kit";
 import { HttpError, SvelteKitError, Redirect, ActionFailure } from "@sveltejs/kit/internal";
 import { with_request_store, merge_tracing, try_get_request_store } from "@sveltejs/kit/internal/server";
-import { B as BINARY_FORM_CONTENT_TYPE, b as base64_encode, t as text_decoder, a as text_encoder, g as get_relative_path, c as create_remote_key, p as parse_remote_arg, s as stringify, d as deserialize_binary_form, T as TRAILING_SLASH_PARAM, I as INVALIDATED_PARAM } from "./chunks/shared.js";
+import { B as BINARY_FORM_CONTENT_TYPE, c as create_remote_key, p as parse_remote_arg, s as stringify, d as deserialize_binary_form, T as TRAILING_SLASH_PARAM, I as INVALIDATED_PARAM } from "./chunks/shared.js";
 import * as devalue from "devalue";
-import { n as noop, s as safe_not_equal, p as public_env, r as read_implementation, o as options, a as set_private_env, b as set_public_env, g as get_hooks, c as set_read_implementation } from "./chunks/internal.js";
+import { m as make_trackable, d as disable_search, a as decode_params, S as SCHEME, v as validate_layout_server_exports, b as validate_layout_exports, c as validate_page_server_exports, e as validate_page_exports, n as normalize_path, r as resolve, f as decode_pathname, g as validate_server_exports } from "./chunks/exports.js";
+import { b as base64_encode, t as text_decoder, a as text_encoder, g as get_relative_path } from "./chunks/utils.js";
+import { n as noop } from "./chunks/utils2.js";
+import { s as safe_not_equal, p as public_env, r as read_implementation, o as options, a as set_private_env, b as set_public_env, g as get_hooks, c as set_read_implementation } from "./chunks/internal.js";
 import "clsx";
 import { parse, serialize } from "cookie";
 import * as set_cookie_parser from "set-cookie-parser";
@@ -834,103 +837,6 @@ function server_data_serializer_json(event, event_state, options2) {
       };
     }
   };
-}
-const SCHEME = /^[a-z][a-z\d+\-.]+:/i;
-const internal = new URL("sveltekit-internal://");
-function resolve(base2, path) {
-  if (path[0] === "/" && path[1] === "/") return path;
-  let url = new URL(base2, internal);
-  url = new URL(path, url);
-  return url.protocol === internal.protocol ? url.pathname + url.search + url.hash : url.href;
-}
-function normalize_path(path, trailing_slash) {
-  if (path === "/" || trailing_slash === "ignore") return path;
-  if (trailing_slash === "never") {
-    return path.endsWith("/") ? path.slice(0, -1) : path;
-  } else if (trailing_slash === "always" && !path.endsWith("/")) {
-    return path + "/";
-  }
-  return path;
-}
-function decode_pathname(pathname) {
-  return pathname.split("%25").map(decodeURI).join("%25");
-}
-function decode_params(params) {
-  for (const key2 in params) {
-    params[key2] = decodeURIComponent(params[key2]);
-  }
-  return params;
-}
-function make_trackable(url, callback, search_params_callback, allow_hash = false) {
-  const tracked = new URL(url);
-  Object.defineProperty(tracked, "searchParams", {
-    value: new Proxy(tracked.searchParams, {
-      get(obj, key2) {
-        if (key2 === "get" || key2 === "getAll" || key2 === "has") {
-          return (param) => {
-            search_params_callback(param);
-            return obj[key2](param);
-          };
-        }
-        callback();
-        const value = Reflect.get(obj, key2);
-        return typeof value === "function" ? value.bind(obj) : value;
-      }
-    }),
-    enumerable: true,
-    configurable: true
-  });
-  const tracked_url_properties = ["href", "pathname", "search", "toString", "toJSON"];
-  if (allow_hash) tracked_url_properties.push("hash");
-  for (const property of tracked_url_properties) {
-    Object.defineProperty(tracked, property, {
-      get() {
-        callback();
-        return url[property];
-      },
-      enumerable: true,
-      configurable: true
-    });
-  }
-  {
-    tracked[Symbol.for("nodejs.util.inspect.custom")] = (depth, opts, inspect) => {
-      return inspect(url, opts);
-    };
-    tracked.searchParams[Symbol.for("nodejs.util.inspect.custom")] = (depth, opts, inspect) => {
-      return inspect(url.searchParams, opts);
-    };
-  }
-  if (!allow_hash) {
-    disable_hash(tracked);
-  }
-  return tracked;
-}
-function disable_hash(url) {
-  allow_nodejs_console_log(url);
-  Object.defineProperty(url, "hash", {
-    get() {
-      throw new Error(
-        "Cannot access event.url.hash. Consider using `page.url.hash` inside a component instead"
-      );
-    }
-  });
-}
-function disable_search(url) {
-  allow_nodejs_console_log(url);
-  for (const property of ["search", "searchParams"]) {
-    Object.defineProperty(url, property, {
-      get() {
-        throw new Error(`Cannot access url.${property} on a page with prerendering enabled`);
-      }
-    });
-  }
-}
-function allow_nodejs_console_log(url) {
-  {
-    url[Symbol.for("nodejs.util.inspect.custom")] = (depth, opts, inspect) => {
-      return inspect(new URL(url), opts);
-    };
-  }
 }
 async function load_server_data({ event, event_state, state, node, parent }) {
   if (!node?.server) return null;
@@ -2235,69 +2141,6 @@ ${indent}}`);
     }
   );
 }
-function validator(expected) {
-  function validate(module, file) {
-    if (!module) return;
-    for (const key2 in module) {
-      if (key2[0] === "_" || expected.has(key2)) continue;
-      const values = [...expected.values()];
-      const hint = hint_for_supported_files(key2, file?.slice(file.lastIndexOf("."))) ?? `valid exports are ${values.join(", ")}, or anything with a '_' prefix`;
-      throw new Error(`Invalid export '${key2}'${file ? ` in ${file}` : ""} (${hint})`);
-    }
-  }
-  return validate;
-}
-function hint_for_supported_files(key2, ext = ".js") {
-  const supported_files = [];
-  if (valid_layout_exports.has(key2)) {
-    supported_files.push(`+layout${ext}`);
-  }
-  if (valid_page_exports.has(key2)) {
-    supported_files.push(`+page${ext}`);
-  }
-  if (valid_layout_server_exports.has(key2)) {
-    supported_files.push(`+layout.server${ext}`);
-  }
-  if (valid_page_server_exports.has(key2)) {
-    supported_files.push(`+page.server${ext}`);
-  }
-  if (valid_server_exports.has(key2)) {
-    supported_files.push(`+server${ext}`);
-  }
-  if (supported_files.length > 0) {
-    return `'${key2}' is a valid export in ${supported_files.slice(0, -1).join(", ")}${supported_files.length > 1 ? " or " : ""}${supported_files.at(-1)}`;
-  }
-}
-const valid_layout_exports = /* @__PURE__ */ new Set([
-  "load",
-  "prerender",
-  "csr",
-  "ssr",
-  "trailingSlash",
-  "config"
-]);
-const valid_page_exports = /* @__PURE__ */ new Set([...valid_layout_exports, "entries"]);
-const valid_layout_server_exports = /* @__PURE__ */ new Set([...valid_layout_exports]);
-const valid_page_server_exports = /* @__PURE__ */ new Set([...valid_layout_server_exports, "actions", "entries"]);
-const valid_server_exports = /* @__PURE__ */ new Set([
-  "GET",
-  "POST",
-  "PATCH",
-  "PUT",
-  "DELETE",
-  "OPTIONS",
-  "HEAD",
-  "fallback",
-  "prerender",
-  "trailingSlash",
-  "config",
-  "entries"
-]);
-const validate_layout_exports = validator(valid_layout_exports);
-const validate_page_exports = validator(valid_page_exports);
-const validate_layout_server_exports = validator(valid_layout_server_exports);
-const validate_page_server_exports = validator(valid_page_server_exports);
-const validate_server_exports = validator(valid_server_exports);
 class PageNodes {
   data;
   /**

@@ -62,12 +62,12 @@ import icon_11_collected from '$lib/images/icons_collected/11.png';
 import icon_12_collected from '$lib/images/icons_collected/12.png';
 
 
-let order_of_items = [2, 8, 3, 5, 9, 1, 0, 7, 6, 12, 10, 11, 4]
-let icon_array = [icon_0, icon_1, icon_2, icon_3, icon_4, icon_5, icon_6, icon_7, icon_8, icon_9, icon_10, icon_11, icon_12]
-let icon_array_collected = [icon_0_collected, icon_1_collected, icon_2_collected, icon_3_collected, icon_4_collected, icon_5_collected, icon_6_collected, icon_7_collected, icon_8_collected, icon_9_collected, icon_10_collected, icon_11_collected, icon_12_collected]
+var order_of_items = [2, 8, 3, 5, 9, 1, 0, 7, 6, 12, 10, 11, 4]
+var icon_array = [icon_0, icon_1, icon_2, icon_3, icon_4, icon_5, icon_6, icon_7, icon_8, icon_9, icon_10, icon_11, icon_12]
+var icon_array_collected = [icon_0_collected, icon_1_collected, icon_2_collected, icon_3_collected, icon_4_collected, icon_5_collected, icon_6_collected, icon_7_collected, icon_8_collected, icon_9_collected, icon_10_collected, icon_11_collected, icon_12_collected]
 
 
-let legend_text = {
+var legend_text = {
     "EN" : [
         "Museum", "Cross", "Servants' quarters", "Stables", "Pond", "Kitchen",
         "Chicken coop", "Bakery", "Water well", "Orangery", "Chapel", "Doggies", "Croquet"
@@ -87,7 +87,7 @@ let legend_text = {
 };
 
 
-let gabaliuku_text = {
+var gabaliuku_text = {
     "EN" : [
         "pieces", "piece", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces", "pieces",
         ],
@@ -147,10 +147,10 @@ import piece_testament_croquet from '$lib/images/map/pieces/testamentas/croquet.
 import piece_1_back from '$lib/images/illustrations/testament_full.png';
 
 
-let piece_array_front = [piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
-let piece_array_back = [piece_testament_cross, piece_testament_house, piece_testament_stables, piece_testament_pond, piece_testament_kitchen, piece_testament_coop, piece_testament_bakery, piece_testament_well, piece_testament_orangery, piece_testament_chapel, piece_testament_doggo, piece_testament_croquet]
-let x_ratio_array = [1.5, 1, 0.2, -0.8, -1.5, 2, 0.5, 0.5, -2.2, 1.5, 0.25, -1.5]
-let y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, -0.2]
+var piece_array_front = [piece_1, piece_2, piece_3, piece_4, piece_5, piece_6, piece_7, piece_8, piece_9, piece_10, piece_11, piece_12]
+var piece_array_back = [piece_testament_cross, piece_testament_house, piece_testament_stables, piece_testament_pond, piece_testament_kitchen, piece_testament_coop, piece_testament_bakery, piece_testament_well, piece_testament_orangery, piece_testament_chapel, piece_testament_doggo, piece_testament_croquet]
+var x_ratio_array = [1.5, 1, 0.2, -0.8, -1.5, 2, 0.5, 0.5, -2.2, 1.5, 0.25, -1.5]
+var y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, -0.2]
 
 
 
@@ -177,17 +177,22 @@ let y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, 
 
 // I need a better way to construct parallaxes, but this custom thing is good for being
 
-let scroll = $state(Number(0))
-let map_scroll = $state(Number(100))
-let flipped = $state(false);
-let map_offset = Number(0)
-let map_wrapper_element
+var scroll = $state(Number(0))
+var map_scroll = $state(Number(0))
+var flipped = $state(false);
+var map_offset = Number(0)
+var map_wrapper_element
 
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
 
     // Linear
-    map_scroll =  Math.max((scroll - document.getElementById("map_wrapper").offsetTop) * -1 -100, 0)
+    if (map_wrapper_element == null){
+        map_wrapper_element = document.getElementById("map_wrapper")
+        // console.log("map_wrapper_element", map_wrapper_element)
+    }
+
+    map_scroll = Math.min(Math.max((scroll - map_wrapper_element.offsetTop) * -1 -100, 0), 32768)
     // console.log("map scroll", map_scroll)
 
 
@@ -412,7 +417,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     class:flipped={flipped}
     > 
 
-    <img src={piece_array_front[index]} class ="map_layer_img" class:current_piece={globe.location == index} />
+    <img src={piece_array_front[index]} class ="map_layer_img" class:current_piece={globe.location == index + 1} class:highlight={map_scroll <= 2} />
     <img src={piece_array_back[index]} class ="map_layer_img backside" />
 </div>
 {/each}
@@ -829,6 +834,9 @@ h1 {
     --x_ratio: 0;
     --y_ratio: 1;
     --map_scroll:  0;
+
+
+    will-change: transform;
     /* --z_value: calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px) ; */
 
 
@@ -856,9 +864,12 @@ h1 {
         rotateX( calc( var(--map_scroll) * var(--x_ratio) * 0.2deg))
         rotateZ( calc( var(--map_scroll) * var(--x_ratio) * var(--y_ratio) * 0.25deg))
         ;
-    transition: transform 0.16s ease-out; /* Safari passes an integer scroll value and lags on phone. This smoothes it out SOMEWHAT */
 
-    transition: transform calc(abs(var(--x_ratio)) * abs(var(--y_ratio)) * var(--transition_time_base) + 0.16s) ease-out;
+
+    transition:
+        transform calc(abs(var(--x_ratio)) * abs(var(--y_ratio)) * var(--transition_time_base) + 0.16s) ease-out
+        ;
+
 
 
 
@@ -883,6 +894,7 @@ h1 {
     /* border: 1px blue solid; */
     position: absolute;
     backface-visibility: hidden;
+    transition: filter 2s;
 }
 
 .backside {
@@ -922,10 +934,14 @@ h1 {
 
 /* .map_layer.current { */
 .current_piece {
-    filter: brightness(1.2) contrast(1.25) saturate(0.5);
+    /* filter: brightness(1.2) contrast(1.25) saturate(0.5); */
+    /* transition: filter 2s; */
     /* backface-visibility: hidden; */
 }
 
+.current_piece.highlight {
+    filter: brightness(1.2) contrast(1.25) saturate(0.5);
+}
 
 
 /* Legend */
