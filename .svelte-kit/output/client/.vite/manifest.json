@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.twSlGrsZ.js",
+    "file": "_app/immutable/entry/app.DDdoGSgK.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -32,7 +32,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.DAervj1P.js",
+    "file": "_app/immutable/nodes/0.dEC_Db_e.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
@@ -41,7 +41,7 @@
       "_g1lcq900.js",
       "_BOAvCIJr.js",
       "_3xwmKQW7.js",
-      "_CbTGiFTU.js",
+      "_DAOjDvPe.js",
       "_BPq9LPTT.js",
       "_DfqifNTS.js",
       "_z08BpYrH.js",
@@ -53,7 +53,7 @@
       "_Bfvy0Kwn.js"
     ],
     "css": [
-      "_app/immutable/assets/0.UeMRvQOg.css"
+      "_app/immutable/assets/0.B9R_qGIU.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",
@@ -300,7 +300,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/2.js": {
-    "file": "_app/immutable/nodes/2.D3wUNT_o.js",
+    "file": "_app/immutable/nodes/2.CkUVp0VQ.js",
     "name": "nodes/2",
     "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
     "isEntry": true,
@@ -310,7 +310,7 @@
       "_z08BpYrH.js",
       "_BOAvCIJr.js",
       "_3xwmKQW7.js",
-      "_CbTGiFTU.js",
+      "_DAOjDvPe.js",
       "_BPq9LPTT.js",
       "_DfqifNTS.js",
       "_DzGLwIQr.js",
@@ -547,24 +547,6 @@
       "_BOAvCIJr.js"
     ]
   },
-  "_CbTGiFTU.js": {
-    "file": "_app/immutable/chunks/CbTGiFTU.js",
-    "name": "game_manager",
-    "imports": [
-      "_BOAvCIJr.js",
-      "_3xwmKQW7.js",
-      "_g1lcq900.js",
-      "_z08BpYrH.js",
-      "_DfqifNTS.js",
-      "_DomUdGu8.js"
-    ],
-    "css": [
-      "_app/immutable/assets/game_manager.B2MM276h.css"
-    ],
-    "assets": [
-      "_app/immutable/assets/sound-8-2._BU3LiBy.mp3"
-    ]
-  },
   "_Ci4xh7Sm.js": {
     "file": "_app/immutable/chunks/Ci4xh7Sm.js",
     "name": "Offer",
@@ -588,6 +570,24 @@
       "_app/immutable/assets/dvaras_bw.KK8Oaffd.jpg"
     ]
   },
+  "_DAOjDvPe.js": {
+    "file": "_app/immutable/chunks/DAOjDvPe.js",
+    "name": "game_manager",
+    "imports": [
+      "_BOAvCIJr.js",
+      "_3xwmKQW7.js",
+      "_g1lcq900.js",
+      "_z08BpYrH.js",
+      "_DfqifNTS.js",
+      "_L1elraAQ.js"
+    ],
+    "css": [
+      "_app/immutable/assets/game_manager.B2MM276h.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/sound-8-2._BU3LiBy.mp3"
+    ]
+  },
   "_DSNnYFS9.js": {
     "file": "_app/immutable/chunks/DSNnYFS9.js",
     "name": "fruit_garden",
@@ -609,14 +609,6 @@
       "_BOAvCIJr.js"
     ]
   },
-  "_DomUdGu8.js": {
-    "file": "_app/immutable/chunks/DomUdGu8.js",
-    "name": "state.svelte",
-    "imports": [
-      "_z08BpYrH.js",
-      "_BOAvCIJr.js"
-    ]
-  },
   "_DzGLwIQr.js": {
     "file": "_app/immutable/chunks/DzGLwIQr.js",
     "name": "class",
@@ -631,6 +623,14 @@
       "_app/immutable/assets/splash.CFG--8IQ.png",
       "_app/immutable/assets/instructions.CX_XWdQk.png",
       "_app/immutable/assets/steps.COm-BiQs.png"
+    ]
+  },
+  "_L1elraAQ.js": {
+    "file": "_app/immutable/chunks/L1elraAQ.js",
+    "name": "state.svelte",
+    "imports": [
+      "_z08BpYrH.js",
+      "_BOAvCIJr.js"
     ]
   },
   "_g1lcq900.js": {
@@ -652,13 +652,13 @@
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.Db6D78C-.js",
+    "file": "_app/immutable/entry/start.S_XwXW-r.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
     "imports": [
       "_BOAvCIJr.js",
-      "_DomUdGu8.js"
+      "_L1elraAQ.js"
     ]
   },
   "src/lib/assets/favicon.svg": {

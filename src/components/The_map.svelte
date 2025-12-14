@@ -180,8 +180,9 @@ var y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, 
 var scroll = $state(Number(0))
 var map_scroll = $state(Number(0))
 var flipped = $state(false);
-var map_offset = Number(0)
+var map_offset = $state(Number(0))
 var map_wrapper_element
+
 
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
@@ -191,8 +192,8 @@ $effect(() => {
         map_wrapper_element = document.getElementById("map_wrapper")
         // console.log("map_wrapper_element", map_wrapper_element)
     }
-
-    map_scroll = Math.min(Math.max((scroll - map_wrapper_element.offsetTop) * -1 -100, 0), 32768)
+    map_offset = map_wrapper_element.offsetTop
+    map_scroll = Math.min(Math.max((scroll - map_offset) * -1 -100, 0), 32768)
     // console.log("map scroll", map_scroll)
 
 
@@ -411,9 +412,12 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     class="map_layer"
     style="
         --transition_time_base: { +flipped  }s;
+        --map_offset: {map_offset};
         --map_scroll: {map_scroll};
+        --scroll: {scroll};
         --y_ratio: {y_ratio_array[index]};
         --x_ratio: {x_ratio_array[index]};"
+    class:current_piece={globe.location == index + 1 && scroll <= map_offset -100}
     class:flipped={flipped}
     > 
 
@@ -830,13 +834,15 @@ h1 {
     top: 0;
     z-index: 40;
 
+
     --transition_time_base: 10.5s;
     --x_ratio: 0;
     --y_ratio: 1;
-    --map_scroll:  0;
+    --map_scroll: 0;
+    --map_offset: 0;
+    --scroll: 0;
 
-
-    will-change: transform;
+    will-change: transform, --map_scroll;
     /* --z_value: calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px) ; */
 
 
@@ -918,7 +924,40 @@ h1 {
 } */
 
 
-.flipped {
+
+
+
+/* .map_layer.current { */
+.map_layer.current_piece {
+    transform-origin: calc(var(--map_offset) * -1px) left;
+    transform:
+        translate3d(
+            calc( var(--scroll) * var(--x_ratio) * 0.05px + 27vw),
+            /* 25vw, */
+            /* 20vw,  */
+            calc( var(--map_offset) * -1px - 25vw - 100px + var(--scroll) * 1.1px), 
+            /* calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px) */
+            0
+            )
+
+
+        rotateY( calc( var(--scroll) * var(--y_ratio) * 0.02deg))
+        rotateX( calc( var(--scroll) * var(--x_ratio) * 0.02deg))
+        rotateZ( calc( var(--scroll) * var(--x_ratio) * var(--y_ratio) * 0.02deg))
+        scale(2, 2)
+        ;
+
+    /* transition: transform 0.16s; */
+}
+
+
+.current_piece.highlight {
+    filter: brightness(1.2) contrast(1.25) saturate(0.5);
+    transition: filter 0.75s;
+}
+
+
+.map_layer.flipped {
     transform: rotateY(-180deg);
     filter: none;
     /* transition: transform 2s; */
@@ -931,17 +970,6 @@ h1 {
     /* scale: 1.2; */
 }
 
-
-/* .map_layer.current { */
-.current_piece {
-    /* filter: brightness(1.2) contrast(1.25) saturate(0.5); */
-    /* transition: filter 2s; */
-    /* backface-visibility: hidden; */
-}
-
-.current_piece.highlight {
-    filter: brightness(1.2) contrast(1.25) saturate(0.5);
-}
 
 
 /* Legend */
