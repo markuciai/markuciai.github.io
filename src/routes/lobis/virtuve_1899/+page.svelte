@@ -108,7 +108,7 @@ Lorem ipsum dolor sit amet
 <h1>Virtuvė</h1>
 <p class="subh">Penktoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-Virtuvėje, kuri stovi priestate šalia namo, dirba virėja. Virėja nudžiunga pamačiusi puikų laimikį - net penkis karpius! Ji juos iškeps krosnyje (ar žinote kas yra krosnis?) su daržovėmis ir visokiausiomis žolelėmis pagal Melnikovų šeimos receptą ir patieks šventiniams pietums.
+Virtuvėje, kuri stovi priestate šalia namo, dirba virėja. Virėja nudžiunga pamačiusi puikų laimikį — net penkis karpius! Ji juos iškeps krosnyje (ar žinote kas yra krosnis?) su daržovėmis ir visokiausiomis žolelėmis pagal Melnikovų šeimos receptą ir patieks šventiniams pietums.
 </article>
 
 

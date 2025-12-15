@@ -19,7 +19,8 @@
       "_mdvaras.js"
     ],
     "assets": [
-      "_app/immutable/assets/instructions.CX_XWdQk.png"
+      "_app/immutable/assets/varvara.BHQkwufB.jpg",
+      "_app/immutable/assets/instructions.CPjAScwm.png"
     ]
   },
   "_attributes.js": {
@@ -374,7 +375,7 @@
     "src": "src/lib/images/illustrations/fodder.png"
   },
   "src/lib/images/illustrations/instructions.png": {
-    "file": "_app/immutable/assets/instructions.CX_XWdQk.png",
+    "file": "_app/immutable/assets/instructions.CPjAScwm.png",
     "src": "src/lib/images/illustrations/instructions.png"
   },
   "src/lib/images/illustrations/mapushkin.png": {
@@ -533,6 +534,10 @@
     "file": "_app/immutable/assets/kitchen.-_fxHPFi.png",
     "src": "src/lib/images/map/pieces/testamentas/kitchen.png"
   },
+  "src/lib/images/map/pieces/testamentas/muziejus.png": {
+    "file": "_app/immutable/assets/muziejus.51lfGqU_.png",
+    "src": "src/lib/images/map/pieces/testamentas/muziejus.png"
+  },
   "src/lib/images/map/pieces/testamentas/orangery.png": {
     "file": "_app/immutable/assets/orangery.Cz9IfxAk.png",
     "src": "src/lib/images/map/pieces/testamentas/orangery.png"
@@ -560,6 +565,10 @@
   "src/lib/images/ornament.png": {
     "file": "_app/immutable/assets/ornament.CWPLtSmL.png",
     "src": "src/lib/images/ornament.png"
+  },
+  "src/lib/images/small/wall_ornament.svg": {
+    "file": "_app/immutable/assets/wall_ornament.Cma19tc6.svg",
+    "src": "src/lib/images/small/wall_ornament.svg"
   },
   "src/routes/+error.svelte": {
     "file": "entries/pages/_error.svelte.js",
@@ -589,7 +598,7 @@
       "_game_manager.svelte_svelte_type_style_lang.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.CIoZzI_K.css"
+      "_app/immutable/assets/_layout.XYHRqKxb.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",

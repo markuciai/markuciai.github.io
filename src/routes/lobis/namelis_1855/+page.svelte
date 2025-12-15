@@ -145,7 +145,7 @@ Tarnai užsiėmę darbais, todėl negali skirti laiko nežinomo dokumento paieš
 <img class="illustration task saddle" src={task}>
 
 <div class="where-next saddle-block">
-Ana ir Viačeslavas sutinka jums atiduoti rastą dokumento dalį, jeigu jūs jiems pagelbėsite ir įvykdysite jų prašymą – nunešite naują balną ponui Michalui.
+Ana ir Viačeslavas sutinka jums atiduoti rastą dokumento dalį, jeigu jūs jiems pagelbėsite ir įvykdysite jų prašymą — nunešite naują balną ponui Michalui.
 	<br><br>
 <span class="highlighted-question">Raskite, kur anksčiau buvo&nbsp;nešamas&nbsp;balnas?</span>
 </div>

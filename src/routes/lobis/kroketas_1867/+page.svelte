@@ -171,7 +171,7 @@ In this game players hit balls with mallots, trying to get the balls trough hoop
 </article>
 
 <article>
-Now, after putting together the pieces, turn them over and read the combined document. What does it say?
+Now, having put together the pieces, turn them over and read the combined document. What does it say?
 </article>
 
 

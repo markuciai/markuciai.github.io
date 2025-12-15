@@ -98,7 +98,7 @@ Lorem ipsum dolor sit amet
 <h1>Arklidės</h1>
 <p class="subh">Trečioji stotelė<br>ieškant Markučių lobio</p>
 <article>
-Šaunuoliai, jūs lengvai įvykdėte tarnų prašymą – naują balną atidavėt į arklides.  Arklidėse dirba Michalas, kuris ilgą laiką tarnavo Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.
+Šaunuoliai, jūs lengvai įvykdėte tarnų prašymą — naują balną atidavėt į arklides.  Arklidėse dirba Michalas, kuris ilgą laiką tarnavo Markučių dvare ir vežiojo savo šeimininkus į miestą bei į kitas gubernijas.
 </article>
 <img width=105% src={stables}>
 <br><br>

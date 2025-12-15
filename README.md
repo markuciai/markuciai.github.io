@@ -1,3 +1,3 @@
-# Markučiu Lobis
+# Markučių lobis
 
-A qr-code treasure hunt quest.
+Lobis, pasleptas tarp raidžių.

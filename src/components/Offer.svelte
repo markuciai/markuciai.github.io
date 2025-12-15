@@ -7,6 +7,7 @@ import doggo from '$lib/images/illustrations/doggo.png';
 import dvaras from '$lib/images/archival/mdvaras.jpg';
 
 
+import varvara from '$lib/images/archival/varvara.jpg';
 </script>
     
 
@@ -127,7 +128,8 @@ Parko teritorijoje išdėliotos lentelės su QR-kodais. Kiekvienam žaidėjui (a
 
 <article>
 <p>
-Žaisti galima lietuvių, anglų, rusų arba ukrainiečių kalbomis.
+<!-- Žaisti galima lietuvių, anglų, rusų arba ukrainiečių kalbomis. -->
+Žaisti galima lietuvių, anglų arba rusų kalbomis.
 </p>
 </article>
 
@@ -138,29 +140,33 @@ Parko teritorijoje išdėliotos lentelės su QR-kodais. Kiekvienam žaidėjui (a
 
 
 <div class="where-next">
-Jeigu jau atvykote į Markučių dvaro parką (muziejaus darbo metu) ir norite išbandyti orientacinį žaidimą, kreipkitės į muziejaus kasą.
-<br><br>
+<!-- Jeigu jau atvykote į Markučių dvaro parką (muziejaus darbo metu) ir norite išbandyti orientacinį žaidimą, kreipkitės į muziejaus kasą.
+<br><br> -->
 Norėdami iš anksto užsakyti orientacinį žaidimą grupei, rašykite <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">elektropaštu</a>.
 <br><br>
 <a href="https://md.vilniausmuziejus.lt/#educations">Daugiau informacijos apie Markučių dvare vykdomas edukacijas</a>.
 </div>
 
-<h1>O kas per dvaras?</h1>
+<h1 >O kas per dvaras?</h1>
 
 <article>
 Markučių dvaras stovi šioje vietoje nuo 1867 m. – nuo XIX amžiaus.
 </article>
 <img width=98% src={dvaras}>
-<br />
+
 <article>
-Tuometinės carinės Rusijos geležinkelių inžinierius Aleksejus Melnikovas Markučių dvarą pastatė savo šeimai – dviems sūnums ir trims dukterims. Dvaro teritorijoje 19 a. buvo įkurtas angliškas parkas, pasodintas vaismedžių sodas, iškasti tvenkiniai ir šulinys, pastatytos medinės arklidės, oranžerija, duonkepė (kepyklėlė), tarnų namelis, ledainė, vištidė, virtuvė, įrengta kroketo aikštelė.
+<br />
+Tuometinės carinės Rusijos geležinkelių inžinierius Aleksejus Melnikovas Markučių dvarą pastatė savo šeimai – dviems sūnums ir trims dukterims. Dvaro teritorijoje XIX a. buvo įkurtas angliškas parkas, pasodintas vaismedžių sodas, iškasti tvenkiniai ir šulinys, pastatytos medinės arklidės, oranžerija, duonkepė (kepyklėlė), tarnų namelis, ledainė, vištidė, virtuvė, įrengta kroketo aikštelė.
 </article>
 
 <article>
-Dvaras ir jo didžiulė valda – visi Markučiai ir dalis kitų rajonų — buvo palikti kaip kraitis vyriausiajai Aleksejaus dukrai Varvarai. 
+Dvaras ir jo didžiulė valda — visi Markučiai ir dalis kitų rajonų — buvo palikti kaip kraitis vyriausiajai Aleksejaus dukrai Varvarai. 
 </article>
+
+<img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
+
 <article>
-Šiandien, iš didelės Markučių dvaro valdos ir priestatų liko tik gyvenamojo dvaro pastatas – vila. Todėl dabar norime jus pakviesti nusikelti laiku į XIX amžių ir apsilankyti dvare, kurio gyvenimas buvo itin kitoks nei 21-ajame amžiuje.
+Šiandien, iš didelės Markučių dvaro valdos ir priestatų liko tik gyvenamojo dvaro pastatas — vila. Todėl dabar norime jus pakviesti nusikelti laiku į XIX amžių ir apsilankyti dvare, kurio gyvenimas buvo itin kitoks nei 21-ajame amžiuje.
 </article>
 <article>
 Tam, kad geriau pažintumėte XIX a. dvaro gyvenimą, Jums reikės atlikti 12 užduočių, kurios padės surinkti senovinį dokumentą ir rasti Markučių lobį.

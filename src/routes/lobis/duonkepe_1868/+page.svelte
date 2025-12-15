@@ -119,7 +119,7 @@ Lorem ipsum dolor sit amet
 <h1>Duonkepė</h1>
 <p class="subh">Septintoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-Duonkepė 19 a. buvo pastatyta lauke, netoli pagrindinio dvaro pastato. Varvara ir jos šeima mėgo kepti savo duoną. Mergaitė Marija, paėmusi iš jūsų pintinę su kiaušiniais, vikriai puola minkyti tešlą pyragui ir bandelėms.
+Duonkepė XIX a. buvo pastatyta lauke, netoli pagrindinio dvaro pastato. Varvara ir jos šeima mėgo kepti savo duoną. Mergaitė Marija, paėmusi iš jūsų pintinę su kiaušiniais, vikriai puola minkyti tešlą pyragui ir bandelėms.
 </article>
 
 

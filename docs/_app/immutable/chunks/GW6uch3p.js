@@ -1,1 +1,0 @@
-const s=""+new URL("../assets/splash.CFG--8IQ.png",import.meta.url).href,t=""+new URL("../assets/instructions.CX_XWdQk.png",import.meta.url).href,e=""+new URL("../assets/steps.COm-BiQs.png",import.meta.url).href;export{e as a,t as i,s};

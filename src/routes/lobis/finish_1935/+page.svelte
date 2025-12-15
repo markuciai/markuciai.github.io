@@ -8,7 +8,7 @@ import Kepure from '$components/Kepure.svelte';
 import splash from '$lib/images/illustrations/splash.png';
 import dvaras_bw from '$lib/images/archival/dvaras_bw.jpg';
 
-
+import task from '$lib/images/illustrations/doggo.png';
 
 
 const station_id = 13
@@ -96,16 +96,47 @@ function ms_to_time(ms) {
 {#if show_station}
 
 <section>
-<!-- <img class="map_piece_header_illustration" src={splash}> -->
-<Kepure></Kepure>
+<img class="map_piece_header_illustration" src={splash}>
+<!-- <Kepure></Kepure> -->
 
 
 
 {#if globe.language == "EN"}
 
-<article>
-Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
+<h1>Finish!</h1>
+<p class="subh">The end of the Markučiai Museum<br>treasure hunt game</p>
+<!-- <article>
+	Jūs surinkote dvaro žemėlapį ir Aleksėejaus Melnikovo dokumentaą.
+</article> -->
+
+<div class="stats_wrapper">
+<div class="stats_block">
+	<p>Started<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
+	<p>Treasure found<br>{date_finished_h}:{date_finished_m}:{date_finished_s}</p>
+	<p>Errors<br>{localStorage.mistakes}</p>
+</div>
+<div class="stats_block_bottom">
+	<p>Time </p>
+	<p class="laikas">{time_delta}</p>
+</div>
+</div>
+
+<!-- <h1>Ačiū už žaidimą</h1> -->
+
+
+<img src={dvaras_bw} width="105%" />
+
+<!-- <article>
+	<br/><br/>
+	Kokias paslaptis saugo pati dvaro sodyba? Kur buvo „slaptasis“ kambarys? Ką slėpė krosnyje? Kokias galvas kapodavo valgomajame?
 </article>
+<article>
+	Pratęsti pažintį su Markučių dvaru galite užsisakę ekskursiją muziejaus kasoje arba iš anksto susisiekę <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">elektropaštu</a>.
+</article>
+<article>
+<a href="https://md.vilniausmuziejus.lt/#educations">Daugiau informacijos apie Markučių dvare vykdomas edukacijas</a>.
+	<br/>&nbsp;
+</article> -->
 
 {:else if globe.language == "RU"}
 
@@ -116,19 +147,24 @@ Finished at {date_finished_h}:{date_finished_m}:{date_finished_s}
 	Вы собрали карту поместья и завещание Варвары.
 </article>
 
-<article>
-	<ul>
-	<li>Старт поиска: {date_started_h}:{date_started_m}:{date_started_s}</li> 
-	<li>Клад найден: {date_finished_h}:{date_finished_m}:{date_finished_s}</li>
-	<li>Время: {time_delta}</li>
-	</ul>
-</article>
+
+<div class="stats_wrapper">
+<div class="stats_block">
+	<p>Начали квест<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
+	<p>Нашли сокровище<br>{date_finished_h}:{date_finished_m}:{date_finished_s}</p>
+	<p>Ошибок<br>{localStorage.mistakes}</p>
+</div>
+<div class="stats_block_bottom">
+	<p>Время </p>
+	<p class="laikas">{time_delta}</p>
+</div>
+</div>
 
 <article>
 	Спасибо, что играли! 
 </article>
 
-<img  src={dvaras_bw} width="105%" />
+<img src={dvaras_bw} width="105%" />
 
 <article>
 	<br/>
@@ -202,6 +238,7 @@ Latin
 
 {:else}
 <!-- Stopper-->
+<!-- <img class="illustration" src={task}> -->
 {#if globe.language == "EN"}
 <Stopper>The safe is locked. <br> You're yet to collect every piece of the map!</Stopper>
 {:else if globe.language == "RU"}

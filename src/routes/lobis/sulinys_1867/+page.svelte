@@ -123,7 +123,7 @@ Lorem ipsum dolor sit amet
 <img width=105% src={sulinys}>
 <article>
 <br>
-Dalį vandens šildydavo praustis bei vonios malonumams. Taip, 19&nbsp;a. šiame name jau buvo vonia ir tualetas! 
+Dalį vandens šildydavo praustis bei vonios malonumams. Taip, XIX&nbsp;a. šiame name jau buvo vonia ir tualetas! 
 </article>
 
 <article>

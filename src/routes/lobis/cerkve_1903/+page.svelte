@@ -103,7 +103,7 @@ Lorem ipsum dolor sit amet
 <h1>Cerkvė</h1>
 <p class="subh">Dešimtoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-Padėję gėles ant kapų, atsisukite į šeimos maldos namus ir raskite datą – kuriais metais buvo pradėtos šios namų cerkvės – lietuviškai vadinamos šeimos koplyčia – statybos?
+Padėję gėles ant kapų, atsisukite į šeimos maldos namus ir raskite datą — kuriais metais buvo pradėtos šios namų cerkvės — lietuviškai vadinamos šeimos koplyčia — statybos?
 </article>
 
 

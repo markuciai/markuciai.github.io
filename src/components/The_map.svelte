@@ -14,6 +14,9 @@ import fruit_garden from '$lib/images/archival/fruit_garden.jpg';
 import doggo from '$lib/images/illustrations/doggo.png';
 
 
+import wall_ornament from '$lib/images/small/wall_ornament.svg';
+
+
 // import Map_0 from '$lib/images/map/0.png';
 // import Map_1 from '$lib/images/map/1.png';
 // import Map_2 from '$lib/images/map/2.png';
@@ -31,6 +34,23 @@ import doggo from '$lib/images/illustrations/doggo.png';
 
 
 
+
+// TODO test this form of import:
+// const images = import.meta.glob("../assets/img/avatars/*")
+// another snippet:
+// const imageModules = import.meta.glob("../../static/*.jpg");
+//   for (const modulePath in imageModules) {
+//     imageModules[modulePath]().then(({ default: imageUrl }) => {
+//       console.log(modulePath, imageUrl);
+//     });
+//   }
+
+// or this:
+
+// const gallery = Object.values(import.meta.glob('@assets/asso/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, as: 'url' }))
+
+// import icon_glob from import.meta.glob("$lib/images/icons/*")
+var icon_glob = import.meta.glob("$lib/images/icons/*")
 
 
 import icon_0 from '$lib/images/icons/0.png';
@@ -143,6 +163,7 @@ import piece_testament_orangery from '$lib/images/map/pieces/testamentas/oranger
 import piece_testament_chapel from '$lib/images/map/pieces/testamentas/chapel.png';
 import piece_testament_doggo from '$lib/images/map/pieces/testamentas/doggo.png';
 import piece_testament_croquet from '$lib/images/map/pieces/testamentas/croquet.png';
+import piece_testament_muziejus from '$lib/images/map/pieces/testamentas/muziejus.png';
 
 import piece_1_back from '$lib/images/illustrations/testament_full.png';
 
@@ -302,7 +323,17 @@ onMount(async () => {
     map_offset = map_wrapper_element.offsetTop
     // map_position_y = document.getElementById("map_wrapper").offsetTop
     // document.getElementsBy
-});
+    // console.log("baz")
+    // console.log("icon_glob", Object.keys(icon_glob)[0] )
+    // console.log("inga")
+
+  for (const modulePath in icon_glob) {
+    icon_glob[modulePath]().then(({ default: imageUrl }) => {
+      // console.log(modulePath, imageUrl);
+    })
+    }
+
+})
 
 
 
@@ -400,7 +431,10 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 </div>
 
 {#if flipped}
+<img src="{wall_ornament}" class="wall_ornament">
+
 <img src="{mapushkin}" class="map_foundation mapushkin" >
+
 {:else}
 <img src="{Map_foundation}" class="map_foundation" >
 {/if}
@@ -412,12 +446,12 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     class="map_layer"
     style="
         --transition_time_base: { +flipped  }s;
-        --map_offset: {map_offset};
+        /* --map_offset: {map_offset}; */
         --map_scroll: {map_scroll};
-        --scroll: {scroll};
+        /* --scroll: {scroll}; */
         --y_ratio: {y_ratio_array[index]};
         --x_ratio: {x_ratio_array[index]};"
-    class:current_piece={globe.location == index + 1 && scroll <= map_offset -100}
+    
     class:flipped={flipped}
     > 
 
@@ -427,6 +461,25 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 {/each}
 
 
+<!-- TODO instead of this manual thing↓ include the piece in all the arrays -->
+{#if globe.progress == 12}
+<div 
+    class="map_layer"
+    style="
+        --transition_time_base: { +flipped -0.5 }s;
+        /* --map_offset: {map_offset}; */
+        --map_scroll: 0;
+        /* --scroll: {scroll}; */
+        --y_ratio: 1;
+        --x_ratio: 1;"
+    
+    class:flipped={flipped}
+    > 
+    <img src={piece_testament_muziejus} class ="map_layer_img backside" />
+</div>
+{/if}
+
+<!--class:current_piece={globe.location == index + 1 && scroll <= map_offset -100}-->
 
 
 </div>
@@ -734,13 +787,30 @@ h1 {
     left: -6vw;
     top: 4vw;
     position: absolute;
-    transition: 1s;
+    transition: 1s cubic-bezier(0.075, 1.82, 0.165, 1);
     @starting-style {
         translate: 0 100px;
         /* opacity: 0; */
     }
 }
 
+
+.wall_ornament {
+    width: 120vw;
+    height: 120vw;
+    left: -10vw;
+    /* z-index: -200; */
+    top: 15vw;
+    position: absolute;
+    transition: 1.2s cubic-bezier(0.075, 1.82, 0.165, 1);
+    /* rotate: 180deg; */
+    @starting-style {
+        /* top: 30vw; */
+        translate: 0 20vw;
+        scale: 0.25;
+        /* opacity: 0; */
+    } 
+}
 
 
 @media (max-aspect-ratio: 5/8) and (orientation:portrait) {
@@ -839,8 +909,8 @@ h1 {
     --x_ratio: 0;
     --y_ratio: 1;
     --map_scroll: 0;
-    --map_offset: 0;
-    --scroll: 0;
+    /* --map_offset: 0; */
+    /* --scroll: 0; */
 
     will-change: transform, --map_scroll;
     /* --z_value: calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px) ; */

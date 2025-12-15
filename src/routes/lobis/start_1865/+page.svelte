@@ -1,8 +1,5 @@
 <script>
 
-
-
-
 import splash from '$lib/images/illustrations/splash.png'
 import instructions from '$lib/images/illustrations/instructions.png'
 import steps from '$lib/images/illustrations/steps.png'
@@ -178,7 +175,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>
-Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių su QR kodais, skenuokite lenteles, skaitykite užuominas ir spręskite užduotis teisinga tvarka.
+Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių su QR-kodais, skenuokite lenteles, skaitykite užuominas ir spręskite užduotis teisinga tvarka.
 </article>
 
 <img  src={steps} width="100%" />
@@ -191,7 +188,7 @@ Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių su QR kodai
 
 
 <article> -->
-19 a. į Markučių dvarą buvo atvykstama karietomis pro pagrindinius vartus, o prie jų stovėjo didelis, iš geležinkelio bėgių padarytas kryžius. Šiuo metu ten stovi kitas objektas.
+XIX a. į Markučių dvarą buvo atvykstama karietomis pro pagrindinius vartus, o prie jų stovėjo didelis, iš geležinkelio bėgių padarytas kryžius. Šiuo metu ten stovi kitas objektas.
 </article>
 
 
