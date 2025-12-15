@@ -475,7 +475,9 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     
     class:flipped={flipped}
     > 
-    <img src={piece_testament_muziejus} class ="map_layer_img backside" />
+    {#if flipped}
+    <img src={piece_testament_muziejus} class ="map_layer_img backside museum_piece" />
+    {/if}
 </div>
 {/if}
 
@@ -538,10 +540,112 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 {#if flipped}
-
-
-
 <section class="testament_section">
+
+
+{#if globe.language == "EN"}
+<h1>Markučiai treasure</h1>
+<div class="testamento_tekstas" >
+<!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
+<p class="subh">Excerpts from the dowry <br/>given by Aleksei Melnikov<br />To his daughter Varvara</p>
+
+<p style="rotate: -2deg">„Atidaviau savo dukrai Varvarai Moškovai kaip kraitį nekilnojamą turtą — dvarą:</p>
+</div>
+<img width=120% src={dvaras_bw} style="margin-bottom:40px; rotate: -4deg;">
+
+
+<div class="testamento_tekstas" style="rotate: 1.5deg">
+<p>a) su visomis žemėmis, miškais, vandens telkiniais. Tos žemės iš viso yra 54 dešimtinės 72 sieksniai;</p>
+</div>
+
+<img width=110% src={pond} style="margin-bottom:40px; rotate: 2deg;">
+
+<div class="testamento_tekstas" style="rotate: -2.5deg">
+<p>b) su visais ponų namais ir su visais kitais pastatais, su žuvų tvenkiniais ir kitomis verslovėmis, o taip pat su žiemkenčių, vasarojaus ir daržovių pasėliais.</p>
+</div>
+
+
+<img width=120% src={fruit_garden} style="margin-bottom:40px; rotate: -3deg;">
+
+
+
+<div class="testamento_tekstas" style="rotate: 1deg">
+<p>Šį kraičiui skirtą kilnojamą ir nekilnojamą turtą vertinu, kaip liepia sąžinė</p>
+<p>a) nekilnojamą turtą 45 000 rub.</p>
+
+
+</div>
+<img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
+
+<div class="testamento_tekstas" style="rotate: 1.5deg">
+<p>ir b) kilnojamą turtą, kartu ir vertingus daiktus — 15 000 rub., kas drauge su grynaisiais pinigais sudaro 40 000 rub., iš viso 100 tūkstančių rublių sidabru“</p>
+</div>
+
+<img class="illustration" src={doggo}>
+<div class="where-next">
+    Veliau Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kad paliktas jai lobis tarnautu kultūros ir švietimo tikslams. Muziejus dirba ir iki šiol.
+{#if globe.location == 12}
+    <br><br>
+    Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
+    <br><br>
+    <span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
+{/if}
+</div>
+
+
+
+{:else if globe.language == "RU"}
+<h1>Клад Маркучай</h1>
+<div class="testamento_tekstas" >
+<!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
+<p class="subh">Текст приданного,<br/>которое Алексей Мельников<br/>оставил своей дочери Варваре</p>
+
+<p style="rotate: -2deg">«Отдал в приданое дочери моей Варваре Мошковой недвижимое имение:</p>
+</div>
+<img width=120% src={dvaras_bw} style="margin-bottom:40px; rotate: -4deg;">
+
+
+<div class="testamento_tekstas" style="rotate: 1.5deg">
+<p>а) со всеми землями, лесами, водами, в мерою всей земли 54 десятины 72 сажени;</p>
+</div>
+
+<img width=110% src={pond} style="margin-bottom:40px; rotate: 2deg;">
+
+<div class="testamento_tekstas" style="rotate: -2.5deg">
+<p> б) со всеми господскими домами и со всеми другими строениями, с рыбнами  ловлями и другими заведениями, а равно с озимыми, яровыми и огородными посевами.</p>
+</div>
+
+
+<img width=120% src={fruit_garden} style="margin-bottom:40px; rotate: -3deg;">
+
+
+
+<div class="testamento_tekstas" style="rotate: 1deg">
+<p>Каковое отдаваемое в приданое недвижимое и&nbsp;движимое имение оцениваю&nbsp;по&nbsp;совести</p>
+<p>а) недвижимое имение в&nbsp;45&nbsp;000&nbsp;руб.</p>
+
+
+</div>
+<img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
+
+<div class="testamento_tekstas" style="rotate: 1.5deg">
+<p>и б) движимое, в том числе драгоценные вещи в&nbsp;15&nbsp;000&nbsp;руб., что составит с наличными 40 000 руб., всего 100 тысяч рублей серебром"</p>
+</div>
+
+<img class="illustration" src={doggo}>
+<div class="where-next">
+    Позже, Варвара уже своим наследникам завещает основать в дворе Маркучай музей, чтобы оставленный ей клад служил лишь культурно&#8288;-&#8288;просветительским целям. Этот музей действует и до сих пор.
+{#if globe.location == 12}
+    <br><br>
+    Благодаря командной работе вам получилось найти клад! Ваш клад — подарок.
+    <br><br>
+    <span class="highlighted-question">А теперь возвращайтесь в музей и получите награду за проделанную работу!</span>
+{/if}
+</div>
+
+
+
+{:else} <!-- LT -->
 <h1>Markučių Lobis</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
@@ -589,11 +693,12 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     <span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
 {/if}
 </div>
+
+
+{/if}<!-- lang -->
 </section>
 <div class="ornament" ></div>
-
-{/if}
-
+{/if}<!-- flipped -->
 
 
 <!--
@@ -984,6 +1089,17 @@ h1 {
     /* transform: rotateY(180deg); */
     backface-visibility: hidden;
 }
+
+
+.flipped .museum_piece {
+    filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg);
+    filter: none;
+    transition: filter 3s 0.5s;
+    @starting-style {
+        filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg);
+    }
+}
+
 
 /* .map_layers {
     position: absolute;
