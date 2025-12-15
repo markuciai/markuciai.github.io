@@ -265,7 +265,6 @@ Testamento originalas yra saugomas dvaro sodybos gyvenamajame name, patikimame, 
 	margin: 0 0 calc(-4vw - 20px) 0;
 	rotation: 0;
 	z-index: 10;
-
 }
 
 </style>

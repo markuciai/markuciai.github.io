@@ -200,7 +200,7 @@ var y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, 
 
 var scroll = $state(Number(0))
 var map_scroll = $state(Number(0))
-var flipped = $state(false);
+var flipped = $state(true);
 var map_offset = $state(Number(0))
 var map_wrapper_element
 
@@ -544,24 +544,30 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 {#if globe.language == "EN"}
-<h1>Markučiai treasure</h1>
+<h1>Markučiai Treasure</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
 <p class="subh">Excerpts from the dowry <br/>given by Aleksei Melnikov<br />To his daughter Varvara</p>
 
-<p style="rotate: -2deg">„Atidaviau savo dukrai Varvarai Moškovai kaip kraitį nekilnojamą turtą — dvarą:</p>
+<p style="rotate: -2deg">
+„I bestow upon my daughter Varvara Moškova, as dowry, the folowing estate:
+</p>
 </div>
 <img width=120% src={dvaras_bw} style="margin-bottom:40px; rotate: -4deg;">
 
 
 <div class="testamento_tekstas" style="rotate: 1.5deg">
-<p>a) su visomis žemėmis, miškais, vandens telkiniais. Tos žemės iš viso yra 54 dešimtinės 72 sieksniai;</p>
+<p>
+a) with all the lands, forests, water bodies, all measuring up to 54 desiatins 72 sazhens;
+</p>
 </div>
 
 <img width=110% src={pond} style="margin-bottom:40px; rotate: 2deg;">
 
-<div class="testamento_tekstas" style="rotate: -2.5deg">
-<p>b) su visais ponų namais ir su visais kitais pastatais, su žuvų tvenkiniais ir kitomis verslovėmis, o taip pat su žiemkenčių, vasarojaus ir daržovių pasėliais.</p>
+<div class="testamento_tekstas" >
+<p style="rotate: -2.5deg">
+b) with all the manor houses and all other buildings, with fisheries and other enterprises, and equally with overwinter, warm-season and vegetable crops.
+</p>
 </div>
 
 
@@ -570,25 +576,26 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 <div class="testamento_tekstas" style="rotate: 1deg">
-<p>Šį kraičiui skirtą kilnojamą ir nekilnojamą turtą vertinu, kaip liepia sąžinė</p>
-<p>a) nekilnojamą turtą 45 000 rub.</p>
-
-
+<p>
+The aforementioned real estate and belongings, given as dowry, I estimate, in good conscience:
+</p>
+<p>a) real estate worth 45 000 rub.</p>
 </div>
+
 <img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
 
 <div class="testamento_tekstas" style="rotate: 1.5deg">
-<p>ir b) kilnojamą turtą, kartu ir vertingus daiktus — 15 000 rub., kas drauge su grynaisiais pinigais sudaro 40 000 rub., iš viso 100 tūkstančių rublių sidabru“</p>
+<p>and b) belongings, including valuables – 15 000 rub., which with cash moneys amounts to 40 000 rub., in total 100 thousands rubles in silver”</p>
 </div>
 
 <img class="illustration" src={doggo}>
 <div class="where-next">
-    Veliau Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kad paliktas jai lobis tarnautu kultūros ir švietimo tikslams. Muziejus dirba ir iki šiol.
+    Later, Varvara will charge her own descendants with establishing a museum at the Markučiai manor, so that the treasure she was given would serve the causes of culture and education. That museum works to this day.
 {#if globe.location == 12}
     <br><br>
-    Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
+    With commendable teamwork you have managed to gather the whole document! Your treasure — a&nbsp;prize.
     <br><br>
-    <span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
+    <span class="highlighted-question">Now, visit the museum and pick up your reward for the job well done!</span>
 {/if}
 </div>
 
@@ -598,7 +605,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 <h1>Клад Маркучай</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
-<p class="subh">Текст приданного,<br/>которое Алексей Мельников<br/>оставил своей дочери Варваре</p>
+<p class="subh">Текст приданого,<br/>которое Алексей Мельников<br/>оставил своей дочери Варваре</p>
 
 <p style="rotate: -2deg">«Отдал в приданое дочери моей Варваре Мошковой недвижимое имение:</p>
 </div>
@@ -629,7 +636,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 <img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
 
 <div class="testamento_tekstas" style="rotate: 1.5deg">
-<p>и б) движимое, в том числе драгоценные вещи в&nbsp;15&nbsp;000&nbsp;руб., что составит с наличными 40 000 руб., всего 100 тысяч рублей серебром"</p>
+<p>и б) движимое, в том числе драгоценные вещи в&nbsp;15&nbsp;000&nbsp;руб., что составит с наличными 40 000 руб., всего 100 тысяч рублей серебром»</p>
 </div>
 
 <img class="illustration" src={doggo}>

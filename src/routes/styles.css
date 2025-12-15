@@ -293,7 +293,6 @@ article {
 }
 
 
-
 .where-next {
 	text-wrap: balance;
 	/* background-color: #EEDC83; */
@@ -349,6 +348,8 @@ article {
 		rgba(211,63,55,1) 67%,
 		rgba(208,74,66,1) 100%); */
 	background: brown;
+	/* background: #9f0d17; */
+	/* background: #803243; */
 	box-shadow:
 		0 35px 25px -30px rgba(0,0,0, 0.3),
 		0 20px 50px -20px rgba(211,63,55,0.8),
@@ -361,6 +362,7 @@ article {
 
 .where-next.too_early:hover {
 	background: brown;
+	/* background: #9f0d17; */
 	/* background-color: #c0352e;	 */
 }
 
