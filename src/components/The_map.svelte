@@ -295,6 +295,7 @@ function set_geolocation_marker(position) {
 function failed_to_get_geolocation(error) {
 	console.log("woops", error)
     an_error = error
+    geolocation_permitted = false // testing
 }
 
 // 100 * (1 - (center_point - half_of_range - passed_value) / range)
