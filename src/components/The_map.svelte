@@ -242,7 +242,7 @@ let orientation = $state(0)
 
 
 function show_where_i_am() {
-    geolocation_permitted = true
+    // geolocation_permitted = true
     show_position()
     watch_position()
 }
@@ -288,6 +288,7 @@ function set_geolocation_marker(position) {
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
 	console.log("location %: ", location_x, location_y, " | heading: ", heading) // reenable when runes moded
 	// console.log(position.coords.latitude)
+    geolocation_permitted = true
 	
 }
 
@@ -448,7 +449,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
             "
             >
         {location_x.toFixed(2)} {location_y.toFixed(2)}
-        <!-- <br/> H: {heading} -->
+        <br/> H: {heading}
     </div>
 </div>
 {/if}
@@ -544,16 +545,20 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 {#if globe.laisve}
 <li class="legend_li">
-<!-- <button class="button"  onclick={() => flipped = !flipped}> -->
-<button class="button"  onclick={() => show_where_i_am() }>
-{#if globe.language == "EN"}
-Show me on the map
-{:else if globe.language == "RU"}
-Покажите меня на карте
-{:else}
-Parodykite kur aš esu
-{/if}
-</button>
+    <!-- <button class="button"  onclick={() => flipped = !flipped}> -->
+    {#if geolocation_permitted}
+    You are here
+    {:else}
+        <button class="button"  onclick={() => show_where_i_am() }>
+            {#if globe.language == "EN"}
+            Show me on the map
+            {:else if globe.language == "RU"}
+            Покажите меня на карте
+            {:else}
+            Parodykite kur aš esu
+            {/if}
+        </button>
+    {/if}
 </li>
 {/if}
 
@@ -846,9 +851,11 @@ h1 {
     background: #DD445599;
 	z-index: 0;
     color: var(--color-sepia);
-    font-size: 12px;
+    font-size: 11px;
     font-family: var(--font-manrope);
     padding: 8px;
+    line-height: 11px;
+    font-weight: 800;
 
     /* what the fuck is this???? */
     /* top: calc(var(--scroll) * 0.1px); */
