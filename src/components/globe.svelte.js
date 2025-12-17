@@ -4,4 +4,5 @@ export const globe = $state({
 	location: -1,
 	// mistakes: 0,
 	laisve: false,
+	location_permitted: false,
 });

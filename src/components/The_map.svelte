@@ -235,8 +235,8 @@ $effect(() => {
 let an_error = "all is good"
 
 let geolocation_permitted = false
-let location_x = $state(-200) // 0...100, percentage
-let location_y = $state(-200)
+let location_x = $state(50) // 0...100, percentage
+let location_y = $state(50)
 let heading = $state(0) //heading is null if there's no speed. Direction only shows up when user moves
 let orientation = $state(0)
 
@@ -298,6 +298,10 @@ function geolocation_to_location(a_latitude, a_longitude) {
 	// location_y	= 100 *( 1 - (25.3245 + 0.002 - a_longitude) / 0.004)
 	location_x 	= 100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)
 	location_y	= 100 *( 1 - (25.2546 + 0.0015 - a_longitude) / 0.003)
+
+
+// location_x  = Math.min(Math.max( (100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)), 0),100)
+// location_y  = Math.min(Math.max( (100 *( 1 - (25.2546 + 0.0015 - a_longitude) / 0.003)), 0),100)
 }
 
 
@@ -307,8 +311,12 @@ function geolocation_to_location(a_latitude, a_longitude) {
 
 if (browser) {
     shuffle_order_of_items(order_of_items)
-    // show_position()
-    // watch_position()
+
+    if(geolocation_permitted){
+        show_position()
+        watch_position()   
+    }
+
     // console.log("i'm a map")
     // fixScrollUpdateSafariIOs() // Does it do anything? I don't think so
 
@@ -404,8 +412,10 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 
-
-
+<!-- for testing -->
+{#if geolocation_permitted}
+{location_x}; {location_y}
+{/if}
 
 <div class="map_and_stuff">
 
@@ -415,6 +425,10 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 <div id="map_wrapper">
 
+
+
+
+{#if geolocation_permitted}
 <div id="marker_container">
     <!-- <div>{scroll} / {map_scroll}</div> -->
     <div
@@ -429,6 +443,11 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
         <br/> H: {heading}
     </div>
 </div>
+{/if}
+
+
+
+
 
 
 <img src="{Map_foundation}" class="map_foundation" class:flipped={flipped}>
@@ -554,7 +573,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 <p class="subh">Excerpts from the dowry <br/>given by Aleksei Melnikov<br />To his daughter Varvara</p>
 
 <p style="rotate: -2deg">
-„I bestow upon my daughter Varvara Moškova, as dowry, the folowing estate:
+“I bestow upon my daughter Varvara Moškova, as dowry, the folowing estate:
 </p>
 </div>
 <img width=120% src={dvaras_bw} style="margin-bottom:40px; rotate: -4deg;">
@@ -594,9 +613,8 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 
 <img class="illustration" src={doggo}>
 <div class="where-next">
-    Later, Varvara will charge her own descendants with establishing a museum at the Markučiai manor, so that the treasure she was given would serve the causes of culture and education. That museum works to this day.
+    <!-- Later, Varvara will charge her own descendants with establishing a museum at the Markučiai manor, so that the treasure she was given would serve the causes of culture and education. That museum works to this day. <br><br> -->
 {#if globe.location == 12}
-    <br><br>
     With commendable teamwork you have managed to gather the whole document! Your treasure — a&nbsp;prize.
     <br><br>
     <span class="highlighted-question">Now, visit the museum and pick up your reward for the job well done!</span>
@@ -645,9 +663,8 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 
 <img class="illustration" src={doggo}>
 <div class="where-next">
-    Позже, Варвара уже своим наследникам завещает основать в дворе Маркучай музей, чтобы оставленный ей клад служил лишь культурно&#8288;-&#8288;просветительским целям. Этот музей действует и до сих пор.
+    <!-- Позже, Варвара уже своим наследникам завещает основать в дворе Маркучай музей, чтобы оставленный ей клад служил лишь культурно&#8288;-&#8288;просветительским целям. Этот музей действует и до сих пор. <br><br> -->
 {#if globe.location == 12}
-    <br><br>
     Благодаря командной работе вам получилось найти клад! Ваш клад — подарок.
     <br><br>
     <span class="highlighted-question">А теперь возвращайтесь в музей и получите награду за проделанную работу!</span>
@@ -696,9 +713,8 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 
 <img class="illustration" src={doggo}>
 <div class="where-next">
-    Veliau Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kad paliktas jai lobis tarnautu kultūros ir švietimo tikslams. Muziejus dirba ir iki šiol.
+    <!-- Veliau Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kad paliktas jai lobis tarnautu kultūros ir švietimo tikslams. Muziejus dirba ir iki šiol. <br><br> -->
 {#if globe.location == 12}
-    <br><br>
     Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
     <br><br>
     <span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
@@ -789,7 +805,8 @@ h1 {
     /* left: 0;
     top: 0; */
     rotate: -7.5deg;
-    /* border: red solid 1px; */
+    border: red solid 1px;
+    z-index: 100;
 }
 
 #position_marker {
@@ -798,13 +815,17 @@ h1 {
     position: relative; 
     width: 50px;
     height: 50px;
+    margin: -25px 0 0 -25px;
     border-radius: 25px;
-    background: magenta;
-	z-index: 200;
-    top: calc(var(--scroll) * 0.1px);
+    border: 1px red solid;
+    background: #DD44BB66;
+	z-index: 0;
 
-/*     left: 10%;
-    top: 20%; */
+    /* what the fuck is this???? */
+    /* top: calc(var(--scroll) * 0.1px); */
+
+    left: 10%;
+    top: 20%;
 }
 
 

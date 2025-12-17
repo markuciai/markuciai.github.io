@@ -93,11 +93,11 @@ function handleMousemove(event) {
 	<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
 	<!-- <p>// Demonstracinė versija. Vyksta darbai.</p> -->
 	{#if globe.language == "EN"}
-		<p>Book the “Markučių Lobis” educational program: <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">edukacija.vokieciu6@vilniausmuziejus.lt</a></p>
+		<p>Book the „Markučių Lobis“ educational program: <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">edukacija.vokieciu6@vilniausmuziejus.lt</a></p>
 	{:else if globe.language == "RU"}
-		<p>Заказать эдукацию “Markučių Lobis”: <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">edukacija.vokieciu6@vilniausmuziejus.lt</a></p>
+		<p>Заказать эдукацию „Markučių Lobis“: <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">edukacija.vokieciu6@vilniausmuziejus.lt</a></p>
 	{:else}
-		<p>Užsakyti edukacija “Markučių Lobis”: <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">edukacija.vokieciu6@vilniausmuziejus.lt</a></p>
+		<p>Užsakyti edukacija „Markučių Lobis“: <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">edukacija.vokieciu6@vilniausmuziejus.lt</a></p>
 	{/if}
 	
 	<p></p>
