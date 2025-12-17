@@ -430,13 +430,14 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     </div>
 </div>
 
+
+<img src="{Map_foundation}" class="map_foundation" class:flipped={flipped}>
 {#if flipped}
 <img src="{wall_ornament}" class="wall_ornament">
-
 <img src="{mapushkin}" class="map_foundation mapushkin" >
 
-{:else}
-<img src="{Map_foundation}" class="map_foundation" >
+<!-- {:else} -->
+<!-- <img src="{Map_foundation}" class="map_foundation" class:flipped={flipped}> -->
 {/if}
 
 
@@ -888,12 +889,22 @@ h1 {
     width: 100%;
     /* position: absolute; */
     /* left: -5vw; */
-    transition: 0.84s 0.16s cubic-bezier(0.075, 0.62, 0.865, 1);
+    /* transition: 0.33s cubic-bezier(0.075, 0.62, 0.865, 1); */
+    transition: 1s cubic-bezier(0.075, 2.82, 0.165, 1);
     @starting-style {
         /* translate: 0 100px; */
         opacity: 0;
     }
 }
+
+.map_foundation.flipped {
+        transition: 0.33s cubic-bezier(0.075, 0.62, 0.865, 1);
+        opacity: 0.25;
+        scale: 0.9;
+        /* rotate: 20deg; */
+    }
+
+
 
 .mapushkin {
     width: 120%;
@@ -1104,11 +1115,14 @@ h1 {
     filter: none;
     transition: 
         /* all 20s, */
-        filter 1.5s 0.5s;
+        filter 1.25s 0.5s,
+        ;
+
     @starting-style {
-        filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-80deg);
+        filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg);
     }
 }
+
 
 
 /* .map_layers {
