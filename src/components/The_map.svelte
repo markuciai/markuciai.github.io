@@ -242,7 +242,7 @@ let orientation = $state(0)
 
 
 function show_where_i_am() {
-    // geolocation_permitted = true
+    geolocation_permitted = true
     show_position()
     watch_position()
 }
@@ -266,12 +266,12 @@ function watch_position() {
 		}
 	)
     
-    // window.addEventListener("deviceorientation", function(an_event) {
-    //     console.log("event:", an_event, an_event.alpha)
-    //     orientation = an_event.alpha    
-    // })
+    window.addEventListener("deviceorientation", function(an_event) {
+        console.log("event:", an_event, an_event.alpha)
+        orientation = an_event.alpha    
+    })
 
-	// navigator.geolocation.clearWatch(watchID) 
+	navigator.geolocation.clearWatch(watchID) 
 }
 
 // function set_orientation(an_event) {
@@ -280,15 +280,17 @@ function watch_position() {
 // }
 
 
+
 function set_geolocation_marker(position) {
 	// const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords
 	geolocation_to_location(position.coords.latitude, position.coords.longitude)
-    heading = position.coords.heading
+    if(position.coords.heading){
+        heading = position.coords.heading
+    }
     console.log("_________________________")
 	console.log("geolocation: ", position.coords.latitude, position.coords.longitude)
 	console.log("location %: ", location_x, location_y, " | heading: ", heading) // reenable when runes moded
 	// console.log(position.coords.latitude)
-    geolocation_permitted = true
 	
 }
 
@@ -303,11 +305,13 @@ function failed_to_get_geolocation(error) {
 // Markuciai parkas center 54.6765, 25.3245 (untested)
 // the other museum center 54.6895, 25.2545
 function geolocation_to_location(a_latitude, a_longitude) {
+    geolocation_permitted = true
 	// location_x 	= 100 *( 1 - (54.6765 + 0.002 - a_latitude) / 0.004)
 	// location_y	= 100 *( 1 - (25.3245 + 0.002 - a_longitude) / 0.004)
 	location_x 	= 100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)
 	location_y	= 100 *( 1 - (25.2546 + 0.0015 - a_longitude) / 0.003)
 
+    console.log("geolocation_to_location", location_x, location_y)
 
 // location_x  = Math.min(Math.max( (100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)), 0),100)
 // location_y  = Math.min(Math.max( (100 *( 1 - (25.2546 + 0.0015 - a_longitude) / 0.003)), 0),100)
@@ -420,10 +424,13 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 
-
+<!-- {geolocation_permitted} -->
 <!-- for testing -->
 {#if geolocation_permitted}
-{location_x}; {location_y}
+{location_x.toFixed(2)}  {location_y.toFixed(2)}, {orientation.toFixed(2)}
+
+{an_error}
+
 {/if}
 
 <div class="map_and_stuff">
@@ -438,6 +445,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 {#if geolocation_permitted}
+
 <div id="marker_container">
     <!-- <div>{scroll} / {map_scroll}</div> -->
     <div
@@ -449,7 +457,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
             "
             >
         {location_x.toFixed(2)} {location_y.toFixed(2)}
-        <br/> H: {heading}
+        <br/> {heading.toFixed(1)} {orientation.toFixed(1)}
     </div>
 </div>
 {/if}
@@ -853,7 +861,7 @@ h1 {
     color: var(--color-sepia);
     font-size: 11px;
     font-family: var(--font-manrope);
-    padding: 8px;
+    padding: 8px 0px 8px 8px;
     line-height: 11px;
     font-weight: 800;
 

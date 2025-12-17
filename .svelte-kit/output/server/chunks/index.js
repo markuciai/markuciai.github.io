@@ -23,8 +23,8 @@ const WAS_MARKED = 1 << 15;
 const REACTION_IS_UPDATING = 1 << 21;
 const ASYNC = 1 << 22;
 const ERROR_VALUE = 1 << 23;
-const STATE_SYMBOL = Symbol("$state");
-const LEGACY_PROPS = Symbol("legacy props");
+const STATE_SYMBOL = /* @__PURE__ */ Symbol("$state");
+const LEGACY_PROPS = /* @__PURE__ */ Symbol("legacy props");
 const STALE_REACTION = new class StaleReactionError extends Error {
   name = "StaleReactionError";
   message = "The reaction that called `getAbortSignal()` was re-run or destroyed";
@@ -42,7 +42,7 @@ const HYDRATION_ERROR = {};
 const ELEMENT_IS_NAMESPACED = 1;
 const ELEMENT_PRESERVE_ATTRIBUTE_CASE = 1 << 1;
 const ELEMENT_IS_INPUT = 1 << 2;
-const UNINITIALIZED = Symbol();
+const UNINITIALIZED = /* @__PURE__ */ Symbol();
 const DOM_BOOLEAN_ATTRIBUTES = [
   "allowfullscreen",
   "async",
