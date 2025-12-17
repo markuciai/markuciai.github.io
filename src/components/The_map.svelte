@@ -207,7 +207,7 @@ var map_wrapper_element
 
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
-
+    return
     // Linear
     if (map_wrapper_element == null){
         map_wrapper_element = document.getElementById("map_wrapper")
@@ -383,7 +383,7 @@ Turn over
 {:else if globe.language == "RU"}
 Перевернуть
 {:else}
-Apversti?
+Apversti
 {/if}
 </button>
 {:else if globe.progress != -1}
@@ -469,11 +469,11 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     class:flipped={flipped}
     style="
         /* --map_offset: {map_offset}; */
-        /* --map_scroll: {map_scroll}; */
+        --map_scroll: {map_scroll};
         /* --scroll: {scroll}; */
         --y_ratio: {y_ratio_array[index]};
         --x_ratio: {x_ratio_array[index]};
-        /* --transition_time_base: { +flipped }s; */
+        --transition_time_base: { +flipped }s;
         "
     > 
 
