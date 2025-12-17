@@ -234,11 +234,18 @@ $effect(() => {
 // I coded this so long ago i forget how it works.
 let an_error = "all is good"
 
-let geolocation_permitted = false
+let geolocation_permitted = $state(false)
 let location_x = $state(50) // 0...100, percentage
 let location_y = $state(50)
 let heading = $state(0) //heading is null if there's no speed. Direction only shows up when user moves
 let orientation = $state(0)
+
+
+function show_where_i_am() {
+    geolocation_permitted = true
+    show_position()
+    watch_position()
+}
 
 
 function show_position() {
@@ -533,6 +540,21 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 {#if !flipped}
 <ul class="legend_ul">
 
+
+{#if globe.laisve}
+<li class="legend_li">
+<!-- <button class="button"  onclick={() => flipped = !flipped}> -->
+<button class="button"  onclick={() => show_where_i_am() }>
+{#if globe.language == "EN"}
+Show me on the map
+{:else if globe.language == "RU"}
+Покажите меня на карте
+{:else}
+Parodykite kur aš esu
+{/if}
+</button>
+</li>
+{/if}
 
 {#each {length: 13 }, index}
     <li class="legend_li" class:current={globe.location == order_of_items[index]}>
