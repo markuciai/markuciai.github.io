@@ -446,8 +446,8 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
             rotate: {heading}deg;
             "
             >
-        {location_x}, {location_y}
-        <br/> H: {heading}
+        {location_x.toFixed(2)} {location_y.toFixed(2)}
+        <!-- <br/> H: {heading} -->
     </div>
 </div>
 {/if}
@@ -555,6 +555,8 @@ Parodykite kur aš esu
 </button>
 </li>
 {/if}
+
+
 
 {#each {length: 13 }, index}
     <li class="legend_li" class:current={globe.location == order_of_items[index]}>
@@ -827,7 +829,7 @@ h1 {
     /* left: 0;
     top: 0; */
     rotate: -7.5deg;
-    border: red solid 1px;
+    /* border: red solid 1px; */
     z-index: 100;
 }
 
@@ -839,9 +841,13 @@ h1 {
     height: 50px;
     margin: -25px 0 0 -25px;
     border-radius: 25px;
-    border: 1px red solid;
-    background: #DD44BB66;
+    /* border: 1px red solid; */
+    background: #DD445599;
 	z-index: 0;
+    color: var(--color-sepia);
+    font-size: 12px;
+    font-family: var(--font-manrope);
+    padding: 8px;
 
     /* what the fuck is this???? */
     /* top: calc(var(--scroll) * 0.1px); */
