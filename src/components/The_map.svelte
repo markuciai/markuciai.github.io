@@ -888,7 +888,7 @@ h1 {
     width: 100%;
     /* position: absolute; */
     /* left: -5vw; */
-    transition: 0.33s 0.1s;
+    transition: 0.84s 0.16s cubic-bezier(0.075, 0.62, 0.865, 1);
     @starting-style {
         /* translate: 0 100px; */
         opacity: 0;
@@ -1100,13 +1100,13 @@ h1 {
 
 
 .flipped .museum_piece {
-    filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg);
+    /* filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg); */
     filter: none;
     transition: 
         /* all 20s, */
         filter 1.5s 0.5s;
     @starting-style {
-        filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg);
+        filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-80deg);
     }
 }
 
