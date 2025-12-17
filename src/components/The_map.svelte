@@ -207,7 +207,7 @@ var map_wrapper_element
 
 $effect(() => {
     // document.querySelector(':root').style.setProperty('--scroll', scroll)
-    return
+
     // Linear
     if (map_wrapper_element == null){
         map_wrapper_element = document.getElementById("map_wrapper")
