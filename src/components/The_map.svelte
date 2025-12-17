@@ -200,7 +200,7 @@ var y_ratio_array = [0.5, 0.8, 0.6, -0.8, 0.2, 0.33, 0.55, 0.2, 0.5, -0.6, 2.8, 
 
 var scroll = $state(Number(0))
 var map_scroll = $state(Number(0))
-var flipped = $state(true);
+var flipped = $state(false);
 var map_offset = $state(Number(0))
 var map_wrapper_element
 
@@ -440,6 +440,26 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 {/if}
 
 
+<!-- TODO instead of this manual thing↓ include the piece in all the arrays -->
+{#if globe.progress == 12}
+<div 
+    class="map_layer"
+    style="
+        --transition_time_base: { +flipped -0.5 }s;
+        /* --map_offset: {map_offset}; */
+        --map_scroll: 0;
+        /* --scroll: {scroll}; */
+        --y_ratio: 1;
+        --x_ratio: 1;"
+    
+    class:flipped={flipped}
+    > 
+    {#if flipped}
+    <img src={piece_testament_muziejus} class ="map_layer_img backside museum_piece" />
+    {/if}
+</div>
+{/if}
+
 
 {#each {length: globe.progress }, index}
 <div 
@@ -461,25 +481,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 {/each}
 
 
-<!-- TODO instead of this manual thing↓ include the piece in all the arrays -->
-{#if globe.progress == 12}
-<div 
-    class="map_layer"
-    style="
-        --transition_time_base: { +flipped -0.5 }s;
-        /* --map_offset: {map_offset}; */
-        --map_scroll: 0;
-        /* --scroll: {scroll}; */
-        --y_ratio: 1;
-        --x_ratio: 1;"
-    
-    class:flipped={flipped}
-    > 
-    {#if flipped}
-    <img src={piece_testament_muziejus} class ="map_layer_img backside museum_piece" />
-    {/if}
-</div>
-{/if}
+
 
 <!--class:current_piece={globe.location == index + 1 && scroll <= map_offset -100}-->
 
@@ -887,7 +889,7 @@ h1 {
     width: 100%;
     /* position: absolute; */
     /* left: -5vw; */
-    transition: 0.25s;
+    transition: 0.33s 0.1s;
     @starting-style {
         /* translate: 0 100px; */
         opacity: 0;
