@@ -469,11 +469,11 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     class:flipped={flipped}
     style="
         /* --map_offset: {map_offset}; */
-        --map_scroll: {map_scroll};
+        /* --map_scroll: {map_scroll}; */
         /* --scroll: {scroll}; */
         --y_ratio: {y_ratio_array[index]};
         --x_ratio: {x_ratio_array[index]};
-        --transition_time_base: { +flipped }s;
+        /* --transition_time_base: { +flipped }s; */
         "
     > 
 
