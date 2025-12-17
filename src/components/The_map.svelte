@@ -445,7 +445,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 <div 
     class="map_layer"
     style="
-        --transition_time_base: { +flipped -0.5 }s;
+        --transition_time_base: { +flipped * 0.5 }s;
         /* --map_offset: {map_offset}; */
         --map_scroll: 0;
         /* --scroll: {scroll}; */
@@ -464,15 +464,14 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 {#each {length: globe.progress }, index}
 <div 
     class="map_layer"
+    class:flipped={flipped}
     style="
-        --transition_time_base: { +flipped  }s;
+        --transition_time_base: { +flipped }s;
         /* --map_offset: {map_offset}; */
         --map_scroll: {map_scroll};
         /* --scroll: {scroll}; */
         --y_ratio: {y_ratio_array[index]};
         --x_ratio: {x_ratio_array[index]};"
-    
-    class:flipped={flipped}
     > 
 
     <img src={piece_array_front[index]} class ="map_layer_img" class:current_piece={globe.location == index + 1} class:highlight={map_scroll <= 2} />
@@ -1103,7 +1102,9 @@ h1 {
 .flipped .museum_piece {
     filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg);
     filter: none;
-    transition: filter 3s 0.5s;
+    transition: 
+        /* all 20s, */
+        filter 1.5s 0.5s;
     @starting-style {
         filter: brightness(0.75) contrast(0.75) saturate(2.5) hue-rotate(-30deg);
     }
