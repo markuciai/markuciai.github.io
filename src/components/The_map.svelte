@@ -310,7 +310,7 @@ if (browser) {
     // show_position()
     // watch_position()
     // console.log("i'm a map")
-    fixScrollUpdateSafariIOs() // Does it do anything? I don't think so
+    // fixScrollUpdateSafariIOs() // Does it do anything? I don't think so
 
 
 }
@@ -383,7 +383,7 @@ Turn over
 {:else if globe.language == "RU"}
 Перевернуть
 {:else}
-Apversti
+Apversti?
 {/if}
 </button>
 {:else if globe.progress != -1}
@@ -446,12 +446,13 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 <div 
     class="map_layer"
     style="
-        --transition_time_base: { +flipped * 0.5 }s;
         /* --map_offset: {map_offset}; */
         --map_scroll: 0;
         /* --scroll: {scroll}; */
         --y_ratio: 1;
-        --x_ratio: 1;"
+        --x_ratio: 1;
+        --transition_time_base: { +flipped }s;
+        "
     
     class:flipped={flipped}
     > 
@@ -467,12 +468,13 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     class="map_layer"
     class:flipped={flipped}
     style="
-        --transition_time_base: { +flipped }s;
         /* --map_offset: {map_offset}; */
         --map_scroll: {map_scroll};
         /* --scroll: {scroll}; */
         --y_ratio: {y_ratio_array[index]};
-        --x_ratio: {x_ratio_array[index]};"
+        --x_ratio: {x_ratio_array[index]};
+        --transition_time_base: { +flipped }s;
+        "
     > 
 
     <img src={piece_array_front[index]} class ="map_layer_img" class:current_piece={globe.location == index + 1} class:highlight={map_scroll <= 2} />
@@ -1029,14 +1031,15 @@ h1 {
     z-index: 40;
 
 
-    --transition_time_base: 10.5s;
+
     --x_ratio: 0;
     --y_ratio: 1;
     --map_scroll: 0;
+    --transition_time_base: 10.5s;
     /* --map_offset: 0; */
     /* --scroll: 0; */
 
-    will-change: transform, --map_scroll;
+    will-change: transform, --map_scroll, transition;
     /* --z_value: calc( var(--map_scroll) * abs(var(--x_ratio)) * abs(var(--y_ratio)) * 0.5px) ; */
 
 
