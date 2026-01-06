@@ -205,7 +205,7 @@
 
     "sourcemap-codec": ["sourcemap-codec@1.4.8", "", {}, "sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA=="],
 
-    "svelte": ["svelte@5.46.0", "", { "dependencies": { "@jridgewell/remapping": "^2.3.4", "@jridgewell/sourcemap-codec": "^1.5.0", "@sveltejs/acorn-typescript": "^1.0.5", "@types/estree": "^1.0.5", "acorn": "^8.12.1", "aria-query": "^5.3.1", "axobject-query": "^4.1.0", "clsx": "^2.1.1", "devalue": "^5.5.0", "esm-env": "^1.2.1", "esrap": "^2.2.1", "is-reference": "^3.0.3", "locate-character": "^3.0.0", "magic-string": "^0.30.11", "zimmerframe": "^1.1.2" } }, "sha512-ZhLtvroYxUxr+HQJfMZEDRsGsmU46x12RvAv/zi9584f5KOX7bUrEbhPJ7cKFmUvZTJXi/CFZUYwDC6M1FigPw=="],
+    "svelte": ["svelte@5.46.1", "", { "dependencies": { "@jridgewell/remapping": "^2.3.4", "@jridgewell/sourcemap-codec": "^1.5.0", "@sveltejs/acorn-typescript": "^1.0.5", "@types/estree": "^1.0.5", "acorn": "^8.12.1", "aria-query": "^5.3.1", "axobject-query": "^4.1.0", "clsx": "^2.1.1", "devalue": "^5.5.0", "esm-env": "^1.2.1", "esrap": "^2.2.1", "is-reference": "^3.0.3", "locate-character": "^3.0.0", "magic-string": "^0.30.11", "zimmerframe": "^1.1.2" } }, "sha512-ynjfCHD3nP2el70kN5Pmg37sSi0EjOm9FgHYQdC4giWG/hzO3AatzXXJJgP305uIhGQxSufJLuYWtkY8uK/8RA=="],
 
     "svelte-adapter-github": ["svelte-adapter-github@1.0.0-next.0", "", {}, "sha512-a2PIoA2UuMJYnhUnh4JkMnC8GgsNgAJzT9Z6UJGG+l4861nlZ6tgU7oF6GHcC19pbA88tM+kxJ3maKgOO0onMg=="],
 

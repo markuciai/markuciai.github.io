@@ -268,7 +268,9 @@ function watch_position() {
     
     window.addEventListener("deviceorientation", function(an_event) {
         console.log("event:", an_event, an_event.alpha)
-        orientation = an_event.alpha    
+        if(an_event.alpha){
+            orientation = an_event.alpha    
+        }
     })
 
 	navigator.geolocation.clearWatch(watchID) 
@@ -444,7 +446,8 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 
-{#if geolocation_permitted}
+<!-- {#if geolocation_permitted && map_scroll <= 0} -->
+{#if geolocation_permitted && !flipped}
 
 <div id="marker_container">
     <!-- <div>{scroll} / {map_scroll}</div> -->
@@ -652,11 +655,11 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 <img class="illustration" src={doggo}>
 <div class="where-next">
     <!-- Later, Varvara will charge her own descendants with establishing a museum at the Markučiai manor, so that the treasure she was given would serve the causes of culture and education. That museum works to this day. <br><br> -->
-{#if globe.location == 12}
+<!-- {#if globe.location == 12} -->
     With commendable teamwork you have managed to gather the whole document! Your treasure — a&nbsp;prize.
     <br><br>
     <span class="highlighted-question">Now, visit the museum and pick up your reward for the job well done!</span>
-{/if}
+<!-- {/if} -->
 </div>
 
 
@@ -702,11 +705,11 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 <img class="illustration" src={doggo}>
 <div class="where-next">
     <!-- Позже, Варвара уже своим наследникам завещает основать в дворе Маркучай музей, чтобы оставленный ей клад служил лишь культурно&#8288;-&#8288;просветительским целям. Этот музей действует и до сих пор. <br><br> -->
-{#if globe.location == 12}
+<!-- {#if globe.location == 12} -->
     Благодаря командной работе вам получилось найти клад! Ваш клад — подарок.
     <br><br>
     <span class="highlighted-question">А теперь возвращайтесь в музей и получите награду за проделанную работу!</span>
-{/if}
+<!-- {/if} -->
 </div>
 
 
@@ -749,16 +752,16 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 <p>ir b) kilnojamą turtą, kartu ir vertingus daiktus — 15 000 rub., kas drauge su grynaisiais pinigais sudaro 40 000 rub., iš viso 100 tūkstančių rublių sidabru“</p>
 </div>
 
+<!-- {#if globe.location == 12} -->
 <img class="illustration" src={doggo}>
 <div class="where-next">
     <!-- Veliau Varvara jau savo palikuoniams įsakys įkurti Markučiu Dvare muziejų, kad paliktas jai lobis tarnautu kultūros ir švietimo tikslams. Muziejus dirba ir iki šiol. <br><br> -->
-{#if globe.location == 12}
+
     Puikaus komandinio darbo dėka jums pavyko surinkti visą dokumentą! Jūsų lobis – tai dovana.
     <br><br>
     <span class="highlighted-question">O dabar užsukite į muziejų ir atsiimkite apdovanojimą už nuveiktą darbą!</span>
-{/if}
 </div>
-
+<!-- {/if} -->
 
 {/if}<!-- lang -->
 </section>
@@ -854,14 +857,20 @@ h1 {
     width: 50px;
     height: 50px;
     margin: -25px 0 0 -25px;
-    border-radius: 25px;
+    border-radius: 5px;
     /* border: 1px red solid; */
-    background: #DD445599;
+    box-shadow:
+        /* 0 0 10px red */
+        0 0 0px 1.25px #FFFFFFBB,
+        0 0 10px 2px #DD6655
+        ;
+
+    background: #DD665599;
 	z-index: 0;
     color: var(--color-sepia);
     font-size: 11px;
     font-family: var(--font-manrope);
-    padding: 8px 0px 8px 8px;
+    padding: 6px 0px 6px 6px;
     line-height: 11px;
     font-weight: 800;
 
