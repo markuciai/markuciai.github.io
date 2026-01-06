@@ -306,12 +306,17 @@ function failed_to_get_geolocation(error) {
 // 100 * (1 - (center_point - half_of_range - passed_value) / range)
 // Markuciai parkas center 54.6765, 25.3245 (untested)
 // the other museum center 54.6895, 25.2545
+
+
 function geolocation_to_location(a_latitude, a_longitude) {
     geolocation_permitted = true
-	// location_x 	= 100 *( 1 - (54.6765 + 0.002 - a_latitude) / 0.004)
-	// location_y	= 100 *( 1 - (25.3245 + 0.002 - a_longitude) / 0.004)
-	location_x 	= 100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)
-	location_y	= 100 *( 1 - (25.2546 + 0.0015 - a_longitude) / 0.003)
+    // markuciai
+	location_x 	= 100 *( 1 - (54.6765 + 0.002 - a_latitude) / 0.004)
+	location_y	= 100 *( 1 - (25.3245 + 0.002 - a_longitude) / 0.004)
+
+    // other museum
+	// location_x 	= 100 *( 1 - (54.6891 + 0.002 - a_latitude) / 0.004)
+	// location_y	= 100 *( 1 - (25.2546 + 0.0015 - a_longitude) / 0.003)
 
     console.log("geolocation_to_location", location_x, location_y)
 
