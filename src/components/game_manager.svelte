@@ -168,7 +168,7 @@ $effect(() => {
 </div>
 {:else}
 <div class="enrult title">
-<h1>Markučių<br />Lobis</h1>
+<h1>Markučių<br />Dvaro Lobis</h1>
 </div>
 {/if}
 

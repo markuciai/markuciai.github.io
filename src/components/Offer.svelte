@@ -22,7 +22,7 @@ import varvara from '$lib/images/archival/varvara.jpg';
 
 {#if globe.language == "EN"}
 
-<h1>Markučiai treasure</h1>
+<h1>Markučiai Manor treasure</h1>
 <p class="subh">A treasure hunt game<br> trough the Markučiai manor park</p>
 
 <article>
@@ -34,7 +34,7 @@ Markučiai manor museum presents a fun adventure (and an educational program) fo
 Plaques containing QR codes are scattered troughout the park. Starting at the museum, visit every quest point in the correct order to dive into the museum's history and get a small prize.
 </article>
 
-<img  src={instructions} width="100%" />
+<img src={instructions} width="100%" />
 
 <article>
 To play, a player will need a phone or tablet with an internet connection (to scan QR-codes and open web pages). There's no need to install any additional apps.
@@ -47,7 +47,7 @@ To play, a player will need a phone or tablet with an internet connection (to sc
 <div class="where-next">
 If you're already at the park during museum work hours and wish to play immediately — visit the museum and ask at the front desk.
 <br><br>
-And if you wish to book an educational program for a group <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">email us</a>.
+And if you wish to book an educational program for a group <a href="mailto:edukacija.markuciai@vilniausmuziejus.lt">email us</a>.
 <br><br>
 <a href="https://md.vilniausmuziejus.lt/#educations">More info about the Markučiai educational opportunities.</a>.
 </div>
@@ -58,7 +58,7 @@ And if you wish to book an educational program for a group <a href="mailto:eduka
 
 {:else if globe.language == "RU"}
 
-<h1>Клад Маркутья</h1>
+<h1>Клад Поместья Маркучай</h1>
 <p class="subh">Ориентационный квест <br> по парку усадьбы Маркутья</p>
 
 <article>
@@ -83,7 +83,7 @@ And if you wish to book an educational program for a group <a href="mailto:eduka
 <div class="where-next">
 Если вы уже в парке (в часы работы музея) и хотите поиграть прямо сейчас — заходите в музей и обращайтесь в кассу.
 <br><br>
-А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">электропочту</a>.
+А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija.markuciai@vilniausmuziejus.lt">электропочту</a>.
 <br><br>
 <a href="https://md.vilniausmuziejus.lt/#educations">Подробная информация об эдукациях двора Маркучай</a>
 </div>
@@ -98,7 +98,7 @@ And if you wish to book an educational program for a group <a href="mailto:eduka
 {:else if globe.language == "LA"}
 
 <div class="where-next">
-    Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a>
+    Ut in educatione “MARKUČIŲ LOBIS”:<br><a href="mailto:edukacija.markuciai@vilniausmuziejus.lt">edukacija.markuciai@vilniausmuziejus.lt</a>
 </div>
 
 
@@ -110,7 +110,7 @@ And if you wish to book an educational program for a group <a href="mailto:eduka
 {:else} <!-- LT -->
 
 
-<h1>Markučių Lobis</h1>
+<h1>Markučių Dvaro Lobis</h1>
 <p class="subh">ORIENTACINIS ŽAIDIMAS<br>PO MARKUČIŲ DVARO PARKĄ</p>
 
 <article>
@@ -142,7 +142,7 @@ Parko teritorijoje išdėliotos lentelės su QR-kodais. Kiekvienam žaidėjui (a
 <div class="where-next">
 <!-- Jeigu jau atvykote į Markučių dvaro parką (muziejaus darbo metu) ir norite išbandyti orientacinį žaidimą, kreipkitės į muziejaus kasą.
 <br><br> -->
-Norėdami iš anksto užsakyti orientacinį žaidimą grupei, rašykite <a href="mailto:edukacija.vokieciu6@vilniausmuziejus.lt">elektropaštu</a>.
+Norėdami iš anksto užsakyti orientacinį žaidimą grupei, rašykite <a href="mailto:edukacija.markuciai@vilniausmuziejus.lt">elektropaštu</a>.
 <br><br>
 <a href="https://md.vilniausmuziejus.lt/#educations">Daugiau informacijos apie Markučių dvare vykdomas edukacijas</a>.
 </div>

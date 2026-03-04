@@ -1,9 +1,10 @@
-import { x as head } from "../../chunks/index.js";
+import { h as head } from "../../chunks/index.js";
 import { a as attr } from "../../chunks/attributes.js";
 import "@sveltejs/kit/internal";
 import "../../chunks/exports.js";
 import "../../chunks/utils.js";
 import "@sveltejs/kit/internal/server";
+import "../../chunks/root.js";
 import "../../chunks/game_manager.svelte_svelte_type_style_lang.js";
 import "clsx";
 const favicon = "/_app/immutable/assets/favicon.XN9wP4KE.svg";
@@ -21,8 +22,8 @@ function Game_manager($$renderer, $$props) {
       sound_correct
     )} id="audio_correct" class="svelte-gieire"></audio> <audio${attr("src", sound_correct)} id="audio_last_piece" class="svelte-gieire"></audio> <audio${attr("src", sound_correct)} id="audio_finish" class="svelte-gieire"></audio> `);
     {
-      $$renderer2.push("<!--[!-->");
-      $$renderer2.push(`<div class="enrult title svelte-gieire"><h1 class="svelte-gieire">Markučių<br class="svelte-gieire"/>Lobis</h1></div>`);
+      $$renderer2.push("<!--[-1-->");
+      $$renderer2.push(`<div class="enrult title svelte-gieire"><h1 class="svelte-gieire">Markučių<br class="svelte-gieire"/>Dvaro Lobis</h1></div>`);
     }
     $$renderer2.push(`<!--]-->`);
   });
@@ -30,7 +31,7 @@ function Game_manager($$renderer, $$props) {
 function Mounted($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     {
-      $$renderer2.push("<!--[!-->");
+      $$renderer2.push("<!--[-1-->");
     }
     $$renderer2.push(`<!--]-->`);
   });

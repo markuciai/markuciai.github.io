@@ -564,6 +564,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
     <!-- <button class="button"  onclick={() => flipped = !flipped}> -->
     {#if geolocation_permitted}
     You are here
+    <!-- TODO if outside of bounds → "You're outside the map" -->
     {:else}
         <button class="button"  onclick={() => show_where_i_am() }>
             {#if globe.language == "EN"}
@@ -613,7 +614,7 @@ Jūs surinkote {globe.progress} {gabaliuku_text[globe.language][globe.progress]}
 
 
 {#if globe.language == "EN"}
-<h1>Markučiai Treasure</h1>
+<h1>Markučiai Manor Treasure</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
 <p class="subh">Excerpts from the dowry <br/>given by Aleksei Melnikov<br />To his daughter Varvara</p>
@@ -670,7 +671,7 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 
 
 {:else if globe.language == "RU"}
-<h1>Клад Маркучай</h1>
+<h1>Клад Поместья Маркучай</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
 <p class="subh">Текст приданого,<br/>которое Алексей Мельников<br/>оставил своей дочери Варваре</p>
@@ -720,7 +721,7 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 
 
 {:else} <!-- LT -->
-<h1>Markučių Lobis</h1>
+<h1>Markučių Dvaro Lobis</h1>
 <div class="testamento_tekstas" >
 <!-- <p class="subh">Aleksejaus Melnikovo<br>testamento tekstas</p> -->
 <p class="subh">Aleksėjaus Melnikovo<br/> dukrai Vavarai<br/> palikto kraičio tekstas</p>

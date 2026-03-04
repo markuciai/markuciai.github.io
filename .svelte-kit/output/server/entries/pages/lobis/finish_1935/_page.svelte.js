@@ -1,4 +1,4 @@
-import { y as attr_class, z as slot, x as head } from "../../../../chunks/index.js";
+import { a as attr_class, G as slot, h as head } from "../../../../chunks/index.js";
 import { g as globe } from "../../../../chunks/globe.svelte.js";
 import { t as task$a } from "../../../../chunks/doggo.js";
 import { a as attr } from "../../../../chunks/attributes.js";
@@ -37,63 +37,11 @@ function Stopper($$renderer, $$props) {
     slot($$renderer2, $$props, "default", {});
     $$renderer2.push(`<!--]--></p> <p>`);
     {
-      $$renderer2.push("<!--[!-->");
-      {
-        $$renderer2.push("<!--[!-->");
-      }
-      $$renderer2.push(`<!--]-->`);
+      $$renderer2.push("<!--[-1-->");
     }
     $$renderer2.push(`<!--]--></p> <br/> <p style="font-style: italic; font-weight: bold;">`);
     {
-      $$renderer2.push("<!--[!-->");
-      {
-        $$renderer2.push("<!--[!-->");
-        {
-          $$renderer2.push("<!--[!-->");
-          {
-            $$renderer2.push("<!--[!-->");
-            {
-              $$renderer2.push("<!--[!-->");
-              {
-                $$renderer2.push("<!--[!-->");
-                {
-                  $$renderer2.push("<!--[!-->");
-                  {
-                    $$renderer2.push("<!--[!-->");
-                    {
-                      $$renderer2.push("<!--[!-->");
-                      {
-                        $$renderer2.push("<!--[!-->");
-                        {
-                          $$renderer2.push("<!--[!-->");
-                          {
-                            $$renderer2.push("<!--[!-->");
-                            {
-                              $$renderer2.push("<!--[!-->");
-                            }
-                            $$renderer2.push(`<!--]-->`);
-                          }
-                          $$renderer2.push(`<!--]-->`);
-                        }
-                        $$renderer2.push(`<!--]-->`);
-                      }
-                      $$renderer2.push(`<!--]-->`);
-                    }
-                    $$renderer2.push(`<!--]-->`);
-                  }
-                  $$renderer2.push(`<!--]-->`);
-                }
-                $$renderer2.push(`<!--]-->`);
-              }
-              $$renderer2.push(`<!--]-->`);
-            }
-            $$renderer2.push(`<!--]-->`);
-          }
-          $$renderer2.push(`<!--]-->`);
-        }
-        $$renderer2.push(`<!--]-->`);
-      }
-      $$renderer2.push(`<!--]-->`);
+      $$renderer2.push("<!--[-1-->");
     }
     $$renderer2.push(`<!--]--></p></div></section>`);
   });
@@ -102,40 +50,24 @@ function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     head("1701eov", $$renderer2, ($$renderer3) => {
       {
-        $$renderer3.push("<!--[!-->");
-        {
-          $$renderer3.push("<!--[!-->");
-          {
-            $$renderer3.push("<!--[!-->");
-            $$renderer3.title(($$renderer4) => {
-              $$renderer4.push(`<title>Finišas – Markučių Lobis</title>`);
-            });
-            $$renderer3.push(`<meta name="description" content="Žaidimas"/>`);
-          }
-          $$renderer3.push(`<!--]-->`);
-        }
-        $$renderer3.push(`<!--]-->`);
+        $$renderer3.push("<!--[-1-->");
+        $$renderer3.title(($$renderer4) => {
+          $$renderer4.push(`<title>Finišas – Markučių Lobis</title>`);
+        });
+        $$renderer3.push(`<meta name="description" content="Žaidimas"/>`);
       }
       $$renderer3.push(`<!--]-->`);
     });
     {
-      $$renderer2.push("<!--[!-->");
+      $$renderer2.push("<!--[-1-->");
       {
-        $$renderer2.push("<!--[!-->");
-        {
-          $$renderer2.push("<!--[!-->");
-          {
-            $$renderer2.push("<!--[!-->");
-            Stopper($$renderer2, {
-              children: ($$renderer3) => {
-                $$renderer3.push(`<!---->Seifas užrakintas. <br/>Jūs dar turite surinkti kiekvieną žemėlapio dalį!`);
-              },
-              $$slots: { default: true }
-            });
-          }
-          $$renderer2.push(`<!--]-->`);
-        }
-        $$renderer2.push(`<!--]-->`);
+        $$renderer2.push("<!--[-1-->");
+        Stopper($$renderer2, {
+          children: ($$renderer3) => {
+            $$renderer3.push(`<!---->Seifas užrakintas. <br/>Jūs dar turite surinkti kiekvieną žemėlapio dalį!`);
+          },
+          $$slots: { default: true }
+        });
       }
       $$renderer2.push(`<!--]-->`);
     }

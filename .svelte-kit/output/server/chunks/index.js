@@ -1,4 +1,5 @@
-import { t as to_class, e as escape_html, b as to_style, c as clsx, a as attr } from "./attributes.js";
+import { n as noop, l as escape_html, m as has_own_property, t as to_class, p as to_style, q as clsx, a as attr } from "./attributes.js";
+import * as devalue from "devalue";
 const DERIVED = 1 << 1;
 const EFFECT = 1 << 2;
 const RENDER_EFFECT = 1 << 3;
@@ -13,13 +14,13 @@ const DIRTY = 1 << 11;
 const MAYBE_DIRTY = 1 << 12;
 const INERT = 1 << 13;
 const DESTROYED = 1 << 14;
-const EFFECT_RAN = 1 << 15;
+const REACTION_RAN = 1 << 15;
 const EFFECT_TRANSPARENT = 1 << 16;
 const EAGER_EFFECT = 1 << 17;
 const HEAD_EFFECT = 1 << 18;
 const EFFECT_PRESERVED = 1 << 19;
 const USER_EFFECT = 1 << 20;
-const WAS_MARKED = 1 << 15;
+const WAS_MARKED = 1 << 16;
 const REACTION_IS_UPDATING = 1 << 21;
 const ASYNC = 1 << 22;
 const ERROR_VALUE = 1 << 23;
@@ -37,6 +38,7 @@ function lifecycle_outside_component(name) {
 }
 const HYDRATION_START = "[";
 const HYDRATION_START_ELSE = "[!";
+const HYDRATION_START_FAILED = "[?";
 const HYDRATION_END = "]";
 const HYDRATION_ERROR = {};
 const ELEMENT_IS_NAMESPACED = 1;
@@ -156,11 +158,16 @@ function get_render_context() {
 let als = null;
 let text_encoder;
 let crypto;
+const obfuscated_import = (module_name) => import(
+  /* @vite-ignore */
+  module_name
+);
 async function sha256(data) {
   text_encoder ??= new TextEncoder();
   crypto ??= globalThis.crypto?.subtle?.digest ? globalThis.crypto : (
     // @ts-ignore - we don't install node types in the prod build
-    (await import("node:crypto")).webcrypto
+    // don't use import('node:crypto') directly because static analysers will think we rely on node when we don't
+    (await obfuscated_import("node:crypto")).webcrypto
   );
   const hash_buffer = await crypto.subtle.digest("SHA-256", text_encoder.encode(data));
   return base64_encode(hash_buffer);
@@ -191,6 +198,16 @@ class Renderer {
    * @type {boolean}
    */
   #is_component_body = false;
+  /**
+   * If set, this renderer is an error boundary. When async collection
+   * of the children fails, the failed snippet is rendered instead.
+   * @type {{
+   * 	failed: (renderer: Renderer, error: unknown, reset: () => void) => void;
+   * 	transformError: (error: unknown) => unknown;
+   * 	context: SSRContext | null;
+   * } | null}
+   */
+  #boundary = null;
   /**
    * The type of string content that this renderer is accumulating.
    * @type {RendererType}
@@ -286,7 +303,17 @@ class Renderer {
       });
       promises.push(promise);
     }
+    promise.catch(noop);
+    this.promise = promise;
     return promises;
+  }
+  /**
+   * @param {(renderer: Renderer) => MaybePromise<void>} fn
+   */
+  child_block(fn) {
+    this.#out.push(BLOCK_OPEN);
+    this.child(fn);
+    this.#out.push(BLOCK_CLOSE);
   }
   /**
    * Create a child renderer. The child renderer inherits the state from the parent,
@@ -306,14 +333,75 @@ class Renderer {
     const result = fn(child);
     set_ssr_context(parent);
     if (result instanceof Promise) {
+      result.catch(noop);
+      result.finally(() => set_ssr_context(null)).catch(noop);
       if (child.global.mode === "sync") {
         await_invalid();
       }
-      result.catch(() => {
-      });
       child.promise = result;
     }
     return child;
+  }
+  /**
+   * Render children inside an error boundary. If the children throw and the API-level
+   * `transformError` transform handles the error (doesn't re-throw), the `failed` snippet is
+   * rendered instead. Otherwise the error propagates.
+   *
+   * @param {{ failed?: (renderer: Renderer, error: unknown, reset: () => void) => void }} props
+   * @param {(renderer: Renderer) => MaybePromise<void>} children_fn
+   */
+  boundary(props, children_fn) {
+    const child = new Renderer(this.global, this);
+    this.#out.push(child);
+    const parent_context = ssr_context;
+    if (props.failed) {
+      child.#boundary = {
+        failed: props.failed,
+        transformError: this.global.transformError,
+        context: parent_context
+      };
+    }
+    set_ssr_context({
+      ...ssr_context,
+      p: parent_context,
+      c: null,
+      r: child
+    });
+    try {
+      const result = children_fn(child);
+      set_ssr_context(parent_context);
+      if (result instanceof Promise) {
+        if (child.global.mode === "sync") {
+          await_invalid();
+        }
+        result.catch(noop);
+        child.promise = result;
+      }
+    } catch (error) {
+      set_ssr_context(parent_context);
+      const failed_snippet = props.failed;
+      if (!failed_snippet) throw error;
+      const result = this.global.transformError(error);
+      child.#out.length = 0;
+      child.#boundary = null;
+      if (result instanceof Promise) {
+        if (this.global.mode === "sync") {
+          await_invalid();
+        }
+        child.promise = /** @type {Promise<unknown>} */
+        result.then((transformed) => {
+          set_ssr_context(parent_context);
+          child.#out.push(Renderer.#serialize_failed_boundary(transformed));
+          failed_snippet(child, transformed, noop);
+          child.#out.push(BLOCK_CLOSE);
+        });
+        child.promise.catch(noop);
+      } else {
+        child.#out.push(Renderer.#serialize_failed_boundary(result));
+        failed_snippet(child, result, noop);
+        child.#out.push(BLOCK_CLOSE);
+      }
+    }
   }
   /**
    * Create a component renderer. The component renderer inherits the state from the parent,
@@ -335,16 +423,17 @@ class Renderer {
    * @param {Record<string, boolean> | undefined} [classes]
    * @param {Record<string, string> | undefined} [styles]
    * @param {number | undefined} [flags]
+   * @param {boolean | undefined} [is_rich]
    * @returns {void}
    */
-  select(attrs, fn, css_hash, classes, styles, flags) {
+  select(attrs, fn, css_hash, classes, styles, flags, is_rich) {
     const { value, ...select_attrs } = attrs;
     this.push(`<select${attributes(select_attrs, css_hash, classes, styles, flags)}>`);
     this.child((renderer) => {
       renderer.local.select_value = value;
       fn(renderer);
     });
-    this.push("</select>");
+    this.push(`${is_rich ? "<!>" : ""}</select>`);
   }
   /**
    * @param {Record<string, any>} attrs
@@ -353,17 +442,18 @@ class Renderer {
    * @param {Record<string, boolean> | undefined} [classes]
    * @param {Record<string, string> | undefined} [styles]
    * @param {number | undefined} [flags]
+   * @param {boolean | undefined} [is_rich]
    */
-  option(attrs, body, css_hash, classes, styles, flags) {
+  option(attrs, body, css_hash, classes, styles, flags, is_rich) {
     this.#out.push(`<option${attributes(attrs, css_hash, classes, styles, flags)}`);
     const close = (renderer, value, { head: head2, body: body2 }) => {
-      if ("value" in attrs) {
+      if (has_own_property.call(attrs, "value")) {
         value = attrs.value;
       }
       if (value === this.local.select_value) {
-        renderer.#out.push(" selected");
+        renderer.#out.push(' selected=""');
       }
-      renderer.#out.push(`>${body2}</option>`);
+      renderer.#out.push(`>${body2}${is_rich ? "<!>" : ""}</option>`);
       if (head2) {
         renderer.head((child) => child.push(head2));
       }
@@ -382,7 +472,7 @@ class Renderer {
         }
       });
     } else {
-      close(this, body, { body });
+      close(this, body, { body: escape_html(body) });
     }
   }
   /**
@@ -459,6 +549,20 @@ class Renderer {
   }
   get length() {
     return this.#out.length;
+  }
+  /**
+   * Creates the hydration comment that marks the start of a failed boundary.
+   * The error is JSON-serialized and embedded inside an HTML comment for the client
+   * to parse during hydration. The JSON is escaped to prevent `-->` or `<!--` sequences
+   * from breaking out of the comment (XSS). Uses unicode escapes which `JSON.parse()`
+   * handles transparently.
+   * @param {unknown} error
+   * @returns {string}
+   */
+  static #serialize_failed_boundary(error) {
+    var json = JSON.stringify(error);
+    var escaped = json.replace(/>/g, "\\u003e").replace(/</g, "\\u003c");
+    return `<!--${HYDRATION_START_FAILED}${escaped}-->`;
   }
   /**
    * Only available on the server and when compiling with the `server` option.
@@ -632,7 +736,26 @@ class Renderer {
       if (typeof item === "string") {
         content[this.type] += item;
       } else if (item instanceof Renderer) {
-        await item.#collect_content_async(content);
+        if (item.#boundary) {
+          const boundary_content = { head: "", body: "" };
+          try {
+            await item.#collect_content_async(boundary_content);
+            content.head += boundary_content.head;
+            content.body += boundary_content.body;
+          } catch (error) {
+            const { context, failed, transformError } = item.#boundary;
+            set_ssr_context(context);
+            let transformed = await transformError(error);
+            const failed_renderer = new Renderer(item.global, item);
+            failed_renderer.type = item.type;
+            failed_renderer.#out.push(Renderer.#serialize_failed_boundary(transformed));
+            failed(failed_renderer, transformed, noop);
+            failed_renderer.#out.push(BLOCK_CLOSE);
+            await failed_renderer.#collect_content_async(content);
+          }
+        } else {
+          await item.#collect_content_async(content);
+        }
       }
     }
     return content;
@@ -651,25 +774,29 @@ class Renderer {
    * @template {Record<string, any>} Props
    * @param {'sync' | 'async'} mode
    * @param {import('svelte').Component<Props>} component
-   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string; csp?: Csp }} options
+   * @param {{ props?: Omit<Props, '$$slots' | '$$events'>; context?: Map<any, any>; idPrefix?: string; csp?: Csp; transformError?: (error: unknown) => unknown }} options
    * @returns {Renderer}
    */
   static #open_render(mode, component, options) {
-    const renderer = new Renderer(
-      new SSRState(mode, options.idPrefix ? options.idPrefix + "-" : "", options.csp)
-    );
-    renderer.push(BLOCK_OPEN);
-    if (options.context) {
-      push();
-      ssr_context.c = options.context;
-      ssr_context.r = renderer;
+    var previous_context = ssr_context;
+    try {
+      const renderer = new Renderer(
+        new SSRState(
+          mode,
+          options.idPrefix ? options.idPrefix + "-" : "",
+          options.csp,
+          options.transformError
+        )
+      );
+      const context = { p: null, c: options.context ?? null, r: renderer };
+      set_ssr_context(context);
+      renderer.push(BLOCK_OPEN);
+      component(renderer, options.props ?? {});
+      renderer.push(BLOCK_CLOSE);
+      return renderer;
+    } finally {
+      set_ssr_context(previous_context);
     }
-    component(renderer, options.props ?? {});
-    if (options.context) {
-      pop();
-    }
-    renderer.push(BLOCK_CLOSE);
-    return renderer;
   }
   /**
    * @param {AccumulatedContent} content
@@ -707,7 +834,7 @@ class Renderer {
         has_promises = true;
         for (const p of v.promises) await p;
       }
-      entries.push(`[${JSON.stringify(k)},${v.serialized}]`);
+      entries.push(`[${devalue.uneval(k)},${v.serialized}]`);
     }
     let prelude = `const h = (window.__svelte ??= {}).h ??= new Map();`;
     if (has_promises) {
@@ -745,16 +872,26 @@ class SSRState {
   uid;
   /** @readonly @type {Set<{ hash: string; code: string }>} */
   css = /* @__PURE__ */ new Set();
+  /**
+   * `transformError` passed to `render`. Called when an error boundary catches an error.
+   * Throws by default if unset in `render`.
+   * @type {(error: unknown) => unknown}
+   */
+  transformError;
   /** @type {{ path: number[], value: string }} */
   #title = { path: [], value: "" };
   /**
    * @param {'sync' | 'async'} mode
    * @param {string} id_prefix
    * @param {Csp} csp
+   * @param {((error: unknown) => unknown) | undefined} [transformError]
    */
-  constructor(mode, id_prefix = "", csp = { hash: false }) {
+  constructor(mode, id_prefix = "", csp = { hash: false }, transformError) {
     this.mode = mode;
     this.csp = { ...csp, script_hashes: [] };
+    this.transformError = transformError ?? ((error) => {
+      throw error;
+    });
     let uid = 1;
     this.uid = () => `${id_prefix}s${uid++}`;
   }
@@ -812,14 +949,14 @@ function attributes(attrs, css_hash, classes, styles, flags = 0) {
   const is_html = (flags & ELEMENT_IS_NAMESPACED) === 0;
   const lowercase = (flags & ELEMENT_PRESERVE_ATTRIBUTE_CASE) === 0;
   const is_input = (flags & ELEMENT_IS_INPUT) !== 0;
-  for (name in attrs) {
+  for (name of Object.keys(attrs)) {
     if (typeof attrs[name] === "function") continue;
     if (name[0] === "$" && name[1] === "$") continue;
     if (INVALID_ATTR_NAME_CHAR_REGEX.test(name)) continue;
     var value = attrs[name];
-    if (lowercase) {
-      name = name.toLowerCase();
-    }
+    var lower = name.toLowerCase();
+    if (lowercase) name = lower;
+    if (lower.length > 2 && lower.startsWith("on")) continue;
     if (is_input) {
       if (name === "defaultvalue" || name === "defaultchecked") {
         name = name === "defaultvalue" ? "value" : "checked";
@@ -843,44 +980,69 @@ function slot(renderer, $$props, name, slot_props, fallback_fn) {
     slot_fn(renderer, slot_props);
   }
 }
+function once(get_value) {
+  let value = (
+    /** @type {V} */
+    UNINITIALIZED
+  );
+  return () => {
+    if (value === UNINITIALIZED) {
+      value = get_value();
+    }
+    return value;
+  };
+}
+function derived(fn) {
+  const get_value = ssr_context === null ? fn : once(fn);
+  let updated_value;
+  return function(new_value) {
+    if (arguments.length === 0) {
+      return updated_value ?? get_value();
+    }
+    updated_value = new_value;
+    return updated_value;
+  };
+}
 export {
   ASYNC as A,
   BOUNDARY_EFFECT as B,
   COMMENT_NODE as C,
   DIRTY as D,
   ERROR_VALUE as E,
+  derived as F,
+  slot as G,
   HYDRATION_ERROR as H,
   INERT as I,
   LEGACY_PROPS as L,
   MAYBE_DIRTY as M,
-  ROOT_EFFECT as R,
-  STATE_SYMBOL as S,
+  REACTION_RAN as R,
+  STALE_REACTION as S,
   UNINITIALIZED as U,
   WAS_MARKED as W,
-  HYDRATION_END as a,
-  HYDRATION_START as b,
-  HYDRATION_START_ELSE as c,
-  EFFECT_RAN as d,
-  CLEAN as e,
-  EFFECT as f,
-  BLOCK_EFFECT as g,
-  DERIVED as h,
-  BRANCH_EFFECT as i,
-  DESTROYED as j,
-  HEAD_EFFECT as k,
-  EFFECT_TRANSPARENT as l,
-  EFFECT_PRESERVED as m,
-  CONNECTED as n,
-  EAGER_EFFECT as o,
-  STALE_REACTION as p,
-  RENDER_EFFECT as q,
-  USER_EFFECT as r,
-  MANAGED_EFFECT as s,
-  REACTION_IS_UPDATING as t,
-  is_passive_event as u,
-  render as v,
-  setContext as w,
-  head as x,
-  attr_class as y,
-  slot as z
+  attr_class as a,
+  HYDRATION_END as b,
+  HYDRATION_START as c,
+  HYDRATION_START_ELSE as d,
+  EFFECT as e,
+  CONNECTED as f,
+  CLEAN as g,
+  head as h,
+  DERIVED as i,
+  RENDER_EFFECT as j,
+  MANAGED_EFFECT as k,
+  BLOCK_EFFECT as l,
+  BRANCH_EFFECT as m,
+  ROOT_EFFECT as n,
+  DESTROYED as o,
+  HYDRATION_START_FAILED as p,
+  EFFECT_TRANSPARENT as q,
+  EFFECT_PRESERVED as r,
+  EAGER_EFFECT as s,
+  STATE_SYMBOL as t,
+  HEAD_EFFECT as u,
+  USER_EFFECT as v,
+  REACTION_IS_UPDATING as w,
+  is_passive_event as x,
+  render as y,
+  setContext as z
 };

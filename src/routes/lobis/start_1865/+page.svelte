@@ -67,16 +67,16 @@ onMount(async () => {
 
 <svelte:head>
 {#if globe.language == "EN"}
-	<title>Start — Markučiai Treasure</title>
+	<title>Start – Markučiai Manor Treasure</title>
 	<meta name="description" content="Quest" />
 {:else if globe.language == "RU"}
-	<title>Старт – Клад Маркутья</title>
+	<title>Старт – Клад Поместья Маркучай</title>
 	<meta name="description" content="Квест" />
 {:else if globe.language == "LA"}
 	<title>Start – Markučiai Treasure</title>
 	<meta name="description" content="Quest" />
 {:else}
-	<title>Startas – Markučių Lobis</title>
+	<title>Startas – Markučių Dvaro Lobis</title>
 	<meta name="description" content="Žaidimas" />
 {/if}
 </svelte:head>
@@ -94,7 +94,7 @@ onMount(async () => {
 
 {#if globe.language == "EN"}
 
-<h1>Markučiai Treasure</h1>
+<h1>Markučiai Manor Treasure</h1>
 <p class="subh">You set on your journey<br>at {date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>
@@ -124,7 +124,7 @@ The manor had a gate, and near that gate there was a large cross made of railway
 
 {:else if globe.language == "RU"}
 
-<h1>Клад Маркутья</h1>
+<h1>ККлад Поместья Маркучай</h1>
 <p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>
@@ -171,7 +171,7 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 
 {:else} <!-- LT -->
 
-<h1>Markučių Lobis</h1>
+<h1>Markučių Dvaro Lobis</h1>
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>

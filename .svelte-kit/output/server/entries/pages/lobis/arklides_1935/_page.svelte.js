@@ -1,7 +1,7 @@
-import { x as head } from "../../../../chunks/index.js";
+import { h as head } from "../../../../chunks/index.js";
+import { l as escape_html, a as attr } from "../../../../chunks/attributes.js";
 import { g as globe } from "../../../../chunks/globe.svelte.js";
 import { O as Offer } from "../../../../chunks/Offer.js";
-import { e as escape_html, a as attr } from "../../../../chunks/attributes.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let header_title_text = {
@@ -23,7 +23,7 @@ function _page($$renderer, $$props) {
       $$renderer3.push(`<meta name="description"${attr("content", header_description_text[globe.language])}/>`);
     });
     {
-      $$renderer2.push("<!--[-->");
+      $$renderer2.push("<!--[0-->");
       Offer($$renderer2);
     }
     $$renderer2.push(`<!--]-->`);

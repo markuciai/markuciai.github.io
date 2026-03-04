@@ -1,4 +1,4 @@
-import { x as head, y as attr_class } from "../../chunks/index.js";
+import { h as head, a as attr_class } from "../../chunks/index.js";
 import { g as globe } from "../../chunks/globe.svelte.js";
 import { d as dvaras } from "../../chunks/mdvaras.js";
 import "@sveltejs/kit/internal";
@@ -6,6 +6,7 @@ import "../../chunks/exports.js";
 import "../../chunks/utils.js";
 import { a as attr } from "../../chunks/attributes.js";
 import "@sveltejs/kit/internal/server";
+import "../../chunks/root.js";
 import "../../chunks/game_manager.svelte_svelte_type_style_lang.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
@@ -18,7 +19,7 @@ function _page($$renderer, $$props) {
     });
     $$renderer2.push(`<section><h1>LOBIS</h1> <p style="font-style: italic; padding: 10px;">«Ты ужас мира, стыд природы»</p> <input${attr("value", bazinga)}${attr_class("laisve_input svelte-1uha8ag", void 0, { "laisvė_success": globe.laisve })} name="password" placeholder="Slaptažodis"/> `);
     {
-      $$renderer2.push("<!--[!-->");
+      $$renderer2.push("<!--[-1-->");
     }
     $$renderer2.push(`<!--]--> <br/> <br/>  <img width="98%"${attr("src", dvaras)}/></section>`);
   });

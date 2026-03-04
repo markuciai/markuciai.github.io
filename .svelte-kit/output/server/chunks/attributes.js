@@ -1,4 +1,31 @@
 import { clsx as clsx$1 } from "clsx";
+var is_array = Array.isArray;
+var index_of = Array.prototype.indexOf;
+var includes = Array.prototype.includes;
+var array_from = Array.from;
+var define_property = Object.defineProperty;
+var get_descriptor = Object.getOwnPropertyDescriptor;
+var object_prototype = Object.prototype;
+var array_prototype = Array.prototype;
+var get_prototype_of = Object.getPrototypeOf;
+var is_extensible = Object.isExtensible;
+var has_own_property = Object.prototype.hasOwnProperty;
+const noop = () => {
+};
+function run_all(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i]();
+  }
+}
+function deferred() {
+  var resolve;
+  var reject;
+  var promise = new Promise((res, rej) => {
+    resolve = res;
+    reject = rej;
+  });
+  return { promise, resolve, reject };
+}
 const ATTR_REGEX = /[&"<]/g;
 const CONTENT_REGEX = /[&<]/g;
 function escape_html(value, is_attr) {
@@ -26,8 +53,8 @@ function attr(name, value, is_boolean = false) {
     is_boolean = true;
   }
   if (value == null || !value && is_boolean) return "";
-  const normalized = name in replacements && replacements[name].get(value) || value;
-  const assignment = is_boolean ? "" : `="${escape_html(normalized, true)}"`;
+  const normalized = has_own_property.call(replacements, name) && replacements[name].get(value) || value;
+  const assignment = is_boolean ? `=""` : `="${escape_html(normalized, true)}"`;
   return ` ${name}${assignment}`;
 }
 function clsx(value) {
@@ -44,7 +71,7 @@ function to_class(value, hash, directives) {
     classname = classname ? classname + " " + hash : hash;
   }
   if (directives) {
-    for (var key in directives) {
+    for (var key of Object.keys(directives)) {
       if (directives[key]) {
         classname = classname ? classname + " " + key : key;
       } else if (classname.length) {
@@ -66,7 +93,7 @@ function to_class(value, hash, directives) {
 function append_styles(styles, important = false) {
   var separator = important ? " !important;" : ";";
   var css = "";
-  for (var key in styles) {
+  for (var key of Object.keys(styles)) {
     var value = styles[key];
     if (value != null && value !== "") {
       css += " " + key + ": " + value + separator;
@@ -158,8 +185,22 @@ function to_style(value, styles) {
 }
 export {
   attr as a,
-  to_style as b,
-  clsx as c,
-  escape_html as e,
+  array_prototype as b,
+  get_prototype_of as c,
+  deferred as d,
+  is_array as e,
+  is_extensible as f,
+  get_descriptor as g,
+  index_of as h,
+  includes as i,
+  define_property as j,
+  array_from as k,
+  escape_html as l,
+  has_own_property as m,
+  noop as n,
+  object_prototype as o,
+  to_style as p,
+  clsx as q,
+  run_all as r,
   to_class as t
 };
