@@ -89,12 +89,12 @@ var icon_array_collected = [icon_0_collected, icon_1_collected, icon_2_collected
 
 var legend_text = {
     "EN" : [
-        "Museum", "Cross", "Servants' quarters", "Stables", "Pond", "Kitchen",
-        "Chicken coop", "Bakery", "Water well", "Orangery", "Chapel", "Doggies", "Croquet"
+        "Museum", "Cross", "Servants' house", "Stables", "Pond", "Kitchen",
+        "Chicken coop", "Bakery", "Water well", "Orangery", "Chapel", "Puppies", "Croquet"
         ],
     "RU" : [
-        "Музей", "Крест", "Домик слуг", "Конюшни", "Пруды", "Кухня",
-        "Птичник", "Пекарня", "Колодец", "Оранжерея", "Церковь", "Собачки", "Крокет",
+        "Музей", "Крест", "Домик слуг", "Конюшня", "Пруды", "Кухня",
+        "Курятник", "Пекарня", "Колодец", "Оранжерея", "Церковь", "Собачки", "Крокет",
         ],
     "LT" : [
         "Muziejus", "Kryžius", "Tarnų namelis", "Arklides", "Tvenkiniai", "Virtuvė",

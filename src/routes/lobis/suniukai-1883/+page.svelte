@@ -52,25 +52,28 @@ onMount(async () => {
 
 {#if globe.language == "EN"}
 
-<h1>Doggos</h1>
+<h1>Puppies</h1>
 <p class="subh">The eleventh stop<br>in the quest for Markučiai Treasure</p>
 <article>
-The descendants of Fanka and Boyka are playing with the croquet ball. That‘s not right! 
-
+Well done! You found the graves of the family's beloved dogs.
 </article>
 
 
 <img width=105% src={doggie}>
 <article>
 <br>
+Suddenly, you see that relatives of Fanka and Boyka (the dogs' names) are playing with a croquet ball.
+<br><br>
+This shouldn't be – a croquet ball is not a dog toy!
+<br><br>
 
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	The ball needs to be taken back to its place. As you pick up the ball from the ground, you notice a part of a sheet of paper with familiar handwriting. Now, head out to search for the last fragment.
+The ball must be returned to the players immediately. As you pick it up, you notice another scrap. Take it and go find the last part.
 	<br><br>
-	<span class="highlighted-question">Where could one find croquet players?</span>
+	<span class="highlighted-question">Where should you look for the croquet&nbsp;players?</span>
 </div>
 
 {:else if globe.language == "RU"}
@@ -78,20 +81,22 @@ The descendants of Fanka and Boyka are playing with the croquet ball. That‘s n
 <h1>Собачки</h1>
 <p class="subh">Одинадцатая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Потомки Фаньки и Бойки играют с шариком от крокета. Непорядок!
-
+Молодцы! Вы нашли могилы любимых собачек семьи.
 </article>
 
 
 <img width=105% src={doggie}>
 <article>
 <br>
-
+Вдруг вы увидели, что родственники Фаньки и Бойки (имена собачек) играют с шаром для крокета.
+<br><br>
+Так не должно быть, этот шар — не игрушка для собак!
+<br><br>
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Шар нужно отнести на место. Подбирая с земли шар, вы замечаете часть листа, исписанного знакомым почерком. Отправляйтесь на поиски последнего фрагмента.
+	Шар нужно немедленно отнести игрокам в крокет. Поднимая его с земли, вы замечаете еще один клочок уже знакомого документа. Возьмите его и идите искать последний фрагмент документа.
 	<br><br>
 	<span class="highlighted-question">Где можно найти игроков в крокет?</span>
 </div>

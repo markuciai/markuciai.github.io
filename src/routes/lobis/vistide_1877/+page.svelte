@@ -52,45 +52,49 @@ onMount(async () => {
 <h1>Chicken Coop And Icehouse</h1>
 <p class="subh">The sixth stop<br>in the quest for Markučiai Treasure</p>
 <article>
-As you approach the chicken coop, you see Vanyusha waving at you excitedly. After you hand him the chicken feed and explain your quest for the missing document, he eagerly offers his help. 
+Vanya sees you from afar and waves. You give him the feed and tell him about your search.
 </article>
 
 
 <img width=105% src={vanyusha}>
 <article>
 <br>
-He has seen a similar piece of paper near a raspberry bush by the glacier. He'll to bring it to you right away. 
+He is happy to help – he saw a similar scrap of paper near the chicken coop and will bring it right away.
 </article>
 <br>&nbsp;<br>&nbsp;<br>&nbsp;
 <img class="illustration" src={task}>
 
 <div class="where-next">
-In return, he asks you to deliver a basket of fresh eggs to Masha. She will make a big pie for the guests and a sweet cream puff for Ilyusha. Today is his birthday.
-	<br><br>
-	<span class="highlighted-question">Where should you bring a basket full of eggs?</span>
+In return, take a basket of fresh eggs to Maria so she can bake a cake for the guests and bread for the whole family.
+<br><br>
+<span class="highlighted-question">Where should you take the basket of eggs?</span>
 </div>
+
+
+
+
 
 {:else if globe.language == "RU"}
 
-<h1>Птичник и&nbsp;ледник</h1>
+<h1>Курятник и&nbsp;ледник</h1>
 <p class="subh">Шестая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Ванюша увидел вас еще издали и весело замахал руками. Вы отдали ему корм для цыплят и рассказали о своих поисках.
+Мальчик по имени Ваня замечает вас издалека и машет рукой. Вы отдаете ему корм для цыплят и рассказываете о своих поисках.
 </article>
 
 
 <img width=105% src={vanyusha}>
 <article>
 <br>
-Мальчик с радостью поможет вам — он видел похожий обрывок бумаги у куста малины рядом с ледником и сейчас же принесет его вам.
+Мальчик с радостью готов вам помочь — он видел похожий клочок бумаги у курятника и сейчас же его принесет.
 </article>
 <br>&nbsp;<br>&nbsp;<br>&nbsp;
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	А вы уж не откажите — отнесите корзинку со свежими яйцами Маше. Пусть она испечет большой пирог для гостей и сладкую ватрушку для Илюши — он сегодня именинник.
+А вы отнесите корзину со свежими яйцами Марии. Пусть она испечет большой пирог для гостей и хлеб для всей семьи.
 	<br><br>
-	<span class="highlighted-question">Куда нужно отнести корзинку с яйцами?</span>
+	<span class="highlighted-question">Куда бы вы отнесли корзинку с яйцами?</span>
 </div>
 
 {:else if globe.language == "LA"}

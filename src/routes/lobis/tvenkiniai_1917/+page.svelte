@@ -48,22 +48,23 @@ onMount(async () => {
 <h1>The Ponds</h1>
 <p class="subh">The fourth stop<br>in the quest for Markučiai Treasure</p>
 <article>
-Finding the boy Taras was not difficult; he spends all his free time at the ponds. In the winter, he skates on the icy surface of the pond, and in the warm weather, he swims or makes wooden ships out of twigs. 
+Finding Taras is easy, as he spends all his free time by the ponds. In winter, people skated here, and in summer, they swam. 
 </article>
 
 
 <img width=105% src={waters}>
 <article>
 <br>
-But today, he has an important task: he must catch fish for the festive dinner. 
+Today, Taras has an important task—to catch fish for the festive lunch.
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-You give Taras the fishing rod and notice that the sail on his boat is made of a piece of the document you need. The boy agrees to give you the scrap of paper, but he asks for you to take the fish he caught to the cook.
+As you hand him the rod, you notice another scrap in his boat! He will give it to you if you wait a moment and then take the fish he catches to the cook.
 
 	<br><br>
-	<span class="highlighted-question">Where should you bring the fish?</span>
+	<span class="highlighted-question">Where do you think the fish should be taken?
+</span>
 </div>
 
 {:else if globe.language == "RU"}
@@ -71,22 +72,23 @@ You give Taras the fishing rod and notice that the sail on his boat is made of a
 <h1>Пруды</h1>
 <p class="subh">Четвёртая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Отыскать мальчика Тараса было несложно, все свое свободное время он проводит у прудов. Зимой катается на коньках по ледяной глади водоема, а в теплое время купается или мастерит кораблики из деревянных щепок.
+Найти Тараса несложно, так как мальчик все свободное время проводит у усадебных прудов. Зимой на прудах катались на коньках, а летом — купались.
 </article>
 
 
 <img width=105% src={waters}>
 <article>
 <br>
-Но сегодня у него важное дело — он должен наловить рыбы для праздничного обеда.
+Сегодня у Тараса важная задача — наловить рыбы к праздничному обеду.
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Вы отдаете Тарасу удочку и замечаете, что парус у его кораблика сделан из обрывка нужного вам документа. Мальчик соглашается отдать клочок бумаги, но просит вас отнести пойманную рыбу кухарке.
+Отдавая удочку Тарасу, вы замечаете, что в его лодке лежит еще один клочок документа! Мальчик согласен отдать его вам, если вы немного подождете, а затем отнесете пойманную им рыбу поварихе.
 
 	<br><br>
-	<span class="highlighted-question">Куда нужно отнести рыбу?</span>
+	<span class="highlighted-question">Как вы думаете, а куда следовало бы отнести рыбу?
+</span>
 </div>
 
 {:else if globe.language == "LA"}

@@ -180,6 +180,7 @@ section {
 	0 20px 20px -15px rgba(0,0,0, 0.4);
 	/* 0 10px 20px -20px rgba(255, 255, 255, 1); */
 	font-size: 16pt;
+	line-height: 133%;
 	rotate: -0.2deg;
 	transition: 1s 0.8s;
 	/* perspective: 1px; */
@@ -207,16 +208,19 @@ h1 {
 	letter-spacing: -3%;
 
 
+
 	font-size: 2rem;
 	/* text-align: center; */
 
 	/* text-transform: uppercase;
 	letter-spacing: 5px; */
 	/* font-style: italic; */
-	font-size: clamp(60px, 16vw, 80px);
-	/* font-size: clamp(40px, 12vw, 64px); */
-	/* line-height: clamp(40px, 12vw, 64px); */
-	line-height: clamp(52.5px, 14vw, 70px);
+
+	font-size: clamp(52.5px, 14vw, 70px);
+	line-height: clamp(40px, 12vw, 64px);
+
+	/* font-size: clamp(60px, 16vw, 80px); */
+	/* line-height: clamp(52.5px, 14vw, 70px); */
 	color: #D33F37;
 	color: #9f0d17;
 
@@ -284,11 +288,15 @@ h2 {
 
 
 article {
-	padding: 0px clamp(20px, 10vw, 80px) 20px clamp(10px, 5vw, 40px);
+	align-self: left;
+	padding: 4px clamp(20px, 10vw, 80px) 12px clamp(10px, 5vw, 40px);
 	margin-bottom: 20px;
-	min-width: 80%;
+	width: 100%;
+	/* border: 1px solid teal; */
 
 	transition: 0.5s 0.5s;
+
+	text-wrap: pretty;
 	/* width should account for padding. may bug out! */
 }
 
@@ -323,7 +331,8 @@ article {
 	
 	/* border: 3px solid #D33F37; */
 	font-size: 24px;
-	font-size: clamp(24px, 6vw, 32px);
+	font-size: clamp(24px, 5.5vw, 32px);
+	line-height: 133%;
 	transition: 1s;
 	transform: rotate(0.7deg);
 }
@@ -415,10 +424,13 @@ article {
 
 
 .highlighted-question {
+	/* font-family: var(--font-manrope); */
+	/* font-weight: 800; */
+
 	font-style: italic;
 	font-weight: bold;
 	color: #D33F37;
-	/* font-family: var(--font-manrope); */
+
 	color: var(--color-vm-orange);
 	text-wrap: balance;
 }

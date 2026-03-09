@@ -20,8 +20,7 @@
       "_mdvaras.js"
     ],
     "assets": [
-      "_app/immutable/assets/varvara.BHQkwufB.jpg",
-      "_app/immutable/assets/instructions.CPjAScwm.png"
+      "_app/immutable/assets/varvara.BHQkwufB.jpg"
     ]
   },
   "_attributes.js": {
@@ -110,6 +109,7 @@
     "name": "steps",
     "assets": [
       "_app/immutable/assets/splash.CFG--8IQ.png",
+      "_app/immutable/assets/instructions.CPjAScwm.png",
       "_app/immutable/assets/steps.COm-BiQs.png"
     ]
   },
@@ -613,7 +613,7 @@
       "_game_manager.svelte_svelte_type_style_lang.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.D2fsEBG9.css"
+      "_app/immutable/assets/_layout.DvfLAM2v.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",

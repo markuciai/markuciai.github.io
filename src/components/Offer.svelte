@@ -22,35 +22,71 @@ import varvara from '$lib/images/archival/varvara.jpg';
 
 {#if globe.language == "EN"}
 
-<h1>Markučiai Manor treasure</h1>
+<h1>Markučiai Manor Treasure</h1>
 <p class="subh">A treasure hunt game<br> trough the Markučiai manor park</p>
 
 <article>
-Did you know that there's a treasure in Markučiai?<br/><br/>
-Markučiai manor museum presents a fun adventure (and an educational program) for single players or small groups.
+<!-- Did you know that there's a treasure in Markučiai?<br/><br/> -->
+The Markučiai Manor Museum presents a fun educational program for small groups and individual visitors. 
+<br/><br/>
+Start at the museum and visit all the designated points in order, learn about the history of Markučiai Manor, and win the orientation game.
 </article>
 <!-- <br><br> -->
 <article>
-Plaques containing QR codes are scattered troughout the park. Starting at the museum, visit every quest point in the correct order to dive into the museum's history and get a small prize.
-</article>
+QR code plaques are placed throughout the park.
+<!-- Plaques containing QR codes are scattered troughout the park. Starting at the museum, visit every quest point in the correct order to dive into the museum's history and get a small prize. -->
 
+</article>
 <img src={instructions} width="100%" />
 
 <article>
-To play, a player will need a phone or tablet with an internet connection (to scan QR-codes and open web pages). There's no need to install any additional apps.
+Each player (or team) will need a mobile phone or tablet with internet access.No additional apps are required. 
+</article>
 
-<br/><br/>It's possible to play in three languages: english, russian and lithuanian.
+<img src={steps} width="100%" />
+
+<article>
+The game can be played in Lithuanian, English and Russian.
 </article>
 
 <img class="illustration" src={doggo}>
 
+
 <div class="where-next">
-If you're already at the park during museum work hours and wish to play immediately — visit the museum and ask at the front desk.
-<br><br>
+<!-- If you're already at the park during museum work hours and wish to play immediately — visit the museum and ask at the front desk.
+<br><br> -->
 And if you wish to book an educational program for a group <a href="mailto:edukacija.markuciai@vilniausmuziejus.lt">email us</a>.
 <br><br>
-<a href="https://md.vilniausmuziejus.lt/#educations">More info about the Markučiai educational opportunities.</a>.
+<a href="https://md.vilniausmuziejus.lt/#educations">More information about educational programs at Markučiai Manor</a>.
 </div>
+
+
+
+<h1 >What manor?</h1>
+
+<article>
+Markučiai Manor has stood here since the XIX century, specifically since 1867. 
+</article>
+<img width=98% src={dvaras}>
+
+<article>
+<br />
+Alexey Melnikov, a railway engineer of the then Tsarist Russia, built the manor for his family – two sons and three daughters. In the XIX century, the manor grounds featured an English park, an orchard, ponds, a well, wooden stables, an orangery, a bakery, a servants' house, an icehouse, a chicken coop, a kitchen, and a croquet field. 
+</article>
+
+<article>
+The manor and its vast estate were left as a dowry to Alexey's eldest daughter, Varvara. 
+</article>
+
+<img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
+
+<article>
+Today, only the main residential building – the villa – remains. We invite you to travel back to the 19th century and visit the manor, where life was very different from the XXI century. 
+</article>
+<article>
+To learn more about manor life, you will complete 12 tasks to collect an ancient document and find the Markučiai treasure.
+</article>
+
 
 
 
@@ -58,37 +94,66 @@ And if you wish to book an educational program for a group <a href="mailto:eduka
 
 {:else if globe.language == "RU"}
 
-<h1>Клад Поместья Маркучай</h1>
-<p class="subh">Ориентационный квест <br> по парку усадьбы Маркутья</p>
+<h1>Сокровище Поместья Маркучай</h1>
+<p class="subh">Ориентационная игра <br> по парку усадьбы Маркучай</p>
 
 <article>
-А вы знали, что в Маркутье спрятан клад? <br/><br/>
-Музей-усадьба Маркучай представляет образовательную программу и увлекательное приключение для небольших групп или одиночных игроков.
+<!-- А вы знали, что в Маркутье спрятан клад? <br/><br/> -->
+Музей-усадьба Маркучяй представляет веселую образовательную программу для небольших групп и индивидуальных посетителей.
+<br/><br/>
+Для начала зайдите в музей, потом по очереди посетите все намеченные точки, познакомьтесь с историей усадьбы Маркучяй и выиграйте ориентировочную игру. 
 </article>
 <!-- <br><br> -->
+
+<img src={instructions} width="100%" />
 <article>
-По парку разбросаны таблички с кьюар-кодами. Начните в музее и посетите все точки квеста в нужном порядке чтобы получить приз и прикоснуться к истории поместья.
+На территории парка размещены таблички с QR-кодами. 
 </article>
 
-<img  src={instructions} width="100%" />
 
 <article>
-Для игры каждому игроку понадобится телефон или планшет подключённый к интернету (чтобы сканировать кьюар-коды). Никаких дополнительных приложений ставить не нужно.
+Каждому игроку (или команде игроков) понадобится мобильный телефон или планшет с доступом к интернету. Никаких дополнительных приложений устанавливать не нужно. 
+</article>
 
-<br/><br/>Играть можно на трёх языках: английском, русском и литовском.
+<img src={steps} width="100%" />
+<article>
+Играть можно на литовском, английском или русском языках.
 </article>
 
 <img class="illustration" src={doggo}>
 
 <div class="where-next">
-Если вы уже в парке (в часы работы музея) и хотите поиграть прямо сейчас — заходите в музей и обращайтесь в кассу.
+<!-- Если вы уже в парке (в часы работы музея) и хотите поиграть прямо сейчас — заходите в музей и обращайтесь в кассу.
+<br><br> -->
+Чтобы заранее заказать образовательную программу пишите на <a href="mailto:edukacija.markuciai@vilniausmuziejus.lt">электропочту</a>.
 <br><br>
-А чтобы заранее заказать эдукацию для групп пишите на <a href="mailto:edukacija.markuciai@vilniausmuziejus.lt">электропочту</a>.
-<br><br>
-<a href="https://md.vilniausmuziejus.lt/#educations">Подробная информация об эдукациях двора Маркучай</a>
+<a href="https://md.vilniausmuziejus.lt/#educations">Подробная информация об образовательных программах усадьбы Маркучяй</a>
 </div>
 
+<h1 >А что за поместье?</h1>
 
+<article>
+Усадьба Маркучяй стоит на этом месте с XIX века, а точнее — с 1867 г.
+</article>
+<img width=98% src={dvaras}>
+
+<article>
+<br />
+Тогдашний инженер железных дорог царской России Алексей Мельников построил усадьбу Маркучяй для своей семьи — двух сыновей и трех дочерей. В XIX веке на территории усадьбы был разбит английский парк, посажен фруктовый сад, выкопаны пруды и колодец, построены деревянная конюшня, оранжерея, пекарня, домик для прислуги, ледник, курятник, кухня, оборудована площадка для крокета.
+</article>
+
+<article>
+Усадьбу и еe огромные владения — все Маркучяй и часть других районов — в качестве приданого получила старшая дочь Алексея, Варвара. 
+</article>
+
+<img width=120% src={varvara} style="margin-bottom:40px; rotate: 2deg;">
+
+<article>
+Сегодня от огромных владений усадьбы Маркучяй и пристроек остался только жилой усадебный дом — вилла. Поэтому сейчас мы хотим пригласить вас перенестись во времени в XIX век и посетить усадьбу, жизнь в которой была совсем иной, нежели в XXI веке.
+</article>
+<article>
+Чтобы лучше узнать усадебную жизнь XIX века, вам предстоит выполнить 12 заданий, которые помогут собрать старинный документ и найти сокровище усадьбы Маркучяй.
+</article>
 
 
 
@@ -114,17 +179,21 @@ And if you wish to book an educational program for a group <a href="mailto:eduka
 <p class="subh">ORIENTACINIS ŽAIDIMAS<br>PO MARKUČIŲ DVARO PARKĄ</p>
 
 <article>
-Markučių dvaro muziejus nedidelėms grupėms ir pavieniams lankytojams pristato smagią edukacinę programą. Pradėkite nuo muziejaus ir aplankykite iš eilės visus numatytus taškus, susipažinkite su Markučių dvaro istorija ir laimėkite orientacinį žaidimą.
+Markučių dvaro muziejus nedidelėms grupėms ir pavieniams lankytojams pristato smagią edukacinę programą.
+<br><br>
+Pradėkite nuo muziejaus ir aplankykite iš eilės visus numatytus taškus, susipažinkite su Markučių dvaro istorija ir laimėkite orientacinį žaidimą.
 </article>
 <!-- <br><br> -->
 
 <img  src={instructions} width="100%" />
 
 <article>
-Parko teritorijoje išdėliotos lentelės su QR-kodais. Kiekvienam žaidėjui (ar žaidėjų komandai) reikės mobilaus telefono arba planšetinio kompiuterio su interneto prieiga. Jokių papildomų programėlių instaliuoti nereikia.
+Parko teritorijoje išdėliotos lentelės su QR-kodais. Kiekvienam žaidėjui (ar žaidėjų komandai) reikės mobilaus telefono arba planšetinio kompiuterio su interneto prieiga. 
+<br><br>
+Jokių papildomų programėlių instaliuoti nereikia.
 </article>
 
-<img  src={steps} width="100%" />
+<img src={steps} width="100%" />
 
 <article>
 <p>

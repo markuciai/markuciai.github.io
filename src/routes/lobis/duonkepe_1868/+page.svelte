@@ -55,24 +55,27 @@ onMount(async () => {
 <h1>Bakery</h1>
 <p class="subh">The seventh stop<br>in the quest for Markučiai Treasure</p>
 <article>
-As you enter the bakery, the heat hits you immediately. Mashenka takes the basket of eggs from you and starts skilfully mixing the dough for the pie and the pastries.
+In the 19th century, the bakery was an outdoor building near the main house. Varvara and her family loved baking their own bread.
+<br><br>
+Maria takes the eggs and begins kneading dough for cake and buns.
 </article>
 
 <img width=105% src={bakery}>
 
 <article>
 <br>
-While standing near the oven, you spot the coveted scrap of the document on the box with firewood and shavings, in a pile of old newspapers used for kindling. 
+Near the oven, in a box of firewood and old newspapers, you spot another scrap of the document.
+<br><br><br>
 </article>
 
-<br><br>
+
 
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	The girl hands the scrap to you and asks you to fetch water and water the orchids.
+	Maria gives it to you and asks you to take a bucket, fetch some water, and water the flowers.
 	<br><br>
-	<span class="highlighted-question">Where would you fill a bucket with water?</span>
+	<span class="highlighted-question">Where should you go to fetch water?</span>
 </div>
 
 {:else if globe.language == "RU"}
@@ -81,24 +84,27 @@ While standing near the oven, you spot the coveted scrap of the document on the 
 <h1>Пекарня</h1>
 <p class="subh">Седьмая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Ух, как жарко в пекарне. Машенька взяла у вас корзинку с яйцами и стала ловко готовить тесто для пирога и ватрушек. 
+Пекарня в XIX веке была построена, недалеко от главного здания усадьбы. Варвара и её семья любили печь свой хлеб.
+<br><br>
+Девочка Мария, взяв у вас корзину с яйцами, проворно бросается месить тесто для пирога и булочек.
 </article>
 
 <img width=105% src={bakery}>
 
 <article>
 <br>
-Рядом с печью на ящике с дровами и щепками, среди старых газет для розжига огня, замечаете заветный клочок документа. 
+У печи, в ящике с дровами, поленьями и старыми газетами для растопки, вы замечаете клочок уже знакомого документа.
+<br/><br/><br>
 </article>
 
-<br><br>
+
 
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Девочка вручила его вам и попросила сходить за водой и полить орхидеи. 
+	Девочка Мария отдает вам клочок и, вручив ведро, просит сходить набрать воды и полить цветы.
 	<br><br>
-	<span class="highlighted-question">Где можно набрать ведро воды?</span>
+	<span class="highlighted-question">Куда нужно идти, чтобы набрать воды?</span>
 </div>
 
 
@@ -119,7 +125,9 @@ Lorem ipsum dolor sit amet
 <h1>Duonkepė</h1>
 <p class="subh">Septintoji stotelė<br>ieškant Markučių lobio</p>
 <article>
-Duonkepė XIX a. buvo pastatyta lauke, netoli pagrindinio dvaro pastato. Varvara ir jos šeima mėgo kepti savo duoną. Mergaitė Marija, paėmusi iš jūsų pintinę su kiaušiniais, vikriai puola minkyti tešlą pyragui ir bandelėms.
+Duonkepė XIX a. buvo pastatyta lauke, netoli pagrindinio dvaro pastato. Varvara ir jos šeima mėgo kepti savo duoną.
+<br><br>
+Mergaitė Marija, paėmusi iš jūsų pintinę su kiaušiniais, vikriai puola minkyti tešlą pyragui ir bandelėms.
 </article>
 
 
@@ -127,8 +135,9 @@ Duonkepė XIX a. buvo pastatyta lauke, netoli pagrindinio dvaro pastato. Varvara
 <article>
 <br>
 Prie krosnies, dėžėje su malkomis, pliauskomis ir senais laikraščiais pakuroms pastebite jau pažįstamo dokumento skiautę.
+<br><br><br>
 </article>
-<br><br>
+
 <img class="illustration" src={task}>
 
 <div class="where-next">

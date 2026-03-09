@@ -51,45 +51,51 @@ onMount(async () => {
 <h1>Orangery</h1>
 <p class="subh">The ninth stop<br>in the quest for Markučiai Treasure</p>
 <article>
-You are incredibly astute! You have found the orchids in the orangery.
+You are absolutely right – in winter, flowers grow in a greenhouse, where exotic, heat-loving plants are protected from the cold during the cold season.
 </article>
 
 
 <img width=105% src={fruit_garden}>
 <article>
 <br>
-Here you meet a girl named Olya. You help her fill the watering cans with water and notice the fragment of the document you were looking for in one of the flowerpots. Take it!
-</article>
+Here you meet a girl named Olga, whom you help fill watering cans, and in one of the beautiful flowerpots you notice a piece of the document you need. Take it!
 <br><br>
+</article>
+
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Olya made beautiful bouquets and asks you to take them to the grave of Grigory and Varvara Pushkin.
+Olga has made beautiful bouquets and asks you to take them to the graves of Varvara and her husband Grigory.
 	<br><br>
-	<span class="highlighted-question">Where should you bring the flowers?</span>
+	<span class="highlighted-question">Where should you take the&nbsp;flowers?</span>
 </div>
+
+
+
+
 
 {:else if globe.language == "RU"}
 <!-- this h1 doesn't fit on mobile without the smaller font and a shift left -->
-<h1 style="font-size: clamp(55px, 15vw, 75px); width: 95%;">Оранжерея</h1>
+<h1>Оранжерея</h1>
 <p class="subh">Девятая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Вы невероятно догадливы — орхидеи растут в оранжерее.
+Вы совершенно правы — зимой цветы растут в оранжерее, где в холодное время года от мороза оберегают экзотические, теплолюбивые растения.
 </article>
 
 
 <img width=105% src={fruit_garden}>
 <article>
 <br>
-Здесь вы встретили девочку Олю. Вы помогли ей наполнить лейки водой и заметили в кашпо для цветов нужный вам фрагмент документа. Берите его!
-</article>
+Здесь вы встречаете девочку Ольгу, которой помогаете налить воду в лейки, и в одном красивом цветочном горшке замечаете нужный вам клочок документа. Заберите его!
 <br><br>
+</article>
+
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Оля сделала красивые букеты и попросила отнести их на надгробие Григория и Варвары Пушкиных.
-	<br><br>
-	<span class="highlighted-question">Куда нужно отнести цветы?</span>
+Ольга составила красивые букеты цветов и попросила отнести их на могилы Варвары и её мужа Григория.
+<br><br>
+<span class="highlighted-question">Куда следует отнести&nbsp;цветы?</span>
 </div>
 
 {:else if globe.language == "LA"}
@@ -118,14 +124,15 @@ Lorem ipsum dolor sit amet
 <article>
 <br>
 Čia jūs sutinkate mergaitę Olgą, kuriai padedate supilti vandenį į laistytuvus ir viename gražiame gėlių vazonėlyje pastebite jums reikalingo dokumento skiautę. Pasiimkite ją!
-</article>
 <br><br>
+</article>
+
 <img class="illustration" src={task}>
 
 <div class="where-next">
 	Olga sukomponavo gražias gėlių puokštes ir paprašė jas nunešti ant Varvaros ir jos vyro Grigorijaus kapų.
 	<br><br>
-	<span class="highlighted-question">Kur reikėtų nešti gėles?</span>
+	<span class="highlighted-question">Kur reikėtų nešti&nbsp;gėles?</span>
 </div>
 
 {/if} <!-- Station globe.languages-->

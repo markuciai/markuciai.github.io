@@ -54,29 +54,29 @@ onMount(async () => {
 <img class="map_piece_header_illustration" src={map_piece}>
 {#if globe.language == "EN"}
 
-<h1>Servants' quarters</h1>
+<h1>Servants' House</h1>
 <p class="subh">The second stop<br>in the quest for Markučiai Treasure</p>
 <article>
-	Anna the maid and her husband Vyacheslav welcome you to their cozy home.
+Ana, a servant at the manor, and her husband Vyacheslav lived in the servants’ house while they worked in the manor.
 </article>
 <img width=105% src={servants}>
 <br>
 <article>
-	They too have found a piece of paper with similar handwriting in the park, but they don't know what to do with it yet.
+Ana and Vyacheslav found a scrap of an important document but don't know what to do with it. 
 </article>
 
 <img width=105% src={servant_house}>
 <article>
 <br>
-The servants are busy in the garden, but if you can collect every piece of this document and bring it to the manor house, you will definitely be rewarded.
+The servants are busy with their work and therefore cannot devote time to searching for an unknown document.  However, they heard that if you collect all the parts and bring them to the main house, you can get a reward.
 </article>
 <img class="illustration task saddle" src={task}>
 
 <div class="where-next saddle-block">
-	The servants will give you their piece of the document, and in return, you have to fulfill their request - deliver a new saddle to pan Michal.
+Ana and Vyacheslav agree to give you the scrap if you help them: deliver a new saddle to Mr. Michal.
 <br><br>
 <span class="highlighted-question">
-	Where should you bring the saddle?
+Where was the saddle usually taken?
 </span>
 </div>
 
@@ -86,26 +86,26 @@ The servants are busy in the garden, but if you can collect every piece of this 
 <h1>Домик слуг</h1>
 <p class="subh">Вторая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Служанка Анна и ее супруг Вячеслав встречают вас на пороге своего уютного домика.
+Служанка усадьбы Маркучяй Анна и её муж Вячеслав жили в домике для слуг, пока работали в усадьбе.
 </article>
 <img width=105% src={servants}>
-<br>
 <article>
-	Они тоже нашли в парке обрывок бумаги с похожим почерком, но пока не знают, что с ним делать.
+<br>
+Анна и Вячеслав нашли обрывок важного документа, но не знают, что с ним делать.
 </article>
 
 <img width=105% src={servant_house}>
 <article>
 <br>
-У слуг много хлопот в саду, но если вы сможете собрать все части этого документа и отнесете его в усадебный дом, то обязательно получите вознаграждение.
+Слуги заняты работой, поэтому не могут уделить время поискам неизвестного документа. Однако они слышали, что если собрать все части документа и отнести его в господский дом, можно получить вознаграждение.
 </article>
 <img class="illustration task saddle" src={task}>
 
 <div class="where-next saddle-block">
-	Слуги отдадут вам свою часть документа, а взамен вы должны выполнить их просьбу — отнесите новое седло пану Михалу.
+Анна и Вячеслав согласны отдать вам найденную часть документа, если вы поможете им и выполните их просьбу — отнесете новое седло господину Михалу.
 <br><br>
 <span class="highlighted-question">
-	Куда нужно отнести седло?
+Найдите, куда раньше относили седло?
 </span>
 </div>
 

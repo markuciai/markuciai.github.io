@@ -157,21 +157,28 @@ Lorem ipsum dolor sit amet
 
 
 
+
+
+
 {#if globe.language == "EN"}
 <h1>Croquet court</h1>
 <p class="subh">The twelfth and final stop<br>in the quest for Markučiai Treasure</p>
 <article>
-There's a game going at the croquet court, a game once played at the 1900 olympics. During the XIX century croquet was a popular game all acros Europe.
+This court is used for a unique game that was played at the 1900 Olympics. Croquet was a popular leisure activity in XIX century Europe.
+<br/><br/>
+During the game, players use mallets to hit balls, trying to drive them through hoops stuck in the grass.
 </article>
 
 <img width=105% src={croquet}>
 <article>
 <br/>
-In this game players hit balls with mallots, trying to get the balls trough hoops. As you play, you find the last piece of the document.
+You notice the final scrap of the document stuck to a mallet.
 </article>
 
 <article>
-Now, having put together the pieces, turn them over and read the combined document. What does it say?
+Now, having put together all the scraps, turn them over  and read the secret document. 
+<br/><br/>
+What is written in it?
 </article>
 
 
@@ -179,19 +186,27 @@ Now, having put together the pieces, turn them over and read the combined docume
 {:else if globe.language == "RU"}
 <h1>Площадка для крокета</h1>
 <p class="subh">Двенадцатая и предпоследняя остановка<br>в поисках Клада Маркутья</p>
+
 <article>
-На площадке для крокета дети играют в уникальную игру, которую играли на олимпиаде 1900 года. В XIX веке крокет был популярным времяпрепровождением по всей Европе.
+На площадке играют в уникальную игру, в которую играли на Олимпийских играх 1900 года.
+<br/><br/>
+Это — крокет. В XIX веке он был популярной игрой для досуга во всей Европе.
+<br/><br/>
+Во время игры ударяют молотками по шарам, стараясь прокатить их через расставленные в траве воротца. 
 </article>
 
 <img width=105% src={croquet}>
 <article>
 <br/>
-Это игра, в которой молотками бьют по шарам, чтобы забить их в расставленные по пространству воротца. Играя, вы находите последний кусочек документа на молотке.
+Вы замечаете, что к палке прилип последний клочок документа.
 </article>
 
 <article>
-А теперь, сложив все кусочки вместе, переверните и прочитайте собранный документ. Что на нём написано?
+А теперь, сложив все кусочки вместе, переверните и прочитайте секретный документ. 
+<br/><br/>
+Что на нём написано?
 </article>
+
 
 {:else if globe.language == "LA"}
 {:else} <!-- LT -->
@@ -208,11 +223,13 @@ Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiam
 
 <article>
 <br/>
-Tai žaidimas, kuriame lazdomis mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. Žaidimo metu, ant lazdos rasite paskutiniąja dokumento skiautę. 
+Tai žaidimas, kuriame plaktukais mušami kamuoliukai, pereinantys per erdvėje išdėliotus lankus. Žaidimo metu, ant plaktuko rasite paskutiniąja dokumento skiautę. 
 </article>
 
 <article>
-O dabar, sudėjus visas skiautes drauge, apverskite ir perskaitykite slaptą dokumentą. Kas jame parašyta? 
+O dabar, sudėjus visas skiautes drauge, apverskite ir perskaitykite slaptą dokumentą.
+<br/><br/>
+Kas jame parašyta? 
 </article>
 
 

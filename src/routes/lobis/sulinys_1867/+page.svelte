@@ -52,23 +52,28 @@ onMount(async () => {
 <h1>Water Well</h1>
 <p class="subh">The eigth stop<br>in the quest for Markučiai Treasure</p>
 <article>
-In 1867, during the construction of the Melnikov estate in Markuchiai, a well was dug. Every morning, the groundskeeper pumped the water, which flowed through pipes into a special reservoir in the house.
-
+This well was dug in 1867, when the entire Melnikov estate was being built.
+<br><br>
+The well had a water pump, which was used to pump water through pipes to the Melnikovs' bathhouse.
 </article>
 
 
 <img width=105% src={sulinys}>
 <article>
 <br>
-Some of the water was heated and used for washing and bathing. Yes, that's right - in the 19th century, this house already had a bathroom and a toilet. But let's not get distracted, as you still need to fetch water and water the orchids. There's a bucket next to the well, but before you lower it, take a look inside - see that? There's a piece of paper on the bottom! Did you take it? Yes, that's what you need.
+Some of it was heated for baths – yes, this house already had a bathtub and a toilet in the 19th century!
+<br><br>
+Imagine you are fetching water. There is a bucket by the well. Before you lower it, look inside.
+<br><br>
+You see another scrap of paper at the bottom! Take it – it’s exactly what you need.
+<br>&nbsp;<br>&nbsp;<br>
 </article>
-<br>&nbsp;<br>&nbsp;<br>&nbsp;
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Now go ahead and fetch the water, and continue your search for the orchids.
+	Now, draw the water and go find the flowers!
 	<br><br>
-	<span class="highlighted-question">Where could the orchids grow?</span>
+	<span class="highlighted-question">Where can you find flowers in winter?</span>
 </div>
 
 
@@ -78,7 +83,7 @@ Some of the water was heated and used for washing and bathing. Yes, that's right
 <h1>Колодец</h1>
 <p class="subh">Восьмая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Этот колодец был выкопан в 1867 г. во время постройки усадьбы Мельниковых в Маркутье. Каждое утро дворник насосом накачивал воду и она по трубам текла в специальный резервуар в доме.
+Этот колодец был выкопан в 1867 г., когда строилась вся усадьба Мельниковых. В колодце была помпа, с помощью которой вода по трубам поступала в ванную Мельниковых.
 
 </article>
 
@@ -86,15 +91,20 @@ Some of the water was heated and used for washing and bathing. Yes, that's right
 <img width=105% src={sulinys}>
 <article>
 <br>
-Часть воды подогревали и использовали для умывания и принятия ванны. Да-да, в 19 веке в этом доме уже была ванная комната и туалет. Что-то мы отвлеклись, ведь вам нужно еще набрать воды и полить орхидеи. Рядом с колодцем стоит ведро. Но не торопитесь. Прежде, чем опустить его в колодец, загляните в ведро — видите? На дне белеет клочок бумаги! Взяли его? Да, это то, что вам нужно. 
+Часть воды грели для умывания и банных удовольствий. Да, в XIX веке в этом доме уже были ванна и туалет!
+<br><br>
+Вернемся к колодцу. Представьте, что вам нужно набрать воды и полить цветы. У колодца стоит ведро. Не спешите. Прежде чем опустить ведро в колодец, загляните в него.
+<br><br>
+На дне белеет еще один клочок бумаги! Возьмите его. Это именно то, что вам нужно.
+<br><br><br>
 </article>
-<br><br><br><br>
+
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Теперь смело набирайте воду и отправляйтесь на поиски орхидей.
+	Теперь смело черпайте воду и идите искать цветы!
 	<br><br>
-	<span class="highlighted-question">Где могут расти орхидеи?</span>
+	<span class="highlighted-question">А где искать цветы, когда наступает зима?</span>
 </div>
 
 {:else if globe.language == "LA"}

@@ -52,22 +52,21 @@ onMount(async () => {
 <h1>Chapel</h1>
 <p class="subh">The tenth stop<br>in the quest for Markučiai Treasure</p>
 <article>
-Search for the year when the construction of this chapel began. 
-
+After placing the flowers on the graves, look at the family house of prayer and find the date it was built.
 </article>
 
 
 <img width=105% src={cerkve}>
 <article>
 	<br>
-	It was dedicated to Saint Great Martyr Barbara. While near the church, you also find another piece of the document.
+	It was named after Saint Barbara. You find another scrap near the chapel. Now, walk around the cemetery.
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Your search for the next fragment will be aided by the Pushkin family's four-legged friends.
+	The family's four-legged friends will help you find the next fragment.
 	<br><br>
-	<span class="highlighted-question">Who's running around the cemetary?</span>
+	<span class="highlighted-question">What should you look for in the cemetery?</span>
 </div>
 
 {:else if globe.language == "RU"}
@@ -75,22 +74,21 @@ Search for the year when the construction of this chapel began.
 <h1>Церковь</h1>
 <p class="subh">Десятая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Найдите дату — в каком году началось строительство этой домовой церкви?  
-
+Положив цветы на могилы, повернитесь к домашней церкви (по-литовски называемой часовней) и найдите дату — в каком году было начато её строительство?
 </article>
 
 
 <img width=105% src={cerkve}>
 <article>
 	<br>
-	Она была освящена во имя святой великомученицы Варвары. Возле церкви вы нашли еще одну часть документа.
+	Она была освящена в честь святой великомученицы Варвары. Рядом с часовней вы находите еще один клочок документа. Теперь обойдите кладбище.
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Следующий фрагмент вам помогут найти четвероногие друзья семьи Пушкиных.
+	Следующую часть документа вам помогут найти четвероногие друзья семьи.
 	<br><br>
-	<span class="highlighted-question">Кто бегает недалеко от кладбища?</span>
+	<span class="highlighted-question">Кого вам нужно найти на кладбище?</span>
 </div>
 
 {:else if globe.language == "LA"}

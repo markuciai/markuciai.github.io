@@ -98,24 +98,30 @@ onMount(async () => {
 <p class="subh">You set on your journey<br>at {date_started_h}:{date_started_m}:{date_started_s}</p>
 
 <article>
-Welcome to the game! Find the plaques planted arond the park. Read the hints and scan the plaques in the correct order.
+Welcome to the game! Look for the QR-code plaques in the park and scan them.
 </article>
 
 <img src={instructions} width="100%" />
 
 <article>
-Any adventure begins at the entrance.<br>
-The manor had a gate, and near that gate there was a large cross made of railway track.
+Read the clues and solve the tasks in the correct order.
+</article>
+
+<img src={steps} width="100%" />
+
+<article>
+The game begins at the entrance to the Markučiai Manor park.
+<br/><br/>
+In the 19th century, people arrived by carriage through the main gates, where a large cross made of railway tracks once stood. Today, a different object stands there.
 </article>
 
 
 <div class="where-next">
-	<span class="highlighted-question">Where's the main entrance into the park? <br>Where did the cross once stand?</span>
+	<span class="highlighted-question">Find where the main entrance to the park used to be. Where do you think the cross stood?
+</span>
 	<br><br>
 	<span>
-		Descend.<br>
-		From the museum to the entrance.<br>
-		From the present into the past.
+		First clue – <br>go down the steps.
 	</span>
 </div>
 
@@ -124,29 +130,41 @@ The manor had a gate, and near that gate there was a large cross made of railway
 
 {:else if globe.language == "RU"}
 
-<h1>ККлад Поместья Маркучай</h1>
+<h1>Клад Поместья Маркучай</h1>
 <p class="subh">Вы начали своё путешествие<br>в {date_started_h}:{date_started_m}:{date_started_s}</p>
 
+
 <article>
-Добро пожаловать в игру! Ищите таблички разбросанные по парку. Читайте подсказки и сканируйте таблички в нужном порядке.
+Добро пожаловать в игру! Ищите в парке таблички с QR-кодами и сканируйте их,
 </article>
 
-<img  src={instructions} width="100%" />
+<img src={instructions} width="100%" />
+
+<article>
+Читайте подсказки и выполняйте задания в правильном порядке.
+</article>
+
+<img src={steps} width="100%" />
+
+
+
 
 
 <article>
-	Любое путешествие начинается со входа. <br>
-	У поместья были ворота, а у ворот стоял большой крест из железнодорожных рельс.
+Игра начинается у входа в парк усадьбы Маркучяй.<br><br>
+В XIX веке в усадьбу Маркучяй въезжали в каретах через главные ворота, а возле них стоял большой крест, сделанный из железнодорожных рельсов. В настоящее время там стоит другой объект.
 </article>
 
 
 <div class="where-next">
-	<span class="highlighted-question">Где у парка главный вход? <br>Где раньше стоял крест?</span>
+	<span class="highlighted-question">
+	Найдите, где был главный вход в парк усадьбы Маркучяй.
+	<br><br>
+	Как вы думаете, где раньше мог стоять крест?
+	</span>
 	<br><br>
 	<span>
-		Спускайтесь вниз.<br>
-		Из музея ко входу.<br>
-		Из настоящего в прошлое.
+		Первая подсказка — спускайтесь по лестнице вниз.
 	</span>
 </div>
 
@@ -174,11 +192,18 @@ Coepi ludum at: {date_started_h}:{date_started_m}:{date_started_s}
 <h1>Markučių Dvaro Lobis</h1>
 <p class="subh">JŪS PRADĖJOTE KELIONĘ<br>{date_started_h}:{date_started_m}:{date_started_s}</p>
 
+
 <article>
-Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių su QR-kodais, skenuokite lenteles, skaitykite užuominas ir spręskite užduotis teisinga tvarka.
+Sveiki atvykę į žaidimą! Ieškokite parke išdėliotų lentelių su QR-kodais ir jas skenuokite.
 </article>
 
-<img  src={steps} width="100%" />
+<img src={instructions} width="100%" />
+
+<article>
+Skaitykite užuominas ir spręskite užduotis teisinga tvarka.
+</article>
+
+<img src={steps} width="100%" />
 
 
 <article>

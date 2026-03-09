@@ -55,21 +55,21 @@ onMount(async () => {
 <h1>The Cross</h1>
 <p class="subh">The first stop<br>in the quest for Markučiai Treasure</p>
 <article>
-In the past, in Varvara Pushkina's time, here, to the left of the park entrance, on a stone foundation stood a tall cross made of railway track. At it's base the estate mistress would leave a bowl of coins for the poor. 
+Yes! An iron cross once stood here. In Varvara's time, a tall cross made of railway tracks stood on a stone pedestal to the left of the entrance (where the notice board is now). Next to it, the owner would leave a jar of coins for the poor.
 </article>
 
 
 <img width=105% src={cross}>
 <article>
 <br>
-Now, in that bowl there's only a piece of paper with a coat of arms and a signature. This looks like a document of some historical importance, but much of the text is missing. Who should be entrusted with this accidental find? 
+In this jar, we have left a scrap of paper from the past with a signature and a seal. It looks like part of an important historical document. But where is the rest? 
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Perhaps the estate servants can&nbsp;be of&nbsp;assistance?&nbsp; You&nbsp;should find&nbsp;them right&nbsp;away!
+	Perhaps the manor servants can&nbsp;be of&nbsp;assistance?
 	<br><br>
-	<span class="highlighted-question">Where could one find the&nbsp;servants?</span>
+	<span class="highlighted-question">Find on the map where the servants lived in the XIX&nbsp;century!</span>
 </div>
 
 
@@ -79,21 +79,21 @@ Now, in that bowl there's only a piece of paper with a coat of arms and a signat
 <h1>Крест</h1>
 <p class="subh">Первая остановка<br>в поисках Клада Маркутья</p>
 <article>
-По левой стороне от входа в парк, во времена Варвары Пушкиной, на каменном фундаменте стоял высокий крест, изготовленный из железнодорожных рельсов. У его основания хозяйка усадьбы оставляла чашу с монетками для бедных людей.
+Да! Здесь стоял железный крест. Во времена Варвары у входа в парк, слева (сейчас там стоит доска объявлений), на каменном постаменте стоял высокий крест, изготовленный из железнодорожных рельсов. А рядом с ним владелица усадьбы оставляла сосуд с монетами, предназначенными для бедных людей.
 </article>
 
 
 <img width=105% src={cross}>
 <article>
 <br>
-Сейчас в этой чаше лежит только обрывок бумаги с гербовой печатью и подписью. Похоже, это очень важный исторический документ. Но, где же остальная часть текста, и что в нем было написано? Кому следует отдать случайную находку?
+В этом сосуде мы оставили для вас клочок бумаги из прошлого с подписью и печатью. Похоже, это часть важного исторического документа. Но где же остальная часть документа?
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Может быть слуги поместья смогут нам&nbsp;помочь? Нужно&nbsp;срочно их&nbsp;найти.
+	Может быть слуги усадьбы смогут нам&nbsp;помочь?
 	<br><br>
-	<span class="highlighted-question">Где можно найти&nbsp;слуг?</span>
+	<span class="highlighted-question">Найдите на карте, где в XIX веке жили&nbsp;слуги!</span>
 </div>
 
 

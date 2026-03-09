@@ -55,38 +55,52 @@ let header_description_text = {
 <h1>The Stables</h1>
 <p class="subh">The third stop<br>in the quest for Markučiai Treasure</p>
 <article>
-You swiftly fulfilled the request: you handed over the saddle to the coachman and told him of your search for an important document. Mr. Michal had served the Pushkin estate in Markuchiai for many years, driving Grigory and Varvara to the city and neighboring provinces. 
+Well done! You delivered the new saddle to the stables. 
 </article>
 <img width=105% src={stables}>
+
+
+<article>
+	<br>
+Michal works here; he served at the manor for a long time, driving the owners to the city and other provinces.
+
+</article>
+
 <br><br>
 
 <img class="illustration" src={task}>
 
 <div class="where-next">
-Today, he found a similar scrap of paper by the stables, which he would gladly give to you if you don't mind taking his fishing rod to his younger son Taras.
+When you mentioned searching for an important document, the coachman remembers finding a scrap near the stables. He will give it to you if you take a fishing rod to his youngest son, Taras.
 	<br><br>
-	<span class="highlighted-question">Where should you bring the&nbsp;fishing&nbsp;rod?</span>
+	<span class="highlighted-question">Find where to take the&nbsp;fishing&nbsp;rod.</span>
 </div>
 
 
 {:else if globe.language == "RU"}
 
 
-<h1>Конюшни</h1>
+<h1>Конюшня</h1>
 <p class="subh">Третья остановка<br>в поисках Клада Маркутья</p>
 <article>
-Вы легко справились с этой просьбой — передали кучеру седло и рассказали о поисках важного документа. Пан Михал много лет служил в усадьбе Пушкиных в Маркутье, возил Григория и Варвару в город и соседние губернии. 
-
+Молодцы, вы легко выполнили просьбу слуг — отнесли новое седло в конюшню.
 </article>
 <img width=105% src={stables}>
 <br><br>
 
+
+
+<article>
+<br>
+Здесь работает Михал, который долгое время служил в усадьбе Маркучяй и возил хозяев в город и в другие губернии.
+</article>
+
 <img class="illustration" src={task}>
 
 <div class="where-next">
-Сегодня у конюшни он обнаружил похожий обрывок бумаги, который с удовольствием отдаст вам, если не откажетесь отнести удочку его младшему сыну Тарасу. 
+Когда вы упомянули о поиске важного документа, кучер вспомнил, что как раз нашел у конюшни клочок документа и с удовольствием отдаст его, если вы отнесете удочку его младшему сыну Тарасу.
 <br><br>
-<span class="highlighted-question">Куда нужно отнести&nbsp;удочку?</span>
+<span class="highlighted-question">Найдите, куда нужно отнести&nbsp;удочку.</span>
 </div>
 
 {:else if globe.language == "LA"}

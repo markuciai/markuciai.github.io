@@ -50,7 +50,9 @@ onMount(async () => {
 <h1>Kitchen</h1>
 <p class="subh">The fifth stop<br>in the quest for Markučiai Treasure</p>
 <article>
-The cook was delighted with this successful catch - she will bake five large carp with vegetables and herbs according to the old Melnikov family recipe and serve the dish on the festive table.
+The cook works in the kitchen, located in the annex next to the house. She is happy with the catch – five carp!
+<br><br>
+You can bake them in the wood burning stove (do you know what a wood burning stove is?) with vegetables and various herbs according to the Melnikov family recipe and serve them for a festive lunch.
 
 </article>
 
@@ -58,7 +60,7 @@ The cook was delighted with this successful catch - she will bake five large car
 
 <article>
 <br>
-You notice that, in her recipe book, instead of a bookmark the cook is using the exact scrap of paper you need.
+Suddenly, you notice a document scrap being used as a bookmark in her recipe book. 
 <br>&nbsp;<br>&nbsp;<br>&nbsp;
 </article>
 
@@ -66,9 +68,9 @@ You notice that, in her recipe book, instead of a bookmark the cook is using the
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	She will give you this scrap if you agree to bring some chicken feed to Vanyusha.
+	The cook will give it to you if you take some chicken feed to a boy named Vanyusha.
 	<br><br>
-	<span class="highlighted-question">Where should you bring the chicken feed?</span>
+	<span class="highlighted-question">Where should you take the chicken feed?</span>
 </div>
 
 
@@ -80,22 +82,21 @@ You notice that, in her recipe book, instead of a bookmark the cook is using the
 <h1>Кухня</h1>
 <p class="subh">Пятая остановка<br>в поисках Клада Маркутья</p>
 <article>
-	Кухарка обрадовалась удачному улову — пять крупных карпов она запечет с овощами и травами по старинному рецепту семьи Мельниковых и подаст блюдо на праздничный стол. 
-
+На кухне, которая находится в пристройке рядом с домом, работает повариха. Она обрадовалась, увидев отличный улов — целых пять карпов! Она сможет запечь их в печи (знаете ли вы, что такое печь?) с овощами и всевозможными травами по рецепту семьи Мельниковых и подаст к праздничному обеду.
 </article>
 
 <img width=105% src={cook}>
 <article>
 <br>
-Вы видите, что в книге с рецептами вместо закладки кухарка использовала нужный вам обрывок документа. 
+Неожиданно в книге рецептов вы замечаете обрывок уже знакомого вам документа, который повариха использует как закладку.
 <br>&nbsp;<br>&nbsp;<br>&nbsp;
 </article>
 <img class="illustration" src={task}>
 
 <div class="where-next">
-	Кухарка отдаст вам листочек, если вы согласитесь отнести Ванюше корм для цыплят. 
-	<br><br>
-	<span class="highlighted-question">Куда нужно отнести корм для цыплят?</span>
+Повариха с радостью отдаст бумажку вам, если вы отнесете мальчику Ванюше корм, приготовленный для цыплят.
+<br><br>
+<span class="highlighted-question">Куда нести корм для цыплят?</span>
 </div>
 
 {:else if globe.language == "LA"}
