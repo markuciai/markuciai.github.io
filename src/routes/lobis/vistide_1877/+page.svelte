@@ -77,7 +77,7 @@ In return, take a basket of fresh eggs to Maria so she can bake a cake for the g
 {:else if globe.language == "RU"}
 
 <h1>Курятник и&nbsp;ледник</h1>
-<p class="subh">Шестая остановка<br>в поисках Клада Маркутья</p>
+<p class="subh">Шестая остановка<br>в поисках Клада Маркучай</p>
 <article>
 Мальчик по имени Ваня замечает вас издалека и машет рукой. Вы отдаете ему корм для цыплят и рассказываете о своих поисках.
 </article>

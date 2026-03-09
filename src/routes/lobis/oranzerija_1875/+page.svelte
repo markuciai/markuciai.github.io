@@ -77,7 +77,7 @@ Olga has made beautiful bouquets and asks you to take them to the graves of Varv
 {:else if globe.language == "RU"}
 <!-- this h1 doesn't fit on mobile without the smaller font and a shift left -->
 <h1>Оранжерея</h1>
-<p class="subh">Девятая остановка<br>в поисках Клада Маркутья</p>
+<p class="subh">Девятая остановка<br>в поисках Клада Маркучай</p>
 <article>
 Вы совершенно правы — зимой цветы растут в оранжерее, где в холодное время года от мороза оберегают экзотические, теплолюбивые растения.
 </article>

@@ -72,7 +72,7 @@ After placing the flowers on the graves, look at the family house of prayer and 
 {:else if globe.language == "RU"}
 
 <h1>Церковь</h1>
-<p class="subh">Десятая остановка<br>в поисках Клада Маркутья</p>
+<p class="subh">Десятая остановка<br>в поисках Клада Маркучай</p>
 <article>
 Положив цветы на могилы, повернитесь к домашней церкви (по-литовски называемой часовней) и найдите дату — в каком году было начато её строительство?
 </article>

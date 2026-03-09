@@ -81,7 +81,7 @@ When you mentioned searching for an important document, the coachman remembers f
 
 
 <h1>Конюшня</h1>
-<p class="subh">Третья остановка<br>в поисках Клада Маркутья</p>
+<p class="subh">Третья остановка<br>в поисках Клада Маркучай</p>
 <article>
 Молодцы, вы легко выполнили просьбу слуг — отнесли новое седло в конюшню.
 </article>

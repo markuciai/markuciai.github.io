@@ -102,7 +102,7 @@ However, to let as many people as possible learn about the last will of the Push
 
 
 <h1>Площадка для крокета</h1>
-<p class="subh">Двенадцатая и предпоследняя остановка<br>в поисках Клада Маркутья</p>
+<p class="subh">Двенадцатая и предпоследняя остановка<br>в поисках Клада Маркучай</p>
 <article>
 	Рядом с памятником поэту вы видите взрослых и детей, которые играют в крокет. Вы отдаете шар главе семейства — это старинный друг Григория Пушкина, архитектор Владимир Назимов.	
 </article>
@@ -216,7 +216,9 @@ What is written in it?
 <h1>Kroketo aikštelė</h1>
 <p class="subh">Dvyliktoji ir priešpaskutinė stotelė<br>ieškant Markučių lobio</p>
 <article>
-Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse. Kroketas XIX a. buvo populiarus laisvalaikio žaidimas visoje Europoje.
+Kroketo aikštelėje<!--, prie poeto Aleksandro Puškino paminklo,--> žaidžiamas unikalus žaidimas, kurį žaidė 1900 olimpinėse žaidynėse.
+<br/><br/>
+Kroketas XIX a. buvo populiarus laisvalaikio žaidimas visoje Europoje.
 </article>
 
 <img width=105% src={croquet}>

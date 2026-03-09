@@ -662,9 +662,9 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 <div class="where-next">
     <!-- Later, Varvara will charge her own descendants with establishing a museum at the Markučiai manor, so that the treasure she was given would serve the causes of culture and education. That museum works to this day. <br><br> -->
 <!-- {#if globe.location == 12} -->
-    With commendable teamwork you have managed to gather the whole document! Your treasure — a&nbsp;prize.
+    Thanks to great teamwork, you have collected the entire&nbsp;document!.
     <br><br>
-    <span class="highlighted-question">Now, visit the museum and pick up your reward for the job well done!</span>
+    <span class="highlighted-question">Now return to the museum to collect your reward!</span>
 <!-- {/if} -->
 </div>
 
@@ -712,9 +712,9 @@ The aforementioned real estate and belongings, given as dowry, I estimate, in go
 <div class="where-next">
     <!-- Позже, Варвара уже своим наследникам завещает основать в дворе Маркучай музей, чтобы оставленный ей клад служил лишь культурно&#8288;-&#8288;просветительским целям. Этот музей действует и до сих пор. <br><br> -->
 <!-- {#if globe.location == 12} -->
-    Благодаря командной работе вам получилось найти клад! Ваш клад — подарок.
+    Благодаря отличной командной работе вам удалось собрать весь документ!
     <br><br>
-    <span class="highlighted-question">А теперь возвращайтесь в музей и получите награду за проделанную работу!</span>
+    <span class="highlighted-question">А теперь возвращайтесь в&nbsp;музей и получите награду!</span>
 <!-- {/if} -->
 </div>
 

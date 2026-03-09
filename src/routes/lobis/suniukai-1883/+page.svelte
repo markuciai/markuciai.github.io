@@ -79,7 +79,7 @@ The ball must be returned to the players immediately. As you pick it up, you not
 {:else if globe.language == "RU"}
 
 <h1>Собачки</h1>
-<p class="subh">Одинадцатая остановка<br>в поисках Клада Маркутья</p>
+<p class="subh">Одинадцатая остановка<br>в поисках Клада Маркучай</p>
 <article>
 Молодцы! Вы нашли могилы любимых собачек семьи.
 </article>
