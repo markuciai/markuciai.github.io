@@ -1,4 +1,4 @@
-import { h as head } from "../../../../chunks/index.js";
+import { h as head } from "../../../../chunks/renderer.js";
 import { O as Offer } from "../../../../chunks/Offer.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {

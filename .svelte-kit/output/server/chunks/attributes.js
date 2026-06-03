@@ -196,11 +196,11 @@ export {
   define_property as j,
   array_from as k,
   escape_html as l,
-  has_own_property as m,
+  to_style as m,
   noop as n,
   object_prototype as o,
-  to_style as p,
-  clsx as q,
+  clsx as p,
+  has_own_property as q,
   run_all as r,
   to_class as t
 };

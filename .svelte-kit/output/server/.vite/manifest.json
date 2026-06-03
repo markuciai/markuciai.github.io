@@ -66,13 +66,6 @@
     "file": "chunks/globe.svelte.js",
     "name": "globe.svelte"
   },
-  "_index.js": {
-    "file": "chunks/index.js",
-    "name": "index",
-    "imports": [
-      "_attributes.js"
-    ]
-  },
   "_internal.js": {
     "file": "chunks/internal.js",
     "name": "internal",
@@ -88,11 +81,23 @@
       "_app/immutable/assets/mdvaras.uf9U8GDs.jpg"
     ]
   },
+  "_render-context.js": {
+    "file": "chunks/render-context.js",
+    "name": "render-context"
+  },
+  "_renderer.js": {
+    "file": "chunks/renderer.js",
+    "name": "renderer",
+    "imports": [
+      "_render-context.js",
+      "_attributes.js"
+    ]
+  },
   "_root.js": {
     "file": "chunks/root.js",
     "name": "root",
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_false.js",
       "_attributes.js"
     ]
@@ -101,7 +106,8 @@
     "file": "chunks/shared.js",
     "name": "shared",
     "imports": [
-      "_utils.js"
+      "_utils.js",
+      "_render-context.js"
     ]
   },
   "_steps.js": {
@@ -134,9 +140,9 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
+      "_shared.js",
       "_false.js",
       "_environment.js",
-      "_shared.js",
       "_exports.js",
       "_utils.js",
       "_attributes.js",
@@ -605,7 +611,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_attributes.js",
       "_exports.js",
       "_utils.js",
@@ -627,7 +633,7 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_globe.svelte.js",
       "_mdvaras.js",
       "_exports.js",
@@ -646,7 +652,7 @@
     "src": "src/routes/lobis/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -656,7 +662,7 @@
     "src": "src/routes/lobis/arklides_1935/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_attributes.js",
       "_globe.svelte.js",
       "_Offer.js"
@@ -668,7 +674,7 @@
     "src": "src/routes/lobis/cerkve_1903/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -678,7 +684,7 @@
     "src": "src/routes/lobis/duonkepe_1868/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -688,7 +694,7 @@
     "src": "src/routes/lobis/finish_1935/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_globe.svelte.js",
       "_doggo.js",
       "_attributes.js"
@@ -715,7 +721,7 @@
     "src": "src/routes/lobis/kroketas_1867/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ],
     "css": [
@@ -728,7 +734,7 @@
     "src": "src/routes/lobis/kryzius_1880/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -738,7 +744,7 @@
     "src": "src/routes/lobis/namelis_1855/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -748,7 +754,7 @@
     "src": "src/routes/lobis/oranzerija_1875/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -758,7 +764,7 @@
     "src": "src/routes/lobis/start_1865/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_attributes.js",
       "_steps.js"
     ]
@@ -769,7 +775,7 @@
     "src": "src/routes/lobis/sulinys_1867/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -779,7 +785,7 @@
     "src": "src/routes/lobis/suniukai-1883/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -789,7 +795,7 @@
     "src": "src/routes/lobis/tvenkiniai_1917/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -799,7 +805,7 @@
     "src": "src/routes/lobis/virtuve_1899/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   },
@@ -809,7 +815,7 @@
     "src": "src/routes/lobis/vistide_1877/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js",
+      "_renderer.js",
       "_Offer.js"
     ]
   }

@@ -1,4 +1,4 @@
-import { h as head, a as attr_class } from "../../chunks/index.js";
+import { h as head, a as attr_class } from "../../chunks/renderer.js";
 import { g as globe } from "../../chunks/globe.svelte.js";
 import { d as dvaras } from "../../chunks/mdvaras.js";
 import "@sveltejs/kit/internal";

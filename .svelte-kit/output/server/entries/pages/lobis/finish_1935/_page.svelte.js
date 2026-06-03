@@ -1,4 +1,4 @@
-import { a as attr_class, J as slot, h as head } from "../../../../chunks/index.js";
+import { a as attr_class, O as slot, h as head } from "../../../../chunks/renderer.js";
 import { g as globe } from "../../../../chunks/globe.svelte.js";
 import { t as task$a } from "../../../../chunks/doggo.js";
 import { a as attr } from "../../../../chunks/attributes.js";

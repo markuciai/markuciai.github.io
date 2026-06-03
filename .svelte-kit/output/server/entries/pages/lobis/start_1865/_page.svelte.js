@@ -1,4 +1,4 @@
-import { h as head } from "../../../../chunks/index.js";
+import { h as head } from "../../../../chunks/renderer.js";
 import { a as attr, l as escape_html } from "../../../../chunks/attributes.js";
 import { s as splash, i as instructions, a as steps } from "../../../../chunks/steps.js";
 function _page($$renderer, $$props) {

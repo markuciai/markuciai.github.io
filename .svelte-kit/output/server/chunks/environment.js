@@ -23,8 +23,8 @@ function set_prerendering() {
 export {
   assets as a,
   base as b,
-  app_dir as c,
-  reset as d,
+  reset as c,
+  app_dir as d,
   set_building as e,
   set_prerendering as f,
   override as o,

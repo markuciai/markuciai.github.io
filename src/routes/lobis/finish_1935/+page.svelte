@@ -96,8 +96,8 @@ function ms_to_time(ms) {
 {#if show_station}
 
 <section>
-<!-- <img class="map_piece_header_illustration" src={splash}> -->
-<Kepure></Kepure>
+<img class="map_piece_header_illustration" src={splash}>
+<!-- <Kepure></Kepure> -->
 
 
 

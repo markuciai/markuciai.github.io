@@ -1,4 +1,4 @@
-import { h as head } from "../../chunks/index.js";
+import { h as head } from "../../chunks/renderer.js";
 import { a as attr } from "../../chunks/attributes.js";
 import "@sveltejs/kit/internal";
 import "../../chunks/exports.js";

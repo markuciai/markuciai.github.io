@@ -1,4 +1,4 @@
-import { h as head } from "../../../../chunks/index.js";
+import { h as head } from "../../../../chunks/renderer.js";
 import { l as escape_html, a as attr } from "../../../../chunks/attributes.js";
 import { g as globe } from "../../../../chunks/globe.svelte.js";
 import { O as Offer } from "../../../../chunks/Offer.js";
