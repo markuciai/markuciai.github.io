@@ -367,7 +367,18 @@ article {
 
 	/* color: #EEDC83; */
 	color: var(--color-sepia)
+
 }
+
+.where-next.too_early > .highlighted-question {
+	color: white;
+}
+
+.where-next.already_visited > .highlighted-question {
+	color: var(--color-sepia);
+}
+
+
 
 .where-next.too_early:hover {
 	background: brown;
@@ -394,12 +405,13 @@ article {
 
 
 	color: var(--color-mdm-sepia);
+
+
 }
 
 .where-next.already_visited:hover {
 	background-color: #2e422f;	
 }
-
 
 
 
@@ -434,6 +446,10 @@ article {
 	color: var(--color-vm-orange);
 	text-wrap: balance;
 }
+
+
+
+
 
 
 .illustration {

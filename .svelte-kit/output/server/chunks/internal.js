@@ -28,6 +28,7 @@ const options = {
   root,
   service_worker: false,
   service_worker_options: void 0,
+  server_error_boundaries: false,
   templates: {
     app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="en" translate="no" >\n	<head>\n		<meta charset="utf-8" />\n		<!-- <link rel="icon" href="' + assets + '/favicon.png" /> -->\n		<!-- <link rel="icon" href="$lib/assets/favicon.svg" /> -->\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
@@ -101,7 +102,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "gnr5ys"
+  version_hash: "9xaqxf"
 };
 async function get_hooks() {
   let handle;

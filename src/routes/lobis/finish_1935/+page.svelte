@@ -96,8 +96,8 @@ function ms_to_time(ms) {
 {#if show_station}
 
 <section>
-<img class="map_piece_header_illustration" src={splash}>
-<!-- <Kepure></Kepure> -->
+<!-- <img class="map_piece_header_illustration" src={splash}> -->
+<Kepure></Kepure>
 
 
 
@@ -171,8 +171,8 @@ function ms_to_time(ms) {
 	А какие тайны хранит в себе дом хозяйки поместья? Где находится «исчезающая» комната? Что спрятано в печке? И зачем в столовой гильотина?
 </article>
 <article>
-	Продолжить путешествие вы можете уже сейчас, заказав экскурсию в кассе музея или по адресу <a href="mailto:edukacija@markuciudvaras.lt">edukacija@markuciudvaras.lt</a> 
-	<br/>&nbsp;
+	Это, и многое другое узнаете из <a href="https://md.vilniausmuziejus.lt/#educations">образовательных программ поместья.</a>
+
 </article>
 
 

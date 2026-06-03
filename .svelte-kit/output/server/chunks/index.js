@@ -15,6 +15,7 @@ const MAYBE_DIRTY = 1 << 12;
 const INERT = 1 << 13;
 const DESTROYED = 1 << 14;
 const REACTION_RAN = 1 << 15;
+const DESTROYING = 1 << 25;
 const EFFECT_TRANSPARENT = 1 << 16;
 const EAGER_EFFECT = 1 << 17;
 const HEAD_EFFECT = 1 << 18;
@@ -1009,10 +1010,11 @@ export {
   COMMENT_NODE as C,
   DIRTY as D,
   ERROR_VALUE as E,
-  derived as F,
-  slot as G,
+  setContext as F,
+  derived as G,
   HYDRATION_ERROR as H,
   INERT as I,
+  slot as J,
   LEGACY_PROPS as L,
   MAYBE_DIRTY as M,
   REACTION_RAN as R,
@@ -1028,11 +1030,11 @@ export {
   CLEAN as g,
   head as h,
   DERIVED as i,
-  RENDER_EFFECT as j,
-  MANAGED_EFFECT as k,
-  BLOCK_EFFECT as l,
-  BRANCH_EFFECT as m,
-  ROOT_EFFECT as n,
+  BLOCK_EFFECT as j,
+  RENDER_EFFECT as k,
+  MANAGED_EFFECT as l,
+  ROOT_EFFECT as m,
+  BRANCH_EFFECT as n,
   DESTROYED as o,
   HYDRATION_START_FAILED as p,
   EFFECT_TRANSPARENT as q,
@@ -1040,9 +1042,9 @@ export {
   EAGER_EFFECT as s,
   STATE_SYMBOL as t,
   HEAD_EFFECT as u,
-  USER_EFFECT as v,
-  REACTION_IS_UPDATING as w,
-  is_passive_event as x,
-  render as y,
-  setContext as z
+  DESTROYING as v,
+  USER_EFFECT as w,
+  REACTION_IS_UPDATING as x,
+  is_passive_event as y,
+  render as z
 };

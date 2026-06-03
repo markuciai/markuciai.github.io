@@ -613,7 +613,7 @@
       "_game_manager.svelte_svelte_type_style_lang.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DvfLAM2v.css"
+      "_app/immutable/assets/_layout.B8Vp7Ig8.css"
     ],
     "assets": [
       "_app/immutable/assets/favicon.XN9wP4KE.svg",
@@ -632,9 +632,9 @@
       "_mdvaras.js",
       "_exports.js",
       "_utils.js",
-      "_attributes.js",
       "_root.js",
-      "_game_manager.svelte_svelte_type_style_lang.js"
+      "_game_manager.svelte_svelte_type_style_lang.js",
+      "_attributes.js"
     ],
     "css": [
       "_app/immutable/assets/_page.BUVafwWG.css"

@@ -4,10 +4,10 @@ import { d as dvaras } from "../../chunks/mdvaras.js";
 import "@sveltejs/kit/internal";
 import "../../chunks/exports.js";
 import "../../chunks/utils.js";
-import { a as attr } from "../../chunks/attributes.js";
 import "@sveltejs/kit/internal/server";
 import "../../chunks/root.js";
 import "../../chunks/game_manager.svelte_svelte_type_style_lang.js";
+import { a as attr } from "../../chunks/attributes.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let bazinga = "";

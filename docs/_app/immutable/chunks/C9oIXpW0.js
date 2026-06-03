@@ -1,1 +1,0 @@
-import{X as y,b as u,b2 as _,aS as o,h as t,W as g,Z as p,af as i,e as l,d,f as m}from"./CvGTeseT.js";function b(n,r){let a=null,f=t;var s;if(t){a=m;for(var e=g(document.head);e!==null&&(e.nodeType!==p||e.data!==n);)e=i(e);if(e===null)l(!1);else{var E=i(e);e.remove(),d(E)}}t||(s=document.head.appendChild(y()));try{u(()=>r(s),_|o)}finally{f&&(l(!0),d(a))}}export{b as h};

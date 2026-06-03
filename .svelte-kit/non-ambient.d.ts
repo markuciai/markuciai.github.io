@@ -26,6 +26,8 @@ export {};
 
 
 declare module "$app/types" {
+	type MatcherParam<M> = M extends (param : string) => param is (infer U extends string) ? U : string;
+
 	export interface AppTypes {
 		RouteId(): "/" | "/lobis" | "/lobis/arklides_1935" | "/lobis/cerkve_1903" | "/lobis/duonkepe_1868" | "/lobis/finish_1935" | "/lobis/kroketas_1867" | "/lobis/kryzius_1880" | "/lobis/namelis_1855" | "/lobis/oranzerija_1875" | "/lobis/start_1865" | "/lobis/sulinys_1867" | "/lobis/suniukai-1883" | "/lobis/tvenkiniai_1917" | "/lobis/virtuve_1899" | "/lobis/vistide_1877" | "/stores";
 		RouteParams(): {

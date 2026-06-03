@@ -1,4 +1,4 @@
-import { a as attr_class, G as slot, h as head } from "../../../../chunks/index.js";
+import { a as attr_class, J as slot, h as head } from "../../../../chunks/index.js";
 import { g as globe } from "../../../../chunks/globe.svelte.js";
 import { t as task$a } from "../../../../chunks/doggo.js";
 import { a as attr } from "../../../../chunks/attributes.js";
@@ -39,7 +39,7 @@ function Stopper($$renderer, $$props) {
     {
       $$renderer2.push("<!--[-1-->");
     }
-    $$renderer2.push(`<!--]--></p> <br/> <p style="font-style: italic; font-weight: bold;">`);
+    $$renderer2.push(`<!--]--></p> <br/> <p class="highlighted-question">`);
     {
       $$renderer2.push("<!--[-1-->");
     }

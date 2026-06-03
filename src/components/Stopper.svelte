@@ -60,7 +60,7 @@ let illustrations = [zero, bowl, saddle, fishing_rod, fish, fodder, eggs, bucket
 
 
 <br>
-<p style="font-style: italic; font-weight: bold;">
+<p class="highlighted-question">
 
 {#if globe.progress == 0}
 {#if globe.language == "EN"}		   	Find the main entrance into the park first.

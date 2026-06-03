@@ -70,7 +70,7 @@ As you hand him the rod, you notice another scrap in his boat! He will give it t
 {:else if globe.language == "RU"}
 
 <h1>Пруды</h1>
-<p class="subh">Четвёртая остановка<br>в поисках Клада Маркутья</p>
+<p class="subh">Четвёртая остановка<br>в поисках Клада Маркучай</p>
 <article>
 Найти Тараса несложно, так как мальчик все свободное время проводит у усадебных прудов. Зимой на прудах катались на коньках, а летом — купались.
 </article>
